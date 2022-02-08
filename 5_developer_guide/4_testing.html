@@ -3,6 +3,7 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
@@ -65,11 +66,20 @@
   </script>
   <script src="../_static/doctools.js">
   </script>
-  <script src="../_static/togglebutton.js">
-  </script>
   <script src="../_static/clipboard.min.js">
   </script>
   <script src="../_static/copybutton.js">
+  </script>
+  <script>
+   let toggleHintShow = 'Click to show';
+  </script>
+  <script>
+   let toggleHintHide = 'Click to hide';
+  </script>
+  <script>
+   let toggleOpenOnPrint = 'true';
+  </script>
+  <script src="../_static/togglebutton.js">
   </script>
   <script>
    var togglebuttonSelector = '.toggle, .admonition.dropdown';
@@ -169,27 +179,27 @@
     <div class="md-tabs__inner md-grid">
      <ul class="md-tabs__list">
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/1_getting_started/0_index.html">
+       <a class="md-tabs__link" href="/1_getting_started/0_index.html">
         Getting Started
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/2_user_guide/0_index.html">
+       <a class="md-tabs__link" href="/2_user_guide/0_index.html">
         User Guide
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/3_api_reference/0_index.html">
+       <a class="md-tabs__link" href="/3_api_reference/0_index.html">
         API Reference
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/4_integrations/0_index.html">
+       <a class="md-tabs__link" href="/4_integrations/0_index.html">
         Integrations
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/5_developer_guide/0_index.html">
+       <a class="md-tabs__link" href="/5_developer_guide/0_index.html">
         Developer Guide
        </a>
       </li>
@@ -408,223 +418,233 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <h1 id="5-developer-guide-4-testing--page-root">
-        Testing
-        <a class="headerlink" href="#5-developer-guide-4-testing--page-root" title="Permalink to this headline">
-         ¶
-        </a>
-       </h1>
-       <p>
-        The test suite is divided into broad categories of tests including:
-       </p>
-       <ul class="simple">
-        <li>
+       <section class="tex2jax_ignore mathjax_ignore" id="testing">
+        <h1 id="5-developer-guide-4-testing--page-root">
+         Testing
+         <a class="headerlink" href="#5-developer-guide-4-testing--page-root" title="Permalink to this headline">
+          ¶
+         </a>
+        </h1>
+        <p>
+         The test suite is divided into broad categories of tests including:
+        </p>
+        <ul class="simple">
+         <li>
+          <p>
+           Unit tests
+          </p>
+         </li>
+         <li>
+          <p>
+           Integration tests
+          </p>
+         </li>
+         <li>
+          <p>
+           Acceptance tests
+          </p>
+         </li>
+         <li>
+          <p>
+           Performance tests
+          </p>
+         </li>
+        </ul>
+        <p>
+         The performance tests are not run as part of the CI pipeline, but exist to aid development of performance-critical components.
+        </p>
+        <p>
+         Tests can be run using either
+         <a class="reference external" href="https://docs.pytest.org">
+          Pytest
+         </a>
+         or the
+         <a class="reference external" href="https://nox.thea.codes/en/stable/">
+          Nox
+         </a>
+         tool.
+        </p>
+        <p>
+         If you’re using PyCharm then tests should run directly by right clicking on the respective folder (or top-level tests folder) and clicking ‘Run pytest’.
+        </p>
+        <p>
+         Alternatively you can use the
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           pytest
+          </span>
+          <span class="pre">
+           .
+          </span>
+         </code>
+         command from the root level tests directory, or the other subdirectories.
+        </p>
+        <section id="nox">
+         <h2 id="nox">
+          Nox
+          <a class="headerlink" href="#nox" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
          <p>
-          Unit tests
-         </p>
-        </li>
-        <li>
-         <p>
-          Integration tests
-         </p>
-        </li>
-        <li>
-         <p>
-          Acceptance tests
-         </p>
-        </li>
-        <li>
-         <p>
-          Performance tests
-         </p>
-        </li>
-       </ul>
-       <p>
-        The performance tests are not run as part of the CI pipeline, but exist to aid development of performance-critical components.
-       </p>
-       <p>
-        Tests can be run using either
-        <a class="reference external" href="https://docs.pytest.org">
-         Pytest
-        </a>
-        or the
-        <a class="reference external" href="https://nox.thea.codes/en/stable/">
-         Nox
-        </a>
-        tool.
-       </p>
-       <p>
-        If you’re using PyCharm then tests should run directly by right clicking on the respective folder (or top-level tests folder) and clicking ‘Run pytest’.
-       </p>
-       <p>
-        Alternatively you can use the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          pytest
-         </span>
-         <span class="pre">
-          .
-         </span>
-        </code>
-        command from the root level tests directory, or the other subdirectories.
-       </p>
-       <h2 id="nox">
-        Nox
-        <a class="headerlink" href="#nox" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Nox sessions are defined within the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          noxfile.py
-         </span>
-        </code>
-        , to run various test collections.
-       </p>
-       <p>
-        To run unit tests with nox:
-       </p>
-       <div class="highlight-none notranslate">
-        <div class="highlight">
-         <pre><span></span>nox -s tests
-</pre>
-        </div>
-       </div>
-       <p>
-        If you have a redis-server up you can run integration tests with nox:
-       </p>
-       <div class="highlight-none notranslate">
-        <div class="highlight">
-         <pre><span></span>nox -s integration_tests
-</pre>
-        </div>
-       </div>
-       <p>
-        Or both unit and integration tests:
-       </p>
-       <div class="highlight-none notranslate">
-        <div class="highlight">
-         <pre><span></span>nox -s tests_with_integration
-</pre>
-        </div>
-       </div>
-       <h2 id="mocks">
-        Mocks
-        <a class="headerlink" href="#mocks" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Unit tests will often include other components acting as mocks. The intent of this is to simplify
-the test suite to avoid extensive use of a mocking framework, although
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          MagicMock
-         </span>
-        </code>
-        objects are
-currently used in particular cases.
-       </p>
-       <h2 id="code-coverage">
-        Code Coverage
-        <a class="headerlink" href="#code-coverage" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Code coverage output is generated using
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          coverage
-         </span>
-        </code>
-        and reported using
-        <a class="reference external" href="https://about.codecov.io/">
-         codecov
-        </a>
-        .
-       </p>
-       <p>
-        High test coverage is a goal for the project however not at the expense of appropriate error
-handling, or causing “test induced damage” to the architecture.
-       </p>
-       <p>
-        There are currently areas of the codebase which are impossible to test unless there is a change to
-the production code. For example the last condition check of an if-else block which would catch an
-unrecognized value, these should be left in place in case there is a change to the production code - which these checks could then catch.
-       </p>
-       <p>
-        Other design-time exceptions may also be impossible to test for, and so 100% test coverage is not
-the ultimate goal.
-       </p>
-       <h2 id="excluded-code-coverage">
-        Excluded code coverage
-        <a class="headerlink" href="#excluded-code-coverage" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        The
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          pragma:
-         </span>
-         <span class="pre">
-          no
-         </span>
-         <span class="pre">
-          cover
-         </span>
-        </code>
-        comments found throughout the codebase
-        <a class="reference external" href="https://coverage.readthedocs.io/en/coverage-4.3.3/excluding.html">
-         exclude code from test coverage
-        </a>
-        .
-The reason for their use is to reduce redundant/needless tests just to keep coverage high, such as:
-       </p>
-       <ul class="simple">
-        <li>
-         <p>
-          Asserting an abstract method raises
+          Nox sessions are defined within the
           <code class="docutils literal notranslate">
            <span class="pre">
-            NotImplementedError
+            noxfile.py
            </span>
           </code>
-          when called.
+          , to run various test collections.
          </p>
-        </li>
-        <li>
          <p>
-          Asserting the final condition check of an if-else block when impossible to test (as above).
+          To run unit tests with nox:
          </p>
-        </li>
-       </ul>
-       <p>
-        These tests are expensive to maintain (as they must be kept in line with any refactorings), and
+         <div class="highlight-none notranslate">
+          <div class="highlight">
+           <pre><span></span>nox -s tests
+</pre>
+          </div>
+         </div>
+         <p>
+          If you have a redis-server up you can run integration tests with nox:
+         </p>
+         <div class="highlight-none notranslate">
+          <div class="highlight">
+           <pre><span></span>nox -s integration_tests
+</pre>
+          </div>
+         </div>
+         <p>
+          Or both unit and integration tests:
+         </p>
+         <div class="highlight-none notranslate">
+          <div class="highlight">
+           <pre><span></span>nox -s tests_with_integration
+</pre>
+          </div>
+         </div>
+        </section>
+        <section id="mocks">
+         <h2 id="mocks">
+          Mocks
+          <a class="headerlink" href="#mocks" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Unit tests will often include other components acting as mocks. The intent of this is to simplify
+the test suite to avoid extensive use of a mocking framework, although
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            MagicMock
+           </span>
+          </code>
+          objects are
+currently used in particular cases.
+         </p>
+        </section>
+        <section id="code-coverage">
+         <h2 id="code-coverage">
+          Code Coverage
+          <a class="headerlink" href="#code-coverage" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Code coverage output is generated using
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            coverage
+           </span>
+          </code>
+          and reported using
+          <a class="reference external" href="https://about.codecov.io/">
+           codecov
+          </a>
+          .
+         </p>
+         <p>
+          High test coverage is a goal for the project however not at the expense of appropriate error
+handling, or causing “test induced damage” to the architecture.
+         </p>
+         <p>
+          There are currently areas of the codebase which are impossible to test unless there is a change to
+the production code. For example the last condition check of an if-else block which would catch an
+unrecognized value, these should be left in place in case there is a change to the production code - which these checks could then catch.
+         </p>
+         <p>
+          Other design-time exceptions may also be impossible to test for, and so 100% test coverage is not
+the ultimate goal.
+         </p>
+        </section>
+        <section id="excluded-code-coverage">
+         <h2 id="excluded-code-coverage">
+          Excluded code coverage
+          <a class="headerlink" href="#excluded-code-coverage" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          The
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            pragma:
+           </span>
+           <span class="pre">
+            no
+           </span>
+           <span class="pre">
+            cover
+           </span>
+          </code>
+          comments found throughout the codebase
+          <a class="reference external" href="https://coverage.readthedocs.io/en/coverage-4.3.3/excluding.html">
+           exclude code from test coverage
+          </a>
+          .
+The reason for their use is to reduce redundant/needless tests just to keep coverage high, such as:
+         </p>
+         <ul class="simple">
+          <li>
+           <p>
+            Asserting an abstract method raises
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              NotImplementedError
+             </span>
+            </code>
+            when called.
+           </p>
+          </li>
+          <li>
+           <p>
+            Asserting the final condition check of an if-else block when impossible to test (as above).
+           </p>
+          </li>
+         </ul>
+         <p>
+          These tests are expensive to maintain (as they must be kept in line with any refactorings), and
 offer little to no benefit in return. However, the intention is for all abstract method
 implementations to be fully covered by tests. Therefore
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          pragma:
-         </span>
-         <span class="pre">
-          no
-         </span>
-         <span class="pre">
-          cover
-         </span>
-        </code>
-        should be judiciously
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            pragma:
+           </span>
+           <span class="pre">
+            no
+           </span>
+           <span class="pre">
+            cover
+           </span>
+          </code>
+          should be judiciously
 removed when no longer appropriate, and its use
-        <em>
-         restricted
-        </em>
-        to the above cases.
-       </p>
+          <em>
+           restricted
+          </em>
+          to the above cases.
+         </p>
+        </section>
+       </section>
       </article>
      </div>
     </div>

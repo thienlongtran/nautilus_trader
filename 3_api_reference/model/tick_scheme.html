@@ -3,6 +3,7 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
@@ -65,11 +66,20 @@
   </script>
   <script src="../../_static/doctools.js">
   </script>
-  <script src="../../_static/togglebutton.js">
-  </script>
   <script src="../../_static/clipboard.min.js">
   </script>
   <script src="../../_static/copybutton.js">
+  </script>
+  <script>
+   let toggleHintShow = 'Click to show';
+  </script>
+  <script>
+   let toggleHintHide = 'Click to hide';
+  </script>
+  <script>
+   let toggleOpenOnPrint = 'true';
+  </script>
+  <script src="../../_static/togglebutton.js">
   </script>
   <script>
    var togglebuttonSelector = '.toggle, .admonition.dropdown';
@@ -169,27 +179,27 @@
     <div class="md-tabs__inner md-grid">
      <ul class="md-tabs__list">
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../../html/1_getting_started/0_index.html">
+       <a class="md-tabs__link" href="/1_getting_started/0_index.html">
         Getting Started
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../../html/2_user_guide/0_index.html">
+       <a class="md-tabs__link" href="/2_user_guide/0_index.html">
         User Guide
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../../html/3_api_reference/0_index.html">
+       <a class="md-tabs__link" href="/3_api_reference/0_index.html">
         API Reference
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../../html/4_integrations/0_index.html">
+       <a class="md-tabs__link" href="/4_integrations/0_index.html">
         Integrations
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../../html/5_developer_guide/0_index.html">
+       <a class="md-tabs__link" href="/5_developer_guide/0_index.html">
         Developer Guide
        </a>
       </li>
@@ -530,1863 +540,1871 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <span id="tick-scheme">
-       </span>
-       <h1 id="3-api-reference-model-tick-scheme--page-root">
-        Tick Scheme
-        <a class="headerlink" href="#3-api-reference-model-tick-scheme--page-root" title="Permalink to this headline">
-         ¶
-        </a>
-       </h1>
-       <p>
-        Defines a scheme for modeling the tick space for various instruments.
-       </p>
-       <span id="fixed">
-       </span>
-       <h2 id="module-nautilus_trader.model.tick_scheme.implementations.fixed">
-        Fixed
-        <a class="headerlink" href="#module-nautilus_trader.model.tick_scheme.implementations.fixed" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <dl class="py class">
-        <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme">
-         <em class="property">
-          <span class="pre">
-           class
-          </span>
-          <span class="w">
-          </span>
-         </em>
-         <span class="sig-name descname">
-          <span class="pre">
-           FixedTickScheme
-          </span>
-         </span>
-         <span class="sig-paren">
-          (
-         </span>
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            unicode
-           </span>
-           <span class="pre">
-            name
-           </span>
-          </span>
-         </em>
-         ,
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            int
-           </span>
-           <span class="pre">
-            price_precision
-           </span>
-          </span>
-         </em>
-         ,
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            Price
-           </span>
-           <span class="pre">
-            min_tick
-           </span>
-          </span>
-         </em>
-         ,
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            Price
-           </span>
-           <span class="pre">
-            max_tick
-           </span>
-          </span>
-         </em>
-         ,
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            increment:
-           </span>
-           <span class="pre">
-            Optional[float]
-           </span>
-           <span class="pre">
-            =
-           </span>
-           <span class="pre">
-            None
-           </span>
-          </span>
-         </em>
-         <span class="sig-paren">
-          )
-         </span>
-         <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme" title="Permalink to this definition">
+       <section class="tex2jax_ignore mathjax_ignore" id="module-nautilus_trader.model.tick_scheme">
+        <span id="tick-scheme">
+        </span>
+        <h1 id="3-api-reference-model-tick-scheme--page-root">
+         Tick Scheme
+         <a class="headerlink" href="#3-api-reference-model-tick-scheme--page-root" title="Permalink to this headline">
           ¶
          </a>
-        </dt>
-        <dd>
-         <p>
-          Bases:
-          <a class="reference internal" href="#nautilus_trader.model.tick_scheme.base.TickScheme" title="nautilus_trader.model.tick_scheme.base.TickScheme">
-           <code class="xref py py-class docutils literal notranslate">
-            <span class="pre">
-             nautilus_trader.model.tick_scheme.base.TickScheme
-            </span>
-           </code>
+        </h1>
+        <p>
+         Defines a scheme for modeling the tick space for various instruments.
+        </p>
+        <section id="module-nautilus_trader.model.tick_scheme.implementations.fixed">
+         <span id="fixed">
+         </span>
+         <h2 id="module-nautilus_trader.model.tick_scheme.implementations.fixed">
+          Fixed
+          <a class="headerlink" href="#module-nautilus_trader.model.tick_scheme.implementations.fixed" title="Permalink to this headline">
+           ¶
           </a>
-         </p>
-         <p>
-          Represents a Fixed precision tick scheme such as for Forex or Crypto.
-         </p>
-         <dl class="field-list simple">
-          <dt class="field-odd">
-           Parameters
+         </h2>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             FixedTickScheme
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              name
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              price_precision
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              min_tick
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              max_tick
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              increment:
+             </span>
+             <span class="pre">
+              Optional[float]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme" title="Permalink to this definition">
+            ¶
+           </a>
           </dt>
-          <dd class="field-odd">
-           <ul class="simple">
-            <li>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.model.tick_scheme.base.TickScheme" title="nautilus_trader.model.tick_scheme.base.TickScheme">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.model.tick_scheme.base.TickScheme
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            Represents a Fixed precision tick scheme such as for Forex or Crypto.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 name
+                </strong>
+                (
+                <em>
+                 str
+                </em>
+                ) – The name of the tick scheme.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 price_precision
+                </strong>
+                (
+                <em>
+                 int
+                </em>
+                ) – The instrument price precision.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 min_tick
+                </strong>
+                (
+                <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                 <em>
+                  Price
+                 </em>
+                </a>
+                ) – The minimum possible tick
+                <cite>
+                 Price
+                </cite>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 max_tick
+                </strong>
+                (
+                <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                 <em>
+                  Price
+                 </em>
+                </a>
+                ) – The maximum possible tick
+                <cite>
+                 Price
+                </cite>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 increment
+                </strong>
+                (
+                <em>
+                 float
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The tick increment.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
              <p>
               <strong>
+               ValueError
+              </strong>
+              – If
+              <cite>
                name
-              </strong>
-              (
-              <em>
-               str
-              </em>
-              ) – The name of the tick scheme.
-             </p>
-            </li>
-            <li>
-             <p>
-              <strong>
-               price_precision
-              </strong>
-              (
-              <em>
-               int
-              </em>
-              ) – The instrument price precision.
-             </p>
-            </li>
-            <li>
-             <p>
-              <strong>
-               min_tick
-              </strong>
-              (
-              <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-               <em>
-                Price
-               </em>
-              </a>
-              ) – The minimum possible tick
-              <cite>
-               Price
               </cite>
-              .
+              is not a valid string.
              </p>
-            </li>
-            <li>
-             <p>
-              <strong>
-               max_tick
-              </strong>
-              (
-              <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-               <em>
-                Price
-               </em>
-              </a>
-              ) – The maximum possible tick
-              <cite>
-               Price
-              </cite>
-              .
-             </p>
-            </li>
-            <li>
-             <p>
-              <strong>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.increment">
+             <span class="sig-name descname">
+              <span class="pre">
                increment
-              </strong>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.increment" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The tick scheme price increment.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Price
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.max_price">
+             <span class="sig-name descname">
+              <span class="pre">
+               max_price
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.max_price" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The maximum valid price for the scheme.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Price
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.min_price">
+             <span class="sig-name descname">
+              <span class="pre">
+               min_price
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.min_price" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The minimum valid price for the scheme.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Price
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.name">
+             <span class="sig-name descname">
+              <span class="pre">
+               name
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The name of the scheme.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 str
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.next_ask_price">
+             <span class="sig-name descname">
+              <span class="pre">
+               next_ask_price
+              </span>
+             </span>
+             <span class="sig-paren">
               (
-              <em>
-               float
-              </em>
-              <em>
-               ,
-              </em>
-              <em>
-               optional
-              </em>
-              ) – The tick increment.
-             </p>
-            </li>
-           </ul>
-          </dd>
-          <dt class="field-even">
-           Raises
-          </dt>
-          <dd class="field-even">
-           <p>
-            <strong>
-             ValueError
-            </strong>
-            – If
-            <cite>
-             name
-            </cite>
-            is not a valid string.
-           </p>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.increment">
-           <span class="sig-name descname">
-            <span class="pre">
-             increment
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.increment" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The tick scheme price increment.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               Price
-              </cite>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.max_price">
-           <span class="sig-name descname">
-            <span class="pre">
-             max_price
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.max_price" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The maximum valid price for the scheme.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               Price
-              </cite>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.min_price">
-           <span class="sig-name descname">
-            <span class="pre">
-             min_price
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.min_price" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The minimum valid price for the scheme.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               Price
-              </cite>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.name">
-           <span class="sig-name descname">
-            <span class="pre">
-             name
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.name" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The name of the scheme.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               str
-              </cite>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.next_ask_price">
-           <span class="sig-name descname">
-            <span class="pre">
-             next_ask_price
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              self
              </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              double
-             </span>
-             <span class="pre">
-              value
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              int
-             </span>
-             <span class="pre">
-              n=0
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-              <span class="pre">
-               Price
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
               </span>
-             </a>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.next_ask_price" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Return the price
-            <cite>
-             n
-            </cite>
-            ask ticks away from value.
-           </p>
-           <p>
-            If a given price is between two ticks, n=0 will find the nearest ask tick.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
-            </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 value
-                </strong>
-                (
-                <em>
-                 double
-                </em>
-                ) – The reference value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 n
-                </strong>
-                (
-                <em>
-                 int
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 default 0
-                </em>
-                ) – The number of ticks to move.
-               </p>
-              </li>
-             </ul>
-            </dd>
-            <dt class="field-even">
-             Returns
-            </dt>
-            <dd class="field-even">
-             <p>
-              <em>
-               Price
-              </em>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.next_bid_price">
-           <span class="sig-name descname">
-            <span class="pre">
-             next_bid_price
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              self
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              double
-             </span>
-             <span class="pre">
-              value
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              int
-             </span>
-             <span class="pre">
-              n=0
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-              <span class="pre">
-               Price
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                double
+               </span>
+               <span class="pre">
+                value
+               </span>
               </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int
+               </span>
+               <span class="pre">
+                n=0
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                <span class="pre">
+                 Price
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.next_ask_price" title="Permalink to this definition">
+              ¶
              </a>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.next_bid_price" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Return the price
-            <cite>
-             n
-            </cite>
-            bid ticks away from value.
-           </p>
-           <p>
-            If a given price is between two ticks, n=0 will find the nearest bid tick.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
             </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 value
-                </strong>
-                (
-                <em>
-                 double
-                </em>
-                ) – The reference value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 n
-                </strong>
-                (
-                <em>
-                 int
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 default 0
-                </em>
-                ) – The number of ticks to move.
-               </p>
-              </li>
-             </ul>
-            </dd>
-            <dt class="field-even">
-             Returns
-            </dt>
-            <dd class="field-even">
+            <dd>
              <p>
-              <em>
-               Price
-              </em>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.price_precision">
-           <span class="sig-name descname">
-            <span class="pre">
-             price_precision
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.price_precision" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The tick scheme price precision.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
+              Return the price
               <cite>
-               int
+               n
               </cite>
+              ask ticks away from value.
              </p>
+             <p>
+              If a given price is between two ticks, n=0 will find the nearest ask tick.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   value
+                  </strong>
+                  (
+                  <em>
+                   double
+                  </em>
+                  ) – The reference value.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   n
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default 0
+                  </em>
+                  ) – The number of ticks to move.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 Price
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.next_bid_price">
+             <span class="sig-name descname">
+              <span class="pre">
+               next_bid_price
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                double
+               </span>
+               <span class="pre">
+                value
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int
+               </span>
+               <span class="pre">
+                n=0
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                <span class="pre">
+                 Price
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.next_bid_price" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the price
+              <cite>
+               n
+              </cite>
+              bid ticks away from value.
+             </p>
+             <p>
+              If a given price is between two ticks, n=0 will find the nearest bid tick.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   value
+                  </strong>
+                  (
+                  <em>
+                   double
+                  </em>
+                  ) – The reference value.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   n
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default 0
+                  </em>
+                  ) – The number of ticks to move.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 Price
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.price_precision">
+             <span class="sig-name descname">
+              <span class="pre">
+               price_precision
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.price_precision" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The tick scheme price precision.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int
+                </cite>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
           </dd>
          </dl>
-        </dd>
-       </dl>
-       <span id="tiered">
-       </span>
-       <h2 id="module-nautilus_trader.model.tick_scheme.implementations.tiered">
-        Tiered
-        <a class="headerlink" href="#module-nautilus_trader.model.tick_scheme.implementations.tiered" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <dl class="py class">
-        <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme">
-         <em class="property">
-          <span class="pre">
-           class
-          </span>
-          <span class="w">
-          </span>
-         </em>
-         <span class="sig-name descname">
-          <span class="pre">
-           TieredTickScheme
-          </span>
+        </section>
+        <section id="module-nautilus_trader.model.tick_scheme.implementations.tiered">
+         <span id="tiered">
          </span>
-         <span class="sig-paren">
-          (
-         </span>
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            unicode
-           </span>
-           <span class="pre">
-            name
-           </span>
-          </span>
-         </em>
-         ,
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            list
-           </span>
-           <span class="pre">
-            tiers
-           </span>
-          </span>
-         </em>
-         ,
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            int
-           </span>
-           <span class="pre">
-            max_ticks_per_tier=100
-           </span>
-          </span>
-         </em>
-         <span class="sig-paren">
-          )
-         </span>
-         <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme" title="Permalink to this definition">
-          ¶
-         </a>
-        </dt>
-        <dd>
-         <p>
-          Bases:
-          <a class="reference internal" href="#nautilus_trader.model.tick_scheme.base.TickScheme" title="nautilus_trader.model.tick_scheme.base.TickScheme">
-           <code class="xref py py-class docutils literal notranslate">
-            <span class="pre">
-             nautilus_trader.model.tick_scheme.base.TickScheme
-            </span>
-           </code>
+         <h2 id="module-nautilus_trader.model.tick_scheme.implementations.tiered">
+          Tiered
+          <a class="headerlink" href="#module-nautilus_trader.model.tick_scheme.implementations.tiered" title="Permalink to this headline">
+           ¶
           </a>
-         </p>
-         <p>
-          Represents a tick scheme where tick levels change based on price level, such as various financial exchanges.
-         </p>
-         <dl class="field-list simple">
-          <dt class="field-odd">
-           Parameters
+         </h2>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             TieredTickScheme
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              name
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              list
+             </span>
+             <span class="pre">
+              tiers
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int
+             </span>
+             <span class="pre">
+              max_ticks_per_tier=100
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme" title="Permalink to this definition">
+            ¶
+           </a>
           </dt>
-          <dd class="field-odd">
-           <ul class="simple">
-            <li>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.model.tick_scheme.base.TickScheme" title="nautilus_trader.model.tick_scheme.base.TickScheme">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.model.tick_scheme.base.TickScheme
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            Represents a tick scheme where tick levels change based on price level, such as various financial exchanges.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 name
+                </strong>
+                (
+                <em>
+                 str
+                </em>
+                ) – The name of the tick scheme.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 tiers
+                </strong>
+                (
+                <em>
+                 list
+                </em>
+                <em>
+                 [
+                </em>
+                <em>
+                 tuple
+                </em>
+                <em>
+                 (
+                </em>
+                <em>
+                 start
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 stop
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 step
+                </em>
+                <em>
+                 )
+                </em>
+                <em>
+                 ]
+                </em>
+                ) – The tiers for the tick scheme. Should be a list of (start, stop, step) tuples.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 max_ticks_per_tier
+                </strong>
+                (
+                <em>
+                 int
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 100
+                </em>
+                ) – The maximum number of ticks per tier.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
              <p>
               <strong>
+               ValueError
+              </strong>
+              – If
+              <cite>
                name
-              </strong>
-              (
-              <em>
-               str
-              </em>
-              ) – The name of the tick scheme.
-             </p>
-            </li>
-            <li>
-             <p>
-              <strong>
-               tiers
-              </strong>
-              (
-              <em>
-               list
-              </em>
-              <em>
-               [
-              </em>
-              <em>
-               tuple
-              </em>
-              <em>
-               (
-              </em>
-              <em>
-               start
-              </em>
-              <em>
-               ,
-              </em>
-              <em>
-               stop
-              </em>
-              <em>
-               ,
-              </em>
-              <em>
-               step
-              </em>
-              <em>
-               )
-              </em>
-              <em>
-               ]
-              </em>
-              ) – The tiers for the tick scheme. Should be a list of (start, stop, step) tuples.
-             </p>
-            </li>
-            <li>
-             <p>
-              <strong>
-               max_ticks_per_tier
-              </strong>
-              (
-              <em>
-               int
-              </em>
-              <em>
-               ,
-              </em>
-              <em>
-               default 100
-              </em>
-              ) – The maximum number of ticks per tier.
-             </p>
-            </li>
-           </ul>
-          </dd>
-          <dt class="field-even">
-           Raises
-          </dt>
-          <dd class="field-even">
-           <p>
-            <strong>
-             ValueError
-            </strong>
-            – If
-            <cite>
-             name
-            </cite>
-            is not a valid string.
-           </p>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.find_tick_index">
-           <span class="sig-name descname">
-            <span class="pre">
-             find_tick_index
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              self
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              double
-             </span>
-             <span class="pre">
-              value
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              int
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.find_tick_index" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.max_price">
-           <span class="sig-name descname">
-            <span class="pre">
-             max_price
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.max_price" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The maximum valid price for the scheme.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               Price
               </cite>
+              is not a valid string.
              </p>
             </dd>
            </dl>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.min_price">
-           <span class="sig-name descname">
-            <span class="pre">
-             min_price
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.min_price" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The minimum valid price for the scheme.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               Price
-              </cite>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.name">
-           <span class="sig-name descname">
-            <span class="pre">
-             name
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.name" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The name of the scheme.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               str
-              </cite>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.next_ask_price">
-           <span class="sig-name descname">
-            <span class="pre">
-             next_ask_price
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              self
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              double
-             </span>
-             <span class="pre">
-              value
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              int
-             </span>
-             <span class="pre">
-              n=0
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.find_tick_index">
+             <span class="sig-name descname">
               <span class="pre">
-               Price
+               find_tick_index
               </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                double
+               </span>
+               <span class="pre">
+                value
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                int
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.find_tick_index" title="Permalink to this definition">
+              ¶
              </a>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.next_ask_price" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Return the price
-            <cite>
-             n
-            </cite>
-            ask ticks away from value.
-           </p>
-           <p>
-            If a given price is between two ticks, n=0 will find the nearest ask tick.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
             </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 value
-                </strong>
-                (
-                <em>
-                 double
-                </em>
-                ) – The reference value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 n
-                </strong>
-                (
-                <em>
-                 int
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 default 0
-                </em>
-                ) – The number of ticks to move.
-               </p>
-              </li>
-             </ul>
-            </dd>
-            <dt class="field-even">
-             Returns
-            </dt>
-            <dd class="field-even">
-             <p>
-              <em>
-               Price
-              </em>
-             </p>
+            <dd>
             </dd>
            </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.next_bid_price">
-           <span class="sig-name descname">
-            <span class="pre">
-             next_bid_price
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              self
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              double
-             </span>
-             <span class="pre">
-              value
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              int
-             </span>
-             <span class="pre">
-              n=0
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.max_price">
+             <span class="sig-name descname">
               <span class="pre">
-               Price
+               max_price
               </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.max_price" title="Permalink to this definition">
+              ¶
              </a>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.next_bid_price" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Return the price
-            <cite>
-             n
-            </cite>
-            bid ticks away from value.
-           </p>
-           <p>
-            If a given price is between two ticks, n=0 will find the nearest bid tick.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
             </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 value
-                </strong>
-                (
-                <em>
-                 double
-                </em>
-                ) – The reference value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 n
-                </strong>
-                (
-                <em>
-                 int
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 default 0
-                </em>
-                ) – The number of ticks to move.
-               </p>
-              </li>
-             </ul>
-            </dd>
-            <dt class="field-even">
-             Returns
-            </dt>
-            <dd class="field-even">
+            <dd>
              <p>
-              <em>
-               Price
-              </em>
+              The maximum valid price for the scheme.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Price
+                </cite>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
-          </dd>
-         </dl>
-        </dd>
-       </dl>
-       <span id="base">
-       </span>
-       <h2 id="module-nautilus_trader.model.tick_scheme.base">
-        Base
-        <a class="headerlink" href="#module-nautilus_trader.model.tick_scheme.base" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <dl class="py class">
-        <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.TickScheme">
-         <em class="property">
-          <span class="pre">
-           class
-          </span>
-          <span class="w">
-          </span>
-         </em>
-         <span class="sig-name descname">
-          <span class="pre">
-           TickScheme
-          </span>
-         </span>
-         <span class="sig-paren">
-          (
-         </span>
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            unicode
-           </span>
-           <span class="pre">
-            name
-           </span>
-          </span>
-         </em>
-         ,
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            Price
-           </span>
-           <span class="pre">
-            min_tick
-           </span>
-          </span>
-         </em>
-         ,
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            Price
-           </span>
-           <span class="pre">
-            max_tick
-           </span>
-          </span>
-         </em>
-         <span class="sig-paren">
-          )
-         </span>
-         <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.TickScheme" title="Permalink to this definition">
-          ¶
-         </a>
-        </dt>
-        <dd>
-         <p>
-          Bases:
-          <code class="xref py py-class docutils literal notranslate">
-           <span class="pre">
-            object
-           </span>
-          </code>
-         </p>
-         <p>
-          Represents an instrument tick scheme.
-         </p>
-         <p>
-          Maps the valid prices available for an instrument.
-         </p>
-         <dl class="field-list simple">
-          <dt class="field-odd">
-           Parameters
-          </dt>
-          <dd class="field-odd">
-           <ul class="simple">
-            <li>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.min_price">
+             <span class="sig-name descname">
+              <span class="pre">
+               min_price
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.min_price" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
              <p>
-              <strong>
+              The minimum valid price for the scheme.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Price
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.name">
+             <span class="sig-name descname">
+              <span class="pre">
                name
-              </strong>
-              (
-              <em>
-               str
-              </em>
-              ) – The name of the tick scheme.
-             </p>
-            </li>
-            <li>
-             <p>
-              <strong>
-               min_tick
-              </strong>
-              (
-              <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-               <em>
-                Price
-               </em>
-              </a>
-              ) – The minimum possible tick
-              <cite>
-               Price
-              </cite>
-              .
-             </p>
-            </li>
-            <li>
-             <p>
-              <strong>
-               max_tick
-              </strong>
-              (
-              <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-               <em>
-                Price
-               </em>
-              </a>
-              ) – The maximum possible tick
-              <cite>
-               Price
-              </cite>
-              .
-             </p>
-            </li>
-           </ul>
-          </dd>
-          <dt class="field-even">
-           Raises
-          </dt>
-          <dd class="field-even">
-           <p>
-            <strong>
-             ValueError
-            </strong>
-            – If
-            <cite>
-             name
-            </cite>
-            is not a valid string.
-           </p>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.TickScheme.max_price">
-           <span class="sig-name descname">
-            <span class="pre">
-             max_price
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.TickScheme.max_price" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The maximum valid price for the scheme.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               Price
-              </cite>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.TickScheme.min_price">
-           <span class="sig-name descname">
-            <span class="pre">
-             min_price
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.TickScheme.min_price" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The minimum valid price for the scheme.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               Price
-              </cite>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.TickScheme.name">
-           <span class="sig-name descname">
-            <span class="pre">
-             name
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.TickScheme.name" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The name of the scheme.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               str
-              </cite>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.TickScheme.next_ask_price">
-           <span class="sig-name descname">
-            <span class="pre">
-             next_ask_price
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              self
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              double
-             </span>
-             <span class="pre">
-              value
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              int
-             </span>
-             <span class="pre">
-              n=0
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-              <span class="pre">
-               Price
               </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.name" title="Permalink to this definition">
+              ¶
              </a>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.TickScheme.next_ask_price" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Return the price
-            <cite>
-             n
-            </cite>
-            ask ticks away from value.
-           </p>
-           <p>
-            If a given price is between two ticks, n=0 will find the nearest ask tick.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
             </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 value
-                </strong>
-                (
-                <em>
-                 double
-                </em>
-                ) – The reference value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 n
-                </strong>
-                (
-                <em>
-                 int
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 default 0
-                </em>
-                ) – The number of ticks to move.
-               </p>
-              </li>
-             </ul>
-            </dd>
-            <dt class="field-even">
-             Returns
-            </dt>
-            <dd class="field-even">
+            <dd>
              <p>
-              <em>
-               Price
-              </em>
+              The name of the scheme.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 str
+                </cite>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.TickScheme.next_bid_price">
-           <span class="sig-name descname">
-            <span class="pre">
-             next_bid_price
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              self
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              double
-             </span>
-             <span class="pre">
-              value
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              int
-             </span>
-             <span class="pre">
-              n=0
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.next_ask_price">
+             <span class="sig-name descname">
               <span class="pre">
-               Price
+               next_ask_price
               </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                double
+               </span>
+               <span class="pre">
+                value
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int
+               </span>
+               <span class="pre">
+                n=0
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                <span class="pre">
+                 Price
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.next_ask_price" title="Permalink to this definition">
+              ¶
              </a>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.TickScheme.next_bid_price" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Return the price
-            <cite>
-             n
-            </cite>
-            bid ticks away from value.
-           </p>
-           <p>
-            If a given price is between two ticks, n=0 will find the nearest bid tick.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
             </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 value
-                </strong>
-                (
-                <em>
-                 double
-                </em>
-                ) – The reference value.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 n
-                </strong>
-                (
-                <em>
-                 int
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 default 0
-                </em>
-                ) – The number of ticks to move.
-               </p>
-              </li>
-             </ul>
-            </dd>
-            <dt class="field-even">
-             Returns
-            </dt>
-            <dd class="field-even">
+            <dd>
              <p>
-              <em>
-               Price
-              </em>
+              Return the price
+              <cite>
+               n
+              </cite>
+              ask ticks away from value.
              </p>
+             <p>
+              If a given price is between two ticks, n=0 will find the nearest ask tick.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   value
+                  </strong>
+                  (
+                  <em>
+                   double
+                  </em>
+                  ) – The reference value.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   n
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default 0
+                  </em>
+                  ) – The number of ticks to move.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 Price
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.next_bid_price">
+             <span class="sig-name descname">
+              <span class="pre">
+               next_bid_price
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                double
+               </span>
+               <span class="pre">
+                value
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int
+               </span>
+               <span class="pre">
+                n=0
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                <span class="pre">
+                 Price
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.implementations.tiered.TieredTickScheme.next_bid_price" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the price
+              <cite>
+               n
+              </cite>
+              bid ticks away from value.
+             </p>
+             <p>
+              If a given price is between two ticks, n=0 will find the nearest bid tick.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   value
+                  </strong>
+                  (
+                  <em>
+                   double
+                  </em>
+                  ) – The reference value.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   n
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default 0
+                  </em>
+                  ) – The number of ticks to move.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 Price
+                </em>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
           </dd>
          </dl>
-        </dd>
-       </dl>
-       <dl class="py function">
-        <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.get_tick_scheme">
-         <span class="sig-name descname">
-          <span class="pre">
-           get_tick_scheme
-          </span>
+        </section>
+        <section id="module-nautilus_trader.model.tick_scheme.base">
+         <span id="base">
          </span>
-         <span class="sig-paren">
-          (
-         </span>
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            unicode
-           </span>
-           <span class="pre">
-            name
-           </span>
-          </span>
-         </em>
-         <span class="sig-paren">
-          )
-         </span>
-         <span class="sig-return">
-          <span class="sig-return-icon">
-           →
-          </span>
-          <span class="sig-return-typehint">
-           <a class="reference internal" href="#nautilus_trader.model.tick_scheme.base.TickScheme" title="nautilus_trader.model.tick_scheme.base.TickScheme">
+         <h2 id="module-nautilus_trader.model.tick_scheme.base">
+          Base
+          <a class="headerlink" href="#module-nautilus_trader.model.tick_scheme.base" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.TickScheme">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
             <span class="pre">
              TickScheme
             </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              name
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              min_tick
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Price
+             </span>
+             <span class="pre">
+              max_tick
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.TickScheme" title="Permalink to this definition">
+            ¶
            </a>
-          </span>
-         </span>
-         <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.get_tick_scheme" title="Permalink to this definition">
-          ¶
-         </a>
-        </dt>
-        <dd>
-        </dd>
-       </dl>
-       <dl class="py function">
-        <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.list_tick_schemes">
-         <span class="sig-name descname">
-          <span class="pre">
-           list_tick_schemes
-          </span>
-         </span>
-         <span class="sig-paren">
-          (
-         </span>
-         <span class="sig-paren">
-          )
-         </span>
-         <span class="sig-return">
-          <span class="sig-return-icon">
-           →
-          </span>
-          <span class="sig-return-typehint">
-           <span class="pre">
-            list
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              object
+             </span>
+            </code>
+           </p>
+           <p>
+            Represents an instrument tick scheme.
+           </p>
+           <p>
+            Maps the valid prices available for an instrument.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 name
+                </strong>
+                (
+                <em>
+                 str
+                </em>
+                ) – The name of the tick scheme.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 min_tick
+                </strong>
+                (
+                <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                 <em>
+                  Price
+                 </em>
+                </a>
+                ) – The minimum possible tick
+                <cite>
+                 Price
+                </cite>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 max_tick
+                </strong>
+                (
+                <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                 <em>
+                  Price
+                 </em>
+                </a>
+                ) – The maximum possible tick
+                <cite>
+                 Price
+                </cite>
+                .
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
+             <p>
+              <strong>
+               ValueError
+              </strong>
+              – If
+              <cite>
+               name
+              </cite>
+              is not a valid string.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.TickScheme.max_price">
+             <span class="sig-name descname">
+              <span class="pre">
+               max_price
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.TickScheme.max_price" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The maximum valid price for the scheme.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Price
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.TickScheme.min_price">
+             <span class="sig-name descname">
+              <span class="pre">
+               min_price
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.TickScheme.min_price" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The minimum valid price for the scheme.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Price
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.TickScheme.name">
+             <span class="sig-name descname">
+              <span class="pre">
+               name
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.TickScheme.name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The name of the scheme.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 str
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.TickScheme.next_ask_price">
+             <span class="sig-name descname">
+              <span class="pre">
+               next_ask_price
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                double
+               </span>
+               <span class="pre">
+                value
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int
+               </span>
+               <span class="pre">
+                n=0
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                <span class="pre">
+                 Price
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.TickScheme.next_ask_price" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the price
+              <cite>
+               n
+              </cite>
+              ask ticks away from value.
+             </p>
+             <p>
+              If a given price is between two ticks, n=0 will find the nearest ask tick.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   value
+                  </strong>
+                  (
+                  <em>
+                   double
+                  </em>
+                  ) – The reference value.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   n
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default 0
+                  </em>
+                  ) – The number of ticks to move.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 Price
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.TickScheme.next_bid_price">
+             <span class="sig-name descname">
+              <span class="pre">
+               next_bid_price
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                double
+               </span>
+               <span class="pre">
+                value
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int
+               </span>
+               <span class="pre">
+                n=0
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
+                <span class="pre">
+                 Price
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.TickScheme.next_bid_price" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the price
+              <cite>
+               n
+              </cite>
+              bid ticks away from value.
+             </p>
+             <p>
+              If a given price is between two ticks, n=0 will find the nearest bid tick.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   value
+                  </strong>
+                  (
+                  <em>
+                   double
+                  </em>
+                  ) – The reference value.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   n
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default 0
+                  </em>
+                  ) – The number of ticks to move.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 Price
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.get_tick_scheme">
+           <span class="sig-name descname">
+            <span class="pre">
+             get_tick_scheme
+            </span>
            </span>
-          </span>
-         </span>
-         <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.list_tick_schemes" title="Permalink to this definition">
-          ¶
-         </a>
-        </dt>
-        <dd>
-        </dd>
-       </dl>
-       <dl class="py function">
-        <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.register_tick_scheme">
-         <span class="sig-name descname">
-          <span class="pre">
-           register_tick_scheme
-          </span>
-         </span>
-         <span class="sig-paren">
-          (
-         </span>
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            TickScheme
+           <span class="sig-paren">
+            (
            </span>
-           <span class="pre">
-            tick_scheme
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              name
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
            </span>
-          </span>
-         </em>
-         <span class="sig-paren">
-          )
-         </span>
-         <span class="sig-return">
-          <span class="sig-return-icon">
-           →
-          </span>
-          <span class="sig-return-typehint">
-           <span class="pre">
-            void
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <a class="reference internal" href="#nautilus_trader.model.tick_scheme.base.TickScheme" title="nautilus_trader.model.tick_scheme.base.TickScheme">
+              <span class="pre">
+               TickScheme
+              </span>
+             </a>
+            </span>
            </span>
-          </span>
-         </span>
-         <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.register_tick_scheme" title="Permalink to this definition">
-          ¶
-         </a>
-        </dt>
-        <dd>
-        </dd>
-       </dl>
-       <dl class="py function">
-        <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.round_down">
-         <span class="sig-name descname">
-          <span class="pre">
-           round_down
-          </span>
-         </span>
-         <span class="sig-paren">
-          (
-         </span>
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            double
+           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.get_tick_scheme" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.list_tick_schemes">
+           <span class="sig-name descname">
+            <span class="pre">
+             list_tick_schemes
+            </span>
            </span>
-           <span class="pre">
-            value
+           <span class="sig-paren">
+            (
            </span>
-          </span>
-         </em>
-         ,
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            double
+           <span class="sig-paren">
+            )
            </span>
-           <span class="pre">
-            base
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              list
+             </span>
+            </span>
            </span>
-          </span>
-         </em>
-         <span class="sig-paren">
-          )
-         </span>
-         <span class="sig-return">
-          <span class="sig-return-icon">
-           →
-          </span>
-          <span class="sig-return-typehint">
-           <span class="pre">
-            double
+           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.list_tick_schemes" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.register_tick_scheme">
+           <span class="sig-name descname">
+            <span class="pre">
+             register_tick_scheme
+            </span>
            </span>
-          </span>
-         </span>
-         <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.round_down" title="Permalink to this definition">
-          ¶
-         </a>
-        </dt>
-        <dd>
-         <p>
-          Returns a value rounded down to a specific number of decimal places.
-         </p>
-        </dd>
-       </dl>
-       <dl class="py function">
-        <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.round_up">
-         <span class="sig-name descname">
-          <span class="pre">
-           round_up
-          </span>
-         </span>
-         <span class="sig-paren">
-          (
-         </span>
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            double
+           <span class="sig-paren">
+            (
            </span>
-           <span class="pre">
-            value
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              TickScheme
+             </span>
+             <span class="pre">
+              tick_scheme
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
            </span>
-          </span>
-         </em>
-         ,
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            double
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              void
+             </span>
+            </span>
            </span>
-           <span class="pre">
-            base
+           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.register_tick_scheme" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.round_down">
+           <span class="sig-name descname">
+            <span class="pre">
+             round_down
+            </span>
            </span>
-          </span>
-         </em>
-         <span class="sig-paren">
-          )
-         </span>
-         <span class="sig-return">
-          <span class="sig-return-icon">
-           →
-          </span>
-          <span class="sig-return-typehint">
-           <span class="pre">
-            double
+           <span class="sig-paren">
+            (
            </span>
-          </span>
-         </span>
-         <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.round_up" title="Permalink to this definition">
-          ¶
-         </a>
-        </dt>
-        <dd>
-         <p>
-          Returns a value rounded down to a specific number of decimal places.
-         </p>
-        </dd>
-       </dl>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              value
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              base
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              double
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.round_down" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Returns a value rounded down to a specific number of decimal places.
+           </p>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.model.tick_scheme.base.round_up">
+           <span class="sig-name descname">
+            <span class="pre">
+             round_up
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              value
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              base
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              double
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.model.tick_scheme.base.round_up" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Returns a value rounded down to a specific number of decimal places.
+           </p>
+          </dd>
+         </dl>
+        </section>
+       </section>
       </article>
      </div>
     </div>

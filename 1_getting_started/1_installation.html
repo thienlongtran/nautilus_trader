@@ -3,6 +3,7 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
@@ -65,11 +66,20 @@
   </script>
   <script src="../_static/doctools.js">
   </script>
-  <script src="../_static/togglebutton.js">
-  </script>
   <script src="../_static/clipboard.min.js">
   </script>
   <script src="../_static/copybutton.js">
+  </script>
+  <script>
+   let toggleHintShow = 'Click to show';
+  </script>
+  <script>
+   let toggleHintHide = 'Click to hide';
+  </script>
+  <script>
+   let toggleOpenOnPrint = 'true';
+  </script>
+  <script src="../_static/togglebutton.js">
   </script>
   <script>
    var togglebuttonSelector = '.toggle, .admonition.dropdown';
@@ -169,27 +179,27 @@
     <div class="md-tabs__inner md-grid">
      <ul class="md-tabs__list">
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/1_getting_started/0_index.html">
+       <a class="md-tabs__link" href="/1_getting_started/0_index.html">
         Getting Started
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/2_user_guide/0_index.html">
+       <a class="md-tabs__link" href="/2_user_guide/0_index.html">
         User Guide
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/3_api_reference/0_index.html">
+       <a class="md-tabs__link" href="/3_api_reference/0_index.html">
         API Reference
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/4_integrations/0_index.html">
+       <a class="md-tabs__link" href="/4_integrations/0_index.html">
         Integrations
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/5_developer_guide/0_index.html">
+       <a class="md-tabs__link" href="/5_developer_guide/0_index.html">
         Developer Guide
        </a>
       </li>
@@ -393,191 +403,201 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <h1 id="1-getting-started-1-installation--page-root">
-        Installation
-        <a class="headerlink" href="#1-getting-started-1-installation--page-root" title="Permalink to this headline">
-         ¶
-        </a>
-       </h1>
-       <p>
-        The package is tested against Python 3.8 - 3.9 on 64-bit Windows, macOS and Linux.
+       <section class="tex2jax_ignore mathjax_ignore" id="installation">
+        <h1 id="1-getting-started-1-installation--page-root">
+         Installation
+         <a class="headerlink" href="#1-getting-started-1-installation--page-root" title="Permalink to this headline">
+          ¶
+         </a>
+        </h1>
+        <p>
+         The package is tested against Python 3.8 - 3.9 on 64-bit Windows, macOS and Linux.
 We recommend running the platform with the latest stable version of Python, and
 in a virtual environment to isolate the dependencies.
-       </p>
-       <h2 id="from-pypi">
-        From PyPI
-        <a class="headerlink" href="#from-pypi" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        To install the latest binary wheel (or sdist package) from PyPI:
-       </p>
-       <div class="highlight-none notranslate">
-        <div class="highlight">
-         <pre><span></span>pip install -U nautilus_trader
-</pre>
-        </div>
-       </div>
-       <h2 id="extras">
-        Extras
-        <a class="headerlink" href="#extras" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Also, the following optional dependency ‘extras’ are separately available for installation.
-       </p>
-       <ul class="simple">
-        <li>
+        </p>
+        <section id="from-pypi">
+         <h2 id="from-pypi">
+          From PyPI
+          <a class="headerlink" href="#from-pypi" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
          <p>
+          To install the latest binary wheel (or sdist package) from PyPI:
+         </p>
+         <div class="highlight-none notranslate">
+          <div class="highlight">
+           <pre><span></span>pip install -U nautilus_trader
+</pre>
+          </div>
+         </div>
+        </section>
+        <section id="extras">
+         <h2 id="extras">
+          Extras
+          <a class="headerlink" href="#extras" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Also, the following optional dependency ‘extras’ are separately available for installation.
+         </p>
+         <ul class="simple">
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              distributed
+             </span>
+            </code>
+            - packages for using Dask distributed in backtests.
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              ib
+             </span>
+            </code>
+            - packages required for the Interactive Brokers adapter.
+           </p>
+          </li>
+         </ul>
+         <p>
+          For example, to install including the
           <code class="docutils literal notranslate">
            <span class="pre">
             distributed
            </span>
           </code>
-          - packages for using Dask distributed in backtests.
-         </p>
-        </li>
-        <li>
-         <p>
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            ib
-           </span>
-          </code>
-          - packages required for the Interactive Brokers adapter.
-         </p>
-        </li>
-       </ul>
-       <p>
-        For example, to install including the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          distributed
-         </span>
-        </code>
-        extras using pip:
-       </p>
-       <div class="highlight-none notranslate">
-        <div class="highlight">
-         <pre><span></span>pip install -U nautilus_trader[distributed]
-</pre>
-        </div>
-       </div>
-       <h2 id="from-source">
-        From Source
-        <a class="headerlink" href="#from-source" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        It’s possible to install from sourcing using
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          pip
-         </span>
-        </code>
-        if you first install the build dependencies
-as specified in the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          pyproject.toml
-         </span>
-        </code>
-        . However, we highly recommend installing using
-        <a class="reference external" href="https://python-poetry.org/">
-         poetry
-        </a>
-        .
-       </p>
-       <ol>
-        <li>
-         <p>
-          First install poetry (or follow the installation guide on their site):
+          extras using pip:
          </p>
          <div class="highlight-none notranslate">
           <div class="highlight">
-           <pre><span></span> curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+           <pre><span></span>pip install -U nautilus_trader[distributed]
 </pre>
           </div>
          </div>
-        </li>
-        <li>
+        </section>
+        <section id="from-source">
+         <h2 id="from-source">
+          From Source
+          <a class="headerlink" href="#from-source" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
          <p>
-          Clone the source with
+          It’s possible to install from sourcing using
           <code class="docutils literal notranslate">
            <span class="pre">
-            git
+            pip
            </span>
           </code>
-          , and install from the projects root directory:
+          if you first install the build dependencies
+as specified in the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            pyproject.toml
+           </span>
+          </code>
+          . However, we highly recommend installing using
+          <a class="reference external" href="https://python-poetry.org/">
+           poetry
+          </a>
+          .
          </p>
-         <div class="highlight-none notranslate">
-          <div class="highlight">
-           <pre><span></span>git clone https://github.com/nautechsystems/nautilus_trader
+         <ol class="arabic">
+          <li>
+           <p>
+            First install poetry (or follow the installation guide on their site):
+           </p>
+           <div class="highlight-none notranslate">
+            <div class="highlight">
+             <pre><span></span> curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+</pre>
+            </div>
+           </div>
+          </li>
+          <li>
+           <p>
+            Clone the source with
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              git
+             </span>
+            </code>
+            , and install from the projects root directory:
+           </p>
+           <div class="highlight-none notranslate">
+            <div class="highlight">
+             <pre><span></span>git clone https://github.com/nautechsystems/nautilus_trader
 cd nautilus_trader
 poetry install --no-dev
 </pre>
+            </div>
+           </div>
+          </li>
+         </ol>
+         <div class="admonition note">
+          <p class="admonition-title">
+           Note
+          </p>
+          <p>
+           Because of
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             jupyter-book
+            </span>
+           </code>
+           , the project requires a large number of development dependencies (which is the
+reason for passing the
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             --no-dev
+            </span>
+           </code>
+           option above). If you’ll be running tests, or developing with the codebase
+in general then remove that option flag when installing. It’s also possible to simply run
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             make
+            </span>
+           </code>
+           from the
+top-level directory.
+          </p>
+         </div>
+        </section>
+        <section id="from-github-release">
+         <h2 id="from-github-release">
+          From GitHub Release
+          <a class="headerlink" href="#from-github-release" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          To install a binary wheel from GitHub, first navigate to the
+          <a class="reference external" href="https://github.com/nautechsystems/nautilus_trader/releases/latest">
+           latest release
+          </a>
+          .
+Download the appropriate
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            .whl
+           </span>
+          </code>
+          for your operating system and Python version, then run:
+         </p>
+         <div class="highlight-none notranslate">
+          <div class="highlight">
+           <pre><span></span>pip install &lt;file-name&gt;.whl
+</pre>
           </div>
          </div>
-        </li>
-       </ol>
-       <div class="admonition note">
-        <p class="admonition-title">
-         Note
-        </p>
-        <p>
-         Because of
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           jupyter-book
-          </span>
-         </code>
-         , the project requires a large number of development dependencies (which is the
-reason for passing the
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           --no-dev
-          </span>
-         </code>
-         option above). If you’ll be running tests, or developing with the codebase
-in general then remove that option flag when installing. It’s also possible to simply run
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           make
-          </span>
-         </code>
-         from the
-top-level directory.
-        </p>
-       </div>
-       <h2 id="from-github-release">
-        From GitHub Release
-        <a class="headerlink" href="#from-github-release" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        To install a binary wheel from GitHub, first navigate to the
-        <a class="reference external" href="https://github.com/nautechsystems/nautilus_trader/releases/latest">
-         latest release
-        </a>
-        .
-Download the appropriate
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          .whl
-         </span>
-        </code>
-        for your operating system and Python version, then run:
-       </p>
-       <div class="highlight-none notranslate">
-        <div class="highlight">
-         <pre><span></span>pip install &lt;file-name&gt;.whl
-</pre>
-        </div>
-       </div>
+        </section>
+       </section>
       </article>
      </div>
     </div>

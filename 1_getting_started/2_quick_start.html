@@ -3,6 +3,7 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
@@ -65,11 +66,20 @@
   </script>
   <script src="../_static/doctools.js">
   </script>
-  <script src="../_static/togglebutton.js">
-  </script>
   <script src="../_static/clipboard.min.js">
   </script>
   <script src="../_static/copybutton.js">
+  </script>
+  <script>
+   let toggleHintShow = 'Click to show';
+  </script>
+  <script>
+   let toggleHintHide = 'Click to hide';
+  </script>
+  <script>
+   let toggleOpenOnPrint = 'true';
+  </script>
+  <script src="../_static/togglebutton.js">
   </script>
   <script>
    var togglebuttonSelector = '.toggle, .admonition.dropdown';
@@ -169,27 +179,27 @@
     <div class="md-tabs__inner md-grid">
      <ul class="md-tabs__list">
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/1_getting_started/0_index.html">
+       <a class="md-tabs__link" href="/1_getting_started/0_index.html">
         Getting Started
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/2_user_guide/0_index.html">
+       <a class="md-tabs__link" href="/2_user_guide/0_index.html">
         User Guide
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/3_api_reference/0_index.html">
+       <a class="md-tabs__link" href="/3_api_reference/0_index.html">
         API Reference
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/4_integrations/0_index.html">
+       <a class="md-tabs__link" href="/4_integrations/0_index.html">
         Integrations
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/5_developer_guide/0_index.html">
+       <a class="md-tabs__link" href="/5_developer_guide/0_index.html">
         Developer Guide
        </a>
       </li>
@@ -483,91 +493,97 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <h1 id="1-getting-started-2-quick-start--page-root">
-        Quick Start
-        <a class="headerlink" href="#1-getting-started-2-quick-start--page-root" title="Permalink to this headline">
-         ¶
-        </a>
-       </h1>
-       <p>
-        This section explains how to get up and running with NautilusTrader by running some backtests on
+       <section class="tex2jax_ignore mathjax_ignore" id="quick-start">
+        <h1 id="1-getting-started-2-quick-start--page-root">
+         Quick Start
+         <a class="headerlink" href="#1-getting-started-2-quick-start--page-root" title="Permalink to this headline">
+          ¶
+         </a>
+        </h1>
+        <p>
+         This section explains how to get up and running with NautilusTrader by running some backtests on
 FX data. The Nautilus maintainers have pre-loaded some existing data into the Nautilus storage
 format (parquet) for this guide.
-       </p>
-       <p>
-        For more details on how to load other data into Nautilus, see
-        <a class="reference internal" href="../2_user_guide/2_backtest_example.html">
-         <span class="doc std std-doc">
-          Backtest Example
-         </span>
-        </a>
-       </p>
-       <h2 id="getting-the-sample-data">
-        Getting the sample data
-        <a class="headerlink" href="#getting-the-sample-data" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        We have prepared a script to load sample data into the Nautilus format for use with this example.
+        </p>
+        <p>
+         For more details on how to load other data into Nautilus, see
+         <a class="reference internal" href="../2_user_guide/2_backtest_example.html">
+          <span class="doc std std-doc">
+           Backtest Example
+          </span>
+         </a>
+        </p>
+        <section id="getting-the-sample-data">
+         <h2 id="getting-the-sample-data">
+          Getting the sample data
+          <a class="headerlink" href="#getting-the-sample-data" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          We have prepared a script to load sample data into the Nautilus format for use with this example.
 First, download and load the data by running the next cell (this should take ~ 1-2 mins):
-       </p>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span>!curl https://raw.githubusercontent.com/nautechsystems/nautilus_data/main/scripts/hist_data_to_catalog.py | python - 
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span>!curl https://raw.githubusercontent.com/nautechsystems/nautilus_data/main/scripts/hist_data_to_catalog.py | python - 
 </pre>
-        </div>
-       </div>
-       <h2 id="connecting-to-the-datacatalog">
-        Connecting to the DataCatalog
-        <a class="headerlink" href="#connecting-to-the-datacatalog" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        If everything worked correctly, you should be able to see a single EUR/USD instrument in the catalog:
-       </p>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.persistence.catalog</span> <span class="kn">import</span> <span class="n">DataCatalog</span>
+          </div>
+         </div>
+        </section>
+        <section id="connecting-to-the-datacatalog">
+         <h2 id="connecting-to-the-datacatalog">
+          Connecting to the DataCatalog
+          <a class="headerlink" href="#connecting-to-the-datacatalog" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          If everything worked correctly, you should be able to see a single EUR/USD instrument in the catalog:
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.persistence.catalog</span> <span class="kn">import</span> <span class="n">DataCatalog</span>
 
 <span class="n">catalog</span> <span class="o">=</span> <span class="n">DataCatalog</span><span class="p">(</span><span class="s2">"EUDUSD202001/"</span><span class="p">)</span>
 <span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">()</span>
 </pre>
-        </div>
-       </div>
-       <h2 id="writing-a-trading-strategy">
-        Writing a trading strategy
-        <a class="headerlink" href="#writing-a-trading-strategy" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        NautilusTrader includes a handful of indicators built-in, in this example we will use a MACD indicator to
+          </div>
+         </div>
+        </section>
+        <section id="writing-a-trading-strategy">
+         <h2 id="writing-a-trading-strategy">
+          Writing a trading strategy
+          <a class="headerlink" href="#writing-a-trading-strategy" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          NautilusTrader includes a handful of indicators built-in, in this example we will use a MACD indicator to
 build a simple trading strategy.
 You can read more about
-        <a class="reference external" href="https://www.investopedia.com/terms/m/macd.asp">
-         MACD here
-        </a>
-        , so this
+          <a class="reference external" href="https://www.investopedia.com/terms/m/macd.asp">
+           MACD here
+          </a>
+          , so this
 indicator merely serves as an example without any expected alpha. There is also a way of
 registering indicators to receive certain data types, however in this example we manually pass the received
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          QuoteTick
-         </span>
-        </code>
-        to the indicator in the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          on_quote_tick
-         </span>
-        </code>
-        method.
-       </p>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.trading.strategy</span> <span class="kn">import</span> <span class="n">TradingStrategy</span><span class="p">,</span> <span class="n">TradingStrategyConfig</span>
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            QuoteTick
+           </span>
+          </code>
+          to the indicator in the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            on_quote_tick
+           </span>
+          </code>
+          method.
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.trading.strategy</span> <span class="kn">import</span> <span class="n">TradingStrategy</span><span class="p">,</span> <span class="n">TradingStrategyConfig</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.indicators.macd</span> <span class="kn">import</span> <span class="n">MovingAverageConvergenceDivergence</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.model.data.tick</span> <span class="kn">import</span> <span class="n">QuoteTick</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.model.enums</span> <span class="kn">import</span> <span class="n">PriceType</span>
@@ -654,93 +670,97 @@ registering indicators to receive certain data types, however in this example we
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">submit_order</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
 </pre>
-        </div>
-       </div>
-       <!-- #region pycharm={"name": "#%% md\n"} -->
-       <h2 id="configuing-backtests">
-        Configuing Backtests
-        <a class="headerlink" href="#configuing-backtests" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Now that we have a trading strategy and data, we can run a backtest! Nautilus uses a
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          BacktestEngine
-         </span>
-        </code>
-        to configure and run backtests, and requires some setup. This may seem a little complex at first,
+          </div>
+         </div>
+         <!-- #region pycharm={"name": "#%% md\n"} -->
+        </section>
+        <section id="configuing-backtests">
+         <h2 id="configuing-backtests">
+          Configuing Backtests
+          <a class="headerlink" href="#configuing-backtests" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Now that we have a trading strategy and data, we can run a backtest! Nautilus uses a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestEngine
+           </span>
+          </code>
+          to configure and run backtests, and requires some setup. This may seem a little complex at first,
 however this is necessary for the correctness that Nautilus strives for.
-       </p>
-       <p>
-        To configure a
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          BacktestEngine
-         </span>
-        </code>
-        , we create an instance of a
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          BacktestRunConfig
-         </span>
-        </code>
-        , configuring the
+         </p>
+         <p>
+          To configure a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestEngine
+           </span>
+          </code>
+          , we create an instance of a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestRunConfig
+           </span>
+          </code>
+          , configuring the
 following (minimal) aspects of the backtest:
-       </p>
-       <ul class="simple">
-        <li>
-         <p>
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            data
-           </span>
-          </code>
-          - The input data we would like to perform the backtest on
          </p>
-        </li>
-        <li>
+         <ul class="simple">
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              data
+             </span>
+            </code>
+            - The input data we would like to perform the backtest on
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              venues
+             </span>
+            </code>
+            - The simulated venues (exchanges or brokers) available in the backtest
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              strategies
+             </span>
+            </code>
+            - The strategy or strategies we would like to run for the backtest
+           </p>
+          </li>
+         </ul>
          <p>
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            venues
-           </span>
-          </code>
-          - The simulated venues (exchanges or brokers) available in the backtest
+          There are many more configurable features which will be described later in the docs, for now this will get us up and running.
          </p>
-        </li>
-        <li>
+         <!-- #endregion -->
+         <!-- #region pycharm={"name": "#%% md\n"} -->
+        </section>
+        <section id="venue">
+         <h2 id="venue">
+          Venue
+          <a class="headerlink" href="#venue" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
          <p>
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            strategies
-           </span>
-          </code>
-          - The strategy or strategies we would like to run for the backtest
-         </p>
-        </li>
-       </ul>
-       <p>
-        There are many more configurable features which will be described later in the docs, for now this will get us up and running.
-       </p>
-       <!-- #endregion -->
-       <!-- #region pycharm={"name": "#%% md\n"} -->
-       <h2 id="venue">
-        Venue
-        <a class="headerlink" href="#venue" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        First, we create a venue. For this example we will create a simulated FX ECN venue.
+          First, we create a venue. For this example we will create a simulated FX ECN venue.
 A venue needs a name which acts as an ID, as well as some basic configuration;
 the account type (cash vs margin), an optional base currency, and starting balance.
-       </p>
-       <!-- #endregion -->
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestVenueConfig</span>
+         </p>
+         <!-- #endregion -->
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestVenueConfig</span>
 
 <span class="n">venue</span> <span class="o">=</span> <span class="n">BacktestVenueConfig</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">"SIM"</span><span class="p">,</span>
@@ -750,63 +770,67 @@ the account type (cash vs margin), an optional base currency, and starting balan
     <span class="n">starting_balances</span><span class="o">=</span><span class="p">[</span><span class="s2">"100_000 USD"</span><span class="p">]</span>
 <span class="p">)</span>
 </pre>
-        </div>
-       </div>
-       <!-- #region -->
-       <h2 id="instruments">
-        Instruments
-        <a class="headerlink" href="#instruments" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Second, we need to know about the instruments that we would like to load data for, we can use the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          DataCatalog
-         </span>
-        </code>
-        for this:
-       </p>
-       <!-- #endregion -->
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="n">instruments</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">(</span><span class="n">as_nautilus</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+          </div>
+         </div>
+         <!-- #region -->
+        </section>
+        <section id="instruments">
+         <h2 id="instruments">
+          Instruments
+          <a class="headerlink" href="#instruments" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Second, we need to know about the instruments that we would like to load data for, we can use the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            DataCatalog
+           </span>
+          </code>
+          for this:
+         </p>
+         <!-- #endregion -->
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">instruments</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">(</span><span class="n">as_nautilus</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">instruments</span>
 </pre>
-        </div>
-       </div>
-       <!-- #region jupyter={"outputs_hidden": false} pycharm={"name": "#%% md\n"} -->
-       <h2 id="data">
-        Data
-        <a class="headerlink" href="#data" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Next, we need to configure the data for the backtest. Nautilus is built to be very flexible when it
+          </div>
+         </div>
+         <!-- #region jupyter={"outputs_hidden": false} pycharm={"name": "#%% md\n"} -->
+        </section>
+        <section id="data">
+         <h2 id="data">
+          Data
+          <a class="headerlink" href="#data" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Next, we need to configure the data for the backtest. Nautilus is built to be very flexible when it
 comes to loading data for backtests, however this also means some configuration is required.
-       </p>
-       <p>
-        For each tick type (and instrument), we add a
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          BacktestDataConfig
-         </span>
-        </code>
-        . In this instance we are simply
+         </p>
+         <p>
+          For each tick type (and instrument), we add a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestDataConfig
+           </span>
+          </code>
+          . In this instance we are simply
 adding the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          QuoteTick
-         </span>
-        </code>
-        (s) for our EUR/USD instrument:
-       </p>
-       <!-- #endregion -->
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.model.data.tick</span> <span class="kn">import</span> <span class="n">QuoteTick</span>
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            QuoteTick
+           </span>
+          </code>
+          (s) for our EUR/USD instrument:
+         </p>
+         <!-- #endregion -->
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.model.data.tick</span> <span class="kn">import</span> <span class="n">QuoteTick</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestDataConfig</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
@@ -818,46 +842,50 @@ adding the
     <span class="p">)</span>
 <span class="p">]</span>
 </pre>
-        </div>
-       </div>
-       <!-- #region pycharm={"name": "#%% md\n"} -->
-       <h2 id="engine">
-        Engine
-        <a class="headerlink" href="#engine" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Then, we need a
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          BacktestEngineConfig
-         </span>
-        </code>
-        which allows configuring the log level and other components,
+          </div>
+         </div>
+         <!-- #region pycharm={"name": "#%% md\n"} -->
+        </section>
+        <section id="engine">
+         <h2 id="engine">
+          Engine
+          <a class="headerlink" href="#engine" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Then, we need a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestEngineConfig
+           </span>
+          </code>
+          which allows configuring the log level and other components,
 however is fine to leave with its defaults:
-       </p>
-       <!-- #endregion -->
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestEngineConfig</span>
+         </p>
+         <!-- #endregion -->
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestEngineConfig</span>
 
 <span class="n">engine</span> <span class="o">=</span> <span class="n">BacktestEngineConfig</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="s2">"ERROR"</span><span class="p">)</span> <span class="c1"># Lower to `INFO` to see more logging about orders, events, etc.</span>
 </pre>
-        </div>
-       </div>
-       <h2 id="strategies">
-        Strategies
-        <a class="headerlink" href="#strategies" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        And finally is our actual trading strategy(s):
-       </p>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="n">macd_config</span> <span class="o">=</span> <span class="n">MACDConfig</span><span class="p">(</span>
+          </div>
+         </div>
+        </section>
+        <section id="strategies">
+         <h2 id="strategies">
+          Strategies
+          <a class="headerlink" href="#strategies" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          And finally is our actual trading strategy(s):
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">macd_config</span> <span class="o">=</span> <span class="n">MACDConfig</span><span class="p">(</span>
     <span class="n">instrument_id</span><span class="o">=</span><span class="n">instruments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
     <span class="n">fast_period</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
     <span class="n">slow_period</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span>
@@ -865,52 +893,54 @@ however is fine to leave with its defaults:
 
 <span class="n">macd_strategy</span> <span class="o">=</span> <span class="n">MACDStrategy</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">macd_config</span><span class="p">)</span>
 </pre>
-        </div>
-       </div>
-       <h2 id="running-a-backtest">
-        Running a backtest
-        <a class="headerlink" href="#running-a-backtest" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        We can now pass our various config pieces to the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          BacktestRunConfig
-         </span>
-        </code>
-        - this object now contains the
+          </div>
+         </div>
+        </section>
+        <section id="running-a-backtest">
+         <h2 id="running-a-backtest">
+          Running a backtest
+          <a class="headerlink" href="#running-a-backtest" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          We can now pass our various config pieces to the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestRunConfig
+           </span>
+          </code>
+          - this object now contains the
 full configuration for our backtest, we are ready to run some backtests!
-       </p>
-       <p>
-        The
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          BacktestNode
-         </span>
-        </code>
-        class
-        <em>
-         actually
-        </em>
-        runs the backtest. The reason for this separation between
+         </p>
+         <p>
+          The
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestNode
+           </span>
+          </code>
+          class
+          <em>
+           actually
+          </em>
+          runs the backtest. The reason for this separation between
 configuration and execution is the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          BacktestNode
-         </span>
-        </code>
-        allows running multiple configurations (different
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestNode
+           </span>
+          </code>
+          allows running multiple configurations (different
 parameters or batches of data), as well as parallelisation via the excellent
-        <a class="reference external" href="https://dask.org/">
-         dask
-        </a>
-        library.
-       </p>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.node</span> <span class="kn">import</span> <span class="n">BacktestNode</span>
+          <a class="reference external" href="https://dask.org/">
+           dask
+          </a>
+          library.
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.node</span> <span class="kn">import</span> <span class="n">BacktestNode</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestRunConfig</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.trading.config</span> <span class="kn">import</span> <span class="n">ImportableStrategyConfig</span>
 
@@ -929,20 +959,22 @@ parameters or batches of data), as well as parallelisation via the excellent
     <span class="n">return_engine</span><span class="o">=</span><span class="kc">True</span> <span class="c1"># Return the full BacktestEngine (which contains much more detailed information) rather than the standard `BacktestResult`</span>
 <span class="p">)</span>
 </pre>
-        </div>
-       </div>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">orders</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
+          </div>
+         </div>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">orders</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
 </pre>
-        </div>
-       </div>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">positions</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
+          </div>
+         </div>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">positions</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
 </pre>
-        </div>
-       </div>
+          </div>
+         </div>
+        </section>
+       </section>
       </article>
      </div>
     </div>

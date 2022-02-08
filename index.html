@@ -3,6 +3,7 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
@@ -65,11 +66,20 @@
   </script>
   <script src="_static/doctools.js">
   </script>
-  <script src="_static/togglebutton.js">
-  </script>
   <script src="_static/clipboard.min.js">
   </script>
   <script src="_static/copybutton.js">
+  </script>
+  <script>
+   let toggleHintShow = 'Click to show';
+  </script>
+  <script>
+   let toggleHintHide = 'Click to hide';
+  </script>
+  <script>
+   let toggleOpenOnPrint = 'true';
+  </script>
+  <script src="_static/togglebutton.js">
   </script>
   <script>
    var togglebuttonSelector = '.toggle, .admonition.dropdown';
@@ -175,27 +185,27 @@
     <div class="md-tabs__inner md-grid">
      <ul class="md-tabs__list">
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../html/1_getting_started/0_index.html">
+       <a class="md-tabs__link" href="/1_getting_started/0_index.html">
         Getting Started
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../html/2_user_guide/0_index.html">
+       <a class="md-tabs__link" href="/2_user_guide/0_index.html">
         User Guide
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../html/3_api_reference/0_index.html">
+       <a class="md-tabs__link" href="/3_api_reference/0_index.html">
         API Reference
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../html/4_integrations/0_index.html">
+       <a class="md-tabs__link" href="/4_integrations/0_index.html">
         Integrations
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../html/5_developer_guide/0_index.html">
+       <a class="md-tabs__link" href="/5_developer_guide/0_index.html">
         Developer Guide
        </a>
       </li>
@@ -320,302 +330,314 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <h1 id="index--page-root">
-        Introduction
-        <a class="headerlink" href="#index--page-root" title="Permalink to this headline">
-         ¶
-        </a>
-       </h1>
-       <p>
-        Welcome to the documentation for NautilusTrader!
-       </p>
-       <p>
-        NautilusTrader is an open-source, high-performance, production-grade algorithmic trading platform,
+       <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+        <h1 id="index--page-root">
+         Introduction
+         <a class="headerlink" href="#index--page-root" title="Permalink to this headline">
+          ¶
+         </a>
+        </h1>
+        <p>
+         Welcome to the documentation for NautilusTrader!
+        </p>
+        <p>
+         NautilusTrader is an open-source, high-performance, production-grade algorithmic trading platform,
 providing quantitative traders with the ability to backtest portfolios of automated trading strategies
 on historical data with an event-driven engine, and also deploy those same strategies live.
-       </p>
-       <p>
-        The platform is ‘AI-first’, designed to deploy models for algorithmic trading strategies developed
+        </p>
+        <p>
+         The platform is ‘AI-first’, designed to deploy models for algorithmic trading strategies developed
 using the Python ecosystem - within a highly performant and robust Python native environment.
 This helps to address the challenge of keeping the research/backtest environment consistent with the production
 live trading environment.
-       </p>
-       <p>
-        NautilusTraders design, architecture and implementation philosophy holds software correctness and safety at the
+        </p>
+        <p>
+         NautilusTraders design, architecture and implementation philosophy holds software correctness and safety at the
 highest level, with the aim of supporting Python native, mission-critical, trading system backtesting
 and live deployment workloads.
-       </p>
-       <p>
-        The platform is also universal and asset class agnostic - with any REST, WebSocket or FIX API able to be integrated via modular
+        </p>
+        <p>
+         The platform is also universal and asset class agnostic - with any REST, WebSocket or FIX API able to be integrated via modular
 adapters. Thus, it can handle high-frequency trading operations for any asset classes
 including FX, Equities, Futures, Options, CFDs, Crypto and Betting - across multiple venues simultaneously.
-       </p>
-       <h2 id="features">
-        Features
-        <a class="headerlink" href="#features" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <ul class="simple">
-        <li>
+        </p>
+        <section id="features">
+         <h2 id="features">
+          Features
+          <a class="headerlink" href="#features" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <ul class="simple">
+          <li>
+           <p>
+            <strong>
+             Fast:
+            </strong>
+            C-level speed through Cython. Asynchronous networking with
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              uvloop
+             </span>
+            </code>
+            .
+           </p>
+          </li>
+          <li>
+           <p>
+            <strong>
+             Reliable:
+            </strong>
+            Type safety through Cython. Redis backed performant state persistence.
+           </p>
+          </li>
+          <li>
+           <p>
+            <strong>
+             Flexible:
+            </strong>
+            OS independent, runs on Linux, macOS, Windows. Deploy using Docker.
+           </p>
+          </li>
+          <li>
+           <p>
+            <strong>
+             Integrated:
+            </strong>
+            Modular adapters mean any REST, WebSocket, or FIX API can be integrated.
+           </p>
+          </li>
+          <li>
+           <p>
+            <strong>
+             Advanced:
+            </strong>
+            Time-in-force options
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              GTD
+             </span>
+            </code>
+            ,
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              IOC
+             </span>
+            </code>
+            ,
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              FOK
+             </span>
+            </code>
+            etc, advanced order types and triggers,
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              post-only
+             </span>
+            </code>
+            ,
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              reduce-only
+             </span>
+            </code>
+            , and icebergs. Contingency order lists including
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              OCO
+             </span>
+            </code>
+            ,
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              OTO
+             </span>
+            </code>
+            etc.
+           </p>
+          </li>
+          <li>
+           <p>
+            <strong>
+             Backtesting:
+            </strong>
+            Run with multiple venues, instruments and strategies simultaneously using historical quote tick, trade tick, bar, order book and custom data with nanosecond resolution.
+           </p>
+          </li>
+          <li>
+           <p>
+            <strong>
+             Live:
+            </strong>
+            Use identical strategy implementations between backtesting and live deployments.
+           </p>
+          </li>
+          <li>
+           <p>
+            <strong>
+             Multi-venue:
+            </strong>
+            Multiple venue capabilities facilitate market making and statistical arbitrage strategies.
+           </p>
+          </li>
+          <li>
+           <p>
+            <strong>
+             AI Agent Training:
+            </strong>
+            Backtest engine fast enough to be used to train AI trading agents (RL/ES).
+           </p>
+          </li>
+          <li>
+           <p>
+            <strong>
+             Distributed:
+            </strong>
+            Run backtests synchronously or as a graph distributed across a
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              dask
+             </span>
+            </code>
+            cluster.
+           </p>
+          </li>
+         </ul>
          <p>
-          <strong>
-           Fast:
-          </strong>
-          C-level speed through Cython. Asynchronous networking with
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            uvloop
-           </span>
-          </code>
-          .
+          <img alt="Nautilus" src="https://github.com/nautechsystems/nautilus_trader/blob/develop/docs/artwork/nautilus-art.png?raw=true"/>
          </p>
-        </li>
-        <li>
-         <p>
-          <strong>
-           Reliable:
-          </strong>
-          Type safety through Cython. Redis backed performant state persistence.
-         </p>
-        </li>
-        <li>
-         <p>
-          <strong>
-           Flexible:
-          </strong>
-          OS independent, runs on Linux, macOS, Windows. Deploy using Docker.
-         </p>
-        </li>
-        <li>
-         <p>
-          <strong>
-           Integrated:
-          </strong>
-          Modular adapters mean any REST, WebSocket, or FIX API can be integrated.
-         </p>
-        </li>
-        <li>
-         <p>
-          <strong>
-           Advanced:
-          </strong>
-          Time-in-force options
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            GTD
-           </span>
-          </code>
-          ,
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            IOC
-           </span>
-          </code>
-          ,
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            FOK
-           </span>
-          </code>
-          etc, advanced order types and triggers,
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            post-only
-           </span>
-          </code>
-          ,
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            reduce-only
-           </span>
-          </code>
-          , and icebergs. Contingency order lists including
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            OCO
-           </span>
-          </code>
-          ,
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            OTO
-           </span>
-          </code>
-          etc.
-         </p>
-        </li>
-        <li>
-         <p>
-          <strong>
-           Backtesting:
-          </strong>
-          Run with multiple venues, instruments and strategies simultaneously using historical quote tick, trade tick, bar, order book and custom data with nanosecond resolution.
-         </p>
-        </li>
-        <li>
-         <p>
-          <strong>
-           Live:
-          </strong>
-          Use identical strategy implementations between backtesting and live deployments.
-         </p>
-        </li>
-        <li>
-         <p>
-          <strong>
-           Multi-venue:
-          </strong>
-          Multiple venue capabilities facilitate market making and statistical arbitrage strategies.
-         </p>
-        </li>
-        <li>
-         <p>
-          <strong>
-           AI Agent Training:
-          </strong>
-          Backtest engine fast enough to be used to train AI trading agents (RL/ES).
-         </p>
-        </li>
-        <li>
-         <p>
-          <strong>
-           Distributed:
-          </strong>
-          Run backtests synchronously or as a graph distributed across a
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            dask
-           </span>
-          </code>
-          cluster.
-         </p>
-        </li>
-       </ul>
-       <p>
-        <img alt="Nautilus" src="https://github.com/nautechsystems/nautilus_trader/blob/develop/docs/artwork/nautilus-art.png?raw=true"/>
-       </p>
-       <blockquote>
-        <div>
-         <p>
-          <em>
-           nautilus - from ancient Greek ‘sailor’ and naus ‘ship’.
-          </em>
-         </p>
-         <p>
-          <em>
-           The nautilus shell consists of modular chambers with a growth factor which approximates a logarithmic spiral.
+         <blockquote>
+          <div>
+           <p>
+            <em>
+             nautilus - from ancient Greek ‘sailor’ and naus ‘ship’.
+            </em>
+           </p>
+           <p>
+            <em>
+             The nautilus shell consists of modular chambers with a growth factor which approximates a logarithmic spiral.
 The idea is that this can be translated to the aesthetics of design and architecture.
-          </em>
-         </p>
-        </div>
-       </blockquote>
-       <h2 id="why-nautilustrader">
-        Why NautilusTrader?
-        <a class="headerlink" href="#why-nautilustrader" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Traditionally, trading strategy research and backtesting might be conducted in Python (or other suitable language), with
+            </em>
+           </p>
+          </div>
+         </blockquote>
+        </section>
+        <section id="why-nautilustrader">
+         <h2 id="why-nautilustrader">
+          Why NautilusTrader?
+          <a class="headerlink" href="#why-nautilustrader" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Traditionally, trading strategy research and backtesting might be conducted in Python (or other suitable language), with
 the models and/or strategies then needing to be reimplemented in C, C++, C#, Java or other statically
 typed language(s). The reasoning here is to utilize the performance and type safety a compiled language can offer,
 which has historically made these languages more suitable for large trading systems.
-       </p>
-       <p>
-        The value of NautilusTrader here is that this reimplementation step is circumvented - as the critical core components of the platform
+         </p>
+         <p>
+          The value of NautilusTrader here is that this reimplementation step is circumvented - as the critical core components of the platform
 have all been written entirely in Cython. Because Cython can generate efficient C code (which then compiles to C extension modules as native binaries),
 Python can effectively be used as a high-performance systems programming language - with the benefit being that a Python native environment can be offered which is suitable for
 professional quantitative traders and trading firms.
-       </p>
-       <h2 id="why-python">
-        Why Python?
-        <a class="headerlink" href="#why-python" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Python was originally created decades ago as a simple scripting language with a clean straight
+         </p>
+        </section>
+        <section id="why-python">
+         <h2 id="why-python">
+          Why Python?
+          <a class="headerlink" href="#why-python" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Python was originally created decades ago as a simple scripting language with a clean straight
 forward syntax. It has since evolved into a fully fledged general purpose object-oriented
 programming language. Based on the TIOBE index, Python is currently the most popular programming language in the world.
 Not only that, Python has become the
-        <em>
-         de facto lingua franca
-        </em>
-        of data science, machine learning, and artificial intelligence.
-       </p>
-       <p>
-        The language out of the box is not without its drawbacks however, especially in the context of
+          <em>
+           de facto lingua franca
+          </em>
+          of data science, machine learning, and artificial intelligence.
+         </p>
+         <p>
+          The language out of the box is not without its drawbacks however, especially in the context of
 implementing large performance-critical systems. Cython has addressed a lot of these issues, offering all the advantages
 of a statically typed language, embedded into Pythons rich ecosystem of software libraries and
 developer/user communities.
-       </p>
-       <h2 id="what-is-cython">
-        What is Cython?
-        <a class="headerlink" href="#what-is-cython" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        <a class="reference external" href="https://cython.org">
-         Cython
-        </a>
-        is a compiled programming language that aims to be a superset of the Python programming
+         </p>
+        </section>
+        <section id="what-is-cython">
+         <h2 id="what-is-cython">
+          What is Cython?
+          <a class="headerlink" href="#what-is-cython" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          <a class="reference external" href="https://cython.org">
+           Cython
+          </a>
+          is a compiled programming language that aims to be a superset of the Python programming
 language, designed to give C-like performance with code that is written mostly in Python with
 optional additional C-inspired syntax.
-       </p>
-       <p>
-        The project heavily utilizes Cython to provide static type safety and increased performance
+         </p>
+         <p>
+          The project heavily utilizes Cython to provide static type safety and increased performance
 for Python through
-        <a class="reference external" href="https://docs.python.org/3/extending/extending.html">
-         C extension modules
-        </a>
-        . The vast majority of the production code is actually
+          <a class="reference external" href="https://docs.python.org/3/extending/extending.html">
+           C extension modules
+          </a>
+          . The vast majority of the production code is actually
 written in Cython, however the libraries can be accessed from both pure Python and Cython.
-       </p>
-       <h2 id="architecture-quality-attributes">
-        Architecture Quality Attributes
-        <a class="headerlink" href="#architecture-quality-attributes" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <ul class="simple">
-        <li>
-         <p>
-          Reliability
          </p>
-        </li>
-        <li>
+        </section>
+        <section id="architecture-quality-attributes">
+         <h2 id="architecture-quality-attributes">
+          Architecture Quality Attributes
+          <a class="headerlink" href="#architecture-quality-attributes" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <ul class="simple">
+          <li>
+           <p>
+            Reliability
+           </p>
+          </li>
+          <li>
+           <p>
+            Performance
+           </p>
+          </li>
+          <li>
+           <p>
+            Testability
+           </p>
+          </li>
+          <li>
+           <p>
+            Modularity
+           </p>
+          </li>
+          <li>
+           <p>
+            Maintainability
+           </p>
+          </li>
+          <li>
+           <p>
+            Deployability
+           </p>
+          </li>
+         </ul>
          <p>
-          Performance
+          <img alt="Architecture" src="https://github.com/nautechsystems/nautilus_trader/blob/develop/docs/artwork/architecture-overview.png?raw=true"/>
          </p>
-        </li>
-        <li>
-         <p>
-          Testability
-         </p>
-        </li>
-        <li>
-         <p>
-          Modularity
-         </p>
-        </li>
-        <li>
-         <p>
-          Maintainability
-         </p>
-        </li>
-        <li>
-         <p>
-          Deployability
-         </p>
-        </li>
-       </ul>
-       <p>
-        <img alt="Architecture" src="https://github.com/nautechsystems/nautilus_trader/blob/develop/docs/artwork/architecture-overview.png?raw=true"/>
-       </p>
-       <div class="toctree-wrapper compound">
-       </div>
+         <div class="toctree-wrapper compound">
+         </div>
+        </section>
+       </section>
       </article>
      </div>
     </div>

@@ -3,6 +3,7 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
@@ -65,11 +66,20 @@
   </script>
   <script src="../_static/doctools.js">
   </script>
-  <script src="../_static/togglebutton.js">
-  </script>
   <script src="../_static/clipboard.min.js">
   </script>
   <script src="../_static/copybutton.js">
+  </script>
+  <script>
+   let toggleHintShow = 'Click to show';
+  </script>
+  <script>
+   let toggleHintHide = 'Click to hide';
+  </script>
+  <script>
+   let toggleOpenOnPrint = 'true';
+  </script>
+  <script src="../_static/togglebutton.js">
   </script>
   <script>
    var togglebuttonSelector = '.toggle, .admonition.dropdown';
@@ -169,27 +179,27 @@
     <div class="md-tabs__inner md-grid">
      <ul class="md-tabs__list">
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/1_getting_started/0_index.html">
+       <a class="md-tabs__link" href="/1_getting_started/0_index.html">
         Getting Started
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/2_user_guide/0_index.html">
+       <a class="md-tabs__link" href="/2_user_guide/0_index.html">
         User Guide
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/3_api_reference/0_index.html">
+       <a class="md-tabs__link" href="/3_api_reference/0_index.html">
         API Reference
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/4_integrations/0_index.html">
+       <a class="md-tabs__link" href="/4_integrations/0_index.html">
         Integrations
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/5_developer_guide/0_index.html">
+       <a class="md-tabs__link" href="/5_developer_guide/0_index.html">
         Developer Guide
        </a>
       </li>
@@ -558,171 +568,177 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <h1 id="2-user-guide-2-backtest-example--page-root">
-        Complete Backtest Example
-        <a class="headerlink" href="#2-user-guide-2-backtest-example--page-root" title="Permalink to this headline">
-         ¶
-        </a>
-       </h1>
-       <p>
-        This notebook runs through a complete backtest example using raw data (external to nautilus) to a parameterised run
-       </p>
-       <!-- #region tags=[] -->
-       <h2 id="getting-some-raw-data">
-        Getting some raw data
-        <a class="headerlink" href="#getting-some-raw-data" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Before we start the notebook - as a once off we need to download some sample data for backtesting
-       </p>
-       <p>
-        For this notebook we will use FX data from
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          histdata.com
-         </span>
-        </code>
-        , simply go to
-        <a class="reference external" href="https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/">
-         https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/
-        </a>
-        and select an FX pair, and one or more months of data to download.
-       </p>
-       <p>
-        Once you have downloaded the data, set the variable
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          DATA_DIR
-         </span>
-        </code>
-        below to the directory containing the data. By default it will use the users
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          Downloads
-         </span>
-        </code>
-        directory.
-       </p>
-       <!-- #endregion -->
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="n">DATA_DIR</span> <span class="o">=</span> <span class="s2">"~/Downloads/"</span>
+       <section class="tex2jax_ignore mathjax_ignore" id="complete-backtest-example">
+        <h1 id="2-user-guide-2-backtest-example--page-root">
+         Complete Backtest Example
+         <a class="headerlink" href="#2-user-guide-2-backtest-example--page-root" title="Permalink to this headline">
+          ¶
+         </a>
+        </h1>
+        <p>
+         This notebook runs through a complete backtest example using raw data (external to nautilus) to a parameterised run
+        </p>
+        <!-- #region tags=[] -->
+        <section id="getting-some-raw-data">
+         <h2 id="getting-some-raw-data">
+          Getting some raw data
+          <a class="headerlink" href="#getting-some-raw-data" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Before we start the notebook - as a once off we need to download some sample data for backtesting
+         </p>
+         <p>
+          For this notebook we will use FX data from
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            histdata.com
+           </span>
+          </code>
+          , simply go to
+          <a class="reference external" href="https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/">
+           https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/
+          </a>
+          and select an FX pair, and one or more months of data to download.
+         </p>
+         <p>
+          Once you have downloaded the data, set the variable
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            DATA_DIR
+           </span>
+          </code>
+          below to the directory containing the data. By default it will use the users
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            Downloads
+           </span>
+          </code>
+          directory.
+         </p>
+         <!-- #endregion -->
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">DATA_DIR</span> <span class="o">=</span> <span class="s2">"~/Downloads/"</span>
 </pre>
-        </div>
-       </div>
-       <p>
-        Run the cell below; you should see the files that you downloaded
-       </p>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="kn">import</span> <span class="nn">fsspec</span>
+          </div>
+         </div>
+         <p>
+          Run the cell below; you should see the files that you downloaded
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">import</span> <span class="nn">fsspec</span>
 <span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span><span class="s1">'file'</span><span class="p">)</span>
 <span class="n">raw_files</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/HISTDATA*"</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">raw_files</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Unable to find any histdata files in directory </span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">"</span>
 <span class="n">raw_files</span>
 </pre>
-        </div>
-       </div>
-       <!-- #region tags=[] -->
-       <h2 id="the-data-catalog">
-        The Data Catalog
-        <a class="headerlink" href="#the-data-catalog" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Next we will load this raw data into the data catalog. The data catalog is a central store for Nautilus data, persisted in the
-        <a class="reference external" href="https://parquet.apache.org">
-         Parquet
-        </a>
-        file format.
-       </p>
-       <p>
-        We have chosen parquet as the storage format for the following reasons:
-       </p>
-       <ul class="simple">
-        <li>
+          </div>
+         </div>
+         <!-- #region tags=[] -->
+        </section>
+        <section id="the-data-catalog">
+         <h2 id="the-data-catalog">
+          The Data Catalog
+          <a class="headerlink" href="#the-data-catalog" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
          <p>
-          It performs much better than CSV/JSON/HDF5/etc in terms of compression (storage size) and read performance
+          Next we will load this raw data into the data catalog. The data catalog is a central store for Nautilus data, persisted in the
+          <a class="reference external" href="https://parquet.apache.org">
+           Parquet
+          </a>
+          file format.
          </p>
-        </li>
-        <li>
          <p>
-          It does not require any separate running components (for example a database)
+          We have chosen parquet as the storage format for the following reasons:
          </p>
-        </li>
-        <li>
+         <ul class="simple">
+          <li>
+           <p>
+            It performs much better than CSV/JSON/HDF5/etc in terms of compression (storage size) and read performance
+           </p>
+          </li>
+          <li>
+           <p>
+            It does not require any separate running components (for example a database)
+           </p>
+          </li>
+          <li>
+           <p>
+            It is quick and simple for someone to get up and running with
+           </p>
+          </li>
+         </ul>
+         <!-- #endregion -->
+        </section>
+        <section id="loading-data-into-the-catalog">
+         <h2 id="loading-data-into-the-catalog">
+          Loading data into the catalog
+          <a class="headerlink" href="#loading-data-into-the-catalog" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
          <p>
-          It is quick and simple for someone to get up and running with
+          We can load data from various sources into the data catalog using helper methods in the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            nautilus_trader.persistence.external.readers
+           </span>
+          </code>
+          module. The module contains methods for reading various data formats (csv, json, txt), minimising the amount of code required to get data loaded correctly into the data catalog.
          </p>
-        </li>
-       </ul>
-       <!-- #endregion -->
-       <h2 id="loading-data-into-the-catalog">
-        Loading data into the catalog
-        <a class="headerlink" href="#loading-data-into-the-catalog" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        We can load data from various sources into the data catalog using helper methods in the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          nautilus_trader.persistence.external.readers
-         </span>
-        </code>
-        module. The module contains methods for reading various data formats (csv, json, txt), minimising the amount of code required to get data loaded correctly into the data catalog.
-       </p>
-       <p>
-        The FX data from
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          histdata
-         </span>
-        </code>
-        is stored in csv/text format, with fields
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          timestamp,
-         </span>
-         <span class="pre">
-          bid_price,
-         </span>
-         <span class="pre">
-          ask_price
-         </span>
-        </code>
-        . To load the data into the catalog, we simply write a function that converts each row into a Nautilus object (in this case, a
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          QuoteTick
-         </span>
-        </code>
-        ). For this example, we will use the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          TextReader
-         </span>
-        </code>
-        helper, which allows reading and applying a parsing function line by line.
-       </p>
-       <p>
-        Then, we simply instantiate a data catalog (passing in a directory where to store the data, by default we will just use the current directory) and pass our parsing function wrapping in the Reader class to
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          process_files
-         </span>
-        </code>
-        . We also need to know about which instrument this data is for; in this example, we will simply use one of the Nautilus test helpers to create a FX instrument.
-       </p>
-       <p>
-        It should only take a couple of minutes to load the data (depending on how many months).
-       </p>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+         <p>
+          The FX data from
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            histdata
+           </span>
+          </code>
+          is stored in csv/text format, with fields
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            timestamp,
+           </span>
+           <span class="pre">
+            bid_price,
+           </span>
+           <span class="pre">
+            ask_price
+           </span>
+          </code>
+          . To load the data into the catalog, we simply write a function that converts each row into a Nautilus object (in this case, a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            QuoteTick
+           </span>
+          </code>
+          ). For this example, we will use the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            TextReader
+           </span>
+          </code>
+          helper, which allows reading and applying a parsing function line by line.
+         </p>
+         <p>
+          Then, we simply instantiate a data catalog (passing in a directory where to store the data, by default we will just use the current directory) and pass our parsing function wrapping in the Reader class to
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            process_files
+           </span>
+          </code>
+          . We also need to know about which instrument this data is for; in this example, we will simply use one of the Nautilus test helpers to create a FX instrument.
+         </p>
+         <p>
+          It should only take a couple of minutes to load the data (depending on how many months).
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">from</span> <span class="nn">nautilus_trader.persistence.catalog</span> <span class="kn">import</span> <span class="n">DataCatalog</span>
@@ -736,11 +752,11 @@
 
 <span class="kn">from</span> <span class="nn">nautilus_trader.backtest.data.providers</span> <span class="kn">import</span> <span class="n">TestInstrumentProvider</span>
 </pre>
-        </div>
-       </div>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="k">def</span> <span class="nf">parser</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+          </div>
+         </div>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="k">def</span> <span class="nf">parser</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
     <span class="n">ts</span><span class="p">,</span> <span class="n">bid</span><span class="p">,</span> <span class="n">ask</span><span class="p">,</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">b</span><span class="s2">","</span><span class="p">)</span>
     <span class="n">dt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">decode</span><span class="p">(),</span> <span class="s2">"%Y%m</span><span class="si">%d</span><span class="s2"> %H%M%S</span><span class="si">%f</span><span class="s2">"</span><span class="p">),</span> <span class="n">tz</span><span class="o">=</span><span class="s1">'UTC'</span><span class="p">)</span>
     <span class="k">yield</span> <span class="n">QuoteTick</span><span class="p">(</span>
@@ -753,14 +769,14 @@
         <span class="n">ts_init</span><span class="o">=</span><span class="n">dt_to_unix_nanos</span><span class="p">(</span><span class="n">dt</span><span class="p">),</span>
     <span class="p">)</span>
 </pre>
-        </div>
-       </div>
-       <p>
-        We’ll set up a catalog in the current working directory
-       </p>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">shutil</span>
+          </div>
+         </div>
+         <p>
+          We’ll set up a catalog in the current working directory
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">shutil</span>
 <span class="n">CATALOG_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="s2">"/catalog"</span>
 
 <span class="c1"># Clear if it already exists, then create fresh</span>
@@ -768,11 +784,11 @@
     <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">CATALOG_PATH</span><span class="p">)</span>
 <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">CATALOG_PATH</span><span class="p">)</span>
 </pre>
-        </div>
-       </div>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="n">AUDUSD</span> <span class="o">=</span> <span class="n">TestInstrumentProvider</span><span class="o">.</span><span class="n">default_fx_ccy</span><span class="p">(</span><span class="s2">"AUD/USD"</span><span class="p">)</span>
+          </div>
+         </div>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">AUDUSD</span> <span class="o">=</span> <span class="n">TestInstrumentProvider</span><span class="o">.</span><span class="n">default_fx_ccy</span><span class="p">(</span><span class="s2">"AUD/USD"</span><span class="p">)</span>
 
 <span class="n">catalog</span> <span class="o">=</span> <span class="n">DataCatalog</span><span class="p">(</span><span class="n">CATALOG_PATH</span><span class="p">)</span>
 
@@ -785,77 +801,82 @@
 <span class="c1"># Also manually write the AUDUSD instrument to the catalog</span>
 <span class="n">write_objects</span><span class="p">(</span><span class="n">catalog</span><span class="p">,</span> <span class="p">[</span><span class="n">AUDUSD</span><span class="p">])</span>
 </pre>
-        </div>
-       </div>
-       <h2 id="using-the-data-catalog">
-        Using the Data Catalog
-        <a class="headerlink" href="#using-the-data-catalog" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Once data has been loaded into the catalog, the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          catalog
-         </span>
-        </code>
-        instance can be used for loading data into the backtest engine, or simple for research purposes. It contains various methods to pull data from the catalog, like
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          quote_ticks
-         </span>
-        </code>
-        (show below))
-       </p>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">()</span>
+          </div>
+         </div>
+        </section>
+        <section id="using-the-data-catalog">
+         <h2 id="using-the-data-catalog">
+          Using the Data Catalog
+          <a class="headerlink" href="#using-the-data-catalog" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Once data has been loaded into the catalog, the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            catalog
+           </span>
+          </code>
+          instance can be used for loading data into the backtest engine, or simple for research purposes. It contains various methods to pull data from the catalog, like
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            quote_ticks
+           </span>
+          </code>
+          (show below))
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">()</span>
 </pre>
-        </div>
-       </div>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">dt_to_unix_nanos</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">'2020-01-01'</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s1">'UTC'</span><span class="p">))</span>
+          </div>
+         </div>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">dt_to_unix_nanos</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">'2020-01-01'</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s1">'UTC'</span><span class="p">))</span>
 <span class="n">end</span> <span class="o">=</span>  <span class="n">dt_to_unix_nanos</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">'2020-01-02'</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s1">'UTC'</span><span class="p">))</span>
 
 <span class="n">catalog</span><span class="o">.</span><span class="n">quote_ticks</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">)</span>
 </pre>
-        </div>
-       </div>
-       <h2 id="configuring-backtests">
-        Configuring backtests
-        <a class="headerlink" href="#configuring-backtests" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Nautilus has a top level object
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          BacktestRunConfig
-         </span>
-        </code>
-        that allows configuring a backtest in one place. It is a
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          Partialable
-         </span>
-        </code>
-        object (which means it can be configured in stages); the benefits of which are reduced boilerplate code when creating multiple backtest runs (for example when doing some sort of grid search over parameters).
-       </p>
-       <h3 id="staring-with-a-venue">
-        Staring with a Venue
-        <a class="headerlink" href="#staring-with-a-venue" title="Permalink to this headline">
-         ¶
-        </a>
-       </h3>
-       <p>
-        We can start partially configuring the config with just a Venue:
-       </p>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestRunConfig</span><span class="p">,</span> <span class="n">BacktestVenueConfig</span><span class="p">,</span> <span class="n">BacktestDataConfig</span><span class="p">,</span> <span class="n">BacktestEngineConfig</span>
+          </div>
+         </div>
+        </section>
+        <section id="configuring-backtests">
+         <h2 id="configuring-backtests">
+          Configuring backtests
+          <a class="headerlink" href="#configuring-backtests" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Nautilus has a top level object
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestRunConfig
+           </span>
+          </code>
+          that allows configuring a backtest in one place. It is a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            Partialable
+           </span>
+          </code>
+          object (which means it can be configured in stages); the benefits of which are reduced boilerplate code when creating multiple backtest runs (for example when doing some sort of grid search over parameters).
+         </p>
+         <section id="staring-with-a-venue">
+          <h3 id="staring-with-a-venue">
+           Staring with a Venue
+           <a class="headerlink" href="#staring-with-a-venue" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           We can start partially configuring the config with just a Venue:
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestRunConfig</span><span class="p">,</span> <span class="n">BacktestVenueConfig</span><span class="p">,</span> <span class="n">BacktestDataConfig</span><span class="p">,</span> <span class="n">BacktestEngineConfig</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.model.currencies</span> <span class="kn">import</span> <span class="n">USD</span>
 
 <span class="c1"># Create a `base` config object to be shared with all backtests</span>
@@ -872,59 +893,61 @@
 <span class="p">)</span>
 <span class="n">base</span>
 </pre>
-        </div>
-       </div>
-       <h3 id="adding-data">
-        Adding Data
-        <a class="headerlink" href="#adding-data" title="Permalink to this headline">
-         ¶
-        </a>
-       </h3>
-       <p>
-        Notice many of the fields are
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          None
-         </span>
-        </code>
-        - we can continue to configure the backtest via
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          update
-         </span>
-        </code>
-        .
-       </p>
-       <p>
-        The
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          data_config
-         </span>
-        </code>
-        arg allows adding multiple data types (
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          quotes
-         </span>
-        </code>
-        ,
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          trades
-         </span>
-        </code>
-        ,
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          generic_data
-         </span>
-        </code>
-        ), but for this example, we will simply load the quote ticks we added earlier.
-       </p>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="n">instrument</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">(</span><span class="n">as_nautilus</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+           </div>
+          </div>
+         </section>
+         <section id="adding-data">
+          <h3 id="adding-data">
+           Adding Data
+           <a class="headerlink" href="#adding-data" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           Notice many of the fields are
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             None
+            </span>
+           </code>
+           - we can continue to configure the backtest via
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             update
+            </span>
+           </code>
+           .
+          </p>
+          <p>
+           The
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             data_config
+            </span>
+           </code>
+           arg allows adding multiple data types (
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             quotes
+            </span>
+           </code>
+           ,
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             trades
+            </span>
+           </code>
+           ,
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             generic_data
+            </span>
+           </code>
+           ), but for this example, we will simply load the quote ticks we added earlier.
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">instrument</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">(</span><span class="n">as_nautilus</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">data_config</span><span class="o">=</span><span class="p">[</span>
     <span class="n">BacktestDataConfig</span><span class="p">(</span>
@@ -943,38 +966,40 @@
 
 <span class="n">config</span>
 </pre>
-        </div>
-       </div>
-       <h3 id="finally-add-strategy-instances">
-        Finally, add Strategy instances
-        <a class="headerlink" href="#finally-add-strategy-instances" title="Permalink to this headline">
-         ¶
-        </a>
-       </h3>
-       <p>
-        We can perform a grid-search of some parameters by using the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          replace
-         </span>
-        </code>
-        method, which returns a new copy of the config. We use the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          ImportableStrategyConfig
-         </span>
-        </code>
-        object to tell Nautilus where the
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          TradingStrategy
-         </span>
-        </code>
-        class exists, and add some config.
-       </p>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
+           </div>
+          </div>
+         </section>
+         <section id="finally-add-strategy-instances">
+          <h3 id="finally-add-strategy-instances">
+           Finally, add Strategy instances
+           <a class="headerlink" href="#finally-add-strategy-instances" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           We can perform a grid-search of some parameters by using the
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             replace
+            </span>
+           </code>
+           method, which returns a new copy of the config. We use the
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             ImportableStrategyConfig
+            </span>
+           </code>
+           object to tell Nautilus where the
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             TradingStrategy
+            </span>
+           </code>
+           class exists, and add some config.
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.trading.config</span> <span class="kn">import</span> <span class="n">ImportableStrategyConfig</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.examples.strategies.ema_cross</span> <span class="kn">import</span> <span class="n">EMACrossConfig</span>
 
@@ -1003,105 +1028,118 @@
     
     <span class="n">configs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
 </pre>
-        </div>
-       </div>
-       <h3 id="this-gives-us-3-parameter-sets-to-backtest">
-        This gives us 3 parameter sets to backtest
-        <a class="headerlink" href="#this-gives-us-3-parameter-sets-to-backtest" title="Permalink to this headline">
-         ¶
-        </a>
-       </h3>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">configs</span><span class="p">)))</span>
+           </div>
+          </div>
+         </section>
+         <section id="this-gives-us-3-parameter-sets-to-backtest">
+          <h3 id="this-gives-us-3-parameter-sets-to-backtest">
+           This gives us 3 parameter sets to backtest
+           <a class="headerlink" href="#this-gives-us-3-parameter-sets-to-backtest" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">configs</span><span class="p">)))</span>
 </pre>
-        </div>
-       </div>
-       <h1 id="run-the-backtest">
-        Run the backtest
-        <a class="headerlink" href="#run-the-backtest" title="Permalink to this headline">
-         ¶
-        </a>
-       </h1>
-       <p>
-        Finally, we can create a BacktestNode and run the backtest:
-       </p>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.node</span> <span class="kn">import</span> <span class="n">BacktestNode</span>
+           </div>
+          </div>
+         </section>
+        </section>
+       </section>
+       <section class="tex2jax_ignore mathjax_ignore" id="run-the-backtest">
+        <h1 id="run-the-backtest">
+         Run the backtest
+         <a class="headerlink" href="#run-the-backtest" title="Permalink to this headline">
+          ¶
+         </a>
+        </h1>
+        <p>
+         Finally, we can create a BacktestNode and run the backtest:
+        </p>
+        <div class="highlight-python notranslate">
+         <div class="highlight">
+          <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.node</span> <span class="kn">import</span> <span class="n">BacktestNode</span>
 <span class="n">node</span> <span class="o">=</span> <span class="n">BacktestNode</span><span class="p">()</span>
 </pre>
+         </div>
         </div>
-       </div>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="n">task</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">build_graph</span><span class="p">(</span><span class="n">run_configs</span><span class="o">=</span><span class="n">configs</span><span class="p">)</span>
+        <div class="highlight-python notranslate">
+         <div class="highlight">
+          <pre><span></span><span class="n">task</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">build_graph</span><span class="p">(</span><span class="n">run_configs</span><span class="o">=</span><span class="n">configs</span><span class="p">)</span>
 <span class="n">task</span>
 </pre>
+         </div>
         </div>
-       </div>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="c1"># Visualising the graph requires graphviz - `%pip install graphviz` in a notebook cell to install it</span>
+        <div class="highlight-python notranslate">
+         <div class="highlight">
+          <pre><span></span><span class="c1"># Visualising the graph requires graphviz - `%pip install graphviz` in a notebook cell to install it</span>
 
 <span class="c1"># task.visualize(rankdir='LR') </span>
 </pre>
+         </div>
         </div>
-       </div>
-       <p>
-        ^ Notice because our configs share the same data, that only one instance of
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          load
-         </span>
-        </code>
-        is required.
-       </p>
-       <h2 id="start-up-a-local-dask-cluster-to-execute-the-graph">
-        Start up a local dask cluster to execute the graph
-        <a class="headerlink" href="#start-up-a-local-dask-cluster-to-execute-the-graph" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="c1"># Create a local dask client - not a requirement, but allows parallelising the runs</span>
+        <p>
+         ^ Notice because our configs share the same data, that only one instance of
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           load
+          </span>
+         </code>
+         is required.
+        </p>
+        <section id="start-up-a-local-dask-cluster-to-execute-the-graph">
+         <h2 id="start-up-a-local-dask-cluster-to-execute-the-graph">
+          Start up a local dask cluster to execute the graph
+          <a class="headerlink" href="#start-up-a-local-dask-cluster-to-execute-the-graph" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="c1"># Create a local dask client - not a requirement, but allows parallelising the runs</span>
 <span class="kn">from</span> <span class="nn">distributed</span> <span class="kn">import</span> <span class="n">Client</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">n_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">client</span>
 </pre>
-        </div>
-       </div>
-       <h2 id="run-the-backtests">
-        Run the backtests!
-        <a class="headerlink" href="#run-the-backtests" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+          </div>
+         </div>
+        </section>
+        <section id="run-the-backtests">
+         <h2 id="run-the-backtests">
+          Run the backtests!
+          <a class="headerlink" href="#run-the-backtests" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 </pre>
-        </div>
-       </div>
-       <h2 id="compare-the-results">
-        Compare the results
-        <a class="headerlink" href="#compare-the-results" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">plot_balances</span><span class="p">()</span>
+          </div>
+         </div>
+        </section>
+        <section id="compare-the-results">
+         <h2 id="compare-the-results">
+          Compare the results
+          <a class="headerlink" href="#compare-the-results" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">plot_balances</span><span class="p">()</span>
 </pre>
-        </div>
-       </div>
-       <div class="highlight-python notranslate">
-        <div class="highlight">
-         <pre><span></span>
+          </div>
+         </div>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span>
 </pre>
-        </div>
-       </div>
+          </div>
+         </div>
+        </section>
+       </section>
       </article>
      </div>
     </div>

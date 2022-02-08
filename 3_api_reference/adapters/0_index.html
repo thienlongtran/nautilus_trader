@@ -3,6 +3,7 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
@@ -65,11 +66,20 @@
   </script>
   <script src="../../_static/doctools.js">
   </script>
-  <script src="../../_static/togglebutton.js">
-  </script>
   <script src="../../_static/clipboard.min.js">
   </script>
   <script src="../../_static/copybutton.js">
+  </script>
+  <script>
+   let toggleHintShow = 'Click to show';
+  </script>
+  <script>
+   let toggleHintHide = 'Click to hide';
+  </script>
+  <script>
+   let toggleOpenOnPrint = 'true';
+  </script>
+  <script src="../../_static/togglebutton.js">
   </script>
   <script>
    var togglebuttonSelector = '.toggle, .admonition.dropdown';
@@ -169,27 +179,27 @@
     <div class="md-tabs__inner md-grid">
      <ul class="md-tabs__list">
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../../html/1_getting_started/0_index.html">
+       <a class="md-tabs__link" href="/1_getting_started/0_index.html">
         Getting Started
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../../html/2_user_guide/0_index.html">
+       <a class="md-tabs__link" href="/2_user_guide/0_index.html">
         User Guide
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../../html/3_api_reference/0_index.html">
+       <a class="md-tabs__link" href="/3_api_reference/0_index.html">
         API Reference
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../../html/4_integrations/0_index.html">
+       <a class="md-tabs__link" href="/4_integrations/0_index.html">
         Integrations
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../../html/5_developer_guide/0_index.html">
+       <a class="md-tabs__link" href="/5_developer_guide/0_index.html">
         Developer Guide
        </a>
       </li>
@@ -436,27 +446,29 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <span id="adapters">
-       </span>
-       <h1 id="3-api-reference-adapters-0-index--page-root">
-        Adapters
-        <a class="headerlink" href="#3-api-reference-adapters-0-index--page-root" title="Permalink to this headline">
-         ¶
-        </a>
-       </h1>
-       <p>
-        The
-        <cite>
-         adapters
-        </cite>
-        subpackage provides integrations for data providers, brokerages, and exchanges.
-       </p>
-       <p>
-        Generally each integration will implement lower level HTTP REST and/or WebSocket clients for the
+       <section class="tex2jax_ignore mathjax_ignore" id="module-nautilus_trader.adapters">
+        <span id="adapters">
+        </span>
+        <h1 id="3-api-reference-adapters-0-index--page-root">
+         Adapters
+         <a class="headerlink" href="#3-api-reference-adapters-0-index--page-root" title="Permalink to this headline">
+          ¶
+         </a>
+        </h1>
+        <p>
+         The
+         <cite>
+          adapters
+         </cite>
+         subpackage provides integrations for data providers, brokerages, and exchanges.
+        </p>
+        <p>
+         Generally each integration will implement lower level HTTP REST and/or WebSocket clients for the
 exchange/venue API, which the rest of the components can then be built on top of.
-       </p>
-       <div class="toctree-wrapper compound">
-       </div>
+        </p>
+        <div class="toctree-wrapper compound">
+        </div>
+       </section>
       </article>
      </div>
     </div>

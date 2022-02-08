@@ -3,6 +3,7 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
@@ -65,11 +66,20 @@
   </script>
   <script src="../_static/doctools.js">
   </script>
-  <script src="../_static/togglebutton.js">
-  </script>
   <script src="../_static/clipboard.min.js">
   </script>
   <script src="../_static/copybutton.js">
+  </script>
+  <script>
+   let toggleHintShow = 'Click to show';
+  </script>
+  <script>
+   let toggleHintHide = 'Click to hide';
+  </script>
+  <script>
+   let toggleOpenOnPrint = 'true';
+  </script>
+  <script src="../_static/togglebutton.js">
   </script>
   <script>
    var togglebuttonSelector = '.toggle, .admonition.dropdown';
@@ -169,27 +179,27 @@
     <div class="md-tabs__inner md-grid">
      <ul class="md-tabs__list">
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/1_getting_started/0_index.html">
+       <a class="md-tabs__link" href="/1_getting_started/0_index.html">
         Getting Started
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/2_user_guide/0_index.html">
+       <a class="md-tabs__link" href="/2_user_guide/0_index.html">
         User Guide
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/3_api_reference/0_index.html">
+       <a class="md-tabs__link" href="/3_api_reference/0_index.html">
         API Reference
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/4_integrations/0_index.html">
+       <a class="md-tabs__link" href="/4_integrations/0_index.html">
         Integrations
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/5_developer_guide/0_index.html">
+       <a class="md-tabs__link" href="/5_developer_guide/0_index.html">
         Developer Guide
        </a>
       </li>
@@ -470,464 +480,44 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <span id="message-bus">
-       </span>
-       <h1 id="3-api-reference-msgbus--page-root">
-        Message Bus
-        <a class="headerlink" href="#3-api-reference-msgbus--page-root" title="Permalink to this headline">
-         ¶
-        </a>
-       </h1>
-       <p>
-        The
-        <cite>
-         msgbus
-        </cite>
-        subpackage provides a universal message bus for connecting system components in a
-loosely coupled way.
-       </p>
-       <h2 id="id1">
-        Message Bus
-        <a class="headerlink" href="#id1" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <span class="target" id="module-nautilus_trader.msgbus.bus">
-       </span>
-       <dl class="py class">
-        <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus">
-         <em class="property">
-          <span class="pre">
-           class
-          </span>
-          <span class="w">
-          </span>
-         </em>
-         <span class="sig-name descname">
-          <span class="pre">
-           MessageBus
-          </span>
-         </span>
-         <span class="sig-paren">
-          (
-         </span>
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            TraderId
-           </span>
-           <span class="pre">
-            trader_id
-           </span>
-          </span>
-         </em>
-         ,
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            Clock
-           </span>
-           <span class="pre">
-            clock
-           </span>
-          </span>
-         </em>
-         ,
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            Logger
-           </span>
-           <span class="pre">
-            logger
-           </span>
-          </span>
-         </em>
-         ,
-         <em class="sig-param">
-          <span class="n">
-           <span class="pre">
-            unicode
-           </span>
-           <span class="pre">
-            name=None
-           </span>
-          </span>
-         </em>
-         <span class="sig-paren">
-          )
-         </span>
-         <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus" title="Permalink to this definition">
+       <section class="tex2jax_ignore mathjax_ignore" id="module-nautilus_trader.msgbus">
+        <span id="message-bus">
+        </span>
+        <h1 id="3-api-reference-msgbus--page-root">
+         Message Bus
+         <a class="headerlink" href="#3-api-reference-msgbus--page-root" title="Permalink to this headline">
           ¶
          </a>
-        </dt>
-        <dd>
-         <p>
-          Bases:
-          <code class="xref py py-class docutils literal notranslate">
-           <span class="pre">
-            object
-           </span>
-          </code>
-         </p>
-         <p>
-          Provides a generic message bus to facilitate various messaging patterns.
-         </p>
-         <p>
-          The bus provides both a producer and consumer API for Pub/Sub, Req/Rep, as
-well as direct point-to-point messaging to registered endpoints.
-         </p>
-         <dl class="simple">
-          <dt>
-           Pub/Sub wildcard patterns for hierarchical topics are possible:
-          </dt>
-          <dd>
-           <ul class="simple">
-            <li>
-             <p>
-              <cite>
-               *
-              </cite>
-              asterisk represents one or more characters in a pattern.
-             </p>
-            </li>
-            <li>
-             <p>
-              <cite>
-               ?
-              </cite>
-              question mark represents a single character in a pattern.
-             </p>
-            </li>
-           </ul>
-          </dd>
-         </dl>
-         <p>
-          The asterisk in a wildcard matches any character zero or more times. For
-example,
-          <cite>
-           comp*
-          </cite>
-          matches anything beginning with
-          <cite>
-           comp
-          </cite>
-          which means
-          <cite>
-           comp
-          </cite>
-          ,
-          <cite>
-           complete
-          </cite>
-          , and
-          <cite>
-           computer
-          </cite>
-          are all matched.
-         </p>
-         <p>
-          A question mark matches a single character once. For example,
-          <cite>
-           c?mp
-          </cite>
-          matches
-          <cite>
-           camp
-          </cite>
-          and
-          <cite>
-           comp
-          </cite>
-          . The question mark can also be used more than once.
-For example,
-          <cite>
-           c??p
-          </cite>
-          would match both of the above examples and
-          <cite>
-           coop
-          </cite>
-          .
-         </p>
-         <dl class="field-list simple">
-          <dt class="field-odd">
-           Parameters
-          </dt>
-          <dd class="field-odd">
-           <ul class="simple">
-            <li>
-             <p>
-              <strong>
-               trader_id
-              </strong>
-              (
-              <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId">
-               <em>
-                TraderId
-               </em>
-              </a>
-              ) – The trader ID associated with the message bus.
-             </p>
-            </li>
-            <li>
-             <p>
-              <strong>
-               clock
-              </strong>
-              (
-              <a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock">
-               <em>
-                Clock
-               </em>
-              </a>
-              ) – The clock for the message bus.
-             </p>
-            </li>
-            <li>
-             <p>
-              <strong>
-               logger
-              </strong>
-              (
-              <a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
-               <em>
-                Logger
-               </em>
-              </a>
-              ) – The logger for the message bus.
-             </p>
-            </li>
-            <li>
-             <p>
-              <strong>
-               name
-              </strong>
-              (
-              <em>
-               str
-              </em>
-              <em>
-               ,
-              </em>
-              <em>
-               optional
-              </em>
-              ) – The custom name for the message bus.
-             </p>
-            </li>
-           </ul>
-          </dd>
-          <dt class="field-even">
-           Raises
-          </dt>
-          <dd class="field-even">
-           <p>
-            <strong>
-             ValueError
-            </strong>
-            – If
-            <cite>
-             name
-            </cite>
-            is not
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              None
-             </span>
-            </code>
-            and not a valid string.
-           </p>
-          </dd>
-         </dl>
-         <div class="admonition warning">
-          <p class="admonition-title">
-           Warning
-          </p>
-          <p>
-           This message bus is not thread-safe and must be called from the same thread
-as the event loop.
-          </p>
-         </div>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.deregister">
-           <span class="sig-name descname">
+        </h1>
+        <p>
+         The
+         <cite>
+          msgbus
+         </cite>
+         subpackage provides a universal message bus for connecting system components in a
+loosely coupled way.
+        </p>
+        <section id="id1">
+         <h2 id="id1">
+          Message Bus
+          <a class="headerlink" href="#id1" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <span class="target" id="module-nautilus_trader.msgbus.bus">
+         </span>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus">
+           <em class="property">
             <span class="pre">
-             deregister
+             class
             </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="pre">
-             self,
-            </span>
-            <span class="pre">
-             unicode
-            </span>
-            <span class="pre">
-             endpoint,
-            </span>
-            <span class="pre">
-             handler:
-            </span>
-            <span class="pre">
-             Callable[[Any],
-            </span>
-            <span class="pre">
-             None]
+            <span class="w">
             </span>
            </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              void
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.deregister" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Deregister the given
-            <cite>
-             handler
-            </cite>
-            from the
-            <cite>
-             endpoint
-            </cite>
-            address.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
-            </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 endpoint
-                </strong>
-                (
-                <em>
-                 str
-                </em>
-                ) – The endpoint address to deregister.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 handler
-                </strong>
-                (
-                <em>
-                 Callable
-                </em>
-                <em>
-                 [
-                </em>
-                <em>
-                 [
-                </em>
-                <em>
-                 Any
-                </em>
-                <em>
-                 ]
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 None
-                </em>
-                <em>
-                 ]
-                </em>
-                ) – The handler to deregister.
-               </p>
-              </li>
-             </ul>
-            </dd>
-            <dt class="field-even">
-             Raises
-            </dt>
-            <dd class="field-even">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 endpoint
-                </cite>
-                is not a valid string.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 handler
-                </cite>
-                is not of type
-                <cite>
-                 Callable
-                </cite>
-                .
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 KeyError
-                </strong>
-                – If
-                <cite>
-                 endpoint
-                </cite>
-                is not registered.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 handler
-                </cite>
-                is not registered at the endpoint.
-               </p>
-              </li>
-             </ul>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.endpoints">
            <span class="sig-name descname">
             <span class="pre">
-             endpoints
+             MessageBus
             </span>
            </span>
            <span class="sig-paren">
@@ -936,59 +526,32 @@ as the event loop.
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              self
+              TraderId
+             </span>
+             <span class="pre">
+              trader_id
              </span>
             </span>
            </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              list
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.endpoints" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Return all endpoint addresses registered with the message bus.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <em>
-               list[str]
-              </em>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.has_subscribers">
-           <span class="sig-name descname">
-            <span class="pre">
-             has_subscribers
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
+           ,
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              self
+              Clock
+             </span>
+             <span class="pre">
+              clock
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Logger
+             </span>
+             <span class="pre">
+              logger
              </span>
             </span>
            </em>
@@ -999,32 +562,103 @@ as the event loop.
               unicode
              </span>
              <span class="pre">
-              pattern=None
+              name=None
              </span>
             </span>
            </em>
            <span class="sig-paren">
             )
            </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              bool
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.has_subscribers" title="Permalink to this definition">
+           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus" title="Permalink to this definition">
             ¶
            </a>
           </dt>
           <dd>
            <p>
-            If the message bus has subscribers for the give topic
+            Bases:
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              object
+             </span>
+            </code>
+           </p>
+           <p>
+            Provides a generic message bus to facilitate various messaging patterns.
+           </p>
+           <p>
+            The bus provides both a producer and consumer API for Pub/Sub, Req/Rep, as
+well as direct point-to-point messaging to registered endpoints.
+           </p>
+           <dl class="simple">
+            <dt>
+             Pub/Sub wildcard patterns for hierarchical topics are possible:
+            </dt>
+            <dd>
+             <ul class="simple">
+              <li>
+               <p>
+                <cite>
+                 *
+                </cite>
+                asterisk represents one or more characters in a pattern.
+               </p>
+              </li>
+              <li>
+               <p>
+                <cite>
+                 ?
+                </cite>
+                question mark represents a single character in a pattern.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <p>
+            The asterisk in a wildcard matches any character zero or more times. For
+example,
             <cite>
-             pattern
+             comp*
+            </cite>
+            matches anything beginning with
+            <cite>
+             comp
+            </cite>
+            which means
+            <cite>
+             comp
+            </cite>
+            ,
+            <cite>
+             complete
+            </cite>
+            , and
+            <cite>
+             computer
+            </cite>
+            are all matched.
+           </p>
+           <p>
+            A question mark matches a single character once. For example,
+            <cite>
+             c?mp
+            </cite>
+            matches
+            <cite>
+             camp
+            </cite>
+            and
+            <cite>
+             comp
+            </cite>
+            . The question mark can also be used more than once.
+For example,
+            <cite>
+             c??p
+            </cite>
+            would match both of the above examples and
+            <cite>
+             coop
             </cite>
             .
            </p>
@@ -1033,730 +667,1681 @@ as the event loop.
              Parameters
             </dt>
             <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 trader_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId">
+                 <em>
+                  TraderId
+                 </em>
+                </a>
+                ) – The trader ID associated with the message bus.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 clock
+                </strong>
+                (
+                <a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock">
+                 <em>
+                  Clock
+                 </em>
+                </a>
+                ) – The clock for the message bus.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 logger
+                </strong>
+                (
+                <a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+                 <em>
+                  Logger
+                 </em>
+                </a>
+                ) – The logger for the message bus.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 name
+                </strong>
+                (
+                <em>
+                 str
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The custom name for the message bus.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
              <p>
               <strong>
-               pattern
+               ValueError
               </strong>
-              (
-              <em>
-               str
-              </em>
-              <em>
-               ,
-              </em>
-              <em>
-               optional
-              </em>
-              ) – The topic filter. May include wildcard characters
+              – If
               <cite>
-               *
+               name
               </cite>
-              and
-              <cite>
-               ?
-              </cite>
-              .
-If
+              is not
               <code class="docutils literal notranslate">
                <span class="pre">
                 None
                </span>
               </code>
-              then query is for
-              <strong>
-               all
-              </strong>
-              topics.
-             </p>
-            </dd>
-            <dt class="field-even">
-             Returns
-            </dt>
-            <dd class="field-even">
-             <p>
-              <em>
-               bool
-              </em>
+              and not a valid string.
              </p>
             </dd>
            </dl>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.pub_count">
-           <span class="sig-name descname">
-            <span class="pre">
-             pub_count
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.pub_count" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The count of messages published by the bus.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
+           <div class="admonition warning">
+            <p class="admonition-title">
+             Warning
+            </p>
+            <p>
+             This message bus is not thread-safe and must be called from the same thread
+as the event loop.
+            </p>
+           </div>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.deregister">
+             <span class="sig-name descname">
+              <span class="pre">
+               deregister
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="pre">
+               self,
+              </span>
+              <span class="pre">
+               unicode
+              </span>
+              <span class="pre">
+               endpoint,
+              </span>
+              <span class="pre">
+               handler:
+              </span>
+              <span class="pre">
+               Callable[[Any],
+              </span>
+              <span class="pre">
+               None]
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.deregister" title="Permalink to this definition">
+              ¶
+             </a>
             </dt>
-            <dd class="field-odd">
+            <dd>
              <p>
+              Deregister the given
               <cite>
-               int
+               handler
               </cite>
+              from the
+              <cite>
+               endpoint
+              </cite>
+              address.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   endpoint
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  ) – The endpoint address to deregister.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   handler
+                  </strong>
+                  (
+                  <em>
+                   Callable
+                  </em>
+                  <em>
+                   [
+                  </em>
+                  <em>
+                   [
+                  </em>
+                  <em>
+                   Any
+                  </em>
+                  <em>
+                   ]
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   None
+                  </em>
+                  <em>
+                   ]
+                  </em>
+                  ) – The handler to deregister.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   endpoint
+                  </cite>
+                  is not a valid string.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   handler
+                  </cite>
+                  is not of type
+                  <cite>
+                   Callable
+                  </cite>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   KeyError
+                  </strong>
+                  – If
+                  <cite>
+                   endpoint
+                  </cite>
+                  is not registered.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   handler
+                  </cite>
+                  is not registered at the endpoint.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.publish">
-           <span class="sig-name descname">
-            <span class="pre">
-             publish
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              self
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.endpoints">
+             <span class="sig-name descname">
+              <span class="pre">
+               endpoints
+              </span>
              </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              unicode
+             <span class="sig-paren">
+              (
              </span>
-             <span class="pre">
-              topic
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
              </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              msg:
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                list
+               </span>
+              </span>
              </span>
-             <span class="pre">
-              Any
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              void
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.publish" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Publish the given message for the given
-            <cite>
-             topic
-            </cite>
-            .
-           </p>
-           <p>
-            Subscription handlers will receive the message in priority order
-(highest first).
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.endpoints" title="Permalink to this definition">
+              ¶
+             </a>
             </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
+            <dd>
+             <p>
+              Return all endpoint addresses registered with the message bus.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 list[str]
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.has_subscribers">
+             <span class="sig-name descname">
+              <span class="pre">
+               has_subscribers
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                unicode
+               </span>
+               <span class="pre">
+                pattern=None
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.has_subscribers" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the message bus has subscribers for the give topic
+              <cite>
+               pattern
+              </cite>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
                <p>
                 <strong>
-                 topic
+                 pattern
                 </strong>
                 (
                 <em>
                  str
-                </em>
-                ) – The topic to publish on.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 msg
-                </strong>
-                (
-                <em>
-                 object
-                </em>
-                ) – The message to publish.
-               </p>
-              </li>
-             </ul>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.register">
-           <span class="sig-name descname">
-            <span class="pre">
-             register
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="pre">
-             self,
-            </span>
-            <span class="pre">
-             unicode
-            </span>
-            <span class="pre">
-             endpoint,
-            </span>
-            <span class="pre">
-             handler:
-            </span>
-            <span class="pre">
-             Callable[[Any],
-            </span>
-            <span class="pre">
-             None]
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              void
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.register" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Register the given
-            <cite>
-             handler
-            </cite>
-            to receive messages at the
-            <cite>
-             endpoint
-            </cite>
-            address.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
-            </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 endpoint
-                </strong>
-                (
-                <em>
-                 str
-                </em>
-                ) – The endpoint address to register.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 handler
-                </strong>
-                (
-                <em>
-                 Callable
-                </em>
-                <em>
-                 [
-                </em>
-                <em>
-                 [
-                </em>
-                <em>
-                 Any
-                </em>
-                <em>
-                 ]
                 </em>
                 <em>
                  ,
                 </em>
                 <em>
-                 None
+                 optional
                 </em>
-                <em>
-                 ]
-                </em>
-                ) – The handler for the registration.
-               </p>
-              </li>
-             </ul>
-            </dd>
-            <dt class="field-even">
-             Raises
-            </dt>
-            <dd class="field-even">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
+                ) – The topic filter. May include wildcard characters
                 <cite>
-                 endpoint
+                 *
                 </cite>
-                is not a valid string.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
+                and
                 <cite>
-                 handler
-                </cite>
-                is not of type
-                <cite>
-                 Callable
+                 ?
                 </cite>
                 .
-               </p>
-              </li>
-              <li>
-               <p>
+If
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                then query is for
                 <strong>
-                 KeyError
+                 all
                 </strong>
-                – If
-                <cite>
-                 endpoint
-                </cite>
-                already registered.
+                topics.
                </p>
-              </li>
-             </ul>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.req_count">
-           <span class="sig-name descname">
-            <span class="pre">
-             req_count
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.req_count" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The count of requests processed by the bus.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               int
-              </cite>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.request">
-           <span class="sig-name descname">
-            <span class="pre">
-             request
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              self
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              unicode
-             </span>
-             <span class="pre">
-              endpoint
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Request
-             </span>
-             <span class="pre">
-              request
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              void
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.request" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Handle the given
-            <cite>
-             request
-            </cite>
-            .
-           </p>
-           <p>
-            Will log an error if the correlation ID already exists.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
-            </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
                <p>
-                <strong>
-                 endpoint
-                </strong>
-                (
                 <em>
-                 str
+                 bool
                 </em>
-                ) – The endpoint address to send the request to.
                </p>
-              </li>
-              <li>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.pub_count">
+             <span class="sig-name descname">
+              <span class="pre">
+               pub_count
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.pub_count" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The count of messages published by the bus.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.publish">
+             <span class="sig-name descname">
+              <span class="pre">
+               publish
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                unicode
+               </span>
+               <span class="pre">
+                topic
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                msg:
+               </span>
+               <span class="pre">
+                Any
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.publish" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Publish the given message for the given
+              <cite>
+               topic
+              </cite>
+              .
+             </p>
+             <p>
+              Subscription handlers will receive the message in priority order
+(highest first).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   topic
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  ) – The topic to publish on.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   msg
+                  </strong>
+                  (
+                  <em>
+                   object
+                  </em>
+                  ) – The message to publish.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.register">
+             <span class="sig-name descname">
+              <span class="pre">
+               register
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="pre">
+               self,
+              </span>
+              <span class="pre">
+               unicode
+              </span>
+              <span class="pre">
+               endpoint,
+              </span>
+              <span class="pre">
+               handler:
+              </span>
+              <span class="pre">
+               Callable[[Any],
+              </span>
+              <span class="pre">
+               None]
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.register" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Register the given
+              <cite>
+               handler
+              </cite>
+              to receive messages at the
+              <cite>
+               endpoint
+              </cite>
+              address.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   endpoint
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  ) – The endpoint address to register.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   handler
+                  </strong>
+                  (
+                  <em>
+                   Callable
+                  </em>
+                  <em>
+                   [
+                  </em>
+                  <em>
+                   [
+                  </em>
+                  <em>
+                   Any
+                  </em>
+                  <em>
+                   ]
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   None
+                  </em>
+                  <em>
+                   ]
+                  </em>
+                  ) – The handler for the registration.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   endpoint
+                  </cite>
+                  is not a valid string.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   handler
+                  </cite>
+                  is not of type
+                  <cite>
+                   Callable
+                  </cite>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   KeyError
+                  </strong>
+                  – If
+                  <cite>
+                   endpoint
+                  </cite>
+                  already registered.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.req_count">
+             <span class="sig-name descname">
+              <span class="pre">
+               req_count
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.req_count" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The count of requests processed by the bus.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.request">
+             <span class="sig-name descname">
+              <span class="pre">
+               request
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                unicode
+               </span>
+               <span class="pre">
+                endpoint
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Request
+               </span>
+               <span class="pre">
+                request
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.request" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Handle the given
+              <cite>
+               request
+              </cite>
+              .
+             </p>
+             <p>
+              Will log an error if the correlation ID already exists.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   endpoint
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  ) – The endpoint address to send the request to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   request
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.message.Request" title="nautilus_trader.core.message.Request">
+                   <em>
+                    Request
+                   </em>
+                  </a>
+                  ) – The request to handle.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.res_count">
+             <span class="sig-name descname">
+              <span class="pre">
+               res_count
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.res_count" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The count of responses processed by the bus.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.response">
+             <span class="sig-name descname">
+              <span class="pre">
+               response
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Response
+               </span>
+               <span class="pre">
+                response
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.response" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Handle the given
+              <cite>
+               response
+              </cite>
+              .
+             </p>
+             <p>
+              Will log an error if the correlation ID is not found.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
                <p>
                 <strong>
-                 request
+                 response
                 </strong>
                 (
-                <a class="reference internal" href="core.html#nautilus_trader.core.message.Request" title="nautilus_trader.core.message.Request">
+                <a class="reference internal" href="core.html#nautilus_trader.core.message.Response" title="nautilus_trader.core.message.Response">
                  <em>
-                  Request
+                  Response
                  </em>
                 </a>
-                ) – The request to handle.
+                ) – The response to handle
                </p>
-              </li>
-             </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.res_count">
-           <span class="sig-name descname">
-            <span class="pre">
-             res_count
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.res_count" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The count of responses processed by the bus.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               int
-              </cite>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.response">
-           <span class="sig-name descname">
-            <span class="pre">
-             response
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              self
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.send">
+             <span class="sig-name descname">
+              <span class="pre">
+               send
+              </span>
              </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              Response
-             </span>
-             <span class="pre">
-              response
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              void
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.response" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Handle the given
-            <cite>
-             response
-            </cite>
-            .
-           </p>
-           <p>
-            Will log an error if the correlation ID is not found.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <strong>
-               response
-              </strong>
+             <span class="sig-paren">
               (
-              <a class="reference internal" href="core.html#nautilus_trader.core.message.Response" title="nautilus_trader.core.message.Response">
-               <em>
-                Response
-               </em>
-              </a>
-              ) – The response to handle
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                unicode
+               </span>
+               <span class="pre">
+                endpoint
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                msg:
+               </span>
+               <span class="pre">
+                Any
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.send" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Send the given message to the given
+              <cite>
+               endpoint
+              </cite>
+              address.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   endpoint
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  ) – The endpoint address to send the message to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   msg
+                  </strong>
+                  (
+                  <em>
+                   object
+                  </em>
+                  ) – The message to send.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.send">
-           <span class="sig-name descname">
-            <span class="pre">
-             send
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              self
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.sent_count">
+             <span class="sig-name descname">
+              <span class="pre">
+               sent_count
+              </span>
              </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              unicode
-             </span>
-             <span class="pre">
-              endpoint
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              msg:
-             </span>
-             <span class="pre">
-              Any
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              void
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.send" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Send the given message to the given
-            <cite>
-             endpoint
-            </cite>
-            address.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.sent_count" title="Permalink to this definition">
+              ¶
+             </a>
             </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
+            <dd>
+             <p>
+              The count of messages sent through the bus.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.subscribe">
+             <span class="sig-name descname">
+              <span class="pre">
+               subscribe
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="pre">
+               self,
+              </span>
+              <span class="pre">
+               unicode
+              </span>
+              <span class="pre">
+               topic,
+              </span>
+              <span class="pre">
+               handler:
+              </span>
+              <span class="pre">
+               Callable[[Any],
+              </span>
+              <span class="pre">
+               None],
+              </span>
+              <span class="pre">
+               int
+              </span>
+              <span class="pre">
+               priority=0
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.subscribe" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Subscribe to the given message
+              <cite>
+               topic
+              </cite>
+              with the given callback
+              <cite>
+               handler
+              </cite>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   topic
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  ) – The topic for the subscription. May include wildcard characters
+                  <cite>
+                   *
+                  </cite>
+                  and
+                  <cite>
+                   ?
+                  </cite>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   handler
+                  </strong>
+                  (
+                  <em>
+                   Callable
+                  </em>
+                  <em>
+                   [
+                  </em>
+                  <em>
+                   [
+                  </em>
+                  <em>
+                   Any
+                  </em>
+                  <em>
+                   ]
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   None
+                  </em>
+                  <em>
+                   ]
+                  </em>
+                  ) – The handler for the subscription.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   priority
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The priority for the subscription. Determines the ordering of
+handlers receiving messages being processed, higher priority
+handlers will receive messages prior to lower priority handlers.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   topic
+                  </cite>
+                  is not a valid string.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   handler
+                  </cite>
+                  is not of type
+                  <cite>
+                   Callable
+                  </cite>
+                  .
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+             <div class="admonition warning">
+              <p class="admonition-title">
+               Warning
+              </p>
+              <p>
+               Assigning priority handling is an advanced feature which
+               <em>
+                shouldn’t
+normally be needed by most users
+               </em>
+               .
+               <strong>
+                Only assign a higher priority to the
+subscription if you are certain of what you’re doing
+               </strong>
+               . If an inappropriate
+priority is assigned then the handler may receive messages before core
+system components have been able to process necessary calculations and
+produce potential side effects for logically sound behaviour.
+              </p>
+             </div>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.subscriptions">
+             <span class="sig-name descname">
+              <span class="pre">
+               subscriptions
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                unicode
+               </span>
+               <span class="pre">
+                pattern=None
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                list
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.subscriptions" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return all subscriptions matching the given topic
+              <cite>
+               pattern
+              </cite>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
                <p>
                 <strong>
-                 endpoint
+                 pattern
                 </strong>
                 (
                 <em>
                  str
                 </em>
-                ) – The endpoint address to send the message to.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 msg
-                </strong>
-                (
                 <em>
-                 object
+                 ,
                 </em>
-                ) – The message to send.
+                <em>
+                 optional
+                </em>
+                ) – The topic pattern filter. May include wildcard characters
+                <cite>
+                 *
+                </cite>
+                and
+                <cite>
+                 ?
+                </cite>
+                .
+If
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                then query is for
+                <strong>
+                 all
+                </strong>
+                topics.
                </p>
-              </li>
-             </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 list[Subscription]
+                </em>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.sent_count">
-           <span class="sig-name descname">
-            <span class="pre">
-             sent_count
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.sent_count" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The count of messages sent through the bus.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.topics">
+             <span class="sig-name descname">
+              <span class="pre">
+               topics
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                list
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.topics" title="Permalink to this definition">
+              ¶
+             </a>
             </dt>
-            <dd class="field-odd">
+            <dd>
              <p>
-              <cite>
-               int
-              </cite>
+              Return all topics with active subscribers.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 list[str]
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.trader_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               trader_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.trader_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The trader ID associated with the bus.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TraderId
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.unsubscribe">
+             <span class="sig-name descname">
+              <span class="pre">
+               unsubscribe
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="pre">
+               self,
+              </span>
+              <span class="pre">
+               unicode
+              </span>
+              <span class="pre">
+               topic,
+              </span>
+              <span class="pre">
+               handler:
+              </span>
+              <span class="pre">
+               Callable[[Any],
+              </span>
+              <span class="pre">
+               None]
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.unsubscribe" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Unsubscribe the given callback
+              <cite>
+               handler
+              </cite>
+              from the given message
+              <cite>
+               topic
+              </cite>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   topic
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The topic to unsubscribe from. May include wildcard characters
+                  <cite>
+                   *
+                  </cite>
+                  and
+                  <cite>
+                   ?
+                  </cite>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   handler
+                  </strong>
+                  (
+                  <em>
+                   Callable
+                  </em>
+                  <em>
+                   [
+                  </em>
+                  <em>
+                   [
+                  </em>
+                  <em>
+                   Any
+                  </em>
+                  <em>
+                   ]
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   None
+                  </em>
+                  <em>
+                   ]
+                  </em>
+                  ) – The handler for the subscription.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   topic
+                  </cite>
+                  is not a valid string.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   handler
+                  </cite>
+                  is not of type
+                  <cite>
+                   Callable
+                  </cite>
+                  .
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
           </dd>
          </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.subscribe">
+        </section>
+        <section id="module-nautilus_trader.msgbus.subscription">
+         <span id="subscription">
+         </span>
+         <h2 id="module-nautilus_trader.msgbus.subscription">
+          Subscription
+          <a class="headerlink" href="#module-nautilus_trader.msgbus.subscription" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
            <span class="sig-name descname">
             <span class="pre">
-             subscribe
+             Subscription
             </span>
            </span>
            <span class="sig-paren">
             (
            </span>
            <em class="sig-param">
-            <span class="pre">
-             self,
-            </span>
             <span class="pre">
              unicode
             </span>
@@ -1782,31 +2367,25 @@ If
            <span class="sig-paren">
             )
            </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              void
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.subscribe" title="Permalink to this definition">
+           <a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription" title="Permalink to this definition">
             ¶
            </a>
           </dt>
           <dd>
            <p>
-            Subscribe to the given message
-            <cite>
-             topic
-            </cite>
-            with the given callback
-            <cite>
-             handler
-            </cite>
-            .
+            Bases:
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              object
+             </span>
+            </code>
+           </p>
+           <p>
+            Represents a subscription to a particular topic.
+           </p>
+           <p>
+            This is an internal class intended to be used by the message bus to organize
+topics and their subscribers.
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">
@@ -1849,9 +2428,11 @@ If
                 <em>
                  [
                 </em>
-                <em>
-                 Any
-                </em>
+                <a class="reference internal" href="core.html#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message">
+                 <em>
+                  Message
+                 </em>
+                </a>
                 <em>
                  ]
                 </em>
@@ -1876,15 +2457,7 @@ If
                 <em>
                  int
                 </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The priority for the subscription. Determines the ordering of
-handlers receiving messages being processed, higher priority
-handlers will receive messages prior to lower priority handlers.
+                ) – The priority for the subscription.
                </p>
               </li>
              </ul>
@@ -1922,351 +2495,6 @@ handlers will receive messages prior to lower priority handlers.
                 .
                </p>
               </li>
-             </ul>
-            </dd>
-           </dl>
-           <div class="admonition warning">
-            <p class="admonition-title">
-             Warning
-            </p>
-            <p>
-             Assigning priority handling is an advanced feature which
-             <em>
-              shouldn’t
-normally be needed by most users
-             </em>
-             .
-             <strong>
-              Only assign a higher priority to the
-subscription if you are certain of what you’re doing
-             </strong>
-             . If an inappropriate
-priority is assigned then the handler may receive messages before core
-system components have been able to process necessary calculations and
-produce potential side effects for logically sound behaviour.
-            </p>
-           </div>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.subscriptions">
-           <span class="sig-name descname">
-            <span class="pre">
-             subscriptions
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              self
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              unicode
-             </span>
-             <span class="pre">
-              pattern=None
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              list
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.subscriptions" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Return all subscriptions matching the given topic
-            <cite>
-             pattern
-            </cite>
-            .
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <strong>
-               pattern
-              </strong>
-              (
-              <em>
-               str
-              </em>
-              <em>
-               ,
-              </em>
-              <em>
-               optional
-              </em>
-              ) – The topic pattern filter. May include wildcard characters
-              <cite>
-               *
-              </cite>
-              and
-              <cite>
-               ?
-              </cite>
-              .
-If
-              <code class="docutils literal notranslate">
-               <span class="pre">
-                None
-               </span>
-              </code>
-              then query is for
-              <strong>
-               all
-              </strong>
-              topics.
-             </p>
-            </dd>
-            <dt class="field-even">
-             Returns
-            </dt>
-            <dd class="field-even">
-             <p>
-              <em>
-               list[Subscription]
-              </em>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.topics">
-           <span class="sig-name descname">
-            <span class="pre">
-             topics
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              self
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              list
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.topics" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Return all topics with active subscribers.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <em>
-               list[str]
-              </em>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.trader_id">
-           <span class="sig-name descname">
-            <span class="pre">
-             trader_id
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.trader_id" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The trader ID associated with the bus.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               TraderId
-              </cite>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py method">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.unsubscribe">
-           <span class="sig-name descname">
-            <span class="pre">
-             unsubscribe
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="pre">
-             self,
-            </span>
-            <span class="pre">
-             unicode
-            </span>
-            <span class="pre">
-             topic,
-            </span>
-            <span class="pre">
-             handler:
-            </span>
-            <span class="pre">
-             Callable[[Any],
-            </span>
-            <span class="pre">
-             None]
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              void
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.unsubscribe" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Unsubscribe the given callback
-            <cite>
-             handler
-            </cite>
-            from the given message
-            <cite>
-             topic
-            </cite>
-            .
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
-            </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 topic
-                </strong>
-                (
-                <em>
-                 str
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The topic to unsubscribe from. May include wildcard characters
-                <cite>
-                 *
-                </cite>
-                and
-                <cite>
-                 ?
-                </cite>
-                .
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 handler
-                </strong>
-                (
-                <em>
-                 Callable
-                </em>
-                <em>
-                 [
-                </em>
-                <em>
-                 [
-                </em>
-                <em>
-                 Any
-                </em>
-                <em>
-                 ]
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 None
-                </em>
-                <em>
-                 ]
-                </em>
-                ) – The handler for the subscription.
-               </p>
-              </li>
-             </ul>
-            </dd>
-            <dt class="field-even">
-             Raises
-            </dt>
-            <dd class="field-even">
-             <ul class="simple">
               <li>
                <p>
                 <strong>
@@ -2274,324 +2502,112 @@ If
                 </strong>
                 – If
                 <cite>
-                 topic
+                 priority
                 </cite>
-                is not a valid string.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 handler
-                </cite>
-                is not of type
-                <cite>
-                 Callable
-                </cite>
-                .
+                is negative (&lt; 0).
                </p>
               </li>
              </ul>
             </dd>
            </dl>
-          </dd>
-         </dl>
-        </dd>
-       </dl>
-       <span id="subscription">
-       </span>
-       <h2 id="module-nautilus_trader.msgbus.subscription">
-        Subscription
-        <a class="headerlink" href="#module-nautilus_trader.msgbus.subscription" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <dl class="py class">
-        <dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription">
-         <em class="property">
-          <span class="pre">
-           class
-          </span>
-          <span class="w">
-          </span>
-         </em>
-         <span class="sig-name descname">
-          <span class="pre">
-           Subscription
-          </span>
-         </span>
-         <span class="sig-paren">
-          (
-         </span>
-         <em class="sig-param">
-          <span class="pre">
-           unicode
-          </span>
-          <span class="pre">
-           topic,
-          </span>
-          <span class="pre">
-           handler:
-          </span>
-          <span class="pre">
-           Callable[[Any],
-          </span>
-          <span class="pre">
-           None],
-          </span>
-          <span class="pre">
-           int
-          </span>
-          <span class="pre">
-           priority=0
-          </span>
-         </em>
-         <span class="sig-paren">
-          )
-         </span>
-         <a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription" title="Permalink to this definition">
-          ¶
-         </a>
-        </dt>
-        <dd>
-         <p>
-          Bases:
-          <code class="xref py py-class docutils literal notranslate">
-           <span class="pre">
-            object
-           </span>
-          </code>
-         </p>
-         <p>
-          Represents a subscription to a particular topic.
-         </p>
-         <p>
-          This is an internal class intended to be used by the message bus to organize
-topics and their subscribers.
-         </p>
-         <dl class="field-list simple">
-          <dt class="field-odd">
-           Parameters
-          </dt>
-          <dd class="field-odd">
-           <ul class="simple">
-            <li>
-             <p>
-              <strong>
-               topic
-              </strong>
-              (
-              <em>
-               str
-              </em>
-              ) – The topic for the subscription. May include wildcard characters
-              <cite>
-               *
-              </cite>
-              and
-              <cite>
-               ?
-              </cite>
-              .
-             </p>
-            </li>
-            <li>
-             <p>
-              <strong>
-               handler
-              </strong>
-              (
-              <em>
-               Callable
-              </em>
-              <em>
-               [
-              </em>
-              <em>
-               [
-              </em>
-              <a class="reference internal" href="core.html#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message">
-               <em>
-                Message
-               </em>
-              </a>
-              <em>
-               ]
-              </em>
-              <em>
-               ,
-              </em>
-              <em>
-               None
-              </em>
-              <em>
-               ]
-              </em>
-              ) – The handler for the subscription.
-             </p>
-            </li>
-            <li>
-             <p>
-              <strong>
-               priority
-              </strong>
-              (
-              <em>
-               int
-              </em>
-              ) – The priority for the subscription.
-             </p>
-            </li>
-           </ul>
-          </dd>
-          <dt class="field-even">
-           Raises
-          </dt>
-          <dd class="field-even">
-           <ul class="simple">
-            <li>
-             <p>
-              <strong>
-               ValueError
-              </strong>
-              – If
-              <cite>
-               topic
-              </cite>
-              is not a valid string.
-             </p>
-            </li>
-            <li>
-             <p>
-              <strong>
-               ValueError
-              </strong>
-              – If
-              <cite>
-               handler
-              </cite>
-              is not of type
-              <cite>
-               Callable
-              </cite>
-              .
-             </p>
-            </li>
-            <li>
-             <p>
-              <strong>
-               ValueError
-              </strong>
-              – If
-              <cite>
-               priority
-              </cite>
-              is negative (&lt; 0).
-             </p>
-            </li>
-           </ul>
-          </dd>
-         </dl>
-         <p class="rubric">
-          Notes
-         </p>
-         <p>
-          The subscription equality is determined by the topic and handler,
+           <p class="rubric">
+            Notes
+           </p>
+           <p>
+            The subscription equality is determined by the topic and handler,
 priority is not considered (and could change).
-         </p>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription.handler">
-           <span class="sig-name descname">
-            <span class="pre">
-             handler
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription.handler" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The handler for the subscription.
            </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription.handler">
+             <span class="sig-name descname">
+              <span class="pre">
+               handler
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription.handler" title="Permalink to this definition">
+              ¶
+             </a>
             </dt>
-            <dd class="field-odd">
+            <dd>
              <p>
-              <cite>
-               Callable
-              </cite>
+              The handler for the subscription.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Callable
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription.priority">
+             <span class="sig-name descname">
+              <span class="pre">
+               priority
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription.priority" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The priority for the subscription.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription.topic">
+             <span class="sig-name descname">
+              <span class="pre">
+               topic
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription.topic" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The topic for the subscription.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 str
+                </cite>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
           </dd>
          </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription.priority">
-           <span class="sig-name descname">
-            <span class="pre">
-             priority
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription.priority" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The priority for the subscription.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               int
-              </cite>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription.topic">
-           <span class="sig-name descname">
-            <span class="pre">
-             topic
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription.topic" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            The topic for the subscription.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Returns
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <cite>
-               str
-              </cite>
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-        </dd>
-       </dl>
+        </section>
+       </section>
       </article>
      </div>
     </div>

@@ -3,6 +3,7 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
@@ -65,11 +66,20 @@
   </script>
   <script src="../_static/doctools.js">
   </script>
-  <script src="../_static/togglebutton.js">
-  </script>
   <script src="../_static/clipboard.min.js">
   </script>
   <script src="../_static/copybutton.js">
+  </script>
+  <script>
+   let toggleHintShow = 'Click to show';
+  </script>
+  <script>
+   let toggleHintHide = 'Click to hide';
+  </script>
+  <script>
+   let toggleOpenOnPrint = 'true';
+  </script>
+  <script src="../_static/togglebutton.js">
   </script>
   <script>
    var togglebuttonSelector = '.toggle, .admonition.dropdown';
@@ -169,27 +179,27 @@
     <div class="md-tabs__inner md-grid">
      <ul class="md-tabs__list">
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/1_getting_started/0_index.html">
+       <a class="md-tabs__link" href="/1_getting_started/0_index.html">
         Getting Started
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/2_user_guide/0_index.html">
+       <a class="md-tabs__link" href="/2_user_guide/0_index.html">
         User Guide
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/3_api_reference/0_index.html">
+       <a class="md-tabs__link" href="/3_api_reference/0_index.html">
         API Reference
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/4_integrations/0_index.html">
+       <a class="md-tabs__link" href="/4_integrations/0_index.html">
         Integrations
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/5_developer_guide/0_index.html">
+       <a class="md-tabs__link" href="/5_developer_guide/0_index.html">
         Developer Guide
        </a>
       </li>
@@ -378,71 +388,124 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <h1 id="5-developer-guide-1-environment-setup--page-root">
-        Environment Setup
-        <a class="headerlink" href="#5-developer-guide-1-environment-setup--page-root" title="Permalink to this headline">
-         ¶
-        </a>
-       </h1>
-       <p>
-        For development we recommend using the PyCharm
-        <em>
-         Professional
-        </em>
-        edition IDE, as it interprets Cython syntax. Alternatively, you could use Visual Studio Code with a Cython extension.
-       </p>
-       <p>
-        <a class="reference external" href="https://github.com/pyenv/pyenv">
-         pyenv
-        </a>
-        is the recommended tool for handling Python installations and virtual environments.
-       </p>
-       <p>
-        <a class="reference external" href="https://python-poetry.org/">
-         poetry
-        </a>
-        is the preferred tool for handling all Python package and dev dependencies.
-       </p>
-       <p>
-        <a class="reference external" href="https://pre-commit.com/">
-         pre-commit
-        </a>
-        is used to automatically run various checks, auto-formatters and linting tools at commit.
-       </p>
-       <h2 id="setup">
-        Setup
-        <a class="headerlink" href="#setup" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        The following steps are for UNIX-like systems, and only need to be completed once.
-       </p>
-       <ol>
-        <li>
+       <section class="tex2jax_ignore mathjax_ignore" id="environment-setup">
+        <h1 id="5-developer-guide-1-environment-setup--page-root">
+         Environment Setup
+         <a class="headerlink" href="#5-developer-guide-1-environment-setup--page-root" title="Permalink to this headline">
+          ¶
+         </a>
+        </h1>
+        <p>
+         For development we recommend using the PyCharm
+         <em>
+          Professional
+         </em>
+         edition IDE, as it interprets Cython syntax. Alternatively, you could use Visual Studio Code with a Cython extension.
+        </p>
+        <p>
+         <a class="reference external" href="https://github.com/pyenv/pyenv">
+          pyenv
+         </a>
+         is the recommended tool for handling Python installations and virtual environments.
+        </p>
+        <p>
+         <a class="reference external" href="https://python-poetry.org/">
+          poetry
+         </a>
+         is the preferred tool for handling all Python package and dev dependencies.
+        </p>
+        <p>
+         <a class="reference external" href="https://pre-commit.com/">
+          pre-commit
+         </a>
+         is used to automatically run various checks, auto-formatters and linting tools at commit.
+        </p>
+        <section id="setup">
+         <h2 id="setup">
+          Setup
+          <a class="headerlink" href="#setup" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
          <p>
-          Install
+          The following steps are for UNIX-like systems, and only need to be completed once.
+         </p>
+         <ol class="arabic">
+          <li>
+           <p>
+            Install
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              poetry
+             </span>
+            </code>
+            :
+           </p>
+           <div class="highlight-none notranslate">
+            <div class="highlight">
+             <pre><span></span>curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+</pre>
+            </div>
+           </div>
+          </li>
+          <li>
+           <p>
+            Then install all Python package dependencies, and compile the C extensions:
+           </p>
+           <div class="highlight-none notranslate">
+            <div class="highlight">
+             <pre><span></span> poetry install
+</pre>
+            </div>
+           </div>
+           <p>
+            or
+           </p>
+           <div class="highlight-none notranslate">
+            <div class="highlight">
+             <pre><span></span> make
+</pre>
+            </div>
+           </div>
+          </li>
+          <li>
+           <p>
+            Setup the pre-commit hook which will then run automatically at commit:
+           </p>
+           <div class="highlight-none notranslate">
+            <div class="highlight">
+             <pre><span></span> pre-commit install
+</pre>
+            </div>
+           </div>
+          </li>
+         </ol>
+        </section>
+        <section id="builds">
+         <h2 id="builds">
+          Builds
+          <a class="headerlink" href="#builds" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Following any changes to
           <code class="docutils literal notranslate">
            <span class="pre">
-            poetry
+            .pyx
            </span>
           </code>
-          :
+          or
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            .pxd
+           </span>
+          </code>
+          files, you can re-compile by running:
          </p>
          <div class="highlight-none notranslate">
           <div class="highlight">
-           <pre><span></span>curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-</pre>
-          </div>
-         </div>
-        </li>
-        <li>
-         <p>
-          Then install all Python package dependencies, and compile the C extensions:
-         </p>
-         <div class="highlight-none notranslate">
-          <div class="highlight">
-           <pre><span></span> poetry install
+           <pre><span></span>poetry run python build.py
 </pre>
           </div>
          </div>
@@ -451,59 +514,12 @@
          </p>
          <div class="highlight-none notranslate">
           <div class="highlight">
-           <pre><span></span> make
+           <pre><span></span>make build
 </pre>
           </div>
          </div>
-        </li>
-        <li>
-         <p>
-          Setup the pre-commit hook which will then run automatically at commit:
-         </p>
-         <div class="highlight-none notranslate">
-          <div class="highlight">
-           <pre><span></span> pre-commit install
-</pre>
-          </div>
-         </div>
-        </li>
-       </ol>
-       <h2 id="builds">
-        Builds
-        <a class="headerlink" href="#builds" title="Permalink to this headline">
-         ¶
-        </a>
-       </h2>
-       <p>
-        Following any changes to
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          .pyx
-         </span>
-        </code>
-        or
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          .pxd
-         </span>
-        </code>
-        files, you can re-compile by running:
-       </p>
-       <div class="highlight-none notranslate">
-        <div class="highlight">
-         <pre><span></span>poetry run python build.py
-</pre>
-        </div>
-       </div>
-       <p>
-        or
-       </p>
-       <div class="highlight-none notranslate">
-        <div class="highlight">
-         <pre><span></span>make build
-</pre>
-        </div>
-       </div>
+        </section>
+       </section>
       </article>
      </div>
     </div>

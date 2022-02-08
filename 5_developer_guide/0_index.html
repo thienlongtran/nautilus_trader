@@ -3,6 +3,7 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
@@ -65,11 +66,20 @@
   </script>
   <script src="../_static/doctools.js">
   </script>
-  <script src="../_static/togglebutton.js">
-  </script>
   <script src="../_static/clipboard.min.js">
   </script>
   <script src="../_static/copybutton.js">
+  </script>
+  <script>
+   let toggleHintShow = 'Click to show';
+  </script>
+  <script>
+   let toggleHintHide = 'Click to hide';
+  </script>
+  <script>
+   let toggleOpenOnPrint = 'true';
+  </script>
+  <script src="../_static/togglebutton.js">
   </script>
   <script>
    var togglebuttonSelector = '.toggle, .admonition.dropdown';
@@ -176,27 +186,27 @@
     <div class="md-tabs__inner md-grid">
      <ul class="md-tabs__list">
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/1_getting_started/0_index.html">
+       <a class="md-tabs__link" href="/1_getting_started/0_index.html">
         Getting Started
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/2_user_guide/0_index.html">
+       <a class="md-tabs__link" href="/2_user_guide/0_index.html">
         User Guide
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/3_api_reference/0_index.html">
+       <a class="md-tabs__link" href="/3_api_reference/0_index.html">
         API Reference
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/4_integrations/0_index.html">
+       <a class="md-tabs__link" href="/4_integrations/0_index.html">
         Integrations
        </a>
       </li>
       <li class="md-tabs__item">
-       <a class="md-tabs__link" href="../../html/5_developer_guide/0_index.html">
+       <a class="md-tabs__link" href="/5_developer_guide/0_index.html">
         Developer Guide
        </a>
       </li>
@@ -324,75 +334,77 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <h1 id="5-developer-guide-0-index--page-root">
-        Developer Guide
-        <a class="headerlink" href="#5-developer-guide-0-index--page-root" title="Permalink to this headline">
-         ¶
-        </a>
-       </h1>
-       <p>
-        Welcome to the developer guide for NautilusTrader!
-       </p>
-       <p>
-        Here you will find information related to developing and extending the NautilusTrader codebase.
+       <section class="tex2jax_ignore mathjax_ignore" id="developer-guide">
+        <h1 id="5-developer-guide-0-index--page-root">
+         Developer Guide
+         <a class="headerlink" href="#5-developer-guide-0-index--page-root" title="Permalink to this headline">
+          ¶
+         </a>
+        </h1>
+        <p>
+         Welcome to the developer guide for NautilusTrader!
+        </p>
+        <p>
+         Here you will find information related to developing and extending the NautilusTrader codebase.
 These guides will assist you in both adding functionality for your own trading operation, and/or
 acting as a guide to assist with valuable contributions.
-       </p>
-       <p>
-        We believe in using the right tool for the job. The overall design philosophy is to fully utilize
+        </p>
+        <p>
+         We believe in using the right tool for the job. The overall design philosophy is to fully utilize
 the high level power of Python, with its rich eco-system of frameworks and libraries, whilst
 overcoming some of its inherent shortcomings in performance and lack of built-in type safety
 (with it being an interpreted dynamic language).
-       </p>
-       <p>
-        One of the advantages of Cython is that allocation and freeing of memory is handled by the C code
+        </p>
+        <p>
+         One of the advantages of Cython is that allocation and freeing of memory is handled by the C code
 generator during the ‘cythonization’ step of the build (unless you’re specifically utilizing some of
 its lower level features).
-       </p>
-       <p>
-        So we get the best of both worlds - with Pythons clean straight forward syntax, and a lot of
+        </p>
+        <p>
+         So we get the best of both worlds - with Pythons clean straight forward syntax, and a lot of
 potential to extract several orders of magnitude greater runtime performance through compiled C
 dynamic libraries.
-       </p>
-       <p>
-        The main development and runtime environment we are working in is of course Python. However with the
+        </p>
+        <p>
+         The main development and runtime environment we are working in is of course Python. However with the
 introduction of Cython syntax throughout the production codebase in
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          .pyx
-         </span>
-        </code>
-        and
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          .pxd
-         </span>
-        </code>
-        files - it’s
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           .pyx
+          </span>
+         </code>
+         and
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           .pxd
+          </span>
+         </code>
+         files - it’s
 important to be aware of how the CPython implementation of Python interacts with the underlying
 CPython API, and the NautilusTrader C extension modules which Cython produces.
-       </p>
-       <p>
-        We recommend a thorough review of the
-        <a class="reference external" href="https://cython.readthedocs.io/en/latest/">
-         Cython docs
-        </a>
-        to familiarize yourself with some of its core
+        </p>
+        <p>
+         We recommend a thorough review of the
+         <a class="reference external" href="https://cython.readthedocs.io/en/latest/">
+          Cython docs
+         </a>
+         to familiarize yourself with some of its core
 concepts, and where C typing is being introduced.
-       </p>
-       <p>
-        It’s not necessary to become a C language expert, however it’s helpful to understand how Cython C
+        </p>
+        <p>
+         It’s not necessary to become a C language expert, however it’s helpful to understand how Cython C
 syntax is used in function and method definitions, in local code blocks, and the common primitive C
 types and how these map to their corresponding
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          PyObject
-         </span>
-        </code>
-        types.
-       </p>
-       <div class="toctree-wrapper compound">
-       </div>
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           PyObject
+          </span>
+         </code>
+         types.
+        </p>
+        <div class="toctree-wrapper compound">
+        </div>
+       </section>
       </article>
      </div>
     </div>
