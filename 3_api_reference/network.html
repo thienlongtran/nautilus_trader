@@ -1,740 +1,2418 @@
-
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Network &#8212; NautilusTrader Docs</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
+  <meta content="Copied to clipboard" name="lang:clipboard.copied"/>
+  <meta content="en" name="lang:search.language"/>
+  <meta content="True" name="lang:search.pipeline.stopwords"/>
+  <meta content="True" name="lang:search.pipeline.trimmer"/>
+  <meta content="No matching documents" name="lang:search.result.none"/>
+  <meta content="1 matching document" name="lang:search.result.one"/>
+  <meta content="# matching documents" name="lang:search.result.other"/>
+  <meta content="[\s\-]+" name="lang:search.tokenizer"/>
+  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+  </style>
+  <link href="../_static/stylesheets/application.css" rel="stylesheet"/>
+  <link href="../_static/stylesheets/application-palette.css" rel="stylesheet"/>
+  <link href="../_static/stylesheets/application-fixes.css" rel="stylesheet"/>
+  <link href="../_static/fonts/material-icons.css" rel="stylesheet"/>
+  <meta content="#2C2E43" name="theme-color"/>
+  <script src="../_static/javascripts/modernizr.js">
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
 
-    
-      
-
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Persistence" href="persistence.html" />
-    <link rel="prev" title="Message Bus" href="msgbus.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-  </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
-
-  <div id="navbar-start">
-    
-    
-
-<a class="navbar-brand" href="../index.html">
-  <img src="../_static/nautilus-trader-docs.png" class="logo" alt="logo">
-</a>
-
-
-    
-  </div>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  
-  <div id="navbar-collapsible" class=" collapse navbar-collapse">
-    <div id="navbar-center" class="mr-auto">
-      
-      <div class="navbar-center-item">
-        <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../1_getting_started/0_index.html">
-  Getting Started
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../2_user_guide/0_index.html">
-  User Guide
- </a>
-</li>
-
-<li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="0_index.html">
-  API Reference
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../4_integrations/0_index.html">
-  Integrations
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../5_developer_guide/0_index.html">
-  Developer Guide
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference external nav-link" href="https://github.com/nautechsystems/nautilus_trader/blob/master/RELEASES.md">
-  Releases
- </a>
-</li>
-
-    
-    <li class="nav-item">
-        <a class="nav-link nav-external" href="https://nautilustrader.io">nautilustrader.io<i class="fas fa-external-link-alt"></i></a>
-    </li>
-    
-</ul>
-      </div>
-      
-    </div>
-
-    <div id="navbar-end">
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/nautechsystems/nautilus_trader" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
-        </li>
-      </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-    </nav>
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <div class="bd-toc-item active">
-    <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="accounting.html">
-   Accounting
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="adapters/0_index.html">
-   Adapters
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="adapters/betfair.html">
-     Betfair
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="adapters/binance.html">
-     Binance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="adapters/ftx.html">
-     FTX
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="adapters/ib.html">
-     Interactive Brokers
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="analysis.html">
-   Analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="backtest.html">
-   Backtest
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="cache.html">
-   Cache
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="common.html">
-   Common
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="core.html">
-   Core
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data.html">
-   Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="execution.html">
-   Execution
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="indicators.html">
-   Indicators
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="infrastructure.html">
-   Infrastructure
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="live.html">
-   Live
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="model/0_index.html">
-   Model
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model/commands.html">
-     Commands
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model/currency.html">
-     Currency
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model/data.html">
-     Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model/events.html">
-     Events
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model/identifiers.html">
-     Identifiers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model/instruments.html">
-     Instruments
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model/objects.html">
-     Objects
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model/orderbook.html">
-     Order Book
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model/orders.html">
-     Orders
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model/position.html">
-     Position
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model/tick_scheme.html">
-     Tick Scheme
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="msgbus.html">
-   Message Bus
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Network
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="persistence.html">
-   Persistence
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="portfolio.html">
-   Portfolio
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="risk.html">
-   Risk
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="serialization.html">
-   Serialization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="trading.html">
-   Trading
-  </a>
- </li>
-</ul>
-
-  </div>
-</nav>
-            </div>
-            
-          
-
-          
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
-
-<nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.network.http">
-   HTTP Client
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.network.socket">
-   Socket
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.network.websocket">
-   WebSocket Client
-  </a>
- </li>
-</ul>
-
-</nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
-            
-          </div>
-          
-
-          
-          
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-              
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.network">
-<span id="network"></span><h1>Network<a class="headerlink" href="#module-nautilus_trader.network" title="Permalink to this headline">¶</a></h1>
-<p>The <cite>network</cite> subpackage provides low-level base components for networking clients.</p>
-<p>The base classes can be inherited to assist with writing adapters for integrations with exchanges,
-brokerages, data providers/feeds and other venues or services.</p>
-<div class="section" id="module-nautilus_trader.network.http">
-<span id="http-client"></span><h2>HTTP Client<a class="headerlink" href="#module-nautilus_trader.network.http" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HttpClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">addresses=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">nameservers=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">ttl_dns_cache=ONE_DAY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssl:</span> <span class="pre">Union[None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Fingerprint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SSLContext]</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">connector_kwargs=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.http.HttpClient" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides an asynchronous HTTP client.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>loop</strong><span class="classifier">asyncio.AbstractEventLoop</span></dt><dd><p>The event loop for the client.</p>
-</dd>
-<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the client.</p>
-</dd>
-<dt><strong>ttl_dns_cache</strong><span class="classifier">int</span></dt><dd><p>The time to live for the DNS cache.</p>
-</dd>
-<dt><strong>ssl: Union[None, bool, Fingerprint, SSLContext], default False</strong></dt><dd><p>The ssl context to use for HTTPS.</p>
-</dd>
-<dt><strong>connector_kwargs</strong><span class="classifier">dict, optional</span></dt><dd><p>The connector key word arguments.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>ttl_dns_cache</cite> is not positive (&gt; 0).</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.network.http.HttpClient.connect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.delete">
-<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">url:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers:</span> <span class="pre">Optional[Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ClientResponse</span></span></span><a class="headerlink" href="#nautilus_trader.network.http.HttpClient.delete" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.disconnect">
-<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.network.http.HttpClient.disconnect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">url:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers:</span> <span class="pre">Optional[Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ClientResponse</span></span></span><a class="headerlink" href="#nautilus_trader.network.http.HttpClient.get" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.post">
-<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">url:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers:</span> <span class="pre">Optional[Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ClientResponse</span></span></span><a class="headerlink" href="#nautilus_trader.network.http.HttpClient.post" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.request">
-<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">method:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">url:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers:</span> <span class="pre">Optional[Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json:</span> <span class="pre">Optional[Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Any]]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ClientResponse</span></span></span><a class="headerlink" href="#nautilus_trader.network.http.HttpClient.request" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-nautilus_trader.network.socket">
-<span id="socket"></span><h2>Socket<a class="headerlink" href="#module-nautilus_trader.network.socket" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SocketClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger:</span> <span class="pre">Logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler:</span> <span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">ssl=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes</span> <span class="pre">crlf=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">encoding=u'utf-8'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a low-level generic socket base client.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>loop</strong><span class="classifier">asyncio.AbstractEventLoop</span></dt><dd><p>The event loop for the client.</p>
-</dd>
-<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the client.</p>
-</dd>
-<dt><strong>host</strong><span class="classifier">str</span></dt><dd><p>The host for the client.</p>
-</dd>
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>The port for the client.</p>
-</dd>
-<dt><strong>handler</strong><span class="classifier">Callable</span></dt><dd><p>The handler to process the raw bytes read.</p>
-</dd>
-<dt><strong>ssl</strong><span class="classifier">bool</span></dt><dd><p>If SSL should be used for socket connection.</p>
-</dd>
-<dt><strong>crlf</strong><span class="classifier">bytes, optional</span></dt><dd><p>The carriage return, line feed delimiter on which to split messages.</p>
-</dd>
-<dt><strong>encoding</strong><span class="classifier">str, optional</span></dt><dd><p>The encoding to use when sending messages.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>host</cite> is not a valid string.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>port</cite> is not positive (&gt; 0).</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.connect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.disconnect">
-<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.disconnect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.host">
-<span class="sig-name descname"><span class="pre">host</span></span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.host" title="Permalink to this definition">¶</a></dt>
-<dd><p>The host for the socket client.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>str</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.is_connected">
-<span class="sig-name descname"><span class="pre">is_connected</span></span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.is_connected" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the socket is connected.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.port">
-<span class="sig-name descname"><span class="pre">port</span></span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.port" title="Permalink to this definition">¶</a></dt>
-<dd><p>The port for the socket client.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.post_connection">
-<span class="sig-name descname"><span class="pre">post_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.post_connection" title="Permalink to this definition">¶</a></dt>
-<dd><p>The actions to perform post-connection. i.e. sending further connection messages.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.reconnect">
-<span class="sig-name descname"><span class="pre">reconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.reconnect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.send">
-<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes</span> <span class="pre">raw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.send" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.ssl">
-<span class="sig-name descname"><span class="pre">ssl</span></span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.ssl" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the socket client is using SSL.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.start">
-<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.stop">
-<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.stop" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-nautilus_trader.network.websocket">
-<span id="websocket-client"></span><h2>WebSocket Client<a class="headerlink" href="#module-nautilus_trader.network.websocket" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WebSocketClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop,</span> <span class="pre">Logger</span> <span class="pre">logger:</span> <span class="pre">Logger,</span> <span class="pre">handler:</span> <span class="pre">Callable[[bytes],</span> <span class="pre">None],</span> <span class="pre">max_retry_connection=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a low-level web socket base client.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>loop</strong><span class="classifier">asyncio.AbstractEventLoop</span></dt><dd><p>The event loop for the client.</p>
-</dd>
-<dt><strong>logger</strong><span class="classifier">LoggerAdapter</span></dt><dd><p>The logger adapter for the client.</p>
-</dd>
-<dt><strong>handler</strong><span class="classifier">Callable[[bytes], None]</span></dt><dd><p>The handler for receiving raw data.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.close">
-<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.close" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">ws_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">start=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**ws_kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.connect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.disconnect">
-<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.disconnect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.is_connected">
-<span class="sig-name descname"><span class="pre">is_connected</span></span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.is_connected" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the client is connected.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.post_connect">
-<span class="sig-name descname"><span class="pre">post_connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.post_connect" title="Permalink to this definition">¶</a></dt>
-<dd><p>Actions to be performed post connection.</p>
-<p>This method is called before start(), override to implement additional
-connection related behaviour (sending other messages etc.).</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.recv">
-<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bytes</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.recv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.send">
-<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes</span> <span class="pre">raw:</span> <span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.send" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.send_json">
-<span class="sig-name descname"><span class="pre">send_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.send_json" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.start">
-<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./3_api_reference"
-        },
-        predefinedOutput: true
+    function gtag() {
+        dataLayer.push(arguments);
     }
-    </script>
-    <script>kernelName = 'python3'</script>
 
-              </div>
-              
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="msgbus.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Message Bus</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="persistence.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Persistence</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
+    gtag('js', new Date());
 
+    gtag('config', 'UA-XXXXX');
+  </script>
+  <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
+  <title>
+   Network
+  </title>
+  <link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+  <link href="../_static/material.css" rel="stylesheet" type="text/css"/>
+  <link href="../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+  <link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+  <link href="../_static/custom.css" rel="stylesheet" type="text/css"/>
+  <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js">
+  </script>
+  <script src="../_static/jquery.js">
+  </script>
+  <script src="../_static/underscore.js">
+  </script>
+  <script src="../_static/doctools.js">
+  </script>
+  <script src="../_static/togglebutton.js">
+  </script>
+  <script src="../_static/clipboard.min.js">
+  </script>
+  <script src="../_static/copybutton.js">
+  </script>
+  <script>
+   var togglebuttonSelector = '.toggle, .admonition.dropdown';
+  </script>
+  <link href="../genindex.html" rel="index" title="Index"/>
+  <link href="../search.html" rel="search" title="Search"/>
+  <link href="persistence.html" rel="next" title="Persistence"/>
+  <link href="msgbus.html" rel="prev" title="Message Bus"/>
+  <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
+ </head>
+ <body data-md-color-accent="#00bdd6" data-md-color-primary="#282f38" dir="ltr">
+  <svg class="md-svg">
+   <defs data-children-count="0">
+    <svg height="448" id="__github" viewbox="0 0 416 448" width="416" xmlns="http://www.w3.org/2000/svg">
+     <path d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z" fill="currentColor">
+     </path>
+    </svg>
+   </defs>
+  </svg>
+  <input class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" data-md-component="overlay" for="__drawer">
+  </label>
+  <a class="md-skip" href="#3_api_reference/network" tabindex="1">
+   Skip to content
+  </a>
+  <header class="md-header" data-md-component="header">
+   <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+     <div class="md-flex__cell md-flex__cell--shrink">
+      <a class="md-header-nav__button md-logo" href="../index.html" title="">
+       <img alt=" logo" height="26" src="../_static/nt-white.png"/>
+      </a>
+     </div>
+     <div class="md-flex__cell md-flex__cell--shrink">
+      <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer">
+      </label>
+     </div>
+     <div class="md-flex__cell md-flex__cell--stretch">
+      <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+       <span class="md-header-nav__topic">
+       </span>
+       <span class="md-header-nav__topic">
+        Network
+       </span>
       </div>
+     </div>
+     <div class="md-flex__cell md-flex__cell--shrink">
+      <label class="md-icon md-icon--search md-header-nav__button" for="__search">
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+       <label class="md-search__overlay" for="__search">
+       </label>
+       <div class="md-search__inner" role="search">
+        <form action="../search.html" class="md-search__form" method="get" name="search">
+         <input autocapitalize="off" autocomplete="off" class="md-search__input" data-md-component="query" data-md-state="active" name="q" placeholder="Search" spellcheck="false" type="text"/>
+         <label class="md-icon md-search__icon" for="__search">
+         </label>
+         <button class="md-icon md-search__icon" data-md-component="reset" tabindex="-1" type="reset">
+          
+         </button>
+        </form>
+        <div class="md-search__output">
+         <div class="md-search__scrollwrap" data-md-scrollfix="">
+          <div class="md-search-result" data-md-component="result">
+           <div class="md-search-result__meta">
+            Type to start searching
+           </div>
+           <ol class="md-search-result__list">
+           </ol>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="md-flex__cell md-flex__cell--shrink">
+      <div class="md-header-nav__source">
+       <a class="md-source" data-md-source="github" href="https://github.com/nautechsystems/nautilus_trader" title="Go to repository">
+        <div class="md-source__icon">
+         <svg height="28" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <use height="24" width="24" xlink:href="#__github">
+          </use>
+         </svg>
+        </div>
+        <div class="md-source__repository">
+         nautilus_trader
+        </div>
+       </a>
+      </div>
+     </div>
     </div>
-  
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
-    &copy; Copyright 2015-2022 Nautech Systems Pty Ltd.<br>
-</p>
+   </nav>
+  </header>
+  <div class="md-container">
+   <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+     <ul class="md-tabs__list">
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="../../html/1_getting_started/0_index.html">
+        Getting Started
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="../../html/2_user_guide/0_index.html">
+        User Guide
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="../../html/3_api_reference/0_index.html">
+        API Reference
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="../../html/4_integrations/0_index.html">
+        Integrations
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="../../html/5_developer_guide/0_index.html">
+        Developer Guide
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="https://nautilustrader.io/">
+        nautilustrader.io
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="0_index.html">
+        API Reference
+       </a>
+      </li>
+     </ul>
     </div>
-    
+   </nav>
+   <main class="md-main">
+    <div class="md-main__inner md-grid" data-md-component="container">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav class="md-nav md-nav--primary" data-md-level="0">
+         <label class="md-nav__title md-nav__title--site" for="__drawer">
+          <a class="md-nav__button md-logo" href="../index.html" title="">
+           <img alt=" logo" height="48" src="../_static/nt-white.png" width="48"/>
+          </a>
+          <a href="../index.html" title="">
+          </a>
+         </label>
+         <div class="md-nav__source">
+          <a class="md-source" data-md-source="github" href="https://github.com/nautechsystems/nautilus_trader" title="Go to repository">
+           <div class="md-source__icon">
+            <svg height="28" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+             <use height="24" width="24" xlink:href="#__github">
+             </use>
+            </svg>
+           </div>
+           <div class="md-source__repository">
+            nautilus_trader
+           </div>
+          </a>
+         </div>
+         <ul class="md-nav__list">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../1_getting_started/0_index.html">
+            Getting Started
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../2_user_guide/0_index.html">
+            User Guide
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="0_index.html">
+            API Reference
+           </a>
+           <ul class="md-nav__list">
+            <li class="md-nav__item">
+             <a class="md-nav__link" href="0_index.html#type-safety">
+              Type Safety
+             </a>
+            </li>
+            <li class="md-nav__item">
+             <a class="md-nav__link" href="0_index.html#framework-organization">
+              Framework Organization
+             </a>
+            </li>
+            <li class="md-nav__item">
+             <a class="md-nav__link" href="0_index.html#errors-and-exceptions">
+              Errors and Exceptions
+             </a>
+             <ul class="md-nav__list">
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="accounting.html">
+                Accounting
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="adapters/0_index.html">
+                Adapters
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="analysis.html">
+                Analysis
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="backtest.html">
+                Backtest
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="cache.html">
+                Cache
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="common.html">
+                Common
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="core.html">
+                Core
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="data.html">
+                Data
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="execution.html">
+                Execution
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="indicators.html">
+                Indicators
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="infrastructure.html">
+                Infrastructure
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="live.html">
+                Live
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="model/0_index.html">
+                Model
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="msgbus.html">
+                Message Bus
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+               <label class="md-nav__link md-nav__link--active" for="__toc">
+                Network
+               </label>
+               <a class="md-nav__link md-nav__link--active" href="#">
+                Network
+               </a>
+               <nav class="md-nav md-nav--secondary">
+                <label class="md-nav__title" for="__toc">
+                 Contents
+                </label>
+                <ul class="md-nav__list" data-md-scrollfix="">
+                 <li class="md-nav__item">
+                  <a class="md-nav__link" href="#3-api-reference-network--page-root">
+                   Network
+                  </a>
+                  <nav class="md-nav">
+                   <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                     <a class="md-nav__link" href="#module-nautilus_trader.network.http">
+                      HTTP Client
+                     </a>
+                    </li>
+                    <li class="md-nav__item">
+                     <a class="md-nav__link" href="#module-nautilus_trader.network.socket">
+                      Socket
+                     </a>
+                    </li>
+                    <li class="md-nav__item">
+                     <a class="md-nav__link" href="#module-nautilus_trader.network.websocket">
+                      WebSocket Client
+                     </a>
+                    </li>
+                   </ul>
+                  </nav>
+                 </li>
+                 <li class="md-nav__item">
+                  <a class="md-nav__extra_link" href="../_sources/3_api_reference/network.md.txt">
+                   Show Source
+                  </a>
+                 </li>
+                </ul>
+               </nav>
+               <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#module-nautilus_trader.network.http">
+                  HTTP Client
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#module-nautilus_trader.network.socket">
+                  Socket
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#module-nautilus_trader.network.websocket">
+                  WebSocket Client
+                 </a>
+                </li>
+               </ul>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="persistence.html">
+                Persistence
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="portfolio.html">
+                Portfolio
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="risk.html">
+                Risk
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="serialization.html">
+                Serialization
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="trading.html">
+                Trading
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../4_integrations/0_index.html">
+            Integrations
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../5_developer_guide/0_index.html">
+            Developer Guide
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          Contents
+         </label>
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#3-api-reference-network--page-root">
+            Network
+           </a>
+           <nav class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#module-nautilus_trader.network.http">
+               HTTP Client
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#module-nautilus_trader.network.socket">
+               Socket
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#module-nautilus_trader.network.websocket">
+               WebSocket Client
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__extra_link" href="../_sources/3_api_reference/network.md.txt">
+            Show Source
+           </a>
+          </li>
+          <li class="md-nav__item" id="searchbox">
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content">
+      <article class="md-content__inner md-typeset" role="main">
+       <span id="network">
+       </span>
+       <h1 id="3-api-reference-network--page-root">
+        Network
+        <a class="headerlink" href="#3-api-reference-network--page-root" title="Permalink to this headline">
+         ¶
+        </a>
+       </h1>
+       <p>
+        The
+        <cite>
+         network
+        </cite>
+        subpackage provides low-level base components for networking clients.
+       </p>
+       <p>
+        The base classes can be inherited to assist with writing adapters for integrations with exchanges,
+brokerages, data providers/feeds and other venues or services.
+       </p>
+       <span id="http-client">
+       </span>
+       <h2 id="module-nautilus_trader.network.http">
+        HTTP Client
+        <a class="headerlink" href="#module-nautilus_trader.network.http" title="Permalink to this headline">
+         ¶
+        </a>
+       </h2>
+       <dl class="py class">
+        <dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient">
+         <em class="property">
+          <span class="pre">
+           class
+          </span>
+          <span class="w">
+          </span>
+         </em>
+         <span class="sig-name descname">
+          <span class="pre">
+           HttpClient
+          </span>
+         </span>
+         <span class="sig-paren">
+          (
+         </span>
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            loop:
+           </span>
+           <span class="pre">
+            asyncio.AbstractEventLoop
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            Logger
+           </span>
+           <span class="pre">
+            logger
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            list
+           </span>
+           <span class="pre">
+            addresses=None
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            list
+           </span>
+           <span class="pre">
+            nameservers=None
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            int
+           </span>
+           <span class="pre">
+            ttl_dns_cache=ONE_DAY
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            ssl:
+           </span>
+           <span class="pre">
+            Union[None
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            bool
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            Fingerprint
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            SSLContext]
+           </span>
+           <span class="pre">
+            =
+           </span>
+           <span class="pre">
+            False
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            dict
+           </span>
+           <span class="pre">
+            connector_kwargs=None
+           </span>
+          </span>
+         </em>
+         <span class="sig-paren">
+          )
+         </span>
+         <a class="headerlink" href="#nautilus_trader.network.http.HttpClient" title="Permalink to this definition">
+          ¶
+         </a>
+        </dt>
+        <dd>
+         <p>
+          Bases:
+          <code class="xref py py-class docutils literal notranslate">
+           <span class="pre">
+            object
+           </span>
+          </code>
+         </p>
+         <p>
+          Provides an asynchronous HTTP client.
+         </p>
+         <dl class="field-list simple">
+          <dt class="field-odd">
+           Parameters
+          </dt>
+          <dd class="field-odd">
+           <ul class="simple">
+            <li>
+             <p>
+              <strong>
+               loop
+              </strong>
+              (
+              <em>
+               asyncio.AbstractEventLoop
+              </em>
+              ) – The event loop for the client.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               logger
+              </strong>
+              (
+              <a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+               <em>
+                Logger
+               </em>
+              </a>
+              ) – The logger for the client.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               ttl_dns_cache
+              </strong>
+              (
+              <em>
+               int
+              </em>
+              ) – The time to live for the DNS cache.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               ssl
+              </strong>
+              (
+              <em>
+               Union
+              </em>
+              <em>
+               [
+              </em>
+              <em>
+               None
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               bool
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               Fingerprint
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               SSLContext
+              </em>
+              <em>
+               ]
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               default False
+              </em>
+              ) – The ssl context to use for HTTPS.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               connector_kwargs
+              </strong>
+              (
+              <em>
+               dict
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               optional
+              </em>
+              ) – The connector key word arguments.
+             </p>
+            </li>
+           </ul>
+          </dd>
+          <dt class="field-even">
+           Raises
+          </dt>
+          <dd class="field-even">
+           <p>
+            <strong>
+             ValueError
+            </strong>
+            – If
+            <cite>
+             ttl_dns_cache
+            </cite>
+            is not positive (&gt; 0).
+           </p>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.connect">
+           <span class="sig-name descname">
+            <span class="pre">
+             connect
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.http.HttpClient.connect" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.delete">
+           <span class="sig-name descname">
+            <span class="pre">
+             delete
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              url:
+             </span>
+             <span class="pre">
+              str
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              headers:
+             </span>
+             <span class="pre">
+              Optional[Dict[str
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              str]]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              **kwargs
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              ClientResponse
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.http.HttpClient.delete" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.disconnect">
+           <span class="sig-name descname">
+            <span class="pre">
+             disconnect
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.http.HttpClient.disconnect" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.get">
+           <span class="sig-name descname">
+            <span class="pre">
+             get
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              url:
+             </span>
+             <span class="pre">
+              str
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              headers:
+             </span>
+             <span class="pre">
+              Optional[Dict[str
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              str]]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              **kwargs
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              ClientResponse
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.http.HttpClient.get" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.post">
+           <span class="sig-name descname">
+            <span class="pre">
+             post
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              url:
+             </span>
+             <span class="pre">
+              str
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              headers:
+             </span>
+             <span class="pre">
+              Optional[Dict[str
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              str]]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              **kwargs
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              ClientResponse
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.http.HttpClient.post" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.request">
+           <span class="sig-name descname">
+            <span class="pre">
+             request
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              method:
+             </span>
+             <span class="pre">
+              str
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              url:
+             </span>
+             <span class="pre">
+              str
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              headers:
+             </span>
+             <span class="pre">
+              Optional[Dict[str
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              str]]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              json:
+             </span>
+             <span class="pre">
+              Optional[Dict[str
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Any]]
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              **kwargs
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              ClientResponse
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.http.HttpClient.request" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+        </dd>
+       </dl>
+       <span id="socket">
+       </span>
+       <h2 id="module-nautilus_trader.network.socket">
+        Socket
+        <a class="headerlink" href="#module-nautilus_trader.network.socket" title="Permalink to this headline">
+         ¶
+        </a>
+       </h2>
+       <dl class="py class">
+        <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient">
+         <em class="property">
+          <span class="pre">
+           class
+          </span>
+          <span class="w">
+          </span>
+         </em>
+         <span class="sig-name descname">
+          <span class="pre">
+           SocketClient
+          </span>
+         </span>
+         <span class="sig-paren">
+          (
+         </span>
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            loop:
+           </span>
+           <span class="pre">
+            asyncio.AbstractEventLoop
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            Logger
+           </span>
+           <span class="pre">
+            logger:
+           </span>
+           <span class="pre">
+            Logger
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            host
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            port
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            handler:
+           </span>
+           <span class="pre">
+            Callable
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            bool
+           </span>
+           <span class="pre">
+            ssl=True
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            bytes
+           </span>
+           <span class="pre">
+            crlf=None
+           </span>
+          </span>
+         </em>
+         ,
+         <em class="sig-param">
+          <span class="n">
+           <span class="pre">
+            unicode
+           </span>
+           <span class="pre">
+            encoding=u'utf-8'
+           </span>
+          </span>
+         </em>
+         <span class="sig-paren">
+          )
+         </span>
+         <a class="headerlink" href="#nautilus_trader.network.socket.SocketClient" title="Permalink to this definition">
+          ¶
+         </a>
+        </dt>
+        <dd>
+         <p>
+          Bases:
+          <code class="xref py py-class docutils literal notranslate">
+           <span class="pre">
+            object
+           </span>
+          </code>
+         </p>
+         <p>
+          Provides a low-level generic socket base client.
+         </p>
+         <dl class="field-list simple">
+          <dt class="field-odd">
+           Parameters
+          </dt>
+          <dd class="field-odd">
+           <ul class="simple">
+            <li>
+             <p>
+              <strong>
+               loop
+              </strong>
+              (
+              <em>
+               asyncio.AbstractEventLoop
+              </em>
+              ) – The event loop for the client.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               logger
+              </strong>
+              (
+              <a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+               <em>
+                Logger
+               </em>
+              </a>
+              ) – The logger for the client.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               host
+              </strong>
+              (
+              <em>
+               str
+              </em>
+              ) – The host for the client.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               port
+              </strong>
+              (
+              <em>
+               int
+              </em>
+              ) – The port for the client.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               handler
+              </strong>
+              (
+              <em>
+               Callable
+              </em>
+              ) – The handler to process the raw bytes read.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               ssl
+              </strong>
+              (
+              <em>
+               bool
+              </em>
+              ) – If SSL should be used for socket connection.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               crlf
+              </strong>
+              (
+              <em>
+               bytes
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               optional
+              </em>
+              ) – The carriage return, line feed delimiter on which to split messages.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               encoding
+              </strong>
+              (
+              <em>
+               str
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               optional
+              </em>
+              ) – The encoding to use when sending messages.
+             </p>
+            </li>
+           </ul>
+          </dd>
+          <dt class="field-even">
+           Raises
+          </dt>
+          <dd class="field-even">
+           <ul class="simple">
+            <li>
+             <p>
+              <strong>
+               ValueError
+              </strong>
+              – If
+              <cite>
+               host
+              </cite>
+              is not a valid string.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               ValueError
+              </strong>
+              – If
+              <cite>
+               port
+              </cite>
+              is not positive (&gt; 0).
+             </p>
+            </li>
+           </ul>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.connect">
+           <span class="sig-name descname">
+            <span class="pre">
+             connect
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.connect" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.disconnect">
+           <span class="sig-name descname">
+            <span class="pre">
+             disconnect
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.disconnect" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py attribute">
+          <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.host">
+           <span class="sig-name descname">
+            <span class="pre">
+             host
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.host" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            The host for the socket client.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Returns
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <cite>
+               str
+              </cite>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py attribute">
+          <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.is_connected">
+           <span class="sig-name descname">
+            <span class="pre">
+             is_connected
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.is_connected" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            If the socket is connected.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Returns
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <cite>
+               bool
+              </cite>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py attribute">
+          <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.port">
+           <span class="sig-name descname">
+            <span class="pre">
+             port
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.port" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            The port for the socket client.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Returns
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <cite>
+               int
+              </cite>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.post_connection">
+           <span class="sig-name descname">
+            <span class="pre">
+             post_connection
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.post_connection" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            The actions to perform post-connection. i.e. sending further connection messages.
+           </p>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.reconnect">
+           <span class="sig-name descname">
+            <span class="pre">
+             reconnect
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.reconnect" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.send">
+           <span class="sig-name descname">
+            <span class="pre">
+             send
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              bytes
+             </span>
+             <span class="pre">
+              raw
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.send" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py attribute">
+          <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.ssl">
+           <span class="sig-name descname">
+            <span class="pre">
+             ssl
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.ssl" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            If the socket client is using SSL.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Returns
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <cite>
+               bool
+              </cite>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.start">
+           <span class="sig-name descname">
+            <span class="pre">
+             start
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.start" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.stop">
+           <span class="sig-name descname">
+            <span class="pre">
+             stop
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.stop" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+        </dd>
+       </dl>
+       <span id="websocket-client">
+       </span>
+       <h2 id="module-nautilus_trader.network.websocket">
+        WebSocket Client
+        <a class="headerlink" href="#module-nautilus_trader.network.websocket" title="Permalink to this headline">
+         ¶
+        </a>
+       </h2>
+       <dl class="py class">
+        <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient">
+         <em class="property">
+          <span class="pre">
+           class
+          </span>
+          <span class="w">
+          </span>
+         </em>
+         <span class="sig-name descname">
+          <span class="pre">
+           WebSocketClient
+          </span>
+         </span>
+         <span class="sig-paren">
+          (
+         </span>
+         <em class="sig-param">
+          <span class="pre">
+           loop:
+          </span>
+          <span class="pre">
+           asyncio.AbstractEventLoop,
+          </span>
+          <span class="pre">
+           Logger
+          </span>
+          <span class="pre">
+           logger:
+          </span>
+          <span class="pre">
+           Logger,
+          </span>
+          <span class="pre">
+           handler:
+          </span>
+          <span class="pre">
+           Callable[[bytes],
+          </span>
+          <span class="pre">
+           None],
+          </span>
+          <span class="pre">
+           max_retry_connection=0
+          </span>
+         </em>
+         <span class="sig-paren">
+          )
+         </span>
+         <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient" title="Permalink to this definition">
+          ¶
+         </a>
+        </dt>
+        <dd>
+         <p>
+          Bases:
+          <code class="xref py py-class docutils literal notranslate">
+           <span class="pre">
+            object
+           </span>
+          </code>
+         </p>
+         <p>
+          Provides a low-level web socket base client.
+         </p>
+         <dl class="field-list simple">
+          <dt class="field-odd">
+           Parameters
+          </dt>
+          <dd class="field-odd">
+           <ul class="simple">
+            <li>
+             <p>
+              <strong>
+               loop
+              </strong>
+              (
+              <em>
+               asyncio.AbstractEventLoop
+              </em>
+              ) – The event loop for the client.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               logger
+              </strong>
+              (
+              <a class="reference internal" href="common.html#nautilus_trader.common.logging.LoggerAdapter" title="nautilus_trader.common.logging.LoggerAdapter">
+               <em>
+                LoggerAdapter
+               </em>
+              </a>
+              ) – The logger adapter for the client.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               handler
+              </strong>
+              (
+              <em>
+               Callable
+              </em>
+              <em>
+               [
+              </em>
+              <em>
+               [
+              </em>
+              <em>
+               bytes
+              </em>
+              <em>
+               ]
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               None
+              </em>
+              <em>
+               ]
+              </em>
+              ) – The handler for receiving raw data.
+             </p>
+            </li>
+           </ul>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.close">
+           <span class="sig-name descname">
+            <span class="pre">
+             close
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.close" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.connect">
+           <span class="sig-name descname">
+            <span class="pre">
+             connect
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              unicode
+             </span>
+             <span class="pre">
+              ws_url
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+             <span class="pre">
+              start=True
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              **ws_kwargs
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.connect" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.disconnect">
+           <span class="sig-name descname">
+            <span class="pre">
+             disconnect
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.disconnect" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py attribute">
+          <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.is_connected">
+           <span class="sig-name descname">
+            <span class="pre">
+             is_connected
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.is_connected" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            If the client is connected.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Returns
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <cite>
+               bool
+              </cite>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.post_connect">
+           <span class="sig-name descname">
+            <span class="pre">
+             post_connect
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.post_connect" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Actions to be performed post connection.
+           </p>
+           <p>
+            This method is called before start(), override to implement additional
+connection related behaviour (sending other messages etc.).
+           </p>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.recv">
+           <span class="sig-name descname">
+            <span class="pre">
+             recv
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <span class="pre">
+              bytes
+             </span>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.recv" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.send">
+           <span class="sig-name descname">
+            <span class="pre">
+             send
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              bytes
+             </span>
+             <span class="pre">
+              raw:
+             </span>
+             <span class="pre">
+              bytes
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.send" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.send_json">
+           <span class="sig-name descname">
+            <span class="pre">
+             send_json
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              msg
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              Dict
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.send_json" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.start">
+           <span class="sig-name descname">
+            <span class="pre">
+             start
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              self
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.start" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+        </dd>
+       </dl>
+      </article>
+     </div>
+    </div>
+   </main>
   </div>
-</footer>
-  </body>
+  <footer class="md-footer">
+   <div class="md-footer-nav">
+    <nav class="md-footer-nav__inner md-grid">
+     <a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href="msgbus.html" rel="prev" title="Message Bus">
+      <div class="md-flex__cell md-flex__cell--shrink">
+       <i class="md-icon md-icon--arrow-back md-footer-nav__button">
+       </i>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+       <span class="md-flex__ellipsis">
+        <span class="md-footer-nav__direction">
+         Previous
+        </span>
+        Message Bus
+       </span>
+      </div>
+     </a>
+     <a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="persistence.html" rel="next" title="Persistence">
+      <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+       <span class="md-flex__ellipsis">
+        <span class="md-footer-nav__direction">
+         Next
+        </span>
+        Persistence
+       </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+       <i class="md-icon md-icon--arrow-forward md-footer-nav__button">
+       </i>
+      </div>
+     </a>
+    </nav>
+   </div>
+   <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+     <div class="md-footer-copyright">
+      <div class="md-footer-copyright__highlight">
+       © Copyright 2015-2022 Nautech Systems Pty Ltd.
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script src="../_static/javascripts/application.js">
+  </script>
+  <script>
+   app.initialize({version: "1.0.4", url: {base: ".."}})
+  </script>
+ </body>
 </html>
