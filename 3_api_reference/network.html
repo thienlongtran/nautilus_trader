@@ -2136,6 +2136,35 @@ brokerages, data providers/feeds and other venues or services.
             <dd>
             </dd>
            </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.connection_retry_count">
+             <span class="sig-name descname">
+              <span class="pre">
+               connection_retry_count
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.connection_retry_count" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The current connection retry count.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.disconnect">
              <span class="sig-name descname">
@@ -2202,6 +2231,35 @@ brokerages, data providers/feeds and other venues or services.
              </dl>
             </dd>
            </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.max_retry_connection">
+             <span class="sig-name descname">
+              <span class="pre">
+               max_retry_connection
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.max_retry_connection" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The max connection retries.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.post_connect">
              <span class="sig-name descname">
@@ -2237,10 +2295,10 @@ connection related behaviour (sending other messages etc.).
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.recv">
+            <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.receive">
              <span class="sig-name descname">
               <span class="pre">
-               recv
+               receive
               </span>
              </span>
              <span class="sig-paren">
@@ -2279,7 +2337,7 @@ connection related behaviour (sending other messages etc.).
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.recv" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.receive" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -2310,10 +2368,7 @@ connection related behaviour (sending other messages etc.).
                 bytes
                </span>
                <span class="pre">
-                raw:
-               </span>
-               <span class="pre">
-                bytes
+                raw
                </span>
               </span>
              </em>
@@ -2358,19 +2413,10 @@ connection related behaviour (sending other messages etc.).
              <em class="sig-param">
               <span class="n">
                <span class="pre">
+                dict
+               </span>
+               <span class="pre">
                 msg
-               </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                Dict
                </span>
               </span>
              </em>
@@ -2429,6 +2475,35 @@ connection related behaviour (sending other messages etc.).
              </a>
             </dt>
             <dd>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.unknown_message_count">
+             <span class="sig-name descname">
+              <span class="pre">
+               unknown_message_count
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.unknown_message_count" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The current unknown message count.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int
+                </cite>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
           </dd>
