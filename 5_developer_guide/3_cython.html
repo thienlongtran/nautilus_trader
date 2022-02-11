@@ -355,9 +355,43 @@
               Cython
              </a>
              <nav class="md-nav md-nav--secondary">
+              <label class="md-nav__title" for="__toc">
+               Contents
+              </label>
               <ul class="md-nav__list" data-md-scrollfix="">
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="#5-developer-guide-3-cython--page-root">
+                 Cython
+                </a>
+                <nav class="md-nav">
+                 <ul class="md-nav__list">
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#function-and-method-signatures">
+                    Function and method signatures
+                   </a>
+                  </li>
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#debugging">
+                    Debugging
+                   </a>
+                  </li>
+                 </ul>
+                </nav>
+               </li>
               </ul>
              </nav>
+             <ul class="md-nav__list">
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#function-and-method-signatures">
+                Function and method signatures
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#debugging">
+                Debugging
+               </a>
+              </li>
+             </ul>
             </li>
             <li class="md-nav__item">
              <a class="md-nav__link" href="4_testing.html">
@@ -380,7 +414,29 @@
       <div class="md-sidebar__scrollwrap">
        <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          Contents
+         </label>
          <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#5-developer-guide-3-cython--page-root">
+            Cython
+           </a>
+           <nav class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#function-and-method-signatures">
+               Function and method signatures
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#debugging">
+               Debugging
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
          </ul>
         </nav>
        </div>
@@ -397,53 +453,144 @@
         </h1>
         <p>
          Here you will find guidance and tips for working on NautilusTrader using the Cython language.
-        </p>
-        <p>
-         Ensure that all functions and methods returning
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           void
-          </span>
-         </code>
-         or a primitive C type (such as
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           bint
-          </span>
-         </code>
-         ,
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           int
-          </span>
-         </code>
-         ,
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           double
-          </span>
-         </code>
-         ) include the
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           except
-          </span>
-          <span class="pre">
-           *
-          </span>
-         </code>
-         keyword in the signature.
-        </p>
-        <p>
-         This will ensure Python exceptions are not ignored, but instead are “bubbled up” to the caller as expected.
-        </p>
-        <p>
-         More information on Cython syntax and conventions can be found by reading the
+More information on Cython syntax and conventions can be found by reading the
          <a class="reference external" href="https://cython.readthedocs.io/en/latest/index.html">
           Cython docs
          </a>
          .
         </p>
+        <section id="function-and-method-signatures">
+         <h2 id="function-and-method-signatures">
+          Function and method signatures
+          <a class="headerlink" href="#function-and-method-signatures" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Ensure that all functions and methods returning
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            void
+           </span>
+          </code>
+          or a primitive C type (such as
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            bint
+           </span>
+          </code>
+          ,
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            int
+           </span>
+          </code>
+          ,
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            double
+           </span>
+          </code>
+          ) include the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            except
+           </span>
+           <span class="pre">
+            *
+           </span>
+          </code>
+          keyword in the signature.
+         </p>
+         <p>
+          This will ensure Python exceptions are not ignored, but instead are “bubbled up” to the caller as expected.
+         </p>
+        </section>
+        <section id="debugging">
+         <h2 id="debugging">
+          Debugging
+          <a class="headerlink" href="#debugging" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          For PyCharm there has been a highly up-voted feature request for better debugging support for Cython,
+however it hasn’t received any traction for nearly a decade. So unfortunately it’s safe to assume that for
+PyCharm at least, it will not be receiving first class support for Cython debugging
+          <a class="reference external" href="https://youtrack.jetbrains.com/issue/PY-9476">
+           https://youtrack.jetbrains.com/issue/PY-9476
+          </a>
+          .
+         </p>
+         <p>
+          The following recommendations are contained in the Cython docs:
+          <a class="reference external" href="https://cython.readthedocs.io/en/latest/src/userguide/debugging.html">
+           https://cython.readthedocs.io/en/latest/src/userguide/debugging.html
+          </a>
+         </p>
+         <p>
+          The summary is it involves manually running a specialized version of
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            gdb
+           </span>
+          </code>
+          from the command line.
+We don’t recommend this workflow.
+         </p>
+         <p>
+          When debugging and seeking to understand a complex system such as NautilusTrader, it can be
+quite helpful to step through the code with a debugger, however with this not being available
+for the Cython part of the codebase, there are a few things we can recommend to help:
+         </p>
+         <ul class="simple">
+          <li>
+           <p>
+            Ensure
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              LogLevel.DEBUG
+             </span>
+            </code>
+            is configured for the backtesting or live system you are debugging. This is available on
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              BacktestEngineConfig(log_level="DEBUG")
+             </span>
+            </code>
+            or
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              TradingNodeConfig(log_level="DEBUG")
+             </span>
+            </code>
+            .
+With
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              DEBUG
+             </span>
+            </code>
+            mode active you will see more granular and verbose log traces which could be what you need to understand the flow.
+           </p>
+          </li>
+          <li>
+           <p>
+            Beyond this, if you still require more granular visibility around a part of the system, we recommend some well-placed calls
+to a components logger (normally
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              self._log.debug(f"HERE
+             </span>
+             <span class="pre">
+              {variable}"
+             </span>
+            </code>
+            is enough).
+           </p>
+          </li>
+         </ul>
+        </section>
        </section>
       </article>
      </div>
