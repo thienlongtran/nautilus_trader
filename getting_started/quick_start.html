@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
+  <meta content="Copied to clipboard" name="lang:clipboard.copied"/>
+  <meta content="en" name="lang:search.language"/>
+  <meta content="True" name="lang:search.pipeline.stopwords"/>
+  <meta content="True" name="lang:search.pipeline.trimmer"/>
+  <meta content="No matching documents" name="lang:search.result.none"/>
+  <meta content="1 matching document" name="lang:search.result.one"/>
+  <meta content="# matching documents" name="lang:search.result.other"/>
+  <meta content="[\s\-]+" name="lang:search.tokenizer"/>
+  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+  </style>
+  <link href="../_static/stylesheets/application.css" rel="stylesheet"/>
+  <link href="../_static/stylesheets/application-palette.css" rel="stylesheet"/>
+  <link href="../_static/stylesheets/application-fixes.css" rel="stylesheet"/>
+  <link href="../_static/fonts/material-icons.css" rel="stylesheet"/>
+  <meta content="#282f38" name="theme-color"/>
+  <script src="../_static/javascripts/modernizr.js">
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-XXXXX');
+  </script>
+  <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
+  <meta content="Copied to clipboard" name="lang:clipboard.copied"/>
+  <meta content="en" name="lang:search.language"/>
+  <meta content="True" name="lang:search.pipeline.stopwords"/>
+  <meta content="True" name="lang:search.pipeline.trimmer"/>
+  <meta content="No matching documents" name="lang:search.result.none"/>
+  <meta content="1 matching document" name="lang:search.result.one"/>
+  <meta content="# matching documents" name="lang:search.result.other"/>
+  <meta content="[\s\-]+" name="lang:search.tokenizer"/>
+  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+  </style>
+  <link href="../_static/stylesheets/application.css" rel="stylesheet"/>
+  <link href="../_static/stylesheets/application-palette.css" rel="stylesheet"/>
+  <link href="../_static/stylesheets/application-fixes.css" rel="stylesheet"/>
+  <link href="../_static/fonts/material-icons.css" rel="stylesheet"/>
+  <meta content="#282f38" name="theme-color"/>
+  <script src="../_static/javascripts/modernizr.js">
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-XXXXX');
+  </script>
+  <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
+  <title>
+   Quick Start
+  </title>
+  <link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+  <link href="../_static/material.css" rel="stylesheet" type="text/css"/>
+  <link href="../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+  <link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+  <link href="../_static/custom.css" rel="stylesheet" type="text/css"/>
+  <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js">
+  </script>
+  <script src="../_static/jquery.js">
+  </script>
+  <script src="../_static/underscore.js">
+  </script>
+  <script src="../_static/doctools.js">
+  </script>
+  <script src="../_static/clipboard.min.js">
+  </script>
+  <script src="../_static/copybutton.js">
+  </script>
+  <script>
+   let toggleHintShow = 'Click to show';
+  </script>
+  <script>
+   let toggleHintHide = 'Click to hide';
+  </script>
+  <script>
+   let toggleOpenOnPrint = 'true';
+  </script>
+  <script src="../_static/togglebutton.js">
+  </script>
+  <script>
+   var togglebuttonSelector = '.toggle, .admonition.dropdown';
+  </script>
+  <link href="../_static/favicon-32x32.png" rel="shortcut icon"/>
+  <link href="../genindex.html" rel="index" title="Index"/>
+  <link href="../search.html" rel="search" title="Search"/>
+  <link href="../user_guide/index.html" rel="next" title="User Guide"/>
+  <link href="installation.html" rel="prev" title="Installation"/>
+  <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
+  <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
+ </head>
+ <body data-md-color-accent="#282f38" data-md-color-primary="#282f38" dir="ltr">
+  <svg class="md-svg">
+   <defs data-children-count="0">
+    <svg fill="#fff" viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+     <!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.-->
+     <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+     </path>
+    </svg>
+   </defs>
+  </svg>
+  <input class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" data-md-component="overlay" for="__drawer">
+  </label>
+  <a class="md-skip" href="#getting_started/quick_start" tabindex="1">
+   Skip to content
+  </a>
+  <header class="md-header" data-md-component="header">
+   <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+     <div class="md-flex__cell md-flex__cell--shrink">
+      <a class="md-header-nav__button md-logo" href="../index.html" title="">
+       <img alt=" logo" height="26" src="../_static/nt-white.png"/>
+      </a>
+     </div>
+     <div class="md-flex__cell md-flex__cell--shrink">
+      <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer">
+      </label>
+     </div>
+     <div class="md-flex__cell md-flex__cell--stretch">
+      <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+       <span class="md-header-nav__topic">
+       </span>
+       <span class="md-header-nav__topic">
+        Quick Start
+       </span>
+      </div>
+     </div>
+     <div class="md-flex__cell md-flex__cell--shrink">
+      <label class="md-icon md-icon--search md-header-nav__button" for="__search">
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+       <label class="md-search__overlay" for="__search">
+       </label>
+       <div class="md-search__inner" role="search">
+        <form action="../search.html" class="md-search__form" method="get" name="search">
+         <input autocapitalize="off" autocomplete="off" class="md-search__input" data-md-component="query" data-md-state="active" name="q" placeholder="Search" spellcheck="false" type="text"/>
+         <label class="md-icon md-search__icon" for="__search">
+         </label>
+         <button class="md-icon md-search__icon" data-md-component="reset" tabindex="-1" type="reset">
+          
+         </button>
+        </form>
+        <div class="md-search__output">
+         <div class="md-search__scrollwrap" data-md-scrollfix="">
+          <div class="md-search-result" data-md-component="result">
+           <div class="md-search-result__meta">
+            Type to start searching
+           </div>
+           <ol class="md-search-result__list">
+           </ol>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="md-flex__cell md-flex__cell--shrink">
+      <div class="md-header-nav__source">
+       <a class="md-source" data-md-source="github" href="https://github.com/nautechsystems/nautilus_trader" title="Go to repository">
+        <div class="md-source__icon test">
+         <svg fill="#fff" viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+          <!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.-->
+          <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+          </path>
+         </svg>
+        </div>
+        <div class="md-source__repository">
+         nautilus_trader
+        </div>
+       </a>
+      </div>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <div class="md-container">
+   <div class="md-hero" data-md-component="hero">
+    <div class="md-hero__inner md-grid">
+     <p>
+      Documentation
+     </p>
+    </div>
+   </div>
+   <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+     <ul class="md-tabs__list">
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="/getting_started/index.html">
+        Getting Started
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="/user_guide/index.html">
+        User Guide
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="/api_reference/index.html">
+        API Reference
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="/integrations/index.html">
+        Integrations
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="/developer_guide/index.html">
+        Developer Guide
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="https://github.com/nautechsystems/nautilus_trader/releases">
+        Releases ⬀
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="https://github.com/nautechsystems/nautilus_trader">
+        GitHub ⬀
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="https://nautilustrader.io/">
+        nautilustrader.io ⬀
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="index.html">
+        Getting Started
+       </a>
+      </li>
+     </ul>
+    </div>
+   </nav>
+   <main class="md-main">
+    <div class="md-main__inner md-grid" data-md-component="container">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav class="md-nav md-nav--primary" data-md-level="0">
+         <label class="md-nav__title md-nav__title--site" for="__drawer">
+          <a class="md-nav__button md-logo" href="../index.html" title="">
+           <img alt=" logo" height="48" src="../_static/nt-white.png" width="48"/>
+          </a>
+          <a href="../index.html" title="">
+          </a>
+         </label>
+         <div class="md-nav__source">
+          <a class="md-source" data-md-source="github" href="https://github.com/nautechsystems/nautilus_trader" title="Go to repository">
+           <div class="md-source__icon test">
+            <svg fill="#fff" viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+             <!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.-->
+             <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+             </path>
+            </svg>
+           </div>
+           <div class="md-source__repository">
+            nautilus_trader
+           </div>
+          </a>
+         </div>
+         <ul class="md-nav__list">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="index.html">
+            Getting Started
+           </a>
+           <ul class="md-nav__list">
+            <li class="md-nav__item">
+             <a class="md-nav__link" href="installation.html">
+              Installation
+             </a>
+            </li>
+            <li class="md-nav__item">
+             <input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+             <label class="md-nav__link md-nav__link--active" for="__toc">
+              Quick Start
+             </label>
+             <a class="md-nav__link md-nav__link--active" href="#">
+              Quick Start
+             </a>
+             <nav class="md-nav md-nav--secondary">
+              <label class="md-nav__title" for="__toc">
+               Contents
+              </label>
+              <ul class="md-nav__list" data-md-scrollfix="">
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="#getting-started-quick-start--page-root">
+                 Quick Start
+                </a>
+                <nav class="md-nav">
+                 <ul class="md-nav__list">
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#getting-the-sample-data">
+                    Getting the sample data
+                   </a>
+                  </li>
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#connecting-to-the-datacatalog">
+                    Connecting to the DataCatalog
+                   </a>
+                  </li>
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#writing-a-trading-strategy">
+                    Writing a trading strategy
+                   </a>
+                  </li>
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#configuing-backtests">
+                    Configuing Backtests
+                   </a>
+                  </li>
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#venue">
+                    Venue
+                   </a>
+                  </li>
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#instruments">
+                    Instruments
+                   </a>
+                  </li>
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#data">
+                    Data
+                   </a>
+                  </li>
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#engine">
+                    Engine
+                   </a>
+                  </li>
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#strategies">
+                    Strategies
+                   </a>
+                  </li>
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#running-a-backtest">
+                    Running a backtest
+                   </a>
+                  </li>
+                 </ul>
+                </nav>
+               </li>
+              </ul>
+             </nav>
+             <ul class="md-nav__list">
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#getting-the-sample-data">
+                Getting the sample data
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#connecting-to-the-datacatalog">
+                Connecting to the DataCatalog
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#writing-a-trading-strategy">
+                Writing a trading strategy
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#configuing-backtests">
+                Configuing Backtests
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#venue">
+                Venue
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#instruments">
+                Instruments
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#data">
+                Data
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#engine">
+                Engine
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#strategies">
+                Strategies
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#running-a-backtest">
+                Running a backtest
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../user_guide/index.html">
+            User Guide
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../api_reference/index.html">
+            API Reference
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../integrations/index.html">
+            Integrations
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../developer_guide/index.html">
+            Developer Guide
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          Contents
+         </label>
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#getting-started-quick-start--page-root">
+            Quick Start
+           </a>
+           <nav class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#getting-the-sample-data">
+               Getting the sample data
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#connecting-to-the-datacatalog">
+               Connecting to the DataCatalog
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#writing-a-trading-strategy">
+               Writing a trading strategy
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#configuing-backtests">
+               Configuing Backtests
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#venue">
+               Venue
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#instruments">
+               Instruments
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#data">
+               Data
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#engine">
+               Engine
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#strategies">
+               Strategies
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#running-a-backtest">
+               Running a backtest
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content">
+      <article class="md-content__inner md-typeset" role="main">
+       <section class="tex2jax_ignore mathjax_ignore" id="quick-start">
+        <h1 id="getting-started-quick-start--page-root">
+         Quick Start
+         <a class="headerlink" href="#getting-started-quick-start--page-root" title="Permalink to this headline">
+          ¶
+         </a>
+        </h1>
+        <p>
+         This section explains how to get up and running with NautilusTrader by running some backtests on
+FX data. The Nautilus maintainers have pre-loaded some existing data into the Nautilus storage
+format (parquet) for this guide.
+        </p>
+        <p>
+         For more details on how to load other data into Nautilus, see
+         <a class="reference internal" href="../user_guide/backtest_example.html">
+          <span class="doc std std-doc">
+           Backtest Example
+          </span>
+         </a>
+        </p>
+        <section id="getting-the-sample-data">
+         <h2 id="getting-the-sample-data">
+          Getting the sample data
+          <a class="headerlink" href="#getting-the-sample-data" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          We have prepared a script to load sample data into the Nautilus format for use with this example.
+First, download and load the data by running the next cell (this should take ~ 1-2 mins):
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span>!curl https://raw.githubusercontent.com/nautechsystems/nautilus_data/main/scripts/hist_data_to_catalog.py | python - 
+</pre>
+          </div>
+         </div>
+        </section>
+        <section id="connecting-to-the-datacatalog">
+         <h2 id="connecting-to-the-datacatalog">
+          Connecting to the DataCatalog
+          <a class="headerlink" href="#connecting-to-the-datacatalog" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          If everything worked correctly, you should be able to see a single EUR/USD instrument in the catalog:
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.persistence.catalog</span> <span class="kn">import</span> <span class="n">DataCatalog</span>
+
+<span class="n">catalog</span> <span class="o">=</span> <span class="n">DataCatalog</span><span class="p">(</span><span class="s2">"EUDUSD202001/"</span><span class="p">)</span>
+<span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">()</span>
+</pre>
+          </div>
+         </div>
+        </section>
+        <section id="writing-a-trading-strategy">
+         <h2 id="writing-a-trading-strategy">
+          Writing a trading strategy
+          <a class="headerlink" href="#writing-a-trading-strategy" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          NautilusTrader includes a handful of indicators built-in, in this example we will use a MACD indicator to
+build a simple trading strategy.
+You can read more about
+          <a class="reference external" href="https://www.investopedia.com/terms/m/macd.asp">
+           MACD here
+          </a>
+          , so this
+indicator merely serves as an example without any expected alpha. There is also a way of
+registering indicators to receive certain data types, however in this example we manually pass the received
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            QuoteTick
+           </span>
+          </code>
+          to the indicator in the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            on_quote_tick
+           </span>
+          </code>
+          method.
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.trading.strategy</span> <span class="kn">import</span> <span class="n">TradingStrategy</span><span class="p">,</span> <span class="n">TradingStrategyConfig</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.indicators.macd</span> <span class="kn">import</span> <span class="n">MovingAverageConvergenceDivergence</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.model.data.tick</span> <span class="kn">import</span> <span class="n">QuoteTick</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.model.enums</span> <span class="kn">import</span> <span class="n">PriceType</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.model.enums</span> <span class="kn">import</span> <span class="n">OrderSide</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.model.events.position</span> <span class="kn">import</span> <span class="n">PositionEvent</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.model.identifiers</span> <span class="kn">import</span> <span class="n">InstrumentId</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.model.objects</span> <span class="kn">import</span> <span class="n">Quantity</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.model.position</span> <span class="kn">import</span> <span class="n">Position</span>
+
+
+
+<span class="k">class</span> <span class="nc">MACDConfig</span><span class="p">(</span><span class="n">TradingStrategyConfig</span><span class="p">):</span>
+    <span class="n">instrument_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">fast_period</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">slow_period</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">trade_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="n">entry_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.00010</span>
+
+
+<span class="k">class</span> <span class="nc">MACDStrategy</span><span class="p">(</span><span class="n">TradingStrategy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">MACDConfig</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+        <span class="c1"># Our "trading signal"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">macd</span> <span class="o">=</span> <span class="n">MovingAverageConvergenceDivergence</span><span class="p">(</span>
+            <span class="n">fast_period</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">fast_period</span><span class="p">,</span> <span class="n">slow_period</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">slow_period</span><span class="p">,</span> <span class="n">price_type</span><span class="o">=</span><span class="n">PriceType</span><span class="o">.</span><span class="n">MID</span>
+        <span class="p">)</span>
+        <span class="c1"># We copy some config values onto the class to make them easier to reference later on</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry_threshold</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">entry_threshold</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instrument_id</span> <span class="o">=</span> <span class="n">InstrumentId</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">instrument_id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trade_size</span> <span class="o">=</span> <span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">trade_size</span><span class="p">)</span>
+
+        <span class="c1"># Convenience</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Position</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">on_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subscribe_quote_ticks</span><span class="p">(</span><span class="n">instrument_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">instrument_id</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_quote_tick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tick</span><span class="p">:</span> <span class="n">QuoteTick</span><span class="p">):</span>
+        <span class="c1"># Update our MACD</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">macd</span><span class="o">.</span><span class="n">handle_quote_tick</span><span class="p">(</span><span class="n">tick</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">macd</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+            <span class="c1"># self._log.info(f"{self.macd.value=}:%5d")</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">check_for_entry</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">check_for_exit</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">quantity</span> <span class="o">&lt;=</span> <span class="mi">1000</span>
+
+    <span class="k">def</span> <span class="nf">on_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">PositionEvent</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">position</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">position_id</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">check_for_entry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">positions</span><span class="p">():</span>
+            <span class="c1"># If we have a position, do not enter again</span>
+            <span class="k">return</span>
+
+        <span class="c1"># We have no position, check if we are above or below our MACD entry threshold</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">macd</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">entry_threshold</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Entering trade, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">macd</span><span class="o">.</span><span class="n">value</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">entry_threshold</span><span class="si">=}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="c1"># We're above (to sell) or below (to buy) our entry threshold, with no position: enter a trade</span>
+            <span class="n">side</span> <span class="o">=</span> <span class="n">OrderSide</span><span class="o">.</span><span class="n">BUY</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">macd</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">entry_threshold</span> <span class="k">else</span> <span class="n">OrderSide</span><span class="o">.</span><span class="n">SELL</span>
+            <span class="n">order</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">market</span><span class="p">(</span>
+                <span class="n">instrument_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">instrument_id</span><span class="p">,</span>
+                <span class="n">order_side</span><span class="o">=</span><span class="n">side</span><span class="p">,</span>
+                <span class="n">quantity</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">trade_size</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">submit_order</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">check_for_exit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">positions</span><span class="p">():</span>
+            <span class="c1"># If we don't have a position, return early</span>
+            <span class="k">return</span>
+
+        <span class="c1"># We have a position, check if we have crossed back over the MACD 0 line (and therefore close position)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">is_long</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">macd</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">is_short</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">macd</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Exiting trade, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">macd</span><span class="o">.</span><span class="n">value</span><span class="si">=}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="c1"># We've crossed back over 0 line - close the position.</span>
+            <span class="c1"># Opposite to trade entry, except only sell our position size (we may not have been full filled)</span>
+            <span class="n">side</span> <span class="o">=</span> <span class="n">OrderSide</span><span class="o">.</span><span class="n">SELL</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">is_long</span> <span class="k">else</span> <span class="n">OrderSide</span><span class="o">.</span><span class="n">BUY</span>
+            <span class="n">order</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">market</span><span class="p">(</span>
+                <span class="n">instrument_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">instrument_id</span><span class="p">,</span>
+                <span class="n">order_side</span><span class="o">=</span><span class="n">side</span><span class="p">,</span>
+                <span class="n">quantity</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">quantity</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">submit_order</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+</pre>
+          </div>
+         </div>
+         <!-- #region pycharm={"name": "#%% md\n"} -->
+        </section>
+        <section id="configuing-backtests">
+         <h2 id="configuing-backtests">
+          Configuing Backtests
+          <a class="headerlink" href="#configuing-backtests" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Now that we have a trading strategy and data, we can run a backtest! Nautilus uses a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestEngine
+           </span>
+          </code>
+          to configure and run backtests, and requires some setup. This may seem a little complex at first,
+however this is necessary for the correctness that Nautilus strives for.
+         </p>
+         <p>
+          To configure a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestEngine
+           </span>
+          </code>
+          , we create an instance of a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestRunConfig
+           </span>
+          </code>
+          , configuring the
+following (minimal) aspects of the backtest:
+         </p>
+         <ul class="simple">
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              data
+             </span>
+            </code>
+            - The input data we would like to perform the backtest on
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              venues
+             </span>
+            </code>
+            - The simulated venues (exchanges or brokers) available in the backtest
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              strategies
+             </span>
+            </code>
+            - The strategy or strategies we would like to run for the backtest
+           </p>
+          </li>
+         </ul>
+         <p>
+          There are many more configurable features which will be described later in the docs, for now this will get us up and running.
+         </p>
+         <!-- #endregion -->
+         <!-- #region pycharm={"name": "#%% md\n"} -->
+        </section>
+        <section id="venue">
+         <h2 id="venue">
+          Venue
+          <a class="headerlink" href="#venue" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          First, we create a venue. For this example we will create a simulated FX ECN venue.
+A venue needs a name which acts as an ID, as well as some basic configuration;
+the account type (cash vs margin), an optional base currency, and starting balance.
+         </p>
+         <!-- #endregion -->
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestVenueConfig</span>
+
+<span class="n">venue</span> <span class="o">=</span> <span class="n">BacktestVenueConfig</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"SIM"</span><span class="p">,</span>
+    <span class="n">oms_type</span><span class="o">=</span><span class="s2">"NETTING"</span><span class="p">,</span>
+    <span class="n">account_type</span><span class="o">=</span><span class="s2">"CASH"</span><span class="p">,</span>
+    <span class="n">base_currency</span><span class="o">=</span><span class="s2">"USD"</span><span class="p">,</span>
+    <span class="n">starting_balances</span><span class="o">=</span><span class="p">[</span><span class="s2">"100_000 USD"</span><span class="p">]</span>
+<span class="p">)</span>
+</pre>
+          </div>
+         </div>
+         <!-- #region -->
+        </section>
+        <section id="instruments">
+         <h2 id="instruments">
+          Instruments
+          <a class="headerlink" href="#instruments" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Second, we need to know about the instruments that we would like to load data for, we can use the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            DataCatalog
+           </span>
+          </code>
+          for this:
+         </p>
+         <!-- #endregion -->
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">instruments</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">(</span><span class="n">as_nautilus</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">instruments</span>
+</pre>
+          </div>
+         </div>
+         <!-- #region jupyter={"outputs_hidden": false} pycharm={"name": "#%% md\n"} -->
+        </section>
+        <section id="data">
+         <h2 id="data">
+          Data
+          <a class="headerlink" href="#data" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Next, we need to configure the data for the backtest. Nautilus is built to be very flexible when it
+comes to loading data for backtests, however this also means some configuration is required.
+         </p>
+         <p>
+          For each tick type (and instrument), we add a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestDataConfig
+           </span>
+          </code>
+          . In this instance we are simply
+adding the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            QuoteTick
+           </span>
+          </code>
+          (s) for our EUR/USD instrument:
+         </p>
+         <!-- #endregion -->
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.model.data.tick</span> <span class="kn">import</span> <span class="n">QuoteTick</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestDataConfig</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">BacktestDataConfig</span><span class="p">(</span>
+        <span class="n">catalog_path</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">catalog</span><span class="o">.</span><span class="n">path</span><span class="p">),</span>
+        <span class="n">data_cls_path</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">QuoteTick</span><span class="o">.</span><span class="vm">__module__</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">QuoteTick</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">instruments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
+        <span class="n">end_time</span><span class="o">=</span><span class="s2">"2020-01-05"</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">]</span>
+</pre>
+          </div>
+         </div>
+         <!-- #region pycharm={"name": "#%% md\n"} -->
+        </section>
+        <section id="engine">
+         <h2 id="engine">
+          Engine
+          <a class="headerlink" href="#engine" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Then, we need a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestEngineConfig
+           </span>
+          </code>
+          which allows configuring the log level and other components,
+however is fine to leave with its defaults:
+         </p>
+         <!-- #endregion -->
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestEngineConfig</span>
+
+<span class="n">engine</span> <span class="o">=</span> <span class="n">BacktestEngineConfig</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="s2">"ERROR"</span><span class="p">)</span> <span class="c1"># Lower to `INFO` to see more logging about orders, events, etc.</span>
+</pre>
+          </div>
+         </div>
+        </section>
+        <section id="strategies">
+         <h2 id="strategies">
+          Strategies
+          <a class="headerlink" href="#strategies" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          And finally is our actual trading strategy(s):
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">macd_config</span> <span class="o">=</span> <span class="n">MACDConfig</span><span class="p">(</span>
+    <span class="n">instrument_id</span><span class="o">=</span><span class="n">instruments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+    <span class="n">fast_period</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">slow_period</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">macd_strategy</span> <span class="o">=</span> <span class="n">MACDStrategy</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">macd_config</span><span class="p">)</span>
+</pre>
+          </div>
+         </div>
+        </section>
+        <section id="running-a-backtest">
+         <h2 id="running-a-backtest">
+          Running a backtest
+          <a class="headerlink" href="#running-a-backtest" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          We can now pass our various config pieces to the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestRunConfig
+           </span>
+          </code>
+          - this object now contains the
+full configuration for our backtest, we are ready to run some backtests!
+         </p>
+         <p>
+          The
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestNode
+           </span>
+          </code>
+          class
+          <em>
+           actually
+          </em>
+          runs the backtest. The reason for this separation between
+configuration and execution is the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestNode
+           </span>
+          </code>
+          allows running multiple configurations (different
+parameters or batches of data), as well as parallelisation via the excellent
+          <a class="reference external" href="https://dask.org/">
+           dask
+          </a>
+          library.
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.node</span> <span class="kn">import</span> <span class="n">BacktestNode</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestRunConfig</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.trading.config</span> <span class="kn">import</span> <span class="n">ImportableStrategyConfig</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="n">BacktestRunConfig</span><span class="p">(</span>
+    <span class="n">venues</span><span class="o">=</span><span class="p">[</span><span class="n">venue</span><span class="p">],</span>
+    <span class="n">strategies</span><span class="o">=</span><span class="p">[</span><span class="n">macd_strategy</span><span class="p">],</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+    <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">node</span> <span class="o">=</span> <span class="n">BacktestNode</span><span class="p">()</span>
+
+ <span class="c1"># run_sync runs one or many configs synchronously</span>
+<span class="p">[</span><span class="n">result</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span>
+    <span class="n">run_configs</span><span class="o">=</span><span class="p">[</span><span class="n">config</span><span class="p">],</span> 
+    <span class="n">return_engine</span><span class="o">=</span><span class="kc">True</span> <span class="c1"># Return the full BacktestEngine (which contains much more detailed information) rather than the standard `BacktestResult`</span>
+<span class="p">)</span>
+</pre>
+          </div>
+         </div>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">orders</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
+</pre>
+          </div>
+         </div>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">positions</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
+</pre>
+          </div>
+         </div>
+        </section>
+       </section>
+      </article>
+     </div>
+    </div>
+   </main>
+  </div>
+  <footer class="md-footer">
+   <div class="md-footer-nav">
+    <nav class="md-footer-nav__inner md-grid">
+     <a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href="installation.html" rel="prev" title="Installation">
+      <div class="md-flex__cell md-flex__cell--shrink">
+       <i class="md-icon md-icon--arrow-back md-footer-nav__button">
+       </i>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+       <span class="md-flex__ellipsis">
+        <span class="md-footer-nav__direction">
+         Previous
+        </span>
+        Installation
+       </span>
+      </div>
+     </a>
+     <a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="../user_guide/index.html" rel="next" title="User Guide">
+      <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+       <span class="md-flex__ellipsis">
+        <span class="md-footer-nav__direction">
+         Next
+        </span>
+        User Guide
+       </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+       <i class="md-icon md-icon--arrow-forward md-footer-nav__button">
+       </i>
+      </div>
+     </a>
+    </nav>
+   </div>
+   <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+     <div class="md-footer-copyright">
+      <div class="md-footer-copyright__highlight">
+       © Copyright 2015-2022 Nautech Systems Pty Ltd.
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script src="../_static/javascripts/application.js">
+  </script>
+  <script>
+   app.initialize({version: "1.0.4", url: {base: ".."}})
+  </script>
+ </body>
+</html>

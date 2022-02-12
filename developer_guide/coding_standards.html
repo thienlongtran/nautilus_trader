@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
+  <meta content="Copied to clipboard" name="lang:clipboard.copied"/>
+  <meta content="en" name="lang:search.language"/>
+  <meta content="True" name="lang:search.pipeline.stopwords"/>
+  <meta content="True" name="lang:search.pipeline.trimmer"/>
+  <meta content="No matching documents" name="lang:search.result.none"/>
+  <meta content="1 matching document" name="lang:search.result.one"/>
+  <meta content="# matching documents" name="lang:search.result.other"/>
+  <meta content="[\s\-]+" name="lang:search.tokenizer"/>
+  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+  </style>
+  <link href="../_static/stylesheets/application.css" rel="stylesheet"/>
+  <link href="../_static/stylesheets/application-palette.css" rel="stylesheet"/>
+  <link href="../_static/stylesheets/application-fixes.css" rel="stylesheet"/>
+  <link href="../_static/fonts/material-icons.css" rel="stylesheet"/>
+  <meta content="#282f38" name="theme-color"/>
+  <script src="../_static/javascripts/modernizr.js">
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-XXXXX');
+  </script>
+  <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
+  <meta content="Copied to clipboard" name="lang:clipboard.copied"/>
+  <meta content="en" name="lang:search.language"/>
+  <meta content="True" name="lang:search.pipeline.stopwords"/>
+  <meta content="True" name="lang:search.pipeline.trimmer"/>
+  <meta content="No matching documents" name="lang:search.result.none"/>
+  <meta content="1 matching document" name="lang:search.result.one"/>
+  <meta content="# matching documents" name="lang:search.result.other"/>
+  <meta content="[\s\-]+" name="lang:search.tokenizer"/>
+  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+  </style>
+  <link href="../_static/stylesheets/application.css" rel="stylesheet"/>
+  <link href="../_static/stylesheets/application-palette.css" rel="stylesheet"/>
+  <link href="../_static/stylesheets/application-fixes.css" rel="stylesheet"/>
+  <link href="../_static/fonts/material-icons.css" rel="stylesheet"/>
+  <meta content="#282f38" name="theme-color"/>
+  <script src="../_static/javascripts/modernizr.js">
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-XXXXX');
+  </script>
+  <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
+  <title>
+   Coding Standards
+  </title>
+  <link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+  <link href="../_static/material.css" rel="stylesheet" type="text/css"/>
+  <link href="../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+  <link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+  <link href="../_static/custom.css" rel="stylesheet" type="text/css"/>
+  <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js">
+  </script>
+  <script src="../_static/jquery.js">
+  </script>
+  <script src="../_static/underscore.js">
+  </script>
+  <script src="../_static/doctools.js">
+  </script>
+  <script src="../_static/clipboard.min.js">
+  </script>
+  <script src="../_static/copybutton.js">
+  </script>
+  <script>
+   let toggleHintShow = 'Click to show';
+  </script>
+  <script>
+   let toggleHintHide = 'Click to hide';
+  </script>
+  <script>
+   let toggleOpenOnPrint = 'true';
+  </script>
+  <script src="../_static/togglebutton.js">
+  </script>
+  <script>
+   var togglebuttonSelector = '.toggle, .admonition.dropdown';
+  </script>
+  <link href="../_static/favicon-32x32.png" rel="shortcut icon"/>
+  <link href="../genindex.html" rel="index" title="Index"/>
+  <link href="../search.html" rel="search" title="Search"/>
+  <link href="cython.html" rel="next" title="Cython"/>
+  <link href="environment_setup.html" rel="prev" title="Environment Setup"/>
+  <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
+  <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
+ </head>
+ <body data-md-color-accent="#282f38" data-md-color-primary="#282f38" dir="ltr">
+  <svg class="md-svg">
+   <defs data-children-count="0">
+    <svg fill="#fff" viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+     <!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.-->
+     <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+     </path>
+    </svg>
+   </defs>
+  </svg>
+  <input class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" data-md-component="overlay" for="__drawer">
+  </label>
+  <a class="md-skip" href="#developer_guide/coding_standards" tabindex="1">
+   Skip to content
+  </a>
+  <header class="md-header" data-md-component="header">
+   <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+     <div class="md-flex__cell md-flex__cell--shrink">
+      <a class="md-header-nav__button md-logo" href="../index.html" title="">
+       <img alt=" logo" height="26" src="../_static/nt-white.png"/>
+      </a>
+     </div>
+     <div class="md-flex__cell md-flex__cell--shrink">
+      <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer">
+      </label>
+     </div>
+     <div class="md-flex__cell md-flex__cell--stretch">
+      <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+       <span class="md-header-nav__topic">
+       </span>
+       <span class="md-header-nav__topic">
+        Coding Standards
+       </span>
+      </div>
+     </div>
+     <div class="md-flex__cell md-flex__cell--shrink">
+      <label class="md-icon md-icon--search md-header-nav__button" for="__search">
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+       <label class="md-search__overlay" for="__search">
+       </label>
+       <div class="md-search__inner" role="search">
+        <form action="../search.html" class="md-search__form" method="get" name="search">
+         <input autocapitalize="off" autocomplete="off" class="md-search__input" data-md-component="query" data-md-state="active" name="q" placeholder="Search" spellcheck="false" type="text"/>
+         <label class="md-icon md-search__icon" for="__search">
+         </label>
+         <button class="md-icon md-search__icon" data-md-component="reset" tabindex="-1" type="reset">
+          
+         </button>
+        </form>
+        <div class="md-search__output">
+         <div class="md-search__scrollwrap" data-md-scrollfix="">
+          <div class="md-search-result" data-md-component="result">
+           <div class="md-search-result__meta">
+            Type to start searching
+           </div>
+           <ol class="md-search-result__list">
+           </ol>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="md-flex__cell md-flex__cell--shrink">
+      <div class="md-header-nav__source">
+       <a class="md-source" data-md-source="github" href="https://github.com/nautechsystems/nautilus_trader" title="Go to repository">
+        <div class="md-source__icon test">
+         <svg fill="#fff" viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+          <!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.-->
+          <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+          </path>
+         </svg>
+        </div>
+        <div class="md-source__repository">
+         nautilus_trader
+        </div>
+       </a>
+      </div>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <div class="md-container">
+   <div class="md-hero" data-md-component="hero">
+    <div class="md-hero__inner md-grid">
+     <p>
+      Documentation
+     </p>
+    </div>
+   </div>
+   <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+     <ul class="md-tabs__list">
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="/getting_started/index.html">
+        Getting Started
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="/user_guide/index.html">
+        User Guide
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="/api_reference/index.html">
+        API Reference
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="/integrations/index.html">
+        Integrations
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="/developer_guide/index.html">
+        Developer Guide
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="https://github.com/nautechsystems/nautilus_trader/releases">
+        Releases ⬀
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="https://github.com/nautechsystems/nautilus_trader">
+        GitHub ⬀
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="https://nautilustrader.io/">
+        nautilustrader.io ⬀
+       </a>
+      </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="index.html">
+        Developer Guide
+       </a>
+      </li>
+     </ul>
+    </div>
+   </nav>
+   <main class="md-main">
+    <div class="md-main__inner md-grid" data-md-component="container">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav class="md-nav md-nav--primary" data-md-level="0">
+         <label class="md-nav__title md-nav__title--site" for="__drawer">
+          <a class="md-nav__button md-logo" href="../index.html" title="">
+           <img alt=" logo" height="48" src="../_static/nt-white.png" width="48"/>
+          </a>
+          <a href="../index.html" title="">
+          </a>
+         </label>
+         <div class="md-nav__source">
+          <a class="md-source" data-md-source="github" href="https://github.com/nautechsystems/nautilus_trader" title="Go to repository">
+           <div class="md-source__icon test">
+            <svg fill="#fff" viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+             <!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.-->
+             <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+             </path>
+            </svg>
+           </div>
+           <div class="md-source__repository">
+            nautilus_trader
+           </div>
+          </a>
+         </div>
+         <ul class="md-nav__list">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../getting_started/index.html">
+            Getting Started
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../user_guide/index.html">
+            User Guide
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../api_reference/index.html">
+            API Reference
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../integrations/index.html">
+            Integrations
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="index.html">
+            Developer Guide
+           </a>
+           <ul class="md-nav__list">
+            <li class="md-nav__item">
+             <a class="md-nav__link" href="environment_setup.html">
+              Environment Setup
+             </a>
+            </li>
+            <li class="md-nav__item">
+             <input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+             <label class="md-nav__link md-nav__link--active" for="__toc">
+              Coding Standards
+             </label>
+             <a class="md-nav__link md-nav__link--active" href="#">
+              Coding Standards
+             </a>
+             <nav class="md-nav md-nav--secondary">
+              <label class="md-nav__title" for="__toc">
+               Contents
+              </label>
+              <ul class="md-nav__list" data-md-scrollfix="">
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="#developer-guide-coding-standards--page-root">
+                 Coding Standards
+                </a>
+                <nav class="md-nav">
+                 <ul class="md-nav__list">
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#code-style">
+                    Code Style
+                   </a>
+                   <nav class="md-nav">
+                    <ul class="md-nav__list">
+                     <li class="md-nav__item">
+                      <a class="md-nav__link" href="#black">
+                       Black
+                      </a>
+                     </li>
+                     <li class="md-nav__item">
+                      <a class="md-nav__link" href="#formatting">
+                       Formatting
+                      </a>
+                     </li>
+                     <li class="md-nav__item">
+                      <a class="md-nav__link" href="#pep-8">
+                       PEP-8
+                      </a>
+                     </li>
+                     <li class="md-nav__item">
+                      <a class="md-nav__link" href="#docstrings">
+                       Docstrings
+                      </a>
+                     </li>
+                     <li class="md-nav__item">
+                      <a class="md-nav__link" href="#flake8">
+                       Flake8
+                      </a>
+                     </li>
+                    </ul>
+                   </nav>
+                  </li>
+                 </ul>
+                </nav>
+               </li>
+              </ul>
+             </nav>
+             <ul class="md-nav__list">
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#code-style">
+                Code Style
+               </a>
+               <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#black">
+                  Black
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#formatting">
+                  Formatting
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#pep-8">
+                  PEP-8
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#docstrings">
+                  Docstrings
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#flake8">
+                  Flake8
+                 </a>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </li>
+            <li class="md-nav__item">
+             <a class="md-nav__link" href="cython.html">
+              Cython
+             </a>
+            </li>
+            <li class="md-nav__item">
+             <a class="md-nav__link" href="testing.html">
+              Testing
+             </a>
+            </li>
+            <li class="md-nav__item">
+             <a class="md-nav__link" href="packaged_data.html">
+              Packaged Data
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          Contents
+         </label>
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#developer-guide-coding-standards--page-root">
+            Coding Standards
+           </a>
+           <nav class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#code-style">
+               Code Style
+              </a>
+              <nav class="md-nav">
+               <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#black">
+                  Black
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#formatting">
+                  Formatting
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#pep-8">
+                  PEP-8
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#docstrings">
+                  Docstrings
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#flake8">
+                  Flake8
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content">
+      <article class="md-content__inner md-typeset" role="main">
+       <section class="tex2jax_ignore mathjax_ignore" id="coding-standards">
+        <h1 id="developer-guide-coding-standards--page-root">
+         Coding Standards
+         <a class="headerlink" href="#developer-guide-coding-standards--page-root" title="Permalink to this headline">
+          ¶
+         </a>
+        </h1>
+        <section id="code-style">
+         <h2 id="code-style">
+          Code Style
+          <a class="headerlink" href="#code-style" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          The current codebase can be used as a guide for formatting conventions.
+         </p>
+         <section id="black">
+          <h3 id="black">
+           Black
+           <a class="headerlink" href="#black" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           <a class="reference external" href="https://github.com/psf/black">
+            Black
+           </a>
+           is a PEP-8 compliant opinionated formatter and used during the pre-commit step.
+          </p>
+          <p>
+           We philosophically agree with the
+           <em>
+            Black
+           </em>
+           formatting style, however it does not currently run over the Cython parts of the codebase.
+So there you could say we are “handcrafting towards”
+           <em>
+            Black
+           </em>
+           stylistic conventions for consistency.
+          </p>
+         </section>
+         <section id="formatting">
+          <h3 id="formatting">
+           Formatting
+           <a class="headerlink" href="#formatting" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           1- For longer lines of code, and when passing more than a couple of arguments, you should take a new line which aligns at the next logical indent (rather than attempting a hanging ‘vanity’ alignment off an opening parenthesis). This practice conserves space to the right, ensures important code is more central in view, and is also robust to function/method name changes.
+          </p>
+          <p>
+           2- The closing parenthesis should be located on a new line, aligned at the logical indent.
+          </p>
+          <p>
+           3- Also ensure multiple hanging parameters or arguments end with a trailing comma:
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">long_method_with_many_params</span><span class="p">(</span>
+    <span class="n">some_arg1</span><span class="p">,</span>
+    <span class="n">some_arg2</span><span class="p">,</span>
+    <span class="n">some_arg3</span><span class="p">,</span>  <span class="c1"># &lt;-- trailing comma</span>
+<span class="p">)</span>
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="pep-8">
+          <h3 id="pep-8">
+           PEP-8
+           <a class="headerlink" href="#pep-8" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           The codebase generally follows the PEP-8 style guide. Even though C typing is taken advantage of in the Cython parts of the codebase, we still aim to be idiomatic of Python where possible.
+One notable departure is that Python truthiness is not always taken advantage of to check if an argument is
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             None
+            </span>
+           </code>
+           for everything other than collections.
+          </p>
+          <p>
+           There are two reasons for this;
+          </p>
+          <p>
+           1- Cython can generate more efficient C code from
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             is
+            </span>
+            <span class="pre">
+             None
+            </span>
+           </code>
+           and
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             is
+            </span>
+            <span class="pre">
+             not
+            </span>
+            <span class="pre">
+             None
+            </span>
+           </code>
+           , rather than entering the Python runtime to check the
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             PyObject
+            </span>
+           </code>
+           truthiness.
+          </p>
+          <p>
+           2- As per the
+           <a class="reference external" href="https://google.github.io/styleguide/pyguide.html">
+            Google Python Style Guide
+           </a>
+           - it’s discouraged to use truthiness to check if an argument is/is not
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             None
+            </span>
+           </code>
+           , when there is a chance an unexpected object could be passed into the function or method which will yield an unexpected truthiness evaluation (which could result in a logical error type bug).
+          </p>
+          <p>
+           <em>
+            “Always use if foo is None: (or is not None) to check for a None value. E.g., when testing whether a variable or argument that defaults to None was set to some other value. The other value might be a value that’s false in a boolean context!”
+           </em>
+          </p>
+          <p>
+           Having said all of this there are still areas of the codebase which aren’t as performance-critical where it is safe to use Python truthiness to check for
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             None
+            </span>
+           </code>
+           .
+          </p>
+          <div class="admonition note">
+           <p class="admonition-title">
+            Note
+           </p>
+           <p>
+            To be clear, it’s still encouraged to use Python truthiness
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              is
+             </span>
+            </code>
+            and
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              not
+             </span>
+            </code>
+            to check if collections are
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              None
+             </span>
+            </code>
+            or empty.
+           </p>
+          </div>
+          <p>
+           We welcome all feedback on where the codebase departs from PEP-8 for no apparent reason.
+          </p>
+         </section>
+         <section id="docstrings">
+          <h3 id="docstrings">
+           Docstrings
+           <a class="headerlink" href="#docstrings" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           The
+           <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">
+            NumPy docstring spec
+           </a>
+           is used throughout the codebase. This needs to be adhered to consistently to ensure the docs build correctly.
+          </p>
+         </section>
+         <section id="flake8">
+          <h3 id="flake8">
+           Flake8
+           <a class="headerlink" href="#flake8" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           <a class="reference external" href="https://github.com/pycqa/flake8">
+            Flake8
+           </a>
+           is utilized to lint the codebase. Current ignores can be found in the top-level
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             pre-commit-config.yaml
+            </span>
+           </code>
+           , with the justifications also commented.
+          </p>
+         </section>
+        </section>
+       </section>
+      </article>
+     </div>
+    </div>
+   </main>
+  </div>
+  <footer class="md-footer">
+   <div class="md-footer-nav">
+    <nav class="md-footer-nav__inner md-grid">
+     <a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href="environment_setup.html" rel="prev" title="Environment Setup">
+      <div class="md-flex__cell md-flex__cell--shrink">
+       <i class="md-icon md-icon--arrow-back md-footer-nav__button">
+       </i>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+       <span class="md-flex__ellipsis">
+        <span class="md-footer-nav__direction">
+         Previous
+        </span>
+        Environment Setup
+       </span>
+      </div>
+     </a>
+     <a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="cython.html" rel="next" title="Cython">
+      <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+       <span class="md-flex__ellipsis">
+        <span class="md-footer-nav__direction">
+         Next
+        </span>
+        Cython
+       </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+       <i class="md-icon md-icon--arrow-forward md-footer-nav__button">
+       </i>
+      </div>
+     </a>
+    </nav>
+   </div>
+   <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+     <div class="md-footer-copyright">
+      <div class="md-footer-copyright__highlight">
+       © Copyright 2015-2022 Nautech Systems Pty Ltd.
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script src="../_static/javascripts/application.js">
+  </script>
+  <script>
+   app.initialize({version: "1.0.4", url: {base: ".."}})
+  </script>
+ </body>
+</html>
