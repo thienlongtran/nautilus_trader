@@ -15725,7 +15725,7 @@ IDs generated.
                     Price
                    </em>
                   </a>
-                  ) – The stop-loss child order trigger (STOP) price.
+                  ) – The stop-loss child order trigger price (STOP).
                  </p>
                 </li>
                 <li>
@@ -15739,7 +15739,7 @@ IDs generated.
                     Price
                    </em>
                   </a>
-                  ) – The take-profit child order (LIMIT) price.
+                  ) – The take-profit child order price (LIMIT).
                  </p>
                 </li>
                 <li>
@@ -15819,7 +15819,7 @@ IDs generated.
                    ,
                   </em>
                   <em>
-                   optional
+                   default False
                   </em>
                   ) – If the entry order will only provide liquidity (make a market).
                  </p>
@@ -16173,7 +16173,7 @@ IDs generated.
                     Price
                    </em>
                   </a>
-                  ) – The stop-loss child order trigger (STOP) price.
+                  ) – The stop-loss child order trigger price (STOP).
                  </p>
                 </li>
                 <li>
@@ -16187,7 +16187,7 @@ IDs generated.
                     Price
                    </em>
                   </a>
-                  ) – The take-profit child order (LIMIT) price.
+                  ) – The take-profit child order price (LIMIT).
                  </p>
                 </li>
                 <li>
@@ -16621,16 +16621,12 @@ IDs generated.
                   <strong>
                    time_in_force
                   </strong>
-                  (
-                  <em>
-                   TimeInForce
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
+                  (TimeInForce, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
                   ) – The orders time-in-force.
                  </p>
                 </li>
@@ -16671,7 +16667,7 @@ IDs generated.
                    ,
                   </em>
                   <em>
-                   optional
+                   default False
                   </em>
                   ) – If the order will only provide liquidity (make a market).
                  </p>
@@ -16689,7 +16685,7 @@ IDs generated.
                    ,
                   </em>
                   <em>
-                   optional
+                   default False
                   </em>
                   ) – If the order carries the ‘reduce-only’ execution instruction.
                  </p>
@@ -16976,16 +16972,12 @@ contain any arbitrary delimiter if required.
                   <strong>
                    time_in_force
                   </strong>
-                  (
-                  <em>
-                   TimeInForce
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
+                  (TimeInForce, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
                   ) – The orders time-in-force. Often not applicable for market orders.
                  </p>
                 </li>
@@ -17002,7 +16994,7 @@ contain any arbitrary delimiter if required.
                    ,
                   </em>
                   <em>
-                   optional
+                   default False
                   </em>
                   ) – If the order carries the ‘reduce-only’ execution instruction.
                  </p>
@@ -17482,10 +17474,12 @@ given count.
                   <strong>
                    trigger_type
                   </strong>
-                  (
-                  <em>
-                   TriggerType
-                  </em>
+                  (TriggerType, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    DEFAULT
+                   </span>
+                  </code>
                   ) – The order trigger type.
                  </p>
                 </li>
@@ -17494,16 +17488,12 @@ given count.
                   <strong>
                    time_in_force
                   </strong>
-                  (
-                  <em>
-                   TimeInForce
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
+                  (TimeInForce, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
                   ) – The orders time-in-force.
                  </p>
                 </li>
@@ -17544,7 +17534,7 @@ given count.
                    ,
                   </em>
                   <em>
-                   optional
+                   default False
                   </em>
                   ) – If the order will only provide liquidity (make a market).
                  </p>
@@ -17562,7 +17552,7 @@ given count.
                    ,
                   </em>
                   <em>
-                   optional
+                   default False
                   </em>
                   ) – If the order carries the ‘reduce-only’ execution instruction.
                  </p>
@@ -17905,10 +17895,12 @@ contain any arbitrary delimiter if required.
                   <strong>
                    trigger_type
                   </strong>
-                  (
-                  <em>
-                   TriggerType
-                  </em>
+                  (TriggerType, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    DEFAULT
+                   </span>
+                  </code>
                   ) – The order trigger type.
                  </p>
                 </li>
@@ -17917,16 +17909,12 @@ contain any arbitrary delimiter if required.
                   <strong>
                    time_in_force
                   </strong>
-                  (
-                  <em>
-                   TimeInForce
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
+                  (TimeInForce, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
                   ) – The orders time-in-force.
                  </p>
                 </li>
@@ -17967,7 +17955,7 @@ contain any arbitrary delimiter if required.
                    ,
                   </em>
                   <em>
-                   optional
+                   default False
                   </em>
                   ) – If the order carries the ‘reduce-only’ execution instruction.
                  </p>
@@ -18388,7 +18376,7 @@ contain any arbitrary delimiter if required.
                   <em>
                    Decimal
                   </em>
-                  ) – The trailing offset for the trigger (STOP) price.
+                  ) – The trailing offset for the trigger price (STOP).
                  </p>
                 </li>
                 <li>
@@ -18400,7 +18388,7 @@ contain any arbitrary delimiter if required.
                   <em>
                    Decimal
                   </em>
-                  ) – The trailing offset for the order (LIMIT) price.
+                  ) – The trailing offset for the order price (LIMIT).
                  </p>
                 </li>
                 <li>
@@ -18470,16 +18458,12 @@ to the delta of market price and
                   <strong>
                    trigger_type
                   </strong>
-                  (
-                  <em>
-                   TriggerType
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
+                  (TriggerType, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    DEFAULT
+                   </span>
+                  </code>
                   ) – The order trigger type.
                  </p>
                 </li>
@@ -18488,16 +18472,12 @@ to the delta of market price and
                   <strong>
                    offset_type
                   </strong>
-                  (
-                  <em>
-                   TrailingOffsetType
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
+                  (TrailingOffsetType, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    PRICE
+                   </span>
+                  </code>
                   ) – The order trailing offset type.
                  </p>
                 </li>
@@ -18506,16 +18486,12 @@ to the delta of market price and
                   <strong>
                    time_in_force
                   </strong>
-                  (
-                  <em>
-                   TimeInForce
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
+                  (TimeInForce, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
                   ) – The orders time-in-force.
                  </p>
                 </li>
@@ -18556,7 +18532,7 @@ to the delta of market price and
                    ,
                   </em>
                   <em>
-                   optional
+                   default False
                   </em>
                   ) – If the order will only provide liquidity (make a market).
                  </p>
@@ -18574,7 +18550,7 @@ to the delta of market price and
                    ,
                   </em>
                   <em>
-                   optional
+                   default False
                   </em>
                   ) – If the order carries the ‘reduce-only’ execution instruction.
                  </p>
@@ -18929,7 +18905,7 @@ contain any arbitrary delimiter if required.
                   <em>
                    Decimal
                   </em>
-                  ) – The trailing offset for the trigger (STOP) price.
+                  ) – The trailing offset for the trigger price (STOP).
                  </p>
                 </li>
                 <li>
@@ -18968,16 +18944,12 @@ to the delta of market price and
                   <strong>
                    trigger_type
                   </strong>
-                  (
-                  <em>
-                   TriggerType
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
+                  (TriggerType, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    DEFAULT
+                   </span>
+                  </code>
                   ) – The order trigger type.
                  </p>
                 </li>
@@ -18986,16 +18958,12 @@ to the delta of market price and
                   <strong>
                    offset_type
                   </strong>
-                  (
-                  <em>
-                   TrailingOffsetType
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
+                  (TrailingOffsetType, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    PRICE
+                   </span>
+                  </code>
                   ) – The order trailing offset type.
                  </p>
                 </li>
@@ -19004,16 +18972,12 @@ to the delta of market price and
                   <strong>
                    time_in_force
                   </strong>
-                  (
-                  <em>
-                   TimeInForce
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
+                  (TimeInForce, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
                   ) – The orders time-in-force.
                  </p>
                 </li>
@@ -19054,7 +19018,7 @@ to the delta of market price and
                    ,
                   </em>
                   <em>
-                   optional
+                   default False
                   </em>
                   ) – If the order carries the ‘reduce-only’ execution instruction.
                  </p>

@@ -1004,7 +1004,7 @@
                  ,
                 </em>
                 <em>
-                 optional
+                 default False
                 </em>
                 ) – If the order carries the ‘reduce-only’ execution instruction.
                </p>
@@ -1034,10 +1034,12 @@
                 <strong>
                  contingency_type
                 </strong>
-                (
-                <em>
-                 ContingencyType
-                </em>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
                 ) – The order contingency type.
                </p>
               </li>
@@ -3712,7 +3714,7 @@ The possible states of closed orders include;
                  ,
                 </em>
                 <em>
-                 optional
+                 default False
                 </em>
                 ) – If the order will only provide liquidity (make a market).
                </p>
@@ -3730,7 +3732,7 @@ The possible states of closed orders include;
                  ,
                 </em>
                 <em>
-                 optional
+                 default False
                 </em>
                 ) – If the order carries the ‘reduce-only’ execution instruction.
                </p>
@@ -3780,10 +3782,12 @@ The possible states of closed orders include;
                 <strong>
                  contingency_type
                 </strong>
-                (
-                <em>
-                 ContingencyType
-                </em>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
                 ) – The order contingency type.
                </p>
               </li>
@@ -6589,7 +6593,7 @@ The possible states of closed orders include;
                  ,
                 </em>
                 <em>
-                 optional
+                 default False
                 </em>
                 ) – If the order carries the ‘reduce-only’ execution instruction.
                </p>
@@ -6619,10 +6623,12 @@ The possible states of closed orders include;
                 <strong>
                  contingency_type
                 </strong>
-                (
-                <em>
-                 ContingencyType
-                </em>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
                 ) – The order contingency type.
                </p>
               </li>
@@ -9471,7 +9477,7 @@ The possible states of closed orders include;
                  ,
                 </em>
                 <em>
-                 optional
+                 default False
                 </em>
                 ) – If the
                 <code class="docutils literal notranslate">
@@ -9495,7 +9501,7 @@ The possible states of closed orders include;
                  ,
                 </em>
                 <em>
-                 optional
+                 default False
                 </em>
                 ) – If the
                 <code class="docutils literal notranslate">
@@ -9557,10 +9563,12 @@ The possible states of closed orders include;
                 <strong>
                  contingency_type
                 </strong>
-                (
-                <em>
-                 ContingencyType
-                </em>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
                 ) – The order contingency type.
                </p>
               </li>
@@ -12485,7 +12493,7 @@ to the delta of market price and
                 <em>
                  Decimal
                 </em>
-                ) – The trailing offset for the trigger (STOP) price.
+                ) – The trailing offset for the trigger price (STOP).
                </p>
               </li>
               <li>
@@ -12569,7 +12577,7 @@ to the delta of market price and
                  ,
                 </em>
                 <em>
-                 optional
+                 default False
                 </em>
                 ) – If the order carries the ‘reduce-only’ execution instruction.
                </p>
@@ -12599,10 +12607,12 @@ to the delta of market price and
                 <strong>
                  contingency_type
                 </strong>
-                (
-                <em>
-                 ContingencyType
-                </em>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
                 ) – The order contingency type.
                </p>
               </li>
@@ -12701,6 +12711,24 @@ contain any arbitrary delimiter if required.
                 – If
                 <cite>
                  trigger_type
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 offset_type
                 </cite>
                 is
                 <code class="docutils literal notranslate">
@@ -14776,7 +14804,7 @@ The possible states of closed orders include;
             </dt>
             <dd>
              <p>
-              The trailing offset for the orders trigger (STOP) price.
+              The trailing offset for the orders trigger price (STOP).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -15522,7 +15550,7 @@ to the delta of market price and
                 <em>
                  Decimal
                 </em>
-                ) – The trailing offset for the order (LIMIT) price.
+                ) – The trailing offset for the order price (LIMIT).
                </p>
               </li>
               <li>
@@ -15534,7 +15562,7 @@ to the delta of market price and
                 <em>
                  Decimal
                 </em>
-                ) – The trailing offset for the order trigger (STOP) price.
+                ) – The trailing offset for the order trigger price (STOP).
                </p>
               </li>
               <li>
@@ -15618,7 +15646,7 @@ to the delta of market price and
                  ,
                 </em>
                 <em>
-                 optional
+                 default False
                 </em>
                 ) – If the
                 <code class="docutils literal notranslate">
@@ -15642,7 +15670,7 @@ to the delta of market price and
                  ,
                 </em>
                 <em>
-                 optional
+                 default False
                 </em>
                 ) – If the
                 <code class="docutils literal notranslate">
@@ -15704,10 +15732,12 @@ to the delta of market price and
                 <strong>
                  contingency_type
                 </strong>
-                (
-                <em>
-                 ContingencyType
-                </em>
+                (ContingencyType, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
                 ) – The order contingency type.
                </p>
               </li>
@@ -15806,6 +15836,24 @@ contain any arbitrary delimiter if required.
                 – If
                 <cite>
                  trigger_type
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  NONE
+                 </span>
+                </code>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 offset_type
                 </cite>
                 is
                 <code class="docutils literal notranslate">
@@ -18031,7 +18079,7 @@ The possible states of closed orders include;
             </dt>
             <dd>
              <p>
-              The trailing offset for the orders trigger (STOP) price.
+              The trailing offset for the orders trigger price (STOP).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
