@@ -1767,108 +1767,6 @@ contain any arbitrary delimiter if required.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_active">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_active
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_active" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the order is active (
-              <strong>
-               not
-              </strong>
-              completed).
-             </p>
-             <p>
-              An order is considered active when its state can change.
-The possible states of active orders include;
-             </p>
-             <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  INITIALIZED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SUBMITTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  ACCEPTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  TRIGGERED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_CANCEL
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_UPDATE
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PARTIALLY_FILLED
-                 </span>
-                </code>
-               </p>
-              </li>
-             </ul>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 bool
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_aggressive">
              <span class="sig-name descname">
               <span class="pre">
@@ -1972,34 +1870,25 @@ The possible states of active orders include;
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_completed">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_closed">
              <span class="sig-name descname">
               <span class="pre">
-               is_completed
+               is_closed
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_completed" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_closed" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              If the order is completed (closed).
+              If the order is closed.
              </p>
              <p>
-              An order is considered completed when its state can no longer change.
-The possible states of completed orders include;
+              An order is considered closed when its state can no longer change.
+The possible states of closed orders include;
              </p>
              <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  INVALID
-                 </span>
-                </code>
-               </p>
-              </li>
               <li>
                <p>
                 <code class="docutils literal notranslate">
@@ -2141,6 +2030,85 @@ The possible states of completed orders include;
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   PENDING_UPDATE
+                 </span>
+                </code>
+               </p>
+              </li>
+             </ul>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_open">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_open
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_open" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the order is open at the trading venue.
+             </p>
+             <p>
+              An order is considered open when its status is any of;
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ACCEPTED
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  TRIGGERED
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PENDING_CANCEL
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PENDING_UPDATE
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PARTIALLY_FILLED
                  </span>
                 </code>
                </p>
@@ -2383,85 +2351,6 @@ The possible states of completed orders include;
               </code>
               .
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 bool
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_working">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_working
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_working" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the order is working (open) at the trading venue.
-             </p>
-             <p>
-              An order is considered working when its status is any of;
-             </p>
-             <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  ACCEPTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  TRIGGERED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_CANCEL
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_UPDATE
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PARTIALLY_FILLED
-                 </span>
-                </code>
-               </p>
-              </li>
-             </ul>
              <dl class="field-list simple">
               <dt class="field-odd">
                Returns
@@ -4713,108 +4602,6 @@ contain any arbitrary delimiter if required.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_active">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_active
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_active" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the order is active (
-              <strong>
-               not
-              </strong>
-              completed).
-             </p>
-             <p>
-              An order is considered active when its state can change.
-The possible states of active orders include;
-             </p>
-             <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  INITIALIZED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SUBMITTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  ACCEPTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  TRIGGERED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_CANCEL
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_UPDATE
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PARTIALLY_FILLED
-                 </span>
-                </code>
-               </p>
-              </li>
-             </ul>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 bool
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_aggressive">
              <span class="sig-name descname">
               <span class="pre">
@@ -4918,34 +4705,25 @@ The possible states of active orders include;
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_completed">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_closed">
              <span class="sig-name descname">
               <span class="pre">
-               is_completed
+               is_closed
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_completed" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_closed" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              If the order is completed (closed).
+              If the order is closed.
              </p>
              <p>
-              An order is considered completed when its state can no longer change.
-The possible states of completed orders include;
+              An order is considered closed when its state can no longer change.
+The possible states of closed orders include;
              </p>
              <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  INVALID
-                 </span>
-                </code>
-               </p>
-              </li>
               <li>
                <p>
                 <code class="docutils literal notranslate">
@@ -5087,6 +4865,85 @@ The possible states of completed orders include;
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   PENDING_UPDATE
+                 </span>
+                </code>
+               </p>
+              </li>
+             </ul>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_open">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_open
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_open" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the order is open at the trading venue.
+             </p>
+             <p>
+              An order is considered open when its status is any of;
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ACCEPTED
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  TRIGGERED
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PENDING_CANCEL
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PENDING_UPDATE
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PARTIALLY_FILLED
                  </span>
                 </code>
                </p>
@@ -5329,85 +5186,6 @@ The possible states of completed orders include;
               </code>
               .
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 bool
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_working">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_working
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_working" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the order is working (open) at the trading venue.
-             </p>
-             <p>
-              An order is considered working when its status is any of;
-             </p>
-             <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  ACCEPTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  TRIGGERED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_CANCEL
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_UPDATE
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PARTIALLY_FILLED
-                 </span>
-                </code>
-               </p>
-              </li>
-             </ul>
              <dl class="field-list simple">
               <dt class="field-odd">
                Returns
@@ -7618,108 +7396,6 @@ contain any arbitrary delimiter if required.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_active">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_active
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_active" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the order is active (
-              <strong>
-               not
-              </strong>
-              completed).
-             </p>
-             <p>
-              An order is considered active when its state can change.
-The possible states of active orders include;
-             </p>
-             <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  INITIALIZED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SUBMITTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  ACCEPTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  TRIGGERED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_CANCEL
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_UPDATE
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PARTIALLY_FILLED
-                 </span>
-                </code>
-               </p>
-              </li>
-             </ul>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 bool
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_aggressive">
              <span class="sig-name descname">
               <span class="pre">
@@ -7823,34 +7499,25 @@ The possible states of active orders include;
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_completed">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_closed">
              <span class="sig-name descname">
               <span class="pre">
-               is_completed
+               is_closed
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_completed" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_closed" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              If the order is completed (closed).
+              If the order is closed.
              </p>
              <p>
-              An order is considered completed when its state can no longer change.
-The possible states of completed orders include;
+              An order is considered closed when its state can no longer change.
+The possible states of closed orders include;
              </p>
              <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  INVALID
-                 </span>
-                </code>
-               </p>
-              </li>
               <li>
                <p>
                 <code class="docutils literal notranslate">
@@ -7992,6 +7659,85 @@ The possible states of completed orders include;
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   PENDING_UPDATE
+                 </span>
+                </code>
+               </p>
+              </li>
+             </ul>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_open">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_open
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_open" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the order is open at the trading venue.
+             </p>
+             <p>
+              An order is considered open when its status is any of;
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ACCEPTED
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  TRIGGERED
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PENDING_CANCEL
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PENDING_UPDATE
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PARTIALLY_FILLED
                  </span>
                 </code>
                </p>
@@ -8234,85 +7980,6 @@ The possible states of completed orders include;
               </code>
               .
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 bool
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_working">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_working
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_working" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the order is working (open) at the trading venue.
-             </p>
-             <p>
-              An order is considered working when its status is any of;
-             </p>
-             <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  ACCEPTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  TRIGGERED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_CANCEL
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_UPDATE
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PARTIALLY_FILLED
-                 </span>
-                </code>
-               </p>
-              </li>
-             </ul>
              <dl class="field-list simple">
               <dt class="field-odd">
                Returns
@@ -10712,108 +10379,6 @@ contain any arbitrary delimiter if required.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_active">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_active
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_active" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the order is active (
-              <strong>
-               not
-              </strong>
-              completed).
-             </p>
-             <p>
-              An order is considered active when its state can change.
-The possible states of active orders include;
-             </p>
-             <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  INITIALIZED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SUBMITTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  ACCEPTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  TRIGGERED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_CANCEL
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_UPDATE
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PARTIALLY_FILLED
-                 </span>
-                </code>
-               </p>
-              </li>
-             </ul>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 bool
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_aggressive">
              <span class="sig-name descname">
               <span class="pre">
@@ -10917,34 +10482,25 @@ The possible states of active orders include;
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_completed">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_closed">
              <span class="sig-name descname">
               <span class="pre">
-               is_completed
+               is_closed
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_completed" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_closed" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              If the order is completed (closed).
+              If the order is closed.
              </p>
              <p>
-              An order is considered completed when its state can no longer change.
-The possible states of completed orders include;
+              An order is considered closed when its state can no longer change.
+The possible states of closed orders include;
              </p>
              <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  INVALID
-                 </span>
-                </code>
-               </p>
-              </li>
               <li>
                <p>
                 <code class="docutils literal notranslate">
@@ -11086,6 +10642,85 @@ The possible states of completed orders include;
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   PENDING_UPDATE
+                 </span>
+                </code>
+               </p>
+              </li>
+             </ul>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_open">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_open
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_open" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the order is open at the trading venue.
+             </p>
+             <p>
+              An order is considered open when its status is any of;
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ACCEPTED
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  TRIGGERED
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PENDING_CANCEL
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PENDING_UPDATE
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PARTIALLY_FILLED
                  </span>
                 </code>
                </p>
@@ -11366,85 +11001,6 @@ The possible states of completed orders include;
                 <cite>
                  bool
                 </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_working">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_working
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_working" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the order is working (open) at the trading venue.
-             </p>
-             <p>
-              An order is considered working when its status is any of;
-             </p>
-             <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  ACCEPTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  TRIGGERED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_CANCEL
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_UPDATE
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PARTIALLY_FILLED
-                 </span>
-                </code>
-               </p>
-              </li>
-             </ul>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 bool
-                </em>
                </p>
               </dd>
              </dl>
@@ -13438,108 +12994,6 @@ The possible states of completed orders include;
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.is_active">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_active
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.base.Order.is_active" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the order is active (
-              <strong>
-               not
-              </strong>
-              completed).
-             </p>
-             <p>
-              An order is considered active when its state can change.
-The possible states of active orders include;
-             </p>
-             <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  INITIALIZED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SUBMITTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  ACCEPTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  TRIGGERED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_CANCEL
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_UPDATE
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PARTIALLY_FILLED
-                 </span>
-                </code>
-               </p>
-              </li>
-             </ul>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 bool
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.is_aggressive">
              <span class="sig-name descname">
               <span class="pre">
@@ -13643,34 +13097,25 @@ The possible states of active orders include;
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.is_completed">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.is_closed">
              <span class="sig-name descname">
               <span class="pre">
-               is_completed
+               is_closed
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.base.Order.is_completed" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.model.orders.base.Order.is_closed" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              If the order is completed (closed).
+              If the order is closed.
              </p>
              <p>
-              An order is considered completed when its state can no longer change.
-The possible states of completed orders include;
+              An order is considered closed when its state can no longer change.
+The possible states of closed orders include;
              </p>
              <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  INVALID
-                 </span>
-                </code>
-               </p>
-              </li>
               <li>
                <p>
                 <code class="docutils literal notranslate">
@@ -13812,6 +13257,85 @@ The possible states of completed orders include;
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   PENDING_UPDATE
+                 </span>
+                </code>
+               </p>
+              </li>
+             </ul>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.is_open">
+             <span class="sig-name descname">
+              <span class="pre">
+               is_open
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.base.Order.is_open" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the order is open at the trading venue.
+             </p>
+             <p>
+              An order is considered open when its status is any of;
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ACCEPTED
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  TRIGGERED
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PENDING_CANCEL
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PENDING_UPDATE
+                 </span>
+                </code>
+               </p>
+              </li>
+              <li>
+               <p>
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  PARTIALLY_FILLED
                  </span>
                 </code>
                </p>
@@ -14054,85 +13578,6 @@ The possible states of completed orders include;
               </code>
               .
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 bool
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.is_working">
-             <span class="sig-name descname">
-              <span class="pre">
-               is_working
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.base.Order.is_working" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the order is working (open) at the trading venue.
-             </p>
-             <p>
-              An order is considered working when its status is any of;
-             </p>
-             <ul class="simple">
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  ACCEPTED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  TRIGGERED
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_CANCEL
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PENDING_UPDATE
-                 </span>
-                </code>
-               </p>
-              </li>
-              <li>
-               <p>
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  PARTIALLY_FILLED
-                 </span>
-                </code>
-               </p>
-              </li>
-             </ul>
              <dl class="field-list simple">
               <dt class="field-odd">
                Returns

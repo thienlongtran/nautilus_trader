@@ -7107,27 +7107,34 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Generate an execution state report based on the given list of active
-orders.
+              Generate an execution mass status report.
              </p>
-             <dl class="simple">
-              <dt>
-               lookback_mins
-               <span class="classifier">
-                int, optional
-               </span>
-              </dt>
-              <dd>
-               <p>
-                The maximum lookback for querying closed orders, trades and positions.
-               </p>
-              </dd>
-             </dl>
              <dl class="field-list simple">
               <dt class="field-odd">
-               Returns
+               Parameters
               </dt>
               <dd class="field-odd">
+               <p>
+                <strong>
+                 lookback_mins
+                </strong>
+                (
+                <em>
+                 int
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The maximum lookback for querying closed orders, trades and positions.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
                <p>
                 <em>
                  ExecutionMassStatus
