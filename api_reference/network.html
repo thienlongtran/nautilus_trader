@@ -2261,10 +2261,10 @@ brokerages, data providers/feeds and other venues or services.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.post_connect">
+            <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.post_connection">
              <span class="sig-name descname">
               <span class="pre">
-               post_connect
+               post_connection
               </span>
              </span>
              <span class="sig-paren">
@@ -2280,7 +2280,17 @@ brokerages, data providers/feeds and other venues or services.
              <span class="sig-paren">
               )
              </span>
-             <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.post_connect" title="Permalink to this definition">
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.post_connection" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -2291,6 +2301,50 @@ brokerages, data providers/feeds and other venues or services.
              <p>
               This method is called before start(), override to implement additional
 connection related behaviour (sending other messages etc.).
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.post_reconnection">
+             <span class="sig-name descname">
+              <span class="pre">
+               post_reconnection
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.post_reconnection" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Actions to be performed post reconnection.
+             </p>
+             <p>
+              Override to implement additional
+reconnection related behaviour (resubscribing etc.).
              </p>
             </dd>
            </dl>
@@ -2338,6 +2392,43 @@ connection related behaviour (sending other messages etc.).
               </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.receive" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.reconnect">
+             <span class="sig-name descname">
+              <span class="pre">
+               reconnect
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.reconnect" title="Permalink to this definition">
               ¶
              </a>
             </dt>
