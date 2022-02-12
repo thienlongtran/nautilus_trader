@@ -5294,6 +5294,35 @@ trading commands and events.
              </p>
             </dd>
            </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.allow_cash_positions">
+             <span class="sig-name descname">
+              <span class="pre">
+               allow_cash_positions
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.allow_cash_positions" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If unleveraged spot cash assets should track positions.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 bool
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.check_connected">
              <span class="sig-name descname">
@@ -11643,6 +11672,53 @@ position ID resolution.
              ExecEngineConfig
             </span>
            </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="o">
+             <span class="pre">
+              *
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              allow_cash_positions
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              False
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
            <a class="headerlink" href="#nautilus_trader.execution.config.ExecEngineConfig" title="Permalink to this definition">
             ¶
            </a>
@@ -11665,6 +11741,29 @@ position ID resolution.
             </code>
             instances.
            </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               allow_cash_positions
+              </strong>
+              (
+              <em>
+               bool
+              </em>
+              <em>
+               ,
+              </em>
+              <em>
+               default False
+              </em>
+              ) – If unleveraged spot cash assets should track positions.
+             </p>
+            </dd>
+           </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.execution.config.ExecEngineConfig.construct">
              <em class="property">
