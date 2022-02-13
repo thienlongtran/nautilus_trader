@@ -1952,7 +1952,16 @@ brokerages, data providers/feeds and other venues or services.
              None],
             </span>
             <span class="pre">
-             max_retry_connection=0
+             int
+            </span>
+            <span class="pre">
+             max_retry_connection=0,
+            </span>
+            <span class="pre">
+             bool
+            </span>
+            <span class="pre">
+             log_recv=False
             </span>
            </em>
            <span class="sig-paren">
@@ -2037,6 +2046,42 @@ brokerages, data providers/feeds and other venues or services.
                  ]
                 </em>
                 ) – The handler for receiving raw data.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 max_retry_connection
+                </strong>
+                (
+                <em>
+                 int
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 0
+                </em>
+                ) – The number of times to attempt a reconnection.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 log_recv
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If the raw received bytes for each message should be logged.
                </p>
               </li>
              </ul>
