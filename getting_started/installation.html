@@ -467,10 +467,11 @@ We recommend running the platform with the latest stable version of Python, and
 in a virtual environment to isolate the dependencies.
         </p>
         <p>
-         To install on ARM architectures such as MacBook Pro M1 / Apple Silicon, this stackoverflow thread is useful:
+         To install on ARM architectures such as MacBook Pro M1 / Apple Silicon,
          <a class="reference external" href="https://stackoverflow.com/questions/65745683/how-to-install-scipy-on-apple-silicon-arm-m1">
-          https://stackoverflow.com/questions/65745683/how-to-install-scipy-on-apple-silicon-arm-m1
+          this stackoverflow thread
          </a>
+         is useful:
         </p>
         <section id="from-pypi">
          <h2 id="from-pypi">
@@ -591,9 +592,9 @@ as specified in the
              <p>
               Linux and macOS:
              </p>
-             <div class="highlight-default notranslate">
+             <div class="highlight-bash notranslate">
               <div class="highlight">
-               <pre><span></span><span class="n">curl</span> <span class="o">--</span><span class="n">proto</span> <span class="s1">'=https'</span> <span class="o">--</span><span class="n">tlsv1</span><span class="mf">.2</span> <span class="o">-</span><span class="n">sSf</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">sh</span><span class="o">.</span><span class="n">rustup</span><span class="o">.</span><span class="n">rs</span> <span class="o">|</span> <span class="n">sh</span>
+               <pre><span></span>curl --proto <span class="s1">'=https'</span> --tlsv1.2 -sSf https://sh.rustup.rs <span class="p">|</span> sh
 </pre>
               </div>
              </div>
@@ -642,9 +643,9 @@ as specified in the
              <p>
               Linux and macOS:
              </p>
-             <div class="highlight-default notranslate">
+             <div class="highlight-bash notranslate">
               <div class="highlight">
-               <pre><span></span>source $HOME/.cargo/env
+               <pre><span></span><span class="nb">source</span> <span class="nv">$HOME</span>/.cargo/env
 </pre>
               </div>
              </div>
