@@ -388,6 +388,11 @@
                        Flake8
                       </a>
                      </li>
+                     <li class="md-nav__item">
+                      <a class="md-nav__link" href="#commit-messages">
+                       Commit messages
+                      </a>
+                     </li>
                     </ul>
                    </nav>
                   </li>
@@ -425,6 +430,11 @@
                 <li class="md-nav__item">
                  <a class="md-nav__link" href="#flake8">
                   Flake8
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#commit-messages">
+                  Commit messages
                  </a>
                 </li>
                </ul>
@@ -503,6 +513,11 @@
                   Flake8
                  </a>
                 </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#commit-messages">
+                  Commit messages
+                 </a>
+                </li>
                </ul>
               </nav>
              </li>
@@ -532,6 +547,7 @@
          </h2>
          <p>
           The current codebase can be used as a guide for formatting conventions.
+Additional guidelines are provided below.
          </p>
          <section id="black">
           <h3 id="black">
@@ -566,15 +582,23 @@ So there you could say we are “handcrafting towards”
             ¶
            </a>
           </h3>
-          <p>
-           1- For longer lines of code, and when passing more than a couple of arguments, you should take a new line which aligns at the next logical indent (rather than attempting a hanging ‘vanity’ alignment off an opening parenthesis). This practice conserves space to the right, ensures important code is more central in view, and is also robust to function/method name changes.
-          </p>
-          <p>
-           2- The closing parenthesis should be located on a new line, aligned at the logical indent.
-          </p>
-          <p>
-           3- Also ensure multiple hanging parameters or arguments end with a trailing comma:
-          </p>
+          <ol class="arabic simple">
+           <li>
+            <p>
+             For longer lines of code, and when passing more than a couple of arguments, you should take a new line which aligns at the next logical indent (rather than attempting a hanging ‘vanity’ alignment off an opening parenthesis). This practice conserves space to the right, ensures important code is more central in view, and is also robust to function/method name changes.
+            </p>
+           </li>
+           <li>
+            <p>
+             The closing parenthesis should be located on a new line, aligned at the logical indent.
+            </p>
+           </li>
+           <li>
+            <p>
+             Also ensure multiple hanging parameters or arguments end with a trailing comma:
+            </p>
+           </li>
+          </ol>
           <div class="highlight-python notranslate">
            <div class="highlight">
             <pre><span></span><span class="n">long_method_with_many_params</span><span class="p">(</span>
@@ -606,49 +630,55 @@ One notable departure is that Python truthiness is not always taken advantage of
           <p>
            There are two reasons for this;
           </p>
-          <p>
-           1- Cython can generate more efficient C code from
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             is
-            </span>
-            <span class="pre">
-             None
-            </span>
-           </code>
-           and
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             is
-            </span>
-            <span class="pre">
-             not
-            </span>
-            <span class="pre">
-             None
-            </span>
-           </code>
-           , rather than entering the Python runtime to check the
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             PyObject
-            </span>
-           </code>
-           truthiness.
-          </p>
-          <p>
-           2- As per the
-           <a class="reference external" href="https://google.github.io/styleguide/pyguide.html">
-            Google Python Style Guide
-           </a>
-           - it’s discouraged to use truthiness to check if an argument is/is not
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             None
-            </span>
-           </code>
-           , when there is a chance an unexpected object could be passed into the function or method which will yield an unexpected truthiness evaluation (which could result in a logical error type bug).
-          </p>
+          <ol class="arabic simple">
+           <li>
+            <p>
+             Cython can generate more efficient C code from
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               is
+              </span>
+              <span class="pre">
+               None
+              </span>
+             </code>
+             and
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               is
+              </span>
+              <span class="pre">
+               not
+              </span>
+              <span class="pre">
+               None
+              </span>
+             </code>
+             , rather than entering the Python runtime to check the
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               PyObject
+              </span>
+             </code>
+             truthiness.
+            </p>
+           </li>
+           <li>
+            <p>
+             As per the
+             <a class="reference external" href="https://google.github.io/styleguide/pyguide.html">
+              Google Python Style Guide
+             </a>
+             - it’s discouraged to use truthiness to check if an argument is/is not
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               None
+              </span>
+             </code>
+             , when there is a chance an unexpected object could be passed into the function or method which will yield an unexpected truthiness evaluation (which could result in a logical error type bug).
+            </p>
+           </li>
+          </ol>
           <p>
            <em>
             “Always use if foo is None: (or is not None) to check for a None value. E.g., when testing whether a variable or argument that defaults to None was set to some other value. The other value might be a value that’s false in a boolean context!”
@@ -727,6 +757,44 @@ One notable departure is that Python truthiness is not always taken advantage of
            </code>
            , with the justifications also commented.
           </p>
+         </section>
+         <section id="commit-messages">
+          <h3 id="commit-messages">
+           Commit messages
+           <a class="headerlink" href="#commit-messages" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           There are no strict restrictions on the style of your commit messages. Here are some guidelines:
+          </p>
+          <ol class="arabic simple">
+           <li>
+            <p>
+             Limit subject titles to 50 characters or fewer. Capitalize subject line; use imperative voice; and do not end with period.
+            </p>
+           </li>
+           <li>
+            <p>
+             Use ‘imperative voice’, i.e. the message should describe what the commit will do if applied.
+            </p>
+           </li>
+           <li>
+            <p>
+             Optional: Use the body to explain change. Separate from subject with a blank line. Keep under 80 character width. You can use bullet points.
+            </p>
+           </li>
+           <li>
+            <p>
+             Optional: Provide # references to relevant issues or tickets.
+            </p>
+           </li>
+           <li>
+            <p>
+             Optional: Provide any hyperlinks which are informative.
+            </p>
+           </li>
+          </ol>
          </section>
         </section>
        </section>
