@@ -345,9 +345,53 @@
               Instruments
              </a>
              <nav class="md-nav md-nav--secondary">
+              <label class="md-nav__title" for="__toc">
+               Contents
+              </label>
               <ul class="md-nav__list" data-md-scrollfix="">
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="#user-guide-instruments--page-root">
+                 Instruments
+                </a>
+                <nav class="md-nav">
+                 <ul class="md-nav__list">
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#backtesting">
+                    Backtesting
+                   </a>
+                  </li>
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#live-trading">
+                    Live trading
+                   </a>
+                  </li>
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#getting-instruments">
+                    Getting instruments
+                   </a>
+                  </li>
+                 </ul>
+                </nav>
+               </li>
               </ul>
              </nav>
+             <ul class="md-nav__list">
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#backtesting">
+                Backtesting
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#live-trading">
+                Live trading
+               </a>
+              </li>
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#getting-instruments">
+                Getting instruments
+               </a>
+              </li>
+             </ul>
             </li>
            </ul>
           </li>
@@ -375,7 +419,34 @@
       <div class="md-sidebar__scrollwrap">
        <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          Contents
+         </label>
          <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#user-guide-instruments--page-root">
+            Instruments
+           </a>
+           <nav class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#backtesting">
+               Backtesting
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#live-trading">
+               Live trading
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#getting-instruments">
+               Getting instruments
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
          </ul>
         </nav>
        </div>
@@ -391,11 +462,234 @@
          </a>
         </h1>
         <p>
-         This notebook runs through some examples of setting up instruments for use in Nautilus Trader
+         The
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           Instrument
+          </span>
+         </code>
+         base class represents the core specification for any tradable financial market instrument. There are
+currently a number of subclasses representing a range of asset classes which are supported by the platform:
         </p>
+        <ul class="simple">
+         <li>
+          <p>
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             CurrencySpot
+            </span>
+           </code>
+           (can represent both Fiat FX and Crypto)
+          </p>
+         </li>
+         <li>
+          <p>
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             CryptoPerpetual
+            </span>
+           </code>
+           (perpetual swap derivative)
+          </p>
+         </li>
+         <li>
+          <p>
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             BettingInstrument
+            </span>
+           </code>
+          </p>
+         </li>
+         <li>
+          <p>
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             Equity
+            </span>
+           </code>
+          </p>
+         </li>
+         <li>
+          <p>
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             Future
+            </span>
+           </code>
+          </p>
+         </li>
+         <li>
+          <p>
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             Option
+            </span>
+           </code>
+          </p>
+         </li>
+        </ul>
         <p>
-         !! Coming soon
+         All instruments should have a unique
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           InstrumentId
+          </span>
+         </code>
+         which is made up of both the native symbol and venue ID separated by a period e.g.
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           ETH-PERP.FTX
+          </span>
+         </code>
+         .
         </p>
+        <section id="backtesting">
+         <h2 id="backtesting">
+          Backtesting
+          <a class="headerlink" href="#backtesting" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Exchange specific concrete implementations can be instantiated through:
+         </p>
+         <ul class="simple">
+          <li>
+           <p>
+            The
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              TestInstrumentProvider
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            Discovered from live exchange data using an adapters
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              InstrumentProvider
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            Flexibly defined by the user through the constructor
+           </p>
+          </li>
+         </ul>
+         <div class="admonition warning">
+          <p class="admonition-title">
+           Warning
+          </p>
+          <p>
+           The correct instrument must be matched to a market dataset such as ticks or orderbook data for logically sound operation.
+An incorrectly specified instrument may truncate data or otherwise produce surprising results.
+          </p>
+         </div>
+        </section>
+        <section id="live-trading">
+         <h2 id="live-trading">
+          Live trading
+          <a class="headerlink" href="#live-trading" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          All the live venue integration adapters have defined
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            InstrumentProvider
+           </span>
+          </code>
+          classes which work in an automated way
+under the hood to cache the latest instrument details from the exchange. All that is requirement
+then to get a particular
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            Instrument
+           </span>
+          </code>
+          object is to use the matching
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            InstrumentId
+           </span>
+          </code>
+          by passing it as a parameter to data and execution
+related methods and classes.
+         </p>
+        </section>
+        <section id="getting-instruments">
+         <h2 id="getting-instruments">
+          Getting instruments
+          <a class="headerlink" href="#getting-instruments" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Since the same strategy/actor classes can be used for both backtests and live trading, you can
+get instruments in exactly the same way through the central cache:
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.model.identifiers</span> <span class="kn">import</span> <span class="n">InstrumentId</span>
+
+<span class="n">instrument_id</span> <span class="o">=</span> <span class="n">InstrumentId</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"ETH/USD.FTX"</span><span class="p">)</span>
+<span class="n">instrument</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">instrument</span><span class="p">(</span><span class="n">instrument_id</span><span class="p">)</span>
+</pre>
+          </div>
+         </div>
+         <p>
+          It’s also possible to subscribe to any changes to a particular instrument:
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">subscribe_instrument</span><span class="p">(</span><span class="n">instrument_id</span><span class="p">)</span>
+</pre>
+          </div>
+         </div>
+         <p>
+          or for changes to any instrument for an entire venue:
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.model.identifiers</span> <span class="kn">import</span> <span class="n">Venue</span>
+
+<span class="n">ftx</span> <span class="o">=</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"FTX"</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">subscribe_instruments</span><span class="p">(</span><span class="n">ftx</span><span class="p">)</span>
+</pre>
+          </div>
+         </div>
+         <p>
+          When an update to the instrument(s) is received by the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            DataEngine
+           </span>
+          </code>
+          , the object(s) will eventually
+be passed to the strategy/actors
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            self.on_instrument()
+           </span>
+          </code>
+          method. A user can override this method with actions
+to take upon receiving an instrument update:
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="k">def</span> <span class="nf">on_instrument</span><span class="p">(</span><span class="n">instrument</span><span class="p">:</span> <span class="n">Instrument</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># Take some action on an instrument update</span>
+    <span class="k">pass</span>
+</pre>
+          </div>
+         </div>
+        </section>
        </section>
       </article>
      </div>
