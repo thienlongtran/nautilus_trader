@@ -469,7 +469,7 @@
           </span>
          </code>
          base class represents the core specification for any tradable financial market instrument. There are
-currently a number of subclasses representing a range of asset classes which are supported by the platform:
+currently a number of subclasses representing a range of asset classes and asset types which are supported by the platform:
         </p>
         <ul class="simple">
          <li>
@@ -536,7 +536,7 @@ currently a number of subclasses representing a range of asset classes which are
            InstrumentId
           </span>
          </code>
-         which is made up of both the native symbol and venue ID separated by a period e.g.
+         which is made up of both the native symbol and venue ID, separated by a period e.g.
          <code class="docutils literal notranslate">
           <span class="pre">
            ETH-PERP.FTX
@@ -544,6 +544,15 @@ currently a number of subclasses representing a range of asset classes which are
          </code>
          .
         </p>
+        <div class="admonition warning">
+         <p class="admonition-title">
+          Warning
+         </p>
+         <p>
+          The correct instrument must be matched to a market dataset such as ticks or orderbook data for logically sound operation.
+An incorrectly specified instrument may truncate data or otherwise produce surprising results.
+         </p>
+        </div>
         <section id="backtesting">
          <h2 id="backtesting">
           Backtesting
@@ -552,44 +561,66 @@ currently a number of subclasses representing a range of asset classes which are
           </a>
          </h2>
          <p>
-          Exchange specific concrete implementations can be instantiated through:
+          Generic test instruments can be instantiated through the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            TestInstrumentProvider
+           </span>
+          </code>
+          :
          </p>
-         <ul class="simple">
-          <li>
-           <p>
-            The
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              TestInstrumentProvider
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            Discovered from live exchange data using an adapters
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              InstrumentProvider
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            Flexibly defined by the user through the constructor
-           </p>
-          </li>
-         </ul>
-         <div class="admonition warning">
-          <p class="admonition-title">
-           Warning
-          </p>
-          <p>
-           The correct instrument must be matched to a market dataset such as ticks or orderbook data for logically sound operation.
-An incorrectly specified instrument may truncate data or otherwise produce surprising results.
-          </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">audusd</span> <span class="o">=</span> <span class="n">TestInstrumentProvider</span><span class="o">.</span><span class="n">default_fx_ccy</span><span class="p">(</span><span class="s2">"AUD/USD"</span><span class="p">)</span>
+</pre>
+          </div>
          </div>
+         <p>
+          Exchange specific instruments can be discovered from live exchange data using an adapters
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            InstrumentProvider
+           </span>
+          </code>
+          :
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">provider</span> <span class="o">=</span> <span class="n">BinanceInstrumentProvider</span><span class="p">(</span>
+    <span class="n">client</span><span class="o">=</span><span class="n">binance_http_client</span><span class="p">,</span>
+    <span class="n">logger</span><span class="o">=</span><span class="n">live_logger</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">load_all_async</span><span class="p">()</span>
+
+<span class="n">btcusdt</span> <span class="o">=</span> <span class="n">InstrumentId</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"BTC/USDT.BINANCE"</span><span class="p">)</span>
+<span class="n">instrument</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Instrument</span><span class="p">]</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">btcusdt</span><span class="p">)</span>
+</pre>
+          </div>
+         </div>
+         <p>
+          Or flexibly defined by the user through an
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            Instrument
+           </span>
+          </code>
+          constructor, or one of its more specific subclasses:
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">instrument</span> <span class="o">=</span> <span class="n">Instrument</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># &lt;-- provide all necessary paramaters</span>
+</pre>
+          </div>
+         </div>
+         <p>
+          See the full instrument
+          <a class="reference internal" href="../api_reference/model/instruments.html">
+           <span class="doc std std-doc">
+            API Reference
+           </span>
+          </a>
+          .
+         </p>
         </section>
         <section id="live-trading">
          <h2 id="live-trading">
@@ -606,21 +637,20 @@ An incorrectly specified instrument may truncate data or otherwise produce surpr
            </span>
           </code>
           classes which work in an automated way
-under the hood to cache the latest instrument details from the exchange. All that is requirement
-then to get a particular
+under the hood to cache the latest instrument details from the exchange. Refer to a particular
           <code class="docutils literal notranslate">
            <span class="pre">
             Instrument
            </span>
           </code>
-          object is to use the matching
+          object by pass the matching
           <code class="docutils literal notranslate">
            <span class="pre">
             InstrumentId
            </span>
           </code>
-          by passing it as a parameter to data and execution
-related methods and classes.
+          to data and execution
+related methods and classes which require one.
          </p>
         </section>
         <section id="getting-instruments">
@@ -653,7 +683,7 @@ get instruments in exactly the same way through the central cache:
           </div>
          </div>
          <p>
-          or for changes to any instrument for an entire venue:
+          Or subscribe to all instrument changes for an entire venue:
          </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
@@ -671,11 +701,11 @@ get instruments in exactly the same way through the central cache:
             DataEngine
            </span>
           </code>
-          , the object(s) will eventually
+          , the object(s) will
 be passed to the strategy/actors
           <code class="docutils literal notranslate">
            <span class="pre">
-            self.on_instrument()
+            on_instrument()
            </span>
           </code>
           method. A user can override this method with actions
