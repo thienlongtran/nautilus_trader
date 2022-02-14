@@ -466,6 +466,12 @@
 We recommend running the platform with the latest stable version of Python, and
 in a virtual environment to isolate the dependencies.
         </p>
+        <p>
+         To install on ARM architectures such as MacBook Pro M1 / Apple Silicon, this stackoverflow thread is useful:
+         <a class="reference external" href="https://stackoverflow.com/questions/65745683/how-to-install-scipy-on-apple-silicon-arm-m1">
+          https://stackoverflow.com/questions/65745683/how-to-install-scipy-on-apple-silicon-arm-m1
+         </a>
+        </p>
         <section id="from-pypi">
          <h2 id="from-pypi">
           From PyPI
@@ -539,7 +545,20 @@ in a virtual environment to isolate the dependencies.
           </a>
          </h2>
          <p>
-          It’s possible to install from sourcing using
+          Installation from source requires the latest stable
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            rustc
+           </span>
+          </code>
+          and
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            cargo
+           </span>
+          </code>
+          to compile the Rust libraries.
+For the Python part, it’s possible to install from sourcing using
           <code class="docutils literal notranslate">
            <span class="pre">
             pip
@@ -556,16 +575,101 @@ as specified in the
           <a class="reference external" href="https://python-poetry.org/">
            poetry
           </a>
-          .
+          as below.
          </p>
          <ol class="arabic">
           <li>
            <p>
-            First install poetry (or follow the installation guide on their site):
+            Install
+            <a class="reference external" href="https://rustup.rs/">
+             rustup
+            </a>
+            (the Rust toolchain installer):
+           </p>
+           <ul>
+            <li>
+             <p>
+              Linux and macOS:
+             </p>
+             <div class="highlight-default notranslate">
+              <div class="highlight">
+               <pre><span></span><span class="n">curl</span> <span class="o">--</span><span class="n">proto</span> <span class="s1">'=https'</span> <span class="o">--</span><span class="n">tlsv1</span><span class="mf">.2</span> <span class="o">-</span><span class="n">sSf</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">sh</span><span class="o">.</span><span class="n">rustup</span><span class="o">.</span><span class="n">rs</span> <span class="o">|</span> <span class="n">sh</span>
+</pre>
+              </div>
+             </div>
+            </li>
+            <li>
+             <p>
+              Windows:
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Download and install
+                <a class="reference external" href="https://win.rustup.rs/x86_64">
+                 <code class="docutils literal notranslate">
+                  <span class="pre">
+                   rustup-init.exe
+                  </span>
+                 </code>
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                Install “Desktop development with C++” with
+                <a class="reference external" href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&amp;rel=16">
+                 Build Tools for Visual Studio 2019
+                </a>
+               </p>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <p>
+            Enable
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              cargo
+             </span>
+            </code>
+            in the current shell:
+           </p>
+           <ul>
+            <li>
+             <p>
+              Linux and macOS:
+             </p>
+             <div class="highlight-default notranslate">
+              <div class="highlight">
+               <pre><span></span>source $HOME/.cargo/env
+</pre>
+              </div>
+             </div>
+            </li>
+            <li>
+             <p>
+              Windows:
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Start a new PowerShell
+               </p>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <p>
+            Install poetry (or follow the installation guide on their site):
            </p>
            <div class="highlight-none notranslate">
             <div class="highlight">
-             <pre><span></span> curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+             <pre><span></span>curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 </pre>
             </div>
            </div>
@@ -590,35 +694,6 @@ poetry install --no-dev
            </div>
           </li>
          </ol>
-         <div class="admonition note">
-          <p class="admonition-title">
-           Note
-          </p>
-          <p>
-           Because of
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             jupyter-book
-            </span>
-           </code>
-           , the project requires a large number of development dependencies (which is the
-reason for passing the
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             --no-dev
-            </span>
-           </code>
-           option above). If you’ll be running tests, or developing with the codebase
-in general then remove that option flag when installing. It’s also possible to simply run
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             make
-            </span>
-           </code>
-           from the
-top-level directory.
-          </p>
-         </div>
         </section>
         <section id="from-github-release">
          <h2 id="from-github-release">
