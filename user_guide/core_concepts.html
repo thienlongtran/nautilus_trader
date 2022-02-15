@@ -525,7 +525,7 @@ performance with a high quality user experience, within the bounds of a safe Pyt
           From a high level architectural view, it’s important to understand that the platform has been designed to run efficiently
 on a single thread, for both backtesting and live trading. A lot of research and testing
 resulted in arriving at this design, as it was found the overhead of context switching between threads
-didn’t pay off in the context of deterministic backtests.
+didn’t pay off in better performance.
          </p>
          <p>
           For live trading, extremely high performance (benchmarks pending) can be achieved running asynchronously on a single
@@ -544,7 +544,7 @@ especially leveraging the
            Note
           </p>
           <p>
-           Of notable interest is that the LMAX exchange achieves award winning performance running on
+           Of interest is the LMAX exchange architectire, which achieves award winning performance running on
 a single thread. You can read about their distributor pattern in
            <a class="reference external" href="https://martinfowler.com/articles/lmax.html">
             this interesting article
@@ -553,9 +553,16 @@ a single thread. You can read about their distributor pattern in
           </p>
          </div>
          <p>
-          What this means when considering the logic of how your trading will work
-within the system boundary, you can expect each component to consume messages
-in a predictable synchronous way (similar to the actor model).
+          When considering the logic of how your trading will work within the system boundary, you can expect each component to consume messages
+in a predictable synchronous way (
+          <em>
+           similar
+          </em>
+          to the
+          <a class="reference external" href="https://en.wikipedia.org/wiki/Actor_model">
+           actor model
+          </a>
+          ).
          </p>
         </section>
         <section id="trading-live">
@@ -572,7 +579,7 @@ in a predictable synchronous way (similar to the actor model).
             TradingNode
            </span>
           </code>
-          can host a fleet of trading strategies, with data able to be ingested from multiple data clients, and order execution through multiple execution clients.
+          can host a fleet of trading strategies, with data able to be ingested from multiple data clients, and order execution handled through multiple execution clients.
 Live deployments can use both demo/paper trading accounts, or real accounts.
          </p>
         </section>
