@@ -97,7 +97,7 @@
   </script>
   <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
   <title>
-   User Guide
+   Strategies
   </title>
   <link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
   <link href="../_static/material.css" rel="stylesheet" type="text/css"/>
@@ -135,8 +135,8 @@
   <link href="../_static/favicon-32x32.png" rel="shortcut icon"/>
   <link href="../genindex.html" rel="index" title="Index"/>
   <link href="../search.html" rel="search" title="Search"/>
-  <link href="core_concepts.html" rel="next" title="Core Concepts"/>
-  <link href="../getting_started/quick_start.html" rel="prev" title="Quick Start"/>
+  <link href="instruments.html" rel="next" title="Instruments"/>
+  <link href="loading_external_data.html" rel="prev" title="Loading External Data"/>
   <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
   <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
  </head>
@@ -154,7 +154,7 @@
   <input class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
   <label class="md-overlay" data-md-component="overlay" for="__drawer">
   </label>
-  <a class="md-skip" href="#user_guide/index" tabindex="1">
+  <a class="md-skip" href="#user_guide/strategies" tabindex="1">
    Skip to content
   </a>
   <header class="md-header" data-md-component="header">
@@ -174,7 +174,7 @@
        <span class="md-header-nav__topic">
        </span>
        <span class="md-header-nav__topic">
-        User Guide
+        Strategies
        </span>
       </div>
      </div>
@@ -272,6 +272,11 @@
         nautilustrader.io ⬀
        </a>
       </li>
+      <li class="md-tabs__item">
+       <a class="md-tabs__link" href="index.html">
+        User Guide
+       </a>
+      </li>
      </ul>
     </div>
    </nav>
@@ -309,17 +314,9 @@
            </a>
           </li>
           <li class="md-nav__item">
-           <input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-           <label class="md-nav__link md-nav__link--active" for="__toc">
-            User Guide
-           </label>
-           <a class="md-nav__link md-nav__link--active" href="#">
+           <a class="md-nav__link" href="index.html">
             User Guide
            </a>
-           <nav class="md-nav md-nav--secondary">
-            <ul class="md-nav__list" data-md-scrollfix="">
-            </ul>
-           </nav>
            <ul class="md-nav__list">
             <li class="md-nav__item">
              <a class="md-nav__link" href="core_concepts.html">
@@ -342,9 +339,57 @@
              </a>
             </li>
             <li class="md-nav__item">
-             <a class="md-nav__link" href="strategies.html">
+             <input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+             <label class="md-nav__link md-nav__link--active" for="__toc">
+              Strategies
+             </label>
+             <a class="md-nav__link md-nav__link--active" href="#">
               Strategies
              </a>
+             <nav class="md-nav md-nav--secondary">
+              <label class="md-nav__title" for="__toc">
+               Contents
+              </label>
+              <ul class="md-nav__list" data-md-scrollfix="">
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="#user-guide-strategies--page-root">
+                 Strategies
+                </a>
+                <nav class="md-nav">
+                 <ul class="md-nav__list">
+                  <li class="md-nav__item">
+                   <a class="md-nav__link" href="#configuration">
+                    Configuration
+                   </a>
+                   <nav class="md-nav">
+                    <ul class="md-nav__list">
+                     <li class="md-nav__item">
+                      <a class="md-nav__link" href="#multiple-strategies">
+                       Multiple strategies
+                      </a>
+                     </li>
+                    </ul>
+                   </nav>
+                  </li>
+                 </ul>
+                </nav>
+               </li>
+              </ul>
+             </nav>
+             <ul class="md-nav__list">
+              <li class="md-nav__item">
+               <a class="md-nav__link" href="#configuration">
+                Configuration
+               </a>
+               <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#multiple-strategies">
+                  Multiple strategies
+                 </a>
+                </li>
+               </ul>
+              </li>
+             </ul>
             </li>
             <li class="md-nav__item">
              <a class="md-nav__link" href="instruments.html">
@@ -377,7 +422,33 @@
       <div class="md-sidebar__scrollwrap">
        <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          Contents
+         </label>
          <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#user-guide-strategies--page-root">
+            Strategies
+           </a>
+           <nav class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#configuration">
+               Configuration
+              </a>
+              <nav class="md-nav">
+               <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#multiple-strategies">
+                  Multiple strategies
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
          </ul>
         </nav>
        </div>
@@ -385,41 +456,179 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <section class="tex2jax_ignore mathjax_ignore" id="user-guide">
-        <h1 id="user-guide-index--page-root">
-         User Guide
-         <a class="headerlink" href="#user-guide-index--page-root" title="Permalink to this headline">
+       <section class="tex2jax_ignore mathjax_ignore" id="strategies">
+        <h1 id="user-guide-strategies--page-root">
+         Strategies
+         <a class="headerlink" href="#user-guide-strategies--page-root" title="Permalink to this headline">
           ¶
          </a>
         </h1>
         <p>
-         Welcome to the user guide for NautilusTrader!
+         The heart of the NautilusTrader user experience is in writing and working with
+trading strategies, by inheriting
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           TradingStrategy
+          </span>
+         </code>
+         and implementing its methods.
         </p>
         <p>
-         Here you will find more in depth guides and tutorials.
+         Please refer to the
+         <span class="xref myst">
+          API Reference
+         </span>
+         for a complete description
+of all the possible functionality.
         </p>
+        <p>
+         There are two main pieces to a Nautilus trading strategy:
+        </p>
+        <ul class="simple">
+         <li>
+          <p>
+           The strategy implementation itself, defined by inheriting
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             TradingStrategy
+            </span>
+           </code>
+          </p>
+         </li>
+         <li>
+          <p>
+           The
+           <em>
+            optional
+           </em>
+           strategy configuration, defined by inheriting
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             TradingStrategyConfig
+            </span>
+           </code>
+          </p>
+         </li>
+        </ul>
         <div class="admonition note">
          <p class="admonition-title">
           Note
          </p>
          <p>
-          The guides are generally ordered from highest to lowest level (although they can also be read in any order).
+          Once a strategy is defined, the same source can be used for backtesting and live trading.
          </p>
         </div>
-        <p>
-         Since the
-         <a class="reference internal" href="../api_reference/index.html">
-          <span class="doc std std-doc">
-           API Reference
-          </span>
-         </a>
-         documentation is generated from the latest source code, it should be considered
-the source of truth if code in the user guide differs. We will aim to keep the
-user guide in line on a best effort basis, and intend to introduce some doc tests
-in the near future.
-        </p>
-        <div class="toctree-wrapper compound">
-        </div>
+        <section id="configuration">
+         <h2 id="configuration">
+          Configuration
+          <a class="headerlink" href="#configuration" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          The main purpose of a separate configuration class is to provide total flexibility
+over where and how a trading strategy can be instantiated. This includes being able
+to serialize strategies and their configurations over the wire, making distributed backtesting
+and firing up remote live trading possible.
+         </p>
+         <p>
+          This configuration flexibility is actually opt in, in that you can actually choose not to have
+any strategy configuration beyond the parameters you choose to pass into your
+strategies constructor. If you would like to run distributed backtests or launch
+live trading servers remotely, then you will need to define a configuration.
+         </p>
+         <p>
+          Here is an example configuration:
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.trading.config</span> <span class="kn">import</span> <span class="n">TradingStrategyConfig</span>
+
+
+<span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">TradingStrategyConfig</span><span class="p">):</span>
+    <span class="n">instrument_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">bar_type</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">fast_ema_period</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">slow_ema_period</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="n">trade_size</span><span class="p">:</span> <span class="n">Decimal</span>
+    <span class="n">order_id_tag</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="n">MyStrategy</span><span class="p">(</span>
+    <span class="n">instrument_id</span><span class="o">=</span><span class="s2">"ETH-PERP.FTX"</span><span class="p">,</span>
+    <span class="n">bar_type</span><span class="o">=</span><span class="s2">"ETH-PERP.FTX-1000-TICK[LAST]-INTERNAL"</span><span class="p">,</span>
+    <span class="n">trade_size</span><span class="o">=</span><span class="n">Decimal</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">order_id_tag</span><span class="o">=</span><span class="s2">"001"</span><span class="p">,</span>
+<span class="p">)</span>
+</pre>
+          </div>
+         </div>
+         <section id="multiple-strategies">
+          <h3 id="multiple-strategies">
+           Multiple strategies
+           <a class="headerlink" href="#multiple-strategies" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           If you intend running multiple instances of the same strategy, with different
+configurations (such as on different instruments), then you will need to define
+a unique
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             order_id_tag
+            </span>
+           </code>
+           for each of these strategies (as shown above).
+          </p>
+          <div class="admonition note">
+           <p class="admonition-title">
+            Note
+           </p>
+           <p>
+            The platform has built in safety measures in the event that two strategies share a
+duplicated strategy ID, then an exception will be thrown that the strategy ID has already been registered.
+           </p>
+          </div>
+          <p>
+           The reason for this is that the system must be able to identify which strategy
+various commands and events belong to. A strategy ID is made up of the
+strategy class name, and the strategies
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             order_id_tag
+            </span>
+           </code>
+           separated by a hyphen. For
+example the above config would result in a strategy ID of
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             MyStrategy-001
+            </span>
+           </code>
+           .
+          </p>
+          <div class="admonition tip">
+           <p class="admonition-title">
+            Tip
+           </p>
+           <p>
+            See the
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              StrategyId
+             </span>
+            </code>
+            <a class="reference internal" href="../api_reference/model/identifiers.html">
+             <span class="doc std std-doc">
+              documentation
+             </span>
+            </a>
+            for further details.
+           </p>
+          </div>
+         </section>
+        </section>
        </section>
       </article>
      </div>
@@ -429,7 +638,7 @@ in the near future.
   <footer class="md-footer">
    <div class="md-footer-nav">
     <nav class="md-footer-nav__inner md-grid">
-     <a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href="../getting_started/quick_start.html" rel="prev" title="Quick Start">
+     <a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href="loading_external_data.html" rel="prev" title="Loading External Data">
       <div class="md-flex__cell md-flex__cell--shrink">
        <i class="md-icon md-icon--arrow-back md-footer-nav__button">
        </i>
@@ -439,17 +648,17 @@ in the near future.
         <span class="md-footer-nav__direction">
          Previous
         </span>
-        Quick Start
+        Loading External Data
        </span>
       </div>
      </a>
-     <a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="core_concepts.html" rel="next" title="Core Concepts">
+     <a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="instruments.html" rel="next" title="Instruments">
       <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
        <span class="md-flex__ellipsis">
         <span class="md-footer-nav__direction">
          Next
         </span>
-        Core Concepts
+        Instruments
        </span>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">

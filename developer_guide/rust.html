@@ -506,10 +506,16 @@ to be highly performant. This combination of correctness and performance is high
           </a>
          </h2>
          <p>
-          Interoperating between Python and Rust can be achieved by binding a C-ABI compatible interface from the Rust FFI with
+          Interoperating from Python calling Rust can be achieved by binding a Rust C-ABI compatible interface generated using
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            cbindgen
+           </span>
+          </code>
+          with
 Cython. This approach is to aid a smooth transition to greater amounts
 of Rust in the codebase, and reducing amounts of Cython (which will eventually be eliminated).
-In the future
+We want to avoid a need for Rust to call Python using the FFI. In the future
           <a class="reference external" href="https://github.com/PyO3/PyO3">
            PyO3
           </a>
@@ -542,8 +548,8 @@ their own standard libraries.
             unsafe
            </span>
           </code>
-          facility (which just enables a small set of additional language features), thereby changing
-the contract between code and caller, shifting some responsibility for guaranteeing correctness
+          facility - which just enables a small set of additional language features, thereby changing
+the contract between the interface and caller, shifting some responsibility for guaranteeing correctness
 from the Rust compiler, and onto us. The goal is to realize the advantages of the
           <code class="docutils literal notranslate">
            <span class="pre">
@@ -571,7 +577,13 @@ The definition for what the Rust language designers consider undefined behaviour
          </h2>
          <p>
           To maintain the high standards of correctness the project strives for, it is necessary to specify a reasonable policy
-to adhere to when implementing unsafe functionality.
+to adhere to when implementing
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            unsafe
+           </span>
+          </code>
+          functionality.
          </p>
          <ul class="simple">
           <li>
