@@ -29,6 +29,7 @@
         font-family: "Roboto Mono", "Courier New", Courier, monospace
       }
   </style>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" referrerpolicy="no-referrer" rel="stylesheet"/>
   <link href="../../_static/stylesheets/application.css" rel="stylesheet"/>
   <link href="../../_static/stylesheets/application-palette.css" rel="stylesheet"/>
   <link href="../../_static/stylesheets/application-fixes.css" rel="stylesheet"/>
@@ -130,7 +131,7 @@
   <script>
    var togglebuttonSelector = '.toggle, .admonition.dropdown';
   </script>
-  <script src="../../_static/_static/script.js">
+  <script src="../../_static/script.js">
   </script>
   <link href="../../_static/favicon-32x32.png" rel="shortcut icon"/>
   <link href="../../genindex.html" rel="index" title="Index"/>
@@ -312,259 +313,342 @@
            </div>
           </a>
          </div>
-         <ul class="md-nav__list">
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../../getting_started/index.html">
-            Getting Started
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../../user_guide/index.html">
-            User Guide
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../index.html">
-            API Reference
-           </a>
-           <ul class="md-nav__list">
-            <li class="md-nav__item">
-             <a class="md-nav__link" href="../index.html#type-safety">
-              Type Safety
-             </a>
-            </li>
-            <li class="md-nav__item">
-             <a class="md-nav__link" href="../index.html#framework-organization">
-              Framework Organization
-             </a>
-            </li>
-            <li class="md-nav__item">
-             <a class="md-nav__link" href="../index.html#errors-and-exceptions">
-              Errors and Exceptions
-             </a>
-             <ul class="md-nav__list">
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../accounting.html">
-                Accounting
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../adapters/index.html">
-                Adapters
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../analysis.html">
-                Analysis
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../backtest.html">
-                Backtest
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../cache.html">
-                Cache
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../common.html">
-                Common
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../core.html">
-                Core
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../data.html">
-                Data
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../execution.html">
-                Execution
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../indicators.html">
-                Indicators
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../infrastructure.html">
-                Infrastructure
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../live.html">
-                Live
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="index.html">
-                Model
-               </a>
-               <ul class="md-nav__list">
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="commands.html">
-                  Commands
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="currency.html">
-                  Currency
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="data.html">
-                  Data
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="events.html">
-                  Events
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="identifiers.html">
-                  Identifiers
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="instruments.html">
-                  Instruments
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="objects.html">
-                  Objects
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-                 <label class="md-nav__link md-nav__link--active" for="__toc">
-                  Order Book
-                 </label>
-                 <a class="md-nav__link md-nav__link--active" href="#">
-                  Order Book
-                 </a>
-                 <nav class="md-nav md-nav--secondary">
-                  <label class="md-nav__title" for="__toc">
-                   Contents
-                  </label>
-                  <ul class="md-nav__list" data-md-scrollfix="">
-                   <li class="md-nav__item">
-                    <a class="md-nav__link" href="#api-reference-model-orderbook--page-root">
-                     Order Book
-                    </a>
-                    <nav class="md-nav">
-                     <ul class="md-nav__list">
-                      <li class="md-nav__item">
-                       <a class="md-nav__link" href="#module-nautilus_trader.model.orderbook.book">
-                        Book
-                       </a>
-                      </li>
-                      <li class="md-nav__item">
-                       <a class="md-nav__link" href="#module-nautilus_trader.model.orderbook.data">
-                        Data
-                       </a>
-                      </li>
-                      <li class="md-nav__item">
-                       <a class="md-nav__link" href="#module-nautilus_trader.model.orderbook.ladder">
-                        Ladder
-                       </a>
-                      </li>
-                      <li class="md-nav__item">
-                       <a class="md-nav__link" href="#module-nautilus_trader.model.orderbook.level">
-                        Level
-                       </a>
-                      </li>
-                      <li class="md-nav__item">
-                       <a class="md-nav__link" href="#module-nautilus_trader.model.orderbook.simulated">
-                        Simulated
-                       </a>
-                      </li>
-                      <li class="md-nav__item">
-                       <a class="md-nav__link" href="#module-nautilus_trader.model.orderbook.error">
-                        Error
-                       </a>
-                      </li>
-                     </ul>
-                    </nav>
-                   </li>
-                  </ul>
-                 </nav>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="orders.html">
-                  Orders
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="position.html">
-                  Position
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="tick_scheme.html">
-                  Tick Scheme
-                 </a>
-                </li>
-               </ul>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../msgbus.html">
-                Message Bus
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../network.html">
-                Network
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../persistence.html">
-                Persistence
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../portfolio.html">
-                Portfolio
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../risk.html">
-                Risk
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../serialization.html">
-                Serialization
-               </a>
-              </li>
-              <li class="md-nav__item">
-               <a class="md-nav__link" href="../trading.html">
-                Trading
-               </a>
-              </li>
-             </ul>
-            </li>
-           </ul>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../../integrations/index.html">
-            Integrations
-           </a>
-          </li>
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="../../developer_guide/index.html">
-            Developer Guide
-           </a>
-          </li>
-         </ul>
+         <div id="menu">
+          <ul class="md-nav__list">
+           <li class="md-nav__item">
+            <a class="md-nav__link" href="../../getting_started/index.html">
+             Getting Started
+            </a>
+            <span class="arrow">
+             <i class="fa-solid fa-chevron-right">
+             </i>
+            </span>
+            <ul class="submenu">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../getting_started/installation.html">
+               Installation
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../getting_started/quick_start.html">
+               Quick Start
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="md-nav__item">
+            <a class="md-nav__link" href="../../user_guide/index.html">
+             User Guide
+            </a>
+            <span class="arrow">
+             <i class="fa-solid fa-chevron-right">
+             </i>
+            </span>
+            <ul class="submenu">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../user_guide/core_concepts.html">
+               Core Concepts
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../user_guide/backtest_example.html">
+               Complete Backtest Example
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../user_guide/backtest_example.html#run-the-backtest">
+               Run the backtest
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../user_guide/loading_external_data.html">
+               Loading External Data
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../user_guide/strategies.html">
+               Strategies
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../user_guide/instruments.html">
+               Instruments
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="md-nav__item">
+            <a class="md-nav__link" href="../index.html">
+             API Reference
+            </a>
+            <span class="arrow">
+             <i class="fa-solid fa-chevron-right">
+             </i>
+            </span>
+            <ul class="submenu">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../accounting.html">
+               Accounting
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../adapters/index.html">
+               Adapters
+              </a>
+              <span class="arrow">
+               <i class="fa-solid fa-chevron-right">
+               </i>
+              </span>
+              <ul class="submenu">
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="../adapters/betfair.html">
+                 Betfair
+                </a>
+               </li>
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="../adapters/binance.html">
+                 Binance
+                </a>
+               </li>
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="../adapters/ftx.html">
+                 FTX
+                </a>
+               </li>
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="../adapters/ib.html">
+                 Interactive Brokers
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../analysis.html">
+               Analysis
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../backtest.html">
+               Backtest
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../cache.html">
+               Cache
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../common.html">
+               Common
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../core.html">
+               Core
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../data.html">
+               Data
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../execution.html">
+               Execution
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../indicators.html">
+               Indicators
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../infrastructure.html">
+               Infrastructure
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../live.html">
+               Live
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="index.html">
+               Model
+              </a>
+              <span class="arrow">
+               <i class="fa-solid fa-chevron-right">
+               </i>
+              </span>
+              <ul class="submenu">
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="commands.html">
+                 Commands
+                </a>
+               </li>
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="currency.html">
+                 Currency
+                </a>
+               </li>
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="data.html">
+                 Data
+                </a>
+               </li>
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="events.html">
+                 Events
+                </a>
+               </li>
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="identifiers.html">
+                 Identifiers
+                </a>
+               </li>
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="instruments.html">
+                 Instruments
+                </a>
+               </li>
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="objects.html">
+                 Objects
+                </a>
+               </li>
+               <li class="md-nav__item md-nav__link--active">
+                <a class="md-nav__link" href="#">
+                 Order Book
+                </a>
+               </li>
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="orders.html">
+                 Orders
+                </a>
+               </li>
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="position.html">
+                 Position
+                </a>
+               </li>
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="tick_scheme.html">
+                 Tick Scheme
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../msgbus.html">
+               Message Bus
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../network.html">
+               Network
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../persistence.html">
+               Persistence
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../portfolio.html">
+               Portfolio
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../risk.html">
+               Risk
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../serialization.html">
+               Serialization
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../trading.html">
+               Trading
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="md-nav__item">
+            <a class="md-nav__link" href="../../integrations/index.html">
+             Integrations
+            </a>
+            <span class="arrow">
+             <i class="fa-solid fa-chevron-right">
+             </i>
+            </span>
+            <ul class="submenu">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../integrations/betfair.html">
+               Betfair
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../integrations/binance.html">
+               Binance
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../integrations/ftx.html">
+               FTX
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../integrations/ib.html">
+               Interactive Brokers
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="md-nav__item">
+            <a class="md-nav__link" href="../../developer_guide/index.html">
+             Developer Guide
+            </a>
+            <span class="arrow">
+             <i class="fa-solid fa-chevron-right">
+             </i>
+            </span>
+            <ul class="submenu">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../developer_guide/environment_setup.html">
+               Environment Setup
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../developer_guide/coding_standards.html">
+               Coding Standards
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../developer_guide/cython.html">
+               Cython
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../developer_guide/rust.html">
+               Rust
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../developer_guide/testing.html">
+               Testing
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../developer_guide/packaged_data.html">
+               Packaged Data
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </div>
         </nav>
        </div>
       </div>
@@ -21207,6 +21291,8 @@ set self.__traceback__ to tb and return self.
   </script>
   <script>
    app.initialize({version: "1.0.4", url: {base: ".."}})
+  </script>
+  <script crossorigin="anonymous" integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js">
   </script>
  </body>
 </html>
