@@ -1018,6 +1018,38 @@ brokerages, data providers/feeds and other venues or services.
              </a>
             </dt>
             <dd>
+             <p>
+              Connect the HTTP client session.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.connected">
+             <span class="sig-name descname">
+              <span class="pre">
+               connected
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.network.http.HttpClient.connected" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the HTTP client is connected.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -1139,6 +1171,9 @@ brokerages, data providers/feeds and other venues or services.
              </a>
             </dt>
             <dd>
+             <p>
+              Disconnect the HTTP client session.
+             </p>
             </dd>
            </dl>
            <dl class="py method">
@@ -1430,6 +1465,35 @@ brokerages, data providers/feeds and other venues or services.
              </a>
             </dt>
             <dd>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.session">
+             <span class="sig-name descname">
+              <span class="pre">
+               session
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.network.http.HttpClient.session" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The current HTTP client session.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 aiohttp.ClientSession
+                </em>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
           </dd>
@@ -2094,6 +2158,18 @@ brokerages, data providers/feeds and other venues or services.
              max_retry_connection=0,
             </span>
             <span class="pre">
+             bytes
+            </span>
+            <span class="pre">
+             pong_msg=None,
+            </span>
+            <span class="pre">
+             bool
+            </span>
+            <span class="pre">
+             log_send=False,
+            </span>
+            <span class="pre">
              bool
             </span>
             <span class="pre">
@@ -2205,6 +2281,42 @@ brokerages, data providers/feeds and other venues or services.
               <li>
                <p>
                 <strong>
+                 pong_msg
+                </strong>
+                (
+                <em>
+                 bytes
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The pong message expected from the server (used to filter).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 log_send
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If the raw sent bytes for each message should be logged.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  log_recv
                 </strong>
                 (
@@ -2217,7 +2329,7 @@ brokerages, data providers/feeds and other venues or services.
                 <em>
                  default False
                 </em>
-                ) – If the raw received bytes for each message should be logged.
+                ) – If the raw recv bytes for each message should be logged.
                </p>
               </li>
              </ul>
@@ -2315,6 +2427,82 @@ brokerages, data providers/feeds and other venues or services.
              </a>
             </dt>
             <dd>
+             <p>
+              Connect the WebSocket client.
+             </p>
+             <p>
+              Will call
+              <cite>
+               post_connection()
+              </cite>
+              prior to starting receive loop.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   ws_url
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  ) – The endpoint URL to connect to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   start
+                  </strong>
+                  (
+                  <em>
+                   bool
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default True
+                  </em>
+                  ) – If the WebSocket should start its receive loop.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ws_kwargs
+                  </strong>
+                  (
+                  <em>
+                   dict
+                  </em>
+                  ) – The optional kwargs for connection.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 ws_url
+                </cite>
+                is not a valid string.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py attribute">
@@ -2381,6 +2569,16 @@ brokerages, data providers/feeds and other venues or services.
              </a>
             </dt>
             <dd>
+             <p>
+              Disconnect the WebSocket client session.
+             </p>
+             <p>
+              Will call
+              <cite>
+               post_disconnection()
+              </cite>
+              .
+             </p>
             </dd>
            </dl>
            <dl class="py attribute">
@@ -2479,9 +2677,45 @@ brokerages, data providers/feeds and other venues or services.
              <p>
               Actions to be performed post connection.
              </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.post_disconnection">
+             <span class="sig-name descname">
+              <span class="pre">
+               post_disconnection
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.post_disconnection" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
              <p>
-              This method is called before start(), override to implement additional
-connection related behaviour (sending other messages etc.).
+              Actions to be performed post disconnection.
              </p>
             </dd>
            </dl>
@@ -2522,10 +2756,6 @@ connection related behaviour (sending other messages etc.).
             <dd>
              <p>
               Actions to be performed post reconnection.
-             </p>
-             <p>
-              Override to implement additional
-reconnection related behaviour (resubscribing etc.).
              </p>
             </dd>
            </dl>
@@ -2614,6 +2844,16 @@ reconnection related behaviour (resubscribing etc.).
              </a>
             </dt>
             <dd>
+             <p>
+              Reconnect the WebSocket client session.
+             </p>
+             <p>
+              Will call
+              <cite>
+               post_reconnection()
+              </cite>
+              following connection.
+             </p>
             </dd>
            </dl>
            <dl class="py method">
