@@ -684,8 +684,23 @@
                  </a>
                 </li>
                 <li class="md-nav__item">
+                 <a class="md-nav__link" href="#account-type">
+                  Account Type
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#base-url-overrides">
+                  Base URL overrides
+                 </a>
+                </li>
+                <li class="md-nav__item">
                  <a class="md-nav__link" href="#binance-us">
                   Binance US
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#testnets">
+                  Testnets
                  </a>
                 </li>
                </ul>
@@ -721,39 +736,6 @@ execution with Binance.
          <p>
           This integration is still under construction. Please consider it to be in an
 unstable beta phase and exercise caution.
-         </p>
-        </div>
-        <div class="admonition note">
-         <p class="admonition-title">
-          Note
-         </p>
-         <p>
-          Binance offers different account types including
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            spot
-           </span>
-          </code>
-          ,
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            margin
-           </span>
-          </code>
-          and
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            futures
-           </span>
-          </code>
-          . NautilusTrader currently supports
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            spot
-           </span>
-          </code>
-          account trading, with
-support for the other account types on the way.
          </p>
         </div>
         <section id="overview">
@@ -917,14 +899,20 @@ configuration(s):
         <span class="s2">"BINANCE"</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">"api_key"</span><span class="p">:</span> <span class="s2">"YOUR_BINANCE_API_KEY"</span><span class="p">,</span>
             <span class="s2">"api_secret"</span><span class="p">:</span> <span class="s2">"YOUR_BINANCE_API_SECRET"</span><span class="p">,</span>
-            <span class="s2">"us"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">"account_type"</span><span class="p">:</span> <span class="s2">"spot"</span><span class="p">,</span>  <span class="c1"># {spot, margin, futures_usdt, futures_coin}</span>
+            <span class="s2">"base_url_http"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># Override with custom endpoint</span>
+            <span class="s2">"base_url_ws"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># Override with custom endpoint</span>
+            <span class="s2">"us"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>  <span class="c1"># If client is for Binance US</span>
         <span class="p">},</span>
     <span class="p">},</span>
     <span class="n">exec_clients</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">"BINANCE"</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">"api_key"</span><span class="p">:</span> <span class="s2">"YOUR_BINANCE_API_KEY"</span><span class="p">,</span>
             <span class="s2">"api_secret"</span><span class="p">:</span> <span class="s2">"YOUR_BINANCE_API_SECRET"</span><span class="p">,</span>
-            <span class="s2">"us"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">"account_type"</span><span class="p">:</span> <span class="s2">"spot"</span><span class="p">,</span>  <span class="c1"># {spot, margin, futures_usdt, futures_coin}</span>
+            <span class="s2">"base_url_http"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># Override with custom endpoint</span>
+            <span class="s2">"base_url_ws"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># Override with custom endpoint</span>
+            <span class="s2">"us"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>  <span class="c1"># If client is for Binance US</span>
         <span class="p">},</span>
     <span class="p">},</span>
 <span class="p">)</span>
@@ -976,7 +964,7 @@ Either pass the corresponding
             </span>
            </code>
            values to the config dictionaries, or
-set the following environment variables:
+set the following environment variables for live clients:
           </p>
           <ul class="simple">
            <li>
@@ -999,8 +987,95 @@ set the following environment variables:
            </li>
           </ul>
           <p>
+           Or for clients connecting to testnets, you can set:
+          </p>
+          <ul class="simple">
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               BINANCE_TESTNET_API_KEY
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               BINANCE_TESTNET_API_SECRET
+              </span>
+             </code>
+            </p>
+           </li>
+          </ul>
+          <p>
            When starting the trading node, you’ll receive immediate confirmation of whether your
 credentials are valid and have trading permissions.
+          </p>
+         </section>
+         <section id="account-type">
+          <h3 id="account-type">
+           Account Type
+           <a class="headerlink" href="#account-type" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           All the Binance account types will be supported for live trading. Set the account type
+through the
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             account_type
+            </span>
+           </code>
+           option as a string. Options are
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             spot
+            </span>
+           </code>
+           ,
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             margin
+            </span>
+           </code>
+           ,
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             futures_usdt
+            </span>
+           </code>
+           (USDT or
+BUSD stablecoins as collateral),
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             futures_coin
+            </span>
+           </code>
+           (other cryptocurrency as collateral).
+          </p>
+          <div class="admonition note">
+           <p class="admonition-title">
+            Note
+           </p>
+           <p>
+            Binance does not currently offer a testnet for COIN-M futures.
+           </p>
+          </div>
+         </section>
+         <section id="base-url-overrides">
+          <h3 id="base-url-overrides">
+           Base URL overrides
+           <a class="headerlink" href="#base-url-overrides" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           It’s possible to override the default base URLs for both HTTP Rest and
+WebSocket APIs. This is useful for configuring API clusters for performance reasons,
+or when Binance has provided you specialized endpoints.
           </p>
          </section>
          <section id="binance-us">
@@ -1033,6 +1108,60 @@ to
            by default). All functionality available to US accounts
 should behave identically to standard Binance.
           </p>
+         </section>
+         <section id="testnets">
+          <h3 id="testnets">
+           Testnets
+           <a class="headerlink" href="#testnets" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           It’s also possible to configure one or both clients to connect to the Binance testnet.
+Simply set the
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             testnet
+            </span>
+           </code>
+           option to
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             True
+            </span>
+           </code>
+           (this is
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             False
+            </span>
+           </code>
+           by default):
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="n">TradingNodeConfig</span><span class="p">(</span>
+    <span class="o">...</span><span class="p">,</span>  <span class="c1"># Omitted</span>
+    <span class="n">data_clients</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"BINANCE"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"api_key"</span><span class="p">:</span> <span class="s2">"YOUR_BINANCE_TESTNET_API_KEY"</span><span class="p">,</span>
+            <span class="s2">"api_secret"</span><span class="p">:</span> <span class="s2">"YOUR_BINANCE_TESTNET_API_SECRET"</span><span class="p">,</span>
+            <span class="s2">"account_type"</span><span class="p">:</span> <span class="s2">"spot"</span><span class="p">,</span>  <span class="c1"># {spot, margin, futures_usdt}</span>
+            <span class="s2">"testnet"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># If client uses the testnet</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="n">exec_clients</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"BINANCE"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"api_key"</span><span class="p">:</span> <span class="s2">"YOUR_BINANCE_TESTNET_API_KEY"</span><span class="p">,</span>
+            <span class="s2">"api_secret"</span><span class="p">:</span> <span class="s2">"YOUR_BINANCE_TESTNET_API_SECRET"</span><span class="p">,</span>
+            <span class="s2">"account_type"</span><span class="p">:</span> <span class="s2">"spot"</span><span class="p">,</span>  <span class="c1"># {spot, margin, futures_usdt}</span>
+            <span class="s2">"testnet"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># If client uses the testnet</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre>
+           </div>
+          </div>
          </section>
         </section>
        </section>

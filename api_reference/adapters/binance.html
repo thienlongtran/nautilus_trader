@@ -12510,6 +12510,40 @@ position ID resolution.
              </span>
             </span>
            </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              is_testnet
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              False
+             </span>
+            </span>
+           </em>
            <span class="sig-paren">
             )
            </span>
@@ -12645,6 +12679,24 @@ If None then will source from the
                 ) – The base URL for the API endpoints.
                </p>
               </li>
+              <li>
+               <p>
+                <strong>
+                 is_testnet
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If the client is connecting to the testnet API.
+               </p>
+              </li>
              </ul>
             </dd>
             <dt class="field-even">
@@ -12711,6 +12763,26 @@ If None then will source from the
              </a>
             </span>
            </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              account_type
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              nautilus_trader.adapters.binance.common.BinanceAccountType
+             </span>
+            </span>
+           </em>
            <span class="sig-paren">
             )
            </span>
@@ -12767,6 +12839,18 @@ If None then will source from the
                  </em>
                 </a>
                 ) – The logger for the instrument provider.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_type
+                </strong>
+                (
+                <em>
+                 BinanceAccountType
+                </em>
+                ) – The Binance account type for the instrument provider.
                </p>
               </li>
              </ul>
@@ -13631,6 +13715,40 @@ If None then will source from the
                nautilus_trader.common.logging.Logger
               </span>
              </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              account_type
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              nautilus_trader.adapters.binance.common.BinanceAccountType
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              BinanceAccountType.SPOT
+             </span>
             </span>
            </em>
            <span class="sig-paren">
