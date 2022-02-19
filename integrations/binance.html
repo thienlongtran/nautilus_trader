@@ -673,6 +673,11 @@
               </a>
              </li>
              <li class="md-nav__item">
+              <a class="md-nav__link" href="#symbology">
+               Symbology
+              </a>
+             </li>
+             <li class="md-nav__item">
               <a class="md-nav__link" href="#configuration">
                Configuration
               </a>
@@ -866,6 +871,69 @@ custom data types:
           </a>
           for full definitions.
          </p>
+        </section>
+        <section id="symbology">
+         <h2 id="symbology">
+          Symbology
+          <a class="headerlink" href="#symbology" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          As per the Nautilus unification policy for symbols, the native Binance symbols are used where possible including for
+spot assets and futures contracts. However, because NautilusTrader is capable of multi-venue + multi-account
+trading, it’s necessary to explicitly clarify the difference between
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BTCUSDT
+           </span>
+          </code>
+          as the spot and margin traded
+pair, and the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BTCUSDT
+           </span>
+          </code>
+          perpetual futures contract (this symbol is used for
+          <em>
+           both
+          </em>
+          natively by Binance). Therefore, NautilusTrader appends
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            -PERP
+           </span>
+          </code>
+          to all native perpetual symbols.
+E.g. for Binance Futures, the said instruments symbol is
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BTCUSDT-PERP
+           </span>
+          </code>
+          within the Nautilus system boundary.
+         </p>
+         <div class="admonition note">
+          <p class="admonition-title">
+           Note
+          </p>
+          <p>
+           This convention of appending
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             -PERP
+            </span>
+           </code>
+           to perpetual futures is also adopted by
+           <a class="reference internal" href="ftx.html">
+            <span class="doc std std-doc">
+             FTX
+            </span>
+           </a>
+           .
+          </p>
+         </div>
         </section>
         <section id="configuration">
          <h2 id="configuration">
