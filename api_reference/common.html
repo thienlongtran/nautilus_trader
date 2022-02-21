@@ -17569,7 +17569,37 @@ contain any arbitrary delimiter if required.
                   <strong>
                    time_in_force
                   </strong>
-                  (TimeInForce, default
+                  (TimeInForce {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    IOC
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FOK
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    AT_THE_OPEN
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    AT_THE_CLOSE
+                   </span>
+                  </code>
+                  }, default
                   <code class="docutils literal notranslate">
                    <span class="pre">
                     GTC
@@ -18055,6 +18085,381 @@ contain any arbitrary delimiter if required.
                    </span>
                   </code>
                   or &lt;= UNIX epoch.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.market_to_limit">
+             <span class="sig-name descname">
+              <span class="pre">
+               market_to_limit
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                InstrumentId
+               </span>
+               <span class="pre">
+                instrument_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                OrderSide
+               </span>
+               <span class="pre">
+                order_side
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Quantity
+               </span>
+               <span class="pre">
+                quantity
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                TimeInForce
+               </span>
+               <span class="pre">
+                time_in_force=TimeInForce.GTC
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                datetime
+               </span>
+               <span class="pre">
+                expire_time=None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+               <span class="pre">
+                reduce_only=False
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Quantity
+               </span>
+               <span class="pre">
+                display_qty=None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                unicode
+               </span>
+               <span class="pre">
+                tags=None
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="model/orders.html#nautilus_trader.model.orders.market_to_limit.MarketToLimitOrder" title="nautilus_trader.model.orders.market_to_limit.MarketToLimitOrder">
+                <span class="pre">
+                 MarketToLimitOrder
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.market_to_limit" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Create a new
+              <cite>
+               market
+              </cite>
+              order.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The orders instrument ID.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   order_side
+                  </strong>
+                  (OrderSide {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    BUY
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    SELL
+                   </span>
+                  </code>
+                  }) – The orders side.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   quantity
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                   <em>
+                    Quantity
+                   </em>
+                  </a>
+                  ) – The orders quantity (&gt; 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   time_in_force
+                  </strong>
+                  (TimeInForce {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTD
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    IOC
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FOK
+                   </span>
+                  </code>
+                  }, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
+                  ) – The orders time-in-force.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   expire_time
+                  </strong>
+                  (
+                  <em>
+                   datetime
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The order expiration (for
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTD
+                   </span>
+                  </code>
+                  orders).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   reduce_only
+                  </strong>
+                  (
+                  <em>
+                   bool
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default False
+                  </em>
+                  ) – If the order carries the ‘reduce-only’ execution instruction.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   display_qty
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                   <em>
+                    Quantity
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The quantity of the limit order to display on the public book (iceberg).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   tags
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The custom user tags for the order. These are optional and can
+contain any arbitrary delimiter if required.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 MarketToLimitOrder
+                </em>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   quantity
+                  </cite>
+                  is not positive (&gt; 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   time_in_force
+                  </cite>
+                  is other than
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTD
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    IOC
+                   </span>
+                  </code>
+                  or
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FOK
+                   </span>
+                  </code>
+                  .
                  </p>
                 </li>
                </ul>
@@ -31112,7 +31517,7 @@ the new model: you should trust this data
                 <em>
                  optional
                 </em>
-                ) – The fully-qualified name of the module.
+                ) – The fully qualified name of the module.
                </p>
               </li>
               <li>
