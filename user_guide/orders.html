@@ -657,7 +657,68 @@
       <div class="md-sidebar__scrollwrap">
        <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          Contents
+         </label>
          <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#user-guide-orders--page-root">
+            Orders
+           </a>
+           <nav class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#types">
+               Types
+              </a>
+              <nav class="md-nav">
+               <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#market">
+                  Market
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#limit">
+                  Limit
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#stop-market">
+                  Stop-Market
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#stop-limit">
+                  Stop-Limit
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#market-to-limit">
+                  Market-To-Limit
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#market-if-touched">
+                  Market-If-Touched
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#limit-if-touched">
+                  Limit-If-Touched
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#order-factory">
+               Order Factory
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
          </ul>
         </nav>
        </div>
@@ -673,11 +734,226 @@
          </a>
         </h1>
         <p>
+         This guide focuses on how to use the available order functionality for the platform in the best way.
+        </p>
+        <p>
          Orders are one of the fundamental building blocks of any algorithmic trading strategy.
 NautilusTrader has unified a large set of order types and execution instructions
 from standard to more advanced, to offer as much of an exchanges available functionality
-as possible.
+as possible. This allows traders to define certain conditions and directions for
+order execution and management, which allows essentially any type of trading strategy to be created.
         </p>
+        <section id="types">
+         <h2 id="types">
+          Types
+          <a class="headerlink" href="#types" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          The two main order types as
+          <em>
+           market
+          </em>
+          orders and
+          <em>
+           limit
+          </em>
+          orders. All the other order
+types are built from these two fundamental types, in terms of liquidity provision they
+are exact opposites. Market orders demand liquidity and require immediate trading at the best
+price available. Whereas limit orders provide liquidity, they act as standing orders in a limit order book
+at a specified price limit.
+         </p>
+         <p>
+          The order types available within the platform are (using the enum values):
+         </p>
+         <ul class="simple">
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              MARKET
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              LIMIT
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              STOP_MARKET
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              STOP_LIMIT
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              MARKET_TO_LIMIT
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              MARKET_IF_TOUCHED
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              LIMIT_IF_TOUCHED
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              TRAILING_STOP_MARKET
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              TRAILING_STOP_LIMIT
+             </span>
+            </code>
+           </p>
+          </li>
+         </ul>
+         <section id="market">
+          <h3 id="market">
+           Market
+           <a class="headerlink" href="#market" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           <span class="xref myst">
+            API Reference
+           </span>
+          </p>
+         </section>
+         <section id="limit">
+          <h3 id="limit">
+           Limit
+           <a class="headerlink" href="#limit" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           <span class="xref myst">
+            API Reference
+           </span>
+          </p>
+         </section>
+         <section id="stop-market">
+          <h3 id="stop-market">
+           Stop-Market
+           <a class="headerlink" href="#stop-market" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           <span class="xref myst">
+            API Reference
+           </span>
+          </p>
+         </section>
+         <section id="stop-limit">
+          <h3 id="stop-limit">
+           Stop-Limit
+           <a class="headerlink" href="#stop-limit" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           <span class="xref myst">
+            API Reference
+           </span>
+          </p>
+         </section>
+         <section id="market-to-limit">
+          <h3 id="market-to-limit">
+           Market-To-Limit
+           <a class="headerlink" href="#market-to-limit" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           API Reference TBD
+          </p>
+         </section>
+         <section id="market-if-touched">
+          <h3 id="market-if-touched">
+           Market-If-Touched
+           <a class="headerlink" href="#market-if-touched" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           <span class="xref myst">
+            API Reference
+           </span>
+          </p>
+         </section>
+         <section id="limit-if-touched">
+          <h3 id="limit-if-touched">
+           Limit-If-Touched
+           <a class="headerlink" href="#limit-if-touched" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           <span class="xref myst">
+            API Reference
+           </span>
+          </p>
+         </section>
+        </section>
+        <section id="order-factory">
+         <h2 id="order-factory">
+          Order Factory
+          <a class="headerlink" href="#order-factory" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          <span class="xref myst">
+           API Reference
+          </span>
+         </p>
+        </section>
        </section>
       </article>
      </div>

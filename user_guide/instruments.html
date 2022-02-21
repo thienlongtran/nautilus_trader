@@ -1181,15 +1181,6 @@ published limits
           Instrument objects also offer a convenient way to create correct prices
 and quantities based on given values.
          </p>
-         <div class="admonition tip">
-          <p class="admonition-title">
-           Tip
-          </p>
-          <p>
-           This is the recommended method for creating valid prices and quantities, e.g. before
-passing them to the order factory to create an order.
-          </p>
-         </div>
          <div class="highlight-python notranslate">
           <div class="highlight">
            <pre><span></span><span class="n">instrument</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">instrument</span><span class="p">(</span><span class="n">instrument_id</span><span class="p">)</span>
@@ -1198,6 +1189,15 @@ passing them to the order factory to create an order.
 <span class="n">quantity</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">make_qty</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
 </pre>
           </div>
+         </div>
+         <div class="admonition tip">
+          <p class="admonition-title">
+           Tip
+          </p>
+          <p>
+           This is the recommended method for creating valid prices and quantities, e.g. before
+passing them to the order factory to create an order.
+          </p>
          </div>
         </section>
         <section id="margins-and-fees">
