@@ -681,6 +681,11 @@
                </ul>
               </nav>
              </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#implementation">
+               Implementation
+              </a>
+             </li>
             </ul>
            </nav>
           </li>
@@ -707,6 +712,11 @@ trading strategies, by inheriting
           </span>
          </code>
          and implementing its methods.
+        </p>
+        <p>
+         Using the basic building blocks of data ingest and order management (which we will discuss
+below), it’s possible to implement any type of trading strategy including positional, momentum, re-balancing,
+pairs trading, market making etc.
         </p>
         <p>
          Please refer to the
@@ -863,6 +873,59 @@ example the above config would result in a strategy ID of
            </p>
           </div>
          </section>
+        </section>
+        <section id="implementation">
+         <h2 id="implementation">
+          Implementation
+          <a class="headerlink" href="#implementation" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Since a trading strategy is a class which inherits from
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            TradingStrategy
+           </span>
+          </code>
+          , you must define
+a constructor where you can handle initialization. Minimally the base/super class needs to be initialized:
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">TradingStrategy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>  <span class="c1"># &lt;-- the super class must be called to initialize the strategy</span>
+</pre>
+          </div>
+         </div>
+         <p>
+          As per the above, it’s also possible to define a configuration. Here we simply add an instrument ID
+as a string, to parameterize the instrument the strategy will trade.
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="k">class</span> <span class="nc">MyStrategyConfig</span><span class="p">(</span><span class="n">TradingStrategyConfig</span><span class="p">):</span>
+    <span class="n">instrument_id</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">TradingStrategy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">MyStrategyConfig</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+        <span class="c1"># Configuration</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instrument_id</span> <span class="o">=</span> <span class="n">InstrumentId</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">instrument_id</span><span class="p">)</span>
+</pre>
+          </div>
+         </div>
+         <div class="admonition note">
+          <p class="admonition-title">
+           Note
+          </p>
+          <p>
+           Even though it often makes sense to define a strategy which will trade a single
+instrument. There is actually no limit to the number of instruments for a single strategy.
+          </p>
+         </div>
         </section>
        </section>
       </article>
