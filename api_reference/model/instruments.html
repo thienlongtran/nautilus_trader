@@ -375,6 +375,11 @@
                Instruments
               </a>
              </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../user_guide/orders.html">
+               Orders
+              </a>
+             </li>
             </ul>
            </li>
            <li class="md-nav__item">
@@ -1038,7 +1043,7 @@ on the asset class and asset type.
             </a>
            </p>
            <p>
-            Represents an instrument in the betting market.
+            Represents an instrument in a betting market.
            </p>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.instruments.betting.BettingInstrument.asset_class">
@@ -3243,7 +3248,16 @@ precision.
             </a>
            </p>
            <p>
-            Represents a Crypto perpetual swap instrument.
+            Represents a Crypto
+            <cite>
+             Perpetual Futures
+            </cite>
+            contract instrument (a.k.a.
+            <cite>
+             Perpetual
+Swap
+            </cite>
+            ).
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">
@@ -6110,7 +6124,12 @@ currency for inverse instruments.
             </a>
            </p>
            <p>
-            Represents a Crypto futures contract instrument.
+            Represents a
+            <cite>
+             Deliverable Futures Contract
+            </cite>
+            instrument, with Crypto assets as
+underlying, and for price quotes and settlement.
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">
@@ -8967,7 +8986,10 @@ currency for inverse instruments.
             </a>
            </p>
            <p>
-            Represents a spot currency instrument.
+            Represents a generic spot currency instrument.
+           </p>
+           <p>
+            Can represent both Fiat FX and Crypto currency pairs.
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">
@@ -11661,7 +11683,7 @@ currency for inverse instruments.
             </a>
            </p>
            <p>
-            Represents an Equity instrument.
+            Represents a generic Equity instrument.
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">
@@ -13982,7 +14004,7 @@ currency for inverse instruments.
             </a>
            </p>
            <p>
-            Represents a futures contract instrument.
+            Represents a generic deliverable Futures Contract instrument.
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">
@@ -16409,7 +16431,7 @@ currency for inverse instruments.
             </a>
            </p>
            <p>
-            Represents an options instrument.
+            Represents a generic Options Contract instrument.
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">
@@ -18927,7 +18949,8 @@ currency for inverse instruments.
             The base class for all instruments.
            </p>
            <p>
-            Represents a tradeable financial market instrument or trading pair.
+            Represents a tradable financial market instrument. This class can be used to
+define an instrument, or act as a parent class for more specific instruments.
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">

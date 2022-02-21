@@ -136,7 +136,7 @@
   <link href="../_static/favicon-32x32.png" rel="shortcut icon"/>
   <link href="../genindex.html" rel="index" title="Index"/>
   <link href="../search.html" rel="search" title="Search"/>
-  <link href="../api_reference/index.html" rel="next" title="API Reference"/>
+  <link href="orders.html" rel="next" title="Orders"/>
   <link href="strategies.html" rel="prev" title="Strategies"/>
   <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
   <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
@@ -368,6 +368,11 @@
              <li class="md-nav__item md-nav__link--active">
               <a class="md-nav__link" href="#">
                Instruments
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="orders.html">
+               Orders
               </a>
              </li>
             </ul>
@@ -663,6 +668,11 @@
            <nav class="md-nav">
             <ul class="md-nav__list">
              <li class="md-nav__item">
+              <a class="md-nav__link" href="#symbology">
+               Symbology
+              </a>
+             </li>
+             <li class="md-nav__item">
               <a class="md-nav__link" href="#backtesting">
                Backtesting
               </a>
@@ -673,8 +683,33 @@
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#getting-instruments">
-               Getting instruments
+              <a class="md-nav__link" href="#finding-instruments">
+               Finding instruments
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#precisions-and-increments">
+               Precisions and Increments
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#limits">
+               Limits
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#prices-and-quantities">
+               Prices and Quantities
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#margins-and-fees">
+               Margins and Fees
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#additional-info">
+               Additional Info
               </a>
              </li>
             </ul>
@@ -701,8 +736,16 @@
            Instrument
           </span>
          </code>
-         base class represents the core specification for any tradable financial market instrument. There are
-currently a number of subclasses representing a range of asset classes and asset types which are supported by the platform:
+         base class represents the core specification (or definition) for any tradable financial market instrument. There are
+currently a number of subclasses representing a range of
+         <em>
+          asset classes
+         </em>
+         and
+         <em>
+          asset types
+         </em>
+         which are supported by the platform:
         </p>
         <ul class="simple">
          <li>
@@ -712,6 +755,7 @@ currently a number of subclasses representing a range of asset classes and asset
              Equity
             </span>
            </code>
+           (generic Equity)
           </p>
          </li>
          <li>
@@ -721,6 +765,7 @@ currently a number of subclasses representing a range of asset classes and asset
              Future
             </span>
            </code>
+           (generic Futures Contract)
           </p>
          </li>
          <li>
@@ -730,6 +775,7 @@ currently a number of subclasses representing a range of asset classes and asset
              Option
             </span>
            </code>
+           (generic Options Contract)
           </p>
          </li>
          <li>
@@ -739,7 +785,7 @@ currently a number of subclasses representing a range of asset classes and asset
              CurrencySpot
             </span>
            </code>
-           (can represent both Fiat FX and Crypto currencies)
+           (generic currency pair i.e. can represent both Fiat FX and Crypto currency)
           </p>
          </li>
          <li>
@@ -749,7 +795,7 @@ currently a number of subclasses representing a range of asset classes and asset
              CryptoPerpetual
             </span>
            </code>
-           (perpetual swap derivative)
+           (Perpetual Futures Contract a.k.a. Perpetual Swap)
           </p>
          </li>
          <li>
@@ -759,7 +805,7 @@ currently a number of subclasses representing a range of asset classes and asset
              CryptoFuture
             </span>
            </code>
-           (Crypto underlying, quotes and settlement)
+           (Deliverable Futures Contract with Crypto assets as underlying, and for price quotes and settlement)
           </p>
          </li>
          <li>
@@ -772,30 +818,57 @@ currently a number of subclasses representing a range of asset classes and asset
           </p>
          </li>
         </ul>
-        <p>
-         All instruments should have a unique
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           InstrumentId
-          </span>
-         </code>
-         which is made up of both the native symbol and venue ID, separated by a period e.g.
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           ETH-PERP.FTX
-          </span>
-         </code>
-         .
-        </p>
-        <div class="admonition warning">
-         <p class="admonition-title">
-          Warning
+        <section id="symbology">
+         <h2 id="symbology">
+          Symbology
+          <a class="headerlink" href="#symbology" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          All instruments should have a unique
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            InstrumentId
+           </span>
+          </code>
+          , which is made up of both the native symbol and venue ID, separated by a period.
+For example, on the FTX crypto exchange, the Ethereum Perpetual Futures Contract has the instrument ID
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            ETH-PERP.FTX
+           </span>
+          </code>
+          .
          </p>
          <p>
-          The correct instrument must be matched to a market dataset such as ticks or orderbook data for logically sound operation.
-An incorrectly specified instrument may truncate data or otherwise produce surprising results.
+          All native symbols
+          <em>
+           should
+          </em>
+          be unique for a venue (this is not always the case e.g. Binance share native symbols between spot and futures markets),
+and the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            {symbol.venue}
+           </span>
+          </code>
+          combination
+          <em>
+           must
+          </em>
+          be unique for a Nautilus system.
          </p>
-        </div>
+         <div class="admonition warning">
+          <p class="admonition-title">
+           Warning
+          </p>
+          <p>
+           The correct instrument must be matched to a market dataset such as ticks or orderbook data for logically sound operation.
+An incorrectly specified instrument may truncate data or otherwise produce surprising results.
+          </p>
+         </div>
+        </section>
         <section id="backtesting">
          <h2 id="backtesting">
           Backtesting
@@ -873,14 +946,14 @@ An incorrectly specified instrument may truncate data or otherwise produce surpr
           </a>
          </h2>
          <p>
-          All the live venue integration adapters have defined
+          All the live integration adapters have defined
           <code class="docutils literal notranslate">
            <span class="pre">
             InstrumentProvider
            </span>
           </code>
           classes which work in an automated way
-under the hood to cache the latest instrument details from the exchange. Refer to a particular
+under the hood to cache the latest instrument definitions from the exchange. Refer to a particular
           <code class="docutils literal notranslate">
            <span class="pre">
             Instrument
@@ -892,14 +965,13 @@ under the hood to cache the latest instrument details from the exchange. Refer t
             InstrumentId
            </span>
           </code>
-          to data and execution
-related methods and classes which require one.
+          to data and execution related methods and classes which require one.
          </p>
         </section>
-        <section id="getting-instruments">
-         <h2 id="getting-instruments">
-          Getting instruments
-          <a class="headerlink" href="#getting-instruments" title="Permalink to this headline">
+        <section id="finding-instruments">
+         <h2 id="finding-instruments">
+          Finding instruments
+          <a class="headerlink" href="#finding-instruments" title="Permalink to this headline">
            ¶
           </a>
          </h2>
@@ -963,6 +1035,245 @@ to take upon receiving an instrument update:
           </div>
          </div>
         </section>
+        <section id="precisions-and-increments">
+         <h2 id="precisions-and-increments">
+          Precisions and Increments
+          <a class="headerlink" href="#precisions-and-increments" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          The instrument objects are a convenient way to organize the specification of an
+instrument through
+          <em>
+           read-only
+          </em>
+          properties. Correct price and quantity precisions, as well as
+minimum price and size increments, multipliers and standard lot sizes, are available.
+         </p>
+         <div class="admonition note">
+          <p class="admonition-title">
+           Note
+          </p>
+          <p>
+           Most of these limits are checked by the Nautilus
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             RiskEngine
+            </span>
+           </code>
+           , otherwise invalid
+values for prices and quantities
+           <em>
+            can
+           </em>
+           result in the exchange rejecting orders.
+          </p>
+         </div>
+        </section>
+        <section id="limits">
+         <h2 id="limits">
+          Limits
+          <a class="headerlink" href="#limits" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Certain value limits are optional for instruments and can be
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            None
+           </span>
+          </code>
+          , these are exchange
+dependent and can include:
+         </p>
+         <ul class="simple">
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              max_quantity
+             </span>
+            </code>
+            (maximum quantity for a single order)
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              min_quantity
+             </span>
+            </code>
+            (minimum quantity for a single order)
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              max_notional
+             </span>
+            </code>
+            (maximum value of a single order)
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              min_notional
+             </span>
+            </code>
+            (minimum value of a single order)
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              max_price
+             </span>
+            </code>
+            (maximum valid order price)
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              min_price
+             </span>
+            </code>
+            (minimum valid order price)
+           </p>
+          </li>
+         </ul>
+         <div class="admonition note">
+          <p class="admonition-title">
+           Note
+          </p>
+          <p>
+           Most of these limits are checked by the Nautilus
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             RiskEngine
+            </span>
+           </code>
+           , otherwise exceeding
+published limits
+           <em>
+            can
+           </em>
+           result in the exchange rejecting orders.
+          </p>
+         </div>
+        </section>
+        <section id="prices-and-quantities">
+         <h2 id="prices-and-quantities">
+          Prices and Quantities
+          <a class="headerlink" href="#prices-and-quantities" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Instrument objects also offer a convenient way to create correct prices
+and quantities based on given values.
+         </p>
+         <div class="admonition note">
+          <p class="admonition-title">
+           Note
+          </p>
+          <p>
+           This is the recommended method for creating valid prices and quantities, e.g. before
+passing them to the order factory to create an order.
+          </p>
+         </div>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">instrument</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">instrument</span><span class="p">(</span><span class="n">instrument_id</span><span class="p">)</span>
+
+<span class="n">price</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">make_price</span><span class="p">(</span><span class="mf">0.90500</span><span class="p">)</span>
+<span class="n">quantity</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">make_qty</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+</pre>
+          </div>
+         </div>
+        </section>
+        <section id="margins-and-fees">
+         <h2 id="margins-and-fees">
+          Margins and Fees
+          <a class="headerlink" href="#margins-and-fees" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          The current initial and maintenance margin requirements, as well as any trading
+fees are available from an instrument:
+         </p>
+         <ul class="simple">
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              margin_init
+             </span>
+            </code>
+            (initial/order margin rate)
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              margin_maint
+             </span>
+            </code>
+            (maintenance/position margin rate)
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              maker_fee
+             </span>
+            </code>
+            (the fee percentage applied to notional order values when providing liquidity)
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              taker_fee
+             </span>
+            </code>
+            (the fee percentage applied to notional order values when demanding liquidity)
+           </p>
+          </li>
+         </ul>
+        </section>
+        <section id="additional-info">
+         <h2 id="additional-info">
+          Additional Info
+          <a class="headerlink" href="#additional-info" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          The raw instrument definition as provided by the exchange (typically from JSON serialized data) is also
+included as a generic Python dictionary. This is to provide all possible information
+which is not necessarily part of the unified Nautilus API, and is available to the user
+at runtime by calling the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            .info
+           </span>
+          </code>
+          property.
+         </p>
+        </section>
        </section>
       </article>
      </div>
@@ -986,13 +1297,13 @@ to take upon receiving an instrument update:
        </span>
       </div>
      </a>
-     <a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="../api_reference/index.html" rel="next" title="API Reference">
+     <a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="orders.html" rel="next" title="Orders">
       <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
        <span class="md-flex__ellipsis">
         <span class="md-footer-nav__direction">
          Next
         </span>
-        API Reference
+        Orders
        </span>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
