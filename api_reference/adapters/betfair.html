@@ -13406,41 +13406,7 @@ MarketOrder, we generate a MIN/MAX price based on the side
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              load_all_on_start
-             </span>
-            </span>
-            <span class="p">
-             <span class="pre">
-              :
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="n">
-             <span class="pre">
-              bool
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="o">
-             <span class="pre">
-              =
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="default_value">
-             <span class="pre">
-              True
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              load_ids_on_start
+              filters
              </span>
             </span>
             <span class="p">
@@ -13460,20 +13426,7 @@ MarketOrder, we generate a MIN/MAX price based on the side
               </span>
              </span>
              <span class="pre">
-              FrozenSet
-             </span>
-             <span class="p">
-              <span class="pre">
-               [
-              </span>
-             </span>
-             <span class="pre">
-              str
-             </span>
-             <span class="p">
-              <span class="pre">
-               ]
-              </span>
+              Dict
              </span>
              <span class="p">
               <span class="pre">
@@ -13500,7 +13453,7 @@ MarketOrder, we generate a MIN/MAX price based on the side
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              filters
+              config
              </span>
             </span>
             <span class="p">
@@ -13519,9 +13472,11 @@ MarketOrder, we generate a MIN/MAX price based on the side
                [
               </span>
              </span>
-             <span class="pre">
-              Dict
-             </span>
+             <a class="reference internal" href="../common.html#nautilus_trader.common.config.InstrumentProviderConfig" title="nautilus_trader.common.config.InstrumentProviderConfig">
+              <span class="pre">
+               nautilus_trader.common.config.InstrumentProviderConfig
+              </span>
+             </a>
              <span class="p">
               <span class="pre">
                ]
@@ -13603,68 +13558,21 @@ MarketOrder, we generate a MIN/MAX price based on the side
               <li>
                <p>
                 <strong>
-                 load_all_on_start
+                 config
                 </strong>
                 (
-                <em>
-                 bool
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 default False
-                </em>
-                ) – If all venue instruments should be loaded on start.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 load_ids_on_start
-                </strong>
-                (
-                <em>
-                 List
-                </em>
-                <em>
-                 [
-                </em>
-                <em>
-                 str
-                </em>
-                <em>
-                 ]
-                </em>
+                <a class="reference internal" href="../common.html#nautilus_trader.common.config.InstrumentProviderConfig" title="nautilus_trader.common.config.InstrumentProviderConfig">
+                 <em>
+                  InstrumentProviderConfig
+                 </em>
+                </a>
                 <em>
                  ,
                 </em>
                 <em>
                  optional
                 </em>
-                ) – The list of instrument IDs to be loaded on start (if
-                <cite>
-                 load_all_instruments
-                </cite>
-                is False).
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 filters
-                </strong>
-                (
-                <em>
-                 Dict
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue specific instrument loading filters to apply.
+                ) – The configuration for the provider.
                </p>
               </li>
              </ul>

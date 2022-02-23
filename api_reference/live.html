@@ -24367,7 +24367,7 @@ the new model: you should trust this data
           </dd>
          </dl>
          <dl class="py class">
-          <dt class="sig sig-object py" id="nautilus_trader.live.config.InstrumentProviderConfig">
+          <dt class="sig sig-object py" id="nautilus_trader.live.config.RoutingConfig">
            <em class="property">
             <span class="pre">
              class
@@ -24377,7 +24377,7 @@ the new model: you should trust this data
            </em>
            <span class="sig-name descname">
             <span class="pre">
-             InstrumentProviderConfig
+             RoutingConfig
             </span>
            </span>
            <span class="sig-paren">
@@ -24394,7 +24394,7 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              load_all
+              default
              </span>
             </span>
             <span class="p">
@@ -24428,7 +24428,7 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              load_ids
+              venues
              </span>
             </span>
             <span class="p">
@@ -24449,76 +24449,6 @@ the new model: you should trust this data
              </span>
              <span class="pre">
               str
-             </span>
-             <span class="p">
-              <span class="pre">
-               ]
-              </span>
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="o">
-             <span class="pre">
-              =
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="default_value">
-             <span class="pre">
-              None
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              filters
-             </span>
-            </span>
-            <span class="p">
-             <span class="pre">
-              :
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="n">
-             <span class="pre">
-              FrozenSet
-             </span>
-             <span class="p">
-              <span class="pre">
-               [
-              </span>
-             </span>
-             <span class="pre">
-              Tuple
-             </span>
-             <span class="p">
-              <span class="pre">
-               [
-              </span>
-             </span>
-             <span class="pre">
-              str
-             </span>
-             <span class="p">
-              <span class="pre">
-               ,
-              </span>
-             </span>
-             <span class="w">
-             </span>
-             <span class="pre">
-              Any
-             </span>
-             <span class="p">
-              <span class="pre">
-               ]
-              </span>
              </span>
              <span class="p">
               <span class="pre">
@@ -24544,7 +24474,7 @@ the new model: you should trust this data
            <span class="sig-paren">
             )
            </span>
-           <a class="headerlink" href="#nautilus_trader.live.config.InstrumentProviderConfig" title="Permalink to this definition">
+           <a class="headerlink" href="#nautilus_trader.live.config.RoutingConfig" title="Permalink to this definition">
             ¶
            </a>
           </dt>
@@ -24558,119 +24488,35 @@ the new model: you should trust this data
             </code>
            </p>
            <p>
-            Configuration for
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              InstrumentProvider
-             </span>
-            </code>
-            instances.
+            Configuration for execution client order routing.
            </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
+           <dl class="simple">
+            <dt>
+             default
+             <span class="classifier">
+              bool
+             </span>
             </dt>
-            <dd class="field-odd">
-             <ul class="simple">
-              <li>
-               <p>
-                <strong>
-                 load_all
-                </strong>
-                (
-                <em>
-                 bool
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 default False
-                </em>
-                ) – If all venue instruments should be loaded on start.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 load_ids
-                </strong>
-                (
-                <em>
-                 FrozenSet
-                </em>
-                <em>
-                 [
-                </em>
-                <em>
-                 str
-                </em>
-                <em>
-                 ]
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The list of instrument IDs to be loaded on start (if
-                <cite>
-                 load_all_instruments
-                </cite>
-                is False).
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 filters
-                </strong>
-                (
-                <em>
-                 [
-                </em>
-                <em>
-                 FrozenSet
-                </em>
-                <em>
-                 [
-                </em>
-                <em>
-                 Tuple
-                </em>
-                <em>
-                 [
-                </em>
-                <em>
-                 str
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 Any
-                </em>
-                <em>
-                 ]
-                </em>
-                <em>
-                 ]
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue specific instrument loading filters to apply.
-               </p>
-              </li>
-             </ul>
+            <dd>
+             <p>
+              If the client should be registered as the default routing client
+(when a specific venue routing cannot be found).
+             </p>
+            </dd>
+            <dt>
+             venues
+             <span class="classifier">
+              List[str], optional
+             </span>
+            </dt>
+            <dd>
+             <p>
+              The venues to register for routing.
+             </p>
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.config.InstrumentProviderConfig.construct">
+            <dt class="sig sig-object py" id="nautilus_trader.live.config.RoutingConfig.construct">
              <em class="property">
               <span class="pre">
                classmethod
@@ -24770,7 +24616,7 @@ the new model: you should trust this data
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.live.config.InstrumentProviderConfig.construct" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.live.config.RoutingConfig.construct" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -24787,7 +24633,7 @@ Behaves as if
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.config.InstrumentProviderConfig.copy">
+            <dt class="sig sig-object py" id="nautilus_trader.live.config.RoutingConfig.copy">
              <span class="sig-name descname">
               <span class="pre">
                copy
@@ -24998,7 +24844,7 @@ Behaves as if
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.live.config.InstrumentProviderConfig.copy" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.live.config.RoutingConfig.copy" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -25063,7 +24909,7 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.config.InstrumentProviderConfig.dict">
+            <dt class="sig sig-object py" id="nautilus_trader.live.config.RoutingConfig.dict">
              <span class="sig-name descname">
               <span class="pre">
                dict
@@ -25376,7 +25222,7 @@ the new model: you should trust this data
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.live.config.InstrumentProviderConfig.dict" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.live.config.RoutingConfig.dict" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -25387,7 +25233,7 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.config.InstrumentProviderConfig.json">
+            <dt class="sig sig-object py" id="nautilus_trader.live.config.RoutingConfig.json">
              <span class="sig-name descname">
               <span class="pre">
                json
@@ -25839,7 +25685,7 @@ the new model: you should trust this data
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.live.config.InstrumentProviderConfig.json" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.live.config.RoutingConfig.json" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -25876,7 +25722,7 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.live.config.InstrumentProviderConfig.update_forward_refs">
+            <dt class="sig sig-object py" id="nautilus_trader.live.config.RoutingConfig.update_forward_refs">
              <em class="property">
               <span class="pre">
                classmethod
@@ -25929,7 +25775,7 @@ the new model: you should trust this data
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.live.config.InstrumentProviderConfig.update_forward_refs" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.live.config.RoutingConfig.update_forward_refs" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -25980,9 +25826,9 @@ the new model: you should trust this data
             <span class="w">
             </span>
             <span class="n">
-             <a class="reference internal" href="#nautilus_trader.live.config.InstrumentProviderConfig" title="nautilus_trader.live.config.InstrumentProviderConfig">
+             <a class="reference internal" href="common.html#nautilus_trader.common.config.InstrumentProviderConfig" title="nautilus_trader.common.config.InstrumentProviderConfig">
               <span class="pre">
-               nautilus_trader.live.config.InstrumentProviderConfig
+               nautilus_trader.common.config.InstrumentProviderConfig
               </span>
              </a>
             </span>
@@ -26042,7 +25888,7 @@ the new model: you should trust this data
                instrument_provider
               </strong>
               (
-              <a class="reference internal" href="#nautilus_trader.live.config.InstrumentProviderConfig" title="nautilus_trader.live.config.InstrumentProviderConfig">
+              <a class="reference internal" href="common.html#nautilus_trader.common.config.InstrumentProviderConfig" title="nautilus_trader.common.config.InstrumentProviderConfig">
                <em>
                 InstrumentProviderConfig
                </em>
@@ -27362,9 +27208,9 @@ the new model: you should trust this data
             <span class="w">
             </span>
             <span class="n">
-             <a class="reference internal" href="#nautilus_trader.live.config.InstrumentProviderConfig" title="nautilus_trader.live.config.InstrumentProviderConfig">
+             <a class="reference internal" href="common.html#nautilus_trader.common.config.InstrumentProviderConfig" title="nautilus_trader.common.config.InstrumentProviderConfig">
               <span class="pre">
-               nautilus_trader.live.config.InstrumentProviderConfig
+               nautilus_trader.common.config.InstrumentProviderConfig
               </span>
              </a>
             </span>
@@ -27386,6 +27232,45 @@ the new model: you should trust this data
              </span>
              <span class="pre">
               filters=None)
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              routing
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="#nautilus_trader.live.config.RoutingConfig" title="nautilus_trader.live.config.RoutingConfig">
+              <span class="pre">
+               nautilus_trader.live.config.RoutingConfig
+              </span>
+             </a>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              RoutingConfig(default=False,
+             </span>
+             <span class="pre">
+              venues=None)
              </span>
             </span>
            </em>
@@ -27419,18 +27304,36 @@ the new model: you should trust this data
              Parameters
             </dt>
             <dd class="field-odd">
-             <p>
-              <strong>
-               instrument_provider
-              </strong>
-              (
-              <a class="reference internal" href="#nautilus_trader.live.config.InstrumentProviderConfig" title="nautilus_trader.live.config.InstrumentProviderConfig">
-               <em>
-                InstrumentProviderConfig
-               </em>
-              </a>
-              ) – The clients instrument provider configuration.
-             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 instrument_provider
+                </strong>
+                (
+                <a class="reference internal" href="common.html#nautilus_trader.common.config.InstrumentProviderConfig" title="nautilus_trader.common.config.InstrumentProviderConfig">
+                 <em>
+                  InstrumentProviderConfig
+                 </em>
+                </a>
+                ) – The clients instrument provider configuration.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 routing
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.live.config.RoutingConfig" title="nautilus_trader.live.config.RoutingConfig">
+                 <em>
+                  RoutingConfig
+                 </em>
+                </a>
+                ) – The clients execution routing config.
+               </p>
+              </li>
+             </ul>
             </dd>
            </dl>
            <dl class="py method">
