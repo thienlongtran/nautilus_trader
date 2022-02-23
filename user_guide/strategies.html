@@ -705,13 +705,14 @@
         </h1>
         <p>
          The heart of the NautilusTrader user experience is in writing and working with
-trading strategies, by inheriting
+trading strategies. Defining a trading strategy is achieved by inheriting the
          <code class="docutils literal notranslate">
           <span class="pre">
            TradingStrategy
           </span>
          </code>
-         and implementing its methods.
+         class,
+and implementing the methods required by the strategy.
         </p>
         <p>
          Using the basic building blocks of data ingest and order management (which we will discuss
@@ -732,12 +733,13 @@ of all the possible functionality.
         <ul class="simple">
          <li>
           <p>
-           The strategy implementation itself, defined by inheriting
+           The strategy implementation itself, defined by inheriting the
            <code class="docutils literal notranslate">
             <span class="pre">
              TradingStrategy
             </span>
            </code>
+           class
           </p>
          </li>
          <li>
@@ -746,12 +748,13 @@ of all the possible functionality.
            <em>
             optional
            </em>
-           strategy configuration, defined by inheriting
+           strategy configuration, defined by inheriting the
            <code class="docutils literal notranslate">
             <span class="pre">
              TradingStrategyConfig
             </span>
            </code>
+           class
           </p>
          </li>
         </ul>
@@ -777,9 +780,9 @@ to serialize strategies and their configurations over the wire, making distribut
 and firing up remote live trading possible.
          </p>
          <p>
-          This configuration flexibility is actually opt in, in that you can actually choose not to have
+          This configuration flexibility is actually opt-in, in that you can actually choose not to have
 any strategy configuration beyond the parameters you choose to pass into your
-strategies’ constructor. If you would like to run distributed backtests or launch
+strategies’ constructor. However, if you would like to run distributed backtests or launch
 live trading servers remotely, then you will need to define a configuration.
          </p>
          <p>
@@ -817,7 +820,7 @@ live trading servers remotely, then you will need to define a configuration.
           </h3>
           <p>
            If you intend running multiple instances of the same strategy, with different
-configurations (such as on different instruments), then you will need to define
+configurations (such as trading different instruments), then you will need to define
 a unique
            <code class="docutils literal notranslate">
             <span class="pre">
@@ -831,7 +834,7 @@ a unique
             Note
            </p>
            <p>
-            The platform has built in safety measures in the event that two strategies share a
+            The platform has built-in safety measures in the event that two strategies share a
 duplicated strategy ID, then an exception will be thrown that the strategy ID has already been registered.
            </p>
           </div>
@@ -923,7 +926,8 @@ as a string, to parameterize the instrument the strategy will trade.
           </p>
           <p>
            Even though it often makes sense to define a strategy which will trade a single
-instrument. There is actually no limit to the number of instruments for a single strategy.
+instrument. There is actually no limit to the number of instruments a single strategy
+can work with.
           </p>
          </div>
         </section>
