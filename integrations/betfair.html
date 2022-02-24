@@ -815,7 +815,7 @@ configuration(s):
 
 <span class="c1"># Register the client factories with the node</span>
 <span class="n">node</span><span class="o">.</span><span class="n">add_data_client_factory</span><span class="p">(</span><span class="s2">"BETFAIR"</span><span class="p">,</span> <span class="n">BetfairLiveDataClientFactory</span><span class="p">)</span>
-<span class="n">node</span><span class="o">.</span><span class="n">add_exec_client_factory</span><span class="p">(</span><span class="s2">"BETFAIR"</span><span class="p">,</span> <span class="n">BetfairLiveExecutionClientFactory</span><span class="p">)</span>
+<span class="n">node</span><span class="o">.</span><span class="n">add_exec_client_factory</span><span class="p">(</span><span class="s2">"BETFAIR"</span><span class="p">,</span> <span class="n">BetfairLiveExecClientFactory</span><span class="p">)</span>
 
 <span class="c1"># Finally build the node</span>
 <span class="n">node</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>

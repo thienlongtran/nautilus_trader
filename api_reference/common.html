@@ -4860,6 +4860,17 @@ paused, and also when it is done for day.
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -4951,6 +4962,33 @@ paused, and also when it is done for day.
                   </code>
                   then will default
 to the current datetime.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
                  </p>
                 </li>
                </ul>
@@ -5136,6 +5174,17 @@ to the current datetime.
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -5229,6 +5278,33 @@ to the current datetime.
 to the current datetime.
                  </p>
                 </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
                </ul>
               </dd>
              </dl>
@@ -5291,6 +5367,17 @@ to the current datetime.
                </span>
                <span class="pre">
                 to_datetime=None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
                </span>
               </span>
              </em>
@@ -5385,6 +5472,33 @@ to the current datetime.
                   </code>
                   then will default
 to the current datetime.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
                  </p>
                 </li>
                </ul>
@@ -5726,6 +5840,17 @@ to the current datetime.
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -5756,18 +5881,49 @@ to the current datetime.
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 bar_type
-                </strong>
-                (
-                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType">
-                 <em>
-                  BarType
-                 </em>
-                </a>
-                ) – The bar type to subscribe to.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   bar_type
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/data.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType">
+                   <em>
+                    BarType
+                   </em>
+                  </a>
+                  ) – The bar type to subscribe to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -5874,7 +6030,7 @@ to the current datetime.
                    Subscribe
                   </cite>
                   command will be
-sent to the data client.
+sent to the corresponding data client.
                  </p>
                 </li>
                </ul>
@@ -5910,6 +6066,17 @@ sent to the data client.
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -5940,18 +6107,49 @@ sent to the data client.
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The instrument ID for the subscription.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The instrument ID for the subscription.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -5984,6 +6182,17 @@ sent to the data client.
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -6010,18 +6219,49 @@ sent to the data client.
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The instrument to subscribe to status updates for.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The instrument to subscribe to status updates for.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -6054,6 +6294,17 @@ sent to the data client.
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -6080,18 +6331,49 @@ sent to the data client.
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The instrument to subscribe to status updates for.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The instrument to subscribe to status updates for.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -6121,6 +6403,17 @@ sent to the data client.
                </span>
                <span class="pre">
                 venue
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
                </span>
               </span>
              </em>
@@ -6154,18 +6447,49 @@ sent to the data client.
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 venue
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
-                 <em>
-                  Venue
-                 </em>
-                </a>
-                ) – The venue for the subscription.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   venue
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                   <em>
+                    Venue
+                   </em>
+                  </a>
+                  ) – The venue for the subscription.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -6228,6 +6552,17 @@ sent to the data client.
                </span>
                <span class="pre">
                 kwargs=None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
                </span>
               </span>
              </em>
@@ -6338,6 +6673,33 @@ sent to the data client.
                   ) – The keyword arguments for exchange specific parameters.
                  </p>
                 </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
                </ul>
               </dd>
              </dl>
@@ -6412,6 +6774,17 @@ sent to the data client.
                </span>
                <span class="pre">
                 kwargs=None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
                </span>
               </span>
              </em>
@@ -6543,6 +6916,33 @@ as per the last subscription request (this will also affect all subscribers).
                   ) – The keyword arguments for exchange specific parameters.
                  </p>
                 </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
                </ul>
               </dd>
               <dt class="field-even">
@@ -6607,6 +7007,17 @@ as per the last subscription request (this will also affect all subscribers).
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -6637,18 +7048,49 @@ as per the last subscription request (this will also affect all subscribers).
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The tick instrument to subscribe to.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The tick instrument to subscribe to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -6678,6 +7120,17 @@ as per the last subscription request (this will also affect all subscribers).
                </span>
                <span class="pre">
                 instrument_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
                </span>
               </span>
              </em>
@@ -6711,18 +7164,49 @@ as per the last subscription request (this will also affect all subscribers).
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The tick instrument to subscribe to.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The tick instrument to subscribe to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -6752,6 +7236,17 @@ as per the last subscription request (this will also affect all subscribers).
                </span>
                <span class="pre">
                 instrument_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
                </span>
               </span>
              </em>
@@ -6785,18 +7280,49 @@ as per the last subscription request (this will also affect all subscribers).
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The tick instrument to subscribe to.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The tick instrument to subscribe to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -6829,6 +7355,17 @@ as per the last subscription request (this will also affect all subscribers).
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -6855,18 +7392,49 @@ as per the last subscription request (this will also affect all subscribers).
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 venue
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
-                 <em>
-                  Venue
-                 </em>
-                </a>
-                ) – The venue to subscribe to.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   venue
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                   <em>
+                    Venue
+                   </em>
+                  </a>
+                  ) – The venue to subscribe to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -6957,6 +7525,17 @@ as per the last subscription request (this will also affect all subscribers).
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -6987,18 +7566,49 @@ as per the last subscription request (this will also affect all subscribers).
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 bar_type
-                </strong>
-                (
-                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType">
-                 <em>
-                  BarType
-                 </em>
-                </a>
-                ) – The bar type to unsubscribe from.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   bar_type
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/data.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType">
+                   <em>
+                    BarType
+                   </em>
+                  </a>
+                  ) – The bar type to unsubscribe from.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -7141,6 +7751,17 @@ be sent to the data client.
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -7171,18 +7792,49 @@ be sent to the data client.
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The instrument to unsubscribe from.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The instrument to unsubscribe from.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -7212,6 +7864,17 @@ be sent to the data client.
                </span>
                <span class="pre">
                 venue
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
                </span>
               </span>
              </em>
@@ -7245,18 +7908,49 @@ be sent to the data client.
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 venue
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
-                 <em>
-                  Venue
-                 </em>
-                </a>
-                ) – The venue for the subscription.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   venue
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                   <em>
+                    Venue
+                   </em>
+                  </a>
+                  ) – The venue for the subscription.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -7289,6 +7983,17 @@ be sent to the data client.
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -7315,18 +8020,49 @@ be sent to the data client.
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The order book instrument to subscribe to.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The order book instrument to subscribe to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -7367,6 +8103,17 @@ be sent to the data client.
                </span>
                <span class="pre">
                 interval_ms=1000
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
                </span>
               </span>
              </em>
@@ -7426,6 +8173,33 @@ be sent to the data client.
                   ) – The order book snapshot interval in milliseconds.
                  </p>
                 </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
                </ul>
               </dd>
              </dl>
@@ -7459,6 +8233,17 @@ be sent to the data client.
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -7489,18 +8274,49 @@ be sent to the data client.
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The tick instrument to unsubscribe from.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The tick instrument to unsubscribe from.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -7530,6 +8346,17 @@ be sent to the data client.
                </span>
                <span class="pre">
                 instrument_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
                </span>
               </span>
              </em>
@@ -7563,18 +8390,49 @@ be sent to the data client.
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The tick instrument to unsubscribe from.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The tick instrument to unsubscribe from.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>
@@ -7604,6 +8462,17 @@ be sent to the data client.
                </span>
                <span class="pre">
                 instrument_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
                </span>
               </span>
              </em>
@@ -7637,18 +8506,161 @@ be sent to the data client.
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The tick instrument ID to unsubscribe from.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The tick instrument ID to unsubscribe from.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.unsubscribe_venue_status_updates">
+             <span class="sig-name descname">
+              <span class="pre">
+               unsubscribe_venue_status_updates
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Venue
+               </span>
+               <span class="pre">
+                venue
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.common.actor.Actor.unsubscribe_venue_status_updates" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Unsubscribe to status updates of the given venue.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   venue
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                   <em>
+                    Venue
+                   </em>
+                  </a>
+                  ) – The venue to subscribe to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue.
+                 </p>
+                </li>
+               </ul>
               </dd>
              </dl>
             </dd>

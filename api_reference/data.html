@@ -3452,6 +3452,17 @@ specification, then a bar is created and sent to the handler.
            <em class="sig-param">
             <span class="n">
              <span class="pre">
+              Venue
+             </span>
+             <span class="pre">
+              venue
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
               MessageBus
              </span>
              <span class="pre">
@@ -3542,6 +3553,32 @@ specification, then a bar is created and sent to the handler.
                  </em>
                 </a>
                 ) – The data client ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 venue
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                 <em>
+                  Venue
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The client venue. If multi-venue then can be
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                .
                </p>
               </li>
               <li>
@@ -4744,6 +4781,41 @@ called after faulting.
              </p>
             </dd>
            </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.client.DataClient.venue">
+             <span class="sig-name descname">
+              <span class="pre">
+               venue
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.client.DataClient.venue" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The clients venue ID (if not a routing client).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Venue
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
           </dd>
          </dl>
          <dl class="py class">
@@ -4770,6 +4842,17 @@ called after faulting.
              </span>
              <span class="pre">
               client_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Venue
+             </span>
+             <span class="pre">
+              venue
              </span>
             </span>
            </em>
@@ -4866,7 +4949,33 @@ called after faulting.
                   ClientId
                  </em>
                 </a>
-                ) – The data client ID (normally the venue).
+                ) – The data client ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 venue
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                 <em>
+                  Venue
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The client venue. If multi-venue then can be
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                .
                </p>
               </li>
               <li>
@@ -7900,6 +8009,41 @@ called after faulting.
              </p>
             </dd>
            </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.client.MarketDataClient.venue">
+             <span class="sig-name descname">
+              <span class="pre">
+               venue
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.client.MarketDataClient.venue" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The clients venue ID (if not a routing client).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Venue
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
           </dd>
          </dl>
         </section>
@@ -8307,6 +8451,35 @@ just need to override the
                 <cite>
                  int
                 </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.engine.DataEngine.default_client">
+             <span class="sig-name descname">
+              <span class="pre">
+               default_client
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.engine.DataEngine.default_client" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The default data client registered with the engine.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 Optional[ClientId]
+                </em>
                </p>
               </dd>
              </dl>
@@ -9121,10 +9294,10 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.data.engine.DataEngine.registered_clients">
+            <dt class="sig sig-object py" id="nautilus_trader.data.engine.DataEngine.register_default_client">
              <span class="sig-name descname">
               <span class="pre">
-               registered_clients
+               register_default_client
               </span>
              </span>
              <span class="sig-paren">
@@ -9137,6 +9310,17 @@ called after faulting.
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                DataClient
+               </span>
+               <span class="pre">
+                client
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -9146,8 +9330,151 @@ called after faulting.
               </span>
               <span class="sig-return-typehint">
                <span class="pre">
-                list
+                void
                </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.engine.DataEngine.register_default_client" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Register the given client as the default routing client (when a specific
+venue routing cannot be found).
+             </p>
+             <p>
+              Any existing default routing client will be overwritten.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 client
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.data.client.DataClient" title="nautilus_trader.data.client.DataClient">
+                 <em>
+                  DataClient
+                 </em>
+                </a>
+                ) – The client to register.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.data.engine.DataEngine.register_venue_routing">
+             <span class="sig-name descname">
+              <span class="pre">
+               register_venue_routing
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                DataClient
+               </span>
+               <span class="pre">
+                client
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Venue
+               </span>
+               <span class="pre">
+                venue
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.engine.DataEngine.register_venue_routing" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Register the given client to route orders to the given venue.
+             </p>
+             <p>
+              Any existing client in the routing map for the given venue will be
+overwritten.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   venue
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                   <em>
+                    Venue
+                   </em>
+                  </a>
+                  ) – The venue to route orders to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client
+                  </strong>
+                  (
+                  <a class="reference internal" href="execution.html#nautilus_trader.execution.client.ExecutionClient" title="nautilus_trader.execution.client.ExecutionClient">
+                   <em>
+                    ExecutionClient
+                   </em>
+                  </a>
+                  ) – The client for the venue routing.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.engine.DataEngine.registered_clients">
+             <span class="sig-name descname">
+              <span class="pre">
+               registered_clients
               </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.data.engine.DataEngine.registered_clients" title="Permalink to this definition">
@@ -9156,7 +9483,7 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Return the data clients registered with the data engine.
+              The execution clients registered with the engine.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -11858,6 +12185,1911 @@ called after faulting.
                <p>
                 <cite>
                  int64
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataCommand">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             VenueDataCommand
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ClientId
+             </span>
+             <span class="pre">
+              client_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Venue
+             </span>
+             <span class="pre">
+              venue
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              DataType
+             </span>
+             <span class="pre">
+              data_type
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              UUID4
+             </span>
+             <span class="pre">
+              command_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataCommand" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.data.messages.DataCommand" title="nautilus_trader.data.messages.DataCommand">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.data.messages.DataCommand
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            The abstract base class for all venue data commands.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 client_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                 <em>
+                  ClientId
+                 </em>
+                </a>
+                ) – The data client ID for the command.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 venue
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                 <em>
+                  Venue
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The venue for the command.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <em>
+                 type
+                </em>
+                ) – The data type for the command.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 command_id
+                </strong>
+                (
+                <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The command ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <div class="admonition warning">
+            <p class="admonition-title">
+             Warning
+            </p>
+            <p>
+             This class should not be used directly, but through a concrete subclass.
+            </p>
+           </div>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataCommand.category">
+             <span class="sig-name descname">
+              <span class="pre">
+               category
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataCommand.category" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message category.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 MessageCategory
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataCommand.client_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               client_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataCommand.client_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The data client ID for the command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientId
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataCommand.data_type">
+             <span class="sig-name descname">
+              <span class="pre">
+               data_type
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataCommand.data_type" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The command data type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 type
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataCommand.id">
+             <span class="sig-name descname">
+              <span class="pre">
+               id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataCommand.id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataCommand.ts_init">
+             <span class="sig-name descname">
+              <span class="pre">
+               ts_init
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataCommand.ts_init" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The UNIX timestamp (nanoseconds) when the object was initialized.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int64
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataCommand.venue">
+             <span class="sig-name descname">
+              <span class="pre">
+               venue
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataCommand.venue" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The venue for the command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Venue
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataRequest">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             VenueDataRequest
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="pre">
+             ClientId
+            </span>
+            <span class="pre">
+             client_id,
+            </span>
+            <span class="pre">
+             Venue
+            </span>
+            <span class="pre">
+             venue,
+            </span>
+            <span class="pre">
+             DataType
+            </span>
+            <span class="pre">
+             data_type,
+            </span>
+            <span class="pre">
+             callback:
+            </span>
+            <span class="pre">
+             Callable[[Any],
+            </span>
+            <span class="pre">
+             None],
+            </span>
+            <span class="pre">
+             UUID4
+            </span>
+            <span class="pre">
+             request_id,
+            </span>
+            <span class="pre">
+             int64_t
+            </span>
+            <span class="pre">
+             ts_init
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataRequest" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.data.messages.DataRequest" title="nautilus_trader.data.messages.DataRequest">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.data.messages.DataRequest
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            Represents a request for data.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 client_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                 <em>
+                  ClientId
+                 </em>
+                </a>
+                ) – The data client ID for the request.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 venue
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                 <em>
+                  Venue
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The venue for the command.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <em>
+                 type
+                </em>
+                ) – The data type for the request.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 callback
+                </strong>
+                (
+                <em>
+                 Callable
+                </em>
+                <em>
+                 [
+                </em>
+                <em>
+                 [
+                </em>
+                <em>
+                 Any
+                </em>
+                <em>
+                 ]
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 None
+                </em>
+                <em>
+                 ]
+                </em>
+                ) – The delegate to call with the data.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 request_id
+                </strong>
+                (
+                <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The request ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataRequest.callback">
+             <span class="sig-name descname">
+              <span class="pre">
+               callback
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataRequest.callback" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The callback for the response.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Callable
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataRequest.category">
+             <span class="sig-name descname">
+              <span class="pre">
+               category
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataRequest.category" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message category.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 MessageCategory
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataRequest.client_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               client_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataRequest.client_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The data client ID for the request.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientId
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataRequest.data_type">
+             <span class="sig-name descname">
+              <span class="pre">
+               data_type
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataRequest.data_type" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The request data type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 type
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataRequest.id">
+             <span class="sig-name descname">
+              <span class="pre">
+               id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataRequest.id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataRequest.ts_init">
+             <span class="sig-name descname">
+              <span class="pre">
+               ts_init
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataRequest.ts_init" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The UNIX timestamp (nanoseconds) when the object was initialized.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int64
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataRequest.venue">
+             <span class="sig-name descname">
+              <span class="pre">
+               venue
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataRequest.venue" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The venue for the command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Venue
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataResponse">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             VenueDataResponse
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ClientId
+             </span>
+             <span class="pre">
+              client_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Venue
+             </span>
+             <span class="pre">
+              venue
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              DataType
+             </span>
+             <span class="pre">
+              data_type
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              data
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              UUID4
+             </span>
+             <span class="pre">
+              correlation_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              UUID4
+             </span>
+             <span class="pre">
+              response_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataResponse" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.data.messages.DataResponse" title="nautilus_trader.data.messages.DataResponse">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.data.messages.DataResponse
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            Represents a response with data.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 client_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                 <em>
+                  ClientId
+                 </em>
+                </a>
+                ) – The data client ID of the response.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 venue
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                 <em>
+                  Venue
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The venue for the command.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <em>
+                 type
+                </em>
+                ) – The data type of the response.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 data
+                </strong>
+                (
+                <em>
+                 object
+                </em>
+                ) – The data of the response.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 correlation_id
+                </strong>
+                (
+                <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The correlation ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 response_id
+                </strong>
+                (
+                <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The response ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataResponse.category">
+             <span class="sig-name descname">
+              <span class="pre">
+               category
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataResponse.category" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message category.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 MessageCategory
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataResponse.client_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               client_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataResponse.client_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The data client ID for the response.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientId
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataResponse.correlation_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               correlation_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataResponse.correlation_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The response correlation ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataResponse.data">
+             <span class="sig-name descname">
+              <span class="pre">
+               data
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataResponse.data" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The response data.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 object
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataResponse.data_type">
+             <span class="sig-name descname">
+              <span class="pre">
+               data_type
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataResponse.data_type" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The response data type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 type
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataResponse.id">
+             <span class="sig-name descname">
+              <span class="pre">
+               id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataResponse.id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataResponse.ts_init">
+             <span class="sig-name descname">
+              <span class="pre">
+               ts_init
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataResponse.ts_init" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The UNIX timestamp (nanoseconds) when the object was initialized.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int64
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueDataResponse.venue">
+             <span class="sig-name descname">
+              <span class="pre">
+               venue
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueDataResponse.venue" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The venue for the command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Venue
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueSubscribe">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             VenueSubscribe
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ClientId
+             </span>
+             <span class="pre">
+              client_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Venue
+             </span>
+             <span class="pre">
+              venue
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              DataType
+             </span>
+             <span class="pre">
+              data_type
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              UUID4
+             </span>
+             <span class="pre">
+              command_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.data.messages.VenueSubscribe" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.data.messages.VenueDataCommand" title="nautilus_trader.data.messages.VenueDataCommand">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.data.messages.VenueDataCommand
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            Represents a command to subscribe to data.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 client_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                 <em>
+                  ClientId
+                 </em>
+                </a>
+                ) – The data client ID for the command.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 venue
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                 <em>
+                  Venue
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The venue for the command.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <em>
+                 type
+                </em>
+                ) – The data type for the subscription.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 command_id
+                </strong>
+                (
+                <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The command ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueSubscribe.category">
+             <span class="sig-name descname">
+              <span class="pre">
+               category
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueSubscribe.category" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message category.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 MessageCategory
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueSubscribe.client_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               client_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueSubscribe.client_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The data client ID for the command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientId
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueSubscribe.data_type">
+             <span class="sig-name descname">
+              <span class="pre">
+               data_type
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueSubscribe.data_type" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The command data type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 type
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueSubscribe.id">
+             <span class="sig-name descname">
+              <span class="pre">
+               id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueSubscribe.id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueSubscribe.ts_init">
+             <span class="sig-name descname">
+              <span class="pre">
+               ts_init
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueSubscribe.ts_init" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The UNIX timestamp (nanoseconds) when the object was initialized.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int64
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueSubscribe.venue">
+             <span class="sig-name descname">
+              <span class="pre">
+               venue
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueSubscribe.venue" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The venue for the command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Venue
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueUnsubscribe">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             VenueUnsubscribe
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ClientId
+             </span>
+             <span class="pre">
+              client_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              Venue
+             </span>
+             <span class="pre">
+              venue
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              DataType
+             </span>
+             <span class="pre">
+              data_type
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              UUID4
+             </span>
+             <span class="pre">
+              command_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.data.messages.VenueUnsubscribe" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.data.messages.VenueDataCommand" title="nautilus_trader.data.messages.VenueDataCommand">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.data.messages.VenueDataCommand
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            Represents a command to unsubscribe from data.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 client_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                 <em>
+                  ClientId
+                 </em>
+                </a>
+                ) – The data client ID for the command.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 venue
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                 <em>
+                  Venue
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The venue for the command.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <em>
+                 type
+                </em>
+                ) – The data type to unsubscribe from.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 command_id
+                </strong>
+                (
+                <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The command ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueUnsubscribe.category">
+             <span class="sig-name descname">
+              <span class="pre">
+               category
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueUnsubscribe.category" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message category.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 MessageCategory
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueUnsubscribe.client_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               client_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueUnsubscribe.client_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The data client ID for the command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientId
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueUnsubscribe.data_type">
+             <span class="sig-name descname">
+              <span class="pre">
+               data_type
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueUnsubscribe.data_type" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The command data type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 type
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueUnsubscribe.id">
+             <span class="sig-name descname">
+              <span class="pre">
+               id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueUnsubscribe.id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueUnsubscribe.ts_init">
+             <span class="sig-name descname">
+              <span class="pre">
+               ts_init
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueUnsubscribe.ts_init" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The UNIX timestamp (nanoseconds) when the object was initialized.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int64
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.data.messages.VenueUnsubscribe.venue">
+             <span class="sig-name descname">
+              <span class="pre">
+               venue
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.data.messages.VenueUnsubscribe.venue" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The venue for the command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Venue
                 </cite>
                </p>
               </dd>

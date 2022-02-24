@@ -763,6 +763,17 @@ trading operations.
            <em class="sig-param">
             <span class="n">
              <span class="pre">
+              Venue
+             </span>
+             <span class="pre">
+              venue
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
               OMSType
              </span>
              <span class="pre">
@@ -886,6 +897,32 @@ trading operations.
                  </em>
                 </a>
                 ) – The client ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 venue
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue">
+                 <em>
+                  Venue
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The client venue. If multi-venue then can be
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                .
                </p>
               </li>
               <li>
@@ -6069,11 +6106,9 @@ called after disposal.
                  command
                 </strong>
                 (
-                <a class="reference internal" href="model/commands.html#nautilus_trader.model.commands.trading.TradingCommand" title="nautilus_trader.model.commands.trading.TradingCommand">
-                 <em>
-                  TradingCommand
-                 </em>
-                </a>
+                <em>
+                 TradingCommand
+                </em>
                 ) – The command to execute.
                </p>
               </dd>

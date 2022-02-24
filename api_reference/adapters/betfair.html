@@ -4383,6 +4383,41 @@ called after faulting.
              </p>
             </dd>
            </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.adapters.betfair.data.BetfairDataClient.venue">
+             <span class="sig-name descname">
+              <span class="pre">
+               venue
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.adapters.betfair.data.BetfairDataClient.venue" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The clients venue ID (if not a routing client).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Venue
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
           </dd>
          </dl>
         </section>
@@ -7245,11 +7280,9 @@ called after faulting.
               <span class="w">
               </span>
               <span class="n">
-               <a class="reference internal" href="../model/commands.html#nautilus_trader.model.commands.trading.SubmitOrderList" title="nautilus_trader.model.commands.trading.SubmitOrderList">
-                <span class="pre">
-                 nautilus_trader.model.commands.trading.SubmitOrderList
-                </span>
-               </a>
+               <span class="pre">
+                nautilus_trader.execution.messages.SubmitOrderList
+               </span>
               </span>
              </em>
              <span class="sig-paren">
@@ -12549,7 +12582,7 @@ If None then will source from the
           </dd>
          </dl>
          <dl class="py class">
-          <dt class="sig sig-object py" id="nautilus_trader.adapters.betfair.factories.BetfairLiveExecutionClientFactory">
+          <dt class="sig sig-object py" id="nautilus_trader.adapters.betfair.factories.BetfairLiveExecClientFactory">
            <em class="property">
             <span class="pre">
              class
@@ -12559,10 +12592,10 @@ If None then will source from the
            </em>
            <span class="sig-name descname">
             <span class="pre">
-             BetfairLiveExecutionClientFactory
+             BetfairLiveExecClientFactory
             </span>
            </span>
-           <a class="headerlink" href="#nautilus_trader.adapters.betfair.factories.BetfairLiveExecutionClientFactory" title="Permalink to this definition">
+           <a class="headerlink" href="#nautilus_trader.adapters.betfair.factories.BetfairLiveExecClientFactory" title="Permalink to this definition">
             ¶
            </a>
           </dt>
@@ -12571,7 +12604,7 @@ If None then will source from the
             Bases:
             <code class="xref py py-class docutils literal notranslate">
              <span class="pre">
-              nautilus_trader.live.factories.LiveExecutionClientFactory
+              nautilus_trader.live.factories.LiveExecClientFactory
              </span>
             </code>
            </p>
@@ -12579,7 +12612,7 @@ If None then will source from the
             Provides data and execution clients for Betfair.
            </p>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.adapters.betfair.factories.BetfairLiveExecutionClientFactory.create">
+            <dt class="sig sig-object py" id="nautilus_trader.adapters.betfair.factories.BetfairLiveExecClientFactory.create">
              <em class="property">
               <span class="pre">
                static
@@ -12780,7 +12813,7 @@ If None then will source from the
                </a>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.adapters.betfair.factories.BetfairLiveExecutionClientFactory.create" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.adapters.betfair.factories.BetfairLiveExecClientFactory.create" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -13024,11 +13057,9 @@ MarketOrder, we generate a MIN/MAX price based on the side
             <span class="w">
             </span>
             <span class="n">
-             <a class="reference internal" href="../model/commands.html#nautilus_trader.model.commands.trading.SubmitOrder" title="nautilus_trader.model.commands.trading.SubmitOrder">
-              <span class="pre">
-               nautilus_trader.model.commands.trading.SubmitOrder
-              </span>
-             </a>
+             <span class="pre">
+              nautilus_trader.execution.messages.SubmitOrder
+             </span>
             </span>
            </em>
            ,
@@ -13100,11 +13131,9 @@ MarketOrder, we generate a MIN/MAX price based on the side
             <span class="w">
             </span>
             <span class="n">
-             <a class="reference internal" href="../model/commands.html#nautilus_trader.model.commands.trading.ModifyOrder" title="nautilus_trader.model.commands.trading.ModifyOrder">
-              <span class="pre">
-               nautilus_trader.model.commands.trading.ModifyOrder
-              </span>
-             </a>
+             <span class="pre">
+              nautilus_trader.execution.messages.ModifyOrder
+             </span>
             </span>
            </em>
            ,
@@ -13208,11 +13237,9 @@ MarketOrder, we generate a MIN/MAX price based on the side
             <span class="w">
             </span>
             <span class="n">
-             <a class="reference internal" href="../model/commands.html#nautilus_trader.model.commands.trading.CancelOrder" title="nautilus_trader.model.commands.trading.CancelOrder">
-              <span class="pre">
-               nautilus_trader.model.commands.trading.CancelOrder
-              </span>
-             </a>
+             <span class="pre">
+              nautilus_trader.execution.messages.CancelOrder
+             </span>
             </span>
            </em>
            ,

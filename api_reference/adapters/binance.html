@@ -1710,7 +1710,7 @@ If None then will source from the
           </dd>
          </dl>
          <dl class="py class">
-          <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.factories.BinanceLiveExecutionClientFactory">
+          <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.factories.BinanceLiveExecClientFactory">
            <em class="property">
             <span class="pre">
              class
@@ -1720,10 +1720,10 @@ If None then will source from the
            </em>
            <span class="sig-name descname">
             <span class="pre">
-             BinanceLiveExecutionClientFactory
+             BinanceLiveExecClientFactory
             </span>
            </span>
-           <a class="headerlink" href="#nautilus_trader.adapters.binance.factories.BinanceLiveExecutionClientFactory" title="Permalink to this definition">
+           <a class="headerlink" href="#nautilus_trader.adapters.binance.factories.BinanceLiveExecClientFactory" title="Permalink to this definition">
             ¶
            </a>
           </dt>
@@ -1732,7 +1732,7 @@ If None then will source from the
             Bases:
             <code class="xref py py-class docutils literal notranslate">
              <span class="pre">
-              nautilus_trader.live.factories.LiveExecutionClientFactory
+              nautilus_trader.live.factories.LiveExecClientFactory
              </span>
             </code>
            </p>
@@ -1744,7 +1744,7 @@ If None then will source from the
             live execution client factory.
            </p>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.factories.BinanceLiveExecutionClientFactory.create">
+            <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.factories.BinanceLiveExecClientFactory.create">
              <em class="property">
               <span class="pre">
                static
@@ -1922,7 +1922,7 @@ If None then will source from the
                </a>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.adapters.binance.factories.BinanceLiveExecutionClientFactory.create" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.adapters.binance.factories.BinanceLiveExecClientFactory.create" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -7303,6 +7303,41 @@ called after faulting.
              <p>
               Abstract method (implement in subclass).
              </p>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.data.BinanceDataClient.venue">
+             <span class="sig-name descname">
+              <span class="pre">
+               venue
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.adapters.binance.data.BinanceDataClient.venue" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The clients venue ID (if not a routing client).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 Venue
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
           </dd>

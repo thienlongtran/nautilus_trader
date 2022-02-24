@@ -808,7 +808,7 @@ which can be used together or separately depending on the users needs.
            <p>
             <code class="docutils literal notranslate">
              <span class="pre">
-              FTXLiveExecutionClientFactory
+              FTXLiveExecClientFactory
              </span>
             </code>
             creation factory for FTX execution clients (used by the trading node builder)
@@ -926,7 +926,7 @@ configuration(s):
 
 <span class="c1"># Register the client factories with the node</span>
 <span class="n">node</span><span class="o">.</span><span class="n">add_data_client_factory</span><span class="p">(</span><span class="s2">"FTX"</span><span class="p">,</span> <span class="n">FTXLiveDataClientFactory</span><span class="p">)</span>
-<span class="n">node</span><span class="o">.</span><span class="n">add_exec_client_factory</span><span class="p">(</span><span class="s2">"FTX"</span><span class="p">,</span> <span class="n">FTXLiveExecutionClientFactory</span><span class="p">)</span>
+<span class="n">node</span><span class="o">.</span><span class="n">add_exec_client_factory</span><span class="p">(</span><span class="s2">"FTX"</span><span class="p">,</span> <span class="n">FTXLiveExecClientFactory</span><span class="p">)</span>
 
 <span class="c1"># Finally build the node</span>
 <span class="n">node</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
