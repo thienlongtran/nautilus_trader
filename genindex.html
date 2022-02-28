@@ -1453,15 +1453,15 @@
              add_position_reports() (ExecutionMassStatus method)
             </a>
            </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.add_positions">
-             add_positions() (PerformanceAnalyzer method)
-            </a>
-           </li>
           </ul>
          </td>
          <td style="width: 33%; vertical-align: top;">
           <ul>
+           <li>
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.add_positions">
+             add_positions() (PortfolioAnalyzer method)
+            </a>
+           </li>
            <li>
             <a href="api_reference/indicators.html#nautilus_trader.indicators.bid_ask_min_max.WindowedMinMaxPrices.add_price">
              add_price() (WindowedMinMaxPrices method)
@@ -1478,8 +1478,8 @@
             </a>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.add_return">
-             add_return() (PerformanceAnalyzer method)
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.add_return">
+             add_return() (PortfolioAnalyzer method)
             </a>
            </li>
            <li>
@@ -1517,8 +1517,8 @@
             </a>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.add_trade">
-             add_trade() (PerformanceAnalyzer method)
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.add_trade">
+             add_trade() (PortfolioAnalyzer method)
             </a>
            </li>
            <li>
@@ -2027,11 +2027,6 @@
             </a>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.avg_loser">
-             avg_loser() (PerformanceAnalyzer method)
-            </a>
-           </li>
-           <li>
             <a href="api_reference/model/orders.html#nautilus_trader.model.orders.limit_if_touched.LimitIfTouchedOrder.avg_px">
              avg_px (LimitIfTouchedOrder attribute)
             </a>
@@ -2141,11 +2136,6 @@
               </a>
              </li>
             </ul>
-           </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.avg_winner">
-             avg_winner() (PerformanceAnalyzer method)
-            </a>
            </li>
           </ul>
          </td>
@@ -3287,6 +3277,26 @@
             </ul>
            </li>
            <li>
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.statistic.PortfolioStatistic.calculate_from_orders">
+             calculate_from_orders() (PortfolioStatistic method)
+            </a>
+           </li>
+           <li>
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.statistic.PortfolioStatistic.calculate_from_positions">
+             calculate_from_positions() (PortfolioStatistic method)
+            </a>
+           </li>
+           <li>
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.statistic.PortfolioStatistic.calculate_from_realized_pnls">
+             calculate_from_realized_pnls() (PortfolioStatistic method)
+            </a>
+           </li>
+           <li>
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.statistic.PortfolioStatistic.calculate_from_returns">
+             calculate_from_returns() (PortfolioStatistic method)
+            </a>
+           </li>
+           <li>
             <a href="api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.calculate_margin_init">
              calculate_margin_init() (MarginAccount method)
             </a>
@@ -3314,8 +3324,8 @@
             </ul>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.calculate_statistics">
-             calculate_statistics() (PerformanceAnalyzer method)
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.calculate_statistics">
+             calculate_statistics() (PortfolioAnalyzer method)
             </a>
            </li>
            <li>
@@ -5096,8 +5106,8 @@
             </a>
             <ul>
              <li>
-              <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.currencies">
-               (PerformanceAnalyzer property)
+              <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.currencies">
+               (PortfolioAnalyzer property)
               </a>
              </li>
             </ul>
@@ -5640,6 +5650,16 @@
             </ul>
            </li>
            <li>
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.deregister_statistic">
+             deregister_statistic() (PortfolioAnalyzer method)
+            </a>
+           </li>
+           <li>
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.deregister_statistics">
+             deregister_statistics() (PortfolioAnalyzer method)
+            </a>
+           </li>
+           <li>
             <a href="api_reference/common.html#nautilus_trader.common.actor.Actor.deregister_warning_event">
              deregister_warning_event() (Actor method)
             </a>
@@ -5668,15 +5688,15 @@
              </li>
             </ul>
            </li>
+          </ul>
+         </td>
+         <td style="width: 33%; vertical-align: top;">
+          <ul>
            <li>
             <a href="api_reference/adapters/betfair.html#nautilus_trader.adapters.betfair.parsing.determine_order_price">
              determine_order_price() (in module nautilus_trader.adapters.betfair.parsing)
             </a>
            </li>
-          </ul>
-         </td>
-         <td style="width: 33%; vertical-align: top;">
-          <ul>
            <li>
             <a href="api_reference/persistence.html#nautilus_trader.persistence.external.core.determine_partition_cols">
              determine_partition_cols() (in module nautilus_trader.persistence.external.core)
@@ -6440,11 +6460,6 @@
            <li>
             <a href="api_reference/execution.html#nautilus_trader.execution.reports.ExecutionReport">
              ExecutionReport (class in nautilus_trader.execution.reports)
-            </a>
-           </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.expectancy">
-             expectancy() (PerformanceAnalyzer method)
             </a>
            </li>
            <li>
@@ -7598,6 +7613,11 @@
               </a>
              </li>
              <li>
+              <a href="api_reference/analysis.html#nautilus_trader.analysis.statistic.PortfolioStatistic.fully_qualified_name">
+               (PortfolioStatistic class method)
+              </a>
+             </li>
+             <li>
               <a href="api_reference/model/data.html#nautilus_trader.model.data.tick.QuoteTick.fully_qualified_name">
                (QuoteTick class method)
               </a>
@@ -7693,7 +7713,7 @@
             </ul>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.reports.ReportProvider.generate_account_report">
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.reporter.ReportProvider.generate_account_report">
              generate_account_report() (ReportProvider static method)
             </a>
             <ul>
@@ -7919,7 +7939,7 @@
             </ul>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.reports.ReportProvider.generate_order_fills_report">
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.reporter.ReportProvider.generate_order_fills_report">
              generate_order_fills_report() (ReportProvider static method)
             </a>
             <ul>
@@ -8199,7 +8219,7 @@
             </ul>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.reports.ReportProvider.generate_orders_report">
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.reporter.ReportProvider.generate_orders_report">
              generate_orders_report() (ReportProvider static method)
             </a>
             <ul>
@@ -8233,7 +8253,7 @@
             </ul>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.reports.ReportProvider.generate_positions_report">
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.reporter.ReportProvider.generate_positions_report">
              generate_positions_report() (ReportProvider static method)
             </a>
             <ul>
@@ -8550,23 +8570,18 @@
             </a>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.get_performance_stats_pnls">
-             get_performance_stats_pnls() (PerformanceAnalyzer method)
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.get_performance_stats_general">
+             get_performance_stats_general() (PortfolioAnalyzer method)
             </a>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.get_performance_stats_pnls_formatted">
-             get_performance_stats_pnls_formatted() (PerformanceAnalyzer method)
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.get_performance_stats_pnls">
+             get_performance_stats_pnls() (PortfolioAnalyzer method)
             </a>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.get_performance_stats_returns">
-             get_performance_stats_returns() (PerformanceAnalyzer method)
-            </a>
-           </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.get_performance_stats_returns_formatted">
-             get_performance_stats_returns_formatted() (PerformanceAnalyzer method)
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.get_performance_stats_returns">
+             get_performance_stats_returns() (PortfolioAnalyzer method)
             </a>
            </li>
            <li>
@@ -8730,6 +8745,21 @@
            <li>
             <a href="api_reference/common.html#nautilus_trader.common.component.ComponentFSMFactory.get_state_transition_table">
              get_state_transition_table() (ComponentFSMFactory static method)
+            </a>
+           </li>
+           <li>
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.get_stats_general_formatted">
+             get_stats_general_formatted() (PortfolioAnalyzer method)
+            </a>
+           </li>
+           <li>
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.get_stats_pnls_formatted">
+             get_stats_pnls_formatted() (PortfolioAnalyzer method)
+            </a>
+           </li>
+           <li>
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.get_stats_returns_formatted">
+             get_stats_returns_formatted() (PortfolioAnalyzer method)
             </a>
            </li>
            <li>
@@ -15041,11 +15071,6 @@
             </a>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.max_loser">
-             max_loser() (PerformanceAnalyzer method)
-            </a>
-           </li>
-           <li>
             <a href="api_reference/model/instruments.html#nautilus_trader.model.instruments.betting.BettingInstrument.max_notional">
              max_notional (BettingInstrument attribute)
             </a>
@@ -15233,11 +15258,6 @@
             </a>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.max_winner">
-             max_winner() (PerformanceAnalyzer method)
-            </a>
-           </li>
-           <li>
             <a href="api_reference/common.html#nautilus_trader.common.queue.Queue.maxsize">
              maxsize (Queue attribute)
             </a>
@@ -15339,11 +15359,6 @@
            <li>
             <a href="api_reference/core.html#nautilus_trader.core.datetime.millis_to_nanos">
              millis_to_nanos() (in module nautilus_trader.core.datetime)
-            </a>
-           </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.min_loser">
-             min_loser() (PerformanceAnalyzer method)
             </a>
            </li>
            <li>
@@ -15491,11 +15506,6 @@
               </a>
              </li>
             </ul>
-           </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.min_winner">
-             min_winner() (PerformanceAnalyzer method)
-            </a>
            </li>
            <li>
             <a href="api_reference/backtest.html#nautilus_trader.backtest.execution_client.BacktestExecClient.modify_order">
@@ -15713,13 +15723,18 @@
               </a>
              </li>
              <li>
-              <a href="api_reference/analysis.html#module-nautilus_trader.analysis.performance">
-               nautilus_trader.analysis.performance
+              <a href="api_reference/analysis.html#module-nautilus_trader.analysis.analyzer">
+               nautilus_trader.analysis.analyzer
               </a>
              </li>
              <li>
-              <a href="api_reference/analysis.html#module-nautilus_trader.analysis.reports">
-               nautilus_trader.analysis.reports
+              <a href="api_reference/analysis.html#module-nautilus_trader.analysis.reporter">
+               nautilus_trader.analysis.reporter
+              </a>
+             </li>
+             <li>
+              <a href="api_reference/analysis.html#module-nautilus_trader.analysis.statistic">
+               nautilus_trader.analysis.statistic
               </a>
              </li>
              <li>
@@ -16814,6 +16829,11 @@
               </a>
              </li>
              <li>
+              <a href="api_reference/analysis.html#nautilus_trader.analysis.statistic.PortfolioStatistic.name">
+               (PortfolioStatistic property)
+              </a>
+             </li>
+             <li>
               <a href="api_reference/indicators.html#nautilus_trader.indicators.pressure.Pressure.name">
                (Pressure attribute)
               </a>
@@ -17308,20 +17328,30 @@
             </ul>
            </li>
            <li>
-            nautilus_trader.analysis.performance
+            nautilus_trader.analysis.analyzer
             <ul>
              <li>
-              <a href="api_reference/analysis.html#module-nautilus_trader.analysis.performance">
+              <a href="api_reference/analysis.html#module-nautilus_trader.analysis.analyzer">
                module
               </a>
              </li>
             </ul>
            </li>
            <li>
-            nautilus_trader.analysis.reports
+            nautilus_trader.analysis.reporter
             <ul>
              <li>
-              <a href="api_reference/analysis.html#module-nautilus_trader.analysis.reports">
+              <a href="api_reference/analysis.html#module-nautilus_trader.analysis.reporter">
+               module
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            nautilus_trader.analysis.statistic
+            <ul>
+             <li>
+              <a href="api_reference/analysis.html#module-nautilus_trader.analysis.statistic">
                module
               </a>
              </li>
@@ -18027,6 +18057,10 @@
              </li>
             </ul>
            </li>
+          </ul>
+         </td>
+         <td style="width: 33%; vertical-align: top;">
+          <ul>
            <li>
             nautilus_trader.indicators.macd
             <ul>
@@ -18037,10 +18071,6 @@
              </li>
             </ul>
            </li>
-          </ul>
-         </td>
-         <td style="width: 33%; vertical-align: top;">
-          <ul>
            <li>
             nautilus_trader.indicators.obv
             <ul>
@@ -20361,11 +20391,6 @@
             </a>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer">
-             PerformanceAnalyzer (class in nautilus_trader.analysis.performance)
-            </a>
-           </li>
-           <li>
             <a href="api_reference/indicators.html#nautilus_trader.indicators.average.ama.AdaptiveMovingAverage.period">
              period (AdaptiveMovingAverage attribute)
             </a>
@@ -20572,8 +20597,18 @@
             </a>
            </li>
            <li>
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer">
+             PortfolioAnalyzer (class in nautilus_trader.analysis.analyzer)
+            </a>
+           </li>
+           <li>
             <a href="api_reference/portfolio.html#nautilus_trader.portfolio.base.PortfolioFacade">
              PortfolioFacade (class in nautilus_trader.portfolio.base)
+            </a>
+           </li>
+           <li>
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.statistic.PortfolioStatistic">
+             PortfolioStatistic (class in nautilus_trader.analysis.statistic)
             </a>
            </li>
            <li>
@@ -21386,16 +21421,6 @@
             </a>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.profit_factor">
-             profit_factor() (PerformanceAnalyzer method)
-            </a>
-           </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.profit_ratio">
-             profit_ratio() (PerformanceAnalyzer method)
-            </a>
-           </li>
-           <li>
             <a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.pub_count">
              pub_count (MessageBus attribute)
             </a>
@@ -21728,8 +21753,8 @@
             </ul>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.realized_pnls">
-             realized_pnls() (PerformanceAnalyzer method)
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.realized_pnls">
+             realized_pnls() (PortfolioAnalyzer method)
             </a>
            </li>
            <li>
@@ -22136,6 +22161,11 @@
             </ul>
            </li>
            <li>
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.register_statistic">
+             register_statistic() (PortfolioAnalyzer method)
+            </a>
+           </li>
+           <li>
             <a href="api_reference/model/tick_scheme.html#nautilus_trader.model.tick_scheme.base.register_tick_scheme">
              register_tick_scheme() (in module nautilus_trader.model.tick_scheme.base)
             </a>
@@ -22263,8 +22293,8 @@
             </ul>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.reports.ReportProvider">
-             ReportProvider (class in nautilus_trader.analysis.reports)
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.reporter.ReportProvider">
+             ReportProvider (class in nautilus_trader.analysis.reporter)
             </a>
            </li>
            <li>
@@ -22410,6 +22440,10 @@
              </li>
             </ul>
            </li>
+          </ul>
+         </td>
+         <td style="width: 33%; vertical-align: top;">
+          <ul>
            <li>
             <a href="api_reference/common.html#nautilus_trader.common.actor.Actor.request_quote_ticks">
              request_quote_ticks() (Actor method)
@@ -22452,10 +22486,6 @@
              </li>
             </ul>
            </li>
-          </ul>
-         </td>
-         <td style="width: 33%; vertical-align: top;">
-          <ul>
            <li>
             <a href="api_reference/common.html#nautilus_trader.common.actor.Actor.request_trade_ticks">
              request_trade_ticks() (Actor method)
@@ -22734,13 +22764,13 @@
               </a>
              </li>
              <li>
-              <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.reset">
-               (PerformanceAnalyzer method)
+              <a href="api_reference/portfolio.html#nautilus_trader.portfolio.portfolio.Portfolio.reset">
+               (Portfolio method)
               </a>
              </li>
              <li>
-              <a href="api_reference/portfolio.html#nautilus_trader.portfolio.portfolio.Portfolio.reset">
-               (Portfolio method)
+              <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.reset">
+               (PortfolioAnalyzer method)
               </a>
              </li>
              <li>
@@ -22992,38 +23022,13 @@
             </ul>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.returns">
-             returns() (PerformanceAnalyzer method)
-            </a>
-           </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.returns_annual_volatility">
-             returns_annual_volatility() (PerformanceAnalyzer method)
-            </a>
-           </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.returns_avg">
-             returns_avg() (PerformanceAnalyzer method)
-            </a>
-           </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.returns_avg_loss">
-             returns_avg_loss() (PerformanceAnalyzer method)
-            </a>
-           </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.returns_avg_win">
-             returns_avg_win() (PerformanceAnalyzer method)
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.returns">
+             returns() (PortfolioAnalyzer method)
             </a>
            </li>
            <li>
             <a href="api_reference/model/orderbook.html#nautilus_trader.model.orderbook.ladder.Ladder.reverse">
              reverse (Ladder attribute)
-            </a>
-           </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.risk_return_ratio">
-             risk_return_ratio() (PerformanceAnalyzer method)
             </a>
            </li>
            <li>
@@ -23419,11 +23424,6 @@
               </a>
              </li>
             </ul>
-           </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.sharpe_ratio">
-             sharpe_ratio() (PerformanceAnalyzer method)
-            </a>
            </li>
            <li>
             <a href="api_reference/model/orders.html#nautilus_trader.model.orders.limit_if_touched.LimitIfTouchedOrder.side">
@@ -23836,11 +23836,6 @@
            <li>
             <a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient">
              SocketClient (class in nautilus_trader.network.socket)
-            </a>
-           </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.sortino_ratio">
-             sortino_ratio() (PerformanceAnalyzer method)
             </a>
            </li>
            <li>
@@ -24546,15 +24541,15 @@
              StopLimitOrder (class in nautilus_trader.model.orders.stop_limit)
             </a>
            </li>
-          </ul>
-         </td>
-         <td style="width: 33%; vertical-align: top;">
-          <ul>
            <li>
             <a href="api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder">
              StopMarketOrder (class in nautilus_trader.model.orders.stop_market)
             </a>
            </li>
+          </ul>
+         </td>
+         <td style="width: 33%; vertical-align: top;">
+          <ul>
            <li>
             <a href="api_reference/execution.html#nautilus_trader.execution.messages.CancelAllOrders.strategy_id">
              strategy_id (CancelAllOrders attribute)
@@ -26749,8 +26744,8 @@
             </a>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.total_pnl">
-             total_pnl() (PerformanceAnalyzer method)
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.total_pnl">
+             total_pnl() (PortfolioAnalyzer method)
             </a>
             <ul>
              <li>
@@ -26761,8 +26756,8 @@
             </ul>
            </li>
            <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.total_pnl_percentage">
-             total_pnl_percentage() (PerformanceAnalyzer method)
+            <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.total_pnl_percentage">
+             total_pnl_percentage() (PortfolioAnalyzer method)
             </a>
            </li>
            <li>
@@ -30501,11 +30496,6 @@
            <li>
             <a href="api_reference/model/data.html#nautilus_trader.model.data.bet.Bet.win_payoff">
              win_payoff() (Bet method)
-            </a>
-           </li>
-           <li>
-            <a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.win_rate">
-             win_rate() (PerformanceAnalyzer method)
             </a>
            </li>
            <li>
