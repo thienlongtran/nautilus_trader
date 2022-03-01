@@ -1041,21 +1041,26 @@ credentials are valid and have trading permissions.
            </a>
           </h3>
           <p>
-           All the Binance account types will be supported for live trading. Set the account type
-through the
+           All the Binance account types will be supported for live trading. Set the
            <code class="docutils literal notranslate">
             <span class="pre">
              account_type
             </span>
            </code>
-           option as a string. The account type options are:
+           using the
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             BinanceAccountType
+            </span>
+           </code>
+           enum. The account type options are:
           </p>
           <ul class="simple">
            <li>
             <p>
              <code class="docutils literal notranslate">
               <span class="pre">
-               spot
+               SPOT
               </span>
              </code>
             </p>
@@ -1064,7 +1069,7 @@ through the
             <p>
              <code class="docutils literal notranslate">
               <span class="pre">
-               margin
+               MARGIN
               </span>
              </code>
             </p>
@@ -1073,7 +1078,7 @@ through the
             <p>
              <code class="docutils literal notranslate">
               <span class="pre">
-               futures_usdt
+               FUTURES_USDT
               </span>
              </code>
              (USDT or BUSD stablecoins as collateral)
@@ -1083,7 +1088,7 @@ through the
             <p>
              <code class="docutils literal notranslate">
               <span class="pre">
-               futures_coin
+               FUTURES_COIN
               </span>
              </code>
              (other cryptocurrency as collateral)
