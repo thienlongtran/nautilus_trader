@@ -907,10 +907,40 @@
            <p>
             Represents a
             <cite>
-             market
+             Market
             </cite>
             order.
            </p>
+           <ul class="simple">
+            <li>
+             <p>
+              <cite>
+               Market-On-Open (MOO)
+              </cite>
+              order type can be represented using
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                ON_OPEN
+               </span>
+              </code>
+              time in force.
+             </p>
+            </li>
+            <li>
+             <p>
+              <cite>
+               Market-On-Close (MOC)
+              </cite>
+              order type can be represented using
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                ON_CLOSE
+               </span>
+              </code>
+              time in force.
+             </p>
+            </li>
+           </ul>
            <dl class="field-list simple">
             <dt class="field-odd">
              Parameters
@@ -1033,6 +1063,12 @@
                 ,
                 <code class="docutils literal notranslate">
                  <span class="pre">
+                  DAY
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
                   ON_OPEN
                  </span>
                 </code>
@@ -1042,7 +1078,7 @@
                   ON_CLOSE
                  </span>
                 </code>
-                }) – The order time-in-force.
+                }) – The order time in force.
                </p>
               </li>
               <li>
@@ -1219,34 +1255,10 @@ contain any arbitrary delimiter if required.
                 <cite>
                  time_in_force
                 </cite>
-                is other than
+                is
                 <code class="docutils literal notranslate">
                  <span class="pre">
-                  GTC
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  IOC
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  FOK
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  ON_OPEN
-                 </span>
-                </code>
-                or
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  ON_CLOSE
+                  GTD
                  </span>
                 </code>
                 .
@@ -3123,7 +3135,7 @@ The possible states of closed orders include;
             </dt>
             <dd>
              <p>
-              The order time-in-force.
+              The order time in force.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -3681,10 +3693,40 @@ The possible states of closed orders include;
            <p>
             Represents a
             <cite>
-             limit
+             Limit
             </cite>
             order.
            </p>
+           <ul class="simple">
+            <li>
+             <p>
+              <cite>
+               Limit-On-Open (LOO)
+              </cite>
+              order type can be represented using
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                ON_OPEN
+               </span>
+              </code>
+              time in force.
+             </p>
+            </li>
+            <li>
+             <p>
+              <cite>
+               Limit-On-Close (LOC)
+              </cite>
+              order type can be represented using
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                ON_CLOSE
+               </span>
+              </code>
+              time in force.
+             </p>
+            </li>
+           </ul>
            <dl class="field-list simple">
             <dt class="field-odd">
              Parameters
@@ -3800,11 +3842,49 @@ The possible states of closed orders include;
                 <strong>
                  time_in_force
                 </strong>
-                (
-                <em>
-                 TimeInForce
-                </em>
-                ) – The order time-in-force.
+                (TimeInForce {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  IOC
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FOK
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTD
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  DAY
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ON_OPEN
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ON_CLOSE
+                 </span>
+                </code>
+                }) – The order time in force.
                </p>
               </li>
               <li>
@@ -6071,7 +6151,7 @@ The possible states of closed orders include;
             </dt>
             <dd>
              <p>
-              The order time-in-force.
+              The order time in force.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -6618,7 +6698,7 @@ The possible states of closed orders include;
            <p>
             Represents a
             <cite>
-             stop-market
+             Stop-Market
             </cite>
             conditional order.
            </p>
@@ -6749,11 +6829,37 @@ The possible states of closed orders include;
                 <strong>
                  time_in_force
                 </strong>
-                (
-                <em>
-                 TimeInForce
-                </em>
-                ) – The order time-in-force.
+                (TimeInForce {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  IOC
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FOK
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTD
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  DAY
+                 </span>
+                </code>
+                }) – The order time in force.
                </p>
               </li>
               <li>
@@ -6952,6 +7058,30 @@ contain any arbitrary delimiter if required.
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   NONE
+                 </span>
+                </code>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 time_in_force
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ON_OPEN
+                 </span>
+                </code>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ON_CLOSE
                  </span>
                 </code>
                 .
@@ -8920,7 +9050,7 @@ The possible states of closed orders include;
             </dt>
             <dd>
              <p>
-              The order time-in-force.
+              The order time in force.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -9558,7 +9688,7 @@ The possible states of closed orders include;
            <p>
             Represents a
             <cite>
-             stop-limit
+             Stop-Limit
             </cite>
             conditional order.
            </p>
@@ -9703,11 +9833,37 @@ The possible states of closed orders include;
                 <strong>
                  time_in_force
                 </strong>
-                (
-                <em>
-                 TimeInForce
-                </em>
-                ) – The order time-in-force.
+                (TimeInForce {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  IOC
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FOK
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTD
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  DAY
+                 </span>
+                </code>
+                }) – The order time in force.
                </p>
               </li>
               <li>
@@ -9962,6 +10118,30 @@ contain any arbitrary delimiter if required.
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   NONE
+                 </span>
+                </code>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 time_in_force
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ON_OPEN
+                 </span>
+                </code>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ON_CLOSE
                  </span>
                 </code>
                 .
@@ -12045,7 +12225,7 @@ The possible states of closed orders include;
             </dt>
             <dd>
              <p>
-              The order time-in-force.
+              The order time in force.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -12668,7 +12848,7 @@ The possible states of closed orders include;
            <p>
             Represents a
             <cite>
-             market-to-limit
+             Market-To-Limit
             </cite>
             order.
            </p>
@@ -12782,12 +12962,6 @@ The possible states of closed orders include;
                 ,
                 <code class="docutils literal notranslate">
                  <span class="pre">
-                  GTD
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
                   IOC
                  </span>
                 </code>
@@ -12797,7 +12971,19 @@ The possible states of closed orders include;
                   FOK
                  </span>
                 </code>
-                }) – The order time-in-force.
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTD
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  DAY
+                 </span>
+                </code>
+                }) – The order time in force.
                </p>
               </li>
               <li>
@@ -13012,28 +13198,16 @@ contain any arbitrary delimiter if required.
                 <cite>
                  time_in_force
                 </cite>
-                is other than
+                is
                 <code class="docutils literal notranslate">
                  <span class="pre">
-                  GTC
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  GTD
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  IOC
+                  ON_OPEN
                  </span>
                 </code>
                 or
                 <code class="docutils literal notranslate">
                  <span class="pre">
-                  FOK
+                  ON_CLOSE
                  </span>
                 </code>
                 .
@@ -15044,7 +15218,7 @@ The possible states of closed orders include;
             </dt>
             <dd>
              <p>
-              The order time-in-force.
+              The order time in force.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -15591,7 +15765,7 @@ The possible states of closed orders include;
            <p>
             Represents a
             <cite>
-             market-if-touched
+             Market-If-Touched
             </cite>
             (MIT) conditional order.
            </p>
@@ -15722,11 +15896,37 @@ The possible states of closed orders include;
                 <strong>
                  time_in_force
                 </strong>
-                (
-                <em>
-                 TimeInForce
-                </em>
-                ) – The order time-in-force.
+                (TimeInForce {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  IOC
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FOK
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTD
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  DAY
+                 </span>
+                </code>
+                }) – The order time in force.
                </p>
               </li>
               <li>
@@ -15925,6 +16125,30 @@ contain any arbitrary delimiter if required.
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   NONE
+                 </span>
+                </code>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 time_in_force
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ON_OPEN
+                 </span>
+                </code>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ON_CLOSE
                  </span>
                 </code>
                 .
@@ -17893,7 +18117,7 @@ The possible states of closed orders include;
             </dt>
             <dd>
              <p>
-              The order time-in-force.
+              The order time in force.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -18531,7 +18755,7 @@ The possible states of closed orders include;
            <p>
             Represents a
             <cite>
-             limit-if-touched
+             Limit-If-Touched
             </cite>
             (LIT) conditional order.
            </p>
@@ -18676,11 +18900,37 @@ The possible states of closed orders include;
                 <strong>
                  time_in_force
                 </strong>
-                (
-                <em>
-                 TimeInForce
-                </em>
-                ) – The order time-in-force.
+                (TimeInForce {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  IOC
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FOK
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTD
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  DAY
+                 </span>
+                </code>
+                }) – The order time in force.
                </p>
               </li>
               <li>
@@ -18935,6 +19185,30 @@ contain any arbitrary delimiter if required.
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   NONE
+                 </span>
+                </code>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 time_in_force
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ON_OPEN
+                 </span>
+                </code>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ON_CLOSE
                  </span>
                 </code>
                 .
@@ -21018,7 +21292,7 @@ The possible states of closed orders include;
             </dt>
             <dd>
              <p>
-              The order time-in-force.
+              The order time in force.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -21674,7 +21948,7 @@ The possible states of closed orders include;
            <p>
             Represents a
             <cite>
-             trailing-stop-market
+             Trailing-Stop-Market
             </cite>
             conditional order.
            </p>
@@ -21846,11 +22120,37 @@ to the delta of market price and
                 <strong>
                  time_in_force
                 </strong>
-                (
-                <em>
-                 TimeInForce
-                </em>
-                ) – The order time-in-force.
+                (TimeInForce {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  IOC
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FOK
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTD
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  DAY
+                 </span>
+                </code>
+                }) – The order time in force.
                </p>
               </li>
               <li>
@@ -22067,6 +22367,30 @@ contain any arbitrary delimiter if required.
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   NONE
+                 </span>
+                </code>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 time_in_force
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ON_OPEN
+                 </span>
+                </code>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ON_CLOSE
                  </span>
                 </code>
                 .
@@ -24064,7 +24388,7 @@ The possible states of closed orders include;
             </dt>
             <dd>
              <p>
-              The order time-in-force.
+              The order time in force.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -24770,7 +25094,7 @@ The possible states of closed orders include;
            <p>
             Represents a
             <cite>
-             trailing-stop-limit
+             Trailing-Stop-Limit
             </cite>
             conditional order.
            </p>
@@ -24985,11 +25309,37 @@ to the delta of market price and
                 <strong>
                  time_in_force
                 </strong>
-                (
-                <em>
-                 TimeInForce
-                </em>
-                ) – The order time-in-force.
+                (TimeInForce {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  IOC
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FOK
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTD
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  DAY
+                 </span>
+                </code>
+                }) – The order time in force.
                </p>
               </li>
               <li>
@@ -25262,6 +25612,30 @@ contain any arbitrary delimiter if required.
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   NONE
+                 </span>
+                </code>
+                .
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 time_in_force
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ON_OPEN
+                 </span>
+                </code>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  ON_CLOSE
                  </span>
                 </code>
                 .
@@ -27409,7 +27783,7 @@ The possible states of closed orders include;
             </dt>
             <dd>
              <p>
-              The order time-in-force.
+              The order time in force.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -30079,7 +30453,7 @@ The possible states of closed orders include;
             </dt>
             <dd>
              <p>
-              The order time-in-force.
+              The order time in force.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">

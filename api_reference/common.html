@@ -16835,7 +16835,7 @@ IDs generated.
                     GTC
                    </span>
                   </code>
-                  }, optional) – The entry orders time-in-force .
+                  }, optional) – The entry orders time in force.
                  </p>
                 </li>
                 <li>
@@ -16879,7 +16879,7 @@ IDs generated.
                     GTC
                    </span>
                   </code>
-                  }, optional) – The bracket orders time-in-force.
+                  }, optional) – The bracket orders time in force.
                  </p>
                 </li>
                 <li>
@@ -17283,7 +17283,7 @@ IDs generated.
                     GTC
                    </span>
                   </code>
-                  }, optional) – The bracket orders time-in-force .
+                  }, optional) – The bracket orders time in force.
                  </p>
                 </li>
                </ul>
@@ -17615,18 +17615,9 @@ IDs generated.
              <p>
               Create a new
               <cite>
-               limit
+               Limit
               </cite>
               order.
-             </p>
-             <p>
-              If the time-in-force is
-              <code class="docutils literal notranslate">
-               <span class="pre">
-                GTD
-               </span>
-              </code>
-              then a valid expire time must be given.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -17701,13 +17692,55 @@ IDs generated.
                   <strong>
                    time_in_force
                   </strong>
-                  (TimeInForce, default
+                  (TimeInForce {
                   <code class="docutils literal notranslate">
                    <span class="pre">
                     GTC
                    </span>
                   </code>
-                  ) – The orders time-in-force.
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    IOC
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FOK
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTD
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    DAY
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    ON_OPEN
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    ON_CLOSE
+                   </span>
+                  </code>
+                  }, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
+                  ) – The orders time in force.
                  </p>
                 </li>
                 <li>
@@ -18059,18 +18092,9 @@ contain any arbitrary delimiter if required.
              <p>
               Create a new
               <cite>
-               limit-if-touched
+               Limit-If-Touched
               </cite>
               (LIT) conditional order.
-             </p>
-             <p>
-              If the time-in-force is
-              <code class="docutils literal notranslate">
-               <span class="pre">
-                GTD
-               </span>
-              </code>
-              then a valid expire time must be given.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -18173,13 +18197,43 @@ contain any arbitrary delimiter if required.
                   <strong>
                    time_in_force
                   </strong>
-                  (TimeInForce, default
+                  (TimeInForce {
                   <code class="docutils literal notranslate">
                    <span class="pre">
                     GTC
                    </span>
                   </code>
-                  ) – The orders time-in-force.
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    IOC
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FOK
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTD
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    DAY
+                   </span>
+                  </code>
+                  }, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
+                  ) – The orders time in force.
                  </p>
                 </li>
                 <li>
@@ -18308,6 +18362,48 @@ contain any arbitrary delimiter if required.
                    quantity
                   </cite>
                   is not positive (&gt; 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   trigger_type
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    NONE
+                   </span>
+                  </code>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   time_in_force
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    ON_OPEN
+                   </span>
+                  </code>
+                  or
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    ON_CLOSE
+                   </span>
+                  </code>
+                  .
                  </p>
                 </li>
                 <li>
@@ -18465,7 +18561,7 @@ contain any arbitrary delimiter if required.
              <p>
               Create a new
               <cite>
-               market
+               Market
               </cite>
               order.
              </p>
@@ -18549,6 +18645,12 @@ contain any arbitrary delimiter if required.
                   ,
                   <code class="docutils literal notranslate">
                    <span class="pre">
+                    DAY
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
                     ON_OPEN
                    </span>
                   </code>
@@ -18564,7 +18666,7 @@ contain any arbitrary delimiter if required.
                     GTC
                    </span>
                   </code>
-                  ) – The orders time-in-force. Often not applicable for market orders.
+                  ) – The orders time in force. Often not applicable for market orders.
                  </p>
                 </li>
                 <li>
@@ -18642,34 +18744,10 @@ contain any arbitrary delimiter if required.
                   <cite>
                    time_in_force
                   </cite>
-                  is other than
+                  is
                   <code class="docutils literal notranslate">
                    <span class="pre">
-                    GTC
-                   </span>
-                  </code>
-                  ,
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    IOC
-                   </span>
-                  </code>
-                  ,
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    FOK
-                   </span>
-                  </code>
-                  ,
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    ON_OPEN
-                   </span>
-                  </code>
-                  or
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    ON_CLOSE
+                    GTD
                    </span>
                   </code>
                   .
@@ -18819,18 +18897,9 @@ contain any arbitrary delimiter if required.
              <p>
               Create a new
               <cite>
-               market-if-touched
+               Market-If-Touched
               </cite>
               (MIT) conditional order.
-             </p>
-             <p>
-              If the time-in-force is
-              <code class="docutils literal notranslate">
-               <span class="pre">
-                GTD
-               </span>
-              </code>
-              then a valid expire time must be given.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -18919,13 +18988,43 @@ contain any arbitrary delimiter if required.
                   <strong>
                    time_in_force
                   </strong>
-                  (TimeInForce, default
+                  (TimeInForce {
                   <code class="docutils literal notranslate">
                    <span class="pre">
                     GTC
                    </span>
                   </code>
-                  ) – The orders time-in-force.
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    IOC
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FOK
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTD
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    DAY
+                   </span>
+                  </code>
+                  }, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
+                  ) – The orders time in force.
                  </p>
                 </li>
                 <li>
@@ -19016,6 +19115,48 @@ contain any arbitrary delimiter if required.
                    quantity
                   </cite>
                   is not positive (&gt; 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   trigger_type
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    NONE
+                   </span>
+                  </code>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   time_in_force
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    ON_OPEN
+                   </span>
+                  </code>
+                  or
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    ON_CLOSE
+                   </span>
+                  </code>
+                  .
                  </p>
                 </li>
                 <li>
@@ -19179,7 +19320,7 @@ contain any arbitrary delimiter if required.
              <p>
               Create a new
               <cite>
-               market
+               Market
               </cite>
               order.
              </p>
@@ -19272,7 +19413,7 @@ contain any arbitrary delimiter if required.
                     GTC
                    </span>
                   </code>
-                  ) – The orders time-in-force.
+                  ) – The orders time in force.
                  </p>
                 </li>
                 <li>
@@ -19394,28 +19535,16 @@ contain any arbitrary delimiter if required.
                   <cite>
                    time_in_force
                   </cite>
-                  is other than
+                  is
                   <code class="docutils literal notranslate">
                    <span class="pre">
-                    GTC
-                   </span>
-                  </code>
-                  ,
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    GTD
-                   </span>
-                  </code>
-                  ,
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    IOC
+                    ON_OPEN
                    </span>
                   </code>
                   or
                   <code class="docutils literal notranslate">
                    <span class="pre">
-                    FOK
+                    ON_CLOSE
                    </span>
                   </code>
                   .
@@ -19717,18 +19846,9 @@ contain any arbitrary delimiter if required.
              <p>
               Create a new
               <cite>
-               stop-limit
+               Stop-Limit
               </cite>
               conditional order.
-             </p>
-             <p>
-              If the time-in-force is
-              <code class="docutils literal notranslate">
-               <span class="pre">
-                GTD
-               </span>
-              </code>
-              then a valid expire time must be given.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -19831,13 +19951,43 @@ contain any arbitrary delimiter if required.
                   <strong>
                    time_in_force
                   </strong>
-                  (TimeInForce, default
+                  (TimeInForce {
                   <code class="docutils literal notranslate">
                    <span class="pre">
                     GTC
                    </span>
                   </code>
-                  ) – The orders time-in-force.
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    IOC
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FOK
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTD
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    DAY
+                   </span>
+                  </code>
+                  }, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
+                  ) – The orders time in force.
                  </p>
                 </li>
                 <li>
@@ -19966,6 +20116,48 @@ contain any arbitrary delimiter if required.
                    quantity
                   </cite>
                   is not positive (&gt; 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   trigger_type
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    NONE
+                   </span>
+                  </code>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   time_in_force
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    ON_OPEN
+                   </span>
+                  </code>
+                  or
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    ON_CLOSE
+                   </span>
+                  </code>
+                  .
                  </p>
                 </li>
                 <li>
@@ -20156,18 +20348,9 @@ contain any arbitrary delimiter if required.
              <p>
               Create a new
               <cite>
-               stop-market
+               Stop-Market
               </cite>
               conditional order.
-             </p>
-             <p>
-              If the time-in-force is
-              <code class="docutils literal notranslate">
-               <span class="pre">
-                GTD
-               </span>
-              </code>
-              then a valid expire time must be given.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -20256,13 +20439,43 @@ contain any arbitrary delimiter if required.
                   <strong>
                    time_in_force
                   </strong>
-                  (TimeInForce, default
+                  (TimeInForce  {
                   <code class="docutils literal notranslate">
                    <span class="pre">
                     GTC
                    </span>
                   </code>
-                  ) – The orders time-in-force.
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    IOC
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FOK
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTD
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    DAY
+                   </span>
+                  </code>
+                  }, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
+                  ) – The orders time in force.
                  </p>
                 </li>
                 <li>
@@ -20353,6 +20566,48 @@ contain any arbitrary delimiter if required.
                    quantity
                   </cite>
                   is not positive (&gt; 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   trigger_type
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    NONE
+                   </span>
+                  </code>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   time_in_force
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    ON_OPEN
+                   </span>
+                  </code>
+                  or
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    ON_CLOSE
+                   </span>
+                  </code>
+                  .
                  </p>
                 </li>
                 <li>
@@ -20651,18 +20906,9 @@ contain any arbitrary delimiter if required.
              <p>
               Create a new
               <cite>
-               trailing-stop-limit
+               Trailing-Stop-Limit
               </cite>
               conditional order.
-             </p>
-             <p>
-              If the time-in-force is
-              <code class="docutils literal notranslate">
-               <span class="pre">
-                GTD
-               </span>
-              </code>
-              then a valid expire time must be given.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -20837,13 +21083,43 @@ to the delta of market price and
                   <strong>
                    time_in_force
                   </strong>
-                  (TimeInForce, default
+                  (TimeInForce {
                   <code class="docutils literal notranslate">
                    <span class="pre">
                     GTC
                    </span>
                   </code>
-                  ) – The orders time-in-force.
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    IOC
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FOK
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTD
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    DAY
+                   </span>
+                  </code>
+                  }, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
+                  ) – The orders time in force.
                  </p>
                 </li>
                 <li>
@@ -20972,6 +21248,66 @@ contain any arbitrary delimiter if required.
                    quantity
                   </cite>
                   is not positive (&gt; 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   trigger_type
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    NONE
+                   </span>
+                  </code>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   offset_type
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    NONE
+                   </span>
+                  </code>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   time_in_force
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    ON_OPEN
+                   </span>
+                  </code>
+                  or
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    ON_CLOSE
+                   </span>
+                  </code>
+                  .
                  </p>
                 </li>
                 <li>
@@ -21184,18 +21520,9 @@ contain any arbitrary delimiter if required.
              <p>
               Create a new
               <cite>
-               trailing-stop-market
+               Trailing-Stop-Market
               </cite>
               conditional order.
-             </p>
-             <p>
-              If the time-in-force is
-              <code class="docutils literal notranslate">
-               <span class="pre">
-                GTD
-               </span>
-              </code>
-              then a valid expire time must be given.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -21327,13 +21654,43 @@ to the delta of market price and
                   <strong>
                    time_in_force
                   </strong>
-                  (TimeInForce, default
+                  (TimeInForce {
                   <code class="docutils literal notranslate">
                    <span class="pre">
                     GTC
                    </span>
                   </code>
-                  ) – The orders time-in-force.
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    IOC
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    FOK
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTD
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    DAY
+                   </span>
+                  </code>
+                  }, default
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    GTC
+                   </span>
+                  </code>
+                  ) – The orders time in force.
                  </p>
                 </li>
                 <li>
@@ -21424,6 +21781,66 @@ contain any arbitrary delimiter if required.
                    quantity
                   </cite>
                   is not positive (&gt; 0).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   trigger_type
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    NONE
+                   </span>
+                  </code>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   offset_type
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    NONE
+                   </span>
+                  </code>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   time_in_force
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    ON_OPEN
+                   </span>
+                  </code>
+                  or
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    ON_CLOSE
+                   </span>
+                  </code>
+                  .
                  </p>
                 </li>
                 <li>
