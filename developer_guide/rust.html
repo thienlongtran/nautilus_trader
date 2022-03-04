@@ -756,13 +756,29 @@ to adhere to when implementing
          <ul class="simple">
           <li>
            <p>
-            Always clearly document the assumptions of an
+            If a function is
             <code class="docutils literal notranslate">
              <span class="pre">
               unsafe
              </span>
             </code>
-            code block or function definition, so that callers know how to meet their obligations in the contract.
+            to call, there
+            <em>
+             must
+            </em>
+            be a
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              Safety
+             </span>
+            </code>
+            section in the documentation explaining why the function is
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              unsafe
+             </span>
+            </code>
+            and covering the invariants that the function expects the callers to uphold and how to meet their obligations in the contract.
            </p>
           </li>
           <li>
@@ -774,11 +790,6 @@ to adhere to when implementing
              </span>
             </code>
             code blocks must be completely covered by unit tests within the same source file.
-           </p>
-          </li>
-          <li>
-           <p>
-            TBD…
            </p>
           </li>
          </ul>

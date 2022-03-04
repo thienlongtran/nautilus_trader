@@ -728,7 +728,7 @@ running strategies which are able to access larger capital allocations.
            </td>
            <td class="text-left">
             <p>
-             Crypto Exchange
+             Crypto Exchange (CEX)
             </p>
            </td>
            <td class="text-left">
@@ -759,7 +759,7 @@ running strategies which are able to access larger capital allocations.
            </td>
            <td class="text-left">
             <p>
-             Crypto Exchange
+             Crypto Exchange (CEX)
             </p>
            </td>
            <td class="text-left">
@@ -790,7 +790,7 @@ running strategies which are able to access larger capital allocations.
            </td>
            <td class="text-left">
             <p>
-             Crypto Exchange
+             Crypto Exchange (CEX)
             </p>
            </td>
            <td class="text-left">
@@ -821,7 +821,7 @@ running strategies which are able to access larger capital allocations.
            </td>
            <td class="text-left">
             <p>
-             Crypto Exchange
+             Crypto Exchange (CEX)
             </p>
            </td>
            <td class="text-left">
@@ -852,7 +852,7 @@ running strategies which are able to access larger capital allocations.
            </td>
            <td class="text-left">
             <p>
-             Crypto Exchange
+             Crypto Exchange (CEX)
             </p>
            </td>
            <td class="text-left">
@@ -991,12 +991,22 @@ this means there is some normalization and standardization needed.
          <ul class="simple">
           <li>
            <p>
-            All symbols will match the native/local symbol for the exchange, unless there are conflicts (such as Binance using the same symbol for both spot and perpetual futures.)
+            All symbols will match the native/local symbol for the exchange, unless there are conflicts (such as
+            <span class="xref myst">
+             Binance
+            </span>
+            using the same symbol for both spot and perpetual futures).
            </p>
           </li>
           <li>
            <p>
-            All timestamps will be normalized to UNIX nanoseconds
+            All timestamps will be either normalized to UNIX nanoseconds, or clearly marked as UNIX milliseconds by appending
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              _ms
+             </span>
+            </code>
+            to param and property names.
            </p>
           </li>
          </ul>
