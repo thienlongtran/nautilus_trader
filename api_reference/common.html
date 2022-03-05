@@ -327,6 +327,22 @@
                Orders
               </a>
              </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../user_guide/advanced/index.html">
+               Advanced
+              </a>
+              <span class="arrow">
+               <i class="fa-solid fa-chevron-right">
+               </i>
+              </span>
+              <ul class="submenu">
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="../user_guide/advanced/portfolio_statistics.html">
+                 Portfolio Statistics
+                </a>
+               </li>
+              </ul>
+             </li>
             </ul>
            </li>
            <li class="md-nav__item">
@@ -441,6 +457,11 @@
                <li class="md-nav__item">
                 <a class="md-nav__link" href="model/data.html">
                  Data
+                </a>
+               </li>
+               <li class="md-nav__item">
+                <a class="md-nav__link" href="model/enums.html">
+                 Enums
                 </a>
                </li>
                <li class="md-nav__item">
@@ -628,6 +649,35 @@
               <a class="md-nav__link" href="#module-nautilus_trader.common.component">
                Component
               </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#module-nautilus_trader.common.enums">
+               Enums
+              </a>
+              <nav class="md-nav">
+               <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#component-state">
+                  Component State
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#component-trigger">
+                  Component Trigger
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#log-level">
+                  Log Level
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#log-color">
+                  Log Color
+                 </a>
+                </li>
+               </ul>
+              </nav>
              </li>
              <li class="md-nav__item">
               <a class="md-nav__link" href="#module-nautilus_trader.common.factories">
@@ -16387,6 +16437,170 @@ called after faulting.
            </dl>
           </dd>
          </dl>
+        </section>
+        <section id="module-nautilus_trader.common.enums">
+         <span id="enums">
+         </span>
+         <h2 id="module-nautilus_trader.common.enums">
+          Enums
+          <a class="headerlink" href="#module-nautilus_trader.common.enums" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Defines system level enums for use with framework components.
+         </p>
+         <section id="component-state">
+          <h3 id="component-state">
+           Component State
+           <a class="headerlink" href="#component-state" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           Represents a discrete component state.
+          </p>
+          <div class="doctest highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nautilus_trader.common.enums</span> <span class="kn">import</span> <span class="n">ComponentState</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">PRE_INITIALIZED</span>
+<span class="go">&lt;ComponentState.PRE_INITIALIZED: 0&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">INITIALIZED</span>
+<span class="go">&lt;ComponentState.INITIALIZED: 1&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">STARTING</span>
+<span class="go">&lt;ComponentState.STARTING: 2&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">RUNNING</span>
+<span class="go">&lt;ComponentState.RUNNING: 3&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">STOPPING</span>
+<span class="go">&lt;ComponentState.STOPPING: 4&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">STOPPED</span>
+<span class="go">&lt;ComponentState.STOPPED: 5&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">RESUMING</span>
+<span class="go">&lt;ComponentState.RESUMING: 6&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">RESETTING</span>
+<span class="go">&lt;ComponentState.RESETTING: 7&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">DISPOSING</span>
+<span class="go">&lt;ComponentState.DISPOSING: 8&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">DISPOSED</span>
+<span class="go">&lt;ComponentState.DISPOSED: 9&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">DEGRADING</span>
+<span class="go">&lt;ComponentState.DEGRADING: 10&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">DEGRADED</span>
+<span class="go">&lt;ComponentState.DEGRADED: 11&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">FAULTING</span>
+<span class="go">&lt;ComponentState.FAULTING: 12&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">FAULTED</span>
+<span class="go">&lt;ComponentState.FAULTED: 13&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentState</span><span class="o">.</span><span class="n">FAULTED</span>
+<span class="go">&lt;ComponentState.FAULTED: 13&gt;</span>
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="component-trigger">
+          <h3 id="component-trigger">
+           Component Trigger
+           <a class="headerlink" href="#component-trigger" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           Represents a trigger event which will cause a component state transition.
+          </p>
+          <div class="doctest highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nautilus_trader.common.enums</span> <span class="kn">import</span> <span class="n">ComponentTrigger</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentTrigger</span><span class="o">.</span><span class="n">INITIALIZE</span>
+<span class="go">&lt;ComponentTrigger.INITIALIZE: 1&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentTrigger</span><span class="o">.</span><span class="n">START</span>
+<span class="go">&lt;ComponentTrigger.START: 2&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentTrigger</span><span class="o">.</span><span class="n">RUNNING</span>
+<span class="go">&lt;ComponentTrigger.RUNNING: 3&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentTrigger</span><span class="o">.</span><span class="n">STOP</span>
+<span class="go">&lt;ComponentTrigger.STOP: 4&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentTrigger</span><span class="o">.</span><span class="n">STOPPED</span>
+<span class="go">&lt;ComponentTrigger.STOPPED: 5&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentTrigger</span><span class="o">.</span><span class="n">RESUME</span>
+<span class="go">&lt;ComponentTrigger.RESUME: 6&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentTrigger</span><span class="o">.</span><span class="n">RESET</span>
+<span class="go">&lt;ComponentTrigger.RESET: 7&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentTrigger</span><span class="o">.</span><span class="n">DISPOSE</span>
+<span class="go">&lt;ComponentTrigger.DISPOSE: 8&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentTrigger</span><span class="o">.</span><span class="n">DISPOSED</span>
+<span class="go">&lt;ComponentTrigger.DISPOSED: 9&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentTrigger</span><span class="o">.</span><span class="n">DEGRADE</span>
+<span class="go">&lt;ComponentTrigger.DEGRADE: 10&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentTrigger</span><span class="o">.</span><span class="n">DEGRADED</span>
+<span class="go">&lt;ComponentTrigger.DEGRADED: 11&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentTrigger</span><span class="o">.</span><span class="n">FAULT</span>
+<span class="go">&lt;ComponentTrigger.FAULT: 12&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ComponentTrigger</span><span class="o">.</span><span class="n">FAULTED</span>
+<span class="go">&lt;ComponentTrigger.FAULTED: 13&gt;</span>
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="log-level">
+          <h3 id="log-level">
+           Log Level
+           <a class="headerlink" href="#log-level" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           Represents a log level thereshold for configuration.
+          </p>
+          <p>
+           Enums values match the built-in Python
+           <cite>
+            LogLevel
+           </cite>
+           .
+          </p>
+          <div class="doctest highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nautilus_trader.common.enums</span> <span class="kn">import</span> <span class="n">LogLevel</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LogLevel</span><span class="o">.</span><span class="n">DEBUG</span>
+<span class="go">&lt;LogLevel.DEBUG: 10&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LogLevel</span><span class="o">.</span><span class="n">INFO</span>
+<span class="go">&lt;LogLevel.INFO: 20&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LogLevel</span><span class="o">.</span><span class="n">WARNING</span>
+<span class="go">&lt;LogLevel.WARNING: 30&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LogLevel</span><span class="o">.</span><span class="n">ERROR</span>
+<span class="go">&lt;LogLevel.ERROR: 40&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LogLevel</span><span class="o">.</span><span class="n">CRITICAL</span>
+<span class="go">&lt;LogLevel.CRITICAL: 50&gt;</span>
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="log-color">
+          <h3 id="log-color">
+           Log Color
+           <a class="headerlink" href="#log-color" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           Represents log color constants.
+          </p>
+          <div class="doctest highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">nautilus_trader.common.enums</span> <span class="kn">import</span> <span class="n">LogColor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LogColor</span><span class="o">.</span><span class="n">NORMAL</span>
+<span class="go">&lt;LogColor.NORMAL: 0&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LogColor</span><span class="o">.</span><span class="n">GREEN</span>
+<span class="go">&lt;LogColor.GREEN: 1&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LogColor</span><span class="o">.</span><span class="n">BLUE</span>
+<span class="go">&lt;LogColor.BLUE: 2&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LogColor</span><span class="o">.</span><span class="n">YELLOW</span>
+<span class="go">&lt;LogColor.YELLOW: 3&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LogColor</span><span class="o">.</span><span class="n">RED</span>
+<span class="go">&lt;LogColor.RED: 4&gt;</span>
+</pre>
+           </div>
+          </div>
+         </section>
         </section>
         <section id="module-nautilus_trader.common.factories">
          <span id="factories">
