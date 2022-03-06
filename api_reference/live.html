@@ -11865,10 +11865,27 @@ position ID resolution.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
+                InstrumentId
+               </span>
+               <span class="pre">
+                instrument_id:
+               </span>
+               <span class="pre">
+                InstrumentId
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
                 VenueOrderId
                </span>
                <span class="pre">
-                venue_order_id=None
+                venue_order_id:
+               </span>
+               <span class="pre">
+                VenueOrderId
                </span>
               </span>
              </em>
@@ -11897,24 +11914,36 @@ position ID resolution.
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 venue_order_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                 <em>
-                  VenueOrderId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue order ID (assigned by the venue) query filter.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The instrument ID for the report.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   venue_order_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
+                   <em>
+                    VenueOrderId
+                   </em>
+                  </a>
+                  ) – The venue order ID for the report.
+                 </p>
+                </li>
+               </ul>
               </dd>
               <dt class="field-even">
                Returns

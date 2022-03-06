@@ -6092,6 +6092,28 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
+                instrument_id
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                <span class="pre">
+                 nautilus_trader.model.identifiers.InstrumentId
+                </span>
+               </a>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
                 venue_order_id
                </span>
               </span>
@@ -6103,38 +6125,11 @@ called after faulting.
               <span class="w">
               </span>
               <span class="n">
-               <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
-               </span>
                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
                 <span class="pre">
                  nautilus_trader.model.identifiers.VenueOrderId
                 </span>
                </a>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
-               <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                None
-               </span>
               </span>
              </em>
              <span class="sig-paren">
@@ -6187,24 +6182,48 @@ called after faulting.
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 venue_order_id
-                </strong>
-                (
-                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                 <em>
-                  VenueOrderId
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The venue order ID (assigned by the venue) query filter.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The instrument ID query filter.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   venue_order_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
+                   <em>
+                    VenueOrderId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The venue order ID (assigned by the venue) query filter.
+                 </p>
+                </li>
+               </ul>
               </dd>
               <dt class="field-even">
                Returns
