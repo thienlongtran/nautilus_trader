@@ -634,6 +634,11 @@
               <a class="md-nav__link" href="#types">
                Types
               </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#order-factory">
+               Order Factory
+              </a>
               <nav class="md-nav">
                <ul class="md-nav__list">
                 <li class="md-nav__item">
@@ -671,13 +676,18 @@
                   Limit-If-Touched
                  </a>
                 </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#order-lists">
+                  Order Lists
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#bracket-orders">
+                  Bracket Orders
+                 </a>
+                </li>
                </ul>
               </nav>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#order-factory">
-               Order Factory
-              </a>
              </li>
             </ul>
            </nav>
@@ -815,6 +825,68 @@ at a specified price limit.
            </p>
           </li>
          </ul>
+         <div class="admonition warning">
+          <p class="admonition-title">
+           Warning
+          </p>
+          <p>
+           NautilusTrader has unified the API for a large set of order types and execution instructions, however
+not all of these are available for every exchange. If an order is submitted where an instruction or option
+is not available, then the system will not submit the order and an error will be logged with
+a clear explanatory message.
+          </p>
+         </div>
+        </section>
+        <section id="order-factory">
+         <h2 id="order-factory">
+          Order Factory
+          <a class="headerlink" href="#order-factory" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          The easiest way to create new orders is by using the built-in
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            OrderFactory
+           </span>
+          </code>
+          , which is
+automatically attached to every
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            TradingStrategy
+           </span>
+          </code>
+          class. This factory will take care
+of lower level details - such as ensuring the correct trader ID and strategy ID is assigned, generation
+of a necessary initialization ID and timestamp, and abstracts away parameters which don’t necessarily
+apply to the order type being created, or are only needed to specify more advanced execution instructions.
+         </p>
+         <p>
+          This leaves the factory with simpler order creation methods to work with, all the
+examples will leverage an
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            OrderFactory
+           </span>
+          </code>
+          from within a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            TradingStrategy
+           </span>
+          </code>
+          context.
+         </p>
+         <div class="admonition note">
+          <p class="admonition-title">
+           Note
+          </p>
+          <p>
+           For clarity, any optional parameters will be clearly marked with a comment which includes the default value.
+          </p>
+         </div>
          <section id="market">
           <h3 id="market">
            Market
@@ -822,6 +894,33 @@ at a specified price limit.
             ¶
            </a>
           </h3>
+          <p>
+           The vanilla market order is an instruction by the trader the immediately trade
+the given quantity at the best price available. You can also specify several
+time in force options, and indicate whether this order is only intended to reduce
+a position.
+          </p>
+          <p>
+           In the following example we create a market order to buy 100,000 AUD on the
+Interactive Brokers
+           <a class="reference external" href="https://ibkr.info/node/1708">
+            IdealPro
+           </a>
+           Forex ECN:
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">MarketOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">market</span><span class="p">(</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"AUD/USD"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"IDEALPRO"</span><span class="p">)),</span>
+        <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">BUY</span><span class="p">,</span>
+        <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">100000</span><span class="p">),</span>
+        <span class="n">time_in_force</span><span class="o">=</span><span class="n">TimeInForce</span><span class="o">.</span><span class="n">IOC</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default GTC)</span>
+        <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
+        <span class="n">tags</span><span class="o">=</span><span class="s2">"ENTRY"</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
+<span class="p">)</span>
+</pre>
+           </div>
+          </div>
           <p>
            <span class="xref myst">
             API Reference
@@ -906,19 +1005,32 @@ at a specified price limit.
            </span>
           </p>
          </section>
-        </section>
-        <section id="order-factory">
-         <h2 id="order-factory">
-          Order Factory
-          <a class="headerlink" href="#order-factory" title="Permalink to this headline">
-           ¶
-          </a>
-         </h2>
-         <p>
-          <span class="xref myst">
-           API Reference
-          </span>
-         </p>
+         <section id="order-lists">
+          <h3 id="order-lists">
+           Order Lists
+           <a class="headerlink" href="#order-lists" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           <span class="xref myst">
+            API Reference
+           </span>
+          </p>
+         </section>
+         <section id="bracket-orders">
+          <h3 id="bracket-orders">
+           Bracket Orders
+           <a class="headerlink" href="#bracket-orders" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           <span class="xref myst">
+            API Reference
+           </span>
+          </p>
+         </section>
         </section>
        </section>
       </article>
