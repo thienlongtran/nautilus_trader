@@ -15753,64 +15753,6 @@ running on.
              </dl>
             </dd>
            </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.recon_auto">
-             <span class="sig-name descname">
-              <span class="pre">
-               recon_auto
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine.recon_auto" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the execution engine will generate reconciliation events to align state.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 bool
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.recon_lookback_mins">
-             <span class="sig-name descname">
-              <span class="pre">
-               recon_lookback_mins
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine.recon_lookback_mins" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The lookback window for reconciliation on start-up (zero for max lookback).
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 int
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.reconcile_mass_status">
              <span class="sig-name descname">
@@ -16046,6 +15988,64 @@ running on.
                  timeout_secs
                 </cite>
                 is not positive (&gt; 0).
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.reconciliation_auto">
+             <span class="sig-name descname">
+              <span class="pre">
+               reconciliation_auto
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine.reconciliation_auto" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the execution engine will generate reconciliation events to align state.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 bool
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.reconciliation_lookback_mins">
+             <span class="sig-name descname">
+              <span class="pre">
+               reconciliation_lookback_mins
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine.reconciliation_lookback_mins" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The lookback window for reconciliation on start-up (zero for max lookback).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int
+                </cite>
                </p>
               </dd>
              </dl>
@@ -22427,7 +22427,7 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              recon_auto
+              reconciliation_auto
              </span>
             </span>
             <span class="p">
@@ -22461,7 +22461,7 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              recon_lookback_mins
+              reconciliation_lookback_mins
              </span>
             </span>
             <span class="p">
@@ -22561,7 +22561,7 @@ the new model: you should trust this data
               <li>
                <p>
                 <strong>
-                 recon_auto
+                 reconciliation_auto
                 </strong>
                 (
                 <em>
@@ -22573,7 +22573,7 @@ the new model: you should trust this data
               <li>
                <p>
                 <strong>
-                 recon_lookback_mins
+                 reconciliation_lookback_mins
                 </strong>
                 (
                 <em>
