@@ -19921,6 +19921,301 @@ graph for execution by a dask executor.
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.backtest.node.BacktestNode.set_strategy_config">
+             <span class="sig-name descname">
+              <span class="pre">
+               set_strategy_config
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                path
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                strategy
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                instrument_id
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                bar_type
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                trade_size
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                decimal.Decimal
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <a class="headerlink" href="#nautilus_trader.backtest.node.BacktestNode.set_strategy_config" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Set strategy parameters which can be passed to the hyperopt objective.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   path
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  ) – The path to the strategy.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   strategy
+                  </strong>
+                  – The strategy config object.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  – The instrument id.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   bar_type
+                  </strong>
+                  – The type of bar type used.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   trade_size
+                  </strong>
+                  – The trade size to be used.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.backtest.node.BacktestNode.hyperopt_search">
+             <span class="sig-name descname">
+              <span class="pre">
+               hyperopt_search
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                config
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                params
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                max_evals
+               </span>
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                50
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <a class="headerlink" href="#nautilus_trader.backtest.node.BacktestNode.hyperopt_search" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Run hyperopt to optimize strategy parameters.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   config
+                  </strong>
+                  – BacktestRunConfig object used to setup the test.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   params
+                  </strong>
+                  – The set of strategy parameters to optimize.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   max_evals
+                  </strong>
+                  – The maximum number of evaluations for the optimization problem.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 BacktestNode class
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.backtest.node.BacktestNode.return_best_params">
+             <span class="sig-name descname">
+              <span class="pre">
+               return_best_params
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                dict
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.backtest.node.BacktestNode.return_best_params" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the best parameters from hyperopt optimization.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.backtest.node.BacktestNode.run_sync">
              <span class="sig-name descname">
               <span class="pre">
