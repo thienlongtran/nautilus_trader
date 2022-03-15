@@ -674,7 +674,7 @@
         </h1>
         <p>
          The following guide should be read in conjunction with the specific documentation from the broker or exchange
-involving these order types, lists/groups and instructions (such as Interactive Brokers).
+involving these order types, lists/groups and execution instructions (such as for Interactive Brokers).
         </p>
         <section id="order-lists">
          <h2 id="order-lists">
@@ -740,7 +740,7 @@ specific exchange they are being routed to.
           </a>
          </h2>
          <p>
-          Is a group of orders including some entry order bracketed by a take-profit
+          Is a group of orders including some entry order bracketed by two child orders being a take-profit
           <code class="docutils literal notranslate">
            <span class="pre">
             LIMIT
@@ -754,11 +754,9 @@ specific exchange they are being routed to.
           </code>
           order.
 The best way to build this group is via the
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            OrderFactory
-           </span>
-          </code>
+          <a class="reference external" href="https://docs.nautilustrader.io/api_reference/common.html#module-nautilus_trader.common.factories">
+           OrderFactory
+          </a>
           .
          </p>
         </section>

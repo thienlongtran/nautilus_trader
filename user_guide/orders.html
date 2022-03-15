@@ -677,8 +677,8 @@
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="#offset-type">
-                  Offset Type
+                 <a class="md-nav__link" href="#trigger-offset-type">
+                  Trigger Offset Type
                  </a>
                 </li>
                 <li class="md-nav__item">
@@ -905,7 +905,7 @@ a clear explanatory message.
          </h2>
          <p>
           Certain exchanges allow a trader to specify conditions and restrictions on
-how an order will be processed and executed at the exchange. The following is a brief
+how an order will be processed and executed. The following is a brief
 summary of the different execution instructions available.
          </p>
          <section id="time-in-force">
@@ -965,7 +965,7 @@ or active before being filled or the remaining quantity canceled.
                GTD
               </span>
              </code>
-             (Good ‘til Date): The order remains in force until reaching the specified expire date and time.
+             (Good ‘til Date): The order remains in force until reaching the specified expiration date and time.
             </p>
            </li>
            <li>
@@ -1068,12 +1068,12 @@ exchanges, however the behaviour as per the Nautilus
           <ul class="simple">
            <li>
             <p>
-             Order will be cancelled if the position is closed / becomes flat.
+             Order will be cancelled if the associated position is closed / becomes flat.
             </p>
            </li>
            <li>
             <p>
-             Order quantity will be reduced as a positions size for the corresponding instrument reduces.
+             Order quantity will be reduced as the associated positions size reduces.
             </p>
            </li>
           </ul>
@@ -1136,7 +1136,13 @@ this will be the inferred instruction for those exchanges where the display quan
                LAST
               </span>
              </code>
-             price).
+             or
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               BID_ASK
+              </span>
+             </code>
+             ).
             </p>
            </li>
            <li>
@@ -1194,7 +1200,7 @@ this will be the inferred instruction for those exchanges where the display quan
                DOUBLE_BID_ASK
               </span>
              </code>
-             : The trigger price will be based on the last two
+             : The trigger price will be based on the last two consecutive
              <code class="docutils literal notranslate">
               <span class="pre">
                BID
@@ -1266,7 +1272,7 @@ this will be the inferred instruction for those exchanges where the display quan
                MARK
               </span>
              </code>
-             : The trigger price will be based on the exchange mark price for the instrument.
+             : The trigger price will be based on the instruments mark price for the exchange.
             </p>
            </li>
            <li>
@@ -1276,21 +1282,21 @@ this will be the inferred instruction for those exchanges where the display quan
                INDEX
               </span>
              </code>
-             : The trigger price will be based on the exchange index price for the instrument.
+             : The trigger price will be based on the instruments index price for the exchange.
             </p>
            </li>
           </ul>
          </section>
-         <section id="offset-type">
-          <h3 id="offset-type">
-           Offset Type
-           <a class="headerlink" href="#offset-type" title="Permalink to this headline">
+         <section id="trigger-offset-type">
+          <h3 id="trigger-offset-type">
+           Trigger Offset Type
+           <a class="headerlink" href="#trigger-offset-type" title="Permalink to this headline">
             ¶
            </a>
           </h3>
           <p>
            Applicable to conditional trailing STOP trigger orders, specifies the method of triggering modification
-of the STOP price based on the offset.
+of the STOP price based on the offset from the ‘market’ (bid, ask or last price and applicable).
           </p>
           <ul class="simple">
            <li>
@@ -1336,7 +1342,7 @@ of the STOP price based on the offset.
                TICKS
               </span>
              </code>
-             : The offset from the current market is based on the number of ticks.
+             : The offset is based on a number of ticks.
             </p>
            </li>
            <li>
@@ -1359,8 +1365,8 @@ of the STOP price based on the offset.
            </a>
           </h3>
           <p>
-           More advanced relationships can be specified between orders such as assigning child order which will only
-trigger when the parent order is filled, and linking orders together which will cancel or reduce in quantity
+           More advanced relationships can be specified between orders such as assigning child order(s) which will only
+trigger when the parent order is activated or filled, or linking orders together which will cancel or reduce in quantity
 contingent on each other. More documentation for these options can be found in the
            <a class="reference internal" href="advanced/advanced_orders.html">
             <span class="doc std std-doc">
@@ -1413,6 +1419,11 @@ examples will leverage an
           </code>
           context.
          </p>
+         <p>
+          <a class="reference external" href="https://docs.nautilustrader.io/api_reference/common.html#module-nautilus_trader.common.factories">
+           API Reference
+          </a>
+         </p>
          <div class="admonition note">
           <p class="admonition-title">
            Note
@@ -1451,19 +1462,7 @@ a position.
            <em>
             Market
            </em>
-           order to BUY 100,000
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             AUD
-            </span>
-           </code>
-           using
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             USD
-            </span>
-           </code>
-           on the
+           order to BUY 100,000 AUD using USD on the
 Interactive Brokers
            <a class="reference external" href="https://ibkr.info/node/1708">
             IdealPro
@@ -1484,9 +1483,9 @@ Interactive Brokers
            </div>
           </div>
           <p>
-           <span class="xref myst">
+           <a class="reference external" href="https://docs.nautilustrader.io/api_reference/model/orders.html#module-nautilus_trader.model.orders.market">
             API Reference
-           </span>
+           </a>
           </p>
          </section>
          <section id="limit">
@@ -1509,20 +1508,8 @@ execute at that price (or better).
            <em>
             Limit
            </em>
-           order to SELL 20
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             ETH-PERP
-            </span>
-           </code>
-           Perpetual Futures
-contracts at 5000
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             USD
-            </span>
-           </code>
-           on the FTX exchange, as a market maker.
+           order to SELL 20 ETH-PERP Perpetual Futures
+contracts at 5000 USD on the FTX exchange, as a market maker.
           </p>
           <div class="highlight-python notranslate">
            <div class="highlight">
@@ -1542,9 +1529,9 @@ contracts at 5000
            </div>
           </div>
           <p>
-           <span class="xref myst">
+           <a class="reference external" href="https://docs.nautilustrader.io/api_reference/model/orders.html#module-nautilus_trader.model.orders.limit">
             API Reference
-           </span>
+           </a>
           </p>
          </section>
          <section id="stop-market">
@@ -1572,19 +1559,7 @@ as a SELL order against LONG positions, or as a BUY order against SHORT position
            <em>
             Stop-Market
            </em>
-           order to SELL 1
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             BTC
-            </span>
-           </code>
-           at 100,000
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             USDT
-            </span>
-           </code>
-           on the
+           order to SELL 1 BTC at 100,000 USDT on the
 Binance Spot/Margin exchange, active until further notice:
           </p>
           <div class="highlight-python notranslate">
@@ -1604,9 +1579,9 @@ Binance Spot/Margin exchange, active until further notice:
            </div>
           </div>
           <p>
-           <span class="xref myst">
+           <a class="reference external" href="https://docs.nautilustrader.io/api_reference/model/orders.html#module-nautilus_trader.model.orders.stop_market">
             API Reference
-           </span>
+           </a>
           </p>
          </section>
          <section id="stop-limit">
@@ -1633,25 +1608,8 @@ a
            <em>
             Stop-Limit
            </em>
-           order to BUY 50,000
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             GBP
-            </span>
-           </code>
-           at a LIMIT price of 1.3000
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             USD
-            </span>
-           </code>
-           once the market hits the trigger price of 1.30010
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             USD
-            </span>
-           </code>
-           on the
+           order to BUY 50,000 GBP at a limit price of 1.3000 USD
+once the market hits the trigger price of 1.30010 USD on the
 Currenex FX ECN, active until midday 6th June, 2022 (UTC):
           </p>
           <div class="highlight-python notranslate">
@@ -1673,9 +1631,9 @@ Currenex FX ECN, active until midday 6th June, 2022 (UTC):
            </div>
           </div>
           <p>
-           <span class="xref myst">
+           <a class="reference external" href="https://docs.nautilustrader.io/api_reference/model/orders.html#module-nautilus_trader.model.orders.stop_limit">
             API Reference
-           </span>
+           </a>
           </p>
          </section>
          <section id="market-to-limit">
