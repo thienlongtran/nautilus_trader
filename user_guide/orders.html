@@ -332,6 +332,11 @@
               </span>
               <ul class="submenu">
                <li class="md-nav__item">
+                <a class="md-nav__link" href="advanced/advanced_orders.html">
+                 Advanced Orders
+                </a>
+               </li>
+               <li class="md-nav__item">
                 <a class="md-nav__link" href="advanced/portfolio_statistics.html">
                  Portfolio Statistics
                 </a>
@@ -631,13 +636,67 @@
            <nav class="md-nav">
             <ul class="md-nav__list">
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#types">
-               Types
+              <a class="md-nav__link" href="#overview">
+               Overview
               </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#execution-instructions">
+               Execution Instructions
+              </a>
+              <nav class="md-nav">
+               <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#time-in-force">
+                  Time In Force
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#expire-time">
+                  Expire Time
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#post-only">
+                  Post Only
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#reduce-only">
+                  Reduce Only
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#display-quantity">
+                  Display Quantity
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#trigger-type">
+                  Trigger Type
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#offset-type">
+                  Offset Type
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#contingency-orders">
+                  Contingency Orders
+                 </a>
+                </li>
+               </ul>
+              </nav>
              </li>
              <li class="md-nav__item">
               <a class="md-nav__link" href="#order-factory">
                Order Factory
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#order-types">
+               Order Types
               </a>
               <nav class="md-nav">
                <ul class="md-nav__list">
@@ -708,7 +767,7 @@
         </h1>
         <p>
          This guide provides more details on the available order types for the platform, along with
-the optional execution instructions available for each.
+the execution instructions available for each.
         </p>
         <p>
          Orders are one of the fundamental building blocks of any algorithmic trading strategy.
@@ -717,21 +776,21 @@ from standard to more advanced, to offer as much of an exchanges available funct
 as possible. This allows traders to define certain conditions and instructions for
 order execution and management, which allows essentially any type of trading strategy to be created.
         </p>
-        <section id="types">
-         <h2 id="types">
-          Types
-          <a class="headerlink" href="#types" title="Permalink to this headline">
+        <section id="overview">
+         <h2 id="overview">
+          Overview
+          <a class="headerlink" href="#overview" title="Permalink to this headline">
            ¶
           </a>
          </h2>
          <p>
           The two main types of orders are
           <em>
-           market
+           Market
           </em>
           orders and
           <em>
-           limit
+           Limit
           </em>
           orders. All the other order
 types are built from these two fundamental types, in terms of liquidity provision they
@@ -740,7 +799,7 @@ price available. Conversely, limit orders provide liquidity, they act as standin
 at a specified price limit.
          </p>
          <p>
-          The order types available for the platform are (using the enum values):
+          The core order types available for the platform are (using the enum values):
          </p>
          <ul class="simple">
           <li>
@@ -837,6 +896,481 @@ a clear explanatory message.
           </p>
          </div>
         </section>
+        <section id="execution-instructions">
+         <h2 id="execution-instructions">
+          Execution Instructions
+          <a class="headerlink" href="#execution-instructions" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Certain exchanges allow a trader to specify conditions and restrictions on
+how an order will be processed and executed at the exchange. The following is a brief
+summary of the different execution instructions available.
+         </p>
+         <section id="time-in-force">
+          <h3 id="time-in-force">
+           Time In Force
+           <a class="headerlink" href="#time-in-force" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           The orders time in force is an instruction to indicate how long the order will remain open
+or active before being filled or the remaining quantity canceled.
+          </p>
+          <ul class="simple">
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               GTC
+              </span>
+             </code>
+             (Good ‘til Canceled): The order remains in force until canceled by the trader or the exchange.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               IOC
+              </span>
+             </code>
+             (Immediate or Cancel / Fill
+             <strong>
+              and
+             </strong>
+             Kill): The order will execute immediately with any portion of the order quantity which cannot be executed being canceled.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               FOK
+              </span>
+             </code>
+             (Fill
+             <strong>
+              or
+             </strong>
+             Kill): The order will execute immediately, and in full, or not at all.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               GTD
+              </span>
+             </code>
+             (Good ‘til Date): The order remains in force until reaching the specified expire date and time.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               DAY
+              </span>
+             </code>
+             (Good for session/day): The order remains in force until the end of the current trading session.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               AT_THE_OPEN
+              </span>
+             </code>
+             (OPG): The order is only in force at the trading session open.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               AT_THE_CLOSE
+              </span>
+             </code>
+             : The order is only in force at the trading session close.
+            </p>
+           </li>
+          </ul>
+         </section>
+         <section id="expire-time">
+          <h3 id="expire-time">
+           Expire Time
+           <a class="headerlink" href="#expire-time" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           This instruction is to be used in conjunction with the
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             GTD
+            </span>
+           </code>
+           time in force to specify the time
+at which the order will expire and be removed from the exchanges order book or order management system.
+          </p>
+         </section>
+         <section id="post-only">
+          <h3 id="post-only">
+           Post Only
+           <a class="headerlink" href="#post-only" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           An order which is marked as
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             post_only
+            </span>
+           </code>
+           will only ever participate in providing liquidity to the central
+limit order book, and never initiating a trade which takes liquidity as an aggressor. This option is
+important for market makers or traders seeking to restrict the order to a liquidity
+           <em>
+            maker
+           </em>
+           fee tier.
+          </p>
+         </section>
+         <section id="reduce-only">
+          <h3 id="reduce-only">
+           Reduce Only
+           <a class="headerlink" href="#reduce-only" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           An order which is marked as
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             reduce_only
+            </span>
+           </code>
+           will only ever reduce an existing position on an instrument, and
+never open a new position if already flat. The exact behaviour of this instruction can vary between
+exchanges, however the behaviour as per the Nautilus
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             SimulatedExchange
+            </span>
+           </code>
+           is typical of a live exchange.
+          </p>
+          <ul class="simple">
+           <li>
+            <p>
+             Order will be cancelled if the position is closed / becomes flat.
+            </p>
+           </li>
+           <li>
+            <p>
+             Order quantity will be reduced as a positions size for the corresponding instrument reduces.
+            </p>
+           </li>
+          </ul>
+         </section>
+         <section id="display-quantity">
+          <h3 id="display-quantity">
+           Display Quantity
+           <a class="headerlink" href="#display-quantity" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           The
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             display_qty
+            </span>
+           </code>
+           specifies the portion of the
+           <em>
+            Limit
+           </em>
+           order which is displayed on the public limit order book.
+These are also known as iceberg orders as there is a visible portion to be displayed, with more quantity which is hidden.
+Specifying a display quantity of zero is also equivalent to marking an order as
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             hidden
+            </span>
+           </code>
+           , and
+this will be the inferred instruction for those exchanges where the display quantity is a binary all, or none (hidden).
+          </p>
+         </section>
+         <section id="trigger-type">
+          <h3 id="trigger-type">
+           Trigger Type
+           <a class="headerlink" href="#trigger-type" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           Also known as
+           <a class="reference external" href="https://guides.interactivebrokers.com/tws/usersguidebook/configuretws/modify_the_stop_trigger_method.htm">
+            trigger method
+           </a>
+           which is applicable to conditional trigger orders, specifying the method of triggering the STOP price.
+          </p>
+          <ul class="simple">
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               DEFAULT
+              </span>
+             </code>
+             : The default trigger type for the exchange (typically
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               LAST
+              </span>
+             </code>
+             price).
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               LAST
+              </span>
+             </code>
+             : The trigger price will be based on the last traded price.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               BID_ASK
+              </span>
+             </code>
+             : The trigger price will be based on the
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               BID
+              </span>
+             </code>
+             for buy orders and
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               ASK
+              </span>
+             </code>
+             for sell orders.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               DOUBLE_LAST
+              </span>
+             </code>
+             : The trigger price will be based on the last two consecutive
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               LAST
+              </span>
+             </code>
+             prices.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               DOUBLE_BID_ASK
+              </span>
+             </code>
+             : The trigger price will be based on the last two
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               BID
+              </span>
+             </code>
+             or
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               ASK
+              </span>
+             </code>
+             prices as applicable.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               LAST_OR_BID_ASK
+              </span>
+             </code>
+             : The trigger price will be based on the
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               LAST
+              </span>
+             </code>
+             or
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               BID
+              </span>
+             </code>
+             /
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               ASK
+              </span>
+             </code>
+             .
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               MID_POINT
+              </span>
+             </code>
+             : The trigger price will be based on the mid-point between the
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               BID
+              </span>
+             </code>
+             and
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               ASK
+              </span>
+             </code>
+             .
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               MARK
+              </span>
+             </code>
+             : The trigger price will be based on the exchange mark price for the instrument.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               INDEX
+              </span>
+             </code>
+             : The trigger price will be based on the exchange index price for the instrument.
+            </p>
+           </li>
+          </ul>
+         </section>
+         <section id="offset-type">
+          <h3 id="offset-type">
+           Offset Type
+           <a class="headerlink" href="#offset-type" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           Applicable to conditional trailing STOP trigger orders, specifies the method of triggering modification
+of the STOP price based on the offset.
+          </p>
+          <ul class="simple">
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               DEFAULT
+              </span>
+             </code>
+             : The default offset type for the exchange (typically
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               PRICE
+              </span>
+             </code>
+             ).
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               PRICE
+              </span>
+             </code>
+             : The offset is based on a price difference.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               BASIS_POINTS
+              </span>
+             </code>
+             : The offset is based on a price percentage difference expressed in basis points (100 = 1%).
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               TICKS
+              </span>
+             </code>
+             : The offset from the current market is based on the number of ticks.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               PRICE_TIER
+              </span>
+             </code>
+             : The offset is based on an exchange specific price tier.
+            </p>
+           </li>
+          </ul>
+         </section>
+         <section id="contingency-orders">
+          <h3 id="contingency-orders">
+           Contingency Orders
+           <a class="headerlink" href="#contingency-orders" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           More advanced relationships can be specified between orders such as assigning child order which will only
+trigger when the parent order is filled, and linking orders together which will cancel or reduce in quantity
+contingent on each other. More documentation for these options can be found in the
+           <a class="reference internal" href="advanced/advanced_orders.html">
+            <span class="doc std std-doc">
+             advanced order guide
+            </span>
+           </a>
+           .
+          </p>
+         </section>
+        </section>
         <section id="order-factory">
          <h2 id="order-factory">
           Order Factory
@@ -887,6 +1421,14 @@ examples will leverage an
            For clarity, any optional parameters will be clearly marked with a comment which includes the default value.
           </p>
          </div>
+        </section>
+        <section id="order-types">
+         <h2 id="order-types">
+          Order Types
+          <a class="headerlink" href="#order-types" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
          <section id="market">
           <h3 id="market">
            Market
@@ -895,13 +1437,33 @@ examples will leverage an
            </a>
           </h3>
           <p>
-           The vanilla market order is an instruction by the trader to immediately trade
+           A
+           <em>
+            Market
+           </em>
+           order is an instruction by the trader to immediately trade
 the given quantity at the best price available. You can also specify several
 time in force options, and indicate whether this order is only intended to reduce
 a position.
           </p>
           <p>
-           In the following example we create a market order to buy 100,000 AUD on the
+           In the following example we create a
+           <em>
+            Market
+           </em>
+           order to BUY 100,000
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             AUD
+            </span>
+           </code>
+           using
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             USD
+            </span>
+           </code>
+           on the
 Interactive Brokers
            <a class="reference external" href="https://ibkr.info/node/1708">
             IdealPro
@@ -935,6 +1497,51 @@ Interactive Brokers
            </a>
           </h3>
           <p>
+           A
+           <em>
+            Limit
+           </em>
+           order is placed on the public order book at a specific price, and will only
+execute at that price (or better).
+          </p>
+          <p>
+           In the following example we create a
+           <em>
+            Limit
+           </em>
+           order to SELL 20
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             ETH-PERP
+            </span>
+           </code>
+           Perpetual Futures
+contracts at 5000
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             USD
+            </span>
+           </code>
+           on the FTX exchange, as a market maker.
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">LimitOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"ETH-PERP"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"FTX"</span><span class="p">)),</span>
+        <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">SELL</span><span class="p">,</span>
+        <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+        <span class="n">price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"5000.00"</span><span class="p">),</span>
+        <span class="n">time_in_force</span><span class="o">=</span><span class="n">TimeInForce</span><span class="o">.</span><span class="n">GTC</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default GTC)</span>
+        <span class="n">expire_time</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
+        <span class="n">post_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
+        <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
+        <span class="n">display_qty</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None which indicates nothing hidden)</span>
+        <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
+<span class="p">)</span>
+</pre>
+           </div>
+          </div>
+          <p>
            <span class="xref myst">
             API Reference
            </span>
@@ -948,6 +1555,55 @@ Interactive Brokers
            </a>
           </h3>
           <p>
+           A
+           <em>
+            Stop-Market
+           </em>
+           order is a conditional order which once triggered will immediately
+place a
+           <em>
+            Market
+           </em>
+           order. This order type is often used as a stop-loss to limit losses, either
+as a SELL order against LONG positions, or as a BUY order against SHORT positions.
+          </p>
+          <p>
+           In the following example we create a
+           <em>
+            Stop-Market
+           </em>
+           order to SELL 1
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             BTC
+            </span>
+           </code>
+           at 100,000
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             USDT
+            </span>
+           </code>
+           on the
+Binance Spot/Margin exchange, active until further notice:
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">StopMarketOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">stop_market</span><span class="p">(</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"BTCUSDT"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"BINANCE"</span><span class="p">)),</span>
+        <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">SELL</span><span class="p">,</span>
+        <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">trigger_price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">100_000</span><span class="p">),</span>
+        <span class="n">trigger_type</span><span class="o">=</span><span class="n">TriggerType</span><span class="o">.</span><span class="n">LAST</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default DEFAULT)</span>
+        <span class="n">time_in_force</span><span class="o">=</span><span class="n">TimeInForce</span><span class="o">.</span><span class="n">GTC</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default GTC)</span>
+        <span class="n">expire_time</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
+        <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
+        <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
+<span class="p">)</span>
+</pre>
+           </div>
+          </div>
+          <p>
            <span class="xref myst">
             API Reference
            </span>
@@ -960,6 +1616,62 @@ Interactive Brokers
             ¶
            </a>
           </h3>
+          <p>
+           A
+           <em>
+            Stop-Limit
+           </em>
+           order is a conditional order which once triggered will immediately place
+a
+           <em>
+            Limit
+           </em>
+           order.
+          </p>
+          <p>
+           In the following example we create a
+           <em>
+            Stop-Limit
+           </em>
+           order to BUY 50,000
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             GBP
+            </span>
+           </code>
+           at a LIMIT price of 1.3000
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             USD
+            </span>
+           </code>
+           once the market hits the trigger price of 1.30010
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             USD
+            </span>
+           </code>
+           on the
+Currenex FX ECN, active until midday 6th June, 2022 (UTC):
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">StopLimitOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">stop_limit</span><span class="p">(</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"GBP/USD"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"CURRENEX"</span><span class="p">)),</span>
+        <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">BUY</span><span class="p">,</span>
+        <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">50_000</span><span class="p">),</span>
+        <span class="n">price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"1.30000"</span><span class="p">),</span>
+        <span class="n">trigger_price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"1.30010"</span><span class="p">),</span>
+        <span class="n">trigger_type</span><span class="o">=</span><span class="n">TriggerType</span><span class="o">.</span><span class="n">BID</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default DEFAULT)</span>
+        <span class="n">time_in_force</span><span class="o">=</span><span class="n">TimeInForce</span><span class="o">.</span><span class="n">GTD</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default GTC)</span>
+        <span class="n">expire_time</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s2">"2022-06-01T12:00"</span><span class="p">),</span>
+        <span class="n">post_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
+        <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
+        <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
+<span class="p">)</span>
+</pre>
+           </div>
+          </div>
           <p>
            <span class="xref myst">
             API Reference
