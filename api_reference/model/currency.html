@@ -947,6 +947,17 @@ decimal precision.
               </span>
              </span>
             </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               bool
+              </span>
+              <span class="pre">
+               strict=False
+              </span>
+             </span>
+            </em>
             <span class="sig-paren">
              )
             </span>
@@ -963,16 +974,40 @@ decimal precision.
               Parameters
              </dt>
              <dd class="field-odd">
-              <p>
-               <strong>
-                code
-               </strong>
-               (
-               <em>
-                str
-               </em>
-               ) – The code of the currency to get.
-              </p>
+              <ul class="simple">
+               <li>
+                <p>
+                 <strong>
+                  code
+                 </strong>
+                 (
+                 <em>
+                  str
+                 </em>
+                 ) – The code of the currency to get.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  strict
+                 </strong>
+                 (
+                 <em>
+                  bool
+                 </em>
+                 <em>
+                  ,
+                 </em>
+                 <em>
+                  default False
+                 </em>
+                 ) – If strict mode is enabled. If not strict mode then it’s very likely
+the currency is a crypto, so for robustness will then return a new
+crypto currency using the code and a default precision of 8.
+                </p>
+               </li>
+              </ul>
              </dd>
              <dt class="field-even">
               Returns
