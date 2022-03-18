@@ -736,6 +736,16 @@
                  </a>
                 </li>
                 <li class="md-nav__item">
+                 <a class="md-nav__link" href="#trailing-stop-market">
+                  Trailing-Stop-Market
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#trailing-stop-limit">
+                  Trailing-Stop-Limit
+                 </a>
+                </li>
+                <li class="md-nav__item">
                  <a class="md-nav__link" href="#order-lists">
                   Order Lists
                  </a>
@@ -1120,7 +1130,7 @@ this will be the inferred instruction for those exchanges where the display quan
            <a class="reference external" href="https://guides.interactivebrokers.com/tws/usersguidebook/configuretws/modify_the_stop_trigger_method.htm">
             trigger method
            </a>
-           which is applicable to conditional trigger orders, specifying the method of triggering the STOP price.
+           which is applicable to conditional trigger orders, specifying the method of triggering the stop price.
           </p>
           <ul class="simple">
            <li>
@@ -1296,7 +1306,7 @@ this will be the inferred instruction for those exchanges where the display quan
           </h3>
           <p>
            Applicable to conditional trailing STOP trigger orders, specifies the method of triggering modification
-of the STOP price based on the offset from the ‘market’ (bid, ask or last price and applicable).
+of the stop price based on the offset from the ‘market’ (bid, ask or last price and applicable).
           </p>
           <ul class="simple">
            <li>
@@ -1601,7 +1611,7 @@ a
            <em>
             Limit
            </em>
-           order.
+           order at the specified price.
           </p>
           <p>
            In the following example we create a
@@ -1644,9 +1654,49 @@ Currenex FX ECN, active until midday 6th June, 2022 (UTC):
            </a>
           </h3>
           <p>
-           <span class="xref myst">
+           A
+           <em>
+            Market-To-Limit
+           </em>
+           order is submitted as a market order to execute at the current best market price.
+If the order is only partially filled, the remainder of the order is canceled and re-submitted as a
+           <em>
+            Limit
+           </em>
+           order with
+the limit price equal to the price at which the filled portion of the order executed.
+          </p>
+          <p>
+           In the following example we create a
+           <em>
+            Market-To-Limit
+           </em>
+           order to BUY 200,000 USD using JPY
+on the Interactive Brokers
+           <a class="reference external" href="https://ibkr.info/node/1708">
+            IdealPro
+           </a>
+           Forex ECN:
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">MarketToLimitOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">market_to_limit</span><span class="p">(</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"USD/JPY"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"IDEALPRO"</span><span class="p">)),</span>
+        <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">BUY</span><span class="p">,</span>
+        <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">200_000</span><span class="p">),</span>
+        <span class="n">price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"1.30000"</span><span class="p">),</span>
+        <span class="n">time_in_force</span><span class="o">=</span><span class="n">TimeInForce</span><span class="o">.</span><span class="n">GTC</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default GTC)</span>
+        <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
+        <span class="n">display_qty</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None which indicates nothing hidden)</span>
+        <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
+<span class="p">)</span>
+</pre>
+           </div>
+          </div>
+          <p>
+           <a class="reference external" href="https://docs.nautilustrader.io/api_reference/model/orders.html#module-nautilus_trader.model.orders.market_to_limit">
             API Reference
-           </span>
+           </a>
           </p>
          </section>
          <section id="market-if-touched">
@@ -1657,9 +1707,47 @@ Currenex FX ECN, active until midday 6th June, 2022 (UTC):
            </a>
           </h3>
           <p>
-           <span class="xref myst">
+           A
+           <em>
+            Market-If-Touched
+           </em>
+           order is a conditional order which once triggered will immediately
+place a
+           <em>
+            Market
+           </em>
+           order. This order type is often used to enter a new position on a stop price in the market orders direction,
+or to take profits from an existing position, either as a SELL order against LONG positions,
+or as a BUY order against SHORT positions.
+          </p>
+          <p>
+           In the following example we create a
+           <em>
+            Market-If-Touched
+           </em>
+           order to SELL 10 ETHUSDT-PERP Perpetual Futures contracts at 10,000 USDT on the
+Binance Futures exchange, active until further notice:
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">MarketIfTouchedOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">market_if_touched</span><span class="p">(</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"ETHUSDT-PERP"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"BINANCE"</span><span class="p">)),</span>
+        <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">SELL</span><span class="p">,</span>
+        <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+        <span class="n">trigger_price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="s2">"10000.00"</span><span class="p">),</span>
+        <span class="n">trigger_type</span><span class="o">=</span><span class="n">TriggerType</span><span class="o">.</span><span class="n">LAST</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default DEFAULT)</span>
+        <span class="n">time_in_force</span><span class="o">=</span><span class="n">TimeInForce</span><span class="o">.</span><span class="n">GTC</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default GTC)</span>
+        <span class="n">expire_time</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
+        <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
+        <span class="n">tags</span><span class="o">=</span><span class="s2">"ENTRY"</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
+<span class="p">)</span>
+</pre>
+           </div>
+          </div>
+          <p>
+           <a class="reference external" href="https://docs.nautilustrader.io/api_reference/model/orders.html#module-nautilus_trader.model.orders.market_if_touched">
             API Reference
-           </span>
+           </a>
           </p>
          </section>
          <section id="limit-if-touched">
@@ -1670,9 +1758,155 @@ Currenex FX ECN, active until midday 6th June, 2022 (UTC):
            </a>
           </h3>
           <p>
-           <span class="xref myst">
+           A
+           <em>
+            Limit-If_Touched
+           </em>
+           order is a conditional order which once triggered will immediately place
+a
+           <em>
+            Limit
+           </em>
+           order at the specified price.
+          </p>
+          <p>
+           In the following example we create a
+           <em>
+            Stop-Limit
+           </em>
+           order to BUY 5 BTCUSDT-PERP Perpetual Futures contracts at a limit price of 30_100 USDT
+once the market hits the trigger price of 30_150 USDT on the
+Binance Futures exchange, active until midday 6th June, 2022 (UTC):
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">StopLimitOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">limit_if_touched</span><span class="p">(</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"BTCUSDT-PERP"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"BINANCE"</span><span class="p">)),</span>
+        <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">BUY</span><span class="p">,</span>
+        <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+        <span class="n">price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"30100"</span><span class="p">),</span>
+        <span class="n">trigger_price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"30150"</span><span class="p">),</span>
+        <span class="n">trigger_type</span><span class="o">=</span><span class="n">TriggerType</span><span class="o">.</span><span class="n">LAST</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default DEFAULT)</span>
+        <span class="n">time_in_force</span><span class="o">=</span><span class="n">TimeInForce</span><span class="o">.</span><span class="n">GTD</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default GTC)</span>
+        <span class="n">expire_time</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s2">"2022-06-01T12:00"</span><span class="p">),</span>
+        <span class="n">post_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
+        <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
+        <span class="n">tags</span><span class="o">=</span><span class="s2">"TAKE_PROFIT"</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
+<span class="p">)</span>
+</pre>
+           </div>
+          </div>
+          <p>
+           <a class="reference external" href="https://docs.nautilustrader.io/api_reference/model/orders.html#module-nautilus_trader.model.orders.limit_if_touched">
             API Reference
-           </span>
+           </a>
+          </p>
+         </section>
+         <section id="trailing-stop-market">
+          <h3 id="trailing-stop-market">
+           Trailing-Stop-Market
+           <a class="headerlink" href="#trailing-stop-market" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           A
+           <em>
+            Trailing-Stop-Market
+           </em>
+           order is a conditional order which trails a stop trigger price
+a fixed offset away from the defined market price. Once triggered a
+           <em>
+            Market
+           </em>
+           order will
+immediately be placed.
+          </p>
+          <p>
+           In the following example we create a
+           <em>
+            Trailing-Stop-Market
+           </em>
+           order to SELL 10 ETHUSD-PERP COIN_M margined
+Perpetual Futures Contracts activating at 5000 USD then trailing at an offset of 1% (in basis points) away from the current last traded price, on the Binance Futures exchange:
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">TrailingStopMarketOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">trailing_stop_market</span><span class="p">(</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"ETHUSD-PERP"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"BINANCE"</span><span class="p">)),</span>
+        <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">SELL</span><span class="p">,</span>
+        <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+        <span class="n">trigger_price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"5000"</span><span class="p">),</span>
+        <span class="n">trigger_type</span><span class="o">=</span><span class="n">TriggerType</span><span class="o">.</span><span class="n">LAST</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default DEFAULT)</span>
+        <span class="n">trailing_offset</span><span class="o">=</span><span class="n">Decimal</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+        <span class="n">offset_type</span><span class="o">=</span><span class="n">TrailingOffsetType</span><span class="o">.</span><span class="n">BASIS_POINTS</span><span class="p">,</span>
+        <span class="n">time_in_force</span><span class="o">=</span><span class="n">TimeInForce</span><span class="o">.</span><span class="n">GTC</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default GTC)</span>
+        <span class="n">expire_time</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
+        <span class="n">reduce_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
+        <span class="n">tags</span><span class="o">=</span><span class="s2">"TRAILING_STOP-1"</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
+<span class="p">)</span>
+</pre>
+           </div>
+          </div>
+          <p>
+           <a class="reference external" href="https://docs.nautilustrader.io/api_reference/model/orders.html#module-nautilus_trader.model.orders.trailing_stop_market">
+            API Reference
+           </a>
+          </p>
+         </section>
+         <section id="trailing-stop-limit">
+          <h3 id="trailing-stop-limit">
+           Trailing-Stop-Limit
+           <a class="headerlink" href="#trailing-stop-limit" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           A
+           <em>
+            Trailing-Stop-Limit
+           </em>
+           order is a conditional order which trails a stop trigger price
+a fixed offset away from the defined market price. Once triggered a
+           <em>
+            Limit
+           </em>
+           order will
+immediately be placed at the defined price (which is also updated as the market moves until triggered).
+          </p>
+          <p>
+           In the following example we create a
+           <em>
+            Trailing-Stop-Limit
+           </em>
+           order to BUY 1,250,000 AUD using USD
+at a limit price of 0.72000 USD activating at 0.71000 USD then trailing at a stop offset of 0.00100 USD
+away from the current ask price on the Currenex FX ECN, active until further notice:
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">TrailingStopLimitOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">trailing_stop_limit</span><span class="p">(</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"AUD/USD"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"CURRENEX"</span><span class="p">)),</span>
+        <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">BUY</span><span class="p">,</span>
+        <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">1_250_000</span><span class="p">),</span>
+        <span class="n">price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"0.71000"</span><span class="p">),</span>
+        <span class="n">trigger_price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"0.72000"</span><span class="p">),</span>
+        <span class="n">trigger_type</span><span class="o">=</span><span class="n">TriggerType</span><span class="o">.</span><span class="n">BID_ASK</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default DEFAULT)</span>
+        <span class="n">limit_offset</span><span class="o">=</span><span class="n">Decimal</span><span class="p">(</span><span class="s2">"0.00050"</span><span class="p">),</span>
+        <span class="n">trailing_offset</span><span class="o">=</span><span class="n">Decimal</span><span class="p">(</span><span class="s2">"0.00100"</span><span class="p">),</span>
+        <span class="n">offset_type</span><span class="o">=</span><span class="n">TrailingOffsetType</span><span class="o">.</span><span class="n">PRICE</span><span class="p">,</span>
+        <span class="n">time_in_force</span><span class="o">=</span><span class="n">TimeInForce</span><span class="o">.</span><span class="n">GTC</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default GTC)</span>
+        <span class="n">expire_time</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
+        <span class="n">reduce_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
+        <span class="n">tags</span><span class="o">=</span><span class="s2">"TRAILING_STOP"</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
+<span class="p">)</span>
+</pre>
+           </div>
+          </div>
+          <p>
+           <a class="reference external" href="https://docs.nautilustrader.io/api_reference/model/orders.html#module-nautilus_trader.model.orders.trailing_stop_limit">
+            API Reference
+           </a>
           </p>
          </section>
          <section id="order-lists">
