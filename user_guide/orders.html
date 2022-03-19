@@ -776,7 +776,7 @@
          </a>
         </h1>
         <p>
-         This guide provides more details on the available order types for the platform, along with
+         This guide provides more details about the available order types for the platform, along with
 the execution instructions available for each.
         </p>
         <p>
@@ -804,9 +804,17 @@ order execution and management, which allows essentially any type of trading str
           </em>
           orders. All the other order
 types are built from these two fundamental types, in terms of liquidity provision they
-are exact opposites. Market orders demand liquidity and require immediate trading at the best
-price available. Conversely, limit orders provide liquidity, they act as standing orders in a limit order book
-at a specified price limit.
+are exact opposites.
+          <em>
+           Market
+          </em>
+          orders demand liquidity and require immediate trading at the best
+price available. Conversely,
+          <em>
+           Limit
+          </em>
+          orders provide liquidity, they act as standing orders in a limit order book
+at a specified limit price.
          </p>
          <p>
           The core order types available for the platform are (using the enum values):
@@ -1102,7 +1110,7 @@ exchanges, however the behaviour as per the Nautilus
              display_qty
             </span>
            </code>
-           specifies the portion of the
+           specifies the portion of a
            <em>
             Limit
            </em>
@@ -1305,8 +1313,8 @@ this will be the inferred instruction for those exchanges where the display quan
            </a>
           </h3>
           <p>
-           Applicable to conditional trailing STOP trigger orders, specifies the method of triggering modification
-of the stop price based on the offset from the ‘market’ (bid, ask or last price and applicable).
+           Applicable to conditional trailing-stop trigger orders, specifies the method of triggering modification
+of the stop price based on the offset from the ‘market’ (bid, ask or last price as applicable).
           </p>
           <ul class="simple">
            <li>
@@ -1342,7 +1350,7 @@ of the stop price based on the offset from the ‘market’ (bid, ask or last pr
                BASIS_POINTS
               </span>
              </code>
-             : The offset is based on a price percentage difference expressed in basis points (100 = 1%).
+             : The offset is based on a price percentage difference expressed in basis points (100bp = 1%).
             </p>
            </li>
            <li>
@@ -1409,7 +1417,7 @@ automatically attached to every
            </span>
           </code>
           class. This factory will take care
-of lower level details - such as ensuring the correct trader ID and strategy ID is assigned, generation
+of lower level details - such as ensuring the correct trader ID and strategy ID are assigned, generation
 of a necessary initialization ID and timestamp, and abstracts away parameters which don’t necessarily
 apply to the order type being created, or are only needed to specify more advanced execution instructions.
          </p>
@@ -1472,12 +1480,12 @@ a position.
            <em>
             Market
            </em>
-           order to BUY 100,000 AUD using USD on the
-Interactive Brokers
+           order on the Interactive Brokers
            <a class="reference external" href="https://ibkr.info/node/1708">
             IdealPro
            </a>
-           Forex ECN:
+           Forex ECN
+to BUY 100,000 AUD using USD:
           </p>
           <div class="highlight-python notranslate">
            <div class="highlight">
@@ -1518,8 +1526,8 @@ execute at that price (or better).
            <em>
             Limit
            </em>
-           order to SELL 20 ETH-PERP Perpetual Futures
-contracts at 5000 USD on the FTX exchange, as a market maker.
+           order on the FTX Crypto exchange to SELL 20 ETH-PERP Perpetual Futures
+contracts at a limit price of 5000 USD, as a market maker.
           </p>
           <div class="highlight-python notranslate">
            <div class="highlight">
@@ -1569,8 +1577,8 @@ as a SELL order against LONG positions, or as a BUY order against SHORT position
            <em>
             Stop-Market
            </em>
-           order to SELL 1 BTC at 100,000 USDT on the
-Binance Spot/Margin exchange, active until further notice:
+           order on the Binance Spot/Margin exchange
+to SELL 1 BTC at a trigger price of 100,000 USDT, active until further notice:
           </p>
           <div class="highlight-python notranslate">
            <div class="highlight">
@@ -1618,9 +1626,8 @@ a
            <em>
             Stop-Limit
            </em>
-           order to BUY 50,000 GBP at a limit price of 1.3000 USD
-once the market hits the trigger price of 1.30010 USD on the
-Currenex FX ECN, active until midday 6th June, 2022 (UTC):
+           order on the Currenex FX ECN to BUY 50,000 GBP at a limit price of 1.3000 USD
+once the market hits the trigger price of 1.30010 USD, active until midday 6th June, 2022 (UTC):
           </p>
           <div class="highlight-python notranslate">
            <div class="highlight">
@@ -1632,7 +1639,7 @@ Currenex FX ECN, active until midday 6th June, 2022 (UTC):
         <span class="n">trigger_price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"1.30010"</span><span class="p">),</span>
         <span class="n">trigger_type</span><span class="o">=</span><span class="n">TriggerType</span><span class="o">.</span><span class="n">BID</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default DEFAULT)</span>
         <span class="n">time_in_force</span><span class="o">=</span><span class="n">TimeInForce</span><span class="o">.</span><span class="n">GTD</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default GTC)</span>
-        <span class="n">expire_time</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s2">"2022-06-01T12:00"</span><span class="p">),</span>
+        <span class="n">expire_time</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s2">"2022-06-06T12:00"</span><span class="p">),</span>
         <span class="n">post_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
         <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
         <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
@@ -1671,12 +1678,12 @@ the limit price equal to the price at which the filled portion of the order exec
            <em>
             Market-To-Limit
            </em>
-           order to BUY 200,000 USD using JPY
-on the Interactive Brokers
+           order on the Interactive Brokers
            <a class="reference external" href="https://ibkr.info/node/1708">
             IdealPro
            </a>
-           Forex ECN:
+           Forex ECN
+to BUY 200,000 USD using JPY:
           </p>
           <div class="highlight-python notranslate">
            <div class="highlight">
@@ -1725,8 +1732,8 @@ or as a BUY order against SHORT positions.
            <em>
             Market-If-Touched
            </em>
-           order to SELL 10 ETHUSDT-PERP Perpetual Futures contracts at 10,000 USDT on the
-Binance Futures exchange, active until further notice:
+           order on the Binance Futures exchange
+to SELL 10 ETHUSDT-PERP Perpetual Futures contracts at a trigger price of 10,000 USDT, active until further notice:
           </p>
           <div class="highlight-python notranslate">
            <div class="highlight">
@@ -1774,9 +1781,9 @@ a
            <em>
             Stop-Limit
            </em>
-           order to BUY 5 BTCUSDT-PERP Perpetual Futures contracts at a limit price of 30_100 USDT
-once the market hits the trigger price of 30_150 USDT on the
-Binance Futures exchange, active until midday 6th June, 2022 (UTC):
+           order to BUY 5 BTCUSDT-PERP Perpetual Futures contracts on the
+Binance Futures exchange at a limit price of 30_100 USDT (once the market hits the trigger price of 30_150 USDT),
+active until midday 6th June, 2022 (UTC):
           </p>
           <div class="highlight-python notranslate">
            <div class="highlight">
@@ -1788,7 +1795,7 @@ Binance Futures exchange, active until midday 6th June, 2022 (UTC):
         <span class="n">trigger_price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"30150"</span><span class="p">),</span>
         <span class="n">trigger_type</span><span class="o">=</span><span class="n">TriggerType</span><span class="o">.</span><span class="n">LAST</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default DEFAULT)</span>
         <span class="n">time_in_force</span><span class="o">=</span><span class="n">TimeInForce</span><span class="o">.</span><span class="n">GTD</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default GTC)</span>
-        <span class="n">expire_time</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s2">"2022-06-01T12:00"</span><span class="p">),</span>
+        <span class="n">expire_time</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s2">"2022-06-06T12:00"</span><span class="p">),</span>
         <span class="n">post_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
         <span class="n">reduce_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default False)</span>
         <span class="n">tags</span><span class="o">=</span><span class="s2">"TAKE_PROFIT"</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default None)</span>
@@ -1827,8 +1834,8 @@ immediately be placed.
            <em>
             Trailing-Stop-Market
            </em>
-           order to SELL 10 ETHUSD-PERP COIN_M margined
-Perpetual Futures Contracts activating at 5000 USD then trailing at an offset of 1% (in basis points) away from the current last traded price, on the Binance Futures exchange:
+           order on the Binance Futures exchange to SELL 10 ETHUSD-PERP COIN_M margined
+Perpetual Futures Contracts activating at a trigger price of 5000 USD, then trailing at an offset of 1% (in basis points) away from the current last traded price:
           </p>
           <div class="highlight-python notranslate">
            <div class="highlight">
@@ -1879,9 +1886,9 @@ immediately be placed at the defined price (which is also updated as the market 
            <em>
             Trailing-Stop-Limit
            </em>
-           order to BUY 1,250,000 AUD using USD
-at a limit price of 0.72000 USD activating at 0.71000 USD then trailing at a stop offset of 0.00100 USD
-away from the current ask price on the Currenex FX ECN, active until further notice:
+           order on the Currenex FX ECN to BUY 1,250,000 AUD using USD
+at a limit price of 0.72000 USD, activating at 0.71000 USD then trailing at a stop offset of 0.00100 USD
+away from the current ask price, active until further notice:
           </p>
           <div class="highlight-python notranslate">
            <div class="highlight">

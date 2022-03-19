@@ -692,7 +692,7 @@
                <ul class="md-nav__list">
                 <li class="md-nav__item">
                  <a class="md-nav__link" href="#start-up-a-local-dask-cluster-to-execute-the-graph">
-                  Start up a local dask cluster to execute the graph
+                  Start up a local Dask cluster to execute the graph
                  </a>
                 </li>
                 <li class="md-nav__item">
@@ -839,7 +839,7 @@
             nautilus_trader.persistence.external.readers
            </span>
           </code>
-          module. The module contains methods for reading various data formats (csv, json, txt), minimising the amount of code required to get data loaded correctly into the data catalog.
+          module. The module contains methods for reading various data formats (CSV, JSON, text), minimising the amount of code required to get data loaded correctly into the data catalog.
          </p>
          <p>
           The FX data from
@@ -848,7 +848,7 @@
             histdata
            </span>
           </code>
-          is stored in csv/text format, with fields
+          is stored in CSV/text format, with fields
           <code class="docutils literal notranslate">
            <span class="pre">
             timestamp,
@@ -875,7 +875,13 @@
           helper, which allows reading and applying a parsing function line by line.
          </p>
          <p>
-          Then, we simply instantiate a data catalog (passing in a directory where to store the data, by default we will just use the current directory) and pass our parsing function wrapping in the Reader class to
+          Then, we simply instantiate a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            DataCatalog
+           </span>
+          </code>
+          (passing in a directory where to store the data, by default we will just use the current directory) and pass our parsing function wrapping in the Reader class to
           <code class="docutils literal notranslate">
            <span class="pre">
             process_files
@@ -948,7 +954,7 @@
     <span class="n">catalog</span><span class="o">=</span><span class="n">catalog</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="c1"># Also manually write the AUDUSD instrument to the catalog</span>
+<span class="c1"># Also manually write the AUD/USD instrument to the catalog</span>
 <span class="n">write_objects</span><span class="p">(</span><span class="n">catalog</span><span class="p">,</span> <span class="p">[</span><span class="n">AUDUSD</span><span class="p">])</span>
 </pre>
           </div>
@@ -968,13 +974,13 @@
             catalog
            </span>
           </code>
-          instance can be used for loading data into the backtest engine, or simple for research purposes. It contains various methods to pull data from the catalog, like
+          instance can be used for loading data for backtests, or simple for research purposes. It contains various methods to pull data from the catalog, like
           <code class="docutils literal notranslate">
            <span class="pre">
             quote_ticks
            </span>
           </code>
-          (show below))
+          (show below).
          </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
@@ -1000,7 +1006,7 @@
           </a>
          </h2>
          <p>
-          Nautilus has a top level object
+          Nautilus has a top-level object
           <code class="docutils literal notranslate">
            <span class="pre">
             BacktestRunConfig
@@ -1027,7 +1033,6 @@
           <div class="highlight-python notranslate">
            <div class="highlight">
             <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestRunConfig</span><span class="p">,</span> <span class="n">BacktestVenueConfig</span><span class="p">,</span> <span class="n">BacktestDataConfig</span><span class="p">,</span> <span class="n">BacktestEngineConfig</span>
-<span class="kn">from</span> <span class="nn">nautilus_trader.model.currencies</span> <span class="kn">import</span> <span class="n">USD</span>
 
 <span class="c1"># Create a `base` config object to be shared with all backtests</span>
 <span class="n">base</span> <span class="o">=</span> <span class="n">BacktestRunConfig</span><span class="p">(</span>
@@ -1204,7 +1209,13 @@
           </a>
          </h2>
          <p>
-          Finally, we can create a BacktestNode and run the backtest:
+          Finally, we can create a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestNode
+           </span>
+          </code>
+          and run the backtest:
          </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
@@ -1229,7 +1240,7 @@
           </div>
          </div>
          <p>
-          ^ Notice because our configs share the same data, that only one instance of
+          Notice because our configs share the same data, that only one instance of
           <code class="docutils literal notranslate">
            <span class="pre">
             load
@@ -1239,7 +1250,7 @@
          </p>
          <section id="start-up-a-local-dask-cluster-to-execute-the-graph">
           <h3 id="start-up-a-local-dask-cluster-to-execute-the-graph">
-           Start up a local dask cluster to execute the graph
+           Start up a local Dask cluster to execute the graph
            <a class="headerlink" href="#start-up-a-local-dask-cluster-to-execute-the-graph" title="Permalink to this headline">
             ¶
            </a>
@@ -1278,12 +1289,6 @@
           <div class="highlight-python notranslate">
            <div class="highlight">
             <pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">plot_balances</span><span class="p">()</span>
-</pre>
-           </div>
-          </div>
-          <div class="highlight-python notranslate">
-           <div class="highlight">
-            <pre><span></span>
 </pre>
            </div>
           </div>
