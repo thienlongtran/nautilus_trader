@@ -759,7 +759,7 @@
             DATA_DIR
            </span>
           </code>
-          below to the directory containing the data. By default it will use the users
+          below to the directory containing the data. By default, it will use the users
           <code class="docutils literal notranslate">
            <span class="pre">
             Downloads
@@ -1101,7 +1101,7 @@
 
 <span class="n">data_config</span><span class="o">=</span><span class="p">[</span>
     <span class="n">BacktestDataConfig</span><span class="p">(</span>
-        <span class="n">catalog_path</span><span class="o">=</span><span class="n">CATALOG_PATH</span><span class="p">,</span>
+        <span class="n">catalog_path</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">DataCatalog</span><span class="o">.</span><span class="n">from_env</span><span class="p">()</span><span class="o">.</span><span class="n">path</span><span class="p">),</span>
         <span class="n">data_cls</span><span class="o">=</span><span class="n">QuoteTick</span><span class="o">.</span><span class="n">fully_qualified_name</span><span class="p">(),</span>
         <span class="n">instrument_id</span><span class="o">=</span><span class="n">instrument</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
         <span class="n">start_time</span><span class="o">=</span><span class="mi">1580398089820000000</span><span class="p">,</span>
