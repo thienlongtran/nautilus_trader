@@ -2787,6 +2787,83 @@ cached client will be returned.
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.data.BinanceDataClient.subscribe">
+             <span class="sig-name descname">
+              <span class="pre">
+               subscribe
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                data_type
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                <span class="pre">
+                 nautilus_trader.model.data.base.DataType
+                </span>
+               </a>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.adapters.binance.data.BinanceDataClient.subscribe" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Subscribe to
+              <cite>
+               Binance
+              </cite>
+              specific data streams.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <a class="reference internal" href="../model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                 <em>
+                  DataType
+                 </em>
+                </a>
+                ) – The data type of the data.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.data.BinanceDataClient.subscribe_instruments">
              <span class="sig-name descname">
               <span class="pre">
@@ -3344,6 +3421,83 @@ cached client will be returned.
              <p>
               Abstract method (implement in subclass).
              </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.data.BinanceDataClient.unsubscribe">
+             <span class="sig-name descname">
+              <span class="pre">
+               unsubscribe
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                data_type
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                <span class="pre">
+                 nautilus_trader.model.data.base.DataType
+                </span>
+               </a>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.adapters.binance.data.BinanceDataClient.unsubscribe" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Subscribe to
+              <cite>
+               Binance
+              </cite>
+              specific data streams.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <a class="reference internal" href="../model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                 <em>
+                  DataType
+                 </em>
+                </a>
+                ) – The data type of the data.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -5118,57 +5272,6 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.data.BinanceDataClient.subscribe">
-             <span class="sig-name descname">
-              <span class="pre">
-               subscribe
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                DataType
-               </span>
-               <span class="pre">
-                data_type
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                void
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.adapters.binance.data.BinanceDataClient.subscribe" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Abstract method (implement in subclass).
-             </p>
-            </dd>
-           </dl>
-           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.data.BinanceDataClient.subscribed_bars">
              <span class="sig-name descname">
               <span class="pre">
@@ -5744,57 +5847,6 @@ called after faulting.
                </p>
               </dd>
              </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.data.BinanceDataClient.unsubscribe">
-             <span class="sig-name descname">
-              <span class="pre">
-               unsubscribe
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                DataType
-               </span>
-               <span class="pre">
-                data_type
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                void
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.adapters.binance.data.BinanceDataClient.unsubscribe" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Abstract method (implement in subclass).
-             </p>
             </dd>
            </dl>
            <dl class="py attribute">

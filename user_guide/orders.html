@@ -1112,8 +1112,7 @@ Specifying a display quantity of zero is also equivalent to marking an order as
              hidden
             </span>
            </code>
-           , and
-this will be the inferred instruction for those exchanges where the display quantity is a binary all, or none (hidden).
+           .
           </p>
          </section>
          <section id="trigger-type">
@@ -1280,7 +1279,7 @@ this will be the inferred instruction for those exchanges where the display quan
                MARK
               </span>
              </code>
-             : The trigger price will be based on the instruments mark price for the exchange.
+             : The trigger price will be based on the exchanges mark price for the instrument.
             </p>
            </li>
            <li>
@@ -1290,7 +1289,7 @@ this will be the inferred instruction for those exchanges where the display quan
                INDEX
               </span>
              </code>
-             : The trigger price will be based on the instruments index price for the exchange.
+             : The trigger price will be based on the exchanges index price for the instrument.
             </p>
            </li>
           </ul>
@@ -1480,7 +1479,7 @@ to BUY 100,000 AUD using USD:
           <div class="highlight-python notranslate">
            <div class="highlight">
             <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">MarketOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">market</span><span class="p">(</span>
-        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"AUD/USD"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"IDEALPRO"</span><span class="p">)),</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"AUD/USD.IDEALPRO"</span><span class="p">),</span>
         <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">BUY</span><span class="p">,</span>
         <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">100000</span><span class="p">),</span>
         <span class="n">time_in_force</span><span class="o">=</span><span class="n">TimeInForce</span><span class="o">.</span><span class="n">IOC</span><span class="p">,</span>  <span class="c1"># &lt;-- optional (default GTC)</span>
@@ -1522,7 +1521,7 @@ contracts at a limit price of 5000 USD, as a market maker.
           <div class="highlight-python notranslate">
            <div class="highlight">
             <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">LimitOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span>
-        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"ETH-PERP"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"FTX"</span><span class="p">)),</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"ETH-PERP.FTX"</span><span class="p">),</span>
         <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">SELL</span><span class="p">,</span>
         <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
         <span class="n">price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"5000.00"</span><span class="p">),</span>
@@ -1573,7 +1572,7 @@ to SELL 1 BTC at a trigger price of 100,000 USDT, active until further notice:
           <div class="highlight-python notranslate">
            <div class="highlight">
             <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">StopMarketOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">stop_market</span><span class="p">(</span>
-        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"BTCUSDT"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"BINANCE"</span><span class="p">)),</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"BTCUSDT.BINANCE"</span><span class="p">),</span>
         <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">SELL</span><span class="p">,</span>
         <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
         <span class="n">trigger_price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">100_000</span><span class="p">),</span>
@@ -1622,7 +1621,7 @@ once the market hits the trigger price of 1.30010 USD, active until midday 6th J
           <div class="highlight-python notranslate">
            <div class="highlight">
             <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">StopLimitOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">stop_limit</span><span class="p">(</span>
-        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"GBP/USD"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"CURRENEX"</span><span class="p">)),</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"GBP/USD.CURRENEX"</span><span class="p">),</span>
         <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">BUY</span><span class="p">,</span>
         <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">50_000</span><span class="p">),</span>
         <span class="n">price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"1.30000"</span><span class="p">),</span>
@@ -1678,7 +1677,7 @@ to BUY 200,000 USD using JPY:
           <div class="highlight-python notranslate">
            <div class="highlight">
             <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">MarketToLimitOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">market_to_limit</span><span class="p">(</span>
-        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"USD/JPY"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"IDEALPRO"</span><span class="p">)),</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"USD/JPY.IDEALPRO"</span><span class="p">),</span>
         <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">BUY</span><span class="p">,</span>
         <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">200_000</span><span class="p">),</span>
         <span class="n">price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"1.30000"</span><span class="p">),</span>
@@ -1728,7 +1727,7 @@ to SELL 10 ETHUSDT-PERP Perpetual Futures contracts at a trigger price of 10,000
           <div class="highlight-python notranslate">
            <div class="highlight">
             <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">MarketIfTouchedOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">market_if_touched</span><span class="p">(</span>
-        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"ETHUSDT-PERP"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"BINANCE"</span><span class="p">)),</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"ETHUSDT-PERP.BINANCE"</span><span class="p">),</span>
         <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">SELL</span><span class="p">,</span>
         <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
         <span class="n">trigger_price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="s2">"10000.00"</span><span class="p">),</span>
@@ -1757,7 +1756,7 @@ to SELL 10 ETHUSDT-PERP Perpetual Futures contracts at a trigger price of 10,000
           <p>
            A
            <em>
-            Limit-If_Touched
+            Limit-If-Touched
            </em>
            order is a conditional order which once triggered will immediately place
 a
@@ -1778,7 +1777,7 @@ active until midday 6th June, 2022 (UTC):
           <div class="highlight-python notranslate">
            <div class="highlight">
             <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">StopLimitOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">limit_if_touched</span><span class="p">(</span>
-        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"BTCUSDT-PERP"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"BINANCE"</span><span class="p">)),</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"BTCUSDT-PERP.BINANCE"</span><span class="p">),</span>
         <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">BUY</span><span class="p">,</span>
         <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
         <span class="n">price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"30100"</span><span class="p">),</span>
@@ -1830,7 +1829,7 @@ Perpetual Futures Contracts activating at a trigger price of 5000 USD, then trai
           <div class="highlight-python notranslate">
            <div class="highlight">
             <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">TrailingStopMarketOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">trailing_stop_market</span><span class="p">(</span>
-        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"ETHUSD-PERP"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"BINANCE"</span><span class="p">)),</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"ETHUSD-PERP.BINANCE"</span><span class="p">),</span>
         <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">SELL</span><span class="p">,</span>
         <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
         <span class="n">trigger_price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"5000"</span><span class="p">),</span>
@@ -1883,7 +1882,7 @@ away from the current ask price, active until further notice:
           <div class="highlight-python notranslate">
            <div class="highlight">
             <pre><span></span><span class="n">order</span><span class="p">:</span> <span class="n">TrailingStopLimitOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_factory</span><span class="o">.</span><span class="n">trailing_stop_limit</span><span class="p">(</span>
-        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"AUD/USD"</span><span class="p">),</span> <span class="n">Venue</span><span class="p">(</span><span class="s2">"CURRENEX"</span><span class="p">)),</span>
+        <span class="n">instrument_id</span><span class="o">=</span><span class="n">InstrumentId</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"AUD/USD.CURRENEX"</span><span class="p">),</span>
         <span class="n">order_side</span><span class="o">=</span><span class="n">OrderSide</span><span class="o">.</span><span class="n">BUY</span><span class="p">,</span>
         <span class="n">quantity</span><span class="o">=</span><span class="n">Quantity</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">1_250_000</span><span class="p">),</span>
         <span class="n">price</span><span class="o">=</span><span class="n">Price</span><span class="o">.</span><span class="n">from_str</span><span class="p">(</span><span class="s2">"0.71000"</span><span class="p">),</span>

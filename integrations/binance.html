@@ -684,6 +684,20 @@
                </ul>
               </nav>
              </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#binance-specific-data">
+               Binance Specific Data
+              </a>
+              <nav class="md-nav">
+               <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#binancefuturesmarkpriceupdate">
+                  BinanceFuturesMarkPriceUpdate
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
             </ul>
            </nav>
           </li>
@@ -826,10 +840,10 @@ custom data types:
            <p>
             <code class="docutils literal notranslate">
              <span class="pre">
-              BinanceSpotTicker
+              BinanceTicker
              </span>
             </code>
-            returned when subscribing to Binance SPOT 24hr tickers (contains many prices and stats).
+            returned when subscribing to Binance 24hr tickers (contains many prices and stats).
            </p>
           </li>
           <li>
@@ -840,6 +854,16 @@ custom data types:
              </span>
             </code>
             returned when requesting historical, or subscribing to, Binance bars (contains extra volume information).
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              BinanceFuturesMarkPriceUpdate
+             </span>
+            </code>
+            returned when subscribing to Binance Futures mark price updates.
            </p>
           </li>
          </ul>
@@ -1174,14 +1198,6 @@ credentials are valid and have trading permissions.
             </p>
            </li>
           </ul>
-          <div class="admonition note">
-           <p class="admonition-title">
-            Note
-           </p>
-           <p>
-            Binance does not currently offer a testnet for COIN-M futures.
-           </p>
-          </div>
          </section>
          <section id="base-url-overrides">
           <h3 id="base-url-overrides">
@@ -1277,6 +1293,80 @@ Simply set the
         <span class="p">},</span>
     <span class="p">},</span>
 <span class="p">)</span>
+</pre>
+           </div>
+          </div>
+         </section>
+        </section>
+        <section id="binance-specific-data">
+         <h2 id="binance-specific-data">
+          Binance Specific Data
+          <a class="headerlink" href="#binance-specific-data" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          It’s possible to subscribe to Binance specific data streams as they become available to the
+adapter over time.
+         </p>
+         <div class="admonition note">
+          <p class="admonition-title">
+           Note
+          </p>
+          <p>
+           Tickers and bars are not considered ‘Binance specific’ and can be subscribed to in the normal way.
+However, as more adapters are built out which need for example mark price and funding rate updates, then these
+methods may eventually become first-class (not requiring custom generic subscriptions as below).
+          </p>
+         </div>
+         <section id="binancefuturesmarkpriceupdate">
+          <h3 id="binancefuturesmarkpriceupdate">
+           BinanceFuturesMarkPriceUpdate
+           <a class="headerlink" href="#binancefuturesmarkpriceupdate" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           You can subscribe to
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             BinanceFuturesMarkPriceUpdate
+            </span>
+           </code>
+           (included funding rating info)
+data streams by subscribing in the following way from your actor or strategy:
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="c1"># In your `on_start` method</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">subscribe_data</span><span class="p">(</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="n">DataType</span><span class="p">(</span><span class="n">BinanceFuturesMarkPriceUpdate</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">"instrument_id"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">id</span><span class="p">}),</span>
+    <span class="n">client_id</span><span class="o">=</span><span class="n">ClientId</span><span class="p">(</span><span class="s2">"BINANCE"</span><span class="p">),</span>
+<span class="p">)</span>
+</pre>
+           </div>
+          </div>
+          <p>
+           This will then pass received
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             BinanceFuturesMarkPriceUpdate
+            </span>
+           </code>
+           to your
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             on_data
+            </span>
+           </code>
+           method:
+          </p>
+          <div class="highlight-python notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="k">def</span> <span class="nf">on_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">):</span>
+    <span class="c1"># First check the type of data</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">BinanceFuturesMarkPriceUpdate</span><span class="p">):</span>
+        <span class="c1"># Do something with the data</span>
 </pre>
            </div>
           </div>
