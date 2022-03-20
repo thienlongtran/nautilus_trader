@@ -731,12 +731,20 @@ and passing in the UNIX
           </strong>
           timestamps for the event, and object initialization.
          </p>
-         <div class="highlight-note{note} notranslate">
-          <div class="highlight">
-           <pre><span></span>Passing these timestamps is what allows Nautilus to correctly order data streams
-by monotonically increasing `ts_init` timestamps for backtests.
-</pre>
-          </div>
+         <div class="admonition note">
+          <p class="admonition-title">
+           Note
+          </p>
+          <p>
+           Passing these timestamps is what allows Nautilus to correctly order data streams
+by monotonically increasing
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             ts_init
+            </span>
+           </code>
+           timestamps for backtests.
+          </p>
          </div>
          <p>
           We can now work with this data type for backtesting and live trading. For instance,
