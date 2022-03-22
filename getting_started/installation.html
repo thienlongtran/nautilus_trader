@@ -774,7 +774,20 @@ in a virtual environment to isolate the dependencies.
           </a>
          </h2>
          <p>
-          Installation from source requires the latest stable
+          Installation from source requires the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            Python.h
+           </span>
+          </code>
+          header file, which is included in development releases such as
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            python-dev
+           </span>
+          </code>
+          .
+You’ll also need the latest stable
           <code class="docutils literal notranslate">
            <span class="pre">
             rustc
@@ -787,7 +800,9 @@ in a virtual environment to isolate the dependencies.
            </span>
           </code>
           to compile the Rust libraries.
-For the Python part, it’s possible to install from source using
+         </p>
+         <p>
+          It’s possible to install from source using
           <code class="docutils literal notranslate">
            <span class="pre">
             pip
@@ -898,7 +913,7 @@ as specified in the
            </p>
            <div class="highlight-none notranslate">
             <div class="highlight">
-             <pre><span></span>curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+             <pre><span></span>curl -sSL https://install.python-poetry.org | python3 -
 </pre>
             </div>
            </div>
