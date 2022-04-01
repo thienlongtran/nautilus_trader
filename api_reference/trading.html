@@ -14988,7 +14988,7 @@ called after faulting.
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              component_id
+              strategy_id
              </span>
             </span>
             <span class="p">
@@ -15096,13 +15096,11 @@ called after faulting.
           <dd>
            <p>
             Bases:
-            <a class="reference internal" href="common.html#nautilus_trader.common.config.ActorConfig" title="nautilus_trader.common.config.ActorConfig">
-             <code class="xref py py-class docutils literal notranslate">
-              <span class="pre">
-               nautilus_trader.common.config.ActorConfig
-              </span>
-             </code>
-            </a>
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              pydantic.main.BaseModel
+             </span>
+            </code>
            </p>
            <p>
             The base model for all trading strategy configurations.
@@ -15116,7 +15114,7 @@ called after faulting.
               <li>
                <p>
                 <strong>
-                 component_id
+                 strategy_id
                 </strong>
                 (
                 <em>
@@ -15128,7 +15126,7 @@ called after faulting.
                 <em>
                  optional
                 </em>
-                ) – The unique component ID for the strategy. Will become the strategy ID if not None.
+                ) – The unique ID for the strategy. Will become the strategy ID if not None.
                </p>
               </li>
               <li>
@@ -16470,7 +16468,7 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              path
+              strategy_path
              </span>
             </span>
             <span class="p">
@@ -16485,18 +16483,24 @@ the new model: you should trust this data
               str
              </span>
             </span>
-            <span class="w">
-            </span>
-            <span class="o">
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
              <span class="pre">
-              =
+              config_path
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
              </span>
             </span>
             <span class="w">
             </span>
-            <span class="default_value">
+            <span class="n">
              <span class="pre">
-              None
+              str
              </span>
             </span>
            </em>
@@ -16516,66 +16520,7 @@ the new model: you should trust this data
             </span>
             <span class="n">
              <span class="pre">
-              Union
-             </span>
-             <span class="p">
-              <span class="pre">
-               [
-              </span>
-             </span>
-             <a class="reference internal" href="#nautilus_trader.trading.config.TradingStrategyConfig" title="nautilus_trader.trading.config.TradingStrategyConfig">
-              <span class="pre">
-               nautilus_trader.trading.config.TradingStrategyConfig
-              </span>
-             </a>
-             <span class="p">
-              <span class="pre">
-               ,
-              </span>
-             </span>
-             <span class="w">
-             </span>
-             <span class="pre">
-              str
-             </span>
-             <span class="p">
-              <span class="pre">
-               ]
-              </span>
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              source
-             </span>
-            </span>
-            <span class="p">
-             <span class="pre">
-              :
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="n">
-             <span class="pre">
-              bytes
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="o">
-             <span class="pre">
-              =
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="default_value">
-             <span class="pre">
-              None
+              dict
              </span>
             </span>
            </em>
@@ -16589,13 +16534,11 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <a class="reference internal" href="common.html#nautilus_trader.common.config.ImportableActorConfig" title="nautilus_trader.common.config.ImportableActorConfig">
-             <code class="xref py py-class docutils literal notranslate">
-              <span class="pre">
-               nautilus_trader.common.config.ImportableActorConfig
-              </span>
-             </code>
-            </a>
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              pydantic.main.BaseModel
+             </span>
+            </code>
            </p>
            <p>
             Represents a trading strategy configuration for one specific backtest run.
@@ -16609,37 +16552,25 @@ the new model: you should trust this data
               <li>
                <p>
                 <strong>
-                 path
+                 strategy_path
                 </strong>
                 (
                 <em>
                  str
                 </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The fully qualified name of the module.
+                ) – The fully qualified name of the strategy class.
                </p>
               </li>
               <li>
                <p>
                 <strong>
-                 source
+                 config_path
                 </strong>
                 (
                 <em>
-                 bytes
+                 str
                 </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The strategy source code.
+                ) – The fully qualified name of the config class.
                </p>
               </li>
               <li>
@@ -16649,24 +16580,7 @@ the new model: you should trust this data
                 </strong>
                 (
                 <em>
-                 Union
-                </em>
-                <em>
-                 [
-                </em>
-                <a class="reference internal" href="#nautilus_trader.trading.config.TradingStrategyConfig" title="nautilus_trader.trading.config.TradingStrategyConfig">
-                 <em>
-                  TradingStrategyConfig
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 str
-                </em>
-                <em>
-                 ]
+                 Dict
                 </em>
                 ) – The strategy configuration
                </p>
