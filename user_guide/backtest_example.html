@@ -1155,7 +1155,8 @@
 <span class="k">for</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">PARAM_SET</span><span class="p">:</span>
     <span class="n">strategies</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">ImportableStrategyConfig</span><span class="p">(</span>
-            <span class="n">path</span><span class="o">=</span><span class="s2">"examples.strategies.ema_cross_simple:EMACross"</span><span class="p">,</span>
+            <span class="n">strategy_path</span><span class="o">=</span><span class="s2">"examples.strategies.ema_cross_simple:EMACross"</span><span class="p">,</span>
+            <span class="n">config_path</span><span class="o">=</span><span class="s2">"examples.strategies.ema_cross_simple:EMACrossConfig"</span><span class="p">,</span>
             <span class="n">config</span><span class="o">=</span><span class="n">EMACrossConfig</span><span class="p">(</span>
                 <span class="n">instrument_id</span><span class="o">=</span><span class="n">instrument</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
                 <span class="n">bar_type</span><span class="o">=</span><span class="s1">'AUD/USD.SIM-15-MINUTE-BID-INTERNAL'</span><span class="p">,</span>
@@ -1207,6 +1208,9 @@
           <div class="highlight">
            <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.node</span> <span class="kn">import</span> <span class="n">BacktestNode</span>
 <span class="n">node</span> <span class="o">=</span> <span class="n">BacktestNode</span><span class="p">()</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span><span class="n">run_configs</span><span class="o">=</span><span class="n">configs</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">r</span><span class="o">.</span><span class="n">stats_pnls</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">])[</span><span class="s1">'USD'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span>
 </pre>
           </div>
          </div>
