@@ -2944,6 +2944,246 @@ If
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.close_all_positions">
+             <span class="sig-name descname">
+              <span class="pre">
+               close_all_positions
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                InstrumentId
+               </span>
+               <span class="pre">
+                instrument_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.close_all_positions" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Close all positions for the given instrument ID for this strategy.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The instrument for the positions to close.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.close_position">
+             <span class="sig-name descname">
+              <span class="pre">
+               close_position
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Position
+               </span>
+               <span class="pre">
+                position
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.close_position" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Close the given position.
+             </p>
+             <p>
+              A closing
+              <cite>
+               MarketOrder
+              </cite>
+              for the position will be created, and then sent
+to the
+              <cite>
+               ExecutionEngine
+              </cite>
+              via a
+              <cite>
+               SubmitOrder
+              </cite>
+              command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   position
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/position.html#nautilus_trader.model.position.Position" title="nautilus_trader.model.position.Position">
+                   <em>
+                    Position
+                   </em>
+                  </a>
+                  ) – The position to close.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.degrade">
              <span class="sig-name descname">
               <span class="pre">
@@ -3215,246 +3455,6 @@ called after faulting.
                Exceptions raised will be caught, logged, and reraised.
               </p>
              </div>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.flatten_all_positions">
-             <span class="sig-name descname">
-              <span class="pre">
-               flatten_all_positions
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                InstrumentId
-               </span>
-               <span class="pre">
-                instrument_id
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                ClientId
-               </span>
-               <span class="pre">
-                client_id=None
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                void
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.flatten_all_positions" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Flatten all positions for the given instrument ID for this strategy.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   instrument_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                   <em>
-                    InstrumentId
-                   </em>
-                  </a>
-                  ) – The instrument for the positions to flatten.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   client_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
-                   <em>
-                    ClientId
-                   </em>
-                  </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The specific client ID for the command.
-If
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  then will be inferred from the venue in the instrument ID.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.flatten_position">
-             <span class="sig-name descname">
-              <span class="pre">
-               flatten_position
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                Position
-               </span>
-               <span class="pre">
-                position
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                ClientId
-               </span>
-               <span class="pre">
-                client_id=None
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                void
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.flatten_position" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Flatten the given position.
-             </p>
-             <p>
-              A closing
-              <cite>
-               MarketOrder
-              </cite>
-              for the position will be created, and then sent
-to the
-              <cite>
-               ExecutionEngine
-              </cite>
-              via a
-              <cite>
-               SubmitOrder
-              </cite>
-              command.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   position
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/position.html#nautilus_trader.model.position.Position" title="nautilus_trader.model.position.Position">
-                   <em>
-                    Position
-                   </em>
-                  </a>
-                  ) – The position to flatten.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   client_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
-                   <em>
-                    ClientId
-                   </em>
-                  </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The specific client ID for the command.
-If
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  then will be inferred from the venue in the instrument ID.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">

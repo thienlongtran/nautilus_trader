@@ -1547,6 +1547,112 @@ contain any arbitrary delimiter if required.
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.closing_side">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               closing_side
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                side
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                OrderSide
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.closing_side" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the order side needed to close a position with the given side.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 side
+                </strong>
+                (PositionSide {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  LONG
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  SHORT
+                 </span>
+                </code>
+                }) – The side of the position to close.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 OrderSide
+                </em>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 side
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FLAT
+                 </span>
+                </code>
+                or invalid.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.contingency_type">
              <span class="sig-name descname">
@@ -1658,112 +1764,6 @@ contain any arbitrary delimiter if required.
                 <cite>
                  Quantity
                 </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.flatten_side">
-             <em class="property">
-              <span class="pre">
-               static
-              </span>
-              <span class="w">
-              </span>
-             </em>
-             <span class="sig-name descname">
-              <span class="pre">
-               flatten_side
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                PositionSide
-               </span>
-               <span class="pre">
-                side
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                OrderSide
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.flatten_side" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return the order side needed to flatten a position from the given side.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 side
-                </strong>
-                (PositionSide {
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  LONG
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SHORT
-                 </span>
-                </code>
-                }) – The position side to flatten.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 OrderSide
-                </em>
-               </p>
-              </dd>
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 side
-                </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  FLAT
-                 </span>
-                </code>
-                or invalid.
                </p>
               </dd>
              </dl>
@@ -4437,6 +4437,112 @@ contain any arbitrary delimiter if required.
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.closing_side">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               closing_side
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                side
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                OrderSide
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.closing_side" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the order side needed to close a position with the given side.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 side
+                </strong>
+                (PositionSide {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  LONG
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  SHORT
+                 </span>
+                </code>
+                }) – The side of the position to close.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 OrderSide
+                </em>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 side
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FLAT
+                 </span>
+                </code>
+                or invalid.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.contingency_type">
              <span class="sig-name descname">
@@ -4647,112 +4753,6 @@ contain any arbitrary delimiter if required.
                 <cite>
                  Quantity
                 </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.flatten_side">
-             <em class="property">
-              <span class="pre">
-               static
-              </span>
-              <span class="w">
-              </span>
-             </em>
-             <span class="sig-name descname">
-              <span class="pre">
-               flatten_side
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                PositionSide
-               </span>
-               <span class="pre">
-                side
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                OrderSide
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.flatten_side" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return the order side needed to flatten a position from the given side.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 side
-                </strong>
-                (PositionSide {
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  LONG
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SHORT
-                 </span>
-                </code>
-                }) – The position side to flatten.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 OrderSide
-                </em>
-               </p>
-              </dd>
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 side
-                </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  FLAT
-                 </span>
-                </code>
-                or invalid.
                </p>
               </dd>
              </dl>
@@ -7400,6 +7400,112 @@ contain any arbitrary delimiter if required.
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.closing_side">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               closing_side
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                side
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                OrderSide
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.closing_side" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the order side needed to close a position with the given side.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 side
+                </strong>
+                (PositionSide {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  LONG
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  SHORT
+                 </span>
+                </code>
+                }) – The side of the position to close.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 OrderSide
+                </em>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 side
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FLAT
+                 </span>
+                </code>
+                or invalid.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.contingency_type">
              <span class="sig-name descname">
@@ -7575,112 +7681,6 @@ contain any arbitrary delimiter if required.
                 <cite>
                  Quantity
                 </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.flatten_side">
-             <em class="property">
-              <span class="pre">
-               static
-              </span>
-              <span class="w">
-              </span>
-             </em>
-             <span class="sig-name descname">
-              <span class="pre">
-               flatten_side
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                PositionSide
-               </span>
-               <span class="pre">
-                side
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                OrderSide
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.flatten_side" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return the order side needed to flatten a position from the given side.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 side
-                </strong>
-                (PositionSide {
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  LONG
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SHORT
-                 </span>
-                </code>
-                }) – The position side to flatten.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 OrderSide
-                </em>
-               </p>
-              </dd>
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 side
-                </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  FLAT
-                 </span>
-                </code>
-                or invalid.
                </p>
               </dd>
              </dl>
@@ -10476,6 +10476,112 @@ contain any arbitrary delimiter if required.
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.closing_side">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               closing_side
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                side
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                OrderSide
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.closing_side" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the order side needed to close a position with the given side.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 side
+                </strong>
+                (PositionSide {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  LONG
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  SHORT
+                 </span>
+                </code>
+                }) – The side of the position to close.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 OrderSide
+                </em>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 side
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FLAT
+                 </span>
+                </code>
+                or invalid.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.contingency_type">
              <span class="sig-name descname">
@@ -10692,112 +10798,6 @@ contain any arbitrary delimiter if required.
                 <cite>
                  Quantity
                 </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.flatten_side">
-             <em class="property">
-              <span class="pre">
-               static
-              </span>
-              <span class="w">
-              </span>
-             </em>
-             <span class="sig-name descname">
-              <span class="pre">
-               flatten_side
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                PositionSide
-               </span>
-               <span class="pre">
-                side
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                OrderSide
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.flatten_side" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return the order side needed to flatten a position from the given side.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 side
-                </strong>
-                (PositionSide {
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  LONG
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SHORT
-                 </span>
-                </code>
-                }) – The position side to flatten.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 OrderSide
-                </em>
-               </p>
-              </dd>
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 side
-                </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  FLAT
-                 </span>
-                </code>
-                or invalid.
                </p>
               </dd>
              </dl>
@@ -13498,6 +13498,112 @@ contain any arbitrary delimiter if required.
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market_to_limit.MarketToLimitOrder.closing_side">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               closing_side
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                side
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                OrderSide
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.market_to_limit.MarketToLimitOrder.closing_side" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the order side needed to close a position with the given side.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 side
+                </strong>
+                (PositionSide {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  LONG
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  SHORT
+                 </span>
+                </code>
+                }) – The side of the position to close.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 OrderSide
+                </em>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 side
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FLAT
+                 </span>
+                </code>
+                or invalid.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.market_to_limit.MarketToLimitOrder.contingency_type">
              <span class="sig-name descname">
@@ -13708,112 +13814,6 @@ contain any arbitrary delimiter if required.
                 <cite>
                  Quantity
                 </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market_to_limit.MarketToLimitOrder.flatten_side">
-             <em class="property">
-              <span class="pre">
-               static
-              </span>
-              <span class="w">
-              </span>
-             </em>
-             <span class="sig-name descname">
-              <span class="pre">
-               flatten_side
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                PositionSide
-               </span>
-               <span class="pre">
-                side
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                OrderSide
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.market_to_limit.MarketToLimitOrder.flatten_side" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return the order side needed to flatten a position from the given side.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 side
-                </strong>
-                (PositionSide {
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  LONG
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SHORT
-                 </span>
-                </code>
-                }) – The position side to flatten.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 OrderSide
-                </em>
-               </p>
-              </dd>
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 side
-                </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  FLAT
-                 </span>
-                </code>
-                or invalid.
                </p>
               </dd>
              </dl>
@@ -16467,6 +16467,112 @@ contain any arbitrary delimiter if required.
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market_if_touched.MarketIfTouchedOrder.closing_side">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               closing_side
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                side
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                OrderSide
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.market_if_touched.MarketIfTouchedOrder.closing_side" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the order side needed to close a position with the given side.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 side
+                </strong>
+                (PositionSide {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  LONG
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  SHORT
+                 </span>
+                </code>
+                }) – The side of the position to close.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 OrderSide
+                </em>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 side
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FLAT
+                 </span>
+                </code>
+                or invalid.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.market_if_touched.MarketIfTouchedOrder.contingency_type">
              <span class="sig-name descname">
@@ -16642,112 +16748,6 @@ contain any arbitrary delimiter if required.
                 <cite>
                  Quantity
                 </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.market_if_touched.MarketIfTouchedOrder.flatten_side">
-             <em class="property">
-              <span class="pre">
-               static
-              </span>
-              <span class="w">
-              </span>
-             </em>
-             <span class="sig-name descname">
-              <span class="pre">
-               flatten_side
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                PositionSide
-               </span>
-               <span class="pre">
-                side
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                OrderSide
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.market_if_touched.MarketIfTouchedOrder.flatten_side" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return the order side needed to flatten a position from the given side.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 side
-                </strong>
-                (PositionSide {
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  LONG
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SHORT
-                 </span>
-                </code>
-                }) – The position side to flatten.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 OrderSide
-                </em>
-               </p>
-              </dd>
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 side
-                </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  FLAT
-                 </span>
-                </code>
-                or invalid.
                </p>
               </dd>
              </dl>
@@ -19543,6 +19543,112 @@ contain any arbitrary delimiter if required.
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit_if_touched.LimitIfTouchedOrder.closing_side">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               closing_side
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                side
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                OrderSide
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.limit_if_touched.LimitIfTouchedOrder.closing_side" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the order side needed to close a position with the given side.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 side
+                </strong>
+                (PositionSide {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  LONG
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  SHORT
+                 </span>
+                </code>
+                }) – The side of the position to close.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 OrderSide
+                </em>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 side
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FLAT
+                 </span>
+                </code>
+                or invalid.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit_if_touched.LimitIfTouchedOrder.contingency_type">
              <span class="sig-name descname">
@@ -19759,112 +19865,6 @@ contain any arbitrary delimiter if required.
                 <cite>
                  Quantity
                 </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit_if_touched.LimitIfTouchedOrder.flatten_side">
-             <em class="property">
-              <span class="pre">
-               static
-              </span>
-              <span class="w">
-              </span>
-             </em>
-             <span class="sig-name descname">
-              <span class="pre">
-               flatten_side
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                PositionSide
-               </span>
-               <span class="pre">
-                side
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                OrderSide
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.limit_if_touched.LimitIfTouchedOrder.flatten_side" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return the order side needed to flatten a position from the given side.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 side
-                </strong>
-                (PositionSide {
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  LONG
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SHORT
-                 </span>
-                </code>
-                }) – The position side to flatten.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 OrderSide
-                </em>
-               </p>
-              </dd>
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 side
-                </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  FLAT
-                 </span>
-                </code>
-                or invalid.
                </p>
               </dd>
              </dl>
@@ -22709,6 +22709,112 @@ contain any arbitrary delimiter if required.
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.trailing_stop_market.TrailingStopMarketOrder.closing_side">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               closing_side
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                side
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                OrderSide
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.trailing_stop_market.TrailingStopMarketOrder.closing_side" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the order side needed to close a position with the given side.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 side
+                </strong>
+                (PositionSide {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  LONG
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  SHORT
+                 </span>
+                </code>
+                }) – The side of the position to close.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 OrderSide
+                </em>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 side
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FLAT
+                 </span>
+                </code>
+                or invalid.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.trailing_stop_market.TrailingStopMarketOrder.contingency_type">
              <span class="sig-name descname">
@@ -22884,112 +22990,6 @@ contain any arbitrary delimiter if required.
                 <cite>
                  Quantity
                 </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.trailing_stop_market.TrailingStopMarketOrder.flatten_side">
-             <em class="property">
-              <span class="pre">
-               static
-              </span>
-              <span class="w">
-              </span>
-             </em>
-             <span class="sig-name descname">
-              <span class="pre">
-               flatten_side
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                PositionSide
-               </span>
-               <span class="pre">
-                side
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                OrderSide
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.trailing_stop_market.TrailingStopMarketOrder.flatten_side" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return the order side needed to flatten a position from the given side.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 side
-                </strong>
-                (PositionSide {
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  LONG
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SHORT
-                 </span>
-                </code>
-                }) – The position side to flatten.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 OrderSide
-                </em>
-               </p>
-              </dd>
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 side
-                </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  FLAT
-                 </span>
-                </code>
-                or invalid.
                </p>
               </dd>
              </dl>
@@ -25970,6 +25970,112 @@ contain any arbitrary delimiter if required.
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.trailing_stop_limit.TrailingStopLimitOrder.closing_side">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               closing_side
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                side
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                OrderSide
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.trailing_stop_limit.TrailingStopLimitOrder.closing_side" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the order side needed to close a position with the given side.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 side
+                </strong>
+                (PositionSide {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  LONG
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  SHORT
+                 </span>
+                </code>
+                }) – The side of the position to close.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 OrderSide
+                </em>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 side
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FLAT
+                 </span>
+                </code>
+                or invalid.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.trailing_stop_limit.TrailingStopLimitOrder.contingency_type">
              <span class="sig-name descname">
@@ -26186,112 +26292,6 @@ contain any arbitrary delimiter if required.
                 <cite>
                  Quantity
                 </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.trailing_stop_limit.TrailingStopLimitOrder.flatten_side">
-             <em class="property">
-              <span class="pre">
-               static
-              </span>
-              <span class="w">
-              </span>
-             </em>
-             <span class="sig-name descname">
-              <span class="pre">
-               flatten_side
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                PositionSide
-               </span>
-               <span class="pre">
-                side
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                OrderSide
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.trailing_stop_limit.TrailingStopLimitOrder.flatten_side" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return the order side needed to flatten a position from the given side.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 side
-                </strong>
-                (PositionSide {
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  LONG
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SHORT
-                 </span>
-                </code>
-                }) – The position side to flatten.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 OrderSide
-                </em>
-               </p>
-              </dd>
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 side
-                </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  FLAT
-                 </span>
-                </code>
-                or invalid.
                </p>
               </dd>
              </dl>
@@ -28867,6 +28867,112 @@ The possible states of closed orders include;
              </dl>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.closing_side">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               closing_side
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionSide
+               </span>
+               <span class="pre">
+                side
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                OrderSide
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.orders.base.Order.closing_side" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the order side needed to close a position with the given side.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 side
+                </strong>
+                (PositionSide {
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  LONG
+                 </span>
+                </code>
+                ,
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  SHORT
+                 </span>
+                </code>
+                }) – The side of the position to close.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 OrderSide
+                </em>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 side
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  FLAT
+                 </span>
+                </code>
+                or invalid.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.contingency_type">
              <span class="sig-name descname">
@@ -28978,112 +29084,6 @@ The possible states of closed orders include;
                 <cite>
                  Quantity
                 </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.flatten_side">
-             <em class="property">
-              <span class="pre">
-               static
-              </span>
-              <span class="w">
-              </span>
-             </em>
-             <span class="sig-name descname">
-              <span class="pre">
-               flatten_side
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                PositionSide
-               </span>
-               <span class="pre">
-                side
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                OrderSide
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.orders.base.Order.flatten_side" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return the order side needed to flatten a position from the given side.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 side
-                </strong>
-                (PositionSide {
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  LONG
-                 </span>
-                </code>
-                ,
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  SHORT
-                 </span>
-                </code>
-                }) – The position side to flatten.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 OrderSide
-                </em>
-               </p>
-              </dd>
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 side
-                </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  FLAT
-                 </span>
-                </code>
-                or invalid.
                </p>
               </dd>
              </dl>
