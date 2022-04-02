@@ -1547,7 +1547,11 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Return the fully qualified name for the component object.
+              Return the fully qualified name for the
+              <cite>
+               Component
+              </cite>
+              class.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -6259,7 +6263,11 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Return the fully qualified name for the component object.
+              Return the fully qualified name for the
+              <cite>
+               Component
+              </cite>
+              class.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -15753,6 +15761,40 @@ position ID resolution.
            <em class="sig-param">
             <span class="n">
              <span class="pre">
+              load_cache
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              True
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
               allow_cash_positions
              </span>
             </span>
@@ -15813,22 +15855,44 @@ position ID resolution.
              Parameters
             </dt>
             <dd class="field-odd">
-             <p>
-              <strong>
-               allow_cash_positions
-              </strong>
-              (
-              <em>
-               bool
-              </em>
-              <em>
-               ,
-              </em>
-              <em>
-               default False
-              </em>
-              ) – If unleveraged spot cash assets should track positions.
-             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 load_cache
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default True
+                </em>
+                ) – If the cache should be loaded on initialization.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 allow_cash_positions
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If unleveraged spot cash assets should track positions.
+               </p>
+              </li>
+             </ul>
             </dd>
            </dl>
            <dl class="py method">

@@ -3615,7 +3615,11 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Return the fully qualified name for the component object.
+              Return the fully qualified name for the
+              <cite>
+               Component
+              </cite>
+              class.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -5016,7 +5020,11 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Return the fully qualified name for the component object.
+              Return the fully qualified name for the
+              <cite>
+               Component
+              </cite>
+              class.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10172,7 +10180,7 @@ generate new position IDs.
             </dt>
             <dd>
              <p>
-              The backtest engine cache.
+              The engines internal read-only cache.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10180,9 +10188,9 @@ generate new position IDs.
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  CacheFacade
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -10468,60 +10476,6 @@ called after disposal.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.get_exec_engine">
-             <span class="sig-name descname">
-              <span class="pre">
-               get_exec_engine
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <a class="reference internal" href="execution.html#nautilus_trader.execution.engine.ExecutionEngine" title="nautilus_trader.execution.engine.ExecutionEngine">
-                <span class="pre">
-                 ExecutionEngine
-                </span>
-               </a>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.get_exec_engine" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return the execution engine for the backtest engine (used for testing).
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <em>
-                 ExecutionEngine
-                </em>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.get_result">
              <span class="sig-name descname">
               <span class="pre">
@@ -10576,7 +10530,7 @@ called after disposal.
             </dt>
             <dd>
              <p>
-              The backtest engine instance ID.
+              The nodes instance ID.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10584,9 +10538,9 @@ called after disposal.
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  UUID4
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -10615,6 +10569,35 @@ called after disposal.
                <p>
                 <cite>
                  int
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.kernel">
+             <span class="sig-name descname">
+              <span class="pre">
+               kernel
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.kernel" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The internal kernel for the engine.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 NautilusKernel
                 </cite>
                </p>
               </dd>
@@ -10777,7 +10760,7 @@ through a call to
             </dt>
             <dd>
              <p>
-              The backtest engine machine ID.
+              The nodes machine ID.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10785,9 +10768,9 @@ through a call to
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  str
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -10806,7 +10789,7 @@ through a call to
             </dt>
             <dd>
              <p>
-              The backtest engine portfolio.
+              The engines internal read-only portfolio.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10814,9 +10797,9 @@ through a call to
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  PortfolioFacade
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -11594,7 +11577,7 @@ to the end of the data.
             </dt>
             <dd>
              <p>
-              The trader for the backtest.
+              The engines internal trader.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -11602,9 +11585,9 @@ to the end of the data.
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  Trader
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -11623,7 +11606,7 @@ to the end of the data.
             </dt>
             <dd>
              <p>
-              The trader ID associated with the engine.
+              The nodes trader ID.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -11631,9 +11614,9 @@ to the end of the data.
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  TraderId
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -14691,7 +14674,11 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Return the fully qualified name for the component object.
+              Return the fully qualified name for the
+              <cite>
+               Component
+              </cite>
+              class.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -19810,124 +19797,6 @@ of fills and slippage by order type.
            <p>
             Provides a node for orchestrating groups of configurable backtest runs.
            </p>
-           <p>
-            These can be run synchronously, or can be built into a lazily evaluated
-graph for execution by a dask executor.
-           </p>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.backtest.node.BacktestNode.build_graph">
-             <span class="sig-name descname">
-              <span class="pre">
-               build_graph
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                run_configs
-               </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                List
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
-               </span>
-               <a class="reference internal" href="#nautilus_trader.backtest.config.BacktestRunConfig" title="nautilus_trader.backtest.config.BacktestRunConfig">
-                <span class="pre">
-                 nautilus_trader.backtest.config.BacktestRunConfig
-                </span>
-               </a>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                dask.delayed.Delayed
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.backtest.node.BacktestNode.build_graph" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Build a
-              <cite>
-               Delayed
-              </cite>
-              graph from
-              <cite>
-               backtest_configs
-              </cite>
-              which can be passed to a dask executor.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 run_configs
-                </strong>
-                (
-                <em>
-                 list
-                </em>
-                <em>
-                 [
-                </em>
-                <a class="reference internal" href="#nautilus_trader.backtest.config.BacktestRunConfig" title="nautilus_trader.backtest.config.BacktestRunConfig">
-                 <em>
-                  BacktestRunConfig
-                 </em>
-                </a>
-                <em>
-                 ]
-                </em>
-                ) – The backtest run configurations.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 Delayed
-                </em>
-                – The delayed graph, yet to be computed.
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.backtest.node.BacktestNode.run_sync">
              <span class="sig-name descname">
