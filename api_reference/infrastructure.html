@@ -2475,7 +2475,7 @@ per the default implementations for both
             </span>
             <span class="default_value">
              <span class="pre">
-              'redis'
+              'in-memory'
              </span>
             </span>
            </em>
@@ -2621,6 +2621,24 @@ per the default implementations for both
                 <em>
                  str
                 </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 {'in-memory'
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 'redis'}
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 'in-memory'
+                </em>
                 ) – The database type.
                </p>
               </li>
@@ -2633,7 +2651,13 @@ per the default implementations for both
                 <em>
                  str
                 </em>
-                ) – The database host address.
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 'localhost'
+                </em>
+                ) – The database host address (default for Redis).
                </p>
               </li>
               <li>
@@ -2645,7 +2669,13 @@ per the default implementations for both
                 <em>
                  int
                 </em>
-                ) – The database port.
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 6379
+                </em>
+                ) – The database port (default for Redis).
                </p>
               </li>
               <li>
@@ -2656,6 +2686,12 @@ per the default implementations for both
                 (
                 <em>
                  bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
                 </em>
                 ) – If database should be flushed before start.
                </p>
