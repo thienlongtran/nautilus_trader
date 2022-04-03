@@ -671,7 +671,7 @@
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#node">
+              <a class="md-nav__link" href="#module-nautilus_trader.live.node">
                Node
               </a>
              </li>
@@ -18815,13 +18815,1029 @@ notional check.
           </dd>
          </dl>
         </section>
-        <section id="node">
-         <h2 id="node">
+        <section id="module-nautilus_trader.live.node">
+         <span id="node">
+         </span>
+         <h2 id="module-nautilus_trader.live.node">
           Node
-          <a class="headerlink" href="#node" title="Permalink to this headline">
+          <a class="headerlink" href="#module-nautilus_trader.live.node" title="Permalink to this headline">
            ¶
           </a>
          </h2>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             TradingNode
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              config
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <a class="reference internal" href="config.html#nautilus_trader.config.nodes.TradingNodeConfig" title="nautilus_trader.config.nodes.TradingNodeConfig">
+              <span class="pre">
+               nautilus_trader.config.nodes.TradingNodeConfig
+              </span>
+             </a>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.live.node.TradingNode" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              object
+             </span>
+            </code>
+           </p>
+           <p>
+            Provides an asynchronous network node for live trading.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               config
+              </strong>
+              (
+              <a class="reference internal" href="config.html#nautilus_trader.config.nodes.TradingNodeConfig" title="nautilus_trader.config.nodes.TradingNodeConfig">
+               <em>
+                TradingNodeConfig
+               </em>
+              </a>
+              <em>
+               ,
+              </em>
+              <em>
+               optional
+              </em>
+              ) – The configuration for the instance.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
+             <p>
+              <strong>
+               TypeError
+              </strong>
+              – If
+              <cite>
+               config
+              </cite>
+              is not of type
+              <cite>
+               TradingNodeConfig
+              </cite>
+              .
+             </p>
+            </dd>
+           </dl>
+           <dl class="py property">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.trader_id">
+             <em class="property">
+              <span class="pre">
+               property
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               trader_id
+              </span>
+             </span>
+             <em class="property">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId">
+               <span class="pre">
+                nautilus_trader.model.identifiers.TraderId
+               </span>
+              </a>
+             </em>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.trader_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the nodes trader ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 TraderId
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py property">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.machine_id">
+             <em class="property">
+              <span class="pre">
+               property
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               machine_id
+              </span>
+             </span>
+             <em class="property">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="pre">
+               str
+              </span>
+             </em>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.machine_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the nodes machine ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py property">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.instance_id">
+             <em class="property">
+              <span class="pre">
+               property
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               instance_id
+              </span>
+             </span>
+             <em class="property">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+               <span class="pre">
+                nautilus_trader.core.uuid.UUID4
+               </span>
+              </a>
+             </em>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.instance_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the nodes instance ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 UUID4
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py property">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.trader">
+             <em class="property">
+              <span class="pre">
+               property
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               trader
+              </span>
+             </span>
+             <em class="property">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <a class="reference internal" href="trading.html#nautilus_trader.trading.trader.Trader" title="nautilus_trader.trading.trader.Trader">
+               <span class="pre">
+                nautilus_trader.trading.trader.Trader
+               </span>
+              </a>
+             </em>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.trader" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the nodes internal trader.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 Trader
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py property">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.cache">
+             <em class="property">
+              <span class="pre">
+               property
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               cache
+              </span>
+             </span>
+             <em class="property">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade">
+               <span class="pre">
+                nautilus_trader.cache.base.CacheFacade
+               </span>
+              </a>
+             </em>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.cache" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the nodes internal read-only cache.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 CacheFacade
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py property">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.portfolio">
+             <em class="property">
+              <span class="pre">
+               property
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               portfolio
+              </span>
+             </span>
+             <em class="property">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <a class="reference internal" href="portfolio.html#nautilus_trader.portfolio.base.PortfolioFacade" title="nautilus_trader.portfolio.base.PortfolioFacade">
+               <span class="pre">
+                nautilus_trader.portfolio.base.PortfolioFacade
+               </span>
+              </a>
+             </em>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.portfolio" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the nodes internal read-only portfolio.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 PortfolioFacade
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py property">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.is_running">
+             <em class="property">
+              <span class="pre">
+               property
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               is_running
+              </span>
+             </span>
+             <em class="property">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="pre">
+               bool
+              </span>
+             </em>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.is_running" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the trading node is running.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py property">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.is_built">
+             <em class="property">
+              <span class="pre">
+               property
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               is_built
+              </span>
+             </span>
+             <em class="property">
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="pre">
+               bool
+              </span>
+             </em>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.is_built" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              If the trading node clients are built.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.get_event_loop">
+             <span class="sig-name descname">
+              <span class="pre">
+               get_event_loop
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                asyncio.events.AbstractEventLoop
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.get_event_loop" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the event loop of the trading node.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 asyncio.AbstractEventLoop
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.get_logger">
+             <span class="sig-name descname">
+              <span class="pre">
+               get_logger
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="common.html#nautilus_trader.common.logging.LiveLogger" title="nautilus_trader.common.logging.LiveLogger">
+                <span class="pre">
+                 nautilus_trader.common.logging.LiveLogger
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.get_logger" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the logger for the trading node.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 LiveLogger
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.add_data_client_factory">
+             <span class="sig-name descname">
+              <span class="pre">
+               add_data_client_factory
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                name
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                factory
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.add_data_client_factory" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Add the given data client factory to the node.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   name
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  ) – The name of the client factory.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   factory
+                  </strong>
+                  (
+                  <em>
+                   LiveDataClientFactory
+                  </em>
+                  <em>
+                   or
+                  </em>
+                  <em>
+                   LiveExecutionClientFactory
+                  </em>
+                  ) – The factory to add.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   name
+                  </cite>
+                  is not a valid string.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   KeyError
+                  </strong>
+                  – If
+                  <cite>
+                   name
+                  </cite>
+                  has already been added.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.add_exec_client_factory">
+             <span class="sig-name descname">
+              <span class="pre">
+               add_exec_client_factory
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                name
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                factory
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.add_exec_client_factory" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Add the given execution client factory to the node.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   name
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  ) – The name of the client factory.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   factory
+                  </strong>
+                  (
+                  <em>
+                   LiveDataClientFactory
+                  </em>
+                  <em>
+                   or
+                  </em>
+                  <em>
+                   LiveExecutionClientFactory
+                  </em>
+                  ) – The factory to add.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   ValueError
+                  </strong>
+                  – If
+                  <cite>
+                   name
+                  </cite>
+                  is not a valid string.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   KeyError
+                  </strong>
+                  – If
+                  <cite>
+                   name
+                  </cite>
+                  has already been added.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.build">
+             <span class="sig-name descname">
+              <span class="pre">
+               build
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.build" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Build the nodes clients.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.start">
+             <span class="sig-name descname">
+              <span class="pre">
+               start
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                _asyncio.Task
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.start" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Start the trading node.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.stop">
+             <span class="sig-name descname">
+              <span class="pre">
+               stop
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.stop" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Stop the trading node gracefully.
+             </p>
+             <p>
+              After a specified delay the internal
+              <cite>
+               Trader
+              </cite>
+              residuals will be checked.
+             </p>
+             <p>
+              If save strategy is specified then strategy states will then be saved.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.dispose">
+             <span class="sig-name descname">
+              <span class="pre">
+               dispose
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.live.node.TradingNode.dispose" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Dispose of the trading node.
+             </p>
+             <p>
+              Gracefully shuts down the executor and event loop.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
         </section>
         <section id="module-nautilus_trader.live.node_builder">
          <span id="node-builder">
