@@ -651,7 +651,7 @@
            <nav class="md-nav">
             <ul class="md-nav__list">
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#factories">
+              <a class="md-nav__link" href="#module-nautilus_trader.adapters.binance.factories">
                Factories
               </a>
              </li>
@@ -711,13 +711,1619 @@
         <p>
          Provides an API integration for the Binance Crypto exchange.
         </p>
-        <section id="factories">
-         <h2 id="factories">
+        <section id="module-nautilus_trader.adapters.binance.factories">
+         <span id="factories">
+         </span>
+         <h2 id="module-nautilus_trader.adapters.binance.factories">
           Factories
-          <a class="headerlink" href="#factories" title="Permalink to this headline">
+          <a class="headerlink" href="#module-nautilus_trader.adapters.binance.factories" title="Permalink to this headline">
            ¶
           </a>
          </h2>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.factories.get_cached_binance_http_client">
+           <span class="sig-name descname">
+            <span class="pre">
+             get_cached_binance_http_client
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              loop
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              asyncio.events.AbstractEventLoop
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              clock
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="../common.html#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock">
+              <span class="pre">
+               nautilus_trader.common.clock.LiveClock
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              logger
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="../common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+              <span class="pre">
+               nautilus_trader.common.logging.Logger
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              key
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <span class="pre">
+              str
+             </span>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              secret
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <span class="pre">
+              str
+             </span>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              account_type
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="#nautilus_trader.adapters.binance.common.enums.BinanceAccountType" title="nautilus_trader.adapters.binance.common.enums.BinanceAccountType">
+              <span class="pre">
+               nautilus_trader.adapters.binance.common.enums.BinanceAccountType
+              </span>
+             </a>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              BinanceAccountType.SPOT
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              base_url
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <span class="pre">
+              str
+             </span>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              is_testnet
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              False
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              nautilus_trader.adapters.binance.http.client.BinanceHttpClient
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.adapters.binance.factories.get_cached_binance_http_client" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Cache and return a Binance HTTP client with the given key and secret.
+           </p>
+           <p>
+            If a cached client with matching key and secret already exists, then that
+cached client will be returned.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 loop
+                </strong>
+                (
+                <em>
+                 asyncio.AbstractEventLoop
+                </em>
+                ) – The event loop for the client.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 clock
+                </strong>
+                (
+                <a class="reference internal" href="../common.html#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock">
+                 <em>
+                  LiveClock
+                 </em>
+                </a>
+                ) – The clock for the client.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 logger
+                </strong>
+                (
+                <a class="reference internal" href="../common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+                 <em>
+                  Logger
+                 </em>
+                </a>
+                ) – The logger for the client.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 key
+                </strong>
+                (
+                <em>
+                 str
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The API key for the client.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 secret
+                </strong>
+                (
+                <em>
+                 str
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The API secret for the client.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_type
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.adapters.binance.common.enums.BinanceAccountType" title="nautilus_trader.adapters.binance.common.enums.BinanceAccountType">
+                 <em>
+                  BinanceAccountType
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default BinanceAccountType.SPOT
+                </em>
+                ) – The account type for the client.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 base_url
+                </strong>
+                (
+                <em>
+                 str
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The base URL for the API endpoints.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 is_testnet
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If the client is connecting to the testnet API.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               BinanceHttpClient
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.factories.get_cached_binance_spot_instrument_provider">
+           <span class="sig-name descname">
+            <span class="pre">
+             get_cached_binance_spot_instrument_provider
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              client
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              nautilus_trader.adapters.binance.http.client.BinanceHttpClient
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              logger
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="../common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+              <span class="pre">
+               nautilus_trader.common.logging.Logger
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              account_type
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="#nautilus_trader.adapters.binance.common.enums.BinanceAccountType" title="nautilus_trader.adapters.binance.common.enums.BinanceAccountType">
+              <span class="pre">
+               nautilus_trader.adapters.binance.common.enums.BinanceAccountType
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              config
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="../config.html#nautilus_trader.config.components.InstrumentProviderConfig" title="nautilus_trader.config.components.InstrumentProviderConfig">
+              <span class="pre">
+               nautilus_trader.config.components.InstrumentProviderConfig
+              </span>
+             </a>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              nautilus_trader.adapters.binance.spot.providers.BinanceSpotInstrumentProvider
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.adapters.binance.factories.get_cached_binance_spot_instrument_provider" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Cache and return a BinanceInstrumentProvider.
+           </p>
+           <p>
+            If a cached provider already exists, then that provider will be returned.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 client
+                </strong>
+                (
+                <em>
+                 BinanceHttpClient
+                </em>
+                ) – The client for the instrument provider.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 logger
+                </strong>
+                (
+                <a class="reference internal" href="../common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+                 <em>
+                  Logger
+                 </em>
+                </a>
+                ) – The logger for the instrument provider.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_type
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.adapters.binance.common.enums.BinanceAccountType" title="nautilus_trader.adapters.binance.common.enums.BinanceAccountType">
+                 <em>
+                  BinanceAccountType
+                 </em>
+                </a>
+                ) – The Binance account type for the instrument provider.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 config
+                </strong>
+                (
+                <a class="reference internal" href="../config.html#nautilus_trader.config.components.InstrumentProviderConfig" title="nautilus_trader.config.components.InstrumentProviderConfig">
+                 <em>
+                  InstrumentProviderConfig
+                 </em>
+                </a>
+                ) – The configuration for the instrument provider.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               BinanceSpotInstrumentProvider
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.factories.get_cached_binance_futures_instrument_provider">
+           <span class="sig-name descname">
+            <span class="pre">
+             get_cached_binance_futures_instrument_provider
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              client
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              nautilus_trader.adapters.binance.http.client.BinanceHttpClient
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              logger
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="../common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+              <span class="pre">
+               nautilus_trader.common.logging.Logger
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              account_type
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="#nautilus_trader.adapters.binance.common.enums.BinanceAccountType" title="nautilus_trader.adapters.binance.common.enums.BinanceAccountType">
+              <span class="pre">
+               nautilus_trader.adapters.binance.common.enums.BinanceAccountType
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              config
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="../config.html#nautilus_trader.config.components.InstrumentProviderConfig" title="nautilus_trader.config.components.InstrumentProviderConfig">
+              <span class="pre">
+               nautilus_trader.config.components.InstrumentProviderConfig
+              </span>
+             </a>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <a class="reference internal" href="../common.html#nautilus_trader.common.providers.InstrumentProvider" title="nautilus_trader.common.providers.InstrumentProvider">
+              <span class="pre">
+               nautilus_trader.common.providers.InstrumentProvider
+              </span>
+             </a>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.adapters.binance.factories.get_cached_binance_futures_instrument_provider" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Cache and return a BinanceInstrumentProvider.
+           </p>
+           <p>
+            If a cached provider already exists, then that provider will be returned.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 client
+                </strong>
+                (
+                <em>
+                 BinanceHttpClient
+                </em>
+                ) – The client for the instrument provider.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 logger
+                </strong>
+                (
+                <a class="reference internal" href="../common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger">
+                 <em>
+                  Logger
+                 </em>
+                </a>
+                ) – The logger for the instrument provider.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 account_type
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.adapters.binance.common.enums.BinanceAccountType" title="nautilus_trader.adapters.binance.common.enums.BinanceAccountType">
+                 <em>
+                  BinanceAccountType
+                 </em>
+                </a>
+                ) – The Binance account type for the instrument provider.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 config
+                </strong>
+                (
+                <a class="reference internal" href="../config.html#nautilus_trader.config.components.InstrumentProviderConfig" title="nautilus_trader.config.components.InstrumentProviderConfig">
+                 <em>
+                  InstrumentProviderConfig
+                 </em>
+                </a>
+                ) – The configuration for the instrument provider.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               BinanceFuturesInstrumentProvider
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.factories.BinanceLiveDataClientFactory">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             BinanceLiveDataClientFactory
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.adapters.binance.factories.BinanceLiveDataClientFactory" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.live.factories.LiveDataClientFactory
+             </span>
+            </code>
+           </p>
+           <p>
+            Provides a
+            <cite>
+             Binance
+            </cite>
+            live data client factory.
+           </p>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.factories.BinanceLiveDataClientFactory.create">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               create
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                loop
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                asyncio.events.AbstractEventLoop
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                name
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                config
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                nautilus_trader.adapters.binance.config.BinanceDataClientConfig
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                msgbus
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus">
+                <span class="pre">
+                 nautilus_trader.msgbus.bus.MessageBus
+                </span>
+               </a>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                cache
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache">
+                <span class="pre">
+                 nautilus_trader.cache.cache.Cache
+                </span>
+               </a>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                clock
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../common.html#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock">
+                <span class="pre">
+                 nautilus_trader.common.clock.LiveClock
+                </span>
+               </a>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                logger
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../common.html#nautilus_trader.common.logging.LiveLogger" title="nautilus_trader.common.logging.LiveLogger">
+                <span class="pre">
+                 nautilus_trader.common.logging.LiveLogger
+                </span>
+               </a>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                Union
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                nautilus_trader.adapters.binance.spot.data.BinanceSpotDataClient
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
+               <span class="pre">
+                nautilus_trader.adapters.binance.futures.data.BinanceFuturesDataClient
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.adapters.binance.factories.BinanceLiveDataClientFactory.create" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Create a new Binance data client.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   loop
+                  </strong>
+                  (
+                  <em>
+                   asyncio.AbstractEventLoop
+                  </em>
+                  ) – The event loop for the client.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   name
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  ) – The client name.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   config
+                  </strong>
+                  (
+                  <em>
+                   BinanceDataClientConfig
+                  </em>
+                  ) – The client configuration.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   msgbus
+                  </strong>
+                  (
+                  <a class="reference internal" href="../msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus">
+                   <em>
+                    MessageBus
+                   </em>
+                  </a>
+                  ) – The message bus for the client.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   cache
+                  </strong>
+                  (
+                  <a class="reference internal" href="../cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache">
+                   <em>
+                    Cache
+                   </em>
+                  </a>
+                  ) – The cache for the client.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   clock
+                  </strong>
+                  (
+                  <a class="reference internal" href="../common.html#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock">
+                   <em>
+                    LiveClock
+                   </em>
+                  </a>
+                  ) – The clock for the client.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   logger
+                  </strong>
+                  (
+                  <a class="reference internal" href="../common.html#nautilus_trader.common.logging.LiveLogger" title="nautilus_trader.common.logging.LiveLogger">
+                   <em>
+                    LiveLogger
+                   </em>
+                  </a>
+                  ) – The logger for the client.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 BinanceSpotDataClient or BinanceFuturesDataClient
+                </em>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 config.account_type
+                </cite>
+                is not a valid
+                <cite>
+                 BinanceAccountType
+                </cite>
+                .
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.factories.BinanceLiveExecClientFactory">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             BinanceLiveExecClientFactory
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.adapters.binance.factories.BinanceLiveExecClientFactory" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              nautilus_trader.live.factories.LiveExecClientFactory
+             </span>
+            </code>
+           </p>
+           <p>
+            Provides a
+            <cite>
+             Binance
+            </cite>
+            live execution client factory.
+           </p>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.factories.BinanceLiveExecClientFactory.create">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               create
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                loop
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                asyncio.events.AbstractEventLoop
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                name
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                config
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                nautilus_trader.adapters.binance.config.BinanceExecClientConfig
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                msgbus
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus">
+                <span class="pre">
+                 nautilus_trader.msgbus.bus.MessageBus
+                </span>
+               </a>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                cache
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache">
+                <span class="pre">
+                 nautilus_trader.cache.cache.Cache
+                </span>
+               </a>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                clock
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../common.html#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock">
+                <span class="pre">
+                 nautilus_trader.common.clock.LiveClock
+                </span>
+               </a>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                logger
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <a class="reference internal" href="../common.html#nautilus_trader.common.logging.LiveLogger" title="nautilus_trader.common.logging.LiveLogger">
+                <span class="pre">
+                 nautilus_trader.common.logging.LiveLogger
+                </span>
+               </a>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                Union
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                nautilus_trader.adapters.binance.spot.execution.BinanceSpotExecutionClient
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
+               <span class="pre">
+                nautilus_trader.adapters.binance.futures.execution.BinanceFuturesExecutionClient
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.adapters.binance.factories.BinanceLiveExecClientFactory.create" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Create a new Binance execution client.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   loop
+                  </strong>
+                  (
+                  <em>
+                   asyncio.AbstractEventLoop
+                  </em>
+                  ) – The event loop for the client.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   name
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  ) – The client name.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   config
+                  </strong>
+                  (
+                  <em>
+                   BinanceExecClientConfig
+                  </em>
+                  ) – The configuration for the client.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   msgbus
+                  </strong>
+                  (
+                  <a class="reference internal" href="../msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus">
+                   <em>
+                    MessageBus
+                   </em>
+                  </a>
+                  ) – The message bus for the client.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   cache
+                  </strong>
+                  (
+                  <a class="reference internal" href="../cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache">
+                   <em>
+                    Cache
+                   </em>
+                  </a>
+                  ) – The cache for the client.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   clock
+                  </strong>
+                  (
+                  <a class="reference internal" href="../common.html#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock">
+                   <em>
+                    LiveClock
+                   </em>
+                  </a>
+                  ) – The clock for the client.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   logger
+                  </strong>
+                  (
+                  <a class="reference internal" href="../common.html#nautilus_trader.common.logging.LiveLogger" title="nautilus_trader.common.logging.LiveLogger">
+                   <em>
+                    LiveLogger
+                   </em>
+                  </a>
+                  ) – The logger for the client.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 BinanceExecutionClient
+                </em>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 config.account_type
+                </cite>
+                is not a valid
+                <cite>
+                 BinanceAccountType
+                </cite>
+                .
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
         </section>
         <section id="providers">
          <h2 id="providers">
