@@ -741,7 +741,7 @@ in a virtual environment to isolate the dependencies.
               hyperopt
              </span>
             </code>
-            - packages required for model hyperparameter optimization in backtests.
+            - package required for model hyperparameter optimization in backtests
            </p>
           </li>
           <li>
@@ -751,7 +751,17 @@ in a virtual environment to isolate the dependencies.
               ib
              </span>
             </code>
-            - packages required for the Interactive Brokers adapter.
+            - package required for the Interactive Brokers adapter
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              redis
+             </span>
+            </code>
+            - packages required to use Redis as a cache database
            </p>
           </li>
          </ul>
@@ -762,11 +772,17 @@ in a virtual environment to isolate the dependencies.
             ib
            </span>
           </code>
+          and
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            redis
+           </span>
+          </code>
           extras using pip:
          </p>
          <div class="highlight-none notranslate">
           <div class="highlight">
-           <pre><span></span>pip install -U nautilus_trader[ib]
+           <pre><span></span>pip install -U nautilus_trader[ib,redis]
 </pre>
           </div>
          </div>
