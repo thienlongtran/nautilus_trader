@@ -5120,6 +5120,57 @@ position ID resolution.
              </p>
             </dd>
            </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.sync_order_status">
+             <span class="sig-name descname">
+              <span class="pre">
+               sync_order_status
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                QueryOrder
+               </span>
+               <span class="pre">
+                command
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.sync_order_status" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Abstract method (implement in subclass).
+             </p>
+            </dd>
+           </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.trader_id">
              <span class="sig-name descname">
@@ -9586,6 +9637,683 @@ overwritten.
               </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.execution.messages.ModifyOrder.venue_order_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The venue order ID associated with the command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 VenueOrderId
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.execution.messages.QueryOrder">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             QueryOrder
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              TraderId
+             </span>
+             <span class="pre">
+              trader_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              StrategyId
+             </span>
+             <span class="pre">
+              strategy_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              InstrumentId
+             </span>
+             <span class="pre">
+              instrument_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ClientOrderId
+             </span>
+             <span class="pre">
+              client_order_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              VenueOrderId
+             </span>
+             <span class="pre">
+              venue_order_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              UUID4
+             </span>
+             <span class="pre">
+              command_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int64_t
+             </span>
+             <span class="pre">
+              ts_init
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ClientId
+             </span>
+             <span class="pre">
+              client_id=None
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.execution.messages.QueryOrder" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.execution.messages.TradingCommand" title="nautilus_trader.execution.messages.TradingCommand">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.execution.messages.TradingCommand
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            Represents a command to query an order.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 trader_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId">
+                 <em>
+                  TraderId
+                 </em>
+                </a>
+                ) – The trader ID for the command.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 strategy_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId">
+                 <em>
+                  StrategyId
+                 </em>
+                </a>
+                ) – The strategy ID for the command.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The instrument ID for the command.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 client_order_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
+                 <em>
+                  ClientOrderId
+                 </em>
+                </a>
+                ) – The client order ID to cancel.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 venue_order_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
+                 <em>
+                  VenueOrderId
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The venue order ID (assigned by the venue) to cancel.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 command_id
+                </strong>
+                (
+                <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The command ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 client_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                 <em>
+                  ClientId
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The execution client ID for the command.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.QueryOrder.category">
+             <span class="sig-name descname">
+              <span class="pre">
+               category
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.messages.QueryOrder.category" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message category.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 MessageCategory
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.QueryOrder.client_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               client_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.messages.QueryOrder.client_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The execution client ID for the command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientId
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.QueryOrder.client_order_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               client_order_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.messages.QueryOrder.client_order_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The client order ID associated with the command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientOrderId
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.QueryOrder.from_dict">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               from_dict
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                dict
+               </span>
+               <span class="pre">
+                values
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="#nautilus_trader.execution.messages.QueryOrder" title="nautilus_trader.execution.messages.QueryOrder">
+                <span class="pre">
+                 QueryOrder
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.messages.QueryOrder.from_dict" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return a cancel order command from the given dict values.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 values
+                </strong>
+                (
+                <em>
+                 dict
+                </em>
+                <em>
+                 [
+                </em>
+                <em>
+                 str
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 object
+                </em>
+                <em>
+                 ]
+                </em>
+                ) – The values for initialization.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 QueryOrder
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.QueryOrder.id">
+             <span class="sig-name descname">
+              <span class="pre">
+               id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.messages.QueryOrder.id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The message ID.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 UUID4
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.QueryOrder.instrument_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               instrument_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.messages.QueryOrder.instrument_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The instrument ID associated with the command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 InstrumentId
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.QueryOrder.strategy_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               strategy_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.messages.QueryOrder.strategy_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The strategy ID associated with the command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 StrategyId
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.QueryOrder.to_dict">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               to_dict
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                CancelOrder
+               </span>
+               <span class="pre">
+                obj
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.messages.QueryOrder.to_dict" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return a dictionary representation of this object.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 dict[str, object]
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.QueryOrder.trader_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               trader_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.messages.QueryOrder.trader_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The trader ID associated with the command.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 TraderId
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.QueryOrder.ts_init">
+             <span class="sig-name descname">
+              <span class="pre">
+               ts_init
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.messages.QueryOrder.ts_init" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The UNIX timestamp (nanoseconds) when the object was initialized.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 int64
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.execution.messages.QueryOrder.venue_order_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               venue_order_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.execution.messages.QueryOrder.venue_order_id" title="Permalink to this definition">
               ¶
              </a>
             </dt>

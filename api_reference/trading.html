@@ -7391,6 +7391,136 @@ paused, and also when it is done for day.
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.query_order">
+             <span class="sig-name descname">
+              <span class="pre">
+               query_order
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Order
+               </span>
+               <span class="pre">
+                order
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.query_order" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              query the given order with optional routing instructions.
+             </p>
+             <p>
+              A
+              <cite>
+               QueryOrder
+              </cite>
+              command will be created and then sent to the
+              <cite>
+               ExecutionEngine
+              </cite>
+              .
+             </p>
+             <p>
+              Logs an error if no
+              <cite>
+               VenueOrderId
+              </cite>
+              has been assigned to the order.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   order
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/orderbook.html#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order">
+                   <em>
+                    Order
+                   </em>
+                  </a>
+                  ) – The order to query.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.register">
              <span class="sig-name descname">
               <span class="pre">
