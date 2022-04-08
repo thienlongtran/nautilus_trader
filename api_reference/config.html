@@ -1896,7 +1896,7 @@
             </span>
             <span class="default_value">
              <span class="pre">
-              DataEngineConfig()
+              DataEngineConfig(debug=False)
              </span>
             </span>
            </em>
@@ -1938,7 +1938,10 @@
               max_order_rate='100/00:00:01',
              </span>
              <span class="pre">
-              max_notional_per_order={})
+              max_notional_per_order={},
+             </span>
+             <span class="pre">
+              debug=False)
              </span>
             </span>
            </em>
@@ -1977,7 +1980,10 @@
               ExecEngineConfig(load_cache=True,
              </span>
              <span class="pre">
-              allow_cash_positions=False)
+              allow_cash_positions=False,
+             </span>
+             <span class="pre">
+              debug=False)
              </span>
             </span>
            </em>
@@ -15000,6 +15006,53 @@ the new model: you should trust this data
              DataEngineConfig
             </span>
            </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="o">
+             <span class="pre">
+              *
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              debug
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              False
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
            <a class="headerlink" href="#nautilus_trader.config.engines.DataEngineConfig" title="Permalink to this definition">
             ¶
            </a>
@@ -15022,6 +15075,23 @@ the new model: you should trust this data
             </code>
             instances.
            </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               debug
+              </strong>
+              (
+              <em>
+               bool
+              </em>
+              ) – If debug mode is active (will provide extra debug logging).
+             </p>
+            </dd>
+           </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.config.engines.DataEngineConfig.construct">
              <em class="property">
@@ -16443,6 +16513,40 @@ the new model: you should trust this data
              </span>
             </span>
            </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              debug
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              False
+             </span>
+            </span>
+           </em>
            <span class="sig-paren">
             )
            </span>
@@ -16530,6 +16634,18 @@ the new model: you should trust this data
                 </em>
                 ) – The maximum notional value of an order per instrument ID.
 The value should be a valid decimal format.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 debug
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                ) – If debug mode is active (will provide extra debug logging).
                </p>
               </li>
              </ul>
@@ -17899,6 +18015,40 @@ the new model: you should trust this data
              </span>
             </span>
            </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              debug
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              False
+             </span>
+            </span>
+           </em>
            <span class="sig-paren">
             )
            </span>
@@ -17964,6 +18114,18 @@ the new model: you should trust this data
                  default False
                 </em>
                 ) – If unleveraged spot cash assets should track positions.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 debug
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                ) – If debug mode is active (will provide extra debug logging).
                </p>
               </li>
              </ul>
@@ -22826,6 +22988,40 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
+              debug
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              False
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
               qsize
              </span>
             </span>
@@ -24308,6 +24504,40 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
+              debug
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              False
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
               qsize
              </span>
             </span>
@@ -25700,6 +25930,40 @@ the new model: you should trust this data
             <span class="n">
              <span class="pre">
               allow_cash_positions
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              False
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              debug
              </span>
             </span>
             <span class="p">
@@ -31687,7 +31951,10 @@ the new model: you should trust this data
             </span>
             <span class="default_value">
              <span class="pre">
-              LiveDataEngineConfig(qsize=10000)
+              LiveDataEngineConfig(debug=False,
+             </span>
+             <span class="pre">
+              qsize=10000)
              </span>
             </span>
            </em>
@@ -31732,6 +31999,9 @@ the new model: you should trust this data
               max_notional_per_order={},
              </span>
              <span class="pre">
+              debug=False,
+             </span>
+             <span class="pre">
               qsize=10000)
              </span>
             </span>
@@ -31772,6 +32042,9 @@ the new model: you should trust this data
              </span>
              <span class="pre">
               allow_cash_positions=False,
+             </span>
+             <span class="pre">
+              debug=False,
              </span>
              <span class="pre">
               reconciliation_auto=True,
