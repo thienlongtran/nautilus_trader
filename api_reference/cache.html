@@ -2363,6 +2363,79 @@ ID.
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.archive_position">
+             <span class="sig-name descname">
+              <span class="pre">
+               archive_position
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                Position
+               </span>
+               <span class="pre">
+                position
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.cache.cache.Cache.archive_position" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Archive a snapshot of the given position in its current state.
+             </p>
+             <p>
+              The position ID will be appended with a UUID4 string.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 position
+                </strong>
+                (
+                <a class="reference internal" href="model/position.html#nautilus_trader.model.position.Position" title="nautilus_trader.model.position.Position">
+                 <em>
+                  Position
+                 </em>
+                </a>
+                ) – The position to archive.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.bar">
              <span class="sig-name descname">
               <span class="pre">
@@ -8052,6 +8125,92 @@ and is open.
                  </p>
                 </li>
                </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 list[Position]
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.positions_archived">
+             <span class="sig-name descname">
+              <span class="pre">
+               positions_archived
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionId
+               </span>
+               <span class="pre">
+                position_id=None
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                list
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.cache.cache.Cache.positions_archived" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return all archived positions with the given optional identifier filter.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 position_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId">
+                 <em>
+                  PositionId
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The position ID query filter.
+               </p>
               </dd>
               <dt class="field-even">
                Returns
@@ -14397,6 +14556,57 @@ and is open.
               </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.cache.base.CacheFacade.positions" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Abstract method (implement in subclass).
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.cache.base.CacheFacade.positions_archived">
+             <span class="sig-name descname">
+              <span class="pre">
+               positions_archived
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                PositionId
+               </span>
+               <span class="pre">
+                position_id=None
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                list
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.cache.base.CacheFacade.positions_archived" title="Permalink to this definition">
               ¶
              </a>
             </dt>
