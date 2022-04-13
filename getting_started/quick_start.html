@@ -661,8 +661,8 @@
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#configuing-backtests">
-               Configuing Backtests
+              <a class="md-nav__link" href="#configuring-backtests">
+               Configuring Backtests
               </a>
              </li>
              <li class="md-nav__item">
@@ -758,7 +758,7 @@ First, download and load the data by running the next cell (this should take ~ 1
           <div class="highlight">
            <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.persistence.catalog</span> <span class="kn">import</span> <span class="n">DataCatalog</span>
 
-<span class="n">catalog</span> <span class="o">=</span> <span class="n">DataCatalog</span><span class="p">(</span><span class="s2">"EUDUSD202001/"</span><span class="p">)</span>
+<span class="n">catalog</span> <span class="o">=</span> <span class="n">DataCatalog</span><span class="p">(</span><span class="s2">"./"</span><span class="p">)</span>
 <span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">()</span>
 </pre>
           </div>
@@ -887,10 +887,10 @@ registering indicators to receive certain data types, however in this example we
          </div>
          <!-- #region pycharm={"name": "#%% md\n"} -->
         </section>
-        <section id="configuing-backtests">
-         <h2 id="configuing-backtests">
-          Configuing Backtests
-          <a class="headerlink" href="#configuing-backtests" title="Permalink to this headline">
+        <section id="configuring-backtests">
+         <h2 id="configuring-backtests">
+          Configuring Backtests
+          <a class="headerlink" href="#configuring-backtests" title="Permalink to this headline">
            ¶
           </a>
          </h2>
@@ -898,17 +898,17 @@ registering indicators to receive certain data types, however in this example we
           Now that we have a trading strategy and data, we can run a backtest! Nautilus uses a
           <code class="docutils literal notranslate">
            <span class="pre">
-            BacktestEngine
+            BacktestNode
            </span>
           </code>
-          to configure and run backtests, and requires some setup. This may seem a little complex at first,
-however this is necessary for the correctness that Nautilus strives for.
+          to run backtests, and requires some setup. This may seem a little complex at first,
+however this is necessary for the capabilities that Nautilus strives for.
          </p>
          <p>
           To configure a
           <code class="docutils literal notranslate">
            <span class="pre">
-            BacktestEngine
+            BacktestNode
            </span>
           </code>
           , we create an instance of a
@@ -925,10 +925,10 @@ following (minimal) aspects of the backtest:
            <p>
             <code class="docutils literal notranslate">
              <span class="pre">
-              data
+              engine
              </span>
             </code>
-            - The input data we would like to perform the backtest on
+            - The engine for the backtest which will contain our strategies
            </p>
           </li>
           <li>
@@ -945,10 +945,10 @@ following (minimal) aspects of the backtest:
            <p>
             <code class="docutils literal notranslate">
              <span class="pre">
-              strategies
+              data
              </span>
             </code>
-            - The strategy or strategies we would like to run for the backtest
+            - The input data we would like to perform the backtest on
            </p>
           </li>
          </ul>
@@ -1081,7 +1081,10 @@ however is fine to leave with its defaults:
           <div class="highlight">
            <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.config.backtest</span> <span class="kn">import</span> <span class="n">BacktestEngineConfig</span>
 
-<span class="n">engine</span> <span class="o">=</span> <span class="n">BacktestEngineConfig</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="s2">"ERROR"</span><span class="p">)</span> <span class="c1"># Lower to `INFO` to see more logging about orders, events, etc.</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">BacktestEngineConfig</span><span class="p">(</span>
+    <span class="n">strategies</span><span class="o">=</span><span class="p">[</span><span class="n">macd_strategy</span><span class="p">],</span>
+    <span class="n">log_level</span><span class="o">=</span><span class="s2">"ERROR"</span><span class="p">,</span>
+<span class="p">)</span> <span class="c1"># Lower to `INFO` to see more logging about orders, events, etc.</span>
 </pre>
           </div>
          </div>
@@ -1153,11 +1156,11 @@ parameters or batches of data).
 <span class="kn">from</span> <span class="nn">nautilus_trader.config.backtest</span> <span class="kn">import</span> <span class="n">BacktestRunConfig</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.config.components</span> <span class="kn">import</span> <span class="n">ImportableStrategyConfig</span>
 
+
 <span class="n">config</span> <span class="o">=</span> <span class="n">BacktestRunConfig</span><span class="p">(</span>
-    <span class="n">venues</span><span class="o">=</span><span class="p">[</span><span class="n">venue</span><span class="p">],</span>
-    <span class="n">strategies</span><span class="o">=</span><span class="p">[</span><span class="n">macd_strategy</span><span class="p">],</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
     <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
+    <span class="n">venues</span><span class="o">=</span><span class="p">[</span><span class="n">venue</span><span class="p">],</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">node</span> <span class="o">=</span> <span class="n">BacktestNode</span><span class="p">()</span>

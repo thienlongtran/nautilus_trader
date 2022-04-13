@@ -672,23 +672,8 @@
               <nav class="md-nav">
                <ul class="md-nav__list">
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="#staring-with-a-venue">
-                  Staring with a Venue
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="#adding-data">
-                  Adding Data
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="#finally-add-strategy-instances">
-                  Finally, add Strategy instances
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="#this-gives-us-3-parameter-sets-to-backtest">
-                  This gives us 3 parameter sets to backtest
+                 <a class="md-nav__link" href="#adding-data-and-venues">
+                  Adding data and venues
                  </a>
                 </li>
                </ul>
@@ -696,7 +681,7 @@
              </li>
              <li class="md-nav__item">
               <a class="md-nav__link" href="#run-the-backtest">
-               Run the backtest
+               Run the backtest!
               </a>
              </li>
             </ul>
@@ -919,7 +904,7 @@
           </div>
          </div>
          <p>
-          We’ll set up a catalog in the current working directory
+          We’ll set up a catalog in the current working directory.
          </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
@@ -1011,89 +996,18 @@
           </code>
           object (which means it can be configured in stages); the benefits of which are reduced boilerplate code when creating multiple backtest runs (for example when doing some sort of grid search over parameters).
          </p>
-         <section id="staring-with-a-venue">
-          <h3 id="staring-with-a-venue">
-           Staring with a Venue
-           <a class="headerlink" href="#staring-with-a-venue" title="Permalink to this headline">
+         <section id="adding-data-and-venues">
+          <h3 id="adding-data-and-venues">
+           Adding data and venues
+           <a class="headerlink" href="#adding-data-and-venues" title="Permalink to this headline">
             ¶
            </a>
           </h3>
-          <p>
-           We can start partially configuring the config with just a Venue:
-          </p>
           <div class="highlight-python notranslate">
            <div class="highlight">
             <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.config.backtest</span> <span class="kn">import</span> <span class="n">BacktestRunConfig</span><span class="p">,</span> <span class="n">BacktestVenueConfig</span><span class="p">,</span> <span class="n">BacktestDataConfig</span><span class="p">,</span> <span class="n">BacktestEngineConfig</span>
 
-<span class="c1"># Create a `base` config object to be shared with all backtests</span>
-<span class="n">base</span> <span class="o">=</span> <span class="n">BacktestRunConfig</span><span class="p">(</span>
-    <span class="n">venues</span><span class="o">=</span><span class="p">[</span>
-        <span class="n">BacktestVenueConfig</span><span class="p">(</span>
-            <span class="n">name</span><span class="o">=</span><span class="s2">"SIM"</span><span class="p">,</span>
-            <span class="n">oms_type</span><span class="o">=</span><span class="s2">"HEDGING"</span><span class="p">,</span>
-            <span class="n">account_type</span><span class="o">=</span><span class="s2">"MARGIN"</span><span class="p">,</span>
-            <span class="n">base_currency</span><span class="o">=</span><span class="s2">"USD"</span><span class="p">,</span>
-            <span class="n">starting_balances</span><span class="o">=</span><span class="p">[</span><span class="s2">"1000000 USD"</span><span class="p">],</span>
-        <span class="p">)</span>
-    <span class="p">]</span>
-<span class="p">)</span>
-<span class="n">base</span>
-</pre>
-           </div>
-          </div>
-         </section>
-         <section id="adding-data">
-          <h3 id="adding-data">
-           Adding Data
-           <a class="headerlink" href="#adding-data" title="Permalink to this headline">
-            ¶
-           </a>
-          </h3>
-          <p>
-           Notice many of the fields are
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             None
-            </span>
-           </code>
-           - we can continue to configure the backtest via
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             update
-            </span>
-           </code>
-           .
-          </p>
-          <p>
-           The
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             data_config
-            </span>
-           </code>
-           arg allows adding multiple data types (
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             quotes
-            </span>
-           </code>
-           ,
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             trades
-            </span>
-           </code>
-           ,
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             generic_data
-            </span>
-           </code>
-           ), but for this example, we will simply load the quote ticks we added earlier.
-          </p>
-          <div class="highlight-python notranslate">
-           <div class="highlight">
-            <pre><span></span><span class="n">instrument</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">(</span><span class="n">as_nautilus</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">instrument</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">(</span><span class="n">as_nautilus</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">data_config</span><span class="o">=</span><span class="p">[</span>
     <span class="n">BacktestDataConfig</span><span class="p">(</span>
@@ -1105,89 +1019,36 @@
     <span class="p">)</span>
 <span class="p">]</span>
 
-<span class="n">config</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">data_config</span><span class="p">,</span>
-    <span class="n">engine</span><span class="o">=</span><span class="n">BacktestEngineConfig</span><span class="p">()</span>
-<span class="p">)</span>
-
-<span class="n">config</span>
-</pre>
-           </div>
-          </div>
-         </section>
-         <section id="finally-add-strategy-instances">
-          <h3 id="finally-add-strategy-instances">
-           Finally, add Strategy instances
-           <a class="headerlink" href="#finally-add-strategy-instances" title="Permalink to this headline">
-            ¶
-           </a>
-          </h3>
-          <p>
-           We can perform a grid-search of some parameters by using the
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             replace
-            </span>
-           </code>
-           method, which returns a new copy of the config. We use the
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             ImportableStrategyConfig
-            </span>
-           </code>
-           object to tell Nautilus where the
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             TradingStrategy
-            </span>
-           </code>
-           class exists, and add some config.
-          </p>
-          <div class="highlight-python notranslate">
-           <div class="highlight">
-            <pre><span></span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
-<span class="kn">from</span> <span class="nn">nautilus_trader.config.components</span> <span class="kn">import</span> <span class="n">ImportableStrategyConfig</span>
-<span class="kn">from</span> <span class="nn">nautilus_trader.examples.strategies.ema_cross</span> <span class="kn">import</span> <span class="n">EMACrossConfig</span>
-
-
-<span class="n">PARAM_SET</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">"fast_ema"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">"slow_ema"</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">"fast_ema"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"slow_ema"</span><span class="p">:</span> <span class="mi">50</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">"fast_ema"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">"slow_ema"</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
+<span class="n">venues_config</span><span class="o">=</span><span class="p">[</span>
+    <span class="n">BacktestVenueConfig</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">"SIM"</span><span class="p">,</span>
+        <span class="n">oms_type</span><span class="o">=</span><span class="s2">"HEDGING"</span><span class="p">,</span>
+        <span class="n">account_type</span><span class="o">=</span><span class="s2">"MARGIN"</span><span class="p">,</span>
+        <span class="n">base_currency</span><span class="o">=</span><span class="s2">"USD"</span><span class="p">,</span>
+        <span class="n">starting_balances</span><span class="o">=</span><span class="p">[</span><span class="s2">"1000000 USD"</span><span class="p">],</span>
+    <span class="p">)</span>
 <span class="p">]</span>
 
-<span class="n">configs</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">PARAM_SET</span><span class="p">:</span>
-    <span class="n">strategies</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">ImportableStrategyConfig</span><span class="p">(</span>
-            <span class="n">strategy_path</span><span class="o">=</span><span class="s2">"examples.strategies.ema_cross_simple:EMACross"</span><span class="p">,</span>
-            <span class="n">config_path</span><span class="o">=</span><span class="s2">"examples.strategies.ema_cross_simple:EMACrossConfig"</span><span class="p">,</span>
-            <span class="n">config</span><span class="o">=</span><span class="n">EMACrossConfig</span><span class="p">(</span>
-                <span class="n">instrument_id</span><span class="o">=</span><span class="n">instrument</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
-                <span class="n">bar_type</span><span class="o">=</span><span class="s1">'AUD/USD.SIM-15-MINUTE-BID-INTERNAL'</span><span class="p">,</span>
-                <span class="n">trade_size</span><span class="o">=</span><span class="n">Decimal</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">),</span>
-                <span class="o">**</span><span class="n">params</span>
-            <span class="p">),</span>
+<span class="n">strategies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">ImportableStrategyConfig</span><span class="p">(</span>
+        <span class="n">strategy_path</span><span class="o">=</span><span class="s2">"nautilus_trader.examples.strategies.ema_cross:EMACross"</span><span class="p">,</span>
+        <span class="n">config_path</span><span class="o">=</span><span class="s2">"nautilus_trader.examples.strategies.ema_cross:EMACrossConfig"</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">EMACrossConfig</span><span class="p">(</span>
+            <span class="n">instrument_id</span><span class="o">=</span><span class="n">instrument</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+            <span class="n">bar_type</span><span class="o">=</span><span class="s2">"EUR/USD.SIM-15-MINUTE-BID-INTERNAL"</span><span class="p">,</span>
+            <span class="n">fast_ema</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+            <span class="n">slow_ema</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+            <span class="n">trade_size</span><span class="o">=</span><span class="n">Decimal</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">),</span>
         <span class="p">),</span>
-    <span class="p">]</span>
-    <span class="c1"># Create the final config</span>
-    <span class="n">new</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">strategies</span><span class="o">=</span><span class="n">strategies</span><span class="p">)</span>
-    
-    <span class="n">configs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
-</pre>
-           </div>
-          </div>
-         </section>
-         <section id="this-gives-us-3-parameter-sets-to-backtest">
-          <h3 id="this-gives-us-3-parameter-sets-to-backtest">
-           This gives us 3 parameter sets to backtest
-           <a class="headerlink" href="#this-gives-us-3-parameter-sets-to-backtest" title="Permalink to this headline">
-            ¶
-           </a>
-          </h3>
-          <div class="highlight-python notranslate">
-           <div class="highlight">
-            <pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">configs</span><span class="p">)))</span>
+    <span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="n">BacktestRunConfig</span><span class="p">(</span>
+    <span class="n">engine</span><span class="o">=</span><span class="n">BacktestEngineConfig</span><span class="p">(</span><span class="n">strategies</span><span class="o">=</span><span class="n">strategies</span><span class="p">),</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">data_config</span><span class="p">,</span>
+    <span class="n">venues</span><span class="o">=</span><span class="n">venues_config</span><span class="p">,</span>
+<span class="p">)</span>
+
 </pre>
            </div>
           </div>
@@ -1195,27 +1056,16 @@
         </section>
         <section id="run-the-backtest">
          <h2 id="run-the-backtest">
-          Run the backtest
+          Run the backtest!
           <a class="headerlink" href="#run-the-backtest" title="Permalink to this headline">
            ¶
           </a>
          </h2>
-         <p>
-          Finally, we can create a
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            BacktestNode
-           </span>
-          </code>
-          and run the backtest:
-         </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
-           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.node</span> <span class="kn">import</span> <span class="n">BacktestNode</span>
-<span class="n">node</span> <span class="o">=</span> <span class="n">BacktestNode</span><span class="p">()</span>
+           <pre><span></span><span class="n">node</span> <span class="o">=</span> <span class="n">BacktestNode</span><span class="p">()</span>
 
-<span class="n">results</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">run_configs</span><span class="o">=</span><span class="n">configs</span><span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">r</span><span class="o">.</span><span class="n">stats_pnls</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">])[</span><span class="s1">'USD'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">run_configs</span><span class="o">=</span><span class="p">[</span><span class="n">config</span><span class="p">])</span>
 </pre>
           </div>
          </div>
