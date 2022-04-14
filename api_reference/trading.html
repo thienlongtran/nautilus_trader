@@ -695,7 +695,7 @@
          This is a top-level package where the majority of users will interface with the
 framework. Custom trading strategies can be implemented by inheriting from the
          <cite>
-          TradingStrategy
+          Strategy
          </cite>
          base class.
         </p>
@@ -2431,7 +2431,7 @@ their own customized trading strategies
          <p>
           A user can inherit from
           <cite>
-           TradingStrategy
+           Strategy
           </cite>
           and optionally override any of the
 “on” named event methods. The class is not entirely initialized in a stand-alone
@@ -2442,7 +2442,7 @@ way, the intended usage is to pass strategies to a
           so that they can be
 fully “wired” into the platform. Exceptions will be raised if a
           <cite>
-           TradingStrategy
+           Strategy
           </cite>
           attempts to operate without a managing
           <cite>
@@ -2451,7 +2451,7 @@ fully “wired” into the platform. Exceptions will be raised if a
           instance.
          </p>
          <dl class="py class">
-          <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy">
+          <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy">
            <em class="property">
             <span class="pre">
              class
@@ -2461,7 +2461,7 @@ fully “wired” into the platform. Exceptions will be raised if a
            </em>
            <span class="sig-name descname">
             <span class="pre">
-             TradingStrategy
+             Strategy
             </span>
            </span>
            <span class="sig-paren">
@@ -2490,7 +2490,7 @@ fully “wired” into the platform. Exceptions will be raised if a
               </span>
              </span>
              <span class="pre">
-              TradingStrategyConfig
+              StrategyConfig
              </span>
              <span class="p">
               <span class="pre">
@@ -2516,7 +2516,7 @@ fully “wired” into the platform. Exceptions will be raised if a
            <span class="sig-paren">
             )
            </span>
-           <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy" title="Permalink to this definition">
+           <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy" title="Permalink to this definition">
             ¶
            </a>
           </dt>
@@ -2600,7 +2600,7 @@ per instrument. The position ID will be
               </strong>
               (
               <em>
-               TradingStrategyConfig
+               StrategyConfig
               </em>
               <em>
                ,
@@ -2625,7 +2625,7 @@ per instrument. The position ID will be
               </cite>
               is not of type
               <cite>
-               TradingStrategyConfig
+               StrategyConfig
               </cite>
               .
              </p>
@@ -2640,13 +2640,13 @@ per instrument. The position ID will be
             </p>
            </div>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.cache">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.cache">
              <span class="sig-name descname">
               <span class="pre">
                cache
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.cache" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.cache" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -2669,7 +2669,7 @@ per instrument. The position ID will be
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.cancel_all_orders">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.cancel_all_orders">
              <span class="sig-name descname">
               <span class="pre">
                cancel_all_orders
@@ -2720,7 +2720,7 @@ per instrument. The position ID will be
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.cancel_all_orders" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.cancel_all_orders" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -2781,7 +2781,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.cancel_order">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.cancel_order">
              <span class="sig-name descname">
               <span class="pre">
                cancel_order
@@ -2832,7 +2832,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.cancel_order" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.cancel_order" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -2911,13 +2911,13 @@ If
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.clock">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.clock">
              <span class="sig-name descname">
               <span class="pre">
                clock
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.clock" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.clock" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -2940,7 +2940,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.close_all_positions">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.close_all_positions">
              <span class="sig-name descname">
               <span class="pre">
                close_all_positions
@@ -2991,7 +2991,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.close_all_positions" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.close_all_positions" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -3052,7 +3052,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.close_position">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.close_position">
              <span class="sig-name descname">
               <span class="pre">
                close_position
@@ -3103,7 +3103,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.close_position" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.close_position" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -3180,7 +3180,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.degrade">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.degrade">
              <span class="sig-name descname">
               <span class="pre">
                degrade
@@ -3209,7 +3209,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.degrade" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.degrade" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -3246,7 +3246,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.deregister_warning_event">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.deregister_warning_event">
              <span class="sig-name descname">
               <span class="pre">
                deregister_warning_event
@@ -3286,7 +3286,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.deregister_warning_event" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.deregister_warning_event" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -3314,7 +3314,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.dispose">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.dispose">
              <span class="sig-name descname">
               <span class="pre">
                dispose
@@ -3343,7 +3343,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.dispose" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.dispose" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -3384,7 +3384,7 @@ called after disposal.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.fault">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.fault">
              <span class="sig-name descname">
               <span class="pre">
                fault
@@ -3413,7 +3413,7 @@ called after disposal.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.fault" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.fault" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -3454,7 +3454,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.fully_qualified_name">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.fully_qualified_name">
              <em class="property">
               <span class="pre">
                classmethod
@@ -3493,7 +3493,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.fully_qualified_name" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.fully_qualified_name" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -3528,7 +3528,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_bar">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_bar">
              <span class="sig-name descname">
               <span class="pre">
                handle_bar
@@ -3579,7 +3579,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_bar" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_bar" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -3650,7 +3650,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_bars">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_bars">
              <span class="sig-name descname">
               <span class="pre">
                handle_bars
@@ -3690,7 +3690,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_bars" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_bars" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -3737,7 +3737,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_data">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_data">
              <span class="sig-name descname">
               <span class="pre">
                handle_data
@@ -3777,7 +3777,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_data" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_data" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -3826,7 +3826,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_event">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_event">
              <span class="sig-name descname">
               <span class="pre">
                handle_event
@@ -3866,7 +3866,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_event" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_event" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -3917,7 +3917,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_instrument">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_instrument">
              <span class="sig-name descname">
               <span class="pre">
                handle_instrument
@@ -3957,7 +3957,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_instrument" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_instrument" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -4008,7 +4008,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_instrument_close_price">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_instrument_close_price">
              <span class="sig-name descname">
               <span class="pre">
                handle_instrument_close_price
@@ -4048,7 +4048,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_instrument_close_price" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_instrument_close_price" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -4099,7 +4099,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_instrument_status_update">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_instrument_status_update">
              <span class="sig-name descname">
               <span class="pre">
                handle_instrument_status_update
@@ -4139,7 +4139,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_instrument_status_update" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_instrument_status_update" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -4190,7 +4190,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_order_book">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_order_book">
              <span class="sig-name descname">
               <span class="pre">
                handle_order_book
@@ -4230,7 +4230,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_order_book" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_order_book" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -4281,7 +4281,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_order_book_delta">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_order_book_delta">
              <span class="sig-name descname">
               <span class="pre">
                handle_order_book_delta
@@ -4321,7 +4321,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_order_book_delta" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_order_book_delta" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -4388,7 +4388,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_quote_tick">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_quote_tick">
              <span class="sig-name descname">
               <span class="pre">
                handle_quote_tick
@@ -4439,7 +4439,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_quote_tick" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_quote_tick" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -4510,7 +4510,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_quote_ticks">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_quote_ticks">
              <span class="sig-name descname">
               <span class="pre">
                handle_quote_ticks
@@ -4550,7 +4550,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_quote_ticks" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_quote_ticks" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -4597,7 +4597,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_ticker">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_ticker">
              <span class="sig-name descname">
               <span class="pre">
                handle_ticker
@@ -4648,7 +4648,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_ticker" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_ticker" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -4719,7 +4719,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_trade_tick">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_trade_tick">
              <span class="sig-name descname">
               <span class="pre">
                handle_trade_tick
@@ -4770,7 +4770,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_trade_tick" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_trade_tick" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -4841,7 +4841,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_trade_ticks">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_trade_ticks">
              <span class="sig-name descname">
               <span class="pre">
                handle_trade_ticks
@@ -4881,7 +4881,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_trade_ticks" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_trade_ticks" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -4928,7 +4928,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_venue_status_update">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.handle_venue_status_update">
              <span class="sig-name descname">
               <span class="pre">
                handle_venue_status_update
@@ -4968,7 +4968,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_venue_status_update" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.handle_venue_status_update" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5019,13 +5019,13 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.id">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.id">
              <span class="sig-name descname">
               <span class="pre">
                id
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.id" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.id" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5048,7 +5048,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.indicators_initialized">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.indicators_initialized">
              <span class="sig-name descname">
               <span class="pre">
                indicators_initialized
@@ -5077,7 +5077,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.indicators_initialized" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.indicators_initialized" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5101,13 +5101,13 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.is_degraded">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.is_degraded">
              <span class="sig-name descname">
               <span class="pre">
                is_degraded
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.is_degraded" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.is_degraded" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5136,13 +5136,13 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.is_disposed">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.is_disposed">
              <span class="sig-name descname">
               <span class="pre">
                is_disposed
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.is_disposed" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.is_disposed" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5171,13 +5171,13 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.is_faulted">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.is_faulted">
              <span class="sig-name descname">
               <span class="pre">
                is_faulted
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.is_faulted" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.is_faulted" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5206,13 +5206,13 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.is_initialized">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.is_initialized">
              <span class="sig-name descname">
               <span class="pre">
                is_initialized
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.is_initialized" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.is_initialized" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5241,13 +5241,13 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.is_running">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.is_running">
              <span class="sig-name descname">
               <span class="pre">
                is_running
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.is_running" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.is_running" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5276,13 +5276,13 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.is_stopped">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.is_stopped">
              <span class="sig-name descname">
               <span class="pre">
                is_stopped
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.is_stopped" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.is_stopped" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5311,7 +5311,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.load">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.load">
              <span class="sig-name descname">
               <span class="pre">
                load
@@ -5351,7 +5351,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.load" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.load" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5424,13 +5424,13 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.log">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.log">
              <span class="sig-name descname">
               <span class="pre">
                log
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.log" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.log" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5453,7 +5453,7 @@ called after faulting.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.modify_order">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.modify_order">
              <span class="sig-name descname">
               <span class="pre">
                modify_order
@@ -5537,7 +5537,7 @@ called after faulting.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.modify_order" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.modify_order" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5719,13 +5719,13 @@ If
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.msgbus">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.msgbus">
              <span class="sig-name descname">
               <span class="pre">
                msgbus
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.msgbus" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.msgbus" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5754,13 +5754,13 @@ If
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.oms_type">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.oms_type">
              <span class="sig-name descname">
               <span class="pre">
                oms_type
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.oms_type" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.oms_type" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5783,7 +5783,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_bar">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_bar">
              <span class="sig-name descname">
               <span class="pre">
                on_bar
@@ -5823,7 +5823,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_bar" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_bar" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5861,7 +5861,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_data">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_data">
              <span class="sig-name descname">
               <span class="pre">
                on_data
@@ -5901,7 +5901,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_data" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_data" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5937,7 +5937,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_degrade">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_degrade">
              <span class="sig-name descname">
               <span class="pre">
                on_degrade
@@ -5966,7 +5966,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_degrade" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_degrade" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -5988,7 +5988,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_dispose">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_dispose">
              <span class="sig-name descname">
               <span class="pre">
                on_dispose
@@ -6017,7 +6017,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_dispose" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_dispose" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6042,7 +6042,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_event">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_event">
              <span class="sig-name descname">
               <span class="pre">
                on_event
@@ -6082,7 +6082,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_event" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_event" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6120,7 +6120,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_fault">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_fault">
              <span class="sig-name descname">
               <span class="pre">
                on_fault
@@ -6149,7 +6149,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_fault" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_fault" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6174,7 +6174,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_instrument">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_instrument">
              <span class="sig-name descname">
               <span class="pre">
                on_instrument
@@ -6214,7 +6214,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_instrument" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_instrument" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6252,7 +6252,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_instrument_close_price">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_instrument_close_price">
              <span class="sig-name descname">
               <span class="pre">
                on_instrument_close_price
@@ -6292,7 +6292,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_instrument_close_price" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_instrument_close_price" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6331,7 +6331,7 @@ price update.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_instrument_status_update">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_instrument_status_update">
              <span class="sig-name descname">
               <span class="pre">
                on_instrument_status_update
@@ -6371,7 +6371,7 @@ price update.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_instrument_status_update" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_instrument_status_update" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6410,7 +6410,7 @@ update.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_load">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_load">
              <span class="sig-name descname">
               <span class="pre">
                on_load
@@ -6450,7 +6450,7 @@ update.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_load" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_load" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6472,7 +6472,7 @@ update.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_order_book">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_order_book">
              <span class="sig-name descname">
               <span class="pre">
                on_order_book
@@ -6512,7 +6512,7 @@ update.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_order_book" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_order_book" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6550,7 +6550,7 @@ update.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_order_book_delta">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_order_book_delta">
              <span class="sig-name descname">
               <span class="pre">
                on_order_book_delta
@@ -6590,7 +6590,7 @@ update.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_order_book_delta" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_order_book_delta" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6644,7 +6644,7 @@ update.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_quote_tick">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_quote_tick">
              <span class="sig-name descname">
               <span class="pre">
                on_quote_tick
@@ -6684,7 +6684,7 @@ update.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_quote_tick" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_quote_tick" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6722,7 +6722,7 @@ update.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_reset">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_reset">
              <span class="sig-name descname">
               <span class="pre">
                on_reset
@@ -6751,7 +6751,7 @@ update.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_reset" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_reset" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6773,7 +6773,7 @@ update.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_resume">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_resume">
              <span class="sig-name descname">
               <span class="pre">
                on_resume
@@ -6802,7 +6802,7 @@ update.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_resume" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_resume" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6821,7 +6821,7 @@ update.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_save">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_save">
              <span class="sig-name descname">
               <span class="pre">
                on_save
@@ -6850,7 +6850,7 @@ update.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_save" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_save" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6885,7 +6885,7 @@ update.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_start">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_start">
              <span class="sig-name descname">
               <span class="pre">
                on_start
@@ -6914,7 +6914,7 @@ update.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_start" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_start" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6943,7 +6943,7 @@ when the component is initially started.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_stop">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_stop">
              <span class="sig-name descname">
               <span class="pre">
                on_stop
@@ -6972,7 +6972,7 @@ when the component is initially started.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_stop" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_stop" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -6998,7 +6998,7 @@ paused, and also when it is done for day.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_ticker">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_ticker">
              <span class="sig-name descname">
               <span class="pre">
                on_ticker
@@ -7038,7 +7038,7 @@ paused, and also when it is done for day.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_ticker" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_ticker" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -7076,7 +7076,7 @@ paused, and also when it is done for day.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_trade_tick">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_trade_tick">
              <span class="sig-name descname">
               <span class="pre">
                on_trade_tick
@@ -7116,7 +7116,7 @@ paused, and also when it is done for day.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_trade_tick" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_trade_tick" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -7154,7 +7154,7 @@ paused, and also when it is done for day.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_venue_status_update">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.on_venue_status_update">
              <span class="sig-name descname">
               <span class="pre">
                on_venue_status_update
@@ -7194,7 +7194,7 @@ paused, and also when it is done for day.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_venue_status_update" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.on_venue_status_update" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -7232,13 +7232,13 @@ paused, and also when it is done for day.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.order_factory">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.order_factory">
              <span class="sig-name descname">
               <span class="pre">
                order_factory
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.order_factory" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.order_factory" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -7261,13 +7261,13 @@ paused, and also when it is done for day.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.portfolio">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.portfolio">
              <span class="sig-name descname">
               <span class="pre">
                portfolio
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.portfolio" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.portfolio" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -7290,7 +7290,7 @@ paused, and also when it is done for day.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.publish_data">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.publish_data">
              <span class="sig-name descname">
               <span class="pre">
                publish_data
@@ -7341,7 +7341,7 @@ paused, and also when it is done for day.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.publish_data" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.publish_data" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -7387,7 +7387,7 @@ paused, and also when it is done for day.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.query_order">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.query_order">
              <span class="sig-name descname">
               <span class="pre">
                query_order
@@ -7438,7 +7438,7 @@ paused, and also when it is done for day.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.query_order" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.query_order" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -7517,7 +7517,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.register">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.register">
              <span class="sig-name descname">
               <span class="pre">
                register
@@ -7612,7 +7612,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.register" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.register" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -7724,7 +7724,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.register_base">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.register_base">
              <span class="sig-name descname">
               <span class="pre">
                register_base
@@ -7808,7 +7808,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.register_base" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.register_base" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -7906,7 +7906,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.register_indicator_for_bars">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.register_indicator_for_bars">
              <span class="sig-name descname">
               <span class="pre">
                register_indicator_for_bars
@@ -7957,7 +7957,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.register_indicator_for_bars" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.register_indicator_for_bars" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -8006,7 +8006,7 @@ given bar type.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.register_indicator_for_quote_ticks">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.register_indicator_for_quote_ticks">
              <span class="sig-name descname">
               <span class="pre">
                register_indicator_for_quote_ticks
@@ -8057,7 +8057,7 @@ given bar type.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.register_indicator_for_quote_ticks" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.register_indicator_for_quote_ticks" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -8106,7 +8106,7 @@ data for the given instrument ID.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.register_indicator_for_trade_ticks">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.register_indicator_for_trade_ticks">
              <span class="sig-name descname">
               <span class="pre">
                register_indicator_for_trade_ticks
@@ -8157,7 +8157,7 @@ data for the given instrument ID.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.register_indicator_for_trade_ticks" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.register_indicator_for_trade_ticks" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -8204,7 +8204,7 @@ data for the given instrument ID.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.register_warning_event">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.register_warning_event">
              <span class="sig-name descname">
               <span class="pre">
                register_warning_event
@@ -8244,7 +8244,7 @@ data for the given instrument ID.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.register_warning_event" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.register_warning_event" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -8272,13 +8272,13 @@ data for the given instrument ID.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.registered_indicators">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.registered_indicators">
              <span class="sig-name descname">
               <span class="pre">
                registered_indicators
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.registered_indicators" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.registered_indicators" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -8301,7 +8301,7 @@ data for the given instrument ID.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.request_bars">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.request_bars">
              <span class="sig-name descname">
               <span class="pre">
                request_bars
@@ -8374,7 +8374,7 @@ data for the given instrument ID.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.request_bars" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.request_bars" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -8516,7 +8516,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.request_data">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.request_data">
              <span class="sig-name descname">
               <span class="pre">
                request_data
@@ -8567,7 +8567,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.request_data" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.request_data" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -8615,7 +8615,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.request_quote_ticks">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.request_quote_ticks">
              <span class="sig-name descname">
               <span class="pre">
                request_quote_ticks
@@ -8688,7 +8688,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.request_quote_ticks" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.request_quote_ticks" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -8811,7 +8811,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.request_trade_ticks">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.request_trade_ticks">
              <span class="sig-name descname">
               <span class="pre">
                request_trade_ticks
@@ -8884,7 +8884,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.request_trade_ticks" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.request_trade_ticks" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -9007,7 +9007,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.reset">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.reset">
              <span class="sig-name descname">
               <span class="pre">
                reset
@@ -9036,7 +9036,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.reset" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.reset" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -9076,7 +9076,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.resume">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.resume">
              <span class="sig-name descname">
               <span class="pre">
                resume
@@ -9105,7 +9105,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.resume" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.resume" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -9142,7 +9142,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.save">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.save">
              <span class="sig-name descname">
               <span class="pre">
                save
@@ -9171,7 +9171,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.save" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.save" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -9214,7 +9214,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.start">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.start">
              <span class="sig-name descname">
               <span class="pre">
                start
@@ -9243,7 +9243,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.start" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.start" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -9280,13 +9280,13 @@ If
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.state">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.state">
              <span class="sig-name descname">
               <span class="pre">
                state
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.state" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.state" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -9309,7 +9309,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.stop">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.stop">
              <span class="sig-name descname">
               <span class="pre">
                stop
@@ -9338,7 +9338,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.stop" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.stop" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -9375,7 +9375,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.submit_order">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.submit_order">
              <span class="sig-name descname">
               <span class="pre">
                submit_order
@@ -9437,7 +9437,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.submit_order" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.submit_order" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -9529,7 +9529,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.submit_order_list">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.submit_order_list">
              <span class="sig-name descname">
               <span class="pre">
                submit_order_list
@@ -9580,7 +9580,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.submit_order_list" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.submit_order_list" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -9652,7 +9652,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.subscribe_bars">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.subscribe_bars">
              <span class="sig-name descname">
               <span class="pre">
                subscribe_bars
@@ -9703,7 +9703,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_bars" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.subscribe_bars" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -9768,7 +9768,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.subscribe_data">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.subscribe_data">
              <span class="sig-name descname">
               <span class="pre">
                subscribe_data
@@ -9819,7 +9819,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_data" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.subscribe_data" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -9878,7 +9878,7 @@ sent to the corresponding data client.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.subscribe_instrument">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.subscribe_instrument">
              <span class="sig-name descname">
               <span class="pre">
                subscribe_instrument
@@ -9929,7 +9929,7 @@ sent to the corresponding data client.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_instrument" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.subscribe_instrument" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -9994,7 +9994,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.subscribe_instrument_close_prices">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.subscribe_instrument_close_prices">
              <span class="sig-name descname">
               <span class="pre">
                subscribe_instrument_close_prices
@@ -10045,7 +10045,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_instrument_close_prices" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.subscribe_instrument_close_prices" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -10106,7 +10106,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.subscribe_instrument_status_updates">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.subscribe_instrument_status_updates">
              <span class="sig-name descname">
               <span class="pre">
                subscribe_instrument_status_updates
@@ -10157,7 +10157,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_instrument_status_updates" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.subscribe_instrument_status_updates" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -10218,7 +10218,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.subscribe_instruments">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.subscribe_instruments">
              <span class="sig-name descname">
               <span class="pre">
                subscribe_instruments
@@ -10269,7 +10269,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_instruments" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.subscribe_instruments" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -10334,7 +10334,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.subscribe_order_book_deltas">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.subscribe_order_book_deltas">
              <span class="sig-name descname">
               <span class="pre">
                subscribe_order_book_deltas
@@ -10418,7 +10418,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_order_book_deltas" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.subscribe_order_book_deltas" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -10545,7 +10545,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.subscribe_order_book_snapshots">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.subscribe_order_book_snapshots">
              <span class="sig-name descname">
               <span class="pre">
                subscribe_order_book_snapshots
@@ -10640,7 +10640,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_order_book_snapshots" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.subscribe_order_book_snapshots" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -10819,7 +10819,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.subscribe_quote_ticks">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.subscribe_quote_ticks">
              <span class="sig-name descname">
               <span class="pre">
                subscribe_quote_ticks
@@ -10870,7 +10870,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_quote_ticks" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.subscribe_quote_ticks" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -10935,7 +10935,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.subscribe_ticker">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.subscribe_ticker">
              <span class="sig-name descname">
               <span class="pre">
                subscribe_ticker
@@ -10986,7 +10986,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_ticker" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.subscribe_ticker" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -11051,7 +11051,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.subscribe_trade_ticks">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.subscribe_trade_ticks">
              <span class="sig-name descname">
               <span class="pre">
                subscribe_trade_ticks
@@ -11102,7 +11102,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_trade_ticks" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.subscribe_trade_ticks" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -11167,7 +11167,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.subscribe_venue_status_updates">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.subscribe_venue_status_updates">
              <span class="sig-name descname">
               <span class="pre">
                subscribe_venue_status_updates
@@ -11218,7 +11218,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_venue_status_updates" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.subscribe_venue_status_updates" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -11279,13 +11279,13 @@ If
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.trader_id">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.trader_id">
              <span class="sig-name descname">
               <span class="pre">
                trader_id
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.trader_id" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.trader_id" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -11308,13 +11308,13 @@ If
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.type">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.type">
              <span class="sig-name descname">
               <span class="pre">
                type
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.type" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.type" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -11337,7 +11337,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_bars">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.unsubscribe_bars">
              <span class="sig-name descname">
               <span class="pre">
                unsubscribe_bars
@@ -11388,7 +11388,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_bars" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.unsubscribe_bars" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -11453,7 +11453,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_data">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.unsubscribe_data">
              <span class="sig-name descname">
               <span class="pre">
                unsubscribe_data
@@ -11504,7 +11504,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_data" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.unsubscribe_data" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -11563,7 +11563,7 @@ be sent to the data client.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_instrument">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.unsubscribe_instrument">
              <span class="sig-name descname">
               <span class="pre">
                unsubscribe_instrument
@@ -11614,7 +11614,7 @@ be sent to the data client.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_instrument" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.unsubscribe_instrument" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -11679,7 +11679,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_instruments">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.unsubscribe_instruments">
              <span class="sig-name descname">
               <span class="pre">
                unsubscribe_instruments
@@ -11730,7 +11730,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_instruments" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.unsubscribe_instruments" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -11795,7 +11795,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_order_book_deltas">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.unsubscribe_order_book_deltas">
              <span class="sig-name descname">
               <span class="pre">
                unsubscribe_order_book_deltas
@@ -11846,7 +11846,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_order_book_deltas" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.unsubscribe_order_book_deltas" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -11907,7 +11907,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_order_book_snapshots">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.unsubscribe_order_book_snapshots">
              <span class="sig-name descname">
               <span class="pre">
                unsubscribe_order_book_snapshots
@@ -11969,7 +11969,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_order_book_snapshots" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.unsubscribe_order_book_snapshots" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -12045,7 +12045,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_quote_ticks">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.unsubscribe_quote_ticks">
              <span class="sig-name descname">
               <span class="pre">
                unsubscribe_quote_ticks
@@ -12096,7 +12096,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_quote_ticks" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.unsubscribe_quote_ticks" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -12161,7 +12161,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_ticker">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.unsubscribe_ticker">
              <span class="sig-name descname">
               <span class="pre">
                unsubscribe_ticker
@@ -12212,7 +12212,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_ticker" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.unsubscribe_ticker" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -12277,7 +12277,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_trade_ticks">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.unsubscribe_trade_ticks">
              <span class="sig-name descname">
               <span class="pre">
                unsubscribe_trade_ticks
@@ -12328,7 +12328,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_trade_ticks" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.unsubscribe_trade_ticks" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -12393,7 +12393,7 @@ If
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_venue_status_updates">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.unsubscribe_venue_status_updates">
              <span class="sig-name descname">
               <span class="pre">
                unsubscribe_venue_status_updates
@@ -12444,7 +12444,7 @@ If
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_venue_status_updates" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.unsubscribe_venue_status_updates" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -12505,13 +12505,13 @@ If
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.uuid_factory">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.uuid_factory">
              <span class="sig-name descname">
               <span class="pre">
                uuid_factory
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.uuid_factory" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.uuid_factory" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -12930,7 +12930,7 @@ a running instance of the platform.
                 </cite>
                 contains a type other than
                 <cite>
-                 TradingStrategy
+                 Strategy
                 </cite>
                 .
                </p>
@@ -13270,7 +13270,7 @@ a running instance of the platform.
                strategies:
               </span>
               <span class="pre">
-               [TradingStrategy]
+               [Strategy]
               </span>
              </em>
              <span class="sig-paren">
@@ -13364,7 +13364,7 @@ a running instance of the platform.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                TradingStrategy
+                Strategy
                </span>
                <span class="pre">
                 strategy
@@ -13402,9 +13402,9 @@ a running instance of the platform.
                  strategy
                 </strong>
                 (
-                <a class="reference internal" href="#nautilus_trader.trading.strategy.TradingStrategy" title="nautilus_trader.trading.strategy.TradingStrategy">
+                <a class="reference internal" href="#nautilus_trader.trading.strategy.Strategy" title="nautilus_trader.trading.strategy.Strategy">
                  <em>
-                  TradingStrategy
+                  Strategy
                  </em>
                 </a>
                 ) – The trading strategy to add and register.

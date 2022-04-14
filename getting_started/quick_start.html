@@ -796,7 +796,7 @@ registering indicators to receive certain data types, however in this example we
          </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
-           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.trading.strategy</span> <span class="kn">import</span> <span class="n">TradingStrategy</span><span class="p">,</span> <span class="n">TradingStrategyConfig</span>
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.trading.strategy</span> <span class="kn">import</span> <span class="n">Strategy</span><span class="p">,</span> <span class="n">StrategyConfig</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.indicators.macd</span> <span class="kn">import</span> <span class="n">MovingAverageConvergenceDivergence</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.model.data.tick</span> <span class="kn">import</span> <span class="n">QuoteTick</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.model.enums</span> <span class="kn">import</span> <span class="n">PriceType</span>
@@ -808,7 +808,7 @@ registering indicators to receive certain data types, however in this example we
 
 
 
-<span class="k">class</span> <span class="nc">MACDConfig</span><span class="p">(</span><span class="n">TradingStrategyConfig</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">MACDConfig</span><span class="p">(</span><span class="n">StrategyConfig</span><span class="p">):</span>
     <span class="n">instrument_id</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">fast_period</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">slow_period</span><span class="p">:</span> <span class="nb">int</span>
@@ -816,7 +816,7 @@ registering indicators to receive certain data types, however in this example we
     <span class="n">entry_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.00010</span>
 
 
-<span class="k">class</span> <span class="nc">MACDStrategy</span><span class="p">(</span><span class="n">TradingStrategy</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">MACDStrategy</span><span class="p">(</span><span class="n">Strategy</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">MACDConfig</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
         <span class="c1"># Our "trading signal"</span>

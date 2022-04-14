@@ -686,7 +686,7 @@
 trading strategies. Defining a trading strategy is achieved by inheriting the
          <code class="docutils literal notranslate">
           <span class="pre">
-           TradingStrategy
+           Strategy
           </span>
          </code>
          class,
@@ -714,7 +714,7 @@ of all the possible functionality.
            The strategy implementation itself, defined by inheriting the
            <code class="docutils literal notranslate">
             <span class="pre">
-             TradingStrategy
+             Strategy
             </span>
            </code>
            class
@@ -729,7 +729,7 @@ of all the possible functionality.
            strategy configuration, defined by inheriting the
            <code class="docutils literal notranslate">
             <span class="pre">
-             TradingStrategyConfig
+             StrategyConfig
             </span>
            </code>
            class
@@ -769,10 +769,10 @@ live trading servers remotely, then you will need to define a configuration.
          <div class="highlight-python notranslate">
           <div class="highlight">
            <pre><span></span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
-<span class="kn">from</span> <span class="nn">nautilus_trader.config</span> <span class="kn">import</span> <span class="n">TradingStrategyConfig</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.config</span> <span class="kn">import</span> <span class="n">StrategyConfig</span>
 
 
-<span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">TradingStrategyConfig</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">StrategyConfig</span><span class="p">):</span>
     <span class="n">instrument_id</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">bar_type</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">fast_ema_period</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
@@ -866,7 +866,7 @@ example the above config would result in a strategy ID of
           Since a trading strategy is a class which inherits from
           <code class="docutils literal notranslate">
            <span class="pre">
-            TradingStrategy
+            Strategy
            </span>
           </code>
           , you must define
@@ -874,7 +874,7 @@ a constructor where you can handle initialization. Minimally the base/super clas
          </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
-           <pre><span></span><span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">TradingStrategy</span><span class="p">):</span>
+           <pre><span></span><span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">Strategy</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>  <span class="c1"># &lt;-- the super class must be called to initialize the strategy</span>
 </pre>
@@ -886,10 +886,10 @@ as a string, to parameterize the instrument the strategy will trade.
          </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
-           <pre><span></span><span class="k">class</span> <span class="nc">MyStrategyConfig</span><span class="p">(</span><span class="n">TradingStrategyConfig</span><span class="p">):</span>
+           <pre><span></span><span class="k">class</span> <span class="nc">MyStrategyConfig</span><span class="p">(</span><span class="n">StrategyConfig</span><span class="p">):</span>
     <span class="n">instrument_id</span><span class="p">:</span> <span class="nb">str</span>
 
-<span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">TradingStrategy</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">MyStrategy</span><span class="p">(</span><span class="n">Strategy</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">MyStrategyConfig</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 
