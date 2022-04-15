@@ -11934,6 +11934,20 @@ position ID resolution.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
+                ClientOrderId
+               </span>
+               <span class="pre">
+                client_order_id:
+               </span>
+               <span class="pre">
+                ClientOrderId
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
                 VenueOrderId
                </span>
                <span class="pre">
@@ -11987,6 +12001,26 @@ position ID resolution.
                 <li>
                  <p>
                   <strong>
+                   client_order_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
+                   <em>
+                    ClientOrderId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The client order ID for the report.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
                    venue_order_id
                   </strong>
                   (
@@ -11995,6 +12029,12 @@ position ID resolution.
                     VenueOrderId
                    </em>
                   </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
                   ) – The venue order ID for the report.
                  </p>
                 </li>
@@ -12006,6 +12046,30 @@ position ID resolution.
               <dd class="field-even">
                <p>
                 OrderStatusReport or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+              <dt class="field-odd">
+               Raises
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If both the
+                <cite>
+                 client_order_id
+                </cite>
+                and
+                <cite>
+                 venue_order_id
+                </cite>
+                are
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
