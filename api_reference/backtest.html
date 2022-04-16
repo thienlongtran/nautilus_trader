@@ -5566,6 +5566,105 @@ to the current datetime.
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.request_instrument">
+             <span class="sig-name descname">
+              <span class="pre">
+               request_instrument
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                InstrumentId
+               </span>
+               <span class="pre">
+                instrument_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                UUID4
+               </span>
+               <span class="pre">
+                correlation_id
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.request_instrument" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Request an instrument for the given parameters.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The instrument ID for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.request_quote_ticks">
              <span class="sig-name descname">
               <span class="pre">

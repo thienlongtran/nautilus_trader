@@ -8383,13 +8383,17 @@ data for the given instrument ID.
               Request historical bars for the given parameters.
              </p>
              <p>
-              If datetimes are
+              If
+              <cite>
+               to_datetime
+              </cite>
+              is
               <code class="docutils literal notranslate">
                <span class="pre">
                 None
                </span>
               </code>
-              then will request the most recent data.
+              then will request up to the most recent data.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -8615,6 +8619,118 @@ If
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.request_instrument">
+             <span class="sig-name descname">
+              <span class="pre">
+               request_instrument
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                InstrumentId
+               </span>
+               <span class="pre">
+                instrument_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.trading.strategy.Strategy.request_instrument" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Request an instrument for the given parameters.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The instrument ID for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specific client ID for the command.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will be inferred from the venue in the instrument ID.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.Strategy.request_quote_ticks">
              <span class="sig-name descname">
               <span class="pre">
@@ -8697,13 +8813,17 @@ If
               Request historical quote ticks for the given parameters.
              </p>
              <p>
-              If datetimes are
+              If
+              <cite>
+               to_datetime
+              </cite>
+              is
               <code class="docutils literal notranslate">
                <span class="pre">
                 None
                </span>
               </code>
-              then will request the most recent data.
+              then will request up to the most recent data.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -8893,13 +9013,17 @@ If
               Request historical trade ticks for the given parameters.
              </p>
              <p>
-              If datetimes are
+              If
+              <cite>
+               to_datetime
+              </cite>
+              is
               <code class="docutils literal notranslate">
                <span class="pre">
                 None
                </span>
               </code>
-              then will request the most recent data.
+              then will request up to the most recent data.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
