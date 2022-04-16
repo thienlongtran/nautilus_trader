@@ -4189,9 +4189,99 @@ the new model: you should trust this data
             </a>
            </p>
            <p>
-            Represents the configuration for one specific backtest run (a single set of
-data / strategies / parameters).
+            Represents the configuration for one specific backtest run.
            </p>
+           <p>
+            This includes a backtest engine with its actors and strategies, with the
+external inputs of venues and data.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 engine
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.config.backtest.BacktestEngineConfig" title="nautilus_trader.config.backtest.BacktestEngineConfig">
+                 <em>
+                  BacktestEngineConfig
+                 </em>
+                </a>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The backtest engine configuration (represents the core system kernel).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 venues
+                </strong>
+                (
+                <em>
+                 List
+                </em>
+                <em>
+                 [
+                </em>
+                <a class="reference internal" href="#nautilus_trader.config.backtest.BacktestVenueConfig" title="nautilus_trader.config.backtest.BacktestVenueConfig">
+                 <em>
+                  BacktestVenueConfig
+                 </em>
+                </a>
+                <em>
+                 ]
+                </em>
+                ) – The venue configurations for the backtest run.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 data
+                </strong>
+                (
+                <em>
+                 List
+                </em>
+                <em>
+                 [
+                </em>
+                <a class="reference internal" href="#nautilus_trader.config.backtest.BacktestDataConfig" title="nautilus_trader.config.backtest.BacktestDataConfig">
+                 <em>
+                  BacktestDataConfig
+                 </em>
+                </a>
+                <em>
+                 ]
+                </em>
+                ) – The data configurations for the backtest run.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 batch_size_bytes
+                </strong>
+                (
+                <em>
+                 optional
+                </em>
+                ) – The batch block size in bytes (will then run in streaming mode).
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.config.backtest.BacktestRunConfig.parse_raw">
              <em class="property">
