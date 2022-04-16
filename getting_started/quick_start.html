@@ -718,12 +718,12 @@
          </a>
         </h1>
         <p>
-         This section explains how to get up and running with NautilusTrader by running some backtests on
-FX data. The Nautilus maintainers have pre-loaded some existing data into the standard Nautilus storage
+         This guide explains how to get up and running with NautilusTrader backtesting with some
+FX data. The Nautilus maintainers have pre-loaded some test data using the standard Nautilus persistence
 format (Parquet) for this guide.
         </p>
         <p>
-         For more details on how to load other data into Nautilus, see
+         For more details on how to load data into Nautilus, see
          <a class="reference internal" href="../user_guide/backtest_example.html">
           <span class="doc std std-doc">
            Backtest Example
@@ -739,7 +739,7 @@ format (Parquet) for this guide.
           </a>
          </h2>
          <p>
-          We have prepared a script to load sample data into the Nautilus format for use with this example.
+          To save time, we have prepared a script to load sample data into the Nautilus format for use with this example.
 First, download and load the data by running the next cell (this should take ~ 1-2 mins):
          </p>
          <div class="highlight-python notranslate">
@@ -890,7 +890,6 @@ registering indicators to receive certain data types, however in this example we
 </pre>
           </div>
          </div>
-         <!-- #region pycharm={"name": "#%% md\n"} -->
         </section>
         <section id="configuring-backtests">
          <h2 id="configuring-backtests">
@@ -900,13 +899,13 @@ registering indicators to receive certain data types, however in this example we
           </a>
          </h2>
          <p>
-          Now that we have a trading strategy and data, we can run a backtest! Nautilus uses a
+          Now that we have a trading strategy and data, we can begin to configure a backtest run! Nautilus uses a
           <code class="docutils literal notranslate">
            <span class="pre">
             BacktestNode
            </span>
           </code>
-          to run backtests, and requires some setup. This may seem a little complex at first,
+          to orchestrate backtest runs, which requires some setup. This may seem a little complex at first,
 however this is necessary for the capabilities that Nautilus strives for.
          </p>
          <p>
@@ -916,7 +915,7 @@ however this is necessary for the capabilities that Nautilus strives for.
             BacktestNode
            </span>
           </code>
-          , we create an instance of a
+          , we first need to create an instance of a
           <code class="docutils literal notranslate">
            <span class="pre">
             BacktestRunConfig
@@ -933,7 +932,7 @@ following (minimal) aspects of the backtest:
               engine
              </span>
             </code>
-            - The engine for the backtest which will also contain our strategies
+            - The engine for the backtest representing our core system, which will also contain our strategies
            </p>
           </li>
           <li>
@@ -960,8 +959,6 @@ following (minimal) aspects of the backtest:
          <p>
           There are many more configurable features which will be described later in the docs, for now this will get us up and running.
          </p>
-         <!-- #endregion -->
-         <!-- #region pycharm={"name": "#%% md\n"} -->
         </section>
         <section id="venue">
          <h2 id="venue">
@@ -971,11 +968,28 @@ following (minimal) aspects of the backtest:
           </a>
          </h2>
          <p>
-          First, we create a venue. For this example we will create a simulated FX ECN venue.
-A venue needs a name which acts as an ID, as well as some basic configuration;
-the account type (cash vs margin), an optional base currency, and starting balance.
+          First, we create a venue configuration. For this example we will create a simulated FX ECN.
+A venue needs a name which acts as an ID (in this case
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            SIM
+           </span>
+          </code>
+          ), as well as some basic configuration, e.g.
+the account type (
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            CASH
+           </span>
+          </code>
+          vs
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            MARGIN
+           </span>
+          </code>
+          ), an optional base currency, and starting balance(s).
          </p>
-         <!-- #endregion -->
          <div class="highlight-python notranslate">
           <div class="highlight">
            <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.config</span> <span class="kn">import</span> <span class="n">BacktestVenueConfig</span>
@@ -990,7 +1004,6 @@ the account type (cash vs margin), an optional base currency, and starting balan
 </pre>
           </div>
          </div>
-         <!-- #region -->
         </section>
         <section id="instruments">
          <h2 id="instruments">
@@ -1008,7 +1021,6 @@ the account type (cash vs margin), an optional base currency, and starting balan
           </code>
           for this:
          </p>
-         <!-- #endregion -->
          <div class="highlight-python notranslate">
           <div class="highlight">
            <pre><span></span><span class="n">instruments</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">(</span><span class="n">as_nautilus</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1016,7 +1028,6 @@ the account type (cash vs margin), an optional base currency, and starting balan
 </pre>
           </div>
          </div>
-         <!-- #region jupyter={"outputs_hidden": false} pycharm={"name": "#%% md\n"} -->
         </section>
         <section id="data">
          <h2 id="data">
@@ -1045,20 +1056,17 @@ adding the
           </code>
           (s) for our EUR/USD instrument:
          </p>
-         <!-- #endregion -->
          <div class="highlight-python notranslate">
           <div class="highlight">
-           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.model.data.tick</span> <span class="kn">import</span> <span class="n">QuoteTick</span>
-<span class="kn">from</span> <span class="nn">nautilus_trader.config</span> <span class="kn">import</span> <span class="n">BacktestDataConfig</span>
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.config</span> <span class="kn">import</span> <span class="n">BacktestDataConfig</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.model.data.tick</span> <span class="kn">import</span> <span class="n">QuoteTick</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">BacktestDataConfig</span><span class="p">(</span>
-        <span class="n">catalog_path</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">catalog</span><span class="o">.</span><span class="n">path</span><span class="p">),</span>
-        <span class="n">data_cls</span><span class="o">=</span><span class="n">QuoteTick</span><span class="p">,</span>
-        <span class="n">instrument_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">instruments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
-        <span class="n">end_time</span><span class="o">=</span><span class="s2">"2020-01-05"</span><span class="p">,</span>
-    <span class="p">)</span>
-<span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">BacktestDataConfig</span><span class="p">(</span>
+    <span class="n">catalog_path</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">catalog</span><span class="o">.</span><span class="n">path</span><span class="p">),</span>
+    <span class="n">data_cls</span><span class="o">=</span><span class="n">QuoteTick</span><span class="p">,</span>
+    <span class="n">instrument_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">instruments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
+    <span class="n">end_time</span><span class="o">=</span><span class="s2">"2020-01-05"</span><span class="p">,</span>
+<span class="p">)</span>
 </pre>
           </div>
          </div>
@@ -1100,8 +1108,9 @@ adding the
             BacktestEngineConfig
            </span>
           </code>
-          which configures the log level and other components,
-however it’s also fine to use the defaults:
+          which represents the configuration of our core trading system.
+Here we need to pass our trading strategies, we can also adjust the log level
+and configure many other components (however, it’s also fine to use the defaults):
          </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
@@ -1109,8 +1118,8 @@ however it’s also fine to use the defaults:
 
 <span class="n">engine</span> <span class="o">=</span> <span class="n">BacktestEngineConfig</span><span class="p">(</span>
     <span class="n">strategies</span><span class="o">=</span><span class="p">[</span><span class="n">macd_strategy</span><span class="p">],</span>
-    <span class="n">log_level</span><span class="o">=</span><span class="s2">"ERROR"</span><span class="p">,</span>
-<span class="p">)</span> <span class="c1"># Lower to `INFO` to see more logging about orders, events, etc.</span>
+    <span class="n">log_level</span><span class="o">=</span><span class="s2">"ERROR"</span><span class="p">,</span>  <span class="c1"># Lower to `INFO` to see more logging about orders, events, etc.</span>
+<span class="p">)</span>
 </pre>
           </div>
          </div>
@@ -1129,9 +1138,23 @@ however it’s also fine to use the defaults:
             BacktestRunConfig
            </span>
           </code>
-          - this object now contains the
-full configuration for our backtest, we are ready to run some backtests!
+          . This object now contains the
+full configuration for our backtest.
          </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.config</span> <span class="kn">import</span> <span class="n">BacktestRunConfig</span>
+
+
+<span class="n">config</span> <span class="o">=</span> <span class="n">BacktestRunConfig</span><span class="p">(</span>
+    <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
+    <span class="n">venues</span><span class="o">=</span><span class="p">[</span><span class="n">venue</span><span class="p">],</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">data</span><span class="p">],</span>
+<span class="p">)</span>
+
+</pre>
+          </div>
+         </div>
          <p>
           The
           <code class="docutils literal notranslate">
@@ -1139,11 +1162,7 @@ full configuration for our backtest, we are ready to run some backtests!
             BacktestNode
            </span>
           </code>
-          class
-          <em>
-           actually
-          </em>
-          runs the backtest. The reason for this separation between
+          class will orchestrate the backtest run. The reason for this separation between
 configuration and execution is the
           <code class="docutils literal notranslate">
            <span class="pre">
@@ -1151,19 +1170,12 @@ configuration and execution is the
            </span>
           </code>
           allows running multiple configurations (different
-parameters or batches of data).
+parameters or batches of data). We are now ready to run some backtests!
          </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
            <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.node</span> <span class="kn">import</span> <span class="n">BacktestNode</span>
-<span class="kn">from</span> <span class="nn">nautilus_trader.config</span> <span class="kn">import</span> <span class="n">BacktestRunConfig</span>
 
-
-<span class="n">config</span> <span class="o">=</span> <span class="n">BacktestRunConfig</span><span class="p">(</span>
-    <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
-    <span class="n">venues</span><span class="o">=</span><span class="p">[</span><span class="n">venue</span><span class="p">],</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-<span class="p">)</span>
 
 <span class="n">node</span> <span class="o">=</span> <span class="n">BacktestNode</span><span class="p">(</span><span class="n">configs</span><span class="o">=</span><span class="p">[</span><span class="n">config</span><span class="p">])</span>
 
@@ -1172,10 +1184,41 @@ parameters or batches of data).
 </pre>
           </div>
          </div>
+         <p>
+          Now that the run is complete, we can also directly query for the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestEngine
+           </span>
+          </code>
+          (s) used internally by the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestNode
+           </span>
+          </code>
+          by using the run configs ID. The engine(s) can provide additional reports and information.
+         </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
-           <pre><span></span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">orders</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
-<span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">positions</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
+           <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.engine</span> <span class="kn">import</span> <span class="n">BacktestEngine</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.model.identifiers</span> <span class="kn">import</span> <span class="n">Venue</span>
+
+<span class="n">engine</span><span class="p">:</span> <span class="n">BacktestEngine</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">get_engine</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+
+<span class="n">engine</span><span class="o">.</span><span class="n">trader</span><span class="o">.</span><span class="n">generate_account_report</span><span class="p">(</span><span class="n">Venue</span><span class="p">(</span><span class="s2">"SIM"</span><span class="p">))</span>
+</pre>
+          </div>
+         </div>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">engine</span><span class="o">.</span><span class="n">trader</span><span class="o">.</span><span class="n">generate_order_fills_report</span><span class="p">()</span>
+</pre>
+          </div>
+         </div>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">engine</span><span class="o">.</span><span class="n">trader</span><span class="o">.</span><span class="n">generate_positions_report</span><span class="p">()</span>
 </pre>
           </div>
          </div>
