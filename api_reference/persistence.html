@@ -3311,6 +3311,84 @@ passed will potentially contain many lines (a block).
            </dl>
           </dd>
          </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.persistence.batching.extract_generic_data_client_ids">
+           <span class="sig-name descname">
+            <span class="pre">
+             extract_generic_data_client_ids
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              data_configs
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              List
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <a class="reference internal" href="config.html#nautilus_trader.config.backtest.BacktestDataConfig" title="nautilus_trader.config.backtest.BacktestDataConfig">
+              <span class="pre">
+               nautilus_trader.config.backtest.BacktestDataConfig
+              </span>
+             </a>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              Dict
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.persistence.batching.extract_generic_data_client_ids" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Extract a mapping of data_type : client_id from the list of
+            <cite>
+             data_configs
+            </cite>
+            .
+In the process of merging the streaming data, we lose the
+            <cite>
+             client_id
+            </cite>
+            for
+generic data, we need to inject this back in so the backtest engine can be
+correctly loaded.
+           </p>
+          </dd>
+         </dl>
         </section>
         <section id="module-nautilus_trader.persistence.catalog">
          <span id="catalog">

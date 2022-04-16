@@ -1160,20 +1160,17 @@ parameters or batches of data).
     <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="n">node</span> <span class="o">=</span> <span class="n">BacktestNode</span><span class="p">()</span>
+<span class="n">node</span> <span class="o">=</span> <span class="n">BacktestNode</span><span class="p">(</span><span class="n">configs</span><span class="o">=</span><span class="p">[</span><span class="n">config</span><span class="p">])</span>
 
- <span class="c1"># `run` runs one or many configs synchronously</span>
-<span class="p">[</span><span class="n">result</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-    <span class="n">run_configs</span><span class="o">=</span><span class="p">[</span><span class="n">config</span><span class="p">],</span> 
-    <span class="n">return_engine</span><span class="o">=</span><span class="kc">True</span> <span class="c1"># Return the full BacktestEngine (which contains much more detailed information) rather than the standard `BacktestResult`</span>
-<span class="p">)</span>
+ <span class="c1"># Runs one or many configs synchronously</span>
+<span class="n">results</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">BacktestResult</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre>
           </div>
          </div>
          <div class="highlight-python notranslate">
           <div class="highlight">
-           <pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">orders</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
-<span class="n">result</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">positions</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
+           <pre><span></span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">orders</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">positions</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
 </pre>
           </div>
          </div>

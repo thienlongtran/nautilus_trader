@@ -19832,6 +19832,73 @@ of fills and slippage by order type.
              BacktestNode
             </span>
            </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              configs
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              Optional
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <span class="pre">
+              List
+             </span>
+             <span class="p">
+              <span class="pre">
+               [
+              </span>
+             </span>
+             <a class="reference internal" href="config.html#nautilus_trader.config.backtest.BacktestRunConfig" title="nautilus_trader.config.backtest.BacktestRunConfig">
+              <span class="pre">
+               nautilus_trader.config.backtest.BacktestRunConfig
+              </span>
+             </a>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+             <span class="p">
+              <span class="pre">
+               ]
+              </span>
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
            <a class="headerlink" href="#nautilus_trader.backtest.node.BacktestNode" title="Permalink to this definition">
             ¶
            </a>
@@ -19846,13 +19913,106 @@ of fills and slippage by order type.
             </code>
            </p>
            <p>
-            Provides a node for orchestrating groups of configurable backtest runs.
+            Provides a node for orchestrating groups of backtest runs.
            </p>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.backtest.node.BacktestNode.run">
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               configs
+              </strong>
+              (
+              <em>
+               list
+              </em>
+              <em>
+               [
+              </em>
+              <a class="reference internal" href="config.html#nautilus_trader.config.backtest.BacktestRunConfig" title="nautilus_trader.config.backtest.BacktestRunConfig">
+               <em>
+                BacktestRunConfig
+               </em>
+              </a>
+              <em>
+               ]
+              </em>
+              ) – The backtest run configurations.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Raises
+            </dt>
+            <dd class="field-even">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 configs
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                or empty.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 configs
+                </cite>
+                contains a type other than
+                <cite>
+                 BacktestRunConfig
+                </cite>
+                .
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="py property">
+            <dt class="sig sig-object py" id="nautilus_trader.backtest.node.BacktestNode.configs">
+             <em class="property">
+              <span class="pre">
+               property
+              </span>
+              <span class="w">
+              </span>
+             </em>
              <span class="sig-name descname">
               <span class="pre">
-               run
+               configs
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.backtest.node.BacktestNode.configs" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the loaded backtest run configs for the node.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.backtest.node.BacktestNode.get_engine">
+             <span class="sig-name descname">
+              <span class="pre">
+               get_engine
               </span>
              </span>
              <span class="sig-paren">
@@ -19861,7 +20021,7 @@ of fills and slippage by order type.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                run_configs
+                run_config_id
                </span>
               </span>
               <span class="p">
@@ -19873,6 +20033,58 @@ of fills and slippage by order type.
               </span>
               <span class="n">
                <span class="pre">
+                str
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <a class="headerlink" href="#nautilus_trader.backtest.node.BacktestNode.get_engine" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the backtest engine associated with the given run config ID
+(if found).
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                BacktestEngine or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.backtest.node.BacktestNode.get_engines">
+             <span class="sig-name descname">
+              <span class="pre">
+               get_engines
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
                 List
                </span>
                <span class="p">
@@ -19880,9 +20092,9 @@ of fills and slippage by order type.
                  [
                 </span>
                </span>
-               <a class="reference internal" href="config.html#nautilus_trader.config.backtest.BacktestRunConfig" title="nautilus_trader.config.backtest.BacktestRunConfig">
+               <a class="reference internal" href="#nautilus_trader.backtest.engine.BacktestEngine" title="nautilus_trader.backtest.engine.BacktestEngine">
                 <span class="pre">
-                 nautilus_trader.config.backtest.BacktestRunConfig
+                 nautilus_trader.backtest.engine.BacktestEngine
                 </span>
                </a>
                <span class="p">
@@ -19891,8 +20103,39 @@ of fills and slippage by order type.
                 </span>
                </span>
               </span>
-             </em>
-             ,
+             </span>
+             <a class="headerlink" href="#nautilus_trader.backtest.node.BacktestNode.get_engines" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return all backtest engines created by the node.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 list[BacktestEngine]
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.backtest.node.BacktestNode.run">
+             <span class="sig-name descname">
+              <span class="pre">
+               run
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
              <em class="sig-param">
               <span class="o">
                <span class="pre">
@@ -19939,39 +20182,13 @@ of fills and slippage by order type.
             </dt>
             <dd>
              <p>
-              Run a list of backtest configs synchronously.
+              Execute a group of backtest run configs synchronously.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 run_configs
-                </strong>
-                (
-                <em>
-                 list
-                </em>
-                <em>
-                 [
-                </em>
-                <a class="reference internal" href="config.html#nautilus_trader.config.backtest.BacktestRunConfig" title="nautilus_trader.config.backtest.BacktestRunConfig">
-                 <em>
-                  BacktestRunConfig
-                 </em>
-                </a>
-                <em>
-                 ]
-                </em>
-                ) – The backtest run configurations.
-               </p>
-              </dd>
-              <dt class="field-even">
                Returns
               </dt>
-              <dd class="field-even">
+              <dd class="field-odd">
                <p>
                 <em>
                  list[BacktestResult]
@@ -19982,152 +20199,6 @@ of fills and slippage by order type.
              </dl>
             </dd>
            </dl>
-          </dd>
-         </dl>
-         <dl class="py function">
-          <dt class="sig sig-object py" id="nautilus_trader.backtest.node.backtest_runner">
-           <span class="sig-name descname">
-            <span class="pre">
-             backtest_runner
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              run_config_id
-             </span>
-            </span>
-            <span class="p">
-             <span class="pre">
-              :
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="n">
-             <span class="pre">
-              str
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              engine
-             </span>
-            </span>
-            <span class="p">
-             <span class="pre">
-              :
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="n">
-             <a class="reference internal" href="#nautilus_trader.backtest.engine.BacktestEngine" title="nautilus_trader.backtest.engine.BacktestEngine">
-              <span class="pre">
-               nautilus_trader.backtest.engine.BacktestEngine
-              </span>
-             </a>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              data_configs
-             </span>
-            </span>
-            <span class="p">
-             <span class="pre">
-              :
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="n">
-             <span class="pre">
-              List
-             </span>
-             <span class="p">
-              <span class="pre">
-               [
-              </span>
-             </span>
-             <a class="reference internal" href="config.html#nautilus_trader.config.backtest.BacktestDataConfig" title="nautilus_trader.config.backtest.BacktestDataConfig">
-              <span class="pre">
-               nautilus_trader.config.backtest.BacktestDataConfig
-              </span>
-             </a>
-             <span class="p">
-              <span class="pre">
-               ]
-              </span>
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              batch_size_bytes
-             </span>
-            </span>
-            <span class="p">
-             <span class="pre">
-              :
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="n">
-             <span class="pre">
-              Optional
-             </span>
-             <span class="p">
-              <span class="pre">
-               [
-              </span>
-             </span>
-             <span class="pre">
-              int
-             </span>
-             <span class="p">
-              <span class="pre">
-               ]
-              </span>
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="o">
-             <span class="pre">
-              =
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="default_value">
-             <span class="pre">
-              None
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <a class="headerlink" href="#nautilus_trader.backtest.node.backtest_runner" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Execute a backtest run.
-           </p>
           </dd>
          </dl>
         </section>
