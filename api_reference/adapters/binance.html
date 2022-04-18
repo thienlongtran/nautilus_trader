@@ -4478,6 +4478,28 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
+              account_type
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <a class="reference internal" href="#nautilus_trader.adapters.binance.common.enums.BinanceAccountType" title="nautilus_trader.adapters.binance.common.enums.BinanceAccountType">
+              <span class="pre">
+               nautilus_trader.adapters.binance.common.enums.BinanceAccountType
+              </span>
+             </a>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
               key
              </span>
             </span>
@@ -4572,42 +4594,6 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              account_type
-             </span>
-            </span>
-            <span class="p">
-             <span class="pre">
-              :
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="n">
-             <a class="reference internal" href="#nautilus_trader.adapters.binance.common.enums.BinanceAccountType" title="nautilus_trader.adapters.binance.common.enums.BinanceAccountType">
-              <span class="pre">
-               nautilus_trader.adapters.binance.common.enums.BinanceAccountType
-              </span>
-             </a>
-            </span>
-            <span class="w">
-            </span>
-            <span class="o">
-             <span class="pre">
-              =
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="default_value">
-             <span class="pre">
-              BinanceAccountType.SPOT
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               base_url
              </span>
             </span>
@@ -4656,6 +4642,40 @@ the new model: you should trust this data
             <span class="n">
              <span class="pre">
               is_testnet
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="o">
+             <span class="pre">
+              =
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="default_value">
+             <span class="pre">
+              False
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              is_us
              </span>
             </span>
             <span class="p">
@@ -4759,6 +4779,20 @@ cached client will be returned.
               <li>
                <p>
                 <strong>
+                 account_type
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.adapters.binance.common.enums.BinanceAccountType" title="nautilus_trader.adapters.binance.common.enums.BinanceAccountType">
+                 <em>
+                  BinanceAccountType
+                 </em>
+                </a>
+                ) – The account type for the client.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  key
                 </strong>
                 (
@@ -4795,26 +4829,6 @@ cached client will be returned.
               <li>
                <p>
                 <strong>
-                 account_type
-                </strong>
-                (
-                <a class="reference internal" href="#nautilus_trader.adapters.binance.common.enums.BinanceAccountType" title="nautilus_trader.adapters.binance.common.enums.BinanceAccountType">
-                 <em>
-                  BinanceAccountType
-                 </em>
-                </a>
-                <em>
-                 ,
-                </em>
-                <em>
-                 default BinanceAccountType.SPOT
-                </em>
-                ) – The account type for the client.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
                  base_url
                 </strong>
                 (
@@ -4846,6 +4860,24 @@ cached client will be returned.
                  default False
                 </em>
                 ) – If the client is connecting to the testnet API.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 is_us
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If the client is connecting to Binance US.
                </p>
               </li>
              </ul>
