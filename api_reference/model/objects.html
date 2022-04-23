@@ -1097,296 +1097,6 @@
          </dd>
         </dl>
         <dl class="py class">
-         <dt class="sig sig-object py" id="nautilus_trader.model.objects.BaseDecimal">
-          <em class="property">
-           <span class="pre">
-            class
-           </span>
-           <span class="w">
-           </span>
-          </em>
-          <span class="sig-name descname">
-           <span class="pre">
-            BaseDecimal
-           </span>
-          </span>
-          <span class="sig-paren">
-           (
-          </span>
-          <em class="sig-param">
-           <span class="n">
-            <span class="pre">
-             value
-            </span>
-           </span>
-          </em>
-          ,
-          <em class="sig-param">
-           <span class="n">
-            <span class="pre">
-             uint8_t
-            </span>
-            <span class="pre">
-             precision
-            </span>
-           </span>
-          </em>
-          <span class="sig-paren">
-           )
-          </span>
-          <a class="headerlink" href="#nautilus_trader.model.objects.BaseDecimal" title="Permalink to this definition">
-           ¶
-          </a>
-         </dt>
-         <dd>
-          <p>
-           Bases:
-           <code class="xref py py-class docutils literal notranslate">
-            <span class="pre">
-             object
-            </span>
-           </code>
-          </p>
-          <p>
-           The abstract base class for all domain value objects.
-          </p>
-          <p>
-           Represents a decimal number with a specified precision and is intended to be
-used as the base class for fundamental domain model value types. The
-specification of precision is more explicit and straight forward than
-providing a decimal.Context. The
-           <cite>
-            BaseDecimal
-           </cite>
-           type and its subclasses are
-also able to be used as operands for mathematical operations with
-           <cite>
-            float
-           </cite>
-           objects. Return values are floats if one of the operands is a float, else
-a
-           <cite>
-            decimal.Decimal
-           </cite>
-           .
-          </p>
-          <dl class="field-list simple">
-           <dt class="field-odd">
-            Parameters
-           </dt>
-           <dd class="field-odd">
-            <ul class="simple">
-             <li>
-              <p>
-               <strong>
-                value
-               </strong>
-               (
-               <em>
-                integer
-               </em>
-               <em>
-                ,
-               </em>
-               <em>
-                float
-               </em>
-               <em>
-                ,
-               </em>
-               <em>
-                string
-               </em>
-               <em>
-                or
-               </em>
-               <em>
-                Decimal
-               </em>
-               ) – The value of the decimal.
-              </p>
-             </li>
-             <li>
-              <p>
-               <strong>
-                precision
-               </strong>
-               (
-               <em>
-                uint8
-               </em>
-               ) – The precision for the decimal. Use a precision of 0 for whole numbers
-(no fractional units).
-              </p>
-             </li>
-            </ul>
-           </dd>
-           <dt class="field-even">
-            Raises
-           </dt>
-           <dd class="field-even">
-            <p>
-             <strong>
-              OverflowError
-             </strong>
-             – If
-             <cite>
-              precision
-             </cite>
-             is negative (&lt; 0).
-            </p>
-           </dd>
-          </dl>
-          <div class="admonition warning">
-           <p class="admonition-title">
-            Warning
-           </p>
-           <p>
-            This class should not be used directly, but through a concrete subclass.
-           </p>
-          </div>
-          <p class="rubric">
-           References
-          </p>
-          <p>
-           <a class="reference external" href="https://docs.python.org/3.9/library/decimal.html">
-            https://docs.python.org/3.9/library/decimal.html
-           </a>
-          </p>
-          <dl class="py method">
-           <dt class="sig sig-object py" id="nautilus_trader.model.objects.BaseDecimal.as_decimal">
-            <span class="sig-name descname">
-             <span class="pre">
-              as_decimal
-             </span>
-            </span>
-            <span class="sig-paren">
-             (
-            </span>
-            <em class="sig-param">
-             <span class="n">
-              <span class="pre">
-               self
-              </span>
-             </span>
-            </em>
-            <span class="sig-paren">
-             )
-            </span>
-            <a class="headerlink" href="#nautilus_trader.model.objects.BaseDecimal.as_decimal" title="Permalink to this definition">
-             ¶
-            </a>
-           </dt>
-           <dd>
-            <p>
-             Return the value as a built-in
-             <cite>
-              Decimal
-             </cite>
-             .
-            </p>
-            <dl class="field-list simple">
-             <dt class="field-odd">
-              Returns
-             </dt>
-             <dd class="field-odd">
-              <p>
-               <em>
-                Decimal
-               </em>
-              </p>
-             </dd>
-            </dl>
-           </dd>
-          </dl>
-          <dl class="py method">
-           <dt class="sig sig-object py" id="nautilus_trader.model.objects.BaseDecimal.as_double">
-            <span class="sig-name descname">
-             <span class="pre">
-              as_double
-             </span>
-            </span>
-            <span class="sig-paren">
-             (
-            </span>
-            <em class="sig-param">
-             <span class="n">
-              <span class="pre">
-               self
-              </span>
-             </span>
-            </em>
-            <span class="sig-paren">
-             )
-            </span>
-            <span class="sig-return">
-             <span class="sig-return-icon">
-              →
-             </span>
-             <span class="sig-return-typehint">
-              <span class="pre">
-               double
-              </span>
-             </span>
-            </span>
-            <a class="headerlink" href="#nautilus_trader.model.objects.BaseDecimal.as_double" title="Permalink to this definition">
-             ¶
-            </a>
-           </dt>
-           <dd>
-            <p>
-             Return the value as a
-             <cite>
-              double
-             </cite>
-             .
-            </p>
-            <dl class="field-list simple">
-             <dt class="field-odd">
-              Returns
-             </dt>
-             <dd class="field-odd">
-              <p>
-               <em>
-                double
-               </em>
-              </p>
-             </dd>
-            </dl>
-           </dd>
-          </dl>
-          <dl class="py attribute">
-           <dt class="sig sig-object py" id="nautilus_trader.model.objects.BaseDecimal.precision">
-            <span class="sig-name descname">
-             <span class="pre">
-              precision
-             </span>
-            </span>
-            <a class="headerlink" href="#nautilus_trader.model.objects.BaseDecimal.precision" title="Permalink to this definition">
-             ¶
-            </a>
-           </dt>
-           <dd>
-            <p>
-             The decimal precision.
-            </p>
-            <dl class="field-list simple">
-             <dt class="field-odd">
-              Returns
-             </dt>
-             <dd class="field-odd">
-              <p>
-               <cite>
-                uint8
-               </cite>
-              </p>
-             </dd>
-            </dl>
-           </dd>
-          </dl>
-         </dd>
-        </dl>
-        <dl class="py class">
          <dt class="sig sig-object py" id="nautilus_trader.model.objects.MarginBalance">
           <em class="property">
            <span class="pre">
@@ -1873,16 +1583,14 @@ a
          <dd>
           <p>
            Bases:
-           <a class="reference internal" href="#nautilus_trader.model.objects.BaseDecimal" title="nautilus_trader.model.objects.BaseDecimal">
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              nautilus_trader.model.objects.BaseDecimal
-             </span>
-            </code>
-           </a>
+           <code class="xref py py-class docutils literal notranslate">
+            <span class="pre">
+             object
+            </span>
+           </code>
           </p>
           <p>
-           Represents an amount of money including currency type.
+           Represents an amount of money in a specified currency denomination.
           </p>
           <dl class="field-list simple">
            <dt class="field-odd">
@@ -2069,6 +1777,54 @@ a
            </dd>
           </dl>
           <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.from_fixed">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_fixed
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               uint64_t
+              </span>
+              <span class="pre">
+               fixed
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               uint8_t
+              </span>
+              <span class="pre">
+               precision
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Money.from_fixed" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+           </dd>
+          </dl>
+          <dl class="py method">
            <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.from_str">
             <em class="property">
              <span class="pre">
@@ -2169,35 +1925,6 @@ whitespace delimiter.
             </dl>
            </dd>
           </dl>
-          <dl class="py attribute">
-           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.precision">
-            <span class="sig-name descname">
-             <span class="pre">
-              precision
-             </span>
-            </span>
-            <a class="headerlink" href="#nautilus_trader.model.objects.Money.precision" title="Permalink to this definition">
-             ¶
-            </a>
-           </dt>
-           <dd>
-            <p>
-             The decimal precision.
-            </p>
-            <dl class="field-list simple">
-             <dt class="field-odd">
-              Returns
-             </dt>
-             <dd class="field-odd">
-              <p>
-               <cite>
-                uint8
-               </cite>
-              </p>
-             </dd>
-            </dl>
-           </dd>
-          </dl>
           <dl class="py method">
            <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.to_str">
             <span class="sig-name descname">
@@ -2272,6 +1999,9 @@ whitespace delimiter.
           <em class="sig-param">
            <span class="n">
             <span class="pre">
+             double
+            </span>
+            <span class="pre">
              value
             </span>
            </span>
@@ -2297,21 +2027,19 @@ whitespace delimiter.
          <dd>
           <p>
            Bases:
-           <a class="reference internal" href="#nautilus_trader.model.objects.BaseDecimal" title="nautilus_trader.model.objects.BaseDecimal">
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              nautilus_trader.model.objects.BaseDecimal
-             </span>
-            </code>
-           </a>
+           <code class="xref py py-class docutils literal notranslate">
+            <span class="pre">
+             object
+            </span>
+           </code>
           </p>
           <p>
            Represents a price in a financial market.
           </p>
           <p>
-           The number of decimal places may vary. For certain asset classes prices may
-be negative values. For example, prices for options strategies can be
-negative under certain market conditions.
+           The number of decimal places may vary. For certain asset classes, prices may
+have negative values. For example, prices for options instruments can be
+negative under certain conditions.
           </p>
           <dl class="field-list simple">
            <dt class="field-odd">
@@ -2368,16 +2096,32 @@ negative under certain market conditions.
             Raises
            </dt>
            <dd class="field-even">
-            <p>
-             <strong>
-              OverflowError
-             </strong>
-             – If
-             <cite>
-              precision
-             </cite>
-             is negative (&lt; 0).
-            </p>
+            <ul class="simple">
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                precision
+               </cite>
+               greater than 9.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                OverflowError
+               </strong>
+               – If
+               <cite>
+                precision
+               </cite>
+               is negative (&lt; 0).
+              </p>
+             </li>
+            </ul>
            </dd>
           </dl>
           <p class="rubric">
@@ -2488,6 +2232,54 @@ negative under certain market conditions.
               </p>
              </dd>
             </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.from_fixed">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_fixed
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               int64_t
+              </span>
+              <span class="pre">
+               fixed
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               uint8_t
+              </span>
+              <span class="pre">
+               precision
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Price.from_fixed" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
            </dd>
           </dl>
           <dl class="py method">
@@ -2649,32 +2441,25 @@ negative under certain market conditions.
               </p>
              </dd>
             </dl>
-           </dd>
-          </dl>
-          <dl class="py attribute">
-           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.precision">
-            <span class="sig-name descname">
-             <span class="pre">
-              precision
-             </span>
-            </span>
-            <a class="headerlink" href="#nautilus_trader.model.objects.Price.precision" title="Permalink to this definition">
-             ¶
-            </a>
-           </dt>
-           <dd>
-            <p>
-             The decimal precision.
-            </p>
+            <div class="admonition warning">
+             <p class="admonition-title">
+              Warning
+             </p>
+             <p>
+              The decimal precision will be inferred from the number of digits
+following the ‘.’ point (if no point then precision zero).
+             </p>
+            </div>
             <dl class="field-list simple">
              <dt class="field-odd">
-              Returns
+              Raises
              </dt>
              <dd class="field-odd">
               <p>
-               <cite>
-                uint8
-               </cite>
+               <strong>
+                ValueError
+               </strong>
+               – If inferred precision greater than 9.
               </p>
              </dd>
             </dl>
@@ -2702,6 +2487,9 @@ negative under certain market conditions.
           <em class="sig-param">
            <span class="n">
             <span class="pre">
+             double
+            </span>
+            <span class="pre">
              value
             </span>
            </span>
@@ -2727,13 +2515,11 @@ negative under certain market conditions.
          <dd>
           <p>
            Bases:
-           <a class="reference internal" href="#nautilus_trader.model.objects.BaseDecimal" title="nautilus_trader.model.objects.BaseDecimal">
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              nautilus_trader.model.objects.BaseDecimal
-             </span>
-            </code>
-           </a>
+           <code class="xref py py-class docutils literal notranslate">
+            <span class="pre">
+             object
+            </span>
+           </code>
           </p>
           <p>
            Represents a quantity with a non-negative value.
@@ -2810,6 +2596,18 @@ in fractional units).
                 value
                </cite>
                is negative (&lt; 0).
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                ValueError
+               </strong>
+               – If
+               <cite>
+                precision
+               </cite>
+               greater than 9.
               </p>
              </li>
              <li>
@@ -2935,6 +2733,54 @@ in fractional units).
               </p>
              </dd>
             </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.from_fixed">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_fixed
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               uint64_t
+              </span>
+              <span class="pre">
+               fixed
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               uint8_t
+              </span>
+              <span class="pre">
+               precision
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Quantity.from_fixed" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
            </dd>
           </dl>
           <dl class="py method">
@@ -3105,32 +2951,16 @@ in fractional units).
 following the ‘.’ point (if no point then precision zero).
              </p>
             </div>
-           </dd>
-          </dl>
-          <dl class="py attribute">
-           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.precision">
-            <span class="sig-name descname">
-             <span class="pre">
-              precision
-             </span>
-            </span>
-            <a class="headerlink" href="#nautilus_trader.model.objects.Quantity.precision" title="Permalink to this definition">
-             ¶
-            </a>
-           </dt>
-           <dd>
-            <p>
-             The decimal precision.
-            </p>
             <dl class="field-list simple">
              <dt class="field-odd">
-              Returns
+              Raises
              </dt>
              <dd class="field-odd">
               <p>
-               <cite>
-                uint8
-               </cite>
+               <strong>
+                ValueError
+               </strong>
+               – If inferred precision greater than 9.
               </p>
              </dd>
             </dl>

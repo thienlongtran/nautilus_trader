@@ -2114,10 +2114,10 @@ currency for inverse instruments.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                last_px:
+                Price
                </span>
                <span class="pre">
-                Decimal
+                last_px
                </span>
               </span>
              </em>
@@ -2211,12 +2211,6 @@ currency for inverse instruments.
                    last_px
                   </strong>
                   (
-                  <em>
-                   Decimal
-                  </em>
-                  <em>
-                   or
-                  </em>
                   <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
                    <em>
                     Price
@@ -4449,10 +4443,10 @@ rather than
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                last_px:
+                Price
                </span>
                <span class="pre">
-                Decimal
+                last_px
                </span>
               </span>
              </em>
@@ -4546,12 +4540,6 @@ currency for inverse instruments.
                    last_px
                   </strong>
                   (
-                  <em>
-                   Decimal
-                  </em>
-                  <em>
-                   or
-                  </em>
                   <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
                    <em>
                     Price
@@ -4839,10 +4827,10 @@ currency for inverse instruments.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                avg_open_px:
+                double
                </span>
                <span class="pre">
-                Decimal
+                avg_open_px
                </span>
               </span>
              </em>
@@ -4945,16 +4933,8 @@ currency for inverse instruments.
                   </strong>
                   (
                   <em>
-                   Decimal
+                   double
                   </em>
-                  <em>
-                   or
-                  </em>
-                  <a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price">
-                   <em>
-                    Price
-                   </em>
-                  </a>
                   ) – The positions average open price.
                  </p>
                 </li>
@@ -7290,6 +7270,16 @@ given balances, therefore we only update included balances.
              <span class="sig-paren">
               )
              </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                double
+               </span>
+              </span>
+             </span>
              <a class="headerlink" href="#nautilus_trader.accounting.calculators.ExchangeRateCalculator.get_rate" title="Permalink to this definition">
               ¶
              </a>
@@ -7354,7 +7344,7 @@ given dictionary of bid and ask quotes.
                   <em>
                    dict
                   </em>
-                  ) – The dictionary of currency pair bid quotes dict[Symbol, Decimal].
+                  ) – The dictionary of currency pair bid quotes dict[Symbol, double].
                  </p>
                 </li>
                 <li>
@@ -7366,7 +7356,7 @@ given dictionary of bid and ask quotes.
                   <em>
                    dict
                   </em>
-                  ) – The dictionary of currency pair ask quotes dict[Symbol, Decimal].
+                  ) – The dictionary of currency pair ask quotes dict[Symbol, double].
                  </p>
                 </li>
                </ul>

@@ -4775,19 +4775,6 @@ set self.__traceback__ to tb and return self.
             Represents a pseudo-random UUID (universally unique identifier) version 4
 based on a 128-bit label as specified in RFC 4122.
            </p>
-           <p>
-            Implemented under the hood with the
-            <cite>
-             fastuuid
-            </cite>
-            library which provides
-CPython bindings to Rusts UUID library. Benched ~3x faster to instantiate
-this class vs the Python standard
-            <cite>
-             uuid.uuid4()
-            </cite>
-            function.
-           </p>
            <dl class="field-list simple">
             <dt class="field-odd">
              Parameters
