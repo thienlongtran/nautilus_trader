@@ -689,11 +689,6 @@
                Streaming
               </a>
              </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#module-nautilus_trader.persistence.util">
-               Utility
-              </a>
-             </li>
             </ul>
            </nav>
           </li>
@@ -826,10 +821,26 @@
                progress
               </span>
              </span>
+             <span class="p">
+              <span class="pre">
+               :
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="n">
+              <span class="pre">
+               bool
+              </span>
+             </span>
+             <span class="w">
+             </span>
              <span class="o">
               <span class="pre">
                =
               </span>
+             </span>
+             <span class="w">
              </span>
              <span class="default_value">
               <span class="pre">
@@ -1637,7 +1648,7 @@ For all other classes, simply return data unchanged.
              </code>
             </p>
             <p>
-             Provides preprocessing lines before they are passed to a
+             Provides pre-processing lines before they are passed to a
              <cite>
               Reader
              </cite>
@@ -1649,14 +1660,14 @@ For all other classes, simply return data unchanged.
              ).
             </p>
             <p>
-             Used if the input data requires any preprocessing that may also be required
+             Used if the input data requires any pre-processing that may also be required
 as attributes on the resulting Nautilus objects that are created.
             </p>
             <p class="rubric">
              Examples
             </p>
             <p>
-             For example, if you were logging data in python with a prepended timestamp, as below:
+             For example, if you were logging data in Python with a prepended timestamp, as below:
             </p>
             <p>
              2021-06-29T06:03:14.528000 - {“op”:”mcm”,”pt”:1624946594395,”mc”:[{“id”:”1.179082386”,”rc”:[{“atb”:[[1.93,0]]}]}
@@ -2231,10 +2242,26 @@ passed a blocks of raw bytes.
                newline
               </span>
              </span>
+             <span class="p">
+              <span class="pre">
+               :
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="n">
+              <span class="pre">
+               bytes
+              </span>
+             </span>
+             <span class="w">
+             </span>
              <span class="o">
               <span class="pre">
                =
               </span>
+             </span>
+             <span class="w">
              </span>
              <span class="default_value">
               <span class="pre">
@@ -2301,7 +2328,7 @@ be passed a single row of bytes.
                  <em>
                   optional
                  </em>
-                 ) – The context manager for preprocessing (cleaning log lines) of lines
+                 ) – The context manager for pre-processing (cleaning log lines) of lines
 before json.loads is called. Nautilus objects are returned to the
 context manager for any post-processing also (for example, setting
 the
@@ -2353,6 +2380,18 @@ data is passed to
                  </cite>
                  (in many cases instruments need to
 be known ahead of parsing).
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  newline
+                 </strong>
+                 (
+                 <em>
+                  bytes
+                 </em>
+                 ) – The newline char value.
                 </p>
                </li>
               </ul>
@@ -2452,10 +2491,39 @@ be known ahead of parsing).
                instrument_provider_update
               </span>
              </span>
+             <span class="p">
+              <span class="pre">
+               :
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="n">
+              <span class="pre">
+               Optional
+              </span>
+              <span class="p">
+               <span class="pre">
+                [
+               </span>
+              </span>
+              <span class="pre">
+               Callable
+              </span>
+              <span class="p">
+               <span class="pre">
+                ]
+               </span>
+              </span>
+             </span>
+             <span class="w">
+             </span>
              <span class="o">
               <span class="pre">
                =
               </span>
+             </span>
+             <span class="w">
              </span>
              <span class="default_value">
               <span class="pre">
@@ -2530,10 +2598,26 @@ be known ahead of parsing).
                chunked
               </span>
              </span>
+             <span class="p">
+              <span class="pre">
+               :
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="n">
+              <span class="pre">
+               bool
+              </span>
+             </span>
+             <span class="w">
+             </span>
              <span class="o">
               <span class="pre">
                =
               </span>
+             </span>
+             <span class="w">
              </span>
              <span class="default_value">
               <span class="pre">
@@ -2548,10 +2632,26 @@ be known ahead of parsing).
                as_dataframe
               </span>
              </span>
+             <span class="p">
+              <span class="pre">
+               :
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="n">
+              <span class="pre">
+               bool
+              </span>
+             </span>
+             <span class="w">
+             </span>
              <span class="o">
               <span class="pre">
                =
               </span>
+             </span>
+             <span class="w">
              </span>
              <span class="default_value">
               <span class="pre">
@@ -2566,10 +2666,26 @@ be known ahead of parsing).
                separator
               </span>
              </span>
+             <span class="p">
+              <span class="pre">
+               :
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="n">
+              <span class="pre">
+               str
+              </span>
+             </span>
+             <span class="w">
+             </span>
              <span class="o">
               <span class="pre">
                =
               </span>
+             </span>
+             <span class="w">
              </span>
              <span class="default_value">
               <span class="pre">
@@ -2584,10 +2700,26 @@ be known ahead of parsing).
                newline
               </span>
              </span>
+             <span class="p">
+              <span class="pre">
+               :
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="n">
+              <span class="pre">
+               bytes
+              </span>
+             </span>
+             <span class="w">
+             </span>
              <span class="o">
               <span class="pre">
                =
               </span>
+             </span>
+             <span class="w">
              </span>
              <span class="default_value">
               <span class="pre">
@@ -2602,10 +2734,26 @@ be known ahead of parsing).
                encoding
               </span>
              </span>
+             <span class="p">
+              <span class="pre">
+               :
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="n">
+              <span class="pre">
+               str
+              </span>
+             </span>
+             <span class="w">
+             </span>
              <span class="o">
               <span class="pre">
                =
               </span>
+             </span>
+             <span class="w">
              </span>
              <span class="default_value">
               <span class="pre">
@@ -3679,10 +3827,26 @@ correctly loaded.
               replace
              </span>
             </span>
+            <span class="p">
+             <span class="pre">
+              :
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              bool
+             </span>
+            </span>
+            <span class="w">
+            </span>
             <span class="o">
              <span class="pre">
               =
              </span>
+            </span>
+            <span class="w">
             </span>
             <span class="default_value">
              <span class="pre">
@@ -3709,156 +3873,6 @@ correctly loaded.
            <p>
             Provides a stream writer of Nautilus objects into feather files.
            </p>
-          </dd>
-         </dl>
-        </section>
-        <section id="module-nautilus_trader.persistence.util">
-         <span id="utility">
-         </span>
-         <h2 id="module-nautilus_trader.persistence.util">
-          Utility
-          <a class="headerlink" href="#module-nautilus_trader.persistence.util" title="Permalink to this headline">
-           ¶
-          </a>
-         </h2>
-         <dl class="py function">
-          <dt class="sig sig-object py" id="nautilus_trader.persistence.util.is_nautilus_class">
-           <span class="sig-name descname">
-            <span class="pre">
-             is_nautilus_class
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              cls
-             </span>
-            </span>
-            <span class="p">
-             <span class="pre">
-              :
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="n">
-             <span class="pre">
-              type
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              bool
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.persistence.util.is_nautilus_class" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Determine whether a class belongs to
-            <cite>
-             nautilus_trader
-            </cite>
-            .
-           </p>
-          </dd>
-         </dl>
-         <dl class="py class">
-          <dt class="sig sig-object py" id="nautilus_trader.persistence.util.Singleton">
-           <em class="property">
-            <span class="pre">
-             class
-            </span>
-            <span class="w">
-            </span>
-           </em>
-           <span class="sig-name descname">
-            <span class="pre">
-             Singleton
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              name
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              bases
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              dict_like
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <a class="headerlink" href="#nautilus_trader.persistence.util.Singleton" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              type
-             </span>
-            </code>
-           </p>
-           <p>
-            The base class to ensure a singleton.
-           </p>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.persistence.util.Singleton.mro">
-             <span class="sig-name descname">
-              <span class="pre">
-               mro
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <span class="sig-paren">
-              )
-             </span>
-             <a class="headerlink" href="#nautilus_trader.persistence.util.Singleton.mro" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return a type’s method resolution order.
-             </p>
-            </dd>
-           </dl>
           </dd>
          </dl>
         </section>
