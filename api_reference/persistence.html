@@ -3645,7 +3645,13 @@ correctly loaded.
                 <em>
                  str
                 </em>
-                ) – The file system protocol to use.
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 'file'
+                </em>
+                ) – The fsspec filesystem protocol to use.
                </p>
               </li>
               <li>
@@ -3682,7 +3688,7 @@ correctly loaded.
           </a>
          </h2>
          <dl class="py class">
-          <dt class="sig sig-object py" id="nautilus_trader.persistence.streaming.StreamingPersistence">
+          <dt class="sig sig-object py" id="nautilus_trader.persistence.streaming.StreamingFeatherWriter">
            <em class="property">
             <span class="pre">
              class
@@ -3692,7 +3698,7 @@ correctly loaded.
            </em>
            <span class="sig-name descname">
             <span class="pre">
-             StreamingPersistence
+             StreamingFeatherWriter
             </span>
            </span>
            <span class="sig-paren">
@@ -3777,7 +3783,7 @@ correctly loaded.
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              flush_interval
+              flush_interval_ms
              </span>
             </span>
             <span class="p">
@@ -3857,7 +3863,7 @@ correctly loaded.
            <span class="sig-paren">
             )
            </span>
-           <a class="headerlink" href="#nautilus_trader.persistence.streaming.StreamingPersistence" title="Permalink to this definition">
+           <a class="headerlink" href="#nautilus_trader.persistence.streaming.StreamingFeatherWriter" title="Permalink to this definition">
             ¶
            </a>
           </dt>
@@ -3873,6 +3879,292 @@ correctly loaded.
            <p>
             Provides a stream writer of Nautilus objects into feather files.
            </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 path
+                </strong>
+                (
+                <em>
+                 str
+                </em>
+                ) – The path to persist the stream to.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 logger
+                </strong>
+                (
+                <a class="reference internal" href="common.html#nautilus_trader.common.logging.LoggerAdapter" title="nautilus_trader.common.logging.LoggerAdapter">
+                 <em>
+                  LoggerAdapter
+                 </em>
+                </a>
+                ) – The logger for the writer.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 fs_protocol
+                </strong>
+                (
+                <em>
+                 str
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 'file'
+                </em>
+                ) – The
+                <cite>
+                 fsspec
+                </cite>
+                file system protocol.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 flush_interval_ms
+                </strong>
+                (
+                <em>
+                 int
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The flush interval (milliseconds) for writing chunks.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 replace
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If existing files at the given
+                <cite>
+                 path
+                </cite>
+                should be replaced.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.persistence.streaming.StreamingFeatherWriter.write">
+             <span class="sig-name descname">
+              <span class="pre">
+               write
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                obj
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                object
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.persistence.streaming.StreamingFeatherWriter.write" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Write the object to the stream.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 obj
+                </strong>
+                (
+                <em>
+                 object
+                </em>
+                ) – The object to write.
+               </p>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 obj
+                </cite>
+                is
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+                .
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.persistence.streaming.StreamingFeatherWriter.check_flush">
+             <span class="sig-name descname">
+              <span class="pre">
+               check_flush
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.persistence.streaming.StreamingFeatherWriter.check_flush" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Flush all stream writers if current time greater than the next flush interval.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.persistence.streaming.StreamingFeatherWriter.flush">
+             <span class="sig-name descname">
+              <span class="pre">
+               flush
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.persistence.streaming.StreamingFeatherWriter.flush" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Flush all stream writers.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.persistence.streaming.StreamingFeatherWriter.close">
+             <span class="sig-name descname">
+              <span class="pre">
+               close
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.persistence.streaming.StreamingFeatherWriter.close" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Flush and close all stream writers.
+             </p>
+            </dd>
+           </dl>
           </dd>
          </dl>
         </section>

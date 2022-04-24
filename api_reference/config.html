@@ -9814,7 +9814,7 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              flush_interval
+              flush_interval_ms
              </span>
             </span>
             <span class="p">
@@ -9912,7 +9912,7 @@ the new model: you should trust this data
                 <em>
                  str
                 </em>
-                ) – The path to the data catalog
+                ) – The path to the data catalog.
                </p>
               </li>
               <li>
@@ -9924,7 +9924,17 @@ the new model: you should trust this data
                 <em>
                  str
                 </em>
-                ) – The fsspec filesystem protocol of the catalog
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The
+                <cite>
+                 fsspec
+                </cite>
+                filesystem protocol for the catalog.
                </p>
               </li>
               <li>
@@ -9936,19 +9946,31 @@ the new model: you should trust this data
                 <em>
                  bool
                 </em>
-                ) – Persist log file to catalog
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If the log should be persisted.
                </p>
               </li>
               <li>
                <p>
                 <strong>
-                 flush_interval
+                 flush_interval_ms
                 </strong>
                 (
                 <em>
                  int
                 </em>
-                ) – How often to write chunks, in milliseconds
+                <em>
+                 ,
+                </em>
+                <em>
+                 optional
+                </em>
+                ) – The flush interval (milliseconds) for writing chunks.
                </p>
               </li>
              </ul>
