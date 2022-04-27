@@ -764,10 +764,10 @@
              LiveExecEngineConfig],
             </span>
             <span class="pre">
-             persistence_config:
+             streaming_config:
             </span>
             <span class="pre">
-             Optional[PersistenceConfig]
+             Optional[StreamingConfig]
             </span>
             <span class="pre">
              =
@@ -1080,12 +1080,12 @@
               <li>
                <p>
                 <strong>
-                 persistence_config
+                 streaming_config
                 </strong>
                 (
-                <a class="reference internal" href="config.html#nautilus_trader.config.common.PersistenceConfig" title="nautilus_trader.config.common.PersistenceConfig">
+                <a class="reference internal" href="config.html#nautilus_trader.config.common.StreamingConfig" title="nautilus_trader.config.common.StreamingConfig">
                  <em>
-                  PersistenceConfig
+                  StreamingConfig
                  </em>
                 </a>
                 <em>
@@ -1094,7 +1094,7 @@
                 <em>
                  optional
                 </em>
-                ) – The configuration for enabling persistence via feather files.
+                ) – The configuration for streaming to feather files.
                </p>
               </li>
               <li>
@@ -2090,19 +2090,19 @@
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.writers">
+            <dt class="sig sig-object py" id="nautilus_trader.system.kernel.NautilusKernel.writer">
              <span class="sig-name descname">
               <span class="pre">
-               writers
+               writer
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.writers" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.system.kernel.NautilusKernel.writer" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              The kernels persistence writers.
+              The kernels writer.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -2111,8 +2111,14 @@
               <dd class="field-odd">
                <p>
                 <cite>
-                 List
+                 StreamingFeatherWriter
                 </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
                </p>
               </dd>
              </dl>

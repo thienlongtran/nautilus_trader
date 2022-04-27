@@ -9665,7 +9665,7 @@ the new model: you should trust this data
           </dd>
          </dl>
          <dl class="py class">
-          <dt class="sig sig-object py" id="nautilus_trader.config.common.PersistenceConfig">
+          <dt class="sig sig-object py" id="nautilus_trader.config.common.StreamingConfig">
            <em class="property">
             <span class="pre">
              class
@@ -9675,7 +9675,7 @@ the new model: you should trust this data
            </em>
            <span class="sig-name descname">
             <span class="pre">
-             PersistenceConfig
+             StreamingConfig
             </span>
            </span>
            <span class="sig-paren">
@@ -9780,40 +9780,6 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              persist_logs
-             </span>
-            </span>
-            <span class="p">
-             <span class="pre">
-              :
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="n">
-             <span class="pre">
-              bool
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="o">
-             <span class="pre">
-              =
-             </span>
-            </span>
-            <span class="w">
-            </span>
-            <span class="default_value">
-             <span class="pre">
-              False
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               flush_interval_ms
              </span>
             </span>
@@ -9881,7 +9847,7 @@ the new model: you should trust this data
            <span class="sig-paren">
             )
            </span>
-           <a class="headerlink" href="#nautilus_trader.config.common.PersistenceConfig" title="Permalink to this definition">
+           <a class="headerlink" href="#nautilus_trader.config.common.StreamingConfig" title="Permalink to this definition">
             ¶
            </a>
           </dt>
@@ -9895,7 +9861,7 @@ the new model: you should trust this data
             </code>
            </p>
            <p>
-            Configuration for persisting live or backtest runs to the catalog in feather format.
+            Configuration for streaming live or backtest runs to the catalog in feather format.
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">
@@ -9940,19 +9906,23 @@ the new model: you should trust this data
               <li>
                <p>
                 <strong>
-                 persist_logs
+                 fs_storage_options
                 </strong>
                 (
                 <em>
-                 bool
+                 Dict
                 </em>
                 <em>
                  ,
                 </em>
                 <em>
-                 default False
+                 optional
                 </em>
-                ) – If the log should be persisted.
+                ) – The
+                <cite>
+                 fsspec
+                </cite>
+                storage options.
                </p>
               </li>
               <li>
@@ -9973,11 +9943,29 @@ the new model: you should trust this data
                 ) – The flush interval (milliseconds) for writing chunks.
                </p>
               </li>
+              <li>
+               <p>
+                <strong>
+                 replace_existing
+                </strong>
+                (
+                <em>
+                 bool
+                </em>
+                <em>
+                 ,
+                </em>
+                <em>
+                 default False
+                </em>
+                ) – If any existing feather files should be replaced.
+               </p>
+              </li>
              </ul>
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.config.common.PersistenceConfig.construct">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.StreamingConfig.construct">
              <em class="property">
               <span class="pre">
                classmethod
@@ -10077,7 +10065,7 @@ the new model: you should trust this data
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.config.common.PersistenceConfig.construct" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.config.common.StreamingConfig.construct" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -10094,7 +10082,7 @@ Behaves as if
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.config.common.PersistenceConfig.copy">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.StreamingConfig.copy">
              <span class="sig-name descname">
               <span class="pre">
                copy
@@ -10305,7 +10293,7 @@ Behaves as if
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.config.common.PersistenceConfig.copy" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.config.common.StreamingConfig.copy" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -10370,7 +10358,7 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.config.common.PersistenceConfig.dict">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.StreamingConfig.dict">
              <span class="sig-name descname">
               <span class="pre">
                dict
@@ -10683,7 +10671,7 @@ the new model: you should trust this data
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.config.common.PersistenceConfig.dict" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.config.common.StreamingConfig.dict" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -10694,7 +10682,7 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.config.common.PersistenceConfig.json">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.StreamingConfig.json">
              <span class="sig-name descname">
               <span class="pre">
                json
@@ -11146,7 +11134,7 @@ the new model: you should trust this data
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.config.common.PersistenceConfig.json" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.config.common.StreamingConfig.json" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -11183,7 +11171,7 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.config.common.PersistenceConfig.update_forward_refs">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.StreamingConfig.update_forward_refs">
              <em class="property">
               <span class="pre">
                classmethod
@@ -11236,7 +11224,7 @@ the new model: you should trust this data
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.config.common.PersistenceConfig.update_forward_refs" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.config.common.StreamingConfig.update_forward_refs" title="Permalink to this definition">
               ¶
              </a>
             </dt>
@@ -17498,7 +17486,7 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              persistence
+              streaming
              </span>
             </span>
             <span class="p">
@@ -17509,9 +17497,9 @@ the new model: you should trust this data
             <span class="w">
             </span>
             <span class="n">
-             <a class="reference internal" href="#nautilus_trader.config.common.PersistenceConfig" title="nautilus_trader.config.common.PersistenceConfig">
+             <a class="reference internal" href="#nautilus_trader.config.common.StreamingConfig" title="nautilus_trader.config.common.StreamingConfig">
               <span class="pre">
-               nautilus_trader.config.common.PersistenceConfig
+               nautilus_trader.config.common.StreamingConfig
               </span>
              </a>
             </span>
@@ -17970,12 +17958,12 @@ the new model: you should trust this data
               <li>
                <p>
                 <strong>
-                 persistence
+                 streaming
                 </strong>
                 (
-                <a class="reference internal" href="#nautilus_trader.config.common.PersistenceConfig" title="nautilus_trader.config.common.PersistenceConfig">
+                <a class="reference internal" href="#nautilus_trader.config.common.StreamingConfig" title="nautilus_trader.config.common.StreamingConfig">
                  <em>
-                  PersistenceConfig
+                  StreamingConfig
                  </em>
                 </a>
                 <em>
@@ -17984,7 +17972,7 @@ the new model: you should trust this data
                 <em>
                  optional
                 </em>
-                ) – The configuration for enabling persistence via feather files.
+                ) – The configuration for streaming to feather files.
                </p>
               </li>
               <li>
@@ -20745,7 +20733,7 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              persistence
+              streaming
              </span>
             </span>
             <span class="p">
@@ -20756,9 +20744,9 @@ the new model: you should trust this data
             <span class="w">
             </span>
             <span class="n">
-             <a class="reference internal" href="#nautilus_trader.config.common.PersistenceConfig" title="nautilus_trader.config.common.PersistenceConfig">
+             <a class="reference internal" href="#nautilus_trader.config.common.StreamingConfig" title="nautilus_trader.config.common.StreamingConfig">
               <span class="pre">
-               nautilus_trader.config.common.PersistenceConfig
+               nautilus_trader.config.common.StreamingConfig
               </span>
              </a>
             </span>
@@ -21263,12 +21251,12 @@ the new model: you should trust this data
               <li>
                <p>
                 <strong>
-                 persistence
+                 streaming
                 </strong>
                 (
-                <a class="reference internal" href="#nautilus_trader.config.common.PersistenceConfig" title="nautilus_trader.config.common.PersistenceConfig">
+                <a class="reference internal" href="#nautilus_trader.config.common.StreamingConfig" title="nautilus_trader.config.common.StreamingConfig">
                  <em>
-                  PersistenceConfig
+                  StreamingConfig
                  </em>
                 </a>
                 <em>
@@ -21277,7 +21265,7 @@ the new model: you should trust this data
                 <em>
                  optional
                 </em>
-                ) – The configuration for enabling persistence via feather files.
+                ) – The configuration for streaming to feather files.
                </p>
               </li>
               <li>
@@ -33680,7 +33668,7 @@ the new model: you should trust this data
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              persistence
+              streaming
              </span>
             </span>
             <span class="p">
@@ -33691,9 +33679,9 @@ the new model: you should trust this data
             <span class="w">
             </span>
             <span class="n">
-             <a class="reference internal" href="#nautilus_trader.config.common.PersistenceConfig" title="nautilus_trader.config.common.PersistenceConfig">
+             <a class="reference internal" href="#nautilus_trader.config.common.StreamingConfig" title="nautilus_trader.config.common.StreamingConfig">
               <span class="pre">
-               nautilus_trader.config.common.PersistenceConfig
+               nautilus_trader.config.common.StreamingConfig
               </span>
              </a>
             </span>
@@ -34422,12 +34410,12 @@ the new model: you should trust this data
               <li>
                <p>
                 <strong>
-                 persistence
+                 streaming
                 </strong>
                 (
-                <a class="reference internal" href="#nautilus_trader.config.common.PersistenceConfig" title="nautilus_trader.config.common.PersistenceConfig">
+                <a class="reference internal" href="#nautilus_trader.config.common.StreamingConfig" title="nautilus_trader.config.common.StreamingConfig">
                  <em>
-                  PersistenceConfig
+                  StreamingConfig
                  </em>
                 </a>
                 <em>
@@ -34436,7 +34424,7 @@ the new model: you should trust this data
                 <em>
                  optional
                 </em>
-                ) – The configuration for enabling persistence via feather files.
+                ) – The configuration for streaming to feather files.
                </p>
               </li>
               <li>
