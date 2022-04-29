@@ -14819,7 +14819,7 @@ trading venue.
               ClientOrderId
              </span>
              <span class="pre">
-              from_order
+              opening_order_id
              </span>
             </span>
            </em>
@@ -15110,7 +15110,7 @@ trading venue.
               <li>
                <p>
                 <strong>
-                 from_order
+                 opening_order_id
                 </strong>
                 (
                 <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
@@ -15118,7 +15118,7 @@ trading venue.
                   ClientOrderId
                  </em>
                 </a>
-                ) – The client order ID for the order which initially opened the position.
+                ) – The client order ID for the order which opened the position.
                </p>
               </li>
               <li>
@@ -15508,6 +15508,41 @@ trading venue.
              </dl>
             </dd>
            </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionChanged.closing_order_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               closing_order_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.events.position.PositionChanged.closing_order_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The client order ID for the order which closed the position.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientOrderId
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionChanged.create">
              <em class="property">
@@ -15836,35 +15871,6 @@ trading venue.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionChanged.from_order">
-             <span class="sig-name descname">
-              <span class="pre">
-               from_order
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.events.position.PositionChanged.from_order" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The client order ID for the order which first opened the position.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 ClientOrderId
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionChanged.id">
              <span class="sig-name descname">
               <span class="pre">
@@ -16015,6 +16021,35 @@ trading venue.
                <p>
                 <cite>
                  Decimal
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionChanged.opening_order_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               opening_order_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.events.position.PositionChanged.opening_order_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The client order ID for the order which opened the position.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientOrderId
                 </cite>
                </p>
               </dd>
@@ -16530,7 +16565,18 @@ trading venue.
               ClientOrderId
              </span>
              <span class="pre">
-              from_order
+              opening_order_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ClientOrderId
+             </span>
+             <span class="pre">
+              closing_order_id
              </span>
             </span>
            </em>
@@ -16821,7 +16867,7 @@ trading venue.
               <li>
                <p>
                 <strong>
-                 from_order
+                 opening_order_id
                 </strong>
                 (
                 <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
@@ -16829,7 +16875,21 @@ trading venue.
                   ClientOrderId
                  </em>
                 </a>
-                ) – The client order ID for the order which initially opened the position.
+                ) – The client order ID for the order which opened the position.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 closing_order_id
+                </strong>
+                (
+                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
+                 <em>
+                  ClientOrderId
+                 </em>
+                </a>
+                ) – The client order ID for the order which closed the position.
                </p>
               </li>
               <li>
@@ -17199,6 +17259,41 @@ trading venue.
              </dl>
             </dd>
            </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionClosed.closing_order_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               closing_order_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.events.position.PositionClosed.closing_order_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The client order ID for the order which closed the position.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientOrderId
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionClosed.create">
              <em class="property">
@@ -17527,35 +17622,6 @@ trading venue.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionClosed.from_order">
-             <span class="sig-name descname">
-              <span class="pre">
-               from_order
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.events.position.PositionClosed.from_order" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The client order ID for the order which first opened the position.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 ClientOrderId
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionClosed.id">
              <span class="sig-name descname">
               <span class="pre">
@@ -17706,6 +17772,35 @@ trading venue.
                <p>
                 <cite>
                  Decimal
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionClosed.opening_order_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               opening_order_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.events.position.PositionClosed.opening_order_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The client order ID for the order which opened the position.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientOrderId
                 </cite>
                </p>
               </dd>
@@ -18221,7 +18316,18 @@ trading venue.
               ClientOrderId
              </span>
              <span class="pre">
-              from_order
+              opening_order_id
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ClientOrderId
+             </span>
+             <span class="pre">
+              closing_order_id
              </span>
             </span>
            </em>
@@ -18534,7 +18640,7 @@ trading venue.
               <li>
                <p>
                 <strong>
-                 from_order
+                 opening_order_id
                 </strong>
                 (
                 <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
@@ -18542,7 +18648,21 @@ trading venue.
                   ClientOrderId
                  </em>
                 </a>
-                ) – The client order ID for the order which initially opened the position.
+                ) – The client order ID for the order which opened the position.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 closing_order_id
+                </strong>
+                (
+                <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
+                 <em>
+                  ClientOrderId
+                 </em>
+                </a>
+                ) – The client order ID for the order which closed the position.
                </p>
               </li>
               <li>
@@ -18951,6 +19071,41 @@ trading venue.
             </dd>
            </dl>
            <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionEvent.closing_order_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               closing_order_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.events.position.PositionEvent.closing_order_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The client order ID for the order which closed the position.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientOrderId
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionEvent.currency">
              <span class="sig-name descname">
               <span class="pre">
@@ -19031,35 +19186,6 @@ trading venue.
                <p>
                 <cite>
                  OrderSide
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionEvent.from_order">
-             <span class="sig-name descname">
-              <span class="pre">
-               from_order
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.events.position.PositionEvent.from_order" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The client order ID for the order which first opened the position.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 ClientOrderId
                 </cite>
                </p>
               </dd>
@@ -19217,6 +19343,35 @@ trading venue.
                <p>
                 <cite>
                  Decimal
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionEvent.opening_order_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               opening_order_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.events.position.PositionEvent.opening_order_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The client order ID for the order which opened the position.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientOrderId
                 </cite>
                </p>
               </dd>
@@ -19680,7 +19835,7 @@ trading venue.
               ClientOrderId
              </span>
              <span class="pre">
-              from_order
+              opening_order_id
              </span>
             </span>
            </em>
@@ -19927,7 +20082,7 @@ trading venue.
               <li>
                <p>
                 <strong>
-                 from_order
+                 opening_order_id
                 </strong>
                 (
                 <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
@@ -19935,7 +20090,7 @@ trading venue.
                   ClientOrderId
                  </em>
                 </a>
-                ) – The client order ID for the order which initially opened the position.
+                ) – The client order ID for the order which opened the position.
                </p>
               </li>
               <li>
@@ -20258,6 +20413,41 @@ trading venue.
                 <cite>
                  MessageCategory
                 </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionOpened.closing_order_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               closing_order_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.events.position.PositionOpened.closing_order_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The client order ID for the order which closed the position.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientOrderId
+                </cite>
+                or
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  None
+                 </span>
+                </code>
                </p>
               </dd>
              </dl>
@@ -20591,35 +20781,6 @@ trading venue.
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionOpened.from_order">
-             <span class="sig-name descname">
-              <span class="pre">
-               from_order
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.events.position.PositionOpened.from_order" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              The client order ID for the order which first opened the position.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 ClientOrderId
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionOpened.id">
              <span class="sig-name descname">
               <span class="pre">
@@ -20770,6 +20931,35 @@ trading venue.
                <p>
                 <cite>
                  Decimal
+                </cite>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionOpened.opening_order_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               opening_order_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.events.position.PositionOpened.opening_order_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The client order ID for the order which opened the position.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <cite>
+                 ClientOrderId
                 </cite>
                </p>
               </dd>

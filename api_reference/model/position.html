@@ -1184,6 +1184,41 @@ currency for inverse instruments.
             </p>
            </dd>
           </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.closing_order_id">
+            <span class="sig-name descname">
+             <span class="pre">
+              closing_order_id
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.closing_order_id" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The client order ID for the order which closed the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                ClientOrderId
+               </cite>
+               or
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 None
+                </span>
+               </code>
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
           <dl class="py method">
            <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.commissions">
             <span class="sig-name descname">
@@ -1376,35 +1411,6 @@ currency for inverse instruments.
                <em>
                 list[Event]
                </em>
-              </p>
-             </dd>
-            </dl>
-           </dd>
-          </dl>
-          <dl class="py attribute">
-           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.from_order">
-            <span class="sig-name descname">
-             <span class="pre">
-              from_order
-             </span>
-            </span>
-            <a class="headerlink" href="#nautilus_trader.model.position.Position.from_order" title="Permalink to this definition">
-             ¶
-            </a>
-           </dt>
-           <dd>
-            <p>
-             The client order ID for the order which initially opened the position.
-            </p>
-            <dl class="field-list simple">
-             <dt class="field-odd">
-              Returns
-             </dt>
-             <dd class="field-odd">
-              <p>
-               <cite>
-                ClientOrderId
-               </cite>
               </p>
              </dd>
             </dl>
@@ -1986,6 +1992,35 @@ the current position side.
                 Money
                </em>
                – In quote currency.
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py attribute">
+           <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.opening_order_id">
+            <span class="sig-name descname">
+             <span class="pre">
+              opening_order_id
+             </span>
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.position.Position.opening_order_id" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
+            <p>
+             The client order ID for the order which opened the position.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Returns
+             </dt>
+             <dd class="field-odd">
+              <p>
+               <cite>
+                ClientOrderId
+               </cite>
               </p>
              </dd>
             </dl>
