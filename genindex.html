@@ -1578,11 +1578,6 @@
             </a>
            </li>
            <li>
-            <a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.add_ticks">
-             add_ticks() (BacktestEngine method)
-            </a>
-           </li>
-           <li>
             <a href="api_reference/analysis.html#nautilus_trader.analysis.analyzer.PortfolioAnalyzer.add_trade">
              add_trade() (PortfolioAnalyzer method)
             </a>
@@ -8119,29 +8114,29 @@
          <td style="width: 33%; vertical-align: top;">
           <ul>
            <li>
-            <a href="api_reference/model/objects.html#nautilus_trader.model.objects.Money.from_fixed">
-             from_fixed() (Money static method)
-            </a>
-            <ul>
-             <li>
-              <a href="api_reference/model/objects.html#nautilus_trader.model.objects.Price.from_fixed">
-               (Price static method)
-              </a>
-             </li>
-             <li>
-              <a href="api_reference/model/objects.html#nautilus_trader.model.objects.Quantity.from_fixed">
-               (Quantity static method)
-              </a>
-             </li>
-            </ul>
-           </li>
-           <li>
             <a href="api_reference/model/objects.html#nautilus_trader.model.objects.Price.from_int">
              from_int() (Price static method)
             </a>
             <ul>
              <li>
               <a href="api_reference/model/objects.html#nautilus_trader.model.objects.Quantity.from_int">
+               (Quantity static method)
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a href="api_reference/model/objects.html#nautilus_trader.model.objects.Money.from_raw">
+             from_raw() (Money static method)
+            </a>
+            <ul>
+             <li>
+              <a href="api_reference/model/objects.html#nautilus_trader.model.objects.Price.from_raw">
+               (Price static method)
+              </a>
+             </li>
+             <li>
+              <a href="api_reference/model/objects.html#nautilus_trader.model.objects.Quantity.from_raw">
                (Quantity static method)
               </a>
              </li>
@@ -8567,11 +8562,6 @@
              <li>
               <a href="api_reference/trading.html#nautilus_trader.trading.strategy.Strategy.fully_qualified_name">
                (Strategy class method)
-              </a>
-             </li>
-             <li>
-              <a href="api_reference/model/data.html#nautilus_trader.model.data.tick.Tick.fully_qualified_name">
-               (Tick class method)
               </a>
              </li>
              <li>
@@ -12261,11 +12251,6 @@
              <li>
               <a href="api_reference/execution.html#nautilus_trader.execution.messages.SubmitOrderList.instrument_id">
                (SubmitOrderList attribute)
-              </a>
-             </li>
-             <li>
-              <a href="api_reference/model/data.html#nautilus_trader.model.data.tick.Tick.instrument_id">
-               (Tick attribute)
               </a>
              </li>
              <li>
@@ -22631,15 +22616,15 @@
              PositionIdGenerator (class in nautilus_trader.common.generators)
             </a>
            </li>
-          </ul>
-         </td>
-         <td style="width: 33%; vertical-align: top;">
-          <ul>
            <li>
             <a href="api_reference/model/events.html#nautilus_trader.model.events.position.PositionOpened">
              PositionOpened (class in nautilus_trader.model.events.position)
             </a>
            </li>
+          </ul>
+         </td>
+         <td style="width: 33%; vertical-align: top;">
+          <ul>
            <li>
             <a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.positions">
              positions() (Cache method)
@@ -23196,8 +23181,13 @@
             </a>
            </li>
            <li>
-            <a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.process_tick">
-             process_tick() (SimulatedExchange method)
+            <a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.process_quote_tick">
+             process_quote_tick() (SimulatedExchange method)
+            </a>
+           </li>
+           <li>
+            <a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.process_trade_tick">
+             process_trade_tick() (SimulatedExchange method)
             </a>
            </li>
            <li>
@@ -28287,11 +28277,6 @@
             </a>
            </li>
            <li>
-            <a href="api_reference/model/data.html#nautilus_trader.model.data.tick.Tick">
-             Tick (class in nautilus_trader.model.data.tick)
-            </a>
-           </li>
-           <li>
             <a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.tick_capacity">
              tick_capacity (Cache attribute)
             </a>
@@ -29957,11 +29942,6 @@
               </a>
              </li>
              <li>
-              <a href="api_reference/model/data.html#nautilus_trader.model.data.tick.Tick.ts_event">
-               (Tick attribute)
-              </a>
-             </li>
-             <li>
               <a href="api_reference/model/data.html#nautilus_trader.model.data.ticker.Ticker.ts_event">
                (Ticker attribute)
               </a>
@@ -30366,11 +30346,6 @@
              <li>
               <a href="api_reference/data.html#nautilus_trader.data.messages.Subscribe.ts_init">
                (Subscribe attribute)
-              </a>
-             </li>
-             <li>
-              <a href="api_reference/model/data.html#nautilus_trader.model.data.tick.Tick.ts_init">
-               (Tick attribute)
               </a>
              </li>
              <li>
@@ -31831,6 +31806,11 @@
             </a>
            </li>
            <li>
+            <a href="api_reference/portfolio.html#nautilus_trader.portfolio.portfolio.Portfolio.update_quote_tick">
+             update_quote_tick() (Portfolio method)
+            </a>
+           </li>
+           <li>
             <a href="api_reference/indicators.html#nautilus_trader.indicators.average.ama.AdaptiveMovingAverage.update_raw">
              update_raw() (AdaptiveMovingAverage method)
             </a>
@@ -31975,18 +31955,6 @@
              <li>
               <a href="api_reference/infrastructure.html#nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_strategy">
                (RedisCacheDatabase method)
-              </a>
-             </li>
-            </ul>
-           </li>
-           <li>
-            <a href="api_reference/portfolio.html#nautilus_trader.portfolio.portfolio.Portfolio.update_tick">
-             update_tick() (Portfolio method)
-            </a>
-            <ul>
-             <li>
-              <a href="api_reference/model/orderbook.html#nautilus_trader.model.orderbook.simulated.SimulatedL1OrderBook.update_tick">
-               (SimulatedL1OrderBook method)
               </a>
              </li>
             </ul>

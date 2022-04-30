@@ -1777,7 +1777,7 @@
            </dd>
           </dl>
           <dl class="py method">
-           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.from_fixed">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.from_raw">
             <em class="property">
              <span class="pre">
               static
@@ -1787,7 +1787,7 @@
             </em>
             <span class="sig-name descname">
              <span class="pre">
-              from_fixed
+              from_raw
              </span>
             </span>
             <span class="sig-paren">
@@ -1799,7 +1799,7 @@
                uint64_t
               </span>
               <span class="pre">
-               fixed
+               raw
               </span>
              </span>
             </em>
@@ -1817,7 +1817,7 @@
             <span class="sig-paren">
              )
             </span>
-            <a class="headerlink" href="#nautilus_trader.model.objects.Money.from_fixed" title="Permalink to this definition">
+            <a class="headerlink" href="#nautilus_trader.model.objects.Money.from_raw" title="Permalink to this definition">
              ¶
             </a>
            </dt>
@@ -2235,54 +2235,6 @@ negative under certain conditions.
            </dd>
           </dl>
           <dl class="py method">
-           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.from_fixed">
-            <em class="property">
-             <span class="pre">
-              static
-             </span>
-             <span class="w">
-             </span>
-            </em>
-            <span class="sig-name descname">
-             <span class="pre">
-              from_fixed
-             </span>
-            </span>
-            <span class="sig-paren">
-             (
-            </span>
-            <em class="sig-param">
-             <span class="n">
-              <span class="pre">
-               int64_t
-              </span>
-              <span class="pre">
-               fixed
-              </span>
-             </span>
-            </em>
-            ,
-            <em class="sig-param">
-             <span class="n">
-              <span class="pre">
-               uint8_t
-              </span>
-              <span class="pre">
-               precision
-              </span>
-             </span>
-            </em>
-            <span class="sig-paren">
-             )
-            </span>
-            <a class="headerlink" href="#nautilus_trader.model.objects.Price.from_fixed" title="Permalink to this definition">
-             ¶
-            </a>
-           </dt>
-           <dd>
-           </dd>
-          </dl>
-          <dl class="py method">
            <dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.from_int">
             <em class="property">
              <span class="pre">
@@ -2362,6 +2314,54 @@ negative under certain conditions.
               </p>
              </dd>
             </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.from_raw">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_raw
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               int64_t
+              </span>
+              <span class="pre">
+               raw
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               uint8_t
+              </span>
+              <span class="pre">
+               precision
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Price.from_raw" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
            </dd>
           </dl>
           <dl class="py method">
@@ -2736,54 +2736,6 @@ in fractional units).
            </dd>
           </dl>
           <dl class="py method">
-           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.from_fixed">
-            <em class="property">
-             <span class="pre">
-              static
-             </span>
-             <span class="w">
-             </span>
-            </em>
-            <span class="sig-name descname">
-             <span class="pre">
-              from_fixed
-             </span>
-            </span>
-            <span class="sig-paren">
-             (
-            </span>
-            <em class="sig-param">
-             <span class="n">
-              <span class="pre">
-               uint64_t
-              </span>
-              <span class="pre">
-               fixed
-              </span>
-             </span>
-            </em>
-            ,
-            <em class="sig-param">
-             <span class="n">
-              <span class="pre">
-               uint8_t
-              </span>
-              <span class="pre">
-               precision
-              </span>
-             </span>
-            </em>
-            <span class="sig-paren">
-             )
-            </span>
-            <a class="headerlink" href="#nautilus_trader.model.objects.Quantity.from_fixed" title="Permalink to this definition">
-             ¶
-            </a>
-           </dt>
-           <dd>
-           </dd>
-          </dl>
-          <dl class="py method">
            <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.from_int">
             <em class="property">
              <span class="pre">
@@ -2863,6 +2815,54 @@ in fractional units).
               </p>
              </dd>
             </dl>
+           </dd>
+          </dl>
+          <dl class="py method">
+           <dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.from_raw">
+            <em class="property">
+             <span class="pre">
+              static
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-name descname">
+             <span class="pre">
+              from_raw
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               uint64_t
+              </span>
+              <span class="pre">
+               raw
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               uint8_t
+              </span>
+              <span class="pre">
+               precision
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#nautilus_trader.model.objects.Quantity.from_raw" title="Permalink to this definition">
+             ¶
+            </a>
+           </dt>
+           <dd>
            </dd>
           </dl>
           <dl class="py method">

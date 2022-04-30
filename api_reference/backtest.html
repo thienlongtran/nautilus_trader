@@ -9612,116 +9612,6 @@ source must be
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_ticks">
-             <span class="sig-name descname">
-              <span class="pre">
-               add_ticks
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                list
-               </span>
-               <span class="pre">
-                data
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_ticks" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Add the tick data to the backtest engine.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 data
-                </strong>
-                (
-                <em>
-                 list
-                </em>
-                <em>
-                 [
-                </em>
-                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.tick.Tick" title="nautilus_trader.model.data.tick.Tick">
-                 <em>
-                  Tick
-                 </em>
-                </a>
-                <em>
-                 ]
-                </em>
-                ) – The tick data to add.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Raises
-              </dt>
-              <dd class="field-even">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   data
-                  </cite>
-                  is empty.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   instrument_id
-                  </cite>
-                  for the data is not found in the cache.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_venue">
              <span class="sig-name descname">
               <span class="pre">
@@ -13638,10 +13528,10 @@ to the end of the data.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.process_tick">
+            <dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.process_quote_tick">
              <span class="sig-name descname">
               <span class="pre">
-               process_tick
+               process_quote_tick
               </span>
              </span>
              <span class="sig-paren">
@@ -13658,7 +13548,7 @@ to the end of the data.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                Tick
+                QuoteTick
                </span>
                <span class="pre">
                 tick
@@ -13678,13 +13568,13 @@ to the end of the data.
                </span>
               </span>
              </span>
-             <a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.process_tick" title="Permalink to this definition">
+             <a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.process_quote_tick" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              Process the exchanges market for the given tick.
+              Process the exchanges market for the given quote tick.
              </p>
              <p>
               Market dynamics are simulated by auctioning open orders.
@@ -13699,9 +13589,82 @@ to the end of the data.
                  tick
                 </strong>
                 (
-                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.tick.Tick" title="nautilus_trader.model.data.tick.Tick">
+                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick">
                  <em>
-                  Tick
+                  QuoteTick
+                 </em>
+                </a>
+                ) – The tick to process.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.process_trade_tick">
+             <span class="sig-name descname">
+              <span class="pre">
+               process_trade_tick
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                TradeTick
+               </span>
+               <span class="pre">
+                tick
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.process_trade_tick" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Process the exchanges market for the given trade tick.
+             </p>
+             <p>
+              Market dynamics are simulated by auctioning open orders.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 tick
+                </strong>
+                (
+                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick">
+                 <em>
+                  TradeTick
                  </em>
                 </a>
                 ) – The tick to process.
