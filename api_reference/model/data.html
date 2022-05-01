@@ -3916,6 +3916,279 @@ internally aggregated.
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.data.tick.QuoteTick.from_raw">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               from_raw
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                InstrumentId
+               </span>
+               <span class="pre">
+                instrument_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int64_t
+               </span>
+               <span class="pre">
+                raw_bid
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int64_t
+               </span>
+               <span class="pre">
+                raw_ask
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                uint8_t
+               </span>
+               <span class="pre">
+                price_prec
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                uint64_t
+               </span>
+               <span class="pre">
+                raw_bid_size
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                uint64_t
+               </span>
+               <span class="pre">
+                raw_ask_size
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                uint8_t
+               </span>
+               <span class="pre">
+                size_prec
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                uint64_t
+               </span>
+               <span class="pre">
+                ts_event
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                uint64_t
+               </span>
+               <span class="pre">
+                ts_init
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick">
+                <span class="pre">
+                 QuoteTick
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.data.tick.QuoteTick.from_raw" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return a quote tick from the given raw values.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The quotes instrument ID.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   raw_bid
+                  </strong>
+                  (
+                  <em>
+                   int64_t
+                  </em>
+                  ) – The raw top of book bid price (as a scaled fixed precision integer).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   raw_ask
+                  </strong>
+                  (
+                  <em>
+                   int64_t
+                  </em>
+                  ) – The raw top of book ask price (as a scaled fixed precision integer).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   price_prec
+                  </strong>
+                  (
+                  <em>
+                   uint8_t
+                  </em>
+                  ) – The price precision.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   raw_bid_size
+                  </strong>
+                  (
+                  <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                   <em>
+                    Quantity
+                   </em>
+                  </a>
+                  ) – The raw top of book bid size (as a scaled fixed precision integer).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   raw_ask_size
+                  </strong>
+                  (
+                  <a class="reference internal" href="objects.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity">
+                   <em>
+                    Quantity
+                   </em>
+                  </a>
+                  ) – The raw top of book ask size (as a scaled fixed precision integer).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   size_prec
+                  </strong>
+                  (
+                  <em>
+                   uint8_t
+                  </em>
+                  ) – The size precision.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ts_event
+                  </strong>
+                  (
+                  <em>
+                   int64
+                  </em>
+                  ) – The UNIX timestamp (nanoseconds) when the tick event occurred.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ts_init
+                  </strong>
+                  (
+                  <em>
+                   int64
+                  </em>
+                  ) – The UNIX timestamp (nanoseconds) when the data object was initialized.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 QuoteTick
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.model.data.tick.QuoteTick.fully_qualified_name">
              <em class="property">
               <span class="pre">
@@ -4471,6 +4744,277 @@ seller counterparties.
                 </em>
                 ) – The values for initialization.
                </p>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                <em>
+                 TradeTick
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.model.data.tick.TradeTick.from_raw">
+             <em class="property">
+              <span class="pre">
+               static
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               from_raw
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                InstrumentId
+               </span>
+               <span class="pre">
+                instrument_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int64_t
+               </span>
+               <span class="pre">
+                raw_price
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                uint8_t
+               </span>
+               <span class="pre">
+                price_prec
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                uint64_t
+               </span>
+               <span class="pre">
+                raw_size
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                uint8_t
+               </span>
+               <span class="pre">
+                size_prec
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                AggressorSide
+               </span>
+               <span class="pre">
+                aggressor_side
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                TradeId
+               </span>
+               <span class="pre">
+                trade_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                uint64_t
+               </span>
+               <span class="pre">
+                ts_event
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                uint64_t
+               </span>
+               <span class="pre">
+                ts_init
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <a class="reference internal" href="#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick">
+                <span class="pre">
+                 TradeTick
+                </span>
+               </a>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.data.tick.TradeTick.from_raw" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return a trade tick from the given raw values.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The trade instrument ID.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   raw_price
+                  </strong>
+                  (
+                  <em>
+                   int64_t
+                  </em>
+                  ) – The traded raw price (as a scaled fixed precision integer).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   price_prec
+                  </strong>
+                  (
+                  <em>
+                   uint8_t
+                  </em>
+                  ) – The traded price precision.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   raw_size
+                  </strong>
+                  (
+                  <em>
+                   uint64_t
+                  </em>
+                  ) – The traded raw size (as a scaled fixed precision integer).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   size_prec
+                  </strong>
+                  (
+                  <em>
+                   uint8_t
+                  </em>
+                  ) – The traded size precision.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   aggressor_side
+                  </strong>
+                  (
+                  <em>
+                   AggressorSide
+                  </em>
+                  ) – The trade aggressor side.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   trade_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="identifiers.html#nautilus_trader.model.identifiers.TradeId" title="nautilus_trader.model.identifiers.TradeId">
+                   <em>
+                    TradeId
+                   </em>
+                  </a>
+                  ) – The trade match ID (assigned by the venue).
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ts_event
+                  </strong>
+                  (
+                  <em>
+                   int64
+                  </em>
+                  ) – The UNIX timestamp (nanoseconds) when the tick event occurred.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ts_init
+                  </strong>
+                  (
+                  <em>
+                   int64
+                  </em>
+                  ) – The UNIX timestamp (nanoseconds) when the data object was initialized.
+                 </p>
+                </li>
+               </ul>
               </dd>
               <dt class="field-even">
                Returns

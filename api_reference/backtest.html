@@ -2815,6 +2815,17 @@ the data source and the Nautilus system. Cannot be negative.
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+               <span class="pre">
+                is_raw=False
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -2922,6 +2933,24 @@ data. If random_seed is
                   then won’t shuffle.
                  </p>
                 </li>
+                <li>
+                 <p>
+                  <strong>
+                   is_raw
+                  </strong>
+                  (
+                  <em>
+                   bool
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default False
+                  </em>
+                  ) – If the data is scaled to the Nautilus fixed precision.
+                 </p>
+                </li>
                </ul>
               </dd>
              </dl>
@@ -3019,17 +3048,8 @@ data. If random_seed is
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                data
+                data:
                </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
                <span class="pre">
                 pd.DataFrame
                </span>
@@ -3039,33 +3059,27 @@ data. If random_seed is
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                ts_init_delta
+                ts_init_delta:
                </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
                <span class="pre">
                 int
                </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
                <span class="pre">
                 =
                </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
                <span class="pre">
                 0
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+               <span class="pre">
+                is_raw=False
                </span>
               </span>
              </em>
@@ -3117,6 +3131,24 @@ data. If random_seed is
                   </cite>
                   value. Can be used to represent/simulate latency between
 the data source and the Nautilus system.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   is_raw
+                  </strong>
+                  (
+                  <em>
+                   bool
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default False
+                  </em>
+                  ) – If the data is scaled to the Nautilus fixed precision.
                  </p>
                 </li>
                </ul>
