@@ -8974,142 +8974,6 @@ data.
             </dd>
            </dl>
            <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_bars">
-             <span class="sig-name descname">
-              <span class="pre">
-               add_bars
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                list
-               </span>
-               <span class="pre">
-                data
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_bars" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Add the built bar data objects to the backtest engines. Suitable for
-running externally aggregated bar subscriptions (bar type aggregation
-source must be
-              <code class="docutils literal notranslate">
-               <span class="pre">
-                EXTERNAL
-               </span>
-              </code>
-              ).
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 data
-                </strong>
-                (
-                <em>
-                 list
-                </em>
-                <em>
-                 [
-                </em>
-                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar">
-                 <em>
-                  Bar
-                 </em>
-                </a>
-                <em>
-                 ]
-                </em>
-                ) – The bars to add.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Raises
-              </dt>
-              <dd class="field-even">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   bar_type.aggregation_source
-                  </cite>
-                  is not equal to
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    EXTERNAL
-                   </span>
-                  </code>
-                  .
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   data
-                  </cite>
-                  is empty.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   instrument_id
-                  </cite>
-                  for the data is not found in the cache.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_data">
              <span class="sig-name descname">
               <span class="pre">
@@ -9137,6 +9001,17 @@ source must be
                </span>
               </span>
              </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                ClientId
+               </span>
+               <span class="pre">
+                client_id=None
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
              </span>
@@ -9156,32 +9031,56 @@ source must be
             </dt>
             <dd>
              <p>
-              Add the data to the backtest engine.
+              Add the given data to the backtest engine.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
                Parameters
               </dt>
               <dd class="field-odd">
-               <p>
-                <strong>
-                 data
-                </strong>
-                (
-                <em>
-                 list
-                </em>
-                <em>
-                 [
-                </em>
-                <em>
-                 Data
-                </em>
-                <em>
-                 ]
-                </em>
-                ) – The data to add.
-               </p>
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   data
+                  </strong>
+                  (
+                  <em>
+                   list
+                  </em>
+                  <em>
+                   [
+                  </em>
+                  <em>
+                   Data
+                  </em>
+                  <em>
+                   ]
+                  </em>
+                  ) – The data to add.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   client_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
+                   <em>
+                    ClientId
+                   </em>
+                  </a>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The data client ID to associate with generic data.
+                 </p>
+                </li>
+               </ul>
               </dd>
               <dt class="field-even">
                Raises
@@ -9212,132 +9111,44 @@ source must be
                   for the data is not found in the cache.
                  </p>
                 </li>
-               </ul>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_generic_data">
-             <span class="sig-name descname">
-              <span class="pre">
-               add_generic_data
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                ClientId
-               </span>
-               <span class="pre">
-                client_id
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                list
-               </span>
-               <span class="pre">
-                data
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_generic_data" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Add the generic data to the container.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
                 <li>
                  <p>
                   <strong>
-                   client_id
+                   ValueError
                   </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId">
-                   <em>
-                    ClientId
-                   </em>
-                  </a>
-                  ) – The data client ID to associate with the generic data.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
+                  – If
+                  <cite>
                    data
-                  </strong>
-                  (
-                  <em>
-                   list
-                  </em>
-                  <em>
-                   [
-                  </em>
-                  <a class="reference internal" href="model/data.html#nautilus_trader.model.data.base.GenericData" title="nautilus_trader.model.data.base.GenericData">
-                   <em>
-                    GenericData
-                   </em>
-                  </a>
-                  <em>
-                   ]
-                  </em>
-                  ) – The data to add.
+                  </cite>
+                  elements do not have an
+                  <cite>
+                   instrument_id
+                  </cite>
+                  and
+                  <cite>
+                   client_id
+                  </cite>
+                  is
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  .
                  </p>
                 </li>
                </ul>
               </dd>
-              <dt class="field-even">
-               Raises
-              </dt>
-              <dd class="field-even">
-               <p>
-                <strong>
-                 ValueError
-                </strong>
-                – If
-                <cite>
-                 data
-                </cite>
-                is empty.
-               </p>
-              </dd>
              </dl>
+             <div class="admonition warning">
+              <p class="admonition-title">
+               Warning
+              </p>
+              <p>
+               Assumes all data elements are of the same type. Adding lists of varying
+data types could result in incorrect backtest logic.
+              </p>
+             </div>
             </dd>
            </dl>
            <dl class="py method">
@@ -9406,116 +9217,6 @@ source must be
                 </a>
                 ) – The instrument to add.
                </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_order_book_data">
-             <span class="sig-name descname">
-              <span class="pre">
-               add_order_book_data
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                list
-               </span>
-               <span class="pre">
-                data
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                None
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_order_book_data" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Add the order book data to the backtest engine.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 data
-                </strong>
-                (
-                <em>
-                 list
-                </em>
-                <em>
-                 [
-                </em>
-                <a class="reference internal" href="model/orderbook.html#nautilus_trader.model.orderbook.data.OrderBookData" title="nautilus_trader.model.orderbook.data.OrderBookData">
-                 <em>
-                  OrderBookData
-                 </em>
-                </a>
-                <em>
-                 ]
-                </em>
-                ) – The order book data to add.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Raises
-              </dt>
-              <dd class="field-even">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   data
-                  </cite>
-                  is empty.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   instrument_id
-                  </cite>
-                  for the data is not found in the cache.
-                 </p>
-                </li>
-               </ul>
               </dd>
              </dl>
             </dd>
