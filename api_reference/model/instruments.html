@@ -11650,6 +11650,74 @@ currency for inverse instruments.
              </span>
             </span>
            </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              margin_init:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              margin_maint:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              maker_fee:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              taker_fee:
+             </span>
+             <span class="pre">
+              Decimal
+             </span>
+             <span class="pre">
+              =
+             </span>
+             <span class="pre">
+              None
+             </span>
+            </span>
+           </em>
            <span class="sig-paren">
             )
            </span>
@@ -11779,6 +11847,54 @@ currency for inverse instruments.
                  str
                 </em>
                 ) – The International Securities Identification Number (ISIN).
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 margin_init
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The initial (order) margin requirement in percentage of order value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 margin_maint
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The maintenance (position) margin in percentage of position value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 maker_fee
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The fee rate for liquidity makers as a percentage of order value.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 taker_fee
+                </strong>
+                (
+                <em>
+                 Decimal
+                </em>
+                ) – The fee rate for liquidity takers as a percentage of order value.
                </p>
               </li>
               <li>
@@ -12154,7 +12270,7 @@ currency for inverse instruments.
               <dd class="field-even">
                <p>
                 <em>
-                 Instrument
+                 Equity
                 </em>
                </p>
               </dd>
