@@ -656,6 +656,11 @@
            <nav class="md-nav">
             <ul class="md-nav__list">
              <li class="md-nav__item">
+              <a class="md-nav__link" href="#running-in-docker">
+               Running in docker
+              </a>
+             </li>
+             <li class="md-nav__item">
               <a class="md-nav__link" href="#getting-the-sample-data">
                Getting the sample data
               </a>
@@ -688,11 +693,6 @@
              <li class="md-nav__item">
               <a class="md-nav__link" href="#data">
                Data
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#strategies">
-               Strategies
               </a>
              </li>
              <li class="md-nav__item">
@@ -736,6 +736,106 @@ format (Parquet) for this guide.
          </a>
          .
         </p>
+        <section id="running-in-docker">
+         <h2 id="running-in-docker">
+          Running in docker
+          <a class="headerlink" href="#running-in-docker" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          A self-contained dockerized jupyter notebook server is available for download, which does not require any setup or
+installation. This is the fastest way to get up and running to try out Nautilus. Bear in mind that any data will be
+deleted when the container is deleted.
+         </p>
+         <ul class="simple">
+          <li>
+           <p>
+            To get started, install docker:
+           </p>
+           <ul>
+            <li>
+             <p>
+              Go to
+              <a class="reference external" href="https://docs.docker.com/get-docker/">
+               docker.com
+              </a>
+              and follow the instructions
+             </p>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <p>
+            From a terminal, download the latest image
+           </p>
+           <ul>
+            <li>
+             <p>
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                docker
+               </span>
+               <span class="pre">
+                pull
+               </span>
+               <span class="pre">
+                ghcr.io/nautechsystems/jupyterlab:develop
+               </span>
+              </code>
+             </p>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <p>
+            Run the docker container, exposing the jupyter port (recommended 8889 in case another jupyter server is running):
+           </p>
+           <ul>
+            <li>
+             <p>
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                docker
+               </span>
+               <span class="pre">
+                run
+               </span>
+               <span class="pre">
+                -p
+               </span>
+               <span class="pre">
+                8889:8888
+               </span>
+               <span class="pre">
+                ghcr.io/nautechsystems/jupyterlab:develop
+               </span>
+              </code>
+             </p>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <p>
+            Open your web browser to
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              localhost:{port}
+             </span>
+            </code>
+           </p>
+           <ul>
+            <li>
+             <p>
+              <a class="reference external" href="https://localhost:8889">
+               https://localhost:8889
+              </a>
+             </p>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </section>
         <section id="getting-the-sample-data">
          <h2 id="getting-the-sample-data">
           Getting the sample data
@@ -1076,29 +1176,6 @@ adding the
           </div>
          </div>
         </section>
-        <section id="strategies">
-         <h2 id="strategies">
-          Strategies
-          <a class="headerlink" href="#strategies" title="Permalink to this headline">
-           ¶
-          </a>
-         </h2>
-         <p>
-          We can then configure and instantiate our trading strategy(s):
-         </p>
-         <div class="highlight-python notranslate">
-          <div class="highlight">
-           <pre><span></span><span class="n">macd_config</span> <span class="o">=</span> <span class="n">MACDConfig</span><span class="p">(</span>
-    <span class="n">instrument_id</span><span class="o">=</span><span class="n">instruments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
-    <span class="n">fast_period</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
-    <span class="n">slow_period</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">macd_strategy</span> <span class="o">=</span> <span class="n">MACDStrategy</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">macd_config</span><span class="p">)</span>
-</pre>
-          </div>
-         </div>
-        </section>
         <section id="engine">
          <h2 id="engine">
           Engine
@@ -1117,12 +1194,45 @@ adding the
 Here we need to pass our trading strategies, we can also adjust the log level
 and configure many other components (however, it’s also fine to use the defaults):
          </p>
+         <p>
+          Strategies are added via the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            ImportableStrategyConfig
+           </span>
+          </code>
+          , which allows importing strategies from arbitrary files or
+user packages. In this instance, our
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            MACDStrategy
+           </span>
+          </code>
+          is defined in the current module, which python refers to as
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            __main__
+           </span>
+          </code>
+          .
+         </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
            <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.config</span> <span class="kn">import</span> <span class="n">BacktestEngineConfig</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.config</span> <span class="kn">import</span> <span class="n">ImportableStrategyConfig</span>
 
 <span class="n">engine</span> <span class="o">=</span> <span class="n">BacktestEngineConfig</span><span class="p">(</span>
-    <span class="n">strategies</span><span class="o">=</span><span class="p">[</span><span class="n">macd_strategy</span><span class="p">],</span>
+    <span class="n">strategies</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">ImportableStrategyConfig</span><span class="p">(</span>
+            <span class="n">strategy_path</span><span class="o">=</span><span class="s2">"__main__:MACDStrategy"</span><span class="p">,</span>
+            <span class="n">config_path</span><span class="o">=</span><span class="s2">"__main__:MACDConfig"</span><span class="p">,</span>
+            <span class="n">config</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+              <span class="n">instrument_id</span><span class="o">=</span><span class="n">instruments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+              <span class="n">fast_period</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+              <span class="n">slow_period</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">],</span>
     <span class="n">log_level</span><span class="o">=</span><span class="s2">"ERROR"</span><span class="p">,</span>  <span class="c1"># Lower to `INFO` to see more logging about orders, events, etc.</span>
 <span class="p">)</span>
 </pre>

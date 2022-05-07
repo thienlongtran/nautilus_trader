@@ -656,6 +656,11 @@
            <nav class="md-nav">
             <ul class="md-nav__list">
              <li class="md-nav__item">
+              <a class="md-nav__link" href="#imports">
+               Imports
+              </a>
+             </li>
+             <li class="md-nav__item">
               <a class="md-nav__link" href="#getting-some-raw-data">
                Getting some raw data
               </a>
@@ -715,6 +720,38 @@
          This notebook runs through a complete backtest example using raw data (external to nautilus) to a parameterised run
         </p>
         <!-- #region tags=[] -->
+        <section id="imports">
+         <h2 id="imports">
+          Imports
+          <a class="headerlink" href="#imports" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          We’ll start with all of our imports for the remainder of this guide.
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
+
+<span class="kn">import</span> <span class="nn">fsspec</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.core.datetime</span> <span class="kn">import</span> <span class="n">dt_to_unix_nanos</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.model.data.tick</span> <span class="kn">import</span> <span class="n">QuoteTick</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.model.objects</span> <span class="kn">import</span> <span class="n">Price</span><span class="p">,</span> <span class="n">Quantity</span>
+
+<span class="kn">from</span> <span class="nn">nautilus_trader.backtest.data.providers</span> <span class="kn">import</span> <span class="n">TestInstrumentProvider</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.backtest.node</span> <span class="kn">import</span> <span class="n">BacktestNode</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.persistence.catalog</span> <span class="kn">import</span> <span class="n">DataCatalog</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.persistence.external.core</span> <span class="kn">import</span> <span class="n">process_files</span><span class="p">,</span> <span class="n">write_objects</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.persistence.external.readers</span> <span class="kn">import</span> <span class="n">TextReader</span>
+</pre>
+          </div>
+         </div>
+        </section>
         <section id="getting-some-raw-data">
          <h2 id="getting-some-raw-data">
           Getting some raw data
@@ -765,8 +802,7 @@
          </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
-           <pre><span></span><span class="kn">import</span> <span class="nn">fsspec</span>
-<span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span><span class="s1">'file'</span><span class="p">)</span>
+           <pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span><span class="s1">'file'</span><span class="p">)</span>
 <span class="n">raw_files</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/HISTDATA*"</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">raw_files</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Unable to find any histdata files in directory </span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">"</span>
 <span class="n">raw_files</span>
@@ -880,24 +916,6 @@
          </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
-           <pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="kn">from</span> <span class="nn">nautilus_trader.persistence.catalog</span> <span class="kn">import</span> <span class="n">DataCatalog</span>
-<span class="kn">from</span> <span class="nn">nautilus_trader.persistence.external.core</span> <span class="kn">import</span> <span class="n">process_files</span><span class="p">,</span> <span class="n">write_objects</span>
-<span class="kn">from</span> <span class="nn">nautilus_trader.persistence.external.readers</span> <span class="kn">import</span> <span class="n">TextReader</span>
-
-<span class="kn">from</span> <span class="nn">nautilus_trader.model.data.tick</span> <span class="kn">import</span> <span class="n">QuoteTick</span>
-<span class="kn">from</span> <span class="nn">nautilus_trader.model.objects</span> <span class="kn">import</span> <span class="n">Price</span><span class="p">,</span> <span class="n">Quantity</span>
-<span class="kn">from</span> <span class="nn">nautilus_trader.core.datetime</span> <span class="kn">import</span> <span class="n">dt_to_unix_nanos</span>
-
-
-<span class="kn">from</span> <span class="nn">nautilus_trader.backtest.data.providers</span> <span class="kn">import</span> <span class="n">TestInstrumentProvider</span>
-</pre>
-          </div>
-         </div>
-         <div class="highlight-python notranslate">
-          <div class="highlight">
            <pre><span></span><span class="k">def</span> <span class="nf">parser</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
     <span class="n">ts</span><span class="p">,</span> <span class="n">bid</span><span class="p">,</span> <span class="n">ask</span><span class="p">,</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">b</span><span class="s2">","</span><span class="p">)</span>
     <span class="n">dt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">decode</span><span class="p">(),</span> <span class="s2">"%Y%m</span><span class="si">%d</span><span class="s2"> %H%M%S</span><span class="si">%f</span><span class="s2">"</span><span class="p">),</span> <span class="n">tz</span><span class="o">=</span><span class="s1">'UTC'</span><span class="p">)</span>
@@ -918,8 +936,7 @@
          </p>
          <div class="highlight-python notranslate">
           <div class="highlight">
-           <pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">shutil</span>
-<span class="n">CATALOG_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="s2">"/catalog"</span>
+           <pre><span></span><span class="n">CATALOG_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="s2">"/catalog"</span>
 
 <span class="c1"># Clear if it already exists, then create fresh</span>
 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">CATALOG_PATH</span><span class="p">):</span>
@@ -1015,9 +1032,7 @@
           </h3>
           <div class="highlight-python notranslate">
            <div class="highlight">
-            <pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.config</span> <span class="kn">import</span> <span class="n">BacktestRunConfig</span><span class="p">,</span> <span class="n">BacktestVenueConfig</span><span class="p">,</span> <span class="n">BacktestDataConfig</span><span class="p">,</span> <span class="n">BacktestEngineConfig</span>
-
-<span class="n">instrument</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">(</span><span class="n">as_nautilus</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <pre><span></span><span class="n">instrument</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">(</span><span class="n">as_nautilus</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">data_config</span><span class="o">=</span><span class="p">[</span>
     <span class="n">BacktestDataConfig</span><span class="p">(</span>
