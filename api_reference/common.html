@@ -4606,6 +4606,124 @@ paused, and also when it is done for day.
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.publish_signal">
+             <span class="sig-name descname">
+              <span class="pre">
+               publish_signal
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                unicode
+               </span>
+               <span class="pre">
+                name
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                int
+               </span>
+               <span class="pre">
+                ts_init
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                value
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+               <span class="pre">
+                stream=False
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.common.actor.Actor.publish_signal" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Publish the given value as a signal to the message bus. Optionally setup persistence for this
+              <cite>
+               signal
+              </cite>
+              .
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   name
+                  </strong>
+                  (
+                  <em>
+                   str
+                  </em>
+                  ) – The name of the signal being published.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   value
+                  </strong>
+                  (
+                  <em>
+                   object
+                  </em>
+                  ) – The data to publish.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.register_base">
              <span class="sig-name descname">
               <span class="pre">
