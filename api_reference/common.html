@@ -4637,10 +4637,7 @@ paused, and also when it is done for day.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                int
-               </span>
-               <span class="pre">
-                ts_init
+                value
                </span>
               </span>
              </em>
@@ -4648,7 +4645,10 @@ paused, and also when it is done for day.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                value
+                int64_t
+               </span>
+               <span class="pre">
+                ts_event=0
                </span>
               </span>
              </em>
@@ -4715,7 +4715,50 @@ paused, and also when it is done for day.
                   <em>
                    object
                   </em>
-                  ) – The data to publish.
+                  ) – The signal data to publish.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   ts_event
+                  </strong>
+                  (
+                  <em>
+                   int64
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The UNIX timestamp (nanoseconds) when the signal event occurred.
+If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will timestamp current time.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   stream
+                  </strong>
+                  (
+                  <em>
+                   bool
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default False
+                  </em>
+                  ) – If the signal should also be streamed for persistence.
                  </p>
                 </li>
                </ul>
