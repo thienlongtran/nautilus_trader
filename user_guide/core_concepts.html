@@ -666,13 +666,13 @@
                   Common core
                  </a>
                 </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#messaging">
+                  Messaging
+                 </a>
+                </li>
                </ul>
               </nav>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#messaging">
-               Messaging
-              </a>
              </li>
              <li class="md-nav__item">
               <a class="md-nav__link" href="#trading-live">
@@ -783,58 +783,58 @@ is formalized in the
 core system, providing many hook points for user defined / custom implementations.
           </p>
          </section>
-        </section>
-        <section id="messaging">
-         <h2 id="messaging">
-          Messaging
-          <a class="headerlink" href="#messaging" title="Permalink to this headline">
-           ¶
-          </a>
-         </h2>
-         <p>
-          From a high level architectural view, it’s important to understand that the platform has been designed to run efficiently
+         <section id="messaging">
+          <h3 id="messaging">
+           Messaging
+           <a class="headerlink" href="#messaging" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           To facilitate this modularity and loose coupling, an extremely efficient
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             MessageBus
+            </span>
+           </code>
+           passes data, commands and events as messages between components.
+          </p>
+          <p>
+           From a high level architectural view, it’s important to understand that the platform has been designed to run efficiently
 on a single thread, for both backtesting and live trading. A lot of research and testing
 resulted in arriving at this design, as it was found the overhead of context switching between threads
 didn’t pay off in better performance.
-         </p>
-         <p>
-          To facilitate this modularity and loose coupling, an extremely efficient
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            MessageBus
-           </span>
-          </code>
-          passes data, commands and events as messages between components.
-         </p>
-         <p>
-          When considering the logic of how your trading will work within the system boundary, you can expect each component to consume messages
-in a predictable synchronous way (
-          <em>
-           similar
-          </em>
-          to the
-          <a class="reference external" href="https://en.wikipedia.org/wiki/Actor_model">
-           actor model
-          </a>
-          ).
-         </p>
-         <div class="admonition note">
-          <p class="admonition-title">
-           Note
           </p>
           <p>
-           Of interest is the LMAX exchange architecture, which achieves award winning performance running on
-a single thread. You can read about their
+           When considering the logic of how your trading will work within the system boundary, you can expect each component to consume messages
+in a predictable synchronous way (
            <em>
-            disruptor
+            similar
            </em>
-           pattern based architecture in
-           <a class="reference external" href="https://martinfowler.com/articles/lmax.html">
-            this interesting article
+           to the
+           <a class="reference external" href="https://en.wikipedia.org/wiki/Actor_model">
+            actor model
            </a>
-           by Martin Fowler.
+           ).
           </p>
-         </div>
+          <div class="admonition note">
+           <p class="admonition-title">
+            Note
+           </p>
+           <p>
+            Of interest is the LMAX exchange architecture, which achieves award winning performance running on
+a single thread. You can read about their
+            <em>
+             disruptor
+            </em>
+            pattern based architecture in
+            <a class="reference external" href="https://martinfowler.com/articles/lmax.html">
+             this interesting article
+            </a>
+            by Martin Fowler.
+           </p>
+          </div>
+         </section>
         </section>
         <section id="trading-live">
          <h2 id="trading-live">
