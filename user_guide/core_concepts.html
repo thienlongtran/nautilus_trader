@@ -743,7 +743,7 @@ especially leveraging the
            Note
           </p>
           <p>
-           Of interest is the LMAX exchange architectire, which achieves award winning performance running on
+           Of interest is the LMAX exchange architecture, which achieves award winning performance running on
 a single thread. You can read about their
            <em>
             disruptor
@@ -912,6 +912,15 @@ Live deployments can use both demo/paper trading accounts, or real accounts.
            <p>
             <code class="docutils literal notranslate">
              <span class="pre">
+              MILLISECOND
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
               SECOND
              </span>
             </code>
@@ -940,6 +949,24 @@ Live deployments can use both demo/paper trading accounts, or real accounts.
             <code class="docutils literal notranslate">
              <span class="pre">
               DAY
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              WEEK
+             </span>
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              MONTH
              </span>
             </code>
            </p>
@@ -1028,14 +1055,14 @@ Live deployments can use both demo/paper trading accounts, or real accounts.
           </li>
          </ul>
          <p>
-          The price types and bar aggregations can be combined with step sizes &gt;= 1 in any way through
+          The price types and bar aggregations can be combined with step sizes &gt;= 1 in any way through a
           <code class="docutils literal notranslate">
            <span class="pre">
             BarSpecification
            </span>
           </code>
           .
-This enables maximum flexibility and now allows alternative bars to be produced for live trading.
+This enables maximum flexibility and now allows alternative bars to be aggregated for live trading.
          </p>
         </section>
         <section id="account-types">
