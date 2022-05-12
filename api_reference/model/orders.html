@@ -832,17 +832,6 @@
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              TimeInForce
-             </span>
-             <span class="pre">
-              time_in_force
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               UUID4
              </span>
              <span class="pre">
@@ -858,6 +847,17 @@
              </span>
              <span class="pre">
               ts_init
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              TimeInForce
+             </span>
+             <span class="pre">
+              time_in_force=TimeInForce.GTC
              </span>
             </span>
            </em>
@@ -1083,6 +1083,32 @@
               <li>
                <p>
                 <strong>
+                 init_id
+                </strong>
+                (
+                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The order initialization event ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  time_in_force
                 </strong>
                 (TimeInForce {
@@ -1121,33 +1147,13 @@
                   AT_THE_CLOSE
                  </span>
                 </code>
-                }) – The order time in force.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 init_id
-                </strong>
-                (
-                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                 <em>
-                  UUID4
-                 </em>
-                </a>
-                ) – The order initialization event ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_init
-                </strong>
-                (
-                <em>
-                 int64
-                </em>
-                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+                }, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ) – The order time in force.
                </p>
               </li>
               <li>
@@ -3649,28 +3655,6 @@ The possible states of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              TimeInForce
-             </span>
-             <span class="pre">
-              time_in_force
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              datetime
-             </span>
-             <span class="pre">
-              expire_time
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               UUID4
              </span>
              <span class="pre">
@@ -3686,6 +3670,28 @@ The possible states of closed orders include;
              </span>
              <span class="pre">
               ts_init
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              TimeInForce
+             </span>
+             <span class="pre">
+              time_in_force=TimeInForce.GTC
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int64_t
+             </span>
+             <span class="pre">
+              expire_time_ns=0
              </span>
             </span>
            </em>
@@ -3947,6 +3953,32 @@ The possible states of closed orders include;
               <li>
                <p>
                 <strong>
+                 init_id
+                </strong>
+                (
+                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The order initialization event ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  time_in_force
                 </strong>
                 (TimeInForce {
@@ -3991,51 +4023,40 @@ The possible states of closed orders include;
                   AT_THE_CLOSE
                  </span>
                 </code>
-                }) – The order time in force.
+                }, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ) – The order time in force.
                </p>
               </li>
               <li>
                <p>
                 <strong>
-                 expire_time
-                </strong>
-                (
-                <em>
-                 datetime
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The order expiration.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 init_id
-                </strong>
-                (
-                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                 <em>
-                  UUID4
-                 </em>
-                </a>
-                ) – The order initialization event ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_init
+                 expire_time_ns
                 </strong>
                 (
                 <em>
                  int64
                 </em>
-                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 0
+                </em>
+                <em>
+                 (
+                </em>
+                <em>
+                 no expiry
+                </em>
+                <em>
+                 )
+                </em>
+                ) – The order expiration.
                </p>
               </li>
               <li>
@@ -4232,15 +4253,9 @@ contain any arbitrary delimiter if required.
                 </code>
                 and
                 <cite>
-                 expire_time
+                 expire_time_ns
                 </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                or &lt;= UNIX epoch.
+                &lt;= UNIX epoch.
                </p>
               </li>
               <li>
@@ -4749,7 +4764,7 @@ contain any arbitrary delimiter if required.
             </dt>
             <dd>
              <p>
-              The order expiration.
+              Return the expire time for the order (UTC).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -4757,10 +4772,7 @@ contain any arbitrary delimiter if required.
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
-                 datetime
-                </cite>
-                or
+                datetime or
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -6740,28 +6752,6 @@ The possible states of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              TimeInForce
-             </span>
-             <span class="pre">
-              time_in_force
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              datetime
-             </span>
-             <span class="pre">
-              expire_time
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               UUID4
              </span>
              <span class="pre">
@@ -6777,6 +6767,28 @@ The possible states of closed orders include;
              </span>
              <span class="pre">
               ts_init
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              TimeInForce
+             </span>
+             <span class="pre">
+              time_in_force=TimeInForce.GTC
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int64_t
+             </span>
+             <span class="pre">
+              expire_time_ns=0
              </span>
             </span>
            </em>
@@ -6996,6 +7008,32 @@ The possible states of closed orders include;
               <li>
                <p>
                 <strong>
+                 init_id
+                </strong>
+                (
+                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The order initialization event ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  time_in_force
                 </strong>
                 (TimeInForce {
@@ -7028,51 +7066,40 @@ The possible states of closed orders include;
                   DAY
                  </span>
                 </code>
-                }) – The order time in force.
+                }, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ) – The order time in force.
                </p>
               </li>
               <li>
                <p>
                 <strong>
-                 expire_time
-                </strong>
-                (
-                <em>
-                 datetime
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The order expiration.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 init_id
-                </strong>
-                (
-                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                 <em>
-                  UUID4
-                 </em>
-                </a>
-                ) – The order initialization event ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_init
+                 expire_time_ns
                 </strong>
                 (
                 <em>
                  int64
                 </em>
-                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 0
+                </em>
+                <em>
+                 (
+                </em>
+                <em>
+                 no expiry
+                </em>
+                <em>
+                 )
+                </em>
+                ) – The order expiration.
                </p>
               </li>
               <li>
@@ -7273,15 +7300,9 @@ contain any arbitrary delimiter if required.
                 </code>
                 and
                 <cite>
-                 expire_time
+                 expire_time_ns
                 </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                or &lt;= UNIX epoch.
+                &lt;= UNIX epoch.
                </p>
               </li>
              </ul>
@@ -7739,7 +7760,7 @@ contain any arbitrary delimiter if required.
             </dt>
             <dd>
              <p>
-              The order expiration.
+              Return the expire time for the order (UTC).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -7747,10 +7768,7 @@ contain any arbitrary delimiter if required.
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
-                 datetime
-                </cite>
-                or
+                datetime or
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -9770,28 +9788,6 @@ The possible states of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              TimeInForce
-             </span>
-             <span class="pre">
-              time_in_force
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              datetime
-             </span>
-             <span class="pre">
-              expire_time
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               UUID4
              </span>
              <span class="pre">
@@ -9807,6 +9803,28 @@ The possible states of closed orders include;
              </span>
              <span class="pre">
               ts_init
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              TimeInForce
+             </span>
+             <span class="pre">
+              time_in_force=TimeInForce.GTC
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int64_t
+             </span>
+             <span class="pre">
+              expire_time_ns=0
              </span>
             </span>
            </em>
@@ -10062,6 +10080,32 @@ The possible states of closed orders include;
               <li>
                <p>
                 <strong>
+                 init_id
+                </strong>
+                (
+                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The order initialization event ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  time_in_force
                 </strong>
                 (TimeInForce {
@@ -10094,51 +10138,40 @@ The possible states of closed orders include;
                   DAY
                  </span>
                 </code>
-                }) – The order time in force.
+                }, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ) – The order time in force.
                </p>
               </li>
               <li>
                <p>
                 <strong>
-                 expire_time
-                </strong>
-                (
-                <em>
-                 datetime
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The order expiration.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 init_id
-                </strong>
-                (
-                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                 <em>
-                  UUID4
-                 </em>
-                </a>
-                ) – The order initialization event ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_init
+                 expire_time_ns
                 </strong>
                 (
                 <em>
                  int64
                 </em>
-                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 0
+                </em>
+                <em>
+                 (
+                </em>
+                <em>
+                 no expiry
+                </em>
+                <em>
+                 )
+                </em>
+                ) – The order expiration.
                </p>
               </li>
               <li>
@@ -10395,15 +10428,9 @@ contain any arbitrary delimiter if required.
                 </code>
                 and
                 <cite>
-                 expire_time
+                 expire_time_ns
                 </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                or &lt;= UNIX epoch.
+                &lt;= UNIX epoch.
                </p>
               </li>
               <li>
@@ -10918,7 +10945,7 @@ contain any arbitrary delimiter if required.
             </dt>
             <dd>
              <p>
-              The order expiration.
+              Return the expire time for the order (UTC).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -10926,10 +10953,7 @@ contain any arbitrary delimiter if required.
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
-                 datetime
-                </cite>
-                or
+                datetime or
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -13003,28 +13027,6 @@ The possible states of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              TimeInForce
-             </span>
-             <span class="pre">
-              time_in_force
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              datetime
-             </span>
-             <span class="pre">
-              expire_time
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               UUID4
              </span>
              <span class="pre">
@@ -13040,6 +13042,28 @@ The possible states of closed orders include;
              </span>
              <span class="pre">
               ts_init
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              TimeInForce
+             </span>
+             <span class="pre">
+              time_in_force=TimeInForce.GTC
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int64_t
+             </span>
+             <span class="pre">
+              expire_time_ns=0
              </span>
             </span>
            </em>
@@ -13244,6 +13268,32 @@ The possible states of closed orders include;
               <li>
                <p>
                 <strong>
+                 init_id
+                </strong>
+                (
+                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The order initialization event ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  time_in_force
                 </strong>
                 (TimeInForce {
@@ -13276,51 +13326,40 @@ The possible states of closed orders include;
                   DAY
                  </span>
                 </code>
-                }) – The order time in force.
+                }, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ) – The order time in force.
                </p>
               </li>
               <li>
                <p>
                 <strong>
-                 expire_time
-                </strong>
-                (
-                <em>
-                 datetime
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The order expiration.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 init_id
-                </strong>
-                (
-                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                 <em>
-                  UUID4
-                 </em>
-                </a>
-                ) – The order initialization event ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_init
+                 expire_time_ns
                 </strong>
                 (
                 <em>
                  int64
                 </em>
-                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 0
+                </em>
+                <em>
+                 (
+                </em>
+                <em>
+                 no expiry
+                </em>
+                <em>
+                 )
+                </em>
+                ) – The order expiration.
                </p>
               </li>
               <li>
@@ -13996,7 +14035,7 @@ contain any arbitrary delimiter if required.
             </dt>
             <dd>
              <p>
-              The order expiration.
+              Return the expire time for the order (UTC).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -14004,10 +14043,7 @@ contain any arbitrary delimiter if required.
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
-                 datetime
-                </cite>
-                or
+                datetime or
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -15993,28 +16029,6 @@ The possible states of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              TimeInForce
-             </span>
-             <span class="pre">
-              time_in_force
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              datetime
-             </span>
-             <span class="pre">
-              expire_time
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               UUID4
              </span>
              <span class="pre">
@@ -16030,6 +16044,28 @@ The possible states of closed orders include;
              </span>
              <span class="pre">
               ts_init
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              TimeInForce
+             </span>
+             <span class="pre">
+              time_in_force=TimeInForce.GTC
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int64_t
+             </span>
+             <span class="pre">
+              expire_time_ns=0
              </span>
             </span>
            </em>
@@ -16249,6 +16285,32 @@ The possible states of closed orders include;
               <li>
                <p>
                 <strong>
+                 init_id
+                </strong>
+                (
+                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The order initialization event ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  time_in_force
                 </strong>
                 (TimeInForce {
@@ -16281,51 +16343,40 @@ The possible states of closed orders include;
                   DAY
                  </span>
                 </code>
-                }) – The order time in force.
+                }, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ) – The order time in force.
                </p>
               </li>
               <li>
                <p>
                 <strong>
-                 expire_time
-                </strong>
-                (
-                <em>
-                 datetime
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The order expiration.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 init_id
-                </strong>
-                (
-                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                 <em>
-                  UUID4
-                 </em>
-                </a>
-                ) – The order initialization event ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_init
+                 expire_time_ns
                 </strong>
                 (
                 <em>
                  int64
                 </em>
-                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 0
+                </em>
+                <em>
+                 (
+                </em>
+                <em>
+                 no expiry
+                </em>
+                <em>
+                 )
+                </em>
+                ) – The order expiration.
                </p>
               </li>
               <li>
@@ -16526,15 +16577,9 @@ contain any arbitrary delimiter if required.
                 </code>
                 and
                 <cite>
-                 expire_time
+                 expire_time_ns
                 </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                or &lt;= UNIX epoch.
+                &lt;= UNIX epoch.
                </p>
               </li>
              </ul>
@@ -16992,7 +17037,7 @@ contain any arbitrary delimiter if required.
             </dt>
             <dd>
              <p>
-              The order expiration.
+              Return the expire time for the order (UTC).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -17000,10 +17045,7 @@ contain any arbitrary delimiter if required.
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
-                 datetime
-                </cite>
-                or
+                datetime or
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -19023,28 +19065,6 @@ The possible states of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              TimeInForce
-             </span>
-             <span class="pre">
-              time_in_force
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              datetime
-             </span>
-             <span class="pre">
-              expire_time
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               UUID4
              </span>
              <span class="pre">
@@ -19060,6 +19080,28 @@ The possible states of closed orders include;
              </span>
              <span class="pre">
               ts_init
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              TimeInForce
+             </span>
+             <span class="pre">
+              time_in_force=TimeInForce.GTC
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int64_t
+             </span>
+             <span class="pre">
+              expire_time_ns=0
              </span>
             </span>
            </em>
@@ -19315,6 +19357,32 @@ The possible states of closed orders include;
               <li>
                <p>
                 <strong>
+                 init_id
+                </strong>
+                (
+                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The order initialization event ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  time_in_force
                 </strong>
                 (TimeInForce {
@@ -19347,51 +19415,40 @@ The possible states of closed orders include;
                   DAY
                  </span>
                 </code>
-                }) – The order time in force.
+                }, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ) – The order time in force.
                </p>
               </li>
               <li>
                <p>
                 <strong>
-                 expire_time
-                </strong>
-                (
-                <em>
-                 datetime
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The order expiration.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 init_id
-                </strong>
-                (
-                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                 <em>
-                  UUID4
-                 </em>
-                </a>
-                ) – The order initialization event ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_init
+                 expire_time_ns
                 </strong>
                 (
                 <em>
                  int64
                 </em>
-                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 0
+                </em>
+                <em>
+                 (
+                </em>
+                <em>
+                 no expiry
+                </em>
+                <em>
+                 )
+                </em>
+                ) – The order expiration.
                </p>
               </li>
               <li>
@@ -19648,15 +19705,9 @@ contain any arbitrary delimiter if required.
                 </code>
                 and
                 <cite>
-                 expire_time
+                 expire_time_ns
                 </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                or &lt;= UNIX epoch.
+                &lt;= UNIX epoch.
                </p>
               </li>
               <li>
@@ -20171,7 +20222,7 @@ contain any arbitrary delimiter if required.
             </dt>
             <dd>
              <p>
-              The order expiration.
+              Return the expire time for the order (UTC).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -20179,10 +20230,7 @@ contain any arbitrary delimiter if required.
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
-                 datetime
-                </cite>
-                or
+                datetime or
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -22300,28 +22348,6 @@ The possible states of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              TimeInForce
-             </span>
-             <span class="pre">
-              time_in_force
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              datetime
-             </span>
-             <span class="pre">
-              expire_time
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               UUID4
              </span>
              <span class="pre">
@@ -22337,6 +22363,28 @@ The possible states of closed orders include;
              </span>
              <span class="pre">
               ts_init
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              TimeInForce
+             </span>
+             <span class="pre">
+              time_in_force=TimeInForce.GTC
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int64_t
+             </span>
+             <span class="pre">
+              expire_time_ns=0
              </span>
             </span>
            </em>
@@ -22597,6 +22645,32 @@ to the delta of market price and
               <li>
                <p>
                 <strong>
+                 init_id
+                </strong>
+                (
+                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The order initialization event ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  time_in_force
                 </strong>
                 (TimeInForce {
@@ -22629,51 +22703,40 @@ to the delta of market price and
                   DAY
                  </span>
                 </code>
-                }) – The order time in force.
+                }, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ) – The order time in force.
                </p>
               </li>
               <li>
                <p>
                 <strong>
-                 expire_time
-                </strong>
-                (
-                <em>
-                 datetime
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The order expiration.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 init_id
-                </strong>
-                (
-                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                 <em>
-                  UUID4
-                 </em>
-                </a>
-                ) – The order initialization event ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_init
+                 expire_time_ns
                 </strong>
                 (
                 <em>
                  int64
                 </em>
-                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 0
+                </em>
+                <em>
+                 (
+                </em>
+                <em>
+                 no expiry
+                </em>
+                <em>
+                 )
+                </em>
+                ) – The order expiration.
                </p>
               </li>
               <li>
@@ -22892,15 +22955,9 @@ contain any arbitrary delimiter if required.
                 </code>
                 and
                 <cite>
-                 expire_time
+                 expire_time_ns
                 </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                or &lt;= UNIX epoch.
+                &lt;= UNIX epoch.
                </p>
               </li>
              </ul>
@@ -23358,7 +23415,7 @@ contain any arbitrary delimiter if required.
             </dt>
             <dd>
              <p>
-              The order expiration.
+              Return the expire time for the order (UTC).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -23366,10 +23423,7 @@ contain any arbitrary delimiter if required.
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
-                 datetime
-                </cite>
-                or
+                datetime or
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
@@ -25486,28 +25540,6 @@ The possible states of closed orders include;
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              TimeInForce
-             </span>
-             <span class="pre">
-              time_in_force
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              datetime
-             </span>
-             <span class="pre">
-              expire_time
-             </span>
-            </span>
-           </em>
-           ,
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
               UUID4
              </span>
              <span class="pre">
@@ -25523,6 +25555,28 @@ The possible states of closed orders include;
              </span>
              <span class="pre">
               ts_init
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              TimeInForce
+             </span>
+             <span class="pre">
+              time_in_force=TimeInForce.GTC
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              int64_t
+             </span>
+             <span class="pre">
+              expire_time_ns=0
              </span>
             </span>
            </em>
@@ -25848,6 +25902,32 @@ to the delta of market price and
               <li>
                <p>
                 <strong>
+                 init_id
+                </strong>
+                (
+                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                 <em>
+                  UUID4
+                 </em>
+                </a>
+                ) – The order initialization event ID.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 ts_init
+                </strong>
+                (
+                <em>
+                 int64
+                </em>
+                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
                  time_in_force
                 </strong>
                 (TimeInForce {
@@ -25880,51 +25960,40 @@ to the delta of market price and
                   DAY
                  </span>
                 </code>
-                }) – The order time in force.
+                }, default
+                <code class="docutils literal notranslate">
+                 <span class="pre">
+                  GTC
+                 </span>
+                </code>
+                ) – The order time in force.
                </p>
               </li>
               <li>
                <p>
                 <strong>
-                 expire_time
-                </strong>
-                (
-                <em>
-                 datetime
-                </em>
-                <em>
-                 ,
-                </em>
-                <em>
-                 optional
-                </em>
-                ) – The order expiration.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 init_id
-                </strong>
-                (
-                <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                 <em>
-                  UUID4
-                 </em>
-                </a>
-                ) – The order initialization event ID.
-               </p>
-              </li>
-              <li>
-               <p>
-                <strong>
-                 ts_init
+                 expire_time_ns
                 </strong>
                 (
                 <em>
                  int64
                 </em>
-                ) – The UNIX timestamp (nanoseconds) when the object was initialized.
+                <em>
+                 ,
+                </em>
+                <em>
+                 default 0
+                </em>
+                <em>
+                 (
+                </em>
+                <em>
+                 no expiry
+                </em>
+                <em>
+                 )
+                </em>
+                ) – The order expiration.
                </p>
               </li>
               <li>
@@ -26199,15 +26268,9 @@ contain any arbitrary delimiter if required.
                 </code>
                 and
                 <cite>
-                 expire_time
+                 expire_time_ns
                 </cite>
-                is
-                <code class="docutils literal notranslate">
-                 <span class="pre">
-                  None
-                 </span>
-                </code>
-                or &lt;= UNIX epoch.
+                &lt;= UNIX epoch.
                </p>
               </li>
               <li>
@@ -26722,7 +26785,7 @@ contain any arbitrary delimiter if required.
             </dt>
             <dd>
              <p>
-              The order expiration.
+              Return the expire time for the order (UTC).
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -26730,10 +26793,7 @@ contain any arbitrary delimiter if required.
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
-                 datetime
-                </cite>
-                or
+                datetime or
                 <code class="docutils literal notranslate">
                  <span class="pre">
                   None
