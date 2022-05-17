@@ -1043,7 +1043,7 @@ as configured:
             <span class="s">"instrument_id"</span><span class="p">:</span> <span class="n">instrument_id</span><span class="p">,</span>
         <span class="p">}),</span>
         <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_handle_instrument_response</span><span class="p">,</span>
-        <span class="n">request_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_uuid_factory</span><span class="o">.</span><span class="n">generate</span><span class="p">(),</span>
+        <span class="n">request_id</span><span class="o">=</span><span class="n">UUID4</span><span class="p">(),</span>
         <span class="n">ts_init</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_clock</span><span class="o">.</span><span class="n">timestamp_ns</span><span class="p">(),</span>
     <span class="p">)</span>
 
