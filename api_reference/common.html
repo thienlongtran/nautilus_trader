@@ -17412,17 +17412,6 @@ IDs generated.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                TimeInForce
-               </span>
-               <span class="pre">
-                tif_bracket=TimeInForce.GTC
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
                 bool
                </span>
                <span class="pre">
@@ -17451,7 +17440,21 @@ IDs generated.
             </dt>
             <dd>
              <p>
-              Create a bracket order with a LIMIT entry from the given parameters.
+              Create a bracket order with a
+              <cite>
+               Limit
+              </cite>
+              parent entry order.
+             </p>
+             <p>
+              The brackets stop-loss and take-profit orders will have a time in force
+of
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                GTC
+               </span>
+              </code>
+              .
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -17596,26 +17599,6 @@ IDs generated.
                 <li>
                  <p>
                   <strong>
-                   tif_bracket
-                  </strong>
-                  (TimeInForce {
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    DAY
-                   </span>
-                  </code>
-                  ,
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    GTC
-                   </span>
-                  </code>
-                  }, optional) – The bracket orders time in force.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
                    post_only
                   </strong>
                   (
@@ -17671,30 +17654,6 @@ IDs generated.
                   <code class="docutils literal notranslate">
                    <span class="pre">
                     None
-                   </span>
-                  </code>
-                  .
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   tif_bracket
-                  </cite>
-                  is not either
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    DAY
-                   </span>
-                  </code>
-                  or
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    GTC
                    </span>
                   </code>
                   .
@@ -17881,17 +17840,6 @@ IDs generated.
                </span>
               </span>
              </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                TimeInForce
-               </span>
-               <span class="pre">
-                tif_bracket=TimeInForce.GTC
-               </span>
-              </span>
-             </em>
              <span class="sig-paren">
               )
              </span>
@@ -17913,7 +17861,15 @@ IDs generated.
             </dt>
             <dd>
              <p>
-              Create a bracket order with a MARKET entry from the given parameters.
+              Create a bracket order with a
+              <cite>
+               Market
+              </cite>
+              parent entry order.
+             </p>
+             <p>
+              The brackets stop-loss and take-profit orders will have a time in force
+of GTC.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -17997,26 +17953,6 @@ IDs generated.
                   ) – The take-profit child order price (LIMIT).
                  </p>
                 </li>
-                <li>
-                 <p>
-                  <strong>
-                   tif_bracket
-                  </strong>
-                  (TimeInForce {
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    DAY
-                   </span>
-                  </code>
-                  ,
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    GTC
-                   </span>
-                  </code>
-                  }, optional) – The bracket orders time in force.
-                 </p>
-                </li>
                </ul>
               </dd>
               <dt class="field-even">
@@ -18034,30 +17970,6 @@ IDs generated.
               </dt>
               <dd class="field-odd">
                <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   ValueError
-                  </strong>
-                  – If
-                  <cite>
-                   tif_bracket
-                  </cite>
-                  is not either
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    DAY
-                   </span>
-                  </code>
-                  or
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    GTC
-                   </span>
-                  </code>
-                  .
-                 </p>
-                </li>
                 <li>
                  <p>
                   <strong>
