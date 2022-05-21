@@ -715,6 +715,1372 @@
           </a>
          </h2>
          <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.config.common.NautilusConfig">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             NautilusConfig
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.config.common.NautilusConfig" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              pydantic.main.BaseModel
+             </span>
+            </code>
+           </p>
+           <p>
+            The base class for all Nautilus configuration objects.
+           </p>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.NautilusConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.NautilusConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.NautilusConfig.construct">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               construct
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                _fields_set
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                SetStr
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="o">
+               <span class="pre">
+                **
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                values
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Any
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                Model
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.NautilusConfig.construct" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Creates a new model setting __dict__ and __fields_set__ from trusted or pre-validated data.
+Default values are respected, but no other validation is performed.
+Behaves as if
+              <cite>
+               Config.extra = ‘allow’
+              </cite>
+              was set since it adds all passed values
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.NautilusConfig.copy">
+             <span class="sig-name descname">
+              <span class="pre">
+               copy
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="o">
+               <span class="pre">
+                *
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                include
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Union
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                AbstractSetIntStr
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
+               <span class="pre">
+                MappingIntStrAny
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                exclude
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Union
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                AbstractSetIntStr
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
+               <span class="pre">
+                MappingIntStrAny
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                update
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                DictStrAny
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                deep
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                False
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                Model
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.NautilusConfig.copy" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Duplicate a model, optionally choose which fields to include, exclude and change.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   include
+                  </strong>
+                  – fields to include in new model
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   exclude
+                  </strong>
+                  – fields to exclude from new model, as with values this takes precedence over include
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   update
+                  </strong>
+                  – values to change/add in the new model. Note: the data is not validated before creating
+the new model: you should trust this data
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   deep
+                  </strong>
+                  – set to
+                  <cite>
+                   True
+                  </cite>
+                  to make a deep copy of the model
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Returns
+              </dt>
+              <dd class="field-even">
+               <p>
+                new model instance
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.NautilusConfig.dict">
+             <span class="sig-name descname">
+              <span class="pre">
+               dict
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="o">
+               <span class="pre">
+                *
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                include
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Union
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                AbstractSetIntStr
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
+               <span class="pre">
+                MappingIntStrAny
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                exclude
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Union
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                AbstractSetIntStr
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
+               <span class="pre">
+                MappingIntStrAny
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                by_alias
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                False
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                skip_defaults
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                exclude_unset
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                False
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                exclude_defaults
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                False
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                exclude_none
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                False
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                DictStrAny
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.NautilusConfig.dict" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.NautilusConfig.json">
+             <span class="sig-name descname">
+              <span class="pre">
+               json
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="o">
+               <span class="pre">
+                *
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                include
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Union
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                AbstractSetIntStr
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
+               <span class="pre">
+                MappingIntStrAny
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                exclude
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Union
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                AbstractSetIntStr
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
+               <span class="pre">
+                MappingIntStrAny
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                by_alias
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                False
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                skip_defaults
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                exclude_unset
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                False
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                exclude_defaults
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                False
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                exclude_none
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                False
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                encoder
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                Callable
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                Any
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ,
+                </span>
+               </span>
+               <span class="w">
+               </span>
+               <span class="pre">
+                Any
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                models_as_dict
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="o">
+               <span class="pre">
+                =
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="default_value">
+               <span class="pre">
+                True
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="o">
+               <span class="pre">
+                **
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                dumps_kwargs
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Any
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                unicode
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.NautilusConfig.json" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Generate a JSON representation of the model,
+              <cite>
+               include
+              </cite>
+              and
+              <cite>
+               exclude
+              </cite>
+              arguments as per
+              <cite>
+               dict()
+              </cite>
+              .
+             </p>
+             <p>
+              <cite>
+               encoder
+              </cite>
+              is an optional function to supply as
+              <cite>
+               default
+              </cite>
+              to json.dumps(), other arguments as per
+              <cite>
+               json.dumps()
+              </cite>
+              .
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.NautilusConfig.update_forward_refs">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               update_forward_refs
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <em class="sig-param">
+              <span class="o">
+               <span class="pre">
+                **
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                localns
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Any
+               </span>
+              </span>
+             </em>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.NautilusConfig.update_forward_refs" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Try to update ForwardRefs on fields based on this Model, globalns and localns.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py class">
           <dt class="sig sig-object py" id="nautilus_trader.config.common.CacheConfig">
            <em class="property">
             <span class="pre">
@@ -816,11 +2182,13 @@
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             Configuration for
@@ -1582,6 +2950,70 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.CacheConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.CacheConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.config.common.CacheConfig.json">
              <span class="sig-name descname">
               <span class="pre">
@@ -2306,11 +3738,13 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             Configuration for
@@ -3132,6 +4566,70 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.CacheDatabaseConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.CacheDatabaseConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.config.common.CacheDatabaseConfig.json">
              <span class="sig-name descname">
               <span class="pre">
@@ -3858,11 +5356,13 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             Configuration for
@@ -4699,6 +6199,70 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.InstrumentProviderConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.InstrumentProviderConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.config.common.InstrumentProviderConfig.json">
              <span class="sig-name descname">
               <span class="pre">
@@ -5321,11 +6885,13 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             Configuration for
@@ -6067,6 +7633,70 @@ the new model: you should trust this data
             <dd>
              <p>
               Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.DataEngineConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.DataEngineConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
              </p>
             </dd>
            </dl>
@@ -6818,11 +8448,13 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             Configuration for
@@ -7630,6 +9262,70 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.RiskEngineConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.RiskEngineConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.config.common.RiskEngineConfig.json">
              <span class="sig-name descname">
               <span class="pre">
@@ -8320,11 +10016,13 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             Configuration for
@@ -9110,6 +10808,70 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.ExecEngineConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.ExecEngineConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.config.common.ExecEngineConfig.json">
              <span class="sig-name descname">
               <span class="pre">
@@ -9854,11 +11616,13 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             Configuration for streaming live or backtest runs to the catalog in feather format.
@@ -10682,6 +12446,70 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.StreamingConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.StreamingConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.config.common.StreamingConfig.json">
              <span class="sig-name descname">
               <span class="pre">
@@ -11304,11 +13132,13 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             The base model for all actor configurations.
@@ -12064,6 +13894,70 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.ActorConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.ActorConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.config.common.ActorConfig.json">
              <span class="sig-name descname">
               <span class="pre">
@@ -12712,11 +14606,13 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             Represents an actor configuration for one specific backtest run.
@@ -13480,6 +15376,70 @@ the new model: you should trust this data
             <dd>
              <p>
               Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.ImportableActorConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.ImportableActorConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
              </p>
             </dd>
            </dl>
@@ -14305,11 +16265,13 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             The base model for all trading strategy configurations.
@@ -15095,6 +17057,70 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.StrategyConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.StrategyConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.config.common.StrategyConfig.json">
              <span class="sig-name descname">
               <span class="pre">
@@ -15766,11 +17792,13 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             Represents a trading strategy configuration for one specific backtest run.
@@ -16549,6 +18577,70 @@ the new model: you should trust this data
             <dd>
              <p>
               Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.ImportableStrategyConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.ImportableStrategyConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
              </p>
             </dd>
            </dl>
@@ -17796,11 +19888,13 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             Configuration for core system
@@ -18898,6 +20992,70 @@ the new model: you should trust this data
             <dd>
              <p>
               Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.common.NautilusKernelConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.common.NautilusKernelConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
              </p>
             </dd>
            </dl>
@@ -22154,6 +24312,70 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.backtest.BacktestEngineConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.backtest.BacktestEngineConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.config.backtest.BacktestEngineConfig.json">
              <span class="sig-name descname">
               <span class="pre">
@@ -23296,11 +25518,13 @@ external inputs of venues and data.
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             Represents a live data or execution client configuration.
@@ -24019,6 +26243,70 @@ the new model: you should trust this data
             <dd>
              <p>
               Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.live.ImportableClientConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.live.ImportableClientConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
              </p>
             </dd>
            </dl>
@@ -25410,6 +27698,70 @@ the new model: you should trust this data
             <dd>
              <p>
               Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.live.LiveDataEngineConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.live.LiveDataEngineConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
              </p>
             </dd>
            </dl>
@@ -26926,6 +29278,70 @@ the new model: you should trust this data
             <dd>
              <p>
               Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.live.LiveRiskEngineConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.live.LiveRiskEngineConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
              </p>
             </dd>
            </dl>
@@ -28509,6 +30925,70 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.live.LiveExecEngineConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.live.LiveExecEngineConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.config.live.LiveExecEngineConfig.json">
              <span class="sig-name descname">
               <span class="pre">
@@ -29178,11 +31658,13 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             Configuration for live client message routing.
@@ -29930,6 +32412,70 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.live.RoutingConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.live.RoutingConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.config.live.RoutingConfig.json">
              <span class="sig-name descname">
               <span class="pre">
@@ -30599,11 +33145,13 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             Configuration for
@@ -31369,6 +33917,70 @@ the new model: you should trust this data
             </dd>
            </dl>
            <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.live.LiveDataClientConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.live.LiveDataClientConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.config.live.LiveDataClientConfig.json">
              <span class="sig-name descname">
               <span class="pre">
@@ -32038,11 +34650,13 @@ the new model: you should trust this data
           <dd>
            <p>
             Bases:
-            <code class="xref py py-class docutils literal notranslate">
-             <span class="pre">
-              pydantic.main.BaseModel
-             </span>
-            </code>
+            <a class="reference internal" href="#nautilus_trader.config.common.NautilusConfig" title="nautilus_trader.config.common.NautilusConfig">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.config.common.NautilusConfig
+              </span>
+             </code>
+            </a>
            </p>
            <p>
             Configuration for
@@ -32804,6 +35418,70 @@ the new model: you should trust this data
             <dd>
              <p>
               Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.live.LiveExecClientConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.live.LiveExecClientConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
              </p>
             </dd>
            </dl>
@@ -35558,6 +38236,70 @@ the new model: you should trust this data
             <dd>
              <p>
               Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.
+             </p>
+            </dd>
+           </dl>
+           <dl class="py method">
+            <dt class="sig sig-object py" id="nautilus_trader.config.live.TradingNodeConfig.fully_qualified_name">
+             <em class="property">
+              <span class="pre">
+               classmethod
+              </span>
+              <span class="w">
+              </span>
+             </em>
+             <span class="sig-name descname">
+              <span class="pre">
+               fully_qualified_name
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                str
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.config.live.TradingNodeConfig.fully_qualified_name" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Return the fully qualified name for the
+              <cite>
+               NautilusConfig
+              </cite>
+              class.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 str
+                </em>
+               </p>
+              </dd>
+             </dl>
+             <p class="rubric">
+              References
+             </p>
+             <p>
+              <a class="reference external" href="https://www.python.org/dev/peps/pep-3155/">
+               https://www.python.org/dev/peps/pep-3155/
+              </a>
              </p>
             </dd>
            </dl>
