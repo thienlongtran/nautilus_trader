@@ -5096,7 +5096,11 @@ If
             </dt>
             <dd>
              <p>
-              Request historical bars for the given parameters.
+              Request historical
+              <cite>
+               Bar
+              </cite>
+              data.
              </p>
              <p>
               If
@@ -5392,7 +5396,11 @@ If
             </dt>
             <dd>
              <p>
-              Request an instrument for the given parameters.
+              Request a
+              <cite>
+               Instrument
+              </cite>
+              data for the given instrument ID.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -5526,7 +5534,11 @@ If
             </dt>
             <dd>
              <p>
-              Request historical quote ticks for the given parameters.
+              Request historical
+              <cite>
+               QuoteTick
+              </cite>
+              data.
              </p>
              <p>
               If
@@ -5726,7 +5738,11 @@ If
             </dt>
             <dd>
              <p>
-              Request historical trade ticks for the given parameters.
+              Request historical
+              <cite>
+               TradeTick
+              </cite>
+              data.
              </p>
              <p>
               If
@@ -26912,7 +26928,8 @@ given filters.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Load the latest instruments into the provider asynchronously, optionally
+applying the given filters.
              </p>
             </dd>
            </dl>
@@ -26973,8 +26990,69 @@ given filters.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Load the instrument for the given ID into the provider asynchronously, optionally
+applying the given filters.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The instrument ID to load.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   filters
+                  </strong>
+                  (
+                  <em>
+                   Dict
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The venue specific instrument loading filters to apply.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 instrument_id.venue
+                </cite>
+                is not equal to
+                <cite>
+                 self.venue
+                </cite>
+                .
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -27268,8 +27346,78 @@ applying the given filters.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Load the instruments for the given IDs into the provider, optionally
+applying the given filters.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_ids
+                  </strong>
+                  (
+                  <em>
+                   List
+                  </em>
+                  <em>
+                   [
+                  </em>
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  <em>
+                   ]
+                  </em>
+                  ) – The instrument IDs to load.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   filters
+                  </strong>
+                  (
+                  <em>
+                   Dict
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The venue specific instrument loading filters to apply.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If any
+                <cite>
+                 instrument_id.venue
+                </cite>
+                is not equal to
+                <cite>
+                 self.venue
+                </cite>
+                .
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py attribute">

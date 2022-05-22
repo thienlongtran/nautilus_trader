@@ -4010,46 +4010,6 @@ called after faulting.
              </a>
             </dt>
             <dd>
-             <p>
-              Request the given data type.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   data_type
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
-                   <em>
-                    DataType
-                   </em>
-                  </a>
-                  ) – The data type to request.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   correlation_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                   <em>
-                    UUID4
-                   </em>
-                  </a>
-                  ) – The correlation ID for the response.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -4394,28 +4354,6 @@ called after faulting.
              </a>
             </dt>
             <dd>
-             <p>
-              Subscribe to the given data type.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 data_type
-                </strong>
-                (
-                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
-                 <em>
-                  DataType
-                 </em>
-                </a>
-                ) – The data type to subscribe to.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -4574,28 +4512,6 @@ called after faulting.
              </a>
             </dt>
             <dd>
-             <p>
-              Unsubscribe from the given data type.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 data_type
-                </strong>
-                (
-                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
-                 <em>
-                  DataType
-                 </em>
-                </a>
-                ) – The data_type to unsubscribe from.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py attribute">
@@ -5382,7 +5298,7 @@ called after faulting.
                 DataType
                </span>
                <span class="pre">
-                datatype
+                data_type
                </span>
               </span>
              </em>
@@ -5416,8 +5332,45 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request data for the given data type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   data_type
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                   <em>
+                    DataType
+                   </em>
+                  </a>
+                  ) – The data type for the subscription.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the response.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -5510,101 +5463,6 @@ called after faulting.
              </a>
             </dt>
             <dd>
-             <p>
-              Request historical bars for the given parameters from the data engine.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   bar_type
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/data.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType">
-                   <em>
-                    BarType
-                   </em>
-                  </a>
-                  ) – The bar type for the request.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   from_datetime
-                  </strong>
-                  (
-                  <em>
-                   datetime
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The specified from datetime for the data.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   to_datetime
-                  </strong>
-                  (
-                  <em>
-                   datetime
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The specified to datetime for the data. If
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  then will default
-to the current datetime.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   limit
-                  </strong>
-                  (
-                  <em>
-                   int
-                  </em>
-                  ) – The limit for the number of returned bars.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   correlation_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                   <em>
-                    UUID4
-                   </em>
-                  </a>
-                  ) – The correlation ID for the request.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -5664,46 +5522,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Request an instrument for the given parameters.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   instrument_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                   <em>
-                    InstrumentId
-                   </em>
-                  </a>
-                  ) – The instrument ID for the request.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   correlation_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                   <em>
-                    UUID4
-                   </em>
-                  </a>
-                  ) – The correlation ID for the request.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -5796,101 +5614,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Request historical quote ticks for the given parameters.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   instrument_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                   <em>
-                    InstrumentId
-                   </em>
-                  </a>
-                  ) – The tick instrument ID for the request.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   from_datetime
-                  </strong>
-                  (
-                  <em>
-                   datetime
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The specified from datetime for the data.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   to_datetime
-                  </strong>
-                  (
-                  <em>
-                   datetime
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The specified to datetime for the data. If
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  then will default
-to the current datetime.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   limit
-                  </strong>
-                  (
-                  <em>
-                   int
-                  </em>
-                  ) – The limit for the number of returned ticks.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   correlation_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                   <em>
-                    UUID4
-                   </em>
-                  </a>
-                  ) – The correlation ID for the request.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -5983,101 +5706,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Request historical trade ticks for the given parameters.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   instrument_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                   <em>
-                    InstrumentId
-                   </em>
-                  </a>
-                  ) – The tick instrument ID for the request.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   from_datetime
-                  </strong>
-                  (
-                  <em>
-                   datetime
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The specified from datetime for the data.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   to_datetime
-                  </strong>
-                  (
-                  <em>
-                   datetime
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The specified to datetime for the data. If
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    None
-                   </span>
-                  </code>
-                  then will default
-to the current datetime.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   limit
-                  </strong>
-                  (
-                  <em>
-                   int
-                  </em>
-                  ) – The limit for the number of returned ticks.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   correlation_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
-                   <em>
-                    UUID4
-                   </em>
-                  </a>
-                  ) – The correlation ID for the request.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6423,8 +6051,27 @@ to the current datetime.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to data for the given data type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                 <em>
+                  DataType
+                 </em>
+                </a>
+                ) – The data type for the subscription.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6473,32 +6120,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Subscribe to
-              <cite>
-               Bar
-              </cite>
-              data for the given bar type.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 bar_type
-                </strong>
-                (
-                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType">
-                 <em>
-                  BarType
-                 </em>
-                </a>
-                ) – The bar type to subscribe to.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6547,32 +6168,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Subscribe to
-              <cite>
-               Instrument
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The instrument to subscribe to.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6621,32 +6216,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Subscribe to
-              <cite>
-               InstrumentClosePrice
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The tick instrument to subscribe to.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6695,32 +6264,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Subscribe to
-              <cite>
-               InstrumentStatusUpdates
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The tick instrument to subscribe to.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6758,13 +6301,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Subscribe to
-              <cite>
-               Instrument
-              </cite>
-              data for the venue.
-             </p>
             </dd>
            </dl>
            <dl class="py method">
@@ -6846,98 +6382,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Subscribe to
-              <cite>
-               OrderBook
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   instrument_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                   <em>
-                    InstrumentId
-                   </em>
-                  </a>
-                  ) – The order book instrument to subscribe to.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   book_type
-                  </strong>
-                  (BookType {
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    L1_TBBO
-                   </span>
-                  </code>
-                  ,
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    L2_MBP
-                   </span>
-                  </code>
-                  ,
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    L3_MBO
-                   </span>
-                  </code>
-                  }) – The order book type.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   depth
-                  </strong>
-                  (
-                  <em>
-                   int
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The maximum depth for the order book. A depth of 0 is maximum depth.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   kwargs
-                  </strong>
-                  (
-                  <em>
-                   dict
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The keyword arguments for exchange specific parameters.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7019,98 +6463,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Subscribe to
-              <cite>
-               OrderBook
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <ul class="simple">
-                <li>
-                 <p>
-                  <strong>
-                   instrument_id
-                  </strong>
-                  (
-                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                   <em>
-                    InstrumentId
-                   </em>
-                  </a>
-                  ) – The order book instrument to subscribe to.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   book_type
-                  </strong>
-                  (BookType {
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    L1_TBBO
-                   </span>
-                  </code>
-                  ,
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    L2_MBP
-                   </span>
-                  </code>
-                  ,
-                  <code class="docutils literal notranslate">
-                   <span class="pre">
-                    L3_MBO
-                   </span>
-                  </code>
-                  }) – The order book level.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   depth
-                  </strong>
-                  (
-                  <em>
-                   int
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The maximum depth for the order book. A depth of 0 is maximum depth.
-                 </p>
-                </li>
-                <li>
-                 <p>
-                  <strong>
-                   kwargs
-                  </strong>
-                  (
-                  <em>
-                   dict
-                  </em>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The keyword arguments for exchange specific parameters.
-                 </p>
-                </li>
-               </ul>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7159,32 +6511,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Subscribe to
-              <cite>
-               QuoteTick
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The tick instrument to subscribe to.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7233,32 +6559,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Subscribe to
-              <cite>
-               Ticker
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The ticker instrument to subscribe to.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7307,32 +6607,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Subscribe to
-              <cite>
-               TradeTick
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The tick instrument to subscribe to.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7960,8 +7234,27 @@ to the current datetime.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from data for the given data type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                 <em>
+                  DataType
+                 </em>
+                </a>
+                ) – The data type for the subscription.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -8010,32 +7303,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Unsubscribe from
-              <cite>
-               Bar
-              </cite>
-              data for the given bar type.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 bar_type
-                </strong>
-                (
-                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType">
-                 <em>
-                  BarType
-                 </em>
-                </a>
-                ) – The bar type to unsubscribe from.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -8084,32 +7351,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Unsubscribe from
-              <cite>
-               Instrument
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The instrument to unsubscribe from.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -8158,32 +7399,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Unsubscribe from
-              <cite>
-               InstrumentClosePrice
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The tick instrument to unsubscribe from.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -8232,32 +7447,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Unsubscribe from
-              <cite>
-               InstrumentStatusUpdates
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The tick instrument to unsubscribe from.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -8295,13 +7484,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Unsubscribe from
-              <cite>
-               Instrument
-              </cite>
-              data for the venue.
-             </p>
             </dd>
            </dl>
            <dl class="py method">
@@ -8350,32 +7532,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Unsubscribe from
-              <cite>
-               OrderBookData
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The order book instrument to unsubscribe from.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -8424,32 +7580,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Unsubscribe from
-              <cite>
-               OrderBook
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The order book instrument to unsubscribe from.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -8498,32 +7628,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Unsubscribe from
-              <cite>
-               QuoteTick
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The tick instrument to unsubscribe from.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -8572,32 +7676,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Unsubscribe from
-              <cite>
-               Ticker
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The ticker instrument to unsubscribe from.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -8646,32 +7724,6 @@ to the current datetime.
              </a>
             </dt>
             <dd>
-             <p>
-              Unsubscribe from
-              <cite>
-               TradeTick
-              </cite>
-              data for the given instrument ID.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 instrument_id
-                </strong>
-                (
-                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                 <em>
-                  InstrumentId
-                 </em>
-                </a>
-                ) – The tick instrument to unsubscribe from.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py attribute">
@@ -14165,28 +13217,6 @@ to the end of the data.
              </a>
             </dt>
             <dd>
-             <p>
-              Cancel all orders for the instrument ID contained in the given command.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 command
-                </strong>
-                (
-                <a class="reference internal" href="execution.html#nautilus_trader.execution.messages.CancelAllOrders" title="nautilus_trader.execution.messages.CancelAllOrders">
-                 <em>
-                  CancelAllOrders
-                 </em>
-                </a>
-                ) – The command to execute.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -14235,28 +13265,6 @@ to the end of the data.
              </a>
             </dt>
             <dd>
-             <p>
-              Cancel the order with the client order ID contained in the given command.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 command
-                </strong>
-                (
-                <a class="reference internal" href="execution.html#nautilus_trader.execution.messages.CancelOrder" title="nautilus_trader.execution.messages.CancelOrder">
-                 <em>
-                  CancelOrder
-                 </em>
-                </a>
-                ) – The command to execute.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -17652,28 +16660,6 @@ position ID resolution.
              </a>
             </dt>
             <dd>
-             <p>
-              Modify the order with parameters contained in the command.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 command
-                </strong>
-                (
-                <a class="reference internal" href="execution.html#nautilus_trader.execution.messages.ModifyOrder" title="nautilus_trader.execution.messages.ModifyOrder">
-                 <em>
-                  ModifyOrder
-                 </em>
-                </a>
-                ) – The command to execute.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py attribute">
@@ -18047,28 +17033,6 @@ position ID resolution.
              </a>
             </dt>
             <dd>
-             <p>
-              Submit the order contained in the given command for execution.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 command
-                </strong>
-                (
-                <a class="reference internal" href="execution.html#nautilus_trader.execution.messages.SubmitOrder" title="nautilus_trader.execution.messages.SubmitOrder">
-                 <em>
-                  SubmitOrder
-                 </em>
-                </a>
-                ) – The command to execute.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -18117,28 +17081,6 @@ position ID resolution.
              </a>
             </dt>
             <dd>
-             <p>
-              Submit the order list contained in the given command for execution.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 command
-                </strong>
-                (
-                <a class="reference internal" href="execution.html#nautilus_trader.execution.messages.SubmitOrderList" title="nautilus_trader.execution.messages.SubmitOrderList">
-                 <em>
-                  SubmitOrderList
-                 </em>
-                </a>
-                ) – The command to execute.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -18188,7 +17130,10 @@ position ID resolution.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request a reconciliation for the queried order which will generate an
+              <cite>
+               OrderStatusReport
+              </cite>
              </p>
             </dd>
            </dl>

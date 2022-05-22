@@ -1142,8 +1142,25 @@
              <span class="sig-paren">
               (
              </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.data.BetfairDataClient.connect" title="Permalink to this definition">
               ¶
@@ -1165,8 +1182,25 @@
              <span class="sig-paren">
               (
              </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.data.BetfairDataClient.disconnect" title="Permalink to this definition">
               ¶
@@ -1202,7 +1236,7 @@
                 DataType
                </span>
                <span class="pre">
-                datatype
+                data_type
                </span>
               </span>
              </em>
@@ -1236,8 +1270,45 @@
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request data for the given data type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   data_type
+                  </strong>
+                  (
+                  <a class="reference internal" href="../model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                   <em>
+                    DataType
+                   </em>
+                  </a>
+                  ) – The data type for the subscription.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the response.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -1253,88 +1324,40 @@
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                instrument_id
+                self
                </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                <span class="pre">
-                 nautilus_trader.model.identifiers.InstrumentId
-                </span>
-               </a>
               </span>
              </em>
              ,
              <em class="sig-param">
               <span class="n">
+               <span class="pre">
+                InstrumentId
+               </span>
+               <span class="pre">
+                instrument_id
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                BookType
+               </span>
                <span class="pre">
                 book_type
                </span>
               </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                importlib._bootstrap.BookType
-               </span>
-              </span>
              </em>
              ,
              <em class="sig-param">
               <span class="n">
-               <span class="pre">
-                depth
-               </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
-               </span>
                <span class="pre">
                 int
                </span>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
                <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                None
+                depth=0
                </span>
               </span>
              </em>
@@ -1342,22 +1365,25 @@
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                kwargs
+                dict
                </span>
-              </span>
-              <span class="o">
                <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                None
+                kwargs=None
                </span>
               </span>
              </em>
              <span class="sig-paren">
               )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.data.BetfairDataClient.subscribe_order_book_deltas" title="Permalink to this definition">
               ¶
@@ -1367,7 +1393,7 @@
              <p>
               Subscribe to
               <cite>
-               OrderBook
+               OrderBookDeltas
               </cite>
               data for the given instrument ID.
              </p>
@@ -1511,8 +1537,31 @@
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               TradeTick
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to subscribe to.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -1562,7 +1611,11 @@
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to the
+              <cite>
+               Instrument
+              </cite>
+              with the given instrument ID.
              </p>
             </dd>
            </dl>
@@ -1613,8 +1666,31 @@
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               InstrumentStatusUpdates
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to subscribe to.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -1664,8 +1740,31 @@
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               InstrumentClosePrice
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to subscribe to.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -1681,26 +1780,33 @@
              <em class="sig-param">
               <span class="n">
                <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                InstrumentId
+               </span>
+               <span class="pre">
                 instrument_id
                </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                <span class="pre">
-                 nautilus_trader.model.identifiers.InstrumentId
-                </span>
-               </a>
               </span>
              </em>
              <span class="sig-paren">
               )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.data.BetfairDataClient.unsubscribe_order_book_snapshots" title="Permalink to this definition">
               ¶
@@ -1710,7 +1816,7 @@
              <p>
               Unsubscribe from
               <cite>
-               OrderBook
+               OrderBookSnapshot
               </cite>
               data for the given instrument ID.
              </p>
@@ -1748,26 +1854,33 @@
              <em class="sig-param">
               <span class="n">
                <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                InstrumentId
+               </span>
+               <span class="pre">
                 instrument_id
                </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                <span class="pre">
-                 nautilus_trader.model.identifiers.InstrumentId
-                </span>
-               </a>
               </span>
              </em>
              <span class="sig-paren">
               )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.data.BetfairDataClient.unsubscribe_order_book_deltas" title="Permalink to this definition">
               ¶
@@ -1777,7 +1890,7 @@
              <p>
               Unsubscribe from
               <cite>
-               OrderBook
+               OrderBookDeltas
               </cite>
               data for the given instrument ID.
              </p>
@@ -2441,8 +2554,104 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request historical
+              <cite>
+               Bar
+              </cite>
+              data.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   bar_type
+                  </strong>
+                  (
+                  <a class="reference internal" href="../model/data.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType">
+                   <em>
+                    BarType
+                   </em>
+                  </a>
+                  ) – The bar type for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   from_datetime
+                  </strong>
+                  (
+                  <em>
+                   datetime
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specified from datetime for the data.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   to_datetime
+                  </strong>
+                  (
+                  <em>
+                   datetime
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specified to datetime for the data. If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will default
+to the current datetime.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   limit
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  ) – The limit for the number of returned bars.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -2503,8 +2712,49 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request
+              <cite>
+               Instrument
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The instrument ID for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -2598,8 +2848,104 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request historical
+              <cite>
+               QuoteTick
+              </cite>
+              data.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The tick instrument ID for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   from_datetime
+                  </strong>
+                  (
+                  <em>
+                   datetime
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specified from datetime for the data.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   to_datetime
+                  </strong>
+                  (
+                  <em>
+                   datetime
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specified to datetime for the data. If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will default
+to the current datetime.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   limit
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  ) – The limit for the number of returned ticks.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -2693,8 +3039,104 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request historical
+              <cite>
+               TradeTick
+              </cite>
+              data.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The tick instrument ID for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   from_datetime
+                  </strong>
+                  (
+                  <em>
+                   datetime
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specified from datetime for the data.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   to_datetime
+                  </strong>
+                  (
+                  <em>
+                   datetime
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specified to datetime for the data. If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will default
+to the current datetime.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   limit
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  ) – The limit for the number of returned ticks.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="../core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -3130,8 +3572,27 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to data for the given data type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <a class="reference internal" href="../model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                 <em>
+                  DataType
+                 </em>
+                </a>
+                ) – The data type for the subscription.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -3181,8 +3642,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               Bar
+              </cite>
+              data for the given bar type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 bar_type
+                </strong>
+                (
+                <a class="reference internal" href="../model/data.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType">
+                 <em>
+                  BarType
+                 </em>
+                </a>
+                ) – The bar type to subscribe to.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -3221,7 +3705,11 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to all
+              <cite>
+               Instrument
+              </cite>
+              data.
              </p>
             </dd>
            </dl>
@@ -3305,8 +3793,97 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               OrderBookSnapshot
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The order book instrument to subscribe to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   book_type
+                  </strong>
+                  (BookType {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    L1_TBBO
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    L2_MBP
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    L3_MBO
+                   </span>
+                  </code>
+                  }) – The order book level.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   depth
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The maximum depth for the order book. A depth of 0 is maximum depth.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   kwargs
+                  </strong>
+                  (
+                  <em>
+                   dict
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The keyword arguments for exchange specific parameters.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -3356,8 +3933,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               QuoteTick
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to subscribe to.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -3407,8 +4007,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               Ticker
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The ticker instrument to subscribe to.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -4036,8 +4659,27 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from data for the given data type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <a class="reference internal" href="../model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                 <em>
+                  DataType
+                 </em>
+                </a>
+                ) – The data type for the subscription.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -4087,8 +4729,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               Bar
+              </cite>
+              data for the given bar type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 bar_type
+                </strong>
+                (
+                <a class="reference internal" href="../model/data.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType">
+                 <em>
+                  BarType
+                 </em>
+                </a>
+                ) – The bar type to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -4138,8 +4803,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               Instrument
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The instrument to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -4189,8 +4877,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               InstrumentClosePrice
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -4240,8 +4951,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               InstrumentStatusUpdates
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -4280,7 +5014,11 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from all
+              <cite>
+               Instrument
+              </cite>
+              data.
              </p>
             </dd>
            </dl>
@@ -4331,8 +5069,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               QuoteTick
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -4382,8 +5143,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               Ticker
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The ticker instrument to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -4433,8 +5217,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               TradeTick
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py attribute">
@@ -6109,8 +6916,25 @@ called after faulting.
              <span class="sig-paren">
               (
              </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.connect" title="Permalink to this definition">
               ¶
@@ -6118,7 +6942,7 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Connect the client.
+              Abstract method (implement in subclass).
              </p>
             </dd>
            </dl>
@@ -6132,8 +6956,25 @@ called after faulting.
              <span class="sig-paren">
               (
              </span>
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
              <span class="sig-paren">
               )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.disconnect" title="Permalink to this definition">
               ¶
@@ -6141,7 +6982,7 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Disconnect the client.
+              Abstract method (implement in subclass).
              </p>
             </dd>
            </dl>
@@ -6195,68 +7036,36 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                instrument_id
+                self
                </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                <span class="pre">
-                 nautilus_trader.model.identifiers.InstrumentId
-                </span>
-               </a>
               </span>
              </em>
              ,
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                client_order_id
+                InstrumentId
                </span>
-              </span>
-              <span class="p">
                <span class="pre">
-                :
+                instrument_id:
+               </span>
+               <span class="pre">
+                InstrumentId
                </span>
               </span>
-              <span class="w">
-              </span>
+             </em>
+             ,
+             <em class="sig-param">
               <span class="n">
                <span class="pre">
-                Optional
+                client_order_id:
                </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
+               <span class="pre">
+                Optional[ClientOrderId]
                </span>
-               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId">
-                <span class="pre">
-                 nautilus_trader.model.identifiers.ClientOrderId
-                </span>
-               </a>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
                <span class="pre">
                 =
                </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
                <span class="pre">
                 None
                </span>
@@ -6266,46 +7075,14 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                venue_order_id
+                venue_order_id:
                </span>
-              </span>
-              <span class="p">
                <span class="pre">
-                :
+                Optional[VenueOrderId]
                </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
-               </span>
-               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                <span class="pre">
-                 nautilus_trader.model.identifiers.VenueOrderId
-                </span>
-               </a>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
                <span class="pre">
                 =
                </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
                <span class="pre">
                 None
                </span>
@@ -6314,38 +7091,13 @@ called after faulting.
              <span class="sig-paren">
               )
              </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
-               </span>
-               <a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.OrderStatusReport" title="nautilus_trader.execution.reports.OrderStatusReport">
-                <span class="pre">
-                 nautilus_trader.execution.reports.OrderStatusReport
-                </span>
-               </a>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-             </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.generate_order_status_report" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              Generate an order status report for the given venue order ID.
+              Generate an order status report for the given order identifier parameter(s).
              </p>
              <p>
               If the order is not found, or an error occurs, then logs and returns
@@ -6373,13 +7125,7 @@ called after faulting.
                     InstrumentId
                    </em>
                   </a>
-                  <em>
-                   ,
-                  </em>
-                  <em>
-                   optional
-                  </em>
-                  ) – The instrument ID query filter.
+                  ) – The instrument ID for the report.
                  </p>
                 </li>
                 <li>
@@ -6419,7 +7165,7 @@ called after faulting.
                   <em>
                    optional
                   </em>
-                  ) – The venue order ID (assigned by the venue) query filter.
+                  ) – The venue order ID for the report.
                  </p>
                 </li>
                </ul>
@@ -6485,48 +7231,7 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                instrument_id
-               </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
-               </span>
-               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                <span class="pre">
-                 nautilus_trader.model.identifiers.InstrumentId
-                </span>
-               </a>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
-               <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                None
+                self
                </span>
               </span>
              </em>
@@ -6534,46 +7239,10 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                start
-               </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
+                InstrumentId
                </span>
                <span class="pre">
-                datetime.datetime
-               </span>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
-               <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                None
+                instrument_id=None
                </span>
               </span>
              </em>
@@ -6581,46 +7250,10 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                end
-               </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
+                datetime
                </span>
                <span class="pre">
-                datetime.datetime
-               </span>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
-               <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                None
+                start=None
                </span>
               </span>
              </em>
@@ -6628,63 +7261,26 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                open_only
+                datetime
                </span>
-              </span>
-              <span class="p">
                <span class="pre">
-                :
+                end=None
                </span>
               </span>
-              <span class="w">
-              </span>
+             </em>
+             ,
+             <em class="sig-param">
               <span class="n">
                <span class="pre">
                 bool
                </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
                <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                False
+                open_only=False
                </span>
               </span>
              </em>
              <span class="sig-paren">
               )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                List
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
-               </span>
-               <a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.OrderStatusReport" title="nautilus_trader.execution.reports.OrderStatusReport">
-                <span class="pre">
-                 nautilus_trader.execution.reports.OrderStatusReport
-                </span>
-               </a>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.generate_order_status_reports" title="Permalink to this definition">
               ¶
@@ -6812,48 +7408,7 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                instrument_id
-               </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
-               </span>
-               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                <span class="pre">
-                 nautilus_trader.model.identifiers.InstrumentId
-                </span>
-               </a>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
-               <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                None
+                self
                </span>
               </span>
              </em>
@@ -6861,48 +7416,10 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                venue_order_id
+                InstrumentId
                </span>
-              </span>
-              <span class="p">
                <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
-               </span>
-               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId">
-                <span class="pre">
-                 nautilus_trader.model.identifiers.VenueOrderId
-                </span>
-               </a>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
-               <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                None
+                instrument_id=None
                </span>
               </span>
              </em>
@@ -6910,46 +7427,10 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                start
-               </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
+                VenueOrderId
                </span>
                <span class="pre">
-                datetime.datetime
-               </span>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
-               <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                None
+                venue_order_id=None
                </span>
               </span>
              </em>
@@ -6957,76 +7438,26 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                end
+                datetime
                </span>
-              </span>
-              <span class="p">
                <span class="pre">
-                :
+                start=None
                </span>
               </span>
-              <span class="w">
-              </span>
+             </em>
+             ,
+             <em class="sig-param">
               <span class="n">
                <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
+                datetime
                </span>
                <span class="pre">
-                datetime.datetime
-               </span>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
-               <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                None
+                end=None
                </span>
               </span>
              </em>
              <span class="sig-paren">
               )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                List
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
-               </span>
-               <a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.TradeReport" title="nautilus_trader.execution.reports.TradeReport">
-                <span class="pre">
-                 nautilus_trader.execution.reports.TradeReport
-                </span>
-               </a>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.generate_trade_reports" title="Permalink to this definition">
               ¶
@@ -7156,48 +7587,7 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                instrument_id
-               </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
-               </span>
-               <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
-                <span class="pre">
-                 nautilus_trader.model.identifiers.InstrumentId
-                </span>
-               </a>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
-               <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                None
+                self
                </span>
               </span>
              </em>
@@ -7205,46 +7595,10 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                start
-               </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
+                InstrumentId
                </span>
                <span class="pre">
-                datetime.datetime
-               </span>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
-               <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                None
+                instrument_id=None
                </span>
               </span>
              </em>
@@ -7252,76 +7606,26 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                end
+                datetime
                </span>
-              </span>
-              <span class="p">
                <span class="pre">
-                :
+                start=None
                </span>
               </span>
-              <span class="w">
-              </span>
+             </em>
+             ,
+             <em class="sig-param">
               <span class="n">
                <span class="pre">
-                Optional
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
+                datetime
                </span>
                <span class="pre">
-                datetime.datetime
-               </span>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="o">
-               <span class="pre">
-                =
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="default_value">
-               <span class="pre">
-                None
+                end=None
                </span>
               </span>
              </em>
              <span class="sig-paren">
               )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                List
-               </span>
-               <span class="p">
-                <span class="pre">
-                 [
-                </span>
-               </span>
-               <a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.PositionStatusReport" title="nautilus_trader.execution.reports.PositionStatusReport">
-                <span class="pre">
-                 nautilus_trader.execution.reports.PositionStatusReport
-                </span>
-               </a>
-               <span class="p">
-                <span class="pre">
-                 ]
-                </span>
-               </span>
-              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.generate_position_status_reports" title="Permalink to this definition">
               ¶
@@ -7458,8 +7762,27 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Submit the order contained in the given command for execution.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.SubmitOrder" title="nautilus_trader.execution.messages.SubmitOrder">
+                 <em>
+                  SubmitOrder
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7475,26 +7798,33 @@ called after faulting.
              <em class="sig-param">
               <span class="n">
                <span class="pre">
+                self
+               </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                SubmitOrderList
+               </span>
+               <span class="pre">
                 command
                </span>
-              </span>
-              <span class="p">
-               <span class="pre">
-                :
-               </span>
-              </span>
-              <span class="w">
-              </span>
-              <span class="n">
-               <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.SubmitOrderList" title="nautilus_trader.execution.messages.SubmitOrderList">
-                <span class="pre">
-                 nautilus_trader.execution.messages.SubmitOrderList
-                </span>
-               </a>
               </span>
              </em>
              <span class="sig-paren">
               )
+             </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                void
+               </span>
+              </span>
              </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.submit_order_list" title="Permalink to this definition">
               ¶
@@ -7502,8 +7832,27 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Submit the order list contained in the given command for execution.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.SubmitOrderList" title="nautilus_trader.execution.messages.SubmitOrderList">
+                 <em>
+                  SubmitOrderList
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7553,8 +7902,27 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Modify the order with parameters contained in the command.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.ModifyOrder" title="nautilus_trader.execution.messages.ModifyOrder">
+                 <em>
+                  ModifyOrder
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7604,8 +7972,27 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Cancel the order with the client order ID contained in the given command.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.CancelOrder" title="nautilus_trader.execution.messages.CancelOrder">
+                 <em>
+                  CancelOrder
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7655,8 +8042,27 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Cancel all orders for the instrument ID contained in the given command.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.CancelAllOrders" title="nautilus_trader.execution.messages.CancelAllOrders">
+                 <em>
+                  CancelAllOrders
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -11858,7 +12264,10 @@ position ID resolution.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request a reconciliation for the queried order which will generate an
+              <cite>
+               OrderStatusReport
+              </cite>
              </p>
             </dd>
            </dl>
@@ -13894,13 +14303,50 @@ MarketOrder, we generate a MIN/MAX price based on the side
              <em class="sig-param">
               <span class="n">
                <span class="pre">
-                market_filter
+                self
                </span>
+              </span>
+             </em>
+             ,
+             <em class="sig-param">
+              <span class="n">
+               <span class="pre">
+                filters
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                :
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                Optional
+               </span>
+               <span class="p">
+                <span class="pre">
+                 [
+                </span>
+               </span>
+               <span class="pre">
+                Dict
+               </span>
+               <span class="p">
+                <span class="pre">
+                 ]
+                </span>
+               </span>
+              </span>
+              <span class="w">
               </span>
               <span class="o">
                <span class="pre">
                 =
                </span>
+              </span>
+              <span class="w">
               </span>
               <span class="default_value">
                <span class="pre">
@@ -13911,13 +14357,24 @@ MarketOrder, we generate a MIN/MAX price based on the side
              <span class="sig-paren">
               )
              </span>
+             <span class="sig-return">
+              <span class="sig-return-icon">
+               →
+              </span>
+              <span class="sig-return-typehint">
+               <span class="pre">
+                None
+               </span>
+              </span>
+             </span>
              <a class="headerlink" href="#nautilus_trader.adapters.betfair.providers.BetfairInstrumentProvider.load_all_async" title="Permalink to this definition">
               ¶
              </a>
             </dt>
             <dd>
              <p>
-              Load all instruments for the venue.
+              Load the latest instruments into the provider asynchronously, optionally
+applying the given filters.
              </p>
             </dd>
            </dl>
@@ -14998,8 +15455,69 @@ given filters.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Load the instrument for the given ID into the provider asynchronously, optionally
+applying the given filters.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The instrument ID to load.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   filters
+                  </strong>
+                  (
+                  <em>
+                   Dict
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The venue specific instrument loading filters to apply.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If
+                <cite>
+                 instrument_id.venue
+                </cite>
+                is not equal to
+                <cite>
+                 self.venue
+                </cite>
+                .
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -15293,8 +15811,78 @@ applying the given filters.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Load the instruments for the given IDs into the provider, optionally
+applying the given filters.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_ids
+                  </strong>
+                  (
+                  <em>
+                   List
+                  </em>
+                  <em>
+                   [
+                  </em>
+                  <a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  <em>
+                   ]
+                  </em>
+                  ) – The instrument IDs to load.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   filters
+                  </strong>
+                  (
+                  <em>
+                   Dict
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The venue specific instrument loading filters to apply.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+              <dt class="field-even">
+               Raises
+              </dt>
+              <dd class="field-even">
+               <p>
+                <strong>
+                 ValueError
+                </strong>
+                – If any
+                <cite>
+                 instrument_id.venue
+                </cite>
+                is not equal to
+                <cite>
+                 self.venue
+                </cite>
+                .
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py attribute">

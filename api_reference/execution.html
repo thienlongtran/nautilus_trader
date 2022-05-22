@@ -1250,8 +1250,27 @@ trading operations.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Cancel all orders for the instrument ID contained in the given command.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.execution.messages.CancelAllOrders" title="nautilus_trader.execution.messages.CancelAllOrders">
+                 <em>
+                  CancelAllOrders
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -1301,8 +1320,27 @@ trading operations.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Cancel the order with the client order ID contained in the given command.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.execution.messages.CancelOrder" title="nautilus_trader.execution.messages.CancelOrder">
+                 <em>
+                  CancelOrder
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -4699,8 +4737,27 @@ position ID resolution.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Modify the order with parameters contained in the command.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.execution.messages.ModifyOrder" title="nautilus_trader.execution.messages.ModifyOrder">
+                 <em>
+                  ModifyOrder
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py attribute">
@@ -5075,8 +5132,27 @@ position ID resolution.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Submit the order contained in the given command for execution.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.execution.messages.SubmitOrder" title="nautilus_trader.execution.messages.SubmitOrder">
+                 <em>
+                  SubmitOrder
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -5126,8 +5202,27 @@ position ID resolution.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Submit the order list contained in the given command for execution.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 command
+                </strong>
+                (
+                <a class="reference internal" href="#nautilus_trader.execution.messages.SubmitOrderList" title="nautilus_trader.execution.messages.SubmitOrderList">
+                 <em>
+                  SubmitOrderList
+                 </em>
+                </a>
+                ) – The command to execute.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -5177,7 +5272,10 @@ position ID resolution.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request a reconciliation for the queried order which will generate an
+              <cite>
+               OrderStatusReport
+              </cite>
              </p>
             </dd>
            </dl>

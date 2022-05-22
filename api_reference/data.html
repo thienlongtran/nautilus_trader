@@ -4256,8 +4256,45 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request data for the given data type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   data_type
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                   <em>
+                    DataType
+                   </em>
+                  </a>
+                  ) – The data type for the subscription.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the response.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -4603,8 +4640,27 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to data for the given data type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                 <em>
+                  DataType
+                 </em>
+                </a>
+                ) – The data type for the subscription.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -4764,8 +4820,27 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from data for the given data type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                 <em>
+                  DataType
+                 </em>
+                </a>
+                ) – The data type for the subscription.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py attribute">
@@ -5637,7 +5712,7 @@ called after faulting.
                 DataType
                </span>
                <span class="pre">
-                datatype
+                data_type
                </span>
               </span>
              </em>
@@ -5671,8 +5746,45 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request data for the given data type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   data_type
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                   <em>
+                    DataType
+                   </em>
+                  </a>
+                  ) – The data type for the subscription.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the response.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -5766,8 +5878,104 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request historical
+              <cite>
+               Bar
+              </cite>
+              data.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   bar_type
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/data.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType">
+                   <em>
+                    BarType
+                   </em>
+                  </a>
+                  ) – The bar type for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   from_datetime
+                  </strong>
+                  (
+                  <em>
+                   datetime
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specified from datetime for the data.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   to_datetime
+                  </strong>
+                  (
+                  <em>
+                   datetime
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specified to datetime for the data. If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will default
+to the current datetime.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   limit
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  ) – The limit for the number of returned bars.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -5828,8 +6036,49 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request
+              <cite>
+               Instrument
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The instrument ID for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -5923,8 +6172,104 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request historical
+              <cite>
+               QuoteTick
+              </cite>
+              data.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The tick instrument ID for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   from_datetime
+                  </strong>
+                  (
+                  <em>
+                   datetime
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specified from datetime for the data.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   to_datetime
+                  </strong>
+                  (
+                  <em>
+                   datetime
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specified to datetime for the data. If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will default
+to the current datetime.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   limit
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  ) – The limit for the number of returned ticks.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6018,8 +6363,104 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Request historical
+              <cite>
+               TradeTick
+              </cite>
+              data.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The tick instrument ID for the request.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   from_datetime
+                  </strong>
+                  (
+                  <em>
+                   datetime
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specified from datetime for the data.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   to_datetime
+                  </strong>
+                  (
+                  <em>
+                   datetime
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The specified to datetime for the data. If
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    None
+                   </span>
+                  </code>
+                  then will default
+to the current datetime.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   limit
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  ) – The limit for the number of returned ticks.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   correlation_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4">
+                   <em>
+                    UUID4
+                   </em>
+                  </a>
+                  ) – The correlation ID for the request.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6365,8 +6806,27 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to data for the given data type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                 <em>
+                  DataType
+                 </em>
+                </a>
+                ) – The data type for the subscription.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6416,8 +6876,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               Bar
+              </cite>
+              data for the given bar type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 bar_type
+                </strong>
+                (
+                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType">
+                 <em>
+                  BarType
+                 </em>
+                </a>
+                ) – The bar type to subscribe to.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6467,7 +6950,11 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to the
+              <cite>
+               Instrument
+              </cite>
+              with the given instrument ID.
              </p>
             </dd>
            </dl>
@@ -6518,8 +7005,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               InstrumentClosePrice
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to subscribe to.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6569,8 +7079,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               InstrumentStatusUpdates
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to subscribe to.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6609,7 +7142,11 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to all
+              <cite>
+               Instrument
+              </cite>
+              data.
              </p>
             </dd>
            </dl>
@@ -6693,8 +7230,103 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               OrderBookDeltas
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The order book instrument to subscribe to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   book_type
+                  </strong>
+                  (BookType {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    L1_TBBO
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    L2_MBP
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    L3_MBO
+                   </span>
+                  </code>
+                  }) – The order book type.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   depth
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   default None
+                  </em>
+                  ) – The maximum depth for the subscription.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   kwargs
+                  </strong>
+                  (
+                  <em>
+                   dict
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The keyword arguments for exchange specific parameters.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6777,8 +7409,97 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               OrderBookSnapshot
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <ul class="simple">
+                <li>
+                 <p>
+                  <strong>
+                   instrument_id
+                  </strong>
+                  (
+                  <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                   <em>
+                    InstrumentId
+                   </em>
+                  </a>
+                  ) – The order book instrument to subscribe to.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   book_type
+                  </strong>
+                  (BookType {
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    L1_TBBO
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    L2_MBP
+                   </span>
+                  </code>
+                  ,
+                  <code class="docutils literal notranslate">
+                   <span class="pre">
+                    L3_MBO
+                   </span>
+                  </code>
+                  }) – The order book level.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   depth
+                  </strong>
+                  (
+                  <em>
+                   int
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The maximum depth for the order book. A depth of 0 is maximum depth.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   kwargs
+                  </strong>
+                  (
+                  <em>
+                   dict
+                  </em>
+                  <em>
+                   ,
+                  </em>
+                  <em>
+                   optional
+                  </em>
+                  ) – The keyword arguments for exchange specific parameters.
+                 </p>
+                </li>
+               </ul>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6828,8 +7549,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               QuoteTick
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to subscribe to.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6879,8 +7623,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               Ticker
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The ticker instrument to subscribe to.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -6930,8 +7697,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Subscribe to
+              <cite>
+               TradeTick
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to subscribe to.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7559,8 +8349,27 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from data for the given data type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 data_type
+                </strong>
+                (
+                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.base.DataType" title="nautilus_trader.model.data.base.DataType">
+                 <em>
+                  DataType
+                 </em>
+                </a>
+                ) – The data type for the subscription.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7610,8 +8419,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               Bar
+              </cite>
+              data for the given bar type.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 bar_type
+                </strong>
+                (
+                <a class="reference internal" href="model/data.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType">
+                 <em>
+                  BarType
+                 </em>
+                </a>
+                ) – The bar type to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7661,8 +8493,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               Instrument
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The instrument to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7712,8 +8567,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               InstrumentClosePrice
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7763,8 +8641,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               InstrumentStatusUpdates
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7803,7 +8704,11 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from all
+              <cite>
+               Instrument
+              </cite>
+              data.
              </p>
             </dd>
            </dl>
@@ -7854,8 +8759,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               OrderBookDeltas
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The order book instrument to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7905,8 +8833,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               OrderBookSnapshot
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The order book instrument to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -7956,8 +8907,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               QuoteTick
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -8007,8 +8981,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               Ticker
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The ticker instrument to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -8058,8 +9055,31 @@ called after faulting.
             </dt>
             <dd>
              <p>
-              Abstract method (implement in subclass).
+              Unsubscribe from
+              <cite>
+               TradeTick
+              </cite>
+              data for the given instrument ID.
              </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Parameters
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <strong>
+                 instrument_id
+                </strong>
+                (
+                <a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId">
+                 <em>
+                  InstrumentId
+                 </em>
+                </a>
+                ) – The tick instrument to unsubscribe from.
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py attribute">
