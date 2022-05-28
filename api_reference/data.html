@@ -3701,21 +3701,20 @@ specification, then a bar is created and sent to the handler.
              <p>
               Degrade the component.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_degrade()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                DEGRADING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -3724,7 +3723,8 @@ specification, then a bar is created and sent to the handler.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -3768,24 +3768,19 @@ specification, then a bar is created and sent to the handler.
               Dispose of the component.
              </p>
              <p>
-              This method is idempotent and irreversible. No other methods should be
-called after disposal.
+              While executing
+              <cite>
+               on_dispose()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                DISPOSING
+               </span>
+              </code>
+              .
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -3794,7 +3789,8 @@ called after disposal.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -3841,21 +3837,20 @@ called after disposal.
               This method is idempotent and irreversible. No other methods should be
 called after faulting.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_fault()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                FAULTING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -3864,7 +3859,8 @@ called after faulting.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -4351,21 +4347,20 @@ called after faulting.
              <p>
               All stateful fields are reset to their initial value.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_reset()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                RESETTING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -4374,7 +4369,8 @@ called after faulting.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -4417,21 +4413,20 @@ called after faulting.
              <p>
               Resume the component.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_resume()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                RESUMING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -4440,7 +4435,8 @@ called after faulting.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -4483,21 +4479,20 @@ called after faulting.
              <p>
               Start the component.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_start()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                STARTING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -4506,7 +4501,8 @@ called after faulting.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -4578,21 +4574,20 @@ called after faulting.
              <p>
               Stop the component.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_stop()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                STOPPING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -4601,7 +4596,8 @@ called after faulting.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -5191,21 +5187,20 @@ called after faulting.
              <p>
               Degrade the component.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_degrade()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                DEGRADING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -5214,7 +5209,8 @@ called after faulting.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -5258,24 +5254,19 @@ called after faulting.
               Dispose of the component.
              </p>
              <p>
-              This method is idempotent and irreversible. No other methods should be
-called after disposal.
+              While executing
+              <cite>
+               on_dispose()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                DISPOSING
+               </span>
+              </code>
+              .
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -5284,7 +5275,8 @@ called after disposal.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -5331,21 +5323,20 @@ called after disposal.
               This method is idempotent and irreversible. No other methods should be
 called after faulting.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_fault()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                FAULTING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -5354,7 +5345,8 @@ called after faulting.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -6517,21 +6509,20 @@ to the current datetime.
              <p>
               All stateful fields are reset to their initial value.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_reset()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                RESETTING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -6540,7 +6531,8 @@ to the current datetime.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -6583,21 +6575,20 @@ to the current datetime.
              <p>
               Resume the component.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_resume()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                RESUMING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -6606,7 +6597,8 @@ to the current datetime.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -6649,21 +6641,20 @@ to the current datetime.
              <p>
               Start the component.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_start()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                STARTING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -6672,7 +6663,8 @@ to the current datetime.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -6744,21 +6736,20 @@ to the current datetime.
              <p>
               Stop the component.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_stop()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                STOPPING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -6767,7 +6758,8 @@ to the current datetime.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -9638,21 +9630,20 @@ just need to override the
              <p>
               Degrade the component.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_degrade()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                DEGRADING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -9661,7 +9652,8 @@ just need to override the
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -9775,24 +9767,19 @@ just need to override the
               Dispose of the component.
              </p>
              <p>
-              This method is idempotent and irreversible. No other methods should be
-called after disposal.
+              While executing
+              <cite>
+               on_dispose()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                DISPOSING
+               </span>
+              </code>
+              .
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -9801,7 +9788,8 @@ called after disposal.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -9918,21 +9906,20 @@ called after disposal.
               This method is idempotent and irreversible. No other methods should be
 called after faulting.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_fault()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                FAULTING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -9941,7 +9928,8 @@ called after faulting.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -10758,21 +10746,20 @@ overwritten.
              <p>
               All stateful fields are reset to their initial value.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_reset()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                RESETTING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -10781,7 +10768,8 @@ overwritten.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -10923,21 +10911,20 @@ overwritten.
              <p>
               Resume the component.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_resume()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                RESUMING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -10946,7 +10933,8 @@ overwritten.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -10989,21 +10977,20 @@ overwritten.
              <p>
               Start the component.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_start()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                STARTING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -11012,7 +10999,8 @@ overwritten.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
@@ -11084,21 +11072,20 @@ overwritten.
              <p>
               Stop the component.
              </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Raises
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger">
-                 <strong>
-                  InvalidStateTrigger
-                 </strong>
-                </a>
-                – If invalid trigger from current component state.
-               </p>
-              </dd>
-             </dl>
+             <p>
+              While executing
+              <cite>
+               on_stop()
+              </cite>
+              , if an exception is raised then it will be
+logged and reraised. The component state will remain at
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                STOPPING
+               </span>
+              </code>
+              .
+             </p>
              <div class="admonition warning">
               <p class="admonition-title">
                Warning
@@ -11107,7 +11094,8 @@ overwritten.
                Do not override.
               </p>
               <p>
-               Exceptions raised will be caught, logged, and reraised.
+               If performing this operation is not valid for the current component
+state, then an error will be logged. The component state will not change.
               </p>
              </div>
             </dd>
