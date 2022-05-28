@@ -834,25 +834,25 @@ Common logging components. A high performance
          <p>
           The
           <cite>
-           Strategy
+           Actor
           </cite>
-          class allows traders to implement their own customized trading strategies.
+          class allows traders to implement their own customized components.
          </p>
          <p>
           A user can inherit from
           <cite>
-           Strategy
+           Actor
           </cite>
           and optionally override any of the
 “on” named event methods. The class is not entirely initialized in a stand-alone
-way, the intended usage is to pass strategies to a
+way, the intended usage is to pass actors to a
           <cite>
            Trader
           </cite>
           so that they can be
-fully “wired” into the platform. Exceptions will be raised if a
+fully “wired” into the platform. Exceptions will be raised if an
           <cite>
-           Strategy
+           Actor
           </cite>
           attempts to operate without a managing
           <cite>
@@ -944,7 +944,7 @@ fully “wired” into the platform. Exceptions will be raised if a
             </a>
            </p>
            <p>
-            The abstract base class for all actor components.
+            The base class for all actor components.
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">
@@ -1099,14 +1099,14 @@ fully “wired” into the platform. Exceptions will be raised if a
               <cite>
                on_degrade()
               </cite>
-              , if an exception is raised then it will be
-logged and reraised. The component state will remain at
+              , any exception will be logged and reraised.
+The component will remain in a
               <code class="docutils literal notranslate">
                <span class="pre">
                 DEGRADING
                </span>
               </code>
-              .
+              state.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -1116,8 +1116,8 @@ logged and reraised. The component state will remain at
                Do not override.
               </p>
               <p>
-               If performing this operation is not valid for the current component
-state, then an error will be logged. The component state will not change.
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
               </p>
              </div>
             </dd>
@@ -1233,14 +1233,14 @@ state, then an error will be logged. The component state will not change.
               <cite>
                on_dispose()
               </cite>
-              , if an exception is raised then it will be
-logged and reraised. The component state will remain at
+              , any exception will be logged and reraised.
+The component will remain in a
               <code class="docutils literal notranslate">
                <span class="pre">
                 DISPOSING
                </span>
               </code>
-              .
+              state.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -1250,8 +1250,8 @@ logged and reraised. The component state will remain at
                Do not override.
               </p>
               <p>
-               If performing this operation is not valid for the current component
-state, then an error will be logged. The component state will not change.
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
               </p>
              </div>
             </dd>
@@ -1303,14 +1303,14 @@ called after faulting.
               <cite>
                on_fault()
               </cite>
-              , if an exception is raised then it will be
-logged and reraised. The component state will remain at
+              , any exception will be logged and reraised.
+The component will remain in a
               <code class="docutils literal notranslate">
                <span class="pre">
                 FAULTING
                </span>
               </code>
-              .
+              state.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -1320,8 +1320,8 @@ logged and reraised. The component state will remain at
                Do not override.
               </p>
               <p>
-               If performing this operation is not valid for the current component
-state, then an error will be logged. The component state will not change.
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
               </p>
              </div>
             </dd>
@@ -1372,11 +1372,7 @@ state, then an error will be logged. The component state will not change.
             </dt>
             <dd>
              <p>
-              Return the fully qualified name for the
-              <cite>
-               Component
-              </cite>
-              class.
+              Return the fully qualified name for the components class.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -3438,7 +3434,7 @@ state, then an error will be logged. The component state will not change.
               Actions to be performed on dispose.
              </p>
              <p>
-              Cleanup any resources used by the strategy here.
+              Cleanup any resources used here.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -4209,11 +4205,11 @@ update.
               Actions to be performed on start.
              </p>
              <p>
-              The intent is that this method is called once per fresh trading session
-when the component is initially started.
+              The intent is that this method is called once per trading session,
+when initially starting.
              </p>
              <p>
-              It is recommended to subscribe/request data here.
+              It is recommended to subscribe/request for data here.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -4264,11 +4260,10 @@ when the component is initially started.
             </dt>
             <dd>
              <p>
-              Actions to be performed on stopped.
+              Actions to be performed on stop.
              </p>
              <p>
-              The intent is that this method is called every time the strategy is
-paused, and also when it is done for day.
+              The intent is that this method is called to pause, or when done for day.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -4866,7 +4861,7 @@ If
             </dt>
             <dd>
              <p>
-              Register the component with a trader.
+              Register with a trader.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -5917,14 +5912,14 @@ If
               <cite>
                on_reset()
               </cite>
-              , if an exception is raised then it will be
-logged and reraised. The component state will remain at
+              , any exception will be logged and reraised.
+The component will remain in a
               <code class="docutils literal notranslate">
                <span class="pre">
                 RESETTING
                </span>
               </code>
-              .
+              state.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -5934,8 +5929,8 @@ logged and reraised. The component state will remain at
                Do not override.
               </p>
               <p>
-               If performing this operation is not valid for the current component
-state, then an error will be logged. The component state will not change.
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
               </p>
              </div>
             </dd>
@@ -5983,14 +5978,14 @@ state, then an error will be logged. The component state will not change.
               <cite>
                on_resume()
               </cite>
-              , if an exception is raised then it will be
-logged and reraised. The component state will remain at
+              , any exception will be logged and reraised.
+The component will remain in a
               <code class="docutils literal notranslate">
                <span class="pre">
                 RESUMING
                </span>
               </code>
-              .
+              state.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -6000,8 +5995,8 @@ logged and reraised. The component state will remain at
                Do not override.
               </p>
               <p>
-               If performing this operation is not valid for the current component
-state, then an error will be logged. The component state will not change.
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
               </p>
              </div>
             </dd>
@@ -6049,14 +6044,14 @@ state, then an error will be logged. The component state will not change.
               <cite>
                on_start()
               </cite>
-              , if an exception is raised then it will be
-logged and reraised. The component state will remain at
+              , any exception will be logged and reraised.
+The component will remain in a
               <code class="docutils literal notranslate">
                <span class="pre">
                 STARTING
                </span>
               </code>
-              .
+              state.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -6066,8 +6061,8 @@ logged and reraised. The component state will remain at
                Do not override.
               </p>
               <p>
-               If performing this operation is not valid for the current component
-state, then an error will be logged. The component state will not change.
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
               </p>
              </div>
             </dd>
@@ -6144,14 +6139,14 @@ state, then an error will be logged. The component state will not change.
               <cite>
                on_stop()
               </cite>
-              , if an exception is raised then it will be
-logged and reraised. The component state will remain at
+              , any exception will be logged and reraised.
+The component will remain in a
               <code class="docutils literal notranslate">
                <span class="pre">
                 STOPPING
                </span>
               </code>
-              .
+              state.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -6161,8 +6156,8 @@ logged and reraised. The component state will remain at
                Do not override.
               </p>
               <p>
-               If performing this operation is not valid for the current component
-state, then an error will be logged. The component state will not change.
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
               </p>
              </div>
             </dd>
@@ -15688,28 +15683,29 @@ then the default handler (if registered) will receive the
             </code>
            </p>
            <p>
-            The abstract base class for all system components.
+            The base class for all system components.
            </p>
            <p>
-            A component is not considered initialized until a message bus is wired up
+            A component is not considered initialized until a message bus is registered
 (this either happens when one is passed to the constructor, or when
 registered with a trader).
            </p>
            <p>
-            Thus if the component does not receive a message bus through the constructor,
+            Thus, if the component does not receive a message bus through the constructor,
 then it will be in a
             <code class="docutils literal notranslate">
              <span class="pre">
               PRE_INITIALIZED
              </span>
             </code>
-            state, otherwise
+            state, otherwise if one is passed
+then it will be in an
             <code class="docutils literal notranslate">
              <span class="pre">
               INITIALIZED
              </span>
             </code>
-            .
+            state.
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">
@@ -15936,14 +15932,14 @@ taken from
               <cite>
                on_degrade()
               </cite>
-              , if an exception is raised then it will be
-logged and reraised. The component state will remain at
+              , any exception will be logged and reraised.
+The component will remain in a
               <code class="docutils literal notranslate">
                <span class="pre">
                 DEGRADING
                </span>
               </code>
-              .
+              state.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -15953,8 +15949,8 @@ logged and reraised. The component state will remain at
                Do not override.
               </p>
               <p>
-               If performing this operation is not valid for the current component
-state, then an error will be logged. The component state will not change.
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
               </p>
              </div>
             </dd>
@@ -16002,14 +15998,14 @@ state, then an error will be logged. The component state will not change.
               <cite>
                on_dispose()
               </cite>
-              , if an exception is raised then it will be
-logged and reraised. The component state will remain at
+              , any exception will be logged and reraised.
+The component will remain in a
               <code class="docutils literal notranslate">
                <span class="pre">
                 DISPOSING
                </span>
               </code>
-              .
+              state.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -16019,8 +16015,8 @@ logged and reraised. The component state will remain at
                Do not override.
               </p>
               <p>
-               If performing this operation is not valid for the current component
-state, then an error will be logged. The component state will not change.
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
               </p>
              </div>
             </dd>
@@ -16072,14 +16068,14 @@ called after faulting.
               <cite>
                on_fault()
               </cite>
-              , if an exception is raised then it will be
-logged and reraised. The component state will remain at
+              , any exception will be logged and reraised.
+The component will remain in a
               <code class="docutils literal notranslate">
                <span class="pre">
                 FAULTING
                </span>
               </code>
-              .
+              state.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -16089,8 +16085,8 @@ logged and reraised. The component state will remain at
                Do not override.
               </p>
               <p>
-               If performing this operation is not valid for the current component
-state, then an error will be logged. The component state will not change.
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
               </p>
              </div>
             </dd>
@@ -16141,11 +16137,7 @@ state, then an error will be logged. The component state will not change.
             </dt>
             <dd>
              <p>
-              Return the fully qualified name for the
-              <cite>
-               Component
-              </cite>
-              class.
+              Return the fully qualified name for the components class.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -16454,14 +16446,14 @@ state, then an error will be logged. The component state will not change.
               <cite>
                on_reset()
               </cite>
-              , if an exception is raised then it will be
-logged and reraised. The component state will remain at
+              , any exception will be logged and reraised.
+The component will remain in a
               <code class="docutils literal notranslate">
                <span class="pre">
                 RESETTING
                </span>
               </code>
-              .
+              state.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -16471,8 +16463,8 @@ logged and reraised. The component state will remain at
                Do not override.
               </p>
               <p>
-               If performing this operation is not valid for the current component
-state, then an error will be logged. The component state will not change.
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
               </p>
              </div>
             </dd>
@@ -16520,14 +16512,14 @@ state, then an error will be logged. The component state will not change.
               <cite>
                on_resume()
               </cite>
-              , if an exception is raised then it will be
-logged and reraised. The component state will remain at
+              , any exception will be logged and reraised.
+The component will remain in a
               <code class="docutils literal notranslate">
                <span class="pre">
                 RESUMING
                </span>
               </code>
-              .
+              state.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -16537,8 +16529,8 @@ logged and reraised. The component state will remain at
                Do not override.
               </p>
               <p>
-               If performing this operation is not valid for the current component
-state, then an error will be logged. The component state will not change.
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
               </p>
              </div>
             </dd>
@@ -16586,14 +16578,14 @@ state, then an error will be logged. The component state will not change.
               <cite>
                on_start()
               </cite>
-              , if an exception is raised then it will be
-logged and reraised. The component state will remain at
+              , any exception will be logged and reraised.
+The component will remain in a
               <code class="docutils literal notranslate">
                <span class="pre">
                 STARTING
                </span>
               </code>
-              .
+              state.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -16603,8 +16595,8 @@ logged and reraised. The component state will remain at
                Do not override.
               </p>
               <p>
-               If performing this operation is not valid for the current component
-state, then an error will be logged. The component state will not change.
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
               </p>
              </div>
             </dd>
@@ -16681,14 +16673,14 @@ state, then an error will be logged. The component state will not change.
               <cite>
                on_stop()
               </cite>
-              , if an exception is raised then it will be
-logged and reraised. The component state will remain at
+              , any exception will be logged and reraised.
+The component will remain in a
               <code class="docutils literal notranslate">
                <span class="pre">
                 STOPPING
                </span>
               </code>
-              .
+              state.
              </p>
              <div class="admonition warning">
               <p class="admonition-title">
@@ -16698,8 +16690,8 @@ logged and reraised. The component state will remain at
                Do not override.
               </p>
               <p>
-               If performing this operation is not valid for the current component
-state, then an error will be logged. The component state will not change.
+               If the component is not in a valid state from which to execute this method,
+then the component state will not change, and an error will be logged.
               </p>
              </div>
             </dd>
@@ -16792,7 +16784,7 @@ state, then an error will be logged. The component state will not change.
             </code>
            </p>
            <p>
-            Provides generic component Finite-State Machines.
+            Provides a generic component Finite-State Machine.
            </p>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.common.component.ComponentFSMFactory.get_state_transition_table">
