@@ -4279,6 +4279,173 @@ set self.__traceback__ to tb and return self.
           </dd>
          </dl>
          <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_mad">
+           <span class="sig-name descname">
+            <span class="pre">
+             fast_mad
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ndarray
+             </span>
+             <span class="pre">
+              values
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              double
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.stats.fast_mad" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the mean absolute deviation from the given values.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               values
+              </strong>
+              (
+              <em>
+               numpy.ndarray
+              </em>
+              ) – The array for the calculation.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               double
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
+          <dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_mad_with_mean">
+           <span class="sig-name descname">
+            <span class="pre">
+             fast_mad_with_mean
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              ndarray
+             </span>
+             <span class="pre">
+              values
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="n">
+             <span class="pre">
+              double
+             </span>
+             <span class="pre">
+              mean
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <span class="sig-return">
+            <span class="sig-return-icon">
+             →
+            </span>
+            <span class="sig-return-typehint">
+             <span class="pre">
+              double
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#nautilus_trader.core.stats.fast_mad_with_mean" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Return the mean absolute deviation from the given values and mean.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 values
+                </strong>
+                (
+                <em>
+                 numpy.ndarray
+                </em>
+                ) – The array for the calculation.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 mean
+                </strong>
+                (
+                <em>
+                 double
+                </em>
+                ) – The pre-calculated mean of the given values.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+            </dt>
+            <dd class="field-even">
+             <p>
+              <em>
+               double
+              </em>
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="py function">
           <dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_mean">
            <span class="sig-name descname">
             <span class="pre">
