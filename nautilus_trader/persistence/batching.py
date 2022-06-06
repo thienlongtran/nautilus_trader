@@ -16,11 +16,13 @@
 import heapq
 import itertools
 import sys
+from bisect import bisect
 from collections import namedtuple
 from typing import Dict, Iterator, List, Set
 
 import fsspec
 import pandas as pd
+import pyarrow as pa
 import pyarrow.dataset as ds
 import pyarrow.parquet as pq
 from pyarrow.lib import ArrowInvalid
@@ -49,13 +51,16 @@ def dataset_batches(
         for batch in f.iter_batches(batch_size=n_rows):
             if batch.num_rows == 0:
                 break
-            df = batch.to_pandas()
-            df = df[(df["ts_init"] >= file_meta.start) & (df["ts_init"] <= file_meta.end)]
-            if df.empty:
-                continue
+            data_filter = pa.compute.and_(
+                pa.compute.greater_equal(batch["ts_init"], file_meta.start),
+                pa.compute.less_equal(batch["ts_init"], file_meta.end),
+            )
+            data = batch.filter(data_filter).to_pylist()
             if file_meta.instrument_id:
-                df.loc[:, "instrument_id"] = file_meta.instrument_id
-            yield df
+                data = [d | {"instrument_id": file_meta.instrument_id} for d in data]
+            if not data:
+                continue
+            yield data
 
 
 def build_filenames(
@@ -82,10 +87,6 @@ def build_filenames(
     return files
 
 
-def frame_to_nautilus(df: pd.DataFrame, cls: type):
-    return ParquetSerializer.deserialize(cls=cls, chunk=df.to_dict("records"))
-
-
 def batch_files(  # noqa: C901
     catalog: DataCatalog,
     data_configs: List[BacktestDataConfig],
@@ -93,7 +94,7 @@ def batch_files(  # noqa: C901
     target_batch_size_bytes: int = parse_bytes("100mb"),  # noqa: B008,
 ):
     files = build_filenames(catalog=catalog, data_configs=data_configs)
-    buffer = {fn.filename: pd.DataFrame() for fn in files}
+    buffer: Dict[str, List] = {fn.filename: [] for fn in files}
     datasets = {
         f.filename: dataset_batches(file_meta=f, fs=catalog.fs, n_rows=read_num_rows) for f in files
     }
@@ -109,10 +110,12 @@ def batch_files(  # noqa: C901
                 if next_buf is None:
                     completed.add(fn)
                     continue
-                buffer[fn] = pd.concat([buffer[fn], next_buf])
+                buffer[fn].extend(next_buf)
 
         # Determine minimum timestamp
-        max_ts_per_frame = {fn: df["ts_init"].max() for fn, df in buffer.items() if not df.empty}
+        max_ts_per_frame = {
+            fn: max(d["ts_init"] for d in data) for fn, data in buffer.items() if data
+        }
         if not max_ts_per_frame:
             continue
         min_ts = min(max_ts_per_frame.values())
@@ -120,13 +123,14 @@ def batch_files(  # noqa: C901
         # Filter buffer dataframes based on min_timestamp
         batches = []
         for f in files:
-            df = buffer[f.filename]
-            if df.empty:
+            buf = buffer[f.filename]
+            if not buf:
                 continue
-            ts_filter = df["ts_init"] <= min_ts  # min of max timestamps
-            batch = df[ts_filter]
-            buffer[f.filename] = df[~ts_filter]
-            objs = frame_to_nautilus(df=batch, cls=f.datatype)
+            timestamps = [d["ts_init"] for d in buf]
+            ts_idx = bisect(timestamps, min_ts)  # min of max timestamps
+            batch = buf[:ts_idx]
+            buffer[f.filename] = buf[ts_idx:]
+            objs = ParquetSerializer.deserialize(cls=f.datatype, chunk=batch)
             batches.append(objs)
             bytes_read += sum([sys.getsizeof(x) for x in objs])
 
