@@ -52,7 +52,7 @@
   </script>
   <link href="_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
   <title>
-   Introduction
+   NautilusTrader Documentation
   </title>
   <link href="_static/pygments.css" rel="stylesheet" type="text/css"/>
   <link href="_static/material.css" rel="stylesheet" type="text/css"/>
@@ -126,7 +126,7 @@
        <span class="md-header-nav__topic">
        </span>
        <span class="md-header-nav__topic">
-        Introduction
+        NautilusTrader Documentation
        </span>
       </div>
      </div>
@@ -180,11 +180,11 @@
        Versions
       </button>
       <div class="dropdown-content md-hero">
-       <a href="https://docs.nautilustrader.io" title="Latest (1.146.0)">
-        Latest (1.146.0)
+       <a href="https://docs.nautilustrader.io" title="Latest (1.147.1)">
+        Latest (1.147.1)
        </a>
-       <a href="https://docs.nautilustrader.io/develop" title="Develop (1.147.0)">
-        Develop (1.147.0)
+       <a href="https://docs.nautilustrader.io/develop" title="Develop (1.148.0)">
+        Develop (1.148.0)
        </a>
       </div>
      </div>
@@ -192,13 +192,6 @@
    </nav>
   </header>
   <div class="md-container">
-   <div class="md-hero" data-md-component="hero">
-    <div class="md-hero__inner md-grid">
-     <p>
-      Documentation
-     </p>
-    </div>
-   </div>
    <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
      <ul class="md-tabs__list">
@@ -302,6 +295,11 @@
              <li class="md-nav__item">
               <a class="md-nav__link" href="user_guide/core_concepts.html">
                Core Concepts
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="user_guide/architecture.html">
+               System Architecture
               </a>
              </li>
              <li class="md-nav__item">
@@ -658,7 +656,7 @@
          <ul class="md-nav__list" data-md-scrollfix="">
           <li class="md-nav__item">
            <a class="md-nav__link" href="#index--page-root">
-            Introduction
+            NautilusTrader Documentation
            </a>
            <nav class="md-nav">
             <ul class="md-nav__list">
@@ -702,23 +700,23 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+       <section class="tex2jax_ignore mathjax_ignore" id="nautilustrader-documentation">
         <h1 id="index--page-root">
-         Introduction
+         NautilusTrader Documentation
          <a class="headerlink" href="#index--page-root" title="Permalink to this headline">
           ¶
          </a>
         </h1>
         <p>
-         Welcome to the documentation for NautilusTrader!
+         Welcome to the official documentation for NautilusTrader!
         </p>
         <p>
          NautilusTrader is an open-source, high-performance, production-grade algorithmic trading platform,
 providing quantitative traders with the ability to backtest portfolios of automated trading strategies
-on historical data with an event-driven engine, and also deploy those same strategies live.
+on historical data with an event-driven engine, and also deploy those same strategies live with no code changes.
         </p>
         <p>
-         The platform is ‘AI-first’, designed to deploy models for algorithmic trading strategies developed
+         The platform is ‘AI-first’, designed to develop and deploy models for algorithmic trading strategies
 using the Python ecosystem - within a highly performant and robust Python native environment.
 This helps to address the challenge of keeping the research/backtest environment consistent with the production
 live trading environment.
@@ -746,11 +744,10 @@ including FX, Equities, Futures, Options, CFDs, Crypto and Betting - across mult
             <strong>
              Fast:
             </strong>
-            C-level speed through Cython. Asynchronous networking with
+            C-level speed through Rust and Cython. Asynchronous networking with
             <a class="reference external" href="https://github.com/MagicStack/uvloop">
              uvloop
             </a>
-            .
            </p>
           </li>
           <li>
@@ -758,7 +755,7 @@ including FX, Equities, Futures, Options, CFDs, Crypto and Betting - across mult
             <strong>
              Reliable:
             </strong>
-            Type safety through Cython. Redis backed performant state persistence.
+            Type safety through Rust and Cython. Redis backed performant state persistence
            </p>
           </li>
           <li>
@@ -766,7 +763,7 @@ including FX, Equities, Futures, Options, CFDs, Crypto and Betting - across mult
             <strong>
              Flexible:
             </strong>
-            OS independent, runs on Linux, macOS, Windows. Deploy using Docker.
+            OS independent, runs on Linux, macOS, Windows. Deploy using Docker
            </p>
           </li>
           <li>
@@ -774,7 +771,7 @@ including FX, Equities, Futures, Options, CFDs, Crypto and Betting - across mult
             <strong>
              Integrated:
             </strong>
-            Modular adapters mean any REST, WebSocket, or FIX API can be integrated.
+            Modular adapters mean any REST, WebSocket, or FIX API can be integrated
            </p>
           </li>
           <li>
@@ -836,7 +833,6 @@ including FX, Equities, Futures, Options, CFDs, Crypto and Betting - across mult
               OTO
              </span>
             </code>
-            .
            </p>
           </li>
           <li>
@@ -844,7 +840,7 @@ including FX, Equities, Futures, Options, CFDs, Crypto and Betting - across mult
             <strong>
              Backtesting:
             </strong>
-            Run with multiple venues, instruments and strategies simultaneously using historical quote tick, trade tick, bar, order book and custom data with nanosecond resolution.
+            Run with multiple venues, instruments and strategies simultaneously using historical quote tick, trade tick, bar, order book and custom data with nanosecond resolution
            </p>
           </li>
           <li>
@@ -852,7 +848,7 @@ including FX, Equities, Futures, Options, CFDs, Crypto and Betting - across mult
             <strong>
              Live:
             </strong>
-            Use identical strategy implementations between backtesting and live deployments.
+            Use identical strategy implementations between backtesting and live deployments
            </p>
           </li>
           <li>
@@ -860,7 +856,7 @@ including FX, Equities, Futures, Options, CFDs, Crypto and Betting - across mult
             <strong>
              Multi-venue:
             </strong>
-            Multiple venue capabilities facilitate market making and statistical arbitrage strategies.
+            Multiple venue capabilities facilitate market making and statistical arbitrage strategies
            </p>
           </li>
           <li>
@@ -868,7 +864,7 @@ including FX, Equities, Futures, Options, CFDs, Crypto and Betting - across mult
             <strong>
              AI Agent Training:
             </strong>
-            Backtest engine fast enough to be used to train AI trading agents (RL/ES).
+            Backtest engine fast enough to be used to train AI trading agents (RL/ES)
            </p>
           </li>
          </ul>

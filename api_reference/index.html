@@ -181,11 +181,11 @@
        Versions
       </button>
       <div class="dropdown-content md-hero">
-       <a href="https://docs.nautilustrader.io" title="Latest (1.146.0)">
-        Latest (1.146.0)
+       <a href="https://docs.nautilustrader.io" title="Latest (1.147.1)">
+        Latest (1.147.1)
        </a>
-       <a href="https://docs.nautilustrader.io/develop" title="Develop (1.147.0)">
-        Develop (1.147.0)
+       <a href="https://docs.nautilustrader.io/develop" title="Develop (1.148.0)">
+        Develop (1.148.0)
        </a>
       </div>
      </div>
@@ -193,13 +193,6 @@
    </nav>
   </header>
   <div class="md-container">
-   <div class="md-hero" data-md-component="hero">
-    <div class="md-hero__inner md-grid">
-     <p>
-      Documentation
-     </p>
-    </div>
-   </div>
    <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
      <ul class="md-tabs__list">
@@ -303,6 +296,11 @@
              <li class="md-nav__item">
               <a class="md-nav__link" href="../user_guide/core_concepts.html">
                Core Concepts
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../user_guide/architecture.html">
+               System Architecture
               </a>
              </li>
              <li class="md-nav__item">
@@ -653,53 +651,7 @@
       <div class="md-sidebar__scrollwrap">
        <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--secondary">
-         <label class="md-nav__title" for="__toc">
-          Contents
-         </label>
          <ul class="md-nav__list" data-md-scrollfix="">
-          <li class="md-nav__item">
-           <a class="md-nav__link" href="#api-reference-index--page-root">
-            API Reference
-           </a>
-           <nav class="md-nav">
-            <ul class="md-nav__list">
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#type-safety">
-               Type Safety
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#framework-organization">
-               Framework Organization
-              </a>
-              <nav class="md-nav">
-               <ul class="md-nav__list">
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="#core-low-level">
-                  Core / Low-Level
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="#system-components">
-                  System Components
-                 </a>
-                </li>
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="#system-implementations">
-                  System Implementations
-                 </a>
-                </li>
-               </ul>
-              </nav>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#errors-and-exceptions">
-               Errors and Exceptions
-              </a>
-             </li>
-            </ul>
-           </nav>
-          </li>
          </ul>
         </nav>
        </div>
@@ -757,321 +709,8 @@ more stable releases on
           .
          </p>
         </div>
-        <section id="type-safety">
-         <h2 id="type-safety">
-          Type Safety
-          <a class="headerlink" href="#type-safety" title="Permalink to this headline">
-           ¶
-          </a>
-         </h2>
-         <p>
-          The design of the platform holds software correctness and safety at the highest level.
-Given most of the core production code is written in Cython, type safety is often provided
-at the C level.
-         </p>
-         <div class="admonition note">
-          <p class="admonition-title">
-           Note
-          </p>
-          <p>
-           If a function or methods parameter is not explicitly typed as allowing
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             None
-            </span>
-           </code>
-           , then you can assume you will receive a
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             ValueError
-            </span>
-           </code>
-           when passing
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             None
-            </span>
-           </code>
-           as an argument (this is not explicitly documented).
-          </p>
-         </div>
-        </section>
-        <section id="framework-organization">
-         <h2 id="framework-organization">
-          Framework Organization
-          <a class="headerlink" href="#framework-organization" title="Permalink to this headline">
-           ¶
-          </a>
-         </h2>
-         <p>
-          The codebase is organized around both layering of abstraction levels, and generally
-grouped into logical subpackages of cohesive concepts. You can navigate to the documentation
-for each of these subpackages from the left menu.
-         </p>
-         <section id="core-low-level">
-          <h3 id="core-low-level">
-           Core / Low-Level
-           <a class="headerlink" href="#core-low-level" title="Permalink to this headline">
-            ¶
-           </a>
-          </h3>
-          <ul class="simple">
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               core
-              </span>
-             </code>
-             : constants, functions and low-level components used throughout the framework
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               common
-              </span>
-             </code>
-             : common parts for assembling the frameworks various components
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               network
-              </span>
-             </code>
-             : low-level base components for networking clients
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               serialization
-              </span>
-             </code>
-             : serialization base components and serializer implementations
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               model
-              </span>
-             </code>
-             : defines a rich trading domain model
-            </p>
-           </li>
-          </ul>
-         </section>
-         <section id="system-components">
-          <h3 id="system-components">
-           System Components
-           <a class="headerlink" href="#system-components" title="Permalink to this headline">
-            ¶
-           </a>
-          </h3>
-          <ul class="simple">
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               accounting
-              </span>
-             </code>
-             : different account types and account management machinery
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               adapters
-              </span>
-             </code>
-             : integration adapters for the platform including brokers and exchanges
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               analysis
-              </span>
-             </code>
-             : components relating to trading performance statistics and analysis
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               cache
-              </span>
-             </code>
-             : provides common caching infrastructure
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               data
-              </span>
-             </code>
-             : the data stack and data tooling for the platform
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               execution
-              </span>
-             </code>
-             : the execution stack for the platform
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               indicators
-              </span>
-             </code>
-             : a set of efficient indicators and analyzers
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               infrastructure
-              </span>
-             </code>
-             : technology specific infrastructure implementations
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               msgbus
-              </span>
-             </code>
-             : a universal message bus for connecting system components
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               persistence
-              </span>
-             </code>
-             : data storage, cataloging and retrieval, mainly to support backtesting
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               portfolio
-              </span>
-             </code>
-             : portfolio management functionality
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               risk
-              </span>
-             </code>
-             : risk specific components and tooling
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               trading
-              </span>
-             </code>
-             : trading domain specific components and tooling
-            </p>
-           </li>
-          </ul>
-         </section>
-         <section id="system-implementations">
-          <h3 id="system-implementations">
-           System Implementations
-           <a class="headerlink" href="#system-implementations" title="Permalink to this headline">
-            ¶
-           </a>
-          </h3>
-          <ul class="simple">
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               backtest
-              </span>
-             </code>
-             : backtesting componentry as well as a backtest engine implementation
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               live
-              </span>
-             </code>
-             : live engine and client implementations as well as a node for live trading
-            </p>
-           </li>
-           <li>
-            <p>
-             <code class="docutils literal notranslate">
-              <span class="pre">
-               system
-              </span>
-             </code>
-             : the core system kernel common between backtest, sandbox and live contexts
-            </p>
-           </li>
-          </ul>
-         </section>
-        </section>
-        <section id="errors-and-exceptions">
-         <h2 id="errors-and-exceptions">
-          Errors and Exceptions
-          <a class="headerlink" href="#errors-and-exceptions" title="Permalink to this headline">
-           ¶
-          </a>
-         </h2>
-         <p>
-          Every attempt has been made to accurately document the possible exceptions which
-can be raised from NautilusTrader code, and the conditions which will trigger them.
-         </p>
-         <div class="admonition warning">
-          <p class="admonition-title">
-           Warning
-          </p>
-          <p>
-           There may be other undocumented exceptions which can be raised by Pythons standard
-library, or from third party library dependencies.
-          </p>
-         </div>
-         <div class="toctree-wrapper compound">
-         </div>
-        </section>
+        <div class="toctree-wrapper compound">
+        </div>
        </section>
       </article>
      </div>
