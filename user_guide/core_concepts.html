@@ -671,6 +671,21 @@
            <nav class="md-nav">
             <ul class="md-nav__list">
              <li class="md-nav__item">
+              <a class="md-nav__link" href="#distributed">
+               Distributed
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#common-core">
+               Common core
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#backtesting">
+               Backtesting
+              </a>
+             </li>
+             <li class="md-nav__item">
               <a class="md-nav__link" href="#trading-live">
                Trading Live
               </a>
@@ -708,18 +723,17 @@
          </a>
         </h1>
         <p>
-         NautilusTrader has been built from the ground up to deliver optimal
-performance with a high quality user experience, within the bounds of a robust Python native environment. There are two main use cases for this software package:
+         There are two main use cases for this software package:
         </p>
         <ul class="simple">
          <li>
           <p>
-           Backtesting trading strategies
+           Backtesting trading systems on historical data
           </p>
          </li>
          <li>
           <p>
-           Deploying trading strategies live
+           Deploying trading systems live in real-time
           </p>
          </li>
         </ul>
@@ -740,6 +754,80 @@ the default
          system implementations in their respectively named subpackages. All examples
 will also either utilize the default backtest or live system implementations.
         </p>
+        <div class="admonition note">
+         <p class="admonition-title">
+          Note
+         </p>
+         <p>
+          We consider trading strategies to be subcomponents of end-to-end trading systems, which
+include the application and infrastructure layers.
+         </p>
+        </div>
+        <section id="distributed">
+         <h2 id="distributed">
+          Distributed
+          <a class="headerlink" href="#distributed" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          The platform is also able to be become part of an even larger distributed system, and so you will find that
+nearly every configuration and domain object can be serialized over the wire using either JSON, MessagePack, or Apache arrow (feather).
+         </p>
+        </section>
+        <section id="common-core">
+         <h2 id="common-core">
+          Common core
+          <a class="headerlink" href="#common-core" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Both backtest, sandbox and live trading nodes use a common system core. Registering user defined
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            Actor
+           </span>
+          </code>
+          and
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            Strategy
+           </span>
+          </code>
+          components are then managed in the same way across these environment contexts.
+         </p>
+        </section>
+        <section id="backtesting">
+         <h2 id="backtesting">
+          Backtesting
+          <a class="headerlink" href="#backtesting" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          Backtesting can be achieved by first making data available to a
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestEngine
+           </span>
+          </code>
+          either directly or via
+a higher level
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            BacktestNode
+           </span>
+          </code>
+          and
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            DataCatalog
+           </span>
+          </code>
+          , and then running the system across this data with nanosecond resolution.
+         </p>
+        </section>
         <section id="trading-live">
          <h2 id="trading-live">
           Trading Live
@@ -754,7 +842,7 @@ will also either utilize the default backtest or live system implementations.
             TradingNode
            </span>
           </code>
-          can host a fleet of trading strategies, with data able to be ingested from multiple data clients, and order execution handled through multiple execution clients.
+          can ingest data and events from multiple data and execution clients.
 Live deployments can use both demo/paper trading accounts, or real accounts.
          </p>
          <p>

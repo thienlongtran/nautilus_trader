@@ -818,6 +818,7 @@ currently a number of subclasses representing a range of
              BettingInstrument
             </span>
            </code>
+           (Sports, gaming, or other betting)
           </p>
          </li>
         </ul>
@@ -835,7 +836,7 @@ currently a number of subclasses representing a range of
             InstrumentId
            </span>
           </code>
-          , which is made up of both the native symbol and venue ID, separated by a period.
+          , which is made up of both the native symbol, and venue ID, separated by a period.
 For example, on the FTX crypto exchange, the Ethereum Perpetual Futures Contract has the instrument ID
           <code class="docutils literal notranslate">
            <span class="pre">
@@ -867,7 +868,7 @@ and the
            Warning
           </p>
           <p>
-           The correct instrument must be matched to a market dataset such as ticks or orderbook data for logically sound operation.
+           The correct instrument must be matched to a market dataset such as ticks or order book data for logically sound operation.
 An incorrectly specified instrument may truncate data or otherwise produce surprising results.
           </p>
          </div>
@@ -949,14 +950,14 @@ An incorrectly specified instrument may truncate data or otherwise produce surpr
           </a>
          </h2>
          <p>
-          All the live integration adapters have defined
+          Live integration adapters have defined
           <code class="docutils literal notranslate">
            <span class="pre">
             InstrumentProvider
            </span>
           </code>
-          classes which work in an automated way
-under the hood to cache the latest instrument definitions from the exchange. Refer to a particular
+          classes which work in an automated way to cache the
+latest instrument definitions for the exchange. Refer to a particular
           <code class="docutils literal notranslate">
            <span class="pre">
             Instrument
@@ -968,7 +969,7 @@ under the hood to cache the latest instrument definitions from the exchange. Ref
             InstrumentId
            </span>
           </code>
-          to data and execution related methods and classes which require one.
+          to data and execution related methods, and classes which require one.
          </p>
         </section>
         <section id="finding-instruments">
@@ -979,7 +980,7 @@ under the hood to cache the latest instrument definitions from the exchange. Ref
           </a>
          </h2>
          <p>
-          Since the same strategy/actor classes can be used for both backtests and live trading, you can
+          Since the same actor/strategy classes can be used for both backtest and live trading, you can
 get instruments in exactly the same way through the central cache:
          </p>
          <div class="highlight-python notranslate">
@@ -1020,7 +1021,7 @@ get instruments in exactly the same way through the central cache:
            </span>
           </code>
           , the object(s) will
-be passed to the strategy/actors
+be passed to the actors/strategies
           <code class="docutils literal notranslate">
            <span class="pre">
             on_instrument()
@@ -1139,7 +1140,7 @@ dependent and can include:
               max_price
              </span>
             </code>
-            (maximum valid order price)
+            (maximum valid quote or order price)
            </p>
           </li>
           <li>
@@ -1149,7 +1150,7 @@ dependent and can include:
               min_price
              </span>
             </code>
-            (minimum valid order price)
+            (minimum valid quote or order price)
            </p>
           </li>
          </ul>
@@ -1198,8 +1199,8 @@ and quantities based on given values.
            Tip
           </p>
           <p>
-           This is the recommended method for creating valid prices and quantities, e.g. before
-passing them to the order factory to create an order.
+           The above is the recommended method for creating valid prices and quantities,
+such as when passing them to the order factory to create an order.
           </p>
          </div>
         </section>
@@ -1212,7 +1213,7 @@ passing them to the order factory to create an order.
          </h2>
          <p>
           The current initial and maintenance margin requirements, as well as any trading
-fees are available from an instrument:
+fees are also available from an instrument:
          </p>
          <ul class="simple">
           <li>
@@ -1266,7 +1267,7 @@ fees are available from an instrument:
          </h2>
          <p>
           The raw instrument definition as provided by the exchange (typically from JSON serialized data) is also
-included as a generic Python dictionary. This is to provide all possible information
+included as a generic Python dictionary. This is to retain all information
 which is not necessarily part of the unified Nautilus API, and is available to the user
 at runtime by calling the
           <code class="docutils literal notranslate">

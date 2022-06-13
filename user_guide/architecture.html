@@ -807,7 +807,7 @@
           </a>
          </h2>
          <p>
-          The major architectural techniques and design patterns employed by NautilusTrader, including:
+          The major architectural techniques and design patterns employed by NautilusTrader are:
          </p>
          <ul class="simple">
           <li>
@@ -832,7 +832,7 @@
           </li>
           <li>
            <p>
-            Crash only design
+            ‘Crash only’ design
            </p>
           </li>
          </ul>
@@ -847,7 +847,7 @@
          <p>
           The codebase is organized with a layering of abstraction levels, and generally
 grouped into logical subpackages of cohesive concepts. You can navigate to the documentation
-for each of these subpackages from the left menu.
+for each of these subpackages from the left nav menu.
          </p>
          <section id="core-low-level">
           <h3 id="core-low-level">
@@ -864,7 +864,7 @@ for each of these subpackages from the left menu.
                core
               </span>
              </code>
-             : constants, functions and low-level components used throughout the framework
+             - constants, functions and low-level components used throughout the framework
             </p>
            </li>
            <li>
@@ -874,7 +874,7 @@ for each of these subpackages from the left menu.
                common
               </span>
              </code>
-             : common parts for assembling the frameworks various components
+             - common parts for assembling the frameworks various components
             </p>
            </li>
            <li>
@@ -884,7 +884,7 @@ for each of these subpackages from the left menu.
                network
               </span>
              </code>
-             : low-level base components for networking clients
+             - low-level base components for networking clients
             </p>
            </li>
            <li>
@@ -894,7 +894,7 @@ for each of these subpackages from the left menu.
                serialization
               </span>
              </code>
-             : serialization base components and serializer implementations
+             - serialization base components and serializer implementations
             </p>
            </li>
            <li>
@@ -904,7 +904,7 @@ for each of these subpackages from the left menu.
                model
               </span>
              </code>
-             : defines a rich trading domain model
+             - defines a rich trading domain model
             </p>
            </li>
           </ul>
@@ -924,7 +924,7 @@ for each of these subpackages from the left menu.
                accounting
               </span>
              </code>
-             : different account types and account management machinery
+             - different account types and account management machinery
             </p>
            </li>
            <li>
@@ -934,7 +934,7 @@ for each of these subpackages from the left menu.
                adapters
               </span>
              </code>
-             : integration adapters for the platform including brokers and exchanges
+             - integration adapters for the platform including brokers and exchanges
             </p>
            </li>
            <li>
@@ -944,7 +944,7 @@ for each of these subpackages from the left menu.
                analysis
               </span>
              </code>
-             : components relating to trading performance statistics and analysis
+             - components relating to trading performance statistics and analysis
             </p>
            </li>
            <li>
@@ -954,7 +954,7 @@ for each of these subpackages from the left menu.
                cache
               </span>
              </code>
-             : provides common caching infrastructure
+             - provides common caching infrastructure
             </p>
            </li>
            <li>
@@ -964,7 +964,7 @@ for each of these subpackages from the left menu.
                data
               </span>
              </code>
-             : the data stack and data tooling for the platform
+             - the data stack and data tooling for the platform
             </p>
            </li>
            <li>
@@ -974,7 +974,7 @@ for each of these subpackages from the left menu.
                execution
               </span>
              </code>
-             : the execution stack for the platform
+             - the execution stack for the platform
             </p>
            </li>
            <li>
@@ -984,7 +984,7 @@ for each of these subpackages from the left menu.
                indicators
               </span>
              </code>
-             : a set of efficient indicators and analyzers
+             - a set of efficient indicators and analyzers
             </p>
            </li>
            <li>
@@ -994,7 +994,7 @@ for each of these subpackages from the left menu.
                infrastructure
               </span>
              </code>
-             : technology specific infrastructure implementations
+             - technology specific infrastructure implementations
             </p>
            </li>
            <li>
@@ -1004,7 +1004,7 @@ for each of these subpackages from the left menu.
                msgbus
               </span>
              </code>
-             : a universal message bus for connecting system components
+             - a universal message bus for connecting system components
             </p>
            </li>
            <li>
@@ -1014,7 +1014,7 @@ for each of these subpackages from the left menu.
                persistence
               </span>
              </code>
-             : data storage, cataloging and retrieval, mainly to support backtesting
+             - data storage, cataloging and retrieval, mainly to support backtesting
             </p>
            </li>
            <li>
@@ -1024,7 +1024,7 @@ for each of these subpackages from the left menu.
                portfolio
               </span>
              </code>
-             : portfolio management functionality
+             - portfolio management functionality
             </p>
            </li>
            <li>
@@ -1034,7 +1034,7 @@ for each of these subpackages from the left menu.
                risk
               </span>
              </code>
-             : risk specific components and tooling
+             - risk specific components and tooling
             </p>
            </li>
            <li>
@@ -1044,7 +1044,7 @@ for each of these subpackages from the left menu.
                trading
               </span>
              </code>
-             : trading domain specific components and tooling
+             - trading domain specific components and tooling
             </p>
            </li>
           </ul>
@@ -1064,7 +1064,7 @@ for each of these subpackages from the left menu.
                backtest
               </span>
              </code>
-             : backtesting componentry as well as a backtest engine implementation
+             - backtesting componentry as well as a backtest engine and node implementations
             </p>
            </li>
            <li>
@@ -1074,7 +1074,7 @@ for each of these subpackages from the left menu.
                live
               </span>
              </code>
-             : live engine and client implementations as well as a node for live trading
+             - live engine and client implementations as well as a node for live trading
             </p>
            </li>
            <li>
@@ -1084,7 +1084,7 @@ for each of these subpackages from the left menu.
                system
               </span>
              </code>
-             : the core system kernel common between backtest, sandbox and live contexts
+             - the core system kernel common between backtest, sandbox and live contexts
             </p>
            </li>
           </ul>
@@ -1107,17 +1107,32 @@ for each of these subpackages from the left menu.
           <ul class="simple">
            <li>
             <p>
-             Backtest
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               Backtest
+              </span>
+             </code>
+             - historical data with simulated venues
             </p>
            </li>
            <li>
             <p>
-             Sandbox
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               Sandbox
+              </span>
+             </code>
+             - Real-time data with simulated venues
             </p>
            </li>
            <li>
             <p>
-             Live
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               Live
+              </span>
+             </code>
+             - Real-time data with live venues (paper trading or real accounts)
             </p>
            </li>
           </ul>
@@ -1130,7 +1145,7 @@ for each of these subpackages from the left menu.
            </a>
           </h3>
           <p>
-           NautilusTrader has been designed to share as much common code between backtest and live systems as possible. This
+           NautilusTrader has been designed to share as much common code between backtest, sandbox and live systems as possible. This
 is formalized in the
            <code class="docutils literal notranslate">
             <span class="pre">
@@ -1151,7 +1166,7 @@ is formalized in the
             ports and adapters
            </em>
            architectural style allows modular components to be ‘plugged into’ the
-core system, providing many hook points for user defined / custom implementations.
+core system, providing many hooks for user defined / custom implementations.
           </p>
          </section>
          <section id="messaging">
@@ -1162,19 +1177,19 @@ core system, providing many hook points for user defined / custom implementation
            </a>
           </h3>
           <p>
-           To facilitate this modularity and loose coupling, an extremely efficient
+           To facilitate modularity and loose coupling, an extremely efficient
            <code class="docutils literal notranslate">
             <span class="pre">
              MessageBus
             </span>
            </code>
-           passes data, commands and events as messages between components.
+           passes messages (data, commands and events) between components.
           </p>
           <p>
            From a high level architectural view, it’s important to understand that the platform has been designed to run efficiently
-on a single thread, for both backtesting and live trading. A lot of research and testing
+on a single thread, for both backtesting and live trading. Much research and testing
 resulted in arriving at this design, as it was found the overhead of context switching between threads
-didn’t pay off in better performance.
+didn’t actually result in improved performance.
           </p>
           <p>
            When considering the logic of how your trading will work within the system boundary, you can expect each component to consume messages
@@ -1239,7 +1254,7 @@ a single thread. You can read about their
           directory, which contains a collection of pure Python and Cython modules.
          </p>
          <p>
-          Python bindings for the Rust core is achieved by statically linking the Rust libraries to the C extension modules generated by Cython at compile time (effectively extending the CPython API).
+          Python bindings for the Rust core are achieved by statically linking the Rust libraries to the C extension modules generated by Cython at compile time (effectively extending the CPython API).
          </p>
          <div class="admonition note">
           <p class="admonition-title">
@@ -1329,7 +1344,7 @@ and so is
            ).
           </p>
           <p>
-           Cython provides a good amount of type safety at the C level:
+           Cython provides type safety at the C level at both compile time, and runtime:
           </p>
           <div class="admonition note">
            <p class="admonition-title">
@@ -1366,8 +1381,13 @@ then you will receive a
             </code>
             as an argument at runtime.
            </p>
+          </div>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
            <p>
-            Both of these exceptions are not explicitly documented (as this would bloat the docstrings significantly).
+            The above exceptions are not explicitly documented, as this would bloat the docstrings significantly.
            </p>
           </div>
          </section>

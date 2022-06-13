@@ -731,7 +731,7 @@
         </h1>
         <p>
          The NautilusTrader design allows for integrating data publishers and/or trading venues
-via adapters, these can be found in the top level
+through adapter implementations, these can be found in the top level
          <code class="docutils literal notranslate">
           <span class="pre">
            adapters
@@ -740,7 +740,7 @@ via adapters, these can be found in the top level
          subpackage.
         </p>
         <p>
-         A full integration adapter (to say a Crypto exchange) is typically comprised of the following main components:
+         A full integration adapter is typically comprised of the following main components:
         </p>
         <ul class="simple">
          <li>
@@ -779,14 +779,13 @@ via adapters, these can be found in the top level
           </a>
          </h2>
          <p>
-          Instrument providers do as their name suggests by parsing the publisher or venues raw API
-and instantiating Nautilus
+          Instrument providers do as their name suggests - instantiating Nautilus
           <code class="docutils literal notranslate">
            <span class="pre">
             Instrument
            </span>
           </code>
-          objects.
+          objects by parsing the publisher or venues raw API.
          </p>
          <p>
           The use cases for the instruments available from an
@@ -805,7 +804,7 @@ and instantiating Nautilus
           </li>
           <li>
            <p>
-            Used in a sandbox or live trading context for consumption by actors/strategies
+            Used in a sandbox or live trading environment context for consumption by actors/strategies
            </p>
           </li>
          </ul>
@@ -817,7 +816,7 @@ and instantiating Nautilus
            </a>
           </h3>
           <p>
-           Here is an example of discovering the current instruments for the Binance Futures testnet
+           Here is an example of discovering the current instruments for the Binance Futures testnet:
           </p>
           <div class="highlight-python notranslate">
            <div class="highlight">
@@ -952,6 +951,12 @@ as configured:
            implements a handler for the request, data will be returned to the
            <code class="docutils literal notranslate">
             <span class="pre">
+             Actor
+            </span>
+           </code>
+           or
+           <code class="docutils literal notranslate">
+            <span class="pre">
              Strategy
             </span>
            </code>
@@ -977,7 +982,13 @@ as configured:
               Instrument
              </span>
             </code>
-            , which the Actor class implements (copied below). Any
+            , which the
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              Actor
+             </span>
+            </code>
+            class implements (copied below). Any
             <code class="docutils literal notranslate">
              <span class="pre">
               Actor
@@ -1016,26 +1027,27 @@ as configured:
               Actor
              </span>
             </code>
-            implements a separate method,
+            implements a separate method
             <code class="docutils literal notranslate">
              <span class="pre">
               request_instrument
              </span>
             </code>
-            , but a similar type of
+            . A similar type of
             <code class="docutils literal notranslate">
              <span class="pre">
               DataRequest
              </span>
             </code>
-            could be instantiated and called from anywhere and anytime in the Actor/Strategy code.
+            could be instantiated and called from anywhere and/or anytime in the actor/strategy code.
            </p>
            <p>
-            On the Actor/Strategy:
+            On the actor/strategy:
            </p>
            <div class="highlight-cython notranslate">
             <div class="highlight">
              <pre><span></span><span class="c"># nautilus_trader/common/actor.pyx</span>
+
 <span class="k">cpdef</span> <span class="kt">void</span> <span class="nf">request_instrument</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">InstrumentId</span> <span class="n">instrument_id</span><span class="p">,</span> <span class="n">ClientId</span> <span class="n">client_id</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span> <span class="k">except</span> <span class="o">*</span><span class="p">:</span>
     <span class="sd">"""</span>
 <span class="sd">    Request `Instrument` data for the given instrument ID.</span>

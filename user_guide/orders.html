@@ -802,7 +802,7 @@
         </h1>
         <p>
          This guide provides more details about the available order types for the platform, along with
-the execution instructions available for each.
+the execution instructions supported for each.
         </p>
         <p>
          Orders are one of the fundamental building blocks of any algorithmic trading strategy.
@@ -838,7 +838,7 @@ price available. Conversely,
           <em>
            Limit
           </em>
-          orders provide liquidity, they act as standing orders in a limit order book
+          orders provide liquidity, they act as standing orders in a public limit order book
 at a specified limit price.
          </p>
          <p>
@@ -959,8 +959,8 @@ summary of the different execution instructions available.
            </a>
           </h3>
           <p>
-           The orders time in force is an instruction to indicate how long the order will remain open
-or active before being filled or the remaining quantity canceled.
+           The orders time in force is an instruction to specify how long the order will remain open
+or active, before any remaining quantity is canceled.
           </p>
           <ul class="simple">
            <li>
@@ -970,7 +970,7 @@ or active before being filled or the remaining quantity canceled.
                GTC
               </span>
              </code>
-             (Good ‘til Canceled): The order remains in force until canceled by the trader or the exchange.
+             (Good ‘til Canceled) - The order remains in force until canceled by the trader or the exchange
             </p>
            </li>
            <li>
@@ -984,7 +984,7 @@ or active before being filled or the remaining quantity canceled.
              <strong>
               and
              </strong>
-             Kill): The order will execute immediately with any portion of the order quantity which cannot be executed being canceled.
+             Kill) - The order will execute immediately with any portion of the order quantity which cannot be executed being canceled
             </p>
            </li>
            <li>
@@ -998,7 +998,7 @@ or active before being filled or the remaining quantity canceled.
              <strong>
               or
              </strong>
-             Kill): The order will execute immediately, and in full, or not at all.
+             Kill) - The order will execute immediately, and in full, or not at all
             </p>
            </li>
            <li>
@@ -1008,7 +1008,7 @@ or active before being filled or the remaining quantity canceled.
                GTD
               </span>
              </code>
-             (Good ‘til Date): The order remains in force until reaching the specified expiration date and time.
+             (Good ‘til Date) - The order remains in force until reaching the specified expiration date and time
             </p>
            </li>
            <li>
@@ -1018,7 +1018,7 @@ or active before being filled or the remaining quantity canceled.
                DAY
               </span>
              </code>
-             (Good for session/day): The order remains in force until the end of the current trading session.
+             (Good for session/day) - The order remains in force until the end of the current trading session
             </p>
            </li>
            <li>
@@ -1028,7 +1028,7 @@ or active before being filled or the remaining quantity canceled.
                AT_THE_OPEN
               </span>
              </code>
-             (OPG): The order is only in force at the trading session open.
+             (OPG) - The order is only in force at the trading session open
             </p>
            </li>
            <li>
@@ -1038,7 +1038,7 @@ or active before being filled or the remaining quantity canceled.
                AT_THE_CLOSE
               </span>
              </code>
-             : The order is only in force at the trading session close.
+             - The order is only in force at the trading session close
             </p>
            </li>
           </ul>
@@ -1058,7 +1058,7 @@ or active before being filled or the remaining quantity canceled.
             </span>
            </code>
            time in force to specify the time
-at which the order will expire and be removed from the exchanges order book or order management system.
+at which the order will expire and be removed from the exchanges order book (or order management system).
           </p>
          </section>
          <section id="post-only">
@@ -1075,9 +1075,9 @@ at which the order will expire and be removed from the exchanges order book or o
              post_only
             </span>
            </code>
-           will only ever participate in providing liquidity to the central
+           will only ever participate in providing liquidity to the
 limit order book, and never initiating a trade which takes liquidity as an aggressor. This option is
-important for market makers or traders seeking to restrict the order to a liquidity
+important for market makers, or traders seeking to restrict the order to a liquidity
            <em>
             maker
            </em>
@@ -1092,14 +1092,14 @@ important for market makers or traders seeking to restrict the order to a liquid
            </a>
           </h3>
           <p>
-           An order which is marked as
+           An order which is set as
            <code class="docutils literal notranslate">
             <span class="pre">
              reduce_only
             </span>
            </code>
            will only ever reduce an existing position on an instrument, and
-never open a new position if already flat. The exact behaviour of this instruction can vary between
+never open a new position (if already flat). The exact behaviour of this instruction can vary between
 exchanges, however the behaviour as per the Nautilus
            <code class="docutils literal notranslate">
             <span class="pre">
@@ -1111,12 +1111,12 @@ exchanges, however the behaviour as per the Nautilus
           <ul class="simple">
            <li>
             <p>
-             Order will be cancelled if the associated position is closed / becomes flat.
+             Order will be cancelled if the associated position is closed (becomes flat)
             </p>
            </li>
            <li>
             <p>
-             Order quantity will be reduced as the associated positions size reduces.
+             Order quantity will be reduced as the associated positions size reduces
             </p>
            </li>
           </ul>
@@ -1141,7 +1141,7 @@ exchanges, however the behaviour as per the Nautilus
            </em>
            order which is displayed on the public limit order book.
 These are also known as iceberg orders as there is a visible portion to be displayed, with more quantity which is hidden.
-Specifying a display quantity of zero is also equivalent to marking an order as
+Specifying a display quantity of zero is also equivalent to setting an order as
            <code class="docutils literal notranslate">
             <span class="pre">
              hidden
@@ -1172,7 +1172,7 @@ Specifying a display quantity of zero is also equivalent to marking an order as
                DEFAULT
               </span>
              </code>
-             : The default trigger type for the exchange (typically
+             - The default trigger type for the exchange (typically
              <code class="docutils literal notranslate">
               <span class="pre">
                LAST
@@ -1184,7 +1184,7 @@ Specifying a display quantity of zero is also equivalent to marking an order as
                BID_ASK
               </span>
              </code>
-             ).
+             )
             </p>
            </li>
            <li>
@@ -1194,7 +1194,7 @@ Specifying a display quantity of zero is also equivalent to marking an order as
                LAST
               </span>
              </code>
-             : The trigger price will be based on the last traded price.
+             - The trigger price will be based on the last traded price
             </p>
            </li>
            <li>
@@ -1204,7 +1204,7 @@ Specifying a display quantity of zero is also equivalent to marking an order as
                BID_ASK
               </span>
              </code>
-             : The trigger price will be based on the
+             - The trigger price will be based on the
              <code class="docutils literal notranslate">
               <span class="pre">
                BID
@@ -1216,7 +1216,7 @@ Specifying a display quantity of zero is also equivalent to marking an order as
                ASK
               </span>
              </code>
-             for sell orders.
+             for sell orders
             </p>
            </li>
            <li>
@@ -1226,13 +1226,13 @@ Specifying a display quantity of zero is also equivalent to marking an order as
                DOUBLE_LAST
               </span>
              </code>
-             : The trigger price will be based on the last two consecutive
+             - The trigger price will be based on the last two consecutive
              <code class="docutils literal notranslate">
               <span class="pre">
                LAST
               </span>
              </code>
-             prices.
+             prices
             </p>
            </li>
            <li>
@@ -1242,7 +1242,7 @@ Specifying a display quantity of zero is also equivalent to marking an order as
                DOUBLE_BID_ASK
               </span>
              </code>
-             : The trigger price will be based on the last two consecutive
+             - The trigger price will be based on the last two consecutive
              <code class="docutils literal notranslate">
               <span class="pre">
                BID
@@ -1254,7 +1254,7 @@ Specifying a display quantity of zero is also equivalent to marking an order as
                ASK
               </span>
              </code>
-             prices as applicable.
+             prices as applicable
             </p>
            </li>
            <li>
@@ -1264,7 +1264,7 @@ Specifying a display quantity of zero is also equivalent to marking an order as
                LAST_OR_BID_ASK
               </span>
              </code>
-             : The trigger price will be based on the
+             - The trigger price will be based on the
              <code class="docutils literal notranslate">
               <span class="pre">
                LAST
@@ -1282,7 +1282,6 @@ Specifying a display quantity of zero is also equivalent to marking an order as
                ASK
               </span>
              </code>
-             .
             </p>
            </li>
            <li>
@@ -1292,7 +1291,7 @@ Specifying a display quantity of zero is also equivalent to marking an order as
                MID_POINT
               </span>
              </code>
-             : The trigger price will be based on the mid-point between the
+             - The trigger price will be based on the mid-point between the
              <code class="docutils literal notranslate">
               <span class="pre">
                BID
@@ -1304,7 +1303,6 @@ Specifying a display quantity of zero is also equivalent to marking an order as
                ASK
               </span>
              </code>
-             .
             </p>
            </li>
            <li>
@@ -1314,7 +1312,7 @@ Specifying a display quantity of zero is also equivalent to marking an order as
                MARK
               </span>
              </code>
-             : The trigger price will be based on the exchanges mark price for the instrument.
+             - The trigger price will be based on the exchanges mark price for the instrument
             </p>
            </li>
            <li>
@@ -1324,7 +1322,7 @@ Specifying a display quantity of zero is also equivalent to marking an order as
                INDEX
               </span>
              </code>
-             : The trigger price will be based on the exchanges index price for the instrument.
+             - The trigger price will be based on the exchanges index price for the instrument
             </p>
            </li>
           </ul>
@@ -1348,13 +1346,13 @@ of the stop price based on the offset from the ‘market’ (bid, ask or last pr
                DEFAULT
               </span>
              </code>
-             : The default offset type for the exchange (typically
+             - The default offset type for the exchange (typically
              <code class="docutils literal notranslate">
               <span class="pre">
                PRICE
               </span>
              </code>
-             ).
+             )
             </p>
            </li>
            <li>
@@ -1364,7 +1362,7 @@ of the stop price based on the offset from the ‘market’ (bid, ask or last pr
                PRICE
               </span>
              </code>
-             : The offset is based on a price difference.
+             - The offset is based on a price difference
             </p>
            </li>
            <li>
@@ -1374,7 +1372,7 @@ of the stop price based on the offset from the ‘market’ (bid, ask or last pr
                BASIS_POINTS
               </span>
              </code>
-             : The offset is based on a price percentage difference expressed in basis points (100bp = 1%).
+             - The offset is based on a price percentage difference expressed in basis points (100bp = 1%)
             </p>
            </li>
            <li>
@@ -1384,7 +1382,7 @@ of the stop price based on the offset from the ‘market’ (bid, ask or last pr
                TICKS
               </span>
              </code>
-             : The offset is based on a number of ticks.
+             - The offset is based on a number of ticks
             </p>
            </li>
            <li>
@@ -1394,7 +1392,7 @@ of the stop price based on the offset from the ‘market’ (bid, ask or last pr
                PRICE_TIER
               </span>
              </code>
-             : The offset is based on an exchange specific price tier.
+             - The offset is based on an exchange specific price tier
             </p>
            </li>
           </ul>
@@ -1588,7 +1586,7 @@ contracts at a limit price of 5000 USD, as a market maker.
            <em>
             Stop-Market
            </em>
-           order is a conditional order which once triggered will immediately
+           order is a conditional order which once triggered, will immediately
 place a
            <em>
             Market
@@ -1748,7 +1746,7 @@ place a
             Market
            </em>
            order. This order type is often used to enter a new position on a stop price in the market orders direction,
-or to take profits from an existing position, either as a SELL order against LONG positions,
+or to take profits for an existing position, either as a SELL order against LONG positions,
 or as a BUY order against SHORT positions.
           </p>
           <p>
