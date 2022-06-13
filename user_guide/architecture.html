@@ -52,7 +52,7 @@
   </script>
   <link href="../_static/images/apple-icon-152x152.png" rel="apple-touch-icon"/>
   <title>
-   System Architecture
+   Architecture
   </title>
   <link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
   <link href="../_static/material.css" rel="stylesheet" type="text/css"/>
@@ -127,7 +127,7 @@
        <span class="md-header-nav__topic">
        </span>
        <span class="md-header-nav__topic">
-        System Architecture
+        Architecture
        </span>
       </div>
      </div>
@@ -181,11 +181,11 @@
        Versions
       </button>
       <div class="dropdown-content md-hero">
-       <a href="https://docs.nautilustrader.io" title="Develop (1.148.0)">
-        Develop (1.148.0)
+       <a href="https://docs.nautilustrader.io" title="1.148.0 (develop)">
+        1.148.0 (develop)
        </a>
-       <a href="https://docs.nautilustrader.io/latest" title="Latest (1.147.1)">
-        Latest (1.147.1)
+       <a href="https://docs.nautilustrader.io/latest" title="1.147.1 (latest)">
+        1.147.1 (latest)
        </a>
       </div>
      </div>
@@ -309,7 +309,7 @@
              </li>
              <li class="md-nav__item md-nav__link--active">
               <a class="md-nav__link" href="#">
-               System Architecture
+               Architecture
               </a>
              </li>
              <li class="md-nav__item">
@@ -666,32 +666,18 @@
          <ul class="md-nav__list" data-md-scrollfix="">
           <li class="md-nav__item">
            <a class="md-nav__link" href="#user-guide-architecture--page-root">
-            System Architecture
+            Architecture
            </a>
            <nav class="md-nav">
             <ul class="md-nav__list">
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#code-structure">
-               Code structure
-              </a>
-              <nav class="md-nav">
-               <ul class="md-nav__list">
-                <li class="md-nav__item">
-                 <a class="md-nav__link" href="#dependency-flow">
-                  Dependency flow
-                 </a>
-                </li>
-               </ul>
-              </nav>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#python-type-safety">
-               Python type safety
+              <a class="md-nav__link" href="#design-philosophy">
+               Design philosophy
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#python-framework-organization">
-               Python framework organization
+              <a class="md-nav__link" href="#framework-organization">
+               Framework organization
               </a>
               <nav class="md-nav">
                <ul class="md-nav__list">
@@ -701,8 +687,8 @@
                  </a>
                 </li>
                 <li class="md-nav__item">
-                 <a class="md-nav__link" href="#system-components">
-                  System components
+                 <a class="md-nav__link" href="#components">
+                  Components
                  </a>
                 </li>
                 <li class="md-nav__item">
@@ -714,16 +700,16 @@
               </nav>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#errors-and-exceptions">
-               Errors and exceptions
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#system-structure">
-               System structure
+              <a class="md-nav__link" href="#system-architecture">
+               System architecture
               </a>
               <nav class="md-nav">
                <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#environment-contexts">
+                  Environment contexts
+                 </a>
+                </li>
                 <li class="md-nav__item">
                  <a class="md-nav__link" href="#common-core">
                   Common core
@@ -732,6 +718,30 @@
                 <li class="md-nav__item">
                  <a class="md-nav__link" href="#messaging">
                   Messaging
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#code-structure">
+               Code structure
+              </a>
+              <nav class="md-nav">
+               <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#dependency-flow">
+                  Dependency flow
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#type-safety">
+                  Type safety
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#errors-and-exceptions">
+                  Errors and exceptions
                  </a>
                 </li>
                </ul>
@@ -747,159 +757,95 @@
      </div>
      <div class="md-content">
       <article class="md-content__inner md-typeset" role="main">
-       <section class="tex2jax_ignore mathjax_ignore" id="system-architecture">
+       <section class="tex2jax_ignore mathjax_ignore" id="architecture">
         <h1 id="user-guide-architecture--page-root">
-         System Architecture
+         Architecture
          <a class="headerlink" href="#user-guide-architecture--page-root" title="Permalink to this headline">
           ¶
          </a>
         </h1>
         <p>
-         This guide describes the architecture of NautilusTrader from the perspective of
-design philosophy, system contexts, component organization and interaction, implementation techniques, and code structure.
+         This guide describes the architecture of NautilusTrader from highest to lowest level, including:
         </p>
-        <section id="code-structure">
-         <h2 id="code-structure">
-          Code structure
-          <a class="headerlink" href="#code-structure" title="Permalink to this headline">
+        <ul class="simple">
+         <li>
+          <p>
+           Design philosophy
+          </p>
+         </li>
+         <li>
+          <p>
+           Framework organization
+          </p>
+         </li>
+         <li>
+          <p>
+           System architecture
+          </p>
+         </li>
+         <li>
+          <p>
+           Code structure
+          </p>
+         </li>
+         <li>
+          <p>
+           Component organization and interaction
+          </p>
+         </li>
+         <li>
+          <p>
+           Implementation techniques
+          </p>
+         </li>
+        </ul>
+        <section id="design-philosophy">
+         <h2 id="design-philosophy">
+          Design philosophy
+          <a class="headerlink" href="#design-philosophy" title="Permalink to this headline">
            ¶
           </a>
          </h2>
          <p>
-          The top-level dependency structure of the codebase includes a
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            nautilus_core
-           </span>
-          </code>
-          directory containing a collection of core Rust libraries, which provides a C API interface.
+          The major architectural techniques and design patterns employed by NautilusTrader, including:
          </p>
-         <p>
-          The bulk of the production code resides in the
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            nautilus_trader
-           </span>
-          </code>
-          directory - being a collection of pure Python, Cython and some C headers (generated by
-          <code class="docutils literal notranslate">
-           <span class="pre">
-            cbindgen
-           </span>
-          </code>
-          ).
-         </p>
-         <p>
-          The build statically links the Rust libraries to the Cython generated C extensions at compile time (effectively extending the CPython API).
-Resulting in Python bindings for the Rust core.
-         </p>
-         <div class="admonition note">
-          <p class="admonition-title">
-           Note
-          </p>
-          <p>
-           Both Rust and Cython are build dependencies. The binary wheels produced from a build do not themselves require
-Cython or Rust to be installed at runtime.
-          </p>
-         </div>
-         <section id="dependency-flow">
-          <h3 id="dependency-flow">
-           Dependency flow
-           <a class="headerlink" href="#dependency-flow" title="Permalink to this headline">
-            ¶
-           </a>
-          </h3>
-          <div class="highlight-default notranslate">
-           <div class="highlight">
-            <pre><span></span>┌─────────────────────────┐
-│                         │
-│                         │
-│     nautilus_trader     │
-│                         │
-│     Python / Cython     │
-│                         │
-│                         │
-└────────────┬────────────┘
- C API       │
-             │
-             │
-             │
- C API       ▼
-┌─────────────────────────┐
-│                         │
-│                         │
-│      nautilus_core      │
-│                         │
-│          Rust           │
-│                         │
-│                         │
-└─────────────────────────┘
-</pre>
-           </div>
-          </div>
-         </section>
+         <ul class="simple">
+          <li>
+           <p>
+            Domain driven design (DDD)
+           </p>
+          </li>
+          <li>
+           <p>
+            Event-driven architecture
+           </p>
+          </li>
+          <li>
+           <p>
+            Messaging patterns (Pub/Sub, Req/Rep, point-to-point)
+           </p>
+          </li>
+          <li>
+           <p>
+            Ports and adapters
+           </p>
+          </li>
+          <li>
+           <p>
+            Crash only design
+           </p>
+          </li>
+         </ul>
         </section>
-        <section id="python-type-safety">
-         <h2 id="python-type-safety">
-          Python type safety
-          <a class="headerlink" href="#python-type-safety" title="Permalink to this headline">
+        <section id="framework-organization">
+         <h2 id="framework-organization">
+          Framework organization
+          <a class="headerlink" href="#framework-organization" title="Permalink to this headline">
            ¶
           </a>
          </h2>
          <p>
-          The design of the platform holds software correctness and safety at the highest level.
-Given most of the core production code is written in Cython, type safety is often provided
-at the C level.
-         </p>
-         <div class="admonition note">
-          <p class="admonition-title">
-           Note
-          </p>
-          <p>
-           If you pass an argument with an invalid type to a C extension module provided by Cython with a typed
-parameter, then you will receive a
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             TypeError
-            </span>
-           </code>
-           at runtime.
-          </p>
-          <p>
-           If a function or methods parameter is not explicitly typed as allowing
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             None
-            </span>
-           </code>
-           , then you can assume you will receive a
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             ValueError
-            </span>
-           </code>
-           when passing
-           <code class="docutils literal notranslate">
-            <span class="pre">
-             None
-            </span>
-           </code>
-           as an argument at runtime.
-          </p>
-          <p>
-           Both of these exceptions are not explicitly documented (as this would bloat the docstrings significantly).
-          </p>
-         </div>
-        </section>
-        <section id="python-framework-organization">
-         <h2 id="python-framework-organization">
-          Python framework organization
-          <a class="headerlink" href="#python-framework-organization" title="Permalink to this headline">
-           ¶
-          </a>
-         </h2>
-         <p>
-          The codebase is organized around both layering of abstraction levels, and generally
+          The codebase is organized with a layering of abstraction levels, and generally
 grouped into logical subpackages of cohesive concepts. You can navigate to the documentation
 for each of these subpackages from the left menu.
          </p>
@@ -963,10 +909,10 @@ for each of these subpackages from the left menu.
            </li>
           </ul>
          </section>
-         <section id="system-components">
-          <h3 id="system-components">
-           System components
-           <a class="headerlink" href="#system-components" title="Permalink to this headline">
+         <section id="components">
+          <h3 id="components">
+           Components
+           <a class="headerlink" href="#components" title="Permalink to this headline">
             ¶
            </a>
           </h3>
@@ -1144,34 +1090,38 @@ for each of these subpackages from the left menu.
           </ul>
          </section>
         </section>
-        <section id="errors-and-exceptions">
-         <h2 id="errors-and-exceptions">
-          Errors and exceptions
-          <a class="headerlink" href="#errors-and-exceptions" title="Permalink to this headline">
+        <section id="system-architecture">
+         <h2 id="system-architecture">
+          System architecture
+          <a class="headerlink" href="#system-architecture" title="Permalink to this headline">
            ¶
           </a>
          </h2>
-         <p>
-          Every attempt has been made to accurately document the possible exceptions which
-can be raised from NautilusTrader code, and the conditions which will trigger them.
-         </p>
-         <div class="admonition warning">
-          <p class="admonition-title">
-           Warning
-          </p>
-          <p>
-           There may be other undocumented exceptions which can be raised by Pythons standard
-library, or from third party library dependencies.
-          </p>
-         </div>
-        </section>
-        <section id="system-structure">
-         <h2 id="system-structure">
-          System structure
-          <a class="headerlink" href="#system-structure" title="Permalink to this headline">
-           ¶
-          </a>
-         </h2>
+         <section id="environment-contexts">
+          <h3 id="environment-contexts">
+           Environment contexts
+           <a class="headerlink" href="#environment-contexts" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <ul class="simple">
+           <li>
+            <p>
+             Backtest
+            </p>
+           </li>
+           <li>
+            <p>
+             Sandbox
+            </p>
+           </li>
+           <li>
+            <p>
+             Live
+            </p>
+           </li>
+          </ul>
+         </section>
          <section id="common-core">
           <h3 id="common-core">
            Common core
@@ -1253,6 +1203,192 @@ a single thread. You can read about their
              this interesting article
             </a>
             by Martin Fowler.
+           </p>
+          </div>
+         </section>
+        </section>
+        <section id="code-structure">
+         <h2 id="code-structure">
+          Code structure
+          <a class="headerlink" href="#code-structure" title="Permalink to this headline">
+           ¶
+          </a>
+         </h2>
+         <p>
+          The foundation of the codebase is the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            nautilus_core
+           </span>
+          </code>
+          directory, containing a collection of core Rust libraries including a C API interface generated by
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            cbindgen
+           </span>
+          </code>
+          .
+         </p>
+         <p>
+          The bulk of the production code resides in the
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            nautilus_trader
+           </span>
+          </code>
+          directory, which contains a collection of pure Python and Cython modules.
+         </p>
+         <p>
+          Python bindings for the Rust core is achieved by statically linking the Rust libraries to the C extension modules generated by Cython at compile time (effectively extending the CPython API).
+         </p>
+         <div class="admonition note">
+          <p class="admonition-title">
+           Note
+          </p>
+          <p>
+           Both Rust and Cython are build dependencies. The binary wheels produced from a build do not themselves require
+Rust or Cython to be installed at runtime.
+          </p>
+         </div>
+         <section id="dependency-flow">
+          <h3 id="dependency-flow">
+           Dependency flow
+           <a class="headerlink" href="#dependency-flow" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <div class="highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span>┌─────────────────────────┐
+│                         │
+│                         │
+│     nautilus_trader     │
+│                         │
+│     Python / Cython     │
+│                         │
+│                         │
+└────────────┬────────────┘
+ C API       │
+             │
+             │
+             │
+ C API       ▼
+┌─────────────────────────┐
+│                         │
+│                         │
+│      nautilus_core      │
+│                         │
+│          Rust           │
+│                         │
+│                         │
+└─────────────────────────┘
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="type-safety">
+          <h3 id="type-safety">
+           Type safety
+           <a class="headerlink" href="#type-safety" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           The design of the platform holds software correctness and safety at the highest level.
+          </p>
+          <p>
+           The Rust codebase in
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             nautilus_core
+            </span>
+           </code>
+           is always type safe and memory safe as guaranteed by the
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             rustc
+            </span>
+           </code>
+           compiler,
+and so is
+           <em>
+            correct by construction
+           </em>
+           (unless explicitly marked
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             unsafe
+            </span>
+           </code>
+           , see the Rust section of the
+           <a class="reference internal" href="../developer_guide/rust.html">
+            <span class="doc std std-doc">
+             Developer Guide
+            </span>
+           </a>
+           ).
+          </p>
+          <p>
+           Cython provides a good amount of type safety at the C level:
+          </p>
+          <div class="admonition note">
+           <p class="admonition-title">
+            Note
+           </p>
+           <p>
+            If you pass an argument with an invalid type to a Cython implemented module with typed parameters,
+then you will receive a
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              TypeError
+             </span>
+            </code>
+            at runtime.
+           </p>
+           <p>
+            If a function or methods parameter is not explicitly typed as allowing
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              None
+             </span>
+            </code>
+            , then you can assume you will receive a
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              ValueError
+             </span>
+            </code>
+            when passing
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              None
+             </span>
+            </code>
+            as an argument at runtime.
+           </p>
+           <p>
+            Both of these exceptions are not explicitly documented (as this would bloat the docstrings significantly).
+           </p>
+          </div>
+         </section>
+         <section id="errors-and-exceptions">
+          <h3 id="errors-and-exceptions">
+           Errors and exceptions
+           <a class="headerlink" href="#errors-and-exceptions" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           Every attempt has been made to accurately document the possible exceptions which
+can be raised from NautilusTrader code, and the conditions which will trigger them.
+          </p>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <p>
+            There may be other undocumented exceptions which can be raised by Pythons standard
+library, or from third party library dependencies.
            </p>
           </div>
          </section>
