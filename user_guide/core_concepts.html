@@ -686,24 +686,33 @@
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#trading-live">
-               Trading Live
+              <a class="md-nav__link" href="#live-trading">
+               Live trading
               </a>
              </li>
              <li class="md-nav__item">
-              <a class="md-nav__link" href="#data-types">
-               Data Types
+              <a class="md-nav__link" href="#domain-model">
+               Domain model
               </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#account-types">
-               Account Types
-              </a>
-             </li>
-             <li class="md-nav__item">
-              <a class="md-nav__link" href="#order-types">
-               Order Types
-              </a>
+              <nav class="md-nav">
+               <ul class="md-nav__list">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#data-types">
+                  Data Types
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#account-types">
+                  Account Types
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="#order-types">
+                  Order Types
+                 </a>
+                </li>
+               </ul>
+              </nav>
              </li>
             </ul>
            </nav>
@@ -828,10 +837,10 @@ a higher level
           , and then running the system across this data with nanosecond resolution.
          </p>
         </section>
-        <section id="trading-live">
-         <h2 id="trading-live">
-          Trading Live
-          <a class="headerlink" href="#trading-live" title="Permalink to this headline">
+        <section id="live-trading">
+         <h2 id="live-trading">
+          Live trading
+          <a class="headerlink" href="#live-trading" title="Permalink to this headline">
            ¶
           </a>
          </h2>
@@ -858,431 +867,461 @@ especially leveraging the
           implementation (available for Linux and macOS only).
          </p>
         </section>
-        <section id="data-types">
-         <h2 id="data-types">
-          Data Types
-          <a class="headerlink" href="#data-types" title="Permalink to this headline">
+        <section id="domain-model">
+         <h2 id="domain-model">
+          Domain model
+          <a class="headerlink" href="#domain-model" title="Permalink to this headline">
            ¶
           </a>
          </h2>
          <p>
-          The following market data types can be requested historically, and also subscribed to as live streams when available from a data publisher, and implemented in an integrations adapter.
-         </p>
-         <ul class="simple">
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              OrderBookDelta
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              OrderBookDeltas
-             </span>
-            </code>
-            (L1/L2/L3)
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              OrderBookSnapshot
-             </span>
-            </code>
-            (L1/L2/L3)
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              QuoteTick
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              TradeTick
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              Bar
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              Instrument
-             </span>
-            </code>
-           </p>
-          </li>
-         </ul>
-         <p>
-          The following PriceType options can be used for bar aggregations;
-         </p>
-         <ul class="simple">
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              BID
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              ASK
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              MID
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              LAST
-             </span>
-            </code>
-           </p>
-          </li>
-         </ul>
-         <p>
-          The following BarAggregation options are possible;
-         </p>
-         <ul class="simple">
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              MILLISECOND
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              SECOND
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              MINUTE
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              HOUR
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              DAY
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              WEEK
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              MONTH
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              TICK
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              VOLUME
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              VALUE
-             </span>
-            </code>
-            (a.k.a Dollar bars)
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              TICK_IMBALANCE
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              TICK_RUNS
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              VOLUME_IMBALANCE
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              VOLUME_RUNS
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              VALUE_IMBALANCE
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              VALUE_RUNS
-             </span>
-            </code>
-           </p>
-          </li>
-         </ul>
-         <p>
-          The price types and bar aggregations can be combined with step sizes &gt;= 1 in any way through a
+          A rich trading domain model has been defined, which expresses value types such as
           <code class="docutils literal notranslate">
            <span class="pre">
-            BarSpecification
+            Price
            </span>
           </code>
-          .
+          and
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            Quantity
+           </span>
+          </code>
+          , up to more complex entities such as
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            Order
+           </span>
+          </code>
+          objects - which aggregate
+many events to determine state.
+         </p>
+         <section id="data-types">
+          <h3 id="data-types">
+           Data Types
+           <a class="headerlink" href="#data-types" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           The following market data types can be requested historically, and also subscribed to as live streams when available from a data publisher, and implemented in an integrations adapter.
+          </p>
+          <ul class="simple">
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               OrderBookDelta
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               OrderBookDeltas
+              </span>
+             </code>
+             (L1/L2/L3)
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               OrderBookSnapshot
+              </span>
+             </code>
+             (L1/L2/L3)
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               QuoteTick
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               TradeTick
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               Bar
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               Instrument
+              </span>
+             </code>
+            </p>
+           </li>
+          </ul>
+          <p>
+           The following PriceType options can be used for bar aggregations;
+          </p>
+          <ul class="simple">
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               BID
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               ASK
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               MID
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               LAST
+              </span>
+             </code>
+            </p>
+           </li>
+          </ul>
+          <p>
+           The following BarAggregation options are possible;
+          </p>
+          <ul class="simple">
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               MILLISECOND
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               SECOND
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               MINUTE
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               HOUR
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               DAY
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               WEEK
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               MONTH
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               TICK
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               VOLUME
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               VALUE
+              </span>
+             </code>
+             (a.k.a Dollar bars)
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               TICK_IMBALANCE
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               TICK_RUNS
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               VOLUME_IMBALANCE
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               VOLUME_RUNS
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               VALUE_IMBALANCE
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               VALUE_RUNS
+              </span>
+             </code>
+            </p>
+           </li>
+          </ul>
+          <p>
+           The price types and bar aggregations can be combined with step sizes &gt;= 1 in any way through a
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             BarSpecification
+            </span>
+           </code>
+           .
 This enables maximum flexibility and now allows alternative bars to be aggregated for live trading.
-         </p>
-        </section>
-        <section id="account-types">
-         <h2 id="account-types">
-          Account Types
-          <a class="headerlink" href="#account-types" title="Permalink to this headline">
-           ¶
-          </a>
-         </h2>
-         <p>
-          The following account types are available for both live and backtest environments;
-         </p>
-         <ul class="simple">
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              Cash
-             </span>
-            </code>
-            single-currency (base currency)
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              Cash
-             </span>
-            </code>
-            multi-currency
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              Margin
-             </span>
-            </code>
-            single-currency (base currency)
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              Margin
-             </span>
-            </code>
-            multi-currency
-           </p>
-          </li>
-         </ul>
-        </section>
-        <section id="order-types">
-         <h2 id="order-types">
-          Order Types
-          <a class="headerlink" href="#order-types" title="Permalink to this headline">
-           ¶
-          </a>
-         </h2>
-         <p>
-          The following order types are available (when possible on an exchange);
-         </p>
-         <ul class="simple">
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              MARKET
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              LIMIT
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              STOP_MARKET
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              STOP_LIMIT
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              MARKET_TO_LIMIT
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              MARKET_IF_TOUCHED
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              LIMIT_IF_TOUCHED
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              TRAILING_STOP_MARKET
-             </span>
-            </code>
-           </p>
-          </li>
-          <li>
-           <p>
-            <code class="docutils literal notranslate">
-             <span class="pre">
-              TRAILING_STOP_LIMIT
-             </span>
-            </code>
-           </p>
-          </li>
-         </ul>
+          </p>
+         </section>
+         <section id="account-types">
+          <h3 id="account-types">
+           Account Types
+           <a class="headerlink" href="#account-types" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           The following account types are available for both live and backtest environments;
+          </p>
+          <ul class="simple">
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               Cash
+              </span>
+             </code>
+             single-currency (base currency)
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               Cash
+              </span>
+             </code>
+             multi-currency
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               Margin
+              </span>
+             </code>
+             single-currency (base currency)
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               Margin
+              </span>
+             </code>
+             multi-currency
+            </p>
+           </li>
+          </ul>
+         </section>
+         <section id="order-types">
+          <h3 id="order-types">
+           Order Types
+           <a class="headerlink" href="#order-types" title="Permalink to this headline">
+            ¶
+           </a>
+          </h3>
+          <p>
+           The following order types are available (when possible on an exchange);
+          </p>
+          <ul class="simple">
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               MARKET
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               LIMIT
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               STOP_MARKET
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               STOP_LIMIT
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               MARKET_TO_LIMIT
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               MARKET_IF_TOUCHED
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               LIMIT_IF_TOUCHED
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               TRAILING_STOP_MARKET
+              </span>
+             </code>
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               TRAILING_STOP_LIMIT
+              </span>
+             </code>
+            </p>
+           </li>
+          </ul>
+         </section>
         </section>
        </section>
       </article>
