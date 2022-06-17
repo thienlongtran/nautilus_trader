@@ -1229,9 +1229,9 @@
              <span class="w">
              </span>
              <span class="n">
-              <a class="reference internal" href="#nautilus_trader.persistence.catalog.DataCatalog" title="nautilus_trader.persistence.catalog.DataCatalog">
+              <a class="reference internal" href="#nautilus_trader.persistence.catalog.BaseDataCatalog" title="nautilus_trader.persistence.catalog.base.BaseDataCatalog">
                <span class="pre">
-                nautilus_trader.persistence.catalog.DataCatalog
+                nautilus_trader.persistence.catalog.base.BaseDataCatalog
                </span>
               </a>
              </span>
@@ -1327,9 +1327,9 @@ For all other classes, simply return data unchanged.
              <span class="w">
              </span>
              <span class="n">
-              <a class="reference internal" href="#nautilus_trader.persistence.catalog.DataCatalog" title="nautilus_trader.persistence.catalog.DataCatalog">
+              <a class="reference internal" href="#nautilus_trader.persistence.catalog.ParquetDataCatalog" title="nautilus_trader.persistence.catalog.parquet.ParquetDataCatalog">
                <span class="pre">
-                nautilus_trader.persistence.catalog.DataCatalog
+                nautilus_trader.persistence.catalog.parquet.ParquetDataCatalog
                </span>
               </a>
              </span>
@@ -3573,7 +3573,7 @@ correctly loaded.
           </a>
          </h2>
          <dl class="py class">
-          <dt class="sig sig-object py" id="nautilus_trader.persistence.catalog.DataCatalog">
+          <dt class="sig sig-object py" id="nautilus_trader.persistence.catalog.BaseDataCatalog">
            <em class="property">
             <span class="pre">
              class
@@ -3583,7 +3583,7 @@ correctly loaded.
            </em>
            <span class="sig-name descname">
             <span class="pre">
-             DataCatalog
+             BaseDataCatalog
             </span>
            </span>
            <span class="sig-paren">
@@ -3617,7 +3617,7 @@ correctly loaded.
            <span class="sig-paren">
             )
            </span>
-           <a class="headerlink" href="#nautilus_trader.persistence.catalog.DataCatalog" title="Permalink to this definition">
+           <a class="headerlink" href="#nautilus_trader.persistence.catalog.BaseDataCatalog" title="Permalink to this definition">
             ¶
            </a>
           </dt>
@@ -3626,12 +3626,77 @@ correctly loaded.
             Bases:
             <code class="xref py py-class docutils literal notranslate">
              <span class="pre">
-              object
+              abc.ABC
              </span>
             </code>
            </p>
            <p>
-            Provides a queryable data catalog.
+            Provides a abstract base class for a queryable data catalog.
+           </p>
+          </dd>
+         </dl>
+         <dl class="py class">
+          <dt class="sig sig-object py" id="nautilus_trader.persistence.catalog.ParquetDataCatalog">
+           <em class="property">
+            <span class="pre">
+             class
+            </span>
+            <span class="w">
+            </span>
+           </em>
+           <span class="sig-name descname">
+            <span class="pre">
+             ParquetDataCatalog
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="o">
+             <span class="pre">
+              *
+             </span>
+            </span>
+            <span class="n">
+             <span class="pre">
+              args
+             </span>
+            </span>
+           </em>
+           ,
+           <em class="sig-param">
+            <span class="o">
+             <span class="pre">
+              **
+             </span>
+            </span>
+            <span class="n">
+             <span class="pre">
+              kw
+             </span>
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#nautilus_trader.persistence.catalog.ParquetDataCatalog" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+           <p>
+            Bases:
+            <a class="reference internal" href="#nautilus_trader.persistence.catalog.BaseDataCatalog" title="nautilus_trader.persistence.catalog.base.BaseDataCatalog">
+             <code class="xref py py-class docutils literal notranslate">
+              <span class="pre">
+               nautilus_trader.persistence.catalog.base.BaseDataCatalog
+              </span>
+             </code>
+            </a>
+           </p>
+           <p>
+            Provides a queryable data catalog persisted to file in parquet format.
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">
