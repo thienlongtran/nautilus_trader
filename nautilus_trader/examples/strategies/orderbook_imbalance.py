@@ -17,6 +17,7 @@ from decimal import Decimal
 from typing import Optional
 
 from nautilus_trader.config import StrategyConfig
+from nautilus_trader.core.data import Data
 from nautilus_trader.model.enums import BookType
 from nautilus_trader.model.enums import OrderSide
 from nautilus_trader.model.identifiers import InstrumentId
@@ -57,6 +58,8 @@ class OrderBookImbalanceConfig(StrategyConfig):
     max_trade_size: Decimal
     trigger_min_size: float = 100.0
     trigger_imbalance_ratio: float = 0.20
+    use_book_deltas: bool = False
+    check_orderbook_integrity: bool = False
 
 
 class OrderBookImbalance(Strategy):
@@ -93,24 +96,39 @@ class OrderBookImbalance(Strategy):
             self.stop()
             return
 
-        self.subscribe_order_book_deltas(
-            instrument_id=self.instrument.id,
-            book_type=BookType.L2_MBP,
-        )
+        if self.config.use_book_deltas:
+            self.subscribe_order_book_deltas(
+                instrument_id=self.instrument.id,
+                book_type=BookType.L2_MBP,
+            )
+        else:
+            self.subscribe_order_book_snapshots(
+                instrument_id=self.instrument.id,
+                book_type=BookType.L2_MBP,
+            )
+
         self._book = OrderBook.create(
             instrument=self.instrument,
             book_type=BookType.L2_MBP,
         )
+        self.msgbus.subscribe("data.*", self.on_data)
+
+    def on_data(self, data: Data):
+        print(data)
 
     def on_order_book_delta(self, data: OrderBookData):
         """Actions to be performed when a delta is received."""
         self._book.apply(data)
+        if self.config.check_orderbook_integrity:
+            self._book.check_integrity()
         if self._book.spread():
             self.check_trigger()
 
     def on_order_book(self, order_book: OrderBook):
-        """Actions to be performed when an order book update is received."""
+        """Actions to be performed when a delta is received."""
         self._book = order_book
+        if self.config.check_orderbook_integrity:
+            self._book.check_integrity()
         if self._book.spread():
             self.check_trigger()
 
