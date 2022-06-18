@@ -759,7 +759,7 @@
 
 <span class="kn">from</span> <span class="nn">nautilus_trader.backtest.data.providers</span> <span class="kn">import</span> <span class="n">TestInstrumentProvider</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.backtest.node</span> <span class="kn">import</span> <span class="n">BacktestNode</span>
-<span class="kn">from</span> <span class="nn">nautilus_trader.persistence.catalog</span> <span class="kn">import</span> <span class="n">DataCatalog</span>
+<span class="kn">from</span> <span class="nn">nautilus_trader.persistence.catalog</span> <span class="kn">import</span> <span class="n">ParquetDataCatalog</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.persistence.external.core</span> <span class="kn">import</span> <span class="n">process_files</span><span class="p">,</span> <span class="n">write_objects</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.persistence.external.readers</span> <span class="kn">import</span> <span class="n">TextReader</span>
 </pre>
@@ -912,7 +912,7 @@
           Then, we simply instantiate a
           <code class="docutils literal notranslate">
            <span class="pre">
-            DataCatalog
+            ParquetDataCatalog
            </span>
           </code>
           (passing in a directory where to store the data, by default we will just use the current directory) and pass our parsing function wrapping in the Reader class to
@@ -961,7 +961,7 @@
           <div class="highlight">
            <pre><span></span><span class="n">AUDUSD</span> <span class="o">=</span> <span class="n">TestInstrumentProvider</span><span class="o">.</span><span class="n">default_fx_ccy</span><span class="p">(</span><span class="s2">"AUD/USD"</span><span class="p">)</span>
 
-<span class="n">catalog</span> <span class="o">=</span> <span class="n">DataCatalog</span><span class="p">(</span><span class="n">CATALOG_PATH</span><span class="p">)</span>
+<span class="n">catalog</span> <span class="o">=</span> <span class="n">ParquetDataCatalog</span><span class="p">(</span><span class="n">CATALOG_PATH</span><span class="p">)</span>
 
 <span class="n">process_files</span><span class="p">(</span>
     <span class="n">glob_path</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/HISTDATA*.zip"</span><span class="p">,</span>
@@ -1052,7 +1052,7 @@
 
 <span class="n">data_config</span><span class="o">=</span><span class="p">[</span>
     <span class="n">BacktestDataConfig</span><span class="p">(</span>
-        <span class="n">catalog_path</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">DataCatalog</span><span class="o">.</span><span class="n">from_env</span><span class="p">()</span><span class="o">.</span><span class="n">path</span><span class="p">),</span>
+        <span class="n">catalog_path</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">ParquetDataCatalog</span><span class="o">.</span><span class="n">from_env</span><span class="p">()</span><span class="o">.</span><span class="n">path</span><span class="p">),</span>
         <span class="n">data_cls</span><span class="o">=</span><span class="n">QuoteTick</span><span class="p">,</span>
         <span class="n">instrument_id</span><span class="o">=</span><span class="n">instrument</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
         <span class="n">start_time</span><span class="o">=</span><span class="mi">1580398089820000000</span><span class="p">,</span>
