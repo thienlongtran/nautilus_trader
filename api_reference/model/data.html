@@ -1067,35 +1067,6 @@
             </dd>
            </dl>
            <dl class="py attribute">
-            <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.Bar.checked">
-             <span class="sig-name descname">
-              <span class="pre">
-               checked
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.model.data.bar.Bar.checked" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              If the input values were integrity checked.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Returns
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <cite>
-                 bool
-                </cite>
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
-           <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.Bar.close">
              <span class="sig-name descname">
               <span class="pre">
@@ -1116,9 +1087,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  Price
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -1313,9 +1284,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  Price
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -1394,9 +1365,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  Price
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -1423,9 +1394,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  Price
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -1562,9 +1533,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  BarType
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -1591,9 +1562,9 @@
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  Quantity
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
@@ -1728,6 +1699,35 @@ method/rule and price type.
               </cite>
               is not positive (&gt; 0).
              </p>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarSpecification.aggregation">
+             <span class="sig-name descname">
+              <span class="pre">
+               aggregation
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.data.bar.BarSpecification.aggregation" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The aggregation for the specification.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 BarAggregation
+                </em>
+               </p>
+              </dd>
+             </dl>
             </dd>
            </dl>
            <dl class="py method">
@@ -2335,6 +2335,64 @@ threshold-driven.
              </dl>
             </dd>
            </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarSpecification.price_type">
+             <span class="sig-name descname">
+              <span class="pre">
+               price_type
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.data.bar.BarSpecification.price_type" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The price type for the specification.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 PriceType
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarSpecification.step">
+             <span class="sig-name descname">
+              <span class="pre">
+               step
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.data.bar.BarSpecification.step" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The step size for the specification.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 int
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
           </dd>
          </dl>
          <dl class="py class">
@@ -2486,6 +2544,35 @@ the data publisher.
             It is expected that all bar aggregation methods other than time will be
 internally aggregated.
            </p>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarType.aggregation_source">
+             <span class="sig-name descname">
+              <span class="pre">
+               aggregation_source
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.data.bar.BarType.aggregation_source" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The aggregation source for the bar type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 AggregationSource
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarType.from_str">
              <em class="property">
@@ -2575,6 +2662,35 @@ internally aggregated.
                  value
                 </cite>
                 is not a valid string.
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarType.instrument_id">
+             <span class="sig-name descname">
+              <span class="pre">
+               instrument_id
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.data.bar.BarType.instrument_id" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The instrument ID for the bar type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 InstrumentId
+                </em>
                </p>
               </dd>
              </dl>
@@ -2690,6 +2806,35 @@ internally aggregated.
                <p>
                 <em>
                  bool
+                </em>
+               </p>
+              </dd>
+             </dl>
+            </dd>
+           </dl>
+           <dl class="py attribute">
+            <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarType.spec">
+             <span class="sig-name descname">
+              <span class="pre">
+               spec
+              </span>
+             </span>
+             <a class="headerlink" href="#nautilus_trader.model.data.bar.BarType.spec" title="Permalink to this definition">
+              ¶
+             </a>
+            </dt>
+            <dd>
+             <p>
+              The specification for the bar type.
+             </p>
+             <dl class="field-list simple">
+              <dt class="field-odd">
+               Returns
+              </dt>
+              <dd class="field-odd">
+               <p>
+                <em>
+                 BarSpecification
                 </em>
                </p>
               </dd>
