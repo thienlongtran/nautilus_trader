@@ -9231,85 +9231,6 @@ already been canceled).
              </p>
             </dd>
            </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.delta">
-             <span class="sig-name descname">
-              <span class="pre">
-               delta
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                time
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                timedelta
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.Clock.delta" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return the timedelta from the current time to the given time.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 time
-                </strong>
-                (
-                <em>
-                 datetime
-                </em>
-                ) – The datum time.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 timedelta
-                </em>
-                – The time difference.
-               </p>
-              </dd>
-             </dl>
-            </dd>
-           </dl>
            <dl class="py attribute">
             <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.is_default_handler_registered">
              <span class="sig-name descname">
@@ -11216,7 +11137,7 @@ then the default handler (if registered) will receive the
             </a>
            </p>
            <p>
-            Provides a clock for live trading. All times are timezone aware UTC.
+            Provides a monotonic clock for live trading. All times are timezone aware UTC.
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">
@@ -11348,85 +11269,6 @@ already been canceled).
              <p>
               Cancel all timers.
              </p>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.delta">
-             <span class="sig-name descname">
-              <span class="pre">
-               delta
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                time
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                timedelta
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.delta" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return the timedelta from the current time to the given time.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 time
-                </strong>
-                (
-                <em>
-                 datetime
-                </em>
-                ) – The datum time.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 timedelta
-                </em>
-                – The time difference.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py attribute">
@@ -13296,22 +13138,6 @@ then the default handler (if registered) will receive the
              TestClock
             </span>
            </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              uint64_t
-             </span>
-             <span class="pre">
-              initial_ns=0
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
            <a class="headerlink" href="#nautilus_trader.common.clock.TestClock" title="Permalink to this definition">
             ¶
            </a>
@@ -13330,23 +13156,6 @@ then the default handler (if registered) will receive the
            <p>
             Provides a monotonic clock for backtesting and unit testing.
            </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <strong>
-               initial_ns
-              </strong>
-              (
-              <em>
-               uint64_t
-              </em>
-              ) – The initial UNIX time (nanoseconds) for the clock.
-             </p>
-            </dd>
-           </dl>
            <dl class="py method">
             <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.advance_time">
              <span class="sig-name descname">
@@ -13558,85 +13367,6 @@ already been canceled).
              <p>
               Cancel all timers.
              </p>
-            </dd>
-           </dl>
-           <dl class="py method">
-            <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.delta">
-             <span class="sig-name descname">
-              <span class="pre">
-               delta
-              </span>
-             </span>
-             <span class="sig-paren">
-              (
-             </span>
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                self
-               </span>
-              </span>
-             </em>
-             ,
-             <em class="sig-param">
-              <span class="n">
-               <span class="pre">
-                datetime
-               </span>
-               <span class="pre">
-                time
-               </span>
-              </span>
-             </em>
-             <span class="sig-paren">
-              )
-             </span>
-             <span class="sig-return">
-              <span class="sig-return-icon">
-               →
-              </span>
-              <span class="sig-return-typehint">
-               <span class="pre">
-                timedelta
-               </span>
-              </span>
-             </span>
-             <a class="headerlink" href="#nautilus_trader.common.clock.TestClock.delta" title="Permalink to this definition">
-              ¶
-             </a>
-            </dt>
-            <dd>
-             <p>
-              Return the timedelta from the current time to the given time.
-             </p>
-             <dl class="field-list simple">
-              <dt class="field-odd">
-               Parameters
-              </dt>
-              <dd class="field-odd">
-               <p>
-                <strong>
-                 time
-                </strong>
-                (
-                <em>
-                 datetime
-                </em>
-                ) – The datum time.
-               </p>
-              </dd>
-              <dt class="field-even">
-               Returns
-              </dt>
-              <dd class="field-even">
-               <p>
-                <em>
-                 timedelta
-                </em>
-                – The time difference.
-               </p>
-              </dd>
-             </dl>
             </dd>
            </dl>
            <dl class="py attribute">
