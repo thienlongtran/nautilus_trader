@@ -864,7 +864,8 @@ First, download and load the data by running the next cell (this should take ~ 1
          </p>
          <div class="highlight-bash notranslate">
           <div class="highlight">
-           <pre><span></span>!curl https://raw.githubusercontent.com/nautechsystems/nautilus_data/main/scripts/hist_data_to_catalog.py <span class="p">|</span> python - 
+           <pre><span></span>!apt-get update <span class="o">&amp;&amp;</span> apt-get install curl -y
+!curl https://raw.githubusercontent.com/nautechsystems/nautilus_data/main/scripts/hist_data_to_catalog.py <span class="p">|</span> python - 
 </pre>
           </div>
          </div>
