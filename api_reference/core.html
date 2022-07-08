@@ -1247,78 +1247,8 @@ slice of a to be searched.
           </dt>
           <dd>
            <p>
-            Format the given string to millisecond accuracy ISO 8601 specification.
-           </p>
-           <dl class="field-list simple">
-            <dt class="field-odd">
-             Parameters
-            </dt>
-            <dd class="field-odd">
-             <p>
-              <strong>
-               dt
-              </strong>
-              (
-              <em>
-               datetime
-              </em>
-              ) – The input datetime to format.
-             </p>
-            </dd>
-            <dt class="field-even">
-             Returns
-            </dt>
-            <dd class="field-even">
-             <p>
-              <em>
-               str
-              </em>
-              – The formatted string.
-             </p>
-            </dd>
-           </dl>
-          </dd>
-         </dl>
-         <dl class="py function">
-          <dt class="sig sig-object py" id="nautilus_trader.core.datetime.format_iso8601_ns">
-           <span class="sig-name descname">
-            <span class="pre">
-             format_iso8601_ns
-            </span>
-           </span>
-           <span class="sig-paren">
-            (
-           </span>
-           <em class="sig-param">
-            <span class="n">
-             <span class="pre">
-              datetime
-             </span>
-             <span class="pre">
-              dt
-             </span>
-            </span>
-           </em>
-           <span class="sig-paren">
-            )
-           </span>
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              unicode
-             </span>
-            </span>
-           </span>
-           <a class="headerlink" href="#nautilus_trader.core.datetime.format_iso8601_ns" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-           <p>
-            Format the given string to nanosecond accuracy ISO 8601 specification.
+            Format the given datetime to a millisecond accurate ISO 8601 specification
+string.
            </p>
            <dl class="field-list simple">
             <dt class="field-odd">
@@ -2076,7 +2006,7 @@ slice of a to be searched.
            <em class="sig-param">
             <span class="n">
              <span class="pre">
-              double
+              uint64_t
              </span>
              <span class="pre">
               nanos
@@ -2115,7 +2045,7 @@ slice of a to be searched.
               </strong>
               (
               <em>
-               double
+               uint64_t
               </em>
               ) – The nanoseconds to convert.
              </p>
