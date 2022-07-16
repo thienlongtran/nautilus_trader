@@ -13222,7 +13222,7 @@ then the default handler (if registered) will receive the
                 <em>
                  uint64_t
                 </em>
-                ) – The UNIX time (nanoseconds) advance the clock to.
+                ) – The UNIX time (nanoseconds) to advance the clock to.
                </p>
               </dd>
               <dt class="field-even">
@@ -13246,7 +13246,7 @@ then the default handler (if registered) will receive the
                 </strong>
                 – If
                 <cite>
-                 to_time
+                 to_time_ns
                 </cite>
                 is &lt; the clocks current time.
                </p>
@@ -31600,7 +31600,7 @@ of events. A
             </dt>
             <dd>
              <p>
-              The time events unique name.
+              The name of the time event.
              </p>
              <dl class="field-list simple">
               <dt class="field-odd">
@@ -31608,9 +31608,9 @@ of events. A
               </dt>
               <dd class="field-odd">
                <p>
-                <cite>
+                <em>
                  str
-                </cite>
+                </em>
                </p>
               </dd>
              </dl>
